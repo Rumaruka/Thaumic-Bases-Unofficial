@@ -1,0 +1,39 @@
+{
+  "entries" :[
+
+    {
+      "key": "THAUMICBASES_FIRST",
+      "name": "research.THAUMICBASES.title",
+      "icons": [ "thaumicbases:textures/thaumonomicon/bases.png" ],
+      "category": "THAUMICBASES",
+      "location": [ 0,0 ],
+      "parents": [ "FIRSTSTEPS" ],
+      "meta": [ "ROUND","SPIKY"],
+      "stages": [
+        {
+          "text": "research.THAUMICBASES.stage.1",
+          "required_craft":["thaumcraft:arcane_workbench"]
+
+        }
+      ]
+    },
+    {
+      "key": "DECORATION",
+      "name": "research.DECORATION.title",
+      "icons": [ "thaumicbases:dustblock" ],
+      "category": "THAUMICBASES",
+      "location": [ 0,2 ],
+      "parents": ["THAUMICBASES_FIRST"],
+      "stages": [
+        {
+          "text": "research.DECORATION.stage.1",
+          "required_knowledge":["OBSERVATION;BASICS;1"]
+        },
+        {
+          "text": "research.DECORATION.stage.2",
+          "recipes":["thaumicbases:dustblock"]
+        }
+      ]
+    }
+  ]
+}

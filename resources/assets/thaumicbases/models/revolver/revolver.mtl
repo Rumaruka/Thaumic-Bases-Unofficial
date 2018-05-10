@@ -1,0 +1,72 @@
+# Blender MTL File: 'None'
+# Material Count: 7
+
+newmtl Material.001
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd revolverHandleUV.png
+
+newmtl Material.003
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd revolverBarrelUV.png
+
+newmtl Material.003_revolverDarkMetal.png
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd revolverDarkMetal.png
+
+newmtl Material.004
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd revolverDarkMetal.png
+
+newmtl Material.005
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd revolverDarkMetal.png
+
+newmtl Material.006
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd revolverGunUV.png
+
+newmtl Material.008
+Ns 90.196078
+Ka 0.000000 0.000000 0.000000
+Kd 0.409600 0.409600 0.409600
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd revolverPressUV.png

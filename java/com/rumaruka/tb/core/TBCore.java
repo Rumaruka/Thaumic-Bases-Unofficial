@@ -32,7 +32,7 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.0.030.15b";
+    public static final String version = "3.0.040.25b";
     //public static final String dependencies = "required-after:Thaumcraft@[1.12.2-6.1BETA13,);required-after:Baubles@[1.12-1.5.2,);required-after:DummyCoreUnofficial@[2.4.112.3,);";
 
     //Networking
@@ -90,7 +90,7 @@ public class TBCore {
         TBOreDirection.setup();
 
 
-        network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
+        network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
 
     }
 

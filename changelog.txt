@@ -1,13 +1,21 @@
 Knowed Bugs and Thinking featurs: add Enchantment last build
 
-Process - 13%
+Process - 15%
 
 Legends:
-			+ : Adding
-			#: Fix
-			>: debuffing
-			<: buffing
+			+ : Adding;
+			#: Fix;
+			>: debuffing;
+			<: buffing;
 			
+			
+Thaumic Bases 1.12.2 (3.0.040.25b)
++New ignot finish porting
++Crystal blocks finish porting
+#Fix more recipe bugs and add config option for count aspect
+
+
+ 			
 Thaumic Bases 1.12.2 (3.0.030.15b)	
 +Crystal blocks.WIP(25%)
 +New ignot (but strange textures).WIP(25%) 

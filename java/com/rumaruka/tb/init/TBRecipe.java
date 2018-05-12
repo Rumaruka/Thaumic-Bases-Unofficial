@@ -73,6 +73,60 @@ public class TBRecipe {
 
 
         });
+        RecipeUtils.addShapedRecipe(new ItemStack(TBBlocks.crystalblockearth,1,0), new Object[]{
+                "###",
+                "###",
+                "###",
+
+                '#',  new ItemStack(TBItems.earthingot)
+
+
+        });
+        RecipeUtils.addShapedRecipe(new ItemStack(TBBlocks.crystalblockorder,1,0), new Object[]{
+                "###",
+                "###",
+                "###",
+
+                '#',  new ItemStack(TBItems.orderingot)
+
+
+        });
+        RecipeUtils.addShapedRecipe(new ItemStack(TBBlocks.crystalblockentropy,1,0), new Object[]{
+                "###",
+                "###",
+                "###",
+
+                '#',  new ItemStack(TBItems.entropyingot)
+
+
+        });
+        RecipeUtils.addShapedRecipe(new ItemStack(TBBlocks.crystalblockmixed,1,0), new Object[]{
+                "###",
+                "###",
+                "###",
+
+                '#',  new ItemStack(TBItems.mixedingot)
+
+
+        });
+        RecipeUtils.addShapedRecipe(new ItemStack(TBBlocks.crystalblocktainted,1,0), new Object[]{
+                "###",
+                "###",
+                "###",
+
+                '#',  new ItemStack(TBItems.taintedingot)
+
+
+        });
+        RecipeUtils.addShapedRecipe(new ItemStack(TBBlocks.crystalblockwater,1,0), new Object[]{
+                "###",
+                "###",
+                "###",
+
+                '#',  new ItemStack(TBItems.wateringot)
+
+
+        });
 
 
 

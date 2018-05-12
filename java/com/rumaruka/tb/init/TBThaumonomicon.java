@@ -16,6 +16,10 @@ import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.api.research.*;
+import thaumcraft.common.blocks.crafting.BlockThaumatorium;
+import thaumcraft.common.config.ConfigItems;
+
+import java.util.Random;
 
 
 public class TBThaumonomicon {
@@ -89,15 +93,32 @@ public class TBThaumonomicon {
                 new ItemStack(ItemsTC.salisMundus,9,0), new Object[] { "   ", " s ", "   ",
                 Character.valueOf('s'), new ItemStack(TBBlocks.dustblock)}));
 
-
         CrucibleRecipe thauminiteRec = new CrucibleRecipe("TB.Thauminite",new ItemStack(TBItems.thauminite_ingot),new ItemStack(ItemsTC.ingots,1,0),new AspectList().add(Aspect.MAGIC, 10).add(Aspect.EARTH, 15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Thauminite"),thauminiteRec);
 
-        CrucibleRecipe airingotRec = new CrucibleRecipe("TB.Air_Ingot",new ItemStack(TBItems.airingot),new ItemStack(Items.IRON_INGOT),new AspectList().add(Aspect.AIR, 64));
+        CrucibleRecipe airingotRec = new CrucibleRecipe("TB.Air_Ingot",new ItemStack(TBItems.airingot),ConfigItems.AIR_CRYSTAL,new AspectList().add(Aspect.AIR, TBConfig.aspectCountForIngotCrucible));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Air_Ingot"),airingotRec);
 
-        CrucibleRecipe fireingotRec = new CrucibleRecipe("TB.Fire_Ingot",new ItemStack(TBItems.fireingot),new ItemStack(Items.IRON_INGOT),new AspectList().add(Aspect.FIRE, 64));
+        CrucibleRecipe fireingotRec = new CrucibleRecipe("TB.Fire_Ingot",new ItemStack(TBItems.fireingot),ConfigItems.FIRE_CRYSTAL,new AspectList().add(Aspect.FIRE, TBConfig.aspectCountForIngotCrucible));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Fire_Ingot"),fireingotRec);
+
+        CrucibleRecipe wateringotRec = new CrucibleRecipe("TB.Water_Ingot",new ItemStack(TBItems.wateringot),ConfigItems.WATER_CRYSTAL,new AspectList().add(Aspect.WATER, TBConfig.aspectCountForIngotCrucible));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Water_Ingot"),wateringotRec);
+
+        CrucibleRecipe earthingotRec = new CrucibleRecipe("TB.Earth_Ingot",new ItemStack(TBItems.earthingot),ConfigItems.EARTH_CRYSTAL,new AspectList().add(Aspect.EARTH, TBConfig.aspectCountForIngotCrucible));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Earth_Ingot"),earthingotRec);
+
+        CrucibleRecipe orgeringotRec = new CrucibleRecipe("TB.Order_Ingot",new ItemStack(TBItems.orderingot),ConfigItems.ORDER_CRYSTAL,new AspectList().add(Aspect.ORDER, TBConfig.aspectCountForIngotCrucible));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Order_Ingot"),orgeringotRec);
+
+        CrucibleRecipe entropyingotRec = new CrucibleRecipe("TB.Entropy_Ingot",new ItemStack(TBItems.entropyingot), ConfigItems.ENTROPY_CRYSTAL,new AspectList().add(Aspect.ENTROPY, TBConfig.aspectCountForIngotCrucible));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Entropy_Ingot"),entropyingotRec);
+
+        CrucibleRecipe mixedingotRec = new CrucibleRecipe("TB.Mixed_Ingot",new ItemStack(TBItems.mixedingot),new ItemStack(Items.IRON_INGOT),new AspectList().add(Aspect.EARTH, 16).add(Aspect.AIR,16).add(Aspect.WATER,16).add(Aspect.FIRE,16).add(Aspect.ENTROPY,5).add(Aspect.ORDER,5));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Mixed_Ingot"),mixedingotRec);
+
+        CrucibleRecipe taintedingotRec = new CrucibleRecipe("TB.Tain_Ingot",new ItemStack(TBItems.taintedingot), ConfigItems.FLUX_CRYSTAL,new AspectList().add(Aspect.FLUX, TBConfig.aspectCountForIngotCrucible));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Tain_Ingot"),taintedingotRec);
 
         CrucibleRecipe gravelToFlint = new CrucibleRecipe("TB.gravelToFlint",new ItemStack(Items.FLINT,2,0),new ItemStack(Blocks.GRAVEL),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,5));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.gravelToFlint"),gravelToFlint);
@@ -110,7 +131,8 @@ public class TBThaumonomicon {
 
 
 
-
+        CrucibleRecipe randomWoolToString = new CrucibleRecipe("TB.randomWoolToString",new ItemStack(Items.STRING,4,0),new ItemStack(Blocks.WOOL),new AspectList().add(Aspect.ENTROPY, 25));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.randomWoolToString"),randomWoolToString);
 
 
 

@@ -7,6 +7,7 @@ import com.google.common.collect.ObjectArrays;
 import com.google.common.collect.Sets;
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
 
+import com.rumaruka.tb.common.block.BlockTBPlant;
 import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.common.block.TBBlockCrytal;
 import com.rumaruka.tb.common.block.TBSidedBlock;
@@ -38,6 +39,7 @@ import net.minecraftforge.registries.IRegistryDelegate;
 import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.Level;
 import thaumcraft.api.blocks.BlocksTC;
+import thaumcraft.api.crafting.IThaumcraftRecipe;
 import thaumcraft.api.items.ItemsTC;
 
 import java.lang.reflect.Constructor;
@@ -50,6 +52,12 @@ public class TBBlocks {
         //TB Blocks
         public static Block crystalblockair;
         public static Block crystalblockfire;
+        public static Block crystalblockwater;
+        public static Block crystalblockearth;
+        public static Block crystalblockorder;
+        public static Block crystalblockentropy;
+        public static Block crystalblockmixed;
+        public static Block crystalblocktainted;
 
         //Trees TB
 
@@ -71,7 +79,7 @@ public class TBBlocks {
         public static Block olddiamond;
 
         //Plant
-
+        public static Block plax;
         //Spike
 
         //Slabs
@@ -117,13 +125,26 @@ public class TBBlocks {
         //TB Blocks
         crystalblockair = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblockair").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
         crystalblockair.setHarvestLevel("pickaxe",0);
-
         crystalblockfire = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblockfire").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
         crystalblockfire.setHarvestLevel("pickaxe",0);
-
-
+        crystalblockwater = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblockwater").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
+        crystalblockwater.setHarvestLevel("pickaxe",0);
+        crystalblockearth = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblockearth").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
+        crystalblockearth.setHarvestLevel("pickaxe",0);
+        crystalblockorder = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblockorder").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
+        crystalblockorder.setHarvestLevel("pickaxe",0);
+        crystalblockentropy = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblockentropy").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
+        crystalblockentropy.setHarvestLevel("pickaxe",0);
+        crystalblockmixed = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblockmixed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
+        crystalblockmixed.setHarvestLevel("pickaxe",0);
+        crystalblocktainted = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblocktainted").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
+        crystalblocktainted.setHarvestLevel("pickaxe",0);
+        //Plant
+        plax = new BlockTBPlant();
 
     }
+
+
 
         public static void InGameRegister(){
             TBBlocks.registerBlock(oldcobble,oldcobble.getUnlocalizedName().substring(5));
@@ -142,6 +163,14 @@ public class TBBlocks {
             TBBlocks.registerBlock(eldritchark, eldritchark.getUnlocalizedName().substring(5));
             TBBlocks.registerBlock(crystalblockair, crystalblockair.getUnlocalizedName().substring(5));
             TBBlocks.registerBlock(crystalblockfire, crystalblockfire.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockwater,crystalblockwater.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockearth,crystalblockearth.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockorder,crystalblockorder.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockentropy,crystalblockentropy.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockmixed,crystalblockmixed.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblocktainted,crystalblocktainted.getUnlocalizedName().substring(5));
+
+
 
     }
 
@@ -217,6 +246,15 @@ public class TBBlocks {
         registerRender(eldritchark);
         registerRender(crystalblockair);
         registerRender(crystalblockfire);
+        registerRender(crystalblockwater);
+        registerRender(crystalblockearth);
+        registerRender(crystalblockorder);
+        registerRender(crystalblockentropy);
+        registerRender(crystalblockmixed);
+        registerRender(crystalblocktainted);
+
+
+
 
     }
         public static void registerRender(Block block)

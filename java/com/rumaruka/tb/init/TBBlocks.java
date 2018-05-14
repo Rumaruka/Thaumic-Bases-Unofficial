@@ -7,10 +7,7 @@ import com.google.common.collect.ObjectArrays;
 import com.google.common.collect.Sets;
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
 
-import com.rumaruka.tb.common.block.BlockTBPlant;
-import com.rumaruka.tb.common.block.TBBlock;
-import com.rumaruka.tb.common.block.TBBlockCrytal;
-import com.rumaruka.tb.common.block.TBSidedBlock;
+import com.rumaruka.tb.common.block.*;
 import com.rumaruka.tb.common.itemblocks.*;
 import com.rumaruka.tb.core.TBCore;
 import joptsimple.internal.Strings;
@@ -58,6 +55,7 @@ public class TBBlocks {
         public static Block crystalblockentropy;
         public static Block crystalblockmixed;
         public static Block crystalblocktainted;
+        public static Block pyrofluid;
 
         //Trees TB
 
@@ -94,7 +92,7 @@ public class TBBlocks {
         oldcobble.setHarvestLevel("piclaxe",0);
         oldcobblemossy = new TBBlock(Material.ROCK, false).setUnlocalizedName("oldcobblemossy").setHardness(1).setResistance(1).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         oldcobblemossy.setHarvestLevel("piclaxe",0);
-        oldgravel = new TBBlock(Material.SAND,false).setUnlocalizedName("oldgravel").setHardness(1).setResistance(1).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        oldgravel = new TBBlock(Material.SAND,false).setSoundType(SoundType.GROUND).setUnlocalizedName("oldgravel").setHardness(1).setResistance(1).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         oldgravel.setHarvestLevel("shovel",0);
         oldbrick = new TBBlock(Material.ROCK, false).setUnlocalizedName("oldbrick").setHardness(1).setResistance(1).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         oldbrick.setHarvestLevel("piclaxe",0);
@@ -139,6 +137,7 @@ public class TBBlocks {
         crystalblockmixed.setHarvestLevel("pickaxe",0);
         crystalblocktainted = new TBBlockCrytal(Material.GLASS,false).setUnlocalizedName("crystalblocktainted").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setHardness(0.5F);
         crystalblocktainted.setHarvestLevel("pickaxe",0);
+        pyrofluid = new BlockPyrofluid().setLightLevel(1).setUnlocalizedName("pyrofluid");
         //Plant
         plax = new BlockTBPlant();
 
@@ -161,16 +160,16 @@ public class TBBlocks {
             TBBlocks.registerBlock(blockthauminite, blockthauminite.getUnlocalizedName().substring(5));
             TBBlocks.registerBlock(irongreatwood, irongreatwood.getUnlocalizedName().substring(5));
             TBBlocks.registerBlock(eldritchark, eldritchark.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblockair, crystalblockair.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblockfire, crystalblockfire.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblockwater,crystalblockwater.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblockearth,crystalblockearth.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblockorder,crystalblockorder.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblockentropy,crystalblockentropy.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblockmixed,crystalblockmixed.getUnlocalizedName().substring(5));
-            TBBlocks.registerBlock(crystalblocktainted,crystalblocktainted.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockair, ItemBlockCrystal.class,crystalblockair.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockfire,ItemBlockCrystal.class ,crystalblockfire.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockwater,ItemBlockCrystal.class ,crystalblockwater.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockearth,ItemBlockCrystal.class ,crystalblockearth.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockorder,ItemBlockCrystal.class ,crystalblockorder.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockentropy,ItemBlockCrystal.class ,crystalblockentropy.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblockmixed,ItemBlockCrystal.class ,crystalblockmixed.getUnlocalizedName().substring(5));
+            TBBlocks.registerBlock(crystalblocktainted,ItemBlockCrystal.class ,crystalblocktainted.getUnlocalizedName().substring(5));
 
-
+            TBBlocks.registerBlock(pyrofluid, pyrofluid.getUnlocalizedName().substring(5));
 
     }
 
@@ -252,7 +251,7 @@ public class TBBlocks {
         registerRender(crystalblockentropy);
         registerRender(crystalblockmixed);
         registerRender(crystalblocktainted);
-
+        registerRender(pyrofluid);
 
 
 

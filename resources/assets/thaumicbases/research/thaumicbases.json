@@ -18,22 +18,115 @@
       ]
     },
     {
-      "key": "DECORATION",
-      "name": "research.DECORATION.title",
-      "icons": [ "thaumicbases:dustblock" ],
+      "key": "TB.ALCHEMY",
+      "name": "research.TBALCHEMY.title",
+      "icons": [ "thaumicbases:thauminite_ingot" ],
       "category": "THAUMICBASES",
       "location": [ 0,2 ],
-      "parents": ["THAUMICBASES_FIRST"],
+      "parents": [ "THAUMICBASES_FIRST" ],
       "stages": [
         {
-          "text": "research.DECORATION.stage.1",
-          "required_knowledge":["OBSERVATION;BASICS;1"]
+          "text": "research.TBALCHEMY.stage.1",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"]
+          },
+        {
+          "text": "research.TBALCHEMY.stage.2",
+          "required_craft":["thaumcraft:thauminite_ingot"]
         },
         {
-          "text": "research.DECORATION.stage.2",
-          "recipes":["thaumicbases:dustblock"]
+          "text": "research.TBALCHEMY.stage.3",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"],
+          "recipe":["thaumicbases:aeringot","thaumicbases:fireingot","thaumicbases:wateringot","thaumicbases:earthingot","thaumicbases:mixedingot","thaumicbases:taintedingot","thaumicbases:orderingot","thaumicbases:entropyingot"]
+
+        }
+      ]
+    },
+    {
+      "key": "TB.DECO",
+      "name": "research.TBDECO.title",
+      "icons": [ "thaumicbases:dustblock" ],
+      "category": "THAUMICBASES",
+      "location": [ -2,4 ],
+      "parents": [ "THAUMICBASES_FIRST" ],
+      "stages": [
+        {
+          "text": "research.TBDECO.stage.1"
+        }
+      ]
+    },
+    {
+      "key": "TB.MACERATOR",
+      "name": "research.MACERATOR.title",
+      "icons": [ "minecraft:gravel" ],
+      "category": "THAUMICBASES",
+      "location": [ 0,4 ],
+      "parents": [ "TB.ALCHEMY" ],
+      "stages": [
+        {
+          "text": "research.MACERATOR.stage.1",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"]
+        },
+        {
+          "text": "research.MACERATOR.stage.2",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"],
+          "recipe":["minecraft:gold_nugget","minecraft:sand","minecraft:flint","minectaft:string","minecraft:blaze_powder","minecraft:blaze_rod"]
+        }
+
+
+
+      ]
+    },
+     {
+      "key": "TB.AdvMACERATOR",
+      "name": "research.AdvMACERATOR.title",
+      "icons": [ "minecraft:gravel" ],
+      "category": "THAUMICBASES",
+      "location": [ 2,4 ],
+      "parents": [ "TB.MACERATOR" ],
+      "stages": [
+        {
+          "text": "research.AdvMACERATOR.stage.1",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"]
+        },
+        {
+          "text": "research.AdvMACERATOR.stage.2",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"],
+          "recipe":["minecraft:gold_nugget","minecraft:sand","minecraft:flint","minectaft:string","minecraft:blaze_powder"]
+        }
+
+
+      ]
+    },
+    {
+      "key": "TB.EXCHANG",
+      "name": "research.EXCHANG.title",
+      "icons": [ "thaumcraft:quicksilver" ],
+      "category": "THAUMICBASES",
+      "location": [ 0,6 ],
+      "parents": [ "TB.MACERATOR" ],
+      "stages": [
+        {
+          "text": "research.EXCHANG.stage.1",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"],
+          "recipe":["thaumcraft:quicksilver","thaumcraft:amber"]
+        }
+      ]
+    },
+    {
+      "key": "TB.DOUBLE",
+      "name": "research.DOUBLE.title",
+      "icons": [ "thaumcraft:salis_mundus" ],
+      "category": "THAUMICBASES",
+      "location": [ 0,8],
+      "parents": [ "TB.EXCHANG" ],
+      "stages": [
+        {
+          "text": "research.DOUBLE.stage.1",
+          "required_knowledge":["OBSERVATION;ALCHEMY;1"],
+          "recipe":"thaumcraft:salis_mundus"
         }
       ]
     }
+
   ]
 }

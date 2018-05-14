@@ -1,5 +1,8 @@
 package com.rumaruka.tb.init;
 
+import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.BlockSapling;
+import net.minecraft.init.Blocks;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.blocks.BlocksTC;
 
@@ -7,6 +10,7 @@ public class TBOreDirection {
 
     public static void setup(){
 
+        //Vanilla
 
         //TC Blocks
         OreDictionary.registerOre("plankGreatwood", BlocksTC.plankGreatwood);
@@ -30,4 +34,5 @@ public class TBOreDirection {
         OreDictionary.registerOre("nuggetThauminite",TBItems.nuggetthauminite);
 
     }
+
 }

@@ -14,7 +14,8 @@ public class TBConfig implements IDummyConfig {
 
         visoldBlocks = cfg.getInt("visCastOldStyle","Count Vis",50,5,250,"Count Vis for Crafting Old Style Vanilla Blocks");
         aspectCountForIngotCrucible = cfg.getInt("aspectCountForIngotCrucible","Count Aspect", 30,5,64,"Count Aspect For Crucible");
-
+        minBlazePowderFromPyrofluid = cfg.getInt("minBlazePowderFromPyrofluid", "Pyrofluid", 5, 0, Integer.MAX_VALUE, "");
+        maxBlazePowderFromPyrofluid = cfg.getInt("maxBlazePowderFromPyrofluid", "Pyrofluid", 5+32, 0, Integer.MAX_VALUE, "");
     }
     static Configuration cfg;
 
@@ -22,8 +23,8 @@ public class TBConfig implements IDummyConfig {
 
     public static int visoldBlocks = 0;
     public static int aspectCountForIngotCrucible = 0;
-
-    public static int eldritchBaneID = 0;
+    public static int minBlazePowderFromPyrofluid = 0;
+    public static int maxBlazePowderFromPyrofluid = 0;
 
     public static int getVisoldBlocks(){
         return visoldBlocks;

@@ -1,6 +1,7 @@
 package com.rumaruka.tb.common.item;
 
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
+import com.rumaruka.tb.common.entity.EntityAerIngot;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.ItemMeshDefinition;
@@ -65,10 +66,11 @@ public class TBAirIngot extends Item {
 
         if (!worldIn.isRemote)
         {
-            EntityEnderPearl entityenderpearl = new EntityEnderPearl(worldIn, playerIn);
+            EntityAerIngot entityenderpearl = new EntityAerIngot(worldIn, playerIn);
             entityenderpearl.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
             worldIn.spawnEntity(entityenderpearl);
         }
+
 
         playerIn.addStat(StatList.getObjectUseStats(this));
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);

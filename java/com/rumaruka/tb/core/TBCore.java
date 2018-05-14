@@ -27,13 +27,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 
 
-@Mod(modid = modid, name = name, version = version)
+@Mod(modid = modid, name = name, version = version,dependencies = dependencies)
 public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.0.040.25b";
-    //public static final String dependencies = "required-after:Thaumcraft@[1.12.2-6.1BETA13,);required-after:Baubles@[1.12-1.5.2,);required-after:DummyCoreUnofficial@[2.4.112.3,);";
+    public static final String version = "3.0.040.30b";
+    public static final String dependencies = "required-after:thaumcraft@[6.1.BETA13,)";
 
     //Networking
     public static final String serverProxy = "com.rumaruka.tb.network.proxy.TBServer";
@@ -87,6 +87,7 @@ public class TBCore {
         proxy.addEnchantmentToCreativeTab();
         TBRecipe.setup();
         TBThaumonomicon.setup();
+        TBThaumonomicon.insertAspects.call();
         TBOreDirection.setup();
 
 

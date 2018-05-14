@@ -3,6 +3,7 @@ import com.google.common.base.Strings;
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
 
 
+import com.rumaruka.tb.common.TBMaterial;
 import com.rumaruka.tb.common.item.*;
 import com.rumaruka.tb.common.item.recourse.TBItemNuggetThauminite;
 import com.rumaruka.tb.common.item.recourse.TBItemThauminiteIngot;
@@ -14,36 +15,34 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.*;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemSeeds;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import thaumcraft.common.items.tools.ItemElementalSword;
+import thaumcraft.common.items.tools.ItemThaumiumAxe;
 
 public class TBItems {
 
 
 
-    public static ToolMaterial thauminite = EnumHelper.addToolMaterial("THAUMINITE", 3, 964, 8F, 3.8F, 15);
+
     public static ArmorMaterial thauminiteA = EnumHelper.addArmorMaterial("ATHAUMINITE", "thaumicbases:textures/items/armor/thauminite/thauminite", 27, new int[]{3, 8, 6, 3}, 17,SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
     public static ArmorMaterial bloodyA = EnumHelper.addArmorMaterial("TBBLOODY", "thaumicbases:textures/items/armor/bloody/bloody" ,21, new int[]{2, 6, 5, 2}, 21, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 
 
-
+    //Seeds
     public static Item plaxSeed;
 
 
-
+    //Metall
     public static Item nuggetthauminite;
     public static Item thauminite_ingot;
-
+    //Ex-Fragments
     public static Item airingot;
     public static Item fireingot;
     public static Item wateringot;
@@ -52,6 +51,13 @@ public class TBItems {
     public static Item entropyingot;
     public static Item mixedingot;
     public static Item taintedingot;
+    //Tools
+    public static Item thauminiteaxe;
+
+    //Pyr
+    public static Item pyrobucket;
+
+
 
     public static void init(){
 
@@ -68,9 +74,14 @@ public class TBItems {
        taintedingot = new TBTaintedIngot().setUnlocalizedName("taintedingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
 
+       thauminiteaxe =  new ItemThauminiteAxe(TBMaterial.thauminite).setUnlocalizedName("thauminiteaxe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
 
        plaxSeed = new ItemSeeds(TBBlocks.plax, Blocks.FARMLAND);
+
+        pyrobucket = new ItemPyrofluidBucket().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("pyrobucket");
     }
+
 
     public static void InGameRegistr(){
         TBItems.registerItem(nuggetthauminite, nuggetthauminite.getUnlocalizedName().substring(5));
@@ -84,6 +95,10 @@ public class TBItems {
         TBItems.registerItem(entropyingot,entropyingot.getUnlocalizedName().substring(5));
         TBItems.registerItem(mixedingot, mixedingot.getUnlocalizedName().substring(5));
         TBItems.registerItem(taintedingot,taintedingot.getUnlocalizedName().substring(5));
+
+        TBItems.registerItem(thauminiteaxe,thauminiteaxe.getUnlocalizedName().substring(5));
+
+        TBItems.registerItem(pyrobucket,pyrobucket.getUnlocalizedName().substring(5));
 
 
     }
@@ -120,6 +135,10 @@ public class TBItems {
         renderItems(entropyingot);
         renderItems(mixedingot);
         renderItems(taintedingot);
+
+        renderItems(thauminiteaxe);
+
+        renderItems(pyrobucket);
 
     }
 

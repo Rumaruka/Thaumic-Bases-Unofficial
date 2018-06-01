@@ -4,16 +4,20 @@ import DummyCore.Utils.ASMManager;
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.init.TBBlocks;
+import com.rumaruka.tb.init.TBFluids;
 import com.rumaruka.tb.init.TBItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSound;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import thaumcraft.client.fx.FXDispatcher;
@@ -24,6 +28,11 @@ import java.util.Arrays;
 
 public class TBClient extends TBServer {
 
+
+    @Override
+    public void preInit() {
+        ModelLoader.setCustomStateMapper(TBBlocks.pyrofluid,new StateMap.Builder().ignore(BlockFluidBase.LEVEL).build());
+    }
 
     @Override
     public void Renders() {
@@ -75,4 +84,6 @@ public class TBClient extends TBServer {
         enchantmentTypes = Arrays.copyOf(enchantmentTypes,enchantmentTypes.length + 1);
         TBCreativeTabs.TB_CREATIVEtabs.setRelevantEnchantmentTypes(enchantmentTypes);
     }
+
+
 }

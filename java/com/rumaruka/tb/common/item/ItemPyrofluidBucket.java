@@ -1,36 +1,27 @@
 package com.rumaruka.tb.common.item;
 
+
 import com.rumaruka.tb.init.TBBlocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
-import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.common.items.consumables.ItemBucketDeath;
 
 public class ItemPyrofluidBucket extends Item {
     public ItemPyrofluidBucket()
     {
         super();
+        this.setHasSubtypes(false);
         this.setMaxStackSize(1);
-    }
-
-    public boolean onItemUse(ItemStack stk, EntityPlayer player, World w, BlockPos pos, EnumFacing side, float vecX, float vecY, float vecZ)
-    {
-        w.setBlockState(pos.offset(side), TBBlocks.pyrofluid.getDefaultState());
-        player.inventory.setInventorySlotContents(player.inventory.currentItem, new ItemStack(Items.BUCKET,1,0));
-
-        return true;
     }
 
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer player, EnumHand hand) {
@@ -72,5 +63,6 @@ public class ItemPyrofluidBucket extends Item {
         world.setBlockState(pos, TBBlocks.pyrofluid.getDefaultState());
         return true;
     }
+
 
 }

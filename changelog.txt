@@ -1,6 +1,6 @@
 Knowed Bugs and Thinking featurs: add Enchantment last build
 
-Process - 15%
+Process - 20%
 
 Legends:
 			+ : Adding;
@@ -8,6 +8,48 @@ Legends:
 			>: debuffing;
 			<: buffing;
 			
+			
+
+			
+Thaumic Bases 1.12.2 (3.0.085.30b)
++Trees (100%, but have craft one sapling)
+#Fix arcane craft vanilla block again!
+#Fix watch recipe in Thauminicons
+#Remove Peacfull Tree
+#Forge updating
+
+Thaumic Bases 1.12.2 (3.0.085.30b)
++Add function for Aurelia
++Add new block - Spikes
+
+
+
+Thaumic Bases 1.12.2 (3.0.070.30b)
+#Fix Thauminicons reloads
++Add new flowers (25%)
+#Fix more error, probably
+
+
+Thaumic Bases 1.12.2 (3.0.058.30b)
++Add new plant and fuction for his
++Add new Research
++Add recipe for plants
+
+			
+Thaumic Bases 1.12.2 (3.0.050.30b)
++Add new Fluid and solid fluid state
+< More powder after break solid
++New researching
++New Cruisble recipes
+> harden Cruisble recipe
+
+
+			
+Thaumic Bases 1.12.2 (3.0.040.30b)
++New research key
+#Craft Cruisble Recipe
+
+
 			
 Thaumic Bases 1.12.2 (3.0.040.25b)
 +New ignot finish porting

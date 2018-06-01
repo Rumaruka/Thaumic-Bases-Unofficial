@@ -1,5 +1,6 @@
 package com.rumaruka.tb.init;
 
+import com.rumaruka.tb.common.block.FluidPyro;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
@@ -32,6 +33,9 @@ public class TBOreDirection {
         //Thaumcraft Item
         OreDictionary.registerOre("ingotThauminite", TBItems.thauminite_ingot);
         OreDictionary.registerOre("nuggetThauminite",TBItems.nuggetthauminite);
+        //Logs
+        OreDictionary.registerOre("logGolden",TBBlocks.goldenlogs);
+
 
     }
 

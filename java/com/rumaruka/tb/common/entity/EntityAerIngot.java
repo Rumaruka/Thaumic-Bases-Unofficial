@@ -42,7 +42,7 @@ public class EntityAerIngot extends EntityThrowable
 
     public static void registerFixesEnderPearl(DataFixer fixer)
     {
-        EntityThrowable.registerFixesThrowable(fixer, "ThrownEnderpearl");
+        EntityThrowable.registerFixesThrowable(fixer, "ThrownAerIngot");
     }
 
     /**
@@ -90,7 +90,7 @@ public class EntityAerIngot extends EntityThrowable
 
         for (int i = 0; i < 32; ++i)
         {
-            this.world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.posX, this.posY + this.rand.nextDouble() * 2.0D, this.posZ, this.rand.nextGaussian(), 0.0D, this.rand.nextGaussian());
+            this.world.spawnParticle(EnumParticleTypes.PORTAL, this.posX, this.posY + this.rand.nextDouble() * 2.0D, this.posZ, this.rand.nextGaussian(), 0.0D, this.rand.nextGaussian());
         }
 
         if (!this.world.isRemote)

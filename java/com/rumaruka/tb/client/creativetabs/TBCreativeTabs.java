@@ -7,6 +7,7 @@ import com.rumaruka.tb.init.TBItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class TBCreativeTabs extends CreativeTabs {
     public static TBCreativeTabs TB_CREATIVEtabs = new TBCreativeTabs();
@@ -18,5 +19,10 @@ public class TBCreativeTabs extends CreativeTabs {
     @Override
     public ItemStack getTabIconItem() {
         return new ItemStack(TBItems.mixedingot);
+    }
+
+    @Override
+    public void displayAllRelevantItems(NonNullList<ItemStack> itemStacks) {
+        super.displayAllRelevantItems(itemStacks);
     }
 }

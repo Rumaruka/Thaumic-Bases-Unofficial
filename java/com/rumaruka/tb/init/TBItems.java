@@ -35,13 +35,14 @@ public class TBItems {
     public static ArmorMaterial bloodyA = EnumHelper.addArmorMaterial("TBBLOODY", "thaumicbases:textures/items/armor/bloody/bloody" ,21, new int[]{2, 6, 5, 2}, 21, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
 
 
-    //Seeds
-    public static Item plaxSeed;
 
 
-    //Metall
+    //Metall and Material
     public static Item nuggetthauminite;
     public static Item thauminite_ingot;
+
+    public static Item bloodycloth;
+
     //Ex-Fragments
     public static Item airingot;
     public static Item fireingot;
@@ -57,12 +58,22 @@ public class TBItems {
     //Pyr
     public static Item pyrobucket;
 
+    //Seeds
+    public static Item plaxseed;
+    public static Item sweedseed;
+    public static Item aureliapetal;
+
+
 
 
     public static void init(){
 
        nuggetthauminite = new TBItemNuggetThauminite().setUnlocalizedName("nuggetthauminite").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
        thauminite_ingot = new TBItemThauminiteIngot().setUnlocalizedName("thauminite_ingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+        bloodycloth = new TBBloodyCloth().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("bloodycloth");
+
+
 
        airingot = new TBAirIngot().setUnlocalizedName("airingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
        fireingot = new TBFireIngot().setUnlocalizedName("fireingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -77,16 +88,24 @@ public class TBItems {
        thauminiteaxe =  new ItemThauminiteAxe(TBMaterial.thauminite).setUnlocalizedName("thauminiteaxe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
 
-       plaxSeed = new ItemSeeds(TBBlocks.plax, Blocks.FARMLAND);
 
-        pyrobucket = new ItemPyrofluidBucket().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("pyrobucket");
+       pyrobucket = new ItemPyrofluidBucket().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("pyrobucket");
+
+
+       plaxseed = new ItemSeeds(TBBlocks.plax,Blocks.FARMLAND).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("plaxseed");
+       sweedseed = new ItemSeeds(TBBlocks.sweed,Blocks.GRASS).setUnlocalizedName("sweedseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+       aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal");
+
     }
+
+    public static final Item[] primalIgot = new Item[]{airingot,fireingot,wateringot,earthingot,entropyingot,orderingot};
 
 
     public static void InGameRegistr(){
         TBItems.registerItem(nuggetthauminite, nuggetthauminite.getUnlocalizedName().substring(5));
         TBItems.registerItem(thauminite_ingot,thauminite_ingot.getUnlocalizedName().substring(5));
-
+        TBItems.registerItem(bloodycloth,bloodycloth.getUnlocalizedName().substring(5));
         TBItems.registerItem(airingot, airingot.getUnlocalizedName().substring(5));
         TBItems.registerItem(fireingot,fireingot.getUnlocalizedName().substring(5));
         TBItems.registerItem(earthingot, earthingot.getUnlocalizedName().substring(5));
@@ -99,6 +118,10 @@ public class TBItems {
         TBItems.registerItem(thauminiteaxe,thauminiteaxe.getUnlocalizedName().substring(5));
 
         TBItems.registerItem(pyrobucket,pyrobucket.getUnlocalizedName().substring(5));
+
+        TBItems.registerItem(plaxseed,plaxseed.getUnlocalizedName().substring(5));
+        TBItems.registerItem(sweedseed,sweedseed.getUnlocalizedName().substring(5));
+        TBItems.registerItem(aureliapetal,aureliapetal.getUnlocalizedName().substring(5));
 
 
     }
@@ -126,6 +149,7 @@ public class TBItems {
 
         renderItems(nuggetthauminite);
         renderItems(thauminite_ingot);
+        renderItems(bloodycloth);
 
         renderItems(airingot);
         renderItems(fireingot);
@@ -139,6 +163,10 @@ public class TBItems {
         renderItems(thauminiteaxe);
 
         renderItems(pyrobucket);
+
+        renderItems(plaxseed);
+        renderItems(sweedseed);
+        renderItems(aureliapetal);
 
     }
 

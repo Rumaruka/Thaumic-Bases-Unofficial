@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory":{"model": "thaumicbases:ironspike_0"},
+    "bloody=0": { "model": "thaumicbases:ironspike_0" },
+    "bloody=1": { "model": "thaumicbases:ironspike_1" }
+
+
+  }
+}

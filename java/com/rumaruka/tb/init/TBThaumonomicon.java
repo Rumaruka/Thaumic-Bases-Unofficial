@@ -2,6 +2,7 @@ package com.rumaruka.tb.init;
 
 
 import com.rumaruka.tb.common.block.TBBlock;
+import com.rumaruka.tb.core.TBCore;
 import com.rumaruka.tb.utils.OnetimeCaller;
 import com.rumaruka.tb.utils.TBConfig;
 import net.minecraft.block.Block;
@@ -20,6 +21,7 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.crafting.CrucibleRecipe;
+import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.internal.CommonInternals;
 import thaumcraft.api.items.ItemsTC;
@@ -33,17 +35,22 @@ import java.util.Random;
 
 
 public class TBThaumonomicon {
+
+
+
+
     static ResourceLocation defaultGroup = new ResourceLocation("");
     public ResearchStage.Knowledge THAUMICBASES = new ResearchStage.Knowledge(IPlayerKnowledge.EnumKnowledgeType.THEORY, ResearchCategories.getResearchCategory("THAUMICBASES"),5);
 
 
     public static final OnetimeCaller insertAspects = new OnetimeCaller(TBThaumonomicon::$insertAspects);
+
+
+
+    public static final Aspect PANNUS = new Aspect("pannus",0xE9EAC0, new Aspect[]{Aspect.BEAST, Aspect.TOOL}, new ResourceLocation(TBCore.modid,"textures/aspects/pannus.png"),1);
+
+
     public static void setup(){
-
-
-
-        ThaumcraftApi.registerResearchLocation(new ResourceLocation("thaumicbases:research/thaumicbases.json"));
-
 
         ResearchCategories.registerCategory(catName,null,null,icon,back,back2);
 
@@ -52,42 +59,47 @@ public class TBThaumonomicon {
 
 
 
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobble"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+
+
+
+
+
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobble"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
-               .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldcobble), new Object[] { "# #", "# #", "# #",
+               .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldcobble,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.COBBLESTONE)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobbleMossy"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobbleMossy"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
-                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldcobblemossy), new Object[] { "# #", "# #", "# #",
+                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldcobblemossy,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.MOSSY_COBBLESTONE)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGravel"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGravel"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
-                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldgravel), new Object[] { "# #", "# #", "# #",
+                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldgravel,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.GRAVEL)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldBrick"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldBrick"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
-                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldbrick), new Object[] { "# #", "# #", "# #",
+                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldbrick,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.BRICK_BLOCK)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldLapis"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldLapis"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
-                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldlapis), new Object[] { "# #", "# #", "# #",
+                .add(Aspect.EARTH, 5), new ItemStack(TBBlocks.oldlapis,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.LAPIS_BLOCK)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldIron"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldIron"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
                 .add(Aspect.EARTH,5)
-                .add(Aspect.ORDER, 5), new ItemStack(TBBlocks.oldiron), new Object[] { "# #", "# #", "# #",
+                .add(Aspect.ORDER, 5), new ItemStack(TBBlocks.oldiron,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.IRON_BLOCK)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGold"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGold"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
                 .add(Aspect.EARTH,5)
-                .add(Aspect.ORDER, 5), new ItemStack(TBBlocks.oldgold), new Object[] { "# #", "# #", "# #",
+                .add(Aspect.ORDER, 5), new ItemStack(TBBlocks.oldgold,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.GOLD_BLOCK)}));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldDiamond"), new ShapedArcaneRecipe(defaultGroup, "OLDBLOCK", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldDiamond"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
                 .add(Aspect.ENTROPY,5)
                 .add(Aspect.EARTH,5)
-                .add(Aspect.ORDER, 5), new ItemStack(TBBlocks.olddiamond), new Object[] { "# #", "# #", "# #",
+                .add(Aspect.ORDER, 5), new ItemStack(TBBlocks.olddiamond,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.DIAMOND_BLOCK)}));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.SMB"), new ShapedArcaneRecipe(defaultGroup, "SMB", 65, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.SMB"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO2", 65, new AspectList()
                 .add(Aspect.ORDER,2)
                 .add(Aspect.AIR, 2)
                 .add(Aspect.WATER, 2)
@@ -96,7 +108,7 @@ public class TBThaumonomicon {
 
                 new ItemStack(TBBlocks.dustblock), new Object[] { "sss", "sss", "sss",
                 Character.valueOf('s'), new ItemStack(ItemsTC.salisMundus)}));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.SMBReturn"), new ShapedArcaneRecipe(defaultGroup, "SMB", 50, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.SMBReturn"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO2", 50, new AspectList()
                 .add(Aspect.ENTROPY,2)
                 .add(Aspect.AIR, 2)
                 .add(Aspect.WATER, 2)
@@ -154,7 +166,7 @@ public class TBThaumonomicon {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.gravelToFlintAdv"),gravelToFlintAdv);
 
         CrucibleRecipe cobbleToSandAdv = new CrucibleRecipe("TB.AdvMACERATOR",new ItemStack(Blocks.SAND,4,0),new ItemStack(Blocks.COBBLESTONE),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,10).add(Aspect.CRAFT,5));
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.gravelToFlintAdv"),cobbleToSandAdv);
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.cobbleToSandAdv"),cobbleToSandAdv);
 
         CrucibleRecipe sandToNuggetGoldAdv = new CrucibleRecipe("TB.AdvMACERATOR",new ItemStack(Items.GOLD_NUGGET,4,0),new ItemStack(Blocks.SAND),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,5).add(Aspect.CRAFT,5));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.sandToNuggetGoldAdv"),sandToNuggetGoldAdv);
@@ -177,10 +189,20 @@ public class TBThaumonomicon {
         CrucibleRecipe doubleMundus= new CrucibleRecipe("TB.DOUBLE",new ItemStack(ItemsTC.salisMundus,2,0),new ItemStack(ItemsTC.salisMundus,1,0),new AspectList().add(primals(8)));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.doubleMundus"),doubleMundus);
 
+        CrucibleRecipe lavaToPyro= new CrucibleRecipe("TB.FLUID",new ItemStack(TBItems.pyrobucket),new ItemStack(Items.LAVA_BUCKET),new AspectList().add(Aspect.FIRE,24).add(Aspect.MAGIC,8));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lavaToPyro"),lavaToPyro);
 
+        CrucibleRecipe seedToSweed= new CrucibleRecipe("TB.PLANT",new ItemStack(TBItems.sweedseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.PLANT,25).add(Aspect.MAGIC,8).add(Aspect.LIFE,8));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.seedToSweed"),seedToSweed);
 
+        CrucibleRecipe sweedToPlax= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.plaxseed),new ItemStack(TBItems.sweedseed),new AspectList().add(Aspect.PLANT,15).add(Aspect.MAGIC,5).add(Aspect.LIFE,4));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.sweedToPlax"),sweedToPlax);
 
+        CrucibleRecipe catusToRC= new CrucibleRecipe("TB.CACTUS",new ItemStack(TBBlocks.rainbowcactus),new ItemStack(Blocks.CACTUS),new AspectList().add(Aspect.PLANT,25).add(Aspect.MAGIC,8));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.catusToRC"),catusToRC);
 
+        InfusionRecipe goldenSapling = new InfusionRecipe("TB.TREE", new ItemStack(TBBlocks.goldensapling),2,new AspectList().add(Aspect.PLANT,16).add(Aspect.DESIRE,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.APPLE),new ItemStack(Items.APPLE));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.goldenSapling"),goldenSapling);
 
 
 
@@ -193,7 +215,13 @@ public class TBThaumonomicon {
 
 
         appendAspects(new ItemStack(BlocksTC.vishroom), new AspectList().add(Aspect.FLUX, 2));
-
+        appendAspects(new ItemStack(Items.LEATHER), new AspectList().add(PANNUS,10));
+        appendAspects(new ItemStack(Items.LEATHER_BOOTS), new AspectList().add(PANNUS,5));
+        appendAspects(new ItemStack(Items.LEATHER_CHESTPLATE), new AspectList().add(PANNUS,5));
+        appendAspects(new ItemStack(Items.LEATHER_HELMET), new AspectList().add(PANNUS,5));
+        appendAspects(new ItemStack(Items.LEATHER_LEGGINGS), new AspectList().add(PANNUS,5));
+        appendAspects(new ItemStack(TBItems.aureliapetal),new AspectList().add(Aspect.AURA,10));
+        appendAspects(new ItemStack(TBBlocks.goldenleaves),new AspectList().add(Aspect.PLANT,5));
 
     }
 

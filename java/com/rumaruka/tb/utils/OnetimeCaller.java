@@ -3,7 +3,7 @@ package com.rumaruka.tb.utils;
 public class OnetimeCaller {
 
     // Code taking in HammerCore by APengu (Sorry, dude)
-    private Runnable call;
+    public Runnable call;
 
     public OnetimeCaller(Runnable run)
     {

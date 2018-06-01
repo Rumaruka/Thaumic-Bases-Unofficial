@@ -28,6 +28,8 @@ public class TBRecipe {
                 "blockQuicksilver","blockQuicksilver"
         });
 
+        RecipeUtils.addShapelessOreRecipe(new ItemStack(TBBlocks.goldenplanks,4),new ItemStack(TBBlocks.goldenlogs));
+
         RecipeUtils.addShapelessOreRecipe(new ItemStack(TBItems.thauminite_ingot), new Object[]{
                 "nuggetThauminite","nuggetThauminite","nuggetThauminite",
                 "nuggetThauminite","nuggetThauminite","nuggetThauminite",

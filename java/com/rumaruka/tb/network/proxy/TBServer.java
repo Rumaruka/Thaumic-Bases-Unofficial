@@ -7,6 +7,11 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 import javax.annotation.Nullable;
 
 public class TBServer implements IGuiHandler {
+
+    public void preInit(){
+
+    }
+
     public void Renders(){
 
     }
@@ -52,4 +57,5 @@ public class TBServer implements IGuiHandler {
     public void addEnchantmentToCreativeTab(){
 
     }
+    public void addFluidCreativetab(){}
 }

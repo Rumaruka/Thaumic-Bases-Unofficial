@@ -31,14 +31,6 @@ public class TBBlock extends Block {
     }
 
 
-
-    public String getTextureName(){
-        return iconName;
-    }
-    public TBBlock setBlockName(String name){
-        this.setUnlocalizedName(name);
-        return this;
-    }
     public TBBlock stabilise(){
         stabilise = true;
         return this;

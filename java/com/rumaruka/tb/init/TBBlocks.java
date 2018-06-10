@@ -51,7 +51,7 @@ public class TBBlocks {
 
 
 
-    //Trees TB
+
 
     //ThaumcraftBlocks
     public static Block quicksilverblock;
@@ -82,7 +82,7 @@ public class TBBlocks {
     public static Block voidspike;
     //Slabs
 
-    //Tree
+    //Trees TB
 
     public static Block goldenlogs;
     public static Block goldenleaves;
@@ -104,6 +104,8 @@ public class TBBlocks {
 
 
     //Main Mechanism TB
+    public static Block overchanter;
+
 
 
     public static void init() {
@@ -193,13 +195,14 @@ public class TBBlocks {
         thaumspike = new BlockThaumSpike().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("thaumspike");
         voidspike = new BlockVoidSpike().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("voidspike");
 
+        //Main Mechanism TB
+        overchanter = new BlockOverchanter().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("overchanter");
 
 
 
 
 
-
-
+        //Cactus ALONE :<
         rainbowcactus = new BlockRainbowCactus().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("rainbowcactus");
 
 
@@ -260,6 +263,8 @@ public class TBBlocks {
         TBBlocks.registerBlock(netherlogs,netherlogs.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(netherleaves,netherleaves.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(netherplanks,netherplanks.getUnlocalizedName().substring(5));
+
+        TBBlocks.registerBlock(overchanter,overchanter.getUnlocalizedName().substring(5));
 
 
 
@@ -371,6 +376,9 @@ public class TBBlocks {
         registerRender(netherlogs);
         registerRender(netherleaves);
         registerRender(netherplanks);
+
+
+        registerRender(overchanter);
 
 
 

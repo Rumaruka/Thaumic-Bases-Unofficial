@@ -1,19 +1,26 @@
 package com.rumaruka.tb.network.proxy;
 
+import DummyCore.Client.GuiCommon;
 import DummyCore.Utils.ASMManager;
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
-import com.rumaruka.tb.common.block.TBBlock;
+
+import com.rumaruka.tb.client.render.RenderOverchanter;
+import com.rumaruka.tb.common.tiles.TileOverchanter;
 import com.rumaruka.tb.init.TBBlocks;
 import com.rumaruka.tb.init.TBFluids;
 import com.rumaruka.tb.init.TBItems;
+import com.rumaruka.tb.utils.TBGui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnumEnchantmentType;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,6 +30,7 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.client.fx.beams.FXArc;
 
+import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
@@ -44,9 +52,9 @@ public class TBClient extends TBServer {
     @Override
     public void registerRenderInformation()
     {
-      /*  ClientRegistry.bindTileEntitySpecialRenderer(TileOverchanter.class, new RenderOverchanter());
-        ClientRegistry.bindTileEntitySpecialRenderer(TileAuraLinker.class, new RenderAuraLinker());
-        ClientRegistry.bindTileEntitySpecialRenderer(TileNodeManipulator.class, new RenderNodeManipulator());
+       ClientRegistry.bindTileEntitySpecialRenderer(TileOverchanter.class, new RenderOverchanter());
+      /*
+
         MinecraftForge.EVENT_BUS.register(new RevolverEvents());*/
 
       /*  RenderAccessLibrary.registerItemRenderingHandler(TBItems.ukulele, new UkuleleRenderer());
@@ -59,8 +67,7 @@ public class TBClient extends TBServer {
         RenderAccessLibrary.registerItemRenderingHandler(TBItems.spawnerCompass, new SpawnerCompassRenderer());
         RenderAccessLibrary.registerItemRenderingHandler(TBItems.castingBracelet, new CastingBraceletRenderer());
         RenderAccessLibrary.registerItemMatrixHandler(TBItems.herobrinesScythe, new HerobrinesScytheMH());
-        RenderingRegistry.registerEntityRenderingHandler(EntityAspectOrb.class, new RenderAspectOrb());
-        RenderingRegistry.registerEntityRenderingHandler(EntityRevolverBullet.class, new RenderBullet());*/
+       */
     }
     @Override
     public void lightning(World world, double sx, double sy, double sz, double ex, double ey, double ez, int dur, float curve, int speed, int type)

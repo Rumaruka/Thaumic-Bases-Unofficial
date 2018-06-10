@@ -7,11 +7,12 @@ enchantment.eldritchBane=Eldritch Bane
 enchantment.magicTouch=Magic Touched
 enchantment.tainted=Tainted
 enchantment.vaporising=Vaporising
-
+#Containers
+tb.overchanter=Overchanter
 
 #Aspects
 tc.aspect.pannus=Cloth, Material, Covering
-
+tc.aspect.iter=Travel, Journey
 #blocks
 tile.quicksilverBlock.name=Block of Quicksilver
 tile.quicksilverBrick.name=Quicksilver Brick

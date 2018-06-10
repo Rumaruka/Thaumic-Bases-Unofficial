@@ -32,7 +32,7 @@ public class BlockAureliaLeaf extends Block {
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
     {
-        return new ItemStack(TBItems.aureliapetal, 4);
+        return new ItemStack(TBItems.aureliapetal);
     }
 
     @Override

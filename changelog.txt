@@ -1,6 +1,6 @@
-Knowed Bugs and Thinking featurs: add Enchantment last build
+Knowed Bugs and Thinking featurs: add Enchantment and Lore in last build
 
-Process - 20%
+Process - 25%
 
 Legends:
 			+ : Adding;
@@ -8,7 +8,14 @@ Legends:
 			>: debuffing;
 			<: buffing;
 			
-			
+	
+
+
+Thaumic Bases 1.12.2 (3.0.105.30b)
++Add OverChanter
++Add Craft Trees and Aurelia
++Add craft Spikes
+#Fix Thauminicons AGAIN
 
 			
 Thaumic Bases 1.12.2 (3.0.085.30b)

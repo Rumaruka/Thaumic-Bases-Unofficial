@@ -48,7 +48,7 @@ public class TBThaumonomicon {
 
 
     public static final Aspect PANNUS = new Aspect("pannus",0xE9EAC0, new Aspect[]{Aspect.BEAST, Aspect.TOOL}, new ResourceLocation(TBCore.modid,"textures/aspects/pannus.png"),1);
-
+    public static final Aspect ITER = new Aspect("iter",0xE0585B,new Aspect[]{Aspect.EARTH, Aspect.MOTION},new ResourceLocation(TBCore.modid,"textures/aspects/iter.png"),1);
 
     public static void setup(){
 
@@ -118,7 +118,19 @@ public class TBThaumonomicon {
                 new ItemStack(ItemsTC.salisMundus,9,0), new Object[] { "   ", " s ", "   ",
                 Character.valueOf('s'), new ItemStack(TBBlocks.dustblock)}));
 
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.IronSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE",20, new AspectList()
+                .add(Aspect.FIRE,1)
+                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.ironspike,1), new Object[] { " i ", "iIi", "IpI",
+                Character.valueOf('i'), "nuggetIron", Character.valueOf('I'),new ItemStack(Items.IRON_INGOT), Character.valueOf('p'),new ItemStack(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)  }));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.ThaumSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE",20, new AspectList()
+                .add(Aspect.FIRE,1)
+                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.thaumspike,1), new Object[] { " t ", "tTt", "TsT",
+                Character.valueOf('t'), new ItemStack(ItemsTC.nuggets,1,6), Character.valueOf('T'),new ItemStack(ItemsTC.ingots,1,0), Character.valueOf('s'),new ItemStack(TBBlocks.ironspike)  }));
 
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.VoidSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE",20, new AspectList()
+                .add(Aspect.FIRE,1)
+                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.voidspike,1), new Object[] { " v ", "vVv", "VsV",
+                Character.valueOf('v'), new ItemStack(ItemsTC.nuggets,1,7), Character.valueOf('V'),new ItemStack(ItemsTC.ingots,1,1), Character.valueOf('s'),new ItemStack(TBBlocks.thaumspike)  }));
 
         CrucibleRecipe thauminiteRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.thauminite_ingot),new ItemStack(ItemsTC.ingots,1,0),new AspectList().add(Aspect.MAGIC, 10).add(Aspect.EARTH, 15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Thauminite"),thauminiteRec);
@@ -198,12 +210,20 @@ public class TBThaumonomicon {
         CrucibleRecipe sweedToPlax= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.plaxseed),new ItemStack(TBItems.sweedseed),new AspectList().add(Aspect.PLANT,15).add(Aspect.MAGIC,5).add(Aspect.LIFE,4));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.sweedToPlax"),sweedToPlax);
 
+        CrucibleRecipe aurelia= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBBlocks.aurelia),new ItemStack(Blocks.RED_FLOWER,1,7),new AspectList().add(Aspect.PLANT,15).add(Aspect.AURA,5).add(Aspect.ELDRITCH,4));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.aurelia"),aurelia);
+
         CrucibleRecipe catusToRC= new CrucibleRecipe("TB.CACTUS",new ItemStack(TBBlocks.rainbowcactus),new ItemStack(Blocks.CACTUS),new AspectList().add(Aspect.PLANT,25).add(Aspect.MAGIC,8));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.catusToRC"),catusToRC);
 
         InfusionRecipe goldenSapling = new InfusionRecipe("TB.TREE", new ItemStack(TBBlocks.goldensapling),2,new AspectList().add(Aspect.PLANT,16).add(Aspect.DESIRE,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.APPLE),new ItemStack(Items.APPLE));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.goldenSapling"),goldenSapling);
-
+        InfusionRecipe netherSapling = new InfusionRecipe("TB.TREE2", new ItemStack(TBBlocks.nethersapling),2,new AspectList().add(Aspect.PLANT,16).add(Aspect.FIRE,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.NETHER_WART),new ItemStack(Items.NETHER_WART),new ItemStack(Items.BLAZE_POWDER),new ItemStack(Items.BLAZE_POWDER));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.netherSapling"),netherSapling);
+        InfusionRecipe enderSapling = new InfusionRecipe("TB.TREE1", new ItemStack(TBBlocks.endersapling),2,new AspectList().add(Aspect.PLANT,16).add(ITER,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.ENDER_PEARL),new ItemStack(Items.ENDER_PEARL),new ItemStack(Items.ENDER_EYE),new ItemStack(Items.ENDER_EYE));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.enderSapling"),enderSapling);
+        InfusionRecipe overchanter = new InfusionRecipe("TB.MACHANISM", new ItemStack(TBBlocks.overchanter),3,new AspectList().add(primals(32)).add(Aspect.MECHANISM,32).add(Aspect.MAGIC,32).add(Aspect.MIND,32), new ItemStack(Blocks.ENCHANTING_TABLE),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockentropy),new ItemStack(TBBlocks.crystalblockorder),new ItemStack(TBBlocks.crystalblockearth),new ItemStack(TBBlocks.crystalblockwater),new ItemStack(TBBlocks.crystalblockfire),new ItemStack(TBBlocks.crystalblockair),new ItemStack(BlocksTC.metalBlockThaumium),new ItemStack(BlocksTC.metalBlockThaumium));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.overchanter"),overchanter);
 
 
 
@@ -216,6 +236,7 @@ public class TBThaumonomicon {
 
         appendAspects(new ItemStack(BlocksTC.vishroom), new AspectList().add(Aspect.FLUX, 2));
         appendAspects(new ItemStack(Items.LEATHER), new AspectList().add(PANNUS,10));
+        appendAspects(new ItemStack(Items.RABBIT_HIDE), new AspectList().add(PANNUS,10));
         appendAspects(new ItemStack(Items.LEATHER_BOOTS), new AspectList().add(PANNUS,5));
         appendAspects(new ItemStack(Items.LEATHER_CHESTPLATE), new AspectList().add(PANNUS,5));
         appendAspects(new ItemStack(Items.LEATHER_HELMET), new AspectList().add(PANNUS,5));

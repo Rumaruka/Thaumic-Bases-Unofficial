@@ -6,6 +6,7 @@ import static com.rumaruka.tb.core.TBCore.*;
 import DummyCore.Core.Core;
 import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.init.*;
+import com.rumaruka.tb.network.proxy.PacketTB;
 import com.rumaruka.tb.network.proxy.TBServer;
 import com.rumaruka.tb.utils.KnowledgeTB;
 import com.rumaruka.tb.utils.TBConfig;
@@ -40,7 +41,7 @@ public class TBCore {
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
     public static final String version = "3.0.085.30b";
-    public static final String dependencies = "required-after:thaumcraft@[6.1.BETA13,)";
+    public static final String dependencies = "required-after:thaumcraft@[6.1.BETA13,);required-after:dummycore@[2.4.112.3,)";
 
     //Networking
     public static final String serverProxy = "com.rumaruka.tb.network.proxy.TBServer";
@@ -77,6 +78,8 @@ public class TBCore {
         TBItems.InGameRegistr();
         MinecraftForge.EVENT_BUS.register(new KnowledgeTB());
         KnowledgeTB.clInit.call();
+        TBTiles.setup();
+
 
         proxy.preInit();
        // FMLInterModComms.sendMessage("Wailla","register","tb")
@@ -89,12 +92,14 @@ public class TBCore {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
-
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new TBGuiHandler());
        // ThaumcraftApi.registerResearchLocation(new ResourceLocation("thaumicbases:research/thaumicbases.json"));
         RES_CAT = ResearchCategories.registerCategory(catName,null,null,icon,back,back2);
-
+        proxy.registerRenderInformation();
         TBThaumonomicon.setup();
         TBThaumonomicon.insertAspects.call();
+        network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
+
     }
 
 

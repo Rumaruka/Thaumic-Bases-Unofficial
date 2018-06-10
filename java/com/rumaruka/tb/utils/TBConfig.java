@@ -32,4 +32,5 @@ public class TBConfig implements IDummyConfig {
     public static int getAspectCountForIngotCrucible(){
         return aspectCountForIngotCrucible;
     }
+
 }

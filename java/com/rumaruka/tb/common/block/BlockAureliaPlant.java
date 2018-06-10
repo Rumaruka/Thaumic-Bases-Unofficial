@@ -45,12 +45,12 @@ public class BlockAureliaPlant extends BlockBush {
 
     public void checkForMoonlight(World w, BlockPos pos,IBlockState state){
 
-      //  boolean underSky = w.canBlockSeeSky(pos.up());
+       boolean underSky = w.canBlockSeeSky(pos.up());
         boolean night = !w.isDaytime();
        // boolean isFullMoon = w.provider.getMoonPhase(w.getWorldTime())==0;
         boolean isOpen =state.getValue(STATE)==1;
 
-        if(night){
+        if(night&&underSky){
 
             w.setBlockState(pos,state.withProperty(STATE,1));
             w.markBlockRangeForRenderUpdate(pos.down().west().north(),pos.up().east().south());

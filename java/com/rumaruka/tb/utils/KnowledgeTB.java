@@ -3,6 +3,7 @@ package com.rumaruka.tb.utils;
 import com.rumaruka.tb.api.ResearchAddendumBuilder;
 import com.rumaruka.tb.api.ResearchEntryBuilder;
 import com.rumaruka.tb.api.ResearchStageBuilder;
+import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.core.TBCore;
 import com.rumaruka.tb.init.TBBlocks;
 import com.rumaruka.tb.init.TBItems;
@@ -71,8 +72,11 @@ public class KnowledgeTB {
         new REB().setBaseInfo("TB.TREE2", "tbtree2", 10, 4, new ItemStack(TBBlocks.nethersapling)).setStages(new RSB().setText("research_stage." + TBCore.modid + ":tbtree.1").setConsumedItems(new ItemStack(Blocks.SAPLING,1,0)).build(), new RSB().setText("research_stage." + TBCore.modid + ":tbtree2.2").setRecipes("TB.netherSapling").setWarp(3).build()).setParents("TB.TREE").buildAndRegister();
 
         new REB().setBaseInfo("TB.MACHANISM", "tbmachanism", 0, -2, new ItemStack(TBBlocks.overchanter)).setStages(new RSB().setText("research_stage." + TBCore.modid + ":tbmachanism.1").setConsumedItems(new ItemStack(Blocks.CRAFTING_TABLE)).build(), new RSB().setText("research_stage." + TBCore.modid + ":tbmachanism.2").setRecipes("TB.overchanter").build()).setParents("TB.FIRST").buildAndRegister();
-
-
+        new REB().setBaseInfo("TB.SPIKE","tbspikes",0,-4,new ItemStack(TBBlocks.ironspike)).setStages(new RSB().setText("research_stage." + TBCore.modid + ":tbspikes.1").setRequiredCraft(new ItemStack(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)).build(), new RSB().setText("research_stage." + TBCore.modid + ":tbslikes.2").setRecipes("TB.IronSpike").build()).setParents("TB.MACHANISM").buildAndRegister();
+        new REB().setBaseInfo("TB.SPIKE1","tbspikes1",2,-4,new ItemStack(TBBlocks.thaumspike)).setMeta(ResearchEntry.EnumResearchMeta.ROUND).setStages(new RSB().setText("research_stage." + TBCore.modid + ":tbspikes1.1").setRequiredCraft(new ItemStack(ItemsTC.ingots,1,0)).build(), new RSB().setText("research_stage." + TBCore.modid + ":tbslikes.2").setRecipes("TB.ThaumSpike").build()).setParents("TB.MACHANISM","TB.SPIKE").buildAndRegister();
+        new REB().setBaseInfo("TB.SPIKE2","tbspikes",-2,-4,new ItemStack(TBBlocks.voidspike)).setMeta(ResearchEntry.EnumResearchMeta.ROUND).setStages(new RSB().setText("research_stage." + TBCore.modid + ":tbspikes2.1").setRequiredCraft(new ItemStack(ItemsTC.ingots,1,1)).build(), new RSB().setText("research_stage." + TBCore.modid + ":tbslikes.2").setRecipes("TB.VoidSpike").setWarp(4).build()).setParents("TB.MACHANISM","TB.SPIKE").buildAndRegister();
+        new REB().setBaseInfo("TB.BloodFabric", "tbbloodfabric",0,-6, new ItemStack(TBItems.bloodycloth)).setMeta(ResearchEntry.EnumResearchMeta.ROUND).setStages(new RSB().setText("research_stage." + TBCore.modid + ":tbbloodfabric.1").setConsumedItems(new ItemStack(TBBlocks.ironspike),new ItemStack(TBBlocks.thaumspike),new ItemStack(TBBlocks.voidspike)).build(), new RSB().setText("research_stage." + TBCore.modid + ":tbbloodfabric.2").setRecipes("TB.BCHEST","TB.BLEGS","TB.BBOOTS").build()).setParents("TB.SPIKE1","TB.SPIKE","TB.SPIKE2").buildAndRegister();
+        new REB().setBaseInfo("TB.CAMPFIRE","tbcampfire",0,-8,new ItemStack(TBBlocks.campfire)).setMeta(ResearchEntry.EnumResearchMeta.ROUND).setStages(new RSB().setText("research_stage." + TBCore.modid + ":tbcampfire.1").setConsumedItems(new ItemStack(Blocks.BREWING_STAND)).build(), new RSB().setText("research_stage." + TBCore.modid + ":tbcampfire.2").setRecipes("TB.campfire").build()).setParents("TB.BloodFabric").buildAndRegister();
     }
 
 

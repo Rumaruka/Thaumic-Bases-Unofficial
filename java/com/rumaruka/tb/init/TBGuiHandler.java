@@ -3,7 +3,9 @@ package com.rumaruka.tb.init;
 import DummyCore.Client.GuiCommon;
 
 
+
 import com.rumaruka.tb.common.inventory.ContainerOverchanter;
+import com.rumaruka.tb.common.inventory.ContainerThaumAnvil;
 import com.rumaruka.tb.common.tiles.TileOverchanter;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
@@ -13,6 +15,7 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 public class TBGuiHandler implements IGuiHandler {
 
     public static int OVERCHANTER = 0;
+    public static int THAUM_ANVIL = 1;
 
 
     @Override
@@ -21,6 +24,8 @@ public class TBGuiHandler implements IGuiHandler {
             return new ContainerOverchanter(player.inventory, (TileOverchanter) world.getTileEntity(new BlockPos(x, y, z)));
 
         }
+
+
         return null;
     }
 

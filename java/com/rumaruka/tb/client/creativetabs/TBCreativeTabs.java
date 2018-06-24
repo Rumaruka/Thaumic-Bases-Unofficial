@@ -18,7 +18,7 @@ public class TBCreativeTabs extends CreativeTabs {
 
     @Override
     public ItemStack getTabIconItem() {
-        return new ItemStack(TBItems.mixedingot);
+        return new ItemStack(TBBlocks.overchanter);
     }
 
     @Override

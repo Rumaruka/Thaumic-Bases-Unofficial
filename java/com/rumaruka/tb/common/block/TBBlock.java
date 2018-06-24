@@ -11,12 +11,13 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import thaumcraft.api.crafting.IInfusionStabiliser;
 
 import java.util.Arrays;
 import java.util.List;
 
 
-public class TBBlock extends Block {
+public class TBBlock extends Block  {
 
     boolean isGlass;
     boolean stabilise;

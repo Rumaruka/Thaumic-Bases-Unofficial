@@ -10,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import thaumcraft.common.entities.monster.EntityWisp;
 
 public class RenderOverchanter extends TileEntitySpecialRenderer {
 
@@ -22,10 +23,11 @@ public class RenderOverchanter extends TileEntitySpecialRenderer {
         if(!overchanter.inventory.isEmpty()){
             GlStateManager.pushMatrix();
             int time = Minecraft.getMinecraft().player !=null ? Minecraft.getMinecraft().player.ticksExisted:0;
-           // DrawUtils.renderItemStack(overchanter.inventory,0,0,0,x,y,z, time%360+partialTicks,0,1,1,1,1,false);
+           //DrawUtils.renderItemStack_Full(overchanter.inventory,0,0,0,time%360+partialTicks,0,1,1,1,1,1,1);
 
             GlStateManager.popMatrix();
         }
+
         if(overchanter.renderedLightning !=null){
             GlStateManager.pushMatrix();
             overchanter.renderedLightning.render(x+1D, y+1D, z+1D, partialTicks);

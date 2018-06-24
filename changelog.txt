@@ -1,6 +1,6 @@
 Knowed Bugs and Thinking featurs: add Enchantment and Lore in last build
 
-Process - 25%
+Process - 40%
 
 Legends:
 			+ : Adding;
@@ -9,6 +9,10 @@ Legends:
 			<: buffing;
 			
 	
+Thaumic Bases 1.12.2 (3.0.120.30b)
++Add new Block - Campfire
++Add new Research
+#Research <3
 
 
 Thaumic Bases 1.12.2 (3.0.105.30b)

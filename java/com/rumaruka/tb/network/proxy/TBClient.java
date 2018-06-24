@@ -2,25 +2,20 @@ package com.rumaruka.tb.network.proxy;
 
 import DummyCore.Client.GuiCommon;
 import DummyCore.Utils.ASMManager;
+
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
 
+
+import com.rumaruka.tb.client.render.HerobrinesScytheMH;
+import com.rumaruka.tb.client.render.RenderCampfire;
 import com.rumaruka.tb.client.render.RenderOverchanter;
+
+import com.rumaruka.tb.common.tiles.TileCampfire;
 import com.rumaruka.tb.common.tiles.TileOverchanter;
 import com.rumaruka.tb.init.TBBlocks;
-import com.rumaruka.tb.init.TBFluids;
 import com.rumaruka.tb.init.TBItems;
-import com.rumaruka.tb.utils.TBGui;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.MovingSound;
 import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,8 +24,6 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.client.fx.beams.FXArc;
-
-import javax.annotation.Nullable;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 
@@ -53,6 +46,9 @@ public class TBClient extends TBServer {
     public void registerRenderInformation()
     {
        ClientRegistry.bindTileEntitySpecialRenderer(TileOverchanter.class, new RenderOverchanter());
+       ClientRegistry.bindTileEntitySpecialRenderer(TileCampfire.class, new RenderCampfire());
+       MinecraftForge.EVENT_BUS.register(new HerobrinesScytheMH());
+
       /*
 
         MinecraftForge.EVENT_BUS.register(new RevolverEvents());*/
@@ -66,7 +62,7 @@ public class TBClient extends TBServer {
         RenderAccessLibrary.registerItemRenderingHandler(TBItems.nodeFoci, new NodeFociRenderer());
         RenderAccessLibrary.registerItemRenderingHandler(TBItems.spawnerCompass, new SpawnerCompassRenderer());
         RenderAccessLibrary.registerItemRenderingHandler(TBItems.castingBracelet, new CastingBraceletRenderer());
-        RenderAccessLibrary.registerItemMatrixHandler(TBItems.herobrinesScythe, new HerobrinesScytheMH());
+
        */
     }
     @Override

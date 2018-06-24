@@ -15,6 +15,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.*;
@@ -62,8 +63,29 @@ public class TBItems {
     public static Item plaxseed;
     public static Item sweedseed;
     public static Item aureliapetal;
+    //Armor
+    public static Item bloodychest;
+    public static Item bloodylegs;
+    public static Item bloodyboots;
 
+    public static Item thauminitehelmet;
+    public static Item thauminitechest;
+    public static Item thauminitelegs;
+    public static Item thauminiteboots;
 
+    //Tools
+    public static Item herobrinesscythe;
+    //Tobacco
+    public static Item tobaccoseed;
+    public static Item tobacco_pile;
+    public  static Item tobacco_eldritch;
+    public  static Item tobacco_fighting;
+    public  static Item tobacco_hunger;
+    public  static Item tobacco_knowledge;
+    public  static Item tobacco_mining;
+    public  static Item tobacco_sanity;
+    public  static Item tobacco_tainted;
+    public  static Item tobacco_wispy;
 
 
     public static void init(){
@@ -94,12 +116,34 @@ public class TBItems {
 
        plaxseed = new ItemSeeds(TBBlocks.plax,Blocks.FARMLAND).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("plaxseed");
        sweedseed = new ItemSeeds(TBBlocks.sweed,Blocks.GRASS).setUnlocalizedName("sweedseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-
+       tobaccoseed = new ItemSeeds(TBBlocks.tobacco,Blocks.FARMLAND).setUnlocalizedName("tobaccoseeds").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
        aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal");
 
+
+
+       bloodychest = new ItemBloodyArmor(bloodyA,0,1,EntityEquipmentSlot.CHEST).setUnlocalizedName("bloodychest").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       bloodylegs = new ItemBloodyArmor(bloodyA,0,2, EntityEquipmentSlot.LEGS).setUnlocalizedName("bloodylegs").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       bloodyboots = new ItemBloodyArmor(bloodyA,0,3, EntityEquipmentSlot.FEET).setUnlocalizedName("bloodyboots").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+       thauminitehelmet = new ItemThauminiteArmor(thauminiteA,0,0,EntityEquipmentSlot.HEAD).setUnlocalizedName("thauminitehelmet").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       thauminitechest = new ItemThauminiteArmor(thauminiteA,0,1,EntityEquipmentSlot.CHEST).setUnlocalizedName("thauminitechest").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       thauminitelegs = new ItemThauminiteArmor(thauminiteA,0,2,EntityEquipmentSlot.LEGS).setUnlocalizedName("thauminitelegs").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       thauminiteboots = new ItemThauminiteArmor(thauminiteA,0,3,EntityEquipmentSlot.FEET).setUnlocalizedName("thauminiteboots").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+
+       herobrinesscythe = new ItemHerobrinesScythe().setUnlocalizedName("herobrinesscythe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+       tobacco_pile = new TBTobacco();
+       tobacco_eldritch = new TBTobacco();
+       tobacco_fighting = new TBTobacco();
+        tobacco_hunger = new TBTobacco();
+        tobacco_knowledge = new TBTobacco();
+        tobacco_mining = new TBTobacco();
+        tobacco_sanity = new TBTobacco();
+        tobacco_tainted = new TBTobacco();
+        tobacco_wispy = new TBTobacco();
     }
 
-    public static final Item[] primalIgot = new Item[]{airingot,fireingot,wateringot,earthingot,entropyingot,orderingot};
 
 
     public static void InGameRegistr(){
@@ -122,6 +166,17 @@ public class TBItems {
         TBItems.registerItem(plaxseed,plaxseed.getUnlocalizedName().substring(5));
         TBItems.registerItem(sweedseed,sweedseed.getUnlocalizedName().substring(5));
         TBItems.registerItem(aureliapetal,aureliapetal.getUnlocalizedName().substring(5));
+
+        TBItems.registerItem(bloodychest,bloodychest.getUnlocalizedName().substring(5));
+        TBItems.registerItem(bloodylegs,bloodylegs.getUnlocalizedName().substring(5));
+        TBItems.registerItem(bloodyboots,bloodyboots.getUnlocalizedName().substring(5));
+
+        TBItems.registerItem(thauminitehelmet,thauminitehelmet.getUnlocalizedName().substring(5));
+        TBItems.registerItem(thauminitechest,thauminitechest.getUnlocalizedName().substring(5));
+        TBItems.registerItem(thauminitelegs,thauminitelegs.getUnlocalizedName().substring(5));
+        TBItems.registerItem(thauminiteboots,thauminiteboots.getUnlocalizedName().substring(5));
+
+        TBItems.registerItem(herobrinesscythe,herobrinesscythe.getUnlocalizedName().substring(5));
 
 
     }
@@ -167,6 +222,16 @@ public class TBItems {
         renderItems(plaxseed);
         renderItems(sweedseed);
         renderItems(aureliapetal);
+
+        renderItems(bloodychest);
+        renderItems(bloodylegs);
+        renderItems(bloodyboots);
+
+        renderItems(thauminitehelmet);
+        renderItems(thauminitechest);
+        renderItems(thauminitelegs);
+        renderItems(thauminiteboots);
+        renderItems(herobrinesscythe);
 
     }
 

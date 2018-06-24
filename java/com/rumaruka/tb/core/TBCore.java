@@ -5,6 +5,8 @@ import static com.rumaruka.tb.core.TBCore.*;
 
 import DummyCore.Core.Core;
 import com.rumaruka.tb.common.block.TBBlock;
+import com.rumaruka.tb.common.handlers.RegisterHandlers;
+import com.rumaruka.tb.common.libs.TBSounds;
 import com.rumaruka.tb.init.*;
 import com.rumaruka.tb.network.proxy.PacketTB;
 import com.rumaruka.tb.network.proxy.TBServer;
@@ -14,25 +16,27 @@ import net.minecraft.block.BlockSand;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 
+
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 
 @Mod(modid = modid, name = name, version = version,dependencies = dependencies)
@@ -40,12 +44,13 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.0.085.30b";
+    public static final String version = "3.0.120.30b";
     public static final String dependencies = "required-after:thaumcraft@[6.1.BETA13,);required-after:dummycore@[2.4.112.3,)";
 
     //Networking
     public static final String serverProxy = "com.rumaruka.tb.network.proxy.TBServer";
     public static final String clientProxy = "com.rumaruka.tb.network.proxy.TBClient";
+
 
 
     @SidedProxy(serverSide = serverProxy, clientSide = clientProxy)
@@ -99,7 +104,7 @@ public class TBCore {
         TBThaumonomicon.setup();
         TBThaumonomicon.insertAspects.call();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
-
+        RegisterHandlers.init();
     }
 
 
@@ -116,8 +121,6 @@ public class TBCore {
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
 
     }
-
-
 
 
 

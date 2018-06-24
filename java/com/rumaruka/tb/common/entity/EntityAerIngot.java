@@ -16,6 +16,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import thaumcraft.client.fx.FXDispatcher;
 
 import javax.annotation.Nullable;
 
@@ -40,8 +41,9 @@ public class EntityAerIngot extends EntityThrowable
         super(worldIn, x, y, z);
     }
 
-    public static void registerFixesEnderPearl(DataFixer fixer)
+    public static void registerFixesAerIngot(DataFixer fixer)
     {
+
         EntityThrowable.registerFixesThrowable(fixer, "ThrownAerIngot");
     }
 

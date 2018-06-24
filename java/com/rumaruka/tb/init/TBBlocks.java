@@ -76,14 +76,14 @@ public class TBBlocks {
     public static Block rainbowcactus;
     public static Block aurelia;
     public static Block aureliapetalb;
+
+    public static Block tobacco;
     //Spike
     public static Block ironspike;
     public static Block thaumspike;
     public static Block voidspike;
-    //Slabs
 
     //Trees TB
-
     public static Block goldenlogs;
     public static Block goldenleaves;
     public static Block goldensapling;
@@ -105,6 +105,7 @@ public class TBBlocks {
 
     //Main Mechanism TB
     public static Block overchanter;
+    public static Block campfire;
 
 
 
@@ -172,6 +173,12 @@ public class TBBlocks {
         }.setUnlocalizedName("plax");
         aurelia = new BlockAureliaPlant().setUnlocalizedName("aurelia");
         aureliapetalb = new BlockAureliaLeaf().setUnlocalizedName("aureliapetalb");
+        tobacco = new BlockTBPlant(8,16,true) {
+            @Override
+            public int getGrowthStages() {
+                return 7;
+            }
+        }.setUnlocalizedName("tobacco");
 
         //Tree
         goldenlogs = new BlockTBLog().setUnlocalizedName("goldenlogs");
@@ -190,6 +197,7 @@ public class TBBlocks {
         enderlogs = new BlockTBLog().setUnlocalizedName("enderlogs");
 
 
+
         //Spike
         ironspike = new BlockIronSpike().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("ironspike");
         thaumspike = new BlockThaumSpike().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("thaumspike");
@@ -197,9 +205,7 @@ public class TBBlocks {
 
         //Main Mechanism TB
         overchanter = new BlockOverchanter().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("overchanter");
-
-
-
+        campfire = new BlockCampfire().setUnlocalizedName("campfire");
 
 
         //Cactus ALONE :<
@@ -244,6 +250,7 @@ public class TBBlocks {
         TBBlocks.registerBlock(sweed,sweed.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(aurelia,aurelia.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(aureliapetalb,aureliapetalb.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(tobacco,tobacco.getUnlocalizedName().substring(5));
 
         TBBlocks.registerBlock(ironspike,ironspike.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(thaumspike,thaumspike.getUnlocalizedName().substring(5));
@@ -265,6 +272,9 @@ public class TBBlocks {
         TBBlocks.registerBlock(netherplanks,netherplanks.getUnlocalizedName().substring(5));
 
         TBBlocks.registerBlock(overchanter,overchanter.getUnlocalizedName().substring(5));
+
+        TBBlocks.registerBlock(campfire,campfire.getUnlocalizedName().substring(5));
+
 
 
 
@@ -354,10 +364,14 @@ public class TBBlocks {
         registerRender(sweed);
         registerRender(aurelia);
         registerRender(aureliapetalb);
+        registerRender(tobacco);
 
         registerRender(ironspike);
+        renderBlockItems(Item.getItemFromBlock(ironspike));
         registerRender(thaumspike);
+        renderBlockItems(Item.getItemFromBlock(thaumspike));
         registerRender(voidspike);
+        renderBlockItems(Item.getItemFromBlock(voidspike));
 
         registerRender(goldensapling);
         renderBlockItems(Item.getItemFromBlock(goldensapling));
@@ -379,6 +393,7 @@ public class TBBlocks {
 
 
         registerRender(overchanter);
+        registerRender(campfire);
 
 
 

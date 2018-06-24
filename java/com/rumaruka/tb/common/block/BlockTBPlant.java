@@ -101,19 +101,44 @@ public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
     }
 
     @Override
-    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-        super.getDrops(drops, world, pos, state, fortune);
-        int i = ((Integer)state.getValue(AGE)).intValue();
-        int j = 1;
-
-        if (i >= 7)
-        {
-            j = 5;
-        }
-
-        for (int k = 0; k < j; ++k)
-        {
-            drops.add(new ItemStack(Items.STRING));
-        }
+    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
+        return new ItemStack( dropSeed != ItemStack.EMPTY ? dropSeed.getItem() : Item.getItemFromBlock(this));
     }
-}
+
+    @Override
+    public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
+    {
+        Random rand = new Random(System.currentTimeMillis());
+        int metadata = state.getValue(AGE);
+        ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
+
+        if (metadata >= growthStages-1)
+        {
+            for (int i = 0; i < (rand.nextDouble()*(fortune) > 0.75D ? 2 : 1); ++i) //Fix for the seed duplication
+            {
+                if (rand.nextInt(growthStages) <= metadata)
+                {
+                    if(dropSeed != null)
+                    {
+                        ret.add(dropSeed.copy());
+                        if(dropSeed.getItem() instanceof ItemBlock) //Fix for the primal shroom duplication
+                            break;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 1 + rand.nextInt(fortune+1); ++i) //Change for the resource drop
+            {
+                if (rand.nextInt(growthStages) <= metadata)
+                {
+                    if(dropItem != null)
+                        ret.add(dropItem.copy());
+                }
+            }
+        }else
+        if(dropSeed != null)
+            ret.add(dropSeed.copy());
+
+        return ret;
+    }
+    }

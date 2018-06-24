@@ -122,15 +122,31 @@ public class TBThaumonomicon {
                 .add(Aspect.FIRE,1)
                 .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.ironspike,1), new Object[] { " i ", "iIi", "IpI",
                 Character.valueOf('i'), "nuggetIron", Character.valueOf('I'),new ItemStack(Items.IRON_INGOT), Character.valueOf('p'),new ItemStack(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.ThaumSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE",20, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.ThaumSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE1",20, new AspectList()
                 .add(Aspect.FIRE,1)
                 .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.thaumspike,1), new Object[] { " t ", "tTt", "TsT",
                 Character.valueOf('t'), new ItemStack(ItemsTC.nuggets,1,6), Character.valueOf('T'),new ItemStack(ItemsTC.ingots,1,0), Character.valueOf('s'),new ItemStack(TBBlocks.ironspike)  }));
 
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.VoidSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE",20, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.VoidSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE2",20, new AspectList()
                 .add(Aspect.FIRE,1)
                 .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.voidspike,1), new Object[] { " v ", "vVv", "VsV",
                 Character.valueOf('v'), new ItemStack(ItemsTC.nuggets,1,7), Character.valueOf('V'),new ItemStack(ItemsTC.ingots,1,1), Character.valueOf('s'),new ItemStack(TBBlocks.thaumspike)  }));
+
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.BCHEST"), new ShapedArcaneRecipe(defaultGroup, "TB.BloodFabric",50, new AspectList()
+                .add(Aspect.AIR,5)
+                    , new ItemStack(TBItems.bloodychest,1), new Object[] { "# #", "###", "###",
+                Character.valueOf('#'), new ItemStack(TBItems.bloodycloth)}));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.BLEGS"), new ShapedArcaneRecipe(defaultGroup, "TB.BloodFabric",50, new AspectList()
+                .add(Aspect.WATER,5)
+                , new ItemStack(TBItems.bloodylegs,1), new Object[] { "###", "# #", "# #",
+                Character.valueOf('#'), new ItemStack(TBItems.bloodycloth)}));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.BBOOTS"), new ShapedArcaneRecipe(defaultGroup, "TB.BloodFabric",50, new AspectList()
+                .add(Aspect.EARTH,4)
+                , new ItemStack(TBItems.bloodyboots,1), new Object[] { "# #", "# #", "   ",
+                Character.valueOf('#'), new ItemStack(TBItems.bloodycloth)}));
+
+
+
 
         CrucibleRecipe thauminiteRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.thauminite_ingot),new ItemStack(ItemsTC.ingots,1,0),new AspectList().add(Aspect.MAGIC, 10).add(Aspect.EARTH, 15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Thauminite"),thauminiteRec);
@@ -225,6 +241,8 @@ public class TBThaumonomicon {
         InfusionRecipe overchanter = new InfusionRecipe("TB.MACHANISM", new ItemStack(TBBlocks.overchanter),3,new AspectList().add(primals(32)).add(Aspect.MECHANISM,32).add(Aspect.MAGIC,32).add(Aspect.MIND,32), new ItemStack(Blocks.ENCHANTING_TABLE),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockentropy),new ItemStack(TBBlocks.crystalblockorder),new ItemStack(TBBlocks.crystalblockearth),new ItemStack(TBBlocks.crystalblockwater),new ItemStack(TBBlocks.crystalblockfire),new ItemStack(TBBlocks.crystalblockair),new ItemStack(BlocksTC.metalBlockThaumium),new ItemStack(BlocksTC.metalBlockThaumium));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.overchanter"),overchanter);
 
+        InfusionRecipe campfire = new InfusionRecipe("TB.CAMPFIRE", new ItemStack(TBBlocks.campfire),2,new AspectList().add(Aspect.FIRE,20).add(Aspect.MAGIC,20), new ItemStack(Items.BREWING_STAND), ThaumcraftApiHelper.makeCrystal(Aspect.FIRE), new ItemStack(Blocks.STONE,1,0), new ItemStack(Blocks.STONE,1,0), new ItemStack(Blocks.STONE,1,0), new ItemStack(BlocksTC.logGreatwood));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.campfire"),campfire);
 
 
 
@@ -243,6 +261,9 @@ public class TBThaumonomicon {
         appendAspects(new ItemStack(Items.LEATHER_LEGGINGS), new AspectList().add(PANNUS,5));
         appendAspects(new ItemStack(TBItems.aureliapetal),new AspectList().add(Aspect.AURA,10));
         appendAspects(new ItemStack(TBBlocks.goldenleaves),new AspectList().add(Aspect.PLANT,5));
+        appendAspects(new ItemStack(Items.ENDER_PEARL),new AspectList().add(ITER,5));
+        appendAspects(new ItemStack(Items.CHORUS_FRUIT),new AspectList().add(ITER,5));
+        appendAspects(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST,26).add(Aspect.CRAFT,6).add(PANNUS,2));
 
     }
 

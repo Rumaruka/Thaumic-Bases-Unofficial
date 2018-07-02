@@ -25,6 +25,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -44,7 +45,7 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.0.120.30b";
+    public static final String version = "3.1.250.1r";
     public static final String dependencies = "required-after:thaumcraft@[6.1.BETA13,);required-after:dummycore@[2.4.112.3,)";
 
     //Networking
@@ -87,7 +88,7 @@ public class TBCore {
 
 
         proxy.preInit();
-       // FMLInterModComms.sendMessage("Wailla","register","tb")
+        FMLInterModComms.sendMessage("Wailla","register","tb");
 
 
 

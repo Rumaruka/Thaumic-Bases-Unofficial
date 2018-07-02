@@ -4,6 +4,7 @@ package com.rumaruka.tb.common.block;
 import DummyCore.Utils.BlockStateMetadata;
 
 import com.rumaruka.tb.init.TBItems;
+import com.rumaruka.tb.utils.TBConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -53,9 +54,6 @@ public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
         requiresFarmland = isCrop;
 
         this.setTickRandomly(true);
-        float f = 0.5F;
-
-
         this.setHardness(0.0F);
         this.setSoundType(SoundType.PLANT);
         this.disableStats();
@@ -80,6 +78,7 @@ public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
         return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
     }
 
+
     @Override
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
         return true;
@@ -100,45 +99,30 @@ public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
 
     }
 
-    @Override
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
-        return new ItemStack( dropSeed != ItemStack.EMPTY ? dropSeed.getItem() : Item.getItemFromBlock(this));
-    }
 
     @Override
-    public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
-    {
-        Random rand = new Random(System.currentTimeMillis());
-        int metadata = state.getValue(AGE);
+    public List<ItemStack> getDrops(IBlockAccess w, BlockPos pos, IBlockState state, int fortune) {
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 
-        if (metadata >= growthStages-1)
-        {
-            for (int i = 0; i < (rand.nextDouble()*(fortune) > 0.75D ? 2 : 1); ++i) //Fix for the seed duplication
-            {
-                if (rand.nextInt(growthStages) <= metadata)
-                {
-                    if(dropSeed != null)
-                    {
-                        ret.add(dropSeed.copy());
-                        if(dropSeed.getItem() instanceof ItemBlock) //Fix for the primal shroom duplication
-                            break;
-                    }
-                }
-            }
+        if (w instanceof World) {
+            World world = World.class.cast(w);
+            int metadata = state.getValue(AGE);
+            if (metadata >= growthStages - 1) {
+                for (int i = 0; i < 1; ++i)
+                    if (world.rand.nextInt(growthStages) <= metadata)
+                        if (dropSeed != ItemStack.EMPTY){
+                            for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j) {
+                                if (world.rand.nextBoolean()) {
+                                    ret.add(new ItemStack(Items.STRING,3));
+                                    ret.add(new ItemStack(TBItems.plaxseed, 1));
+                                }
+                            }
 
-            for (int i = 0; i < 1 + rand.nextInt(fortune+1); ++i) //Change for the resource drop
-            {
-                if (rand.nextInt(growthStages) <= metadata)
-                {
-                    if(dropItem != null)
-                        ret.add(dropItem.copy());
-                }
-            }
-        }else
-        if(dropSeed != null)
-            ret.add(dropSeed.copy());
+                        }
 
+            }
+        }
         return ret;
     }
-    }
+
+}

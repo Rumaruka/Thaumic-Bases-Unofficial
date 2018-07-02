@@ -17,13 +17,11 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class TBBlock extends Block  {
+public class TBBlock extends Block implements IInfusionStabiliser  {
 
     boolean isGlass;
     boolean stabilise;
     protected SoundType blockSoundType;
-    String iconName;
-
 
     public TBBlock(Material m, boolean b) {
         super(m);
@@ -46,9 +44,7 @@ public class TBBlock extends Block  {
     public int getLightOpacity(IBlockState state, IBlockAccess world, BlockPos pos) {
         return isGlass ? 7 : 15;
     }
-    public int getRenderBlockPass(){
-        return isGlass ? 1 : 0;
-    }
+
 
 
 
@@ -60,19 +56,9 @@ public class TBBlock extends Block  {
 
 
 
-    public List<IBlockState> listPossibleStates(Block b) {
-        return Arrays.asList(this.getDefaultState());
-    }
 
 
 
-
-
-    public TBBlock setBlockTextureName(String tex)
-    {
-        iconName = tex;
-        return this;
-    }
 
     public Block setSoundType(SoundType sound)
     {

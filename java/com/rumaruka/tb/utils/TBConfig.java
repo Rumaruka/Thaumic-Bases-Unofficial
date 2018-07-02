@@ -16,6 +16,8 @@ public class TBConfig implements IDummyConfig {
         aspectCountForIngotCrucible = cfg.getInt("aspectCountForIngotCrucible","Count Aspect", 30,5,64,"Count Aspect For Crucible");
         minBlazePowderFromPyrofluid = cfg.getInt("minBlazePowderFromPyrofluid", "Pyrofluid", 5, 0, Integer.MAX_VALUE, "");
         maxBlazePowderFromPyrofluid = cfg.getInt("maxBlazePowderFromPyrofluid", "Pyrofluid", 5+32, 0, Integer.MAX_VALUE, "");
+        firstDropItemInSeeeds = cfg.getInt("firstDropItemSeeds","Seeds Droped Chance",4, 1,20,"chance droped");
+        extraDropItemInSeeeds = cfg.getInt("extraDropItemSeeds","Seeds Droped Chance",1, 1,10,"chance droped");
     }
     static Configuration cfg;
 
@@ -25,6 +27,24 @@ public class TBConfig implements IDummyConfig {
     public static int aspectCountForIngotCrucible = 0;
     public static int minBlazePowderFromPyrofluid = 0;
     public static int maxBlazePowderFromPyrofluid = 0;
+    public static int firstDropItemInSeeeds = 0;
+    public static int extraDropItemInSeeeds = 0;
+
+    public static int getMaxBlazePowderFromPyrofluid() {
+        return maxBlazePowderFromPyrofluid;
+    }
+
+    public static int getExtraDropItemInSeeeds() {
+        return extraDropItemInSeeeds;
+    }
+
+    public static int getMinBlazePowderFromPyrofluid() {
+        return minBlazePowderFromPyrofluid;
+    }
+
+    public static int getFirstDropItemInSeeeds() {
+        return firstDropItemInSeeeds;
+    }
 
     public static int getVisoldBlocks(){
         return visoldBlocks;

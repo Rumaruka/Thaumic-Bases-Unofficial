@@ -2,6 +2,7 @@ package com.rumaruka.tb.common.block;
 
 import DummyCore.Utils.BlockStateMetadata;
 import com.rumaruka.tb.init.TBItems;
+import com.rumaruka.tb.utils.TBConfig;
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -88,10 +89,10 @@ public class BlockSweed extends BlockTBPlant {
                         if (dropSeed != null)
                             ret.add(dropSeed.copy());
 
-                for (int i = 0; i < 3 + fortune; ++i)
+                for (int i = 0; i < TBConfig.firstDropItemInSeeeds + fortune; ++i)
                     if (world.rand.nextBoolean())
                         ret.add(new ItemStack(Items.SUGAR));
-
+                for (int i = 0; i < TBConfig.extraDropItemInSeeeds + fortune; ++i)
                 if (world.rand.nextBoolean())
                     ret.add(new ItemStack(Items.REEDS));
 

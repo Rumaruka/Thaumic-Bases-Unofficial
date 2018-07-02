@@ -14,6 +14,7 @@ import com.rumaruka.tb.common.tiles.TileCampfire;
 import com.rumaruka.tb.common.tiles.TileOverchanter;
 import com.rumaruka.tb.init.TBBlocks;
 import com.rumaruka.tb.init.TBItems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.world.World;
@@ -88,5 +89,8 @@ public class TBClient extends TBServer {
         TBCreativeTabs.TB_CREATIVEtabs.setRelevantEnchantmentTypes(enchantmentTypes);
     }
 
-
+    @Override
+    public boolean fancyGraphicsEnable() {
+        return Minecraft.getMinecraft().gameSettings.fancyGraphics;
+    }
 }

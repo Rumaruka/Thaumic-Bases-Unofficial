@@ -43,4 +43,5 @@ public class TBServer  {
 
     }
     public void addFluidCreativetab(){}
+    public boolean fancyGraphicsEnable(){return false;}
 }

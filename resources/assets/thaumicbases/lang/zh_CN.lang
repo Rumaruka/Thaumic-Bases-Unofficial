@@ -4,8 +4,8 @@ tc.research_category.THAUMICBASES=神秘基础学
 
 
 #tooltip
-tb.tooltip.aer=Test
-tb.tooltip.fire=Test 2
+tb.tooltip.aer=测试
+tb.tooltip.fire=测试2
 #enchantments
 enchantment.elderKnowledge=睿智
 enchantment.eldritchBane=异域杀手
@@ -13,7 +13,7 @@ enchantment.magicTouch=魔法之触
 enchantment.tainted=污染
 enchantment.vaporising=蒸腾
 #Containers
-tb.overchanter=Overchanter
+tb.overchanter=超吟附魔台
 
 #Aspects
 tc.aspect.pannus=布匹，材料，覆盖物

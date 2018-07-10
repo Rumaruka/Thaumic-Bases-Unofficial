@@ -149,74 +149,74 @@ item.voidshears.name=虚空金属剪刀
 item.voidfas.name=虚空金属打火石
 
 #Researchs
-research_name.thaumicbases:thaumicbases=Thaumic Bases: First Step
-research_stage.thaumicbases:thaumicbases.1=Okay, I hardly understand what this new page gives. Can I learning something, maybe find answer my question? Hmm, unlike the main book here everything is open. It`s interesting!
-research_stage.thaumicbases:thaumicbases.2=I did it! What? Well, I opened a new research!
+research_name.thaumicbases:thaumicbases=神秘基础学：起源
+research_stage.thaumicbases:thaumicbases.1=好吧，让我们来看看这一崭新的研究页会带给我们什么，又会使我们获得什么知识。
+research_stage.thaumicbases:thaumicbases.2=是的，看起来我做到了！我解锁了一个新的研究！
 
-research_name.thaumicbases:tbalchemy=Thaumic Bases: Alchemy
-research_stage.thaumicbases:tbalchemy.1=If I make Thaumium Ingot, then hmmm.....
-research_stage.thaumicbases:tbalchemy.2=Nice i make new things, I write recipes. Wow, I make new metall - Thauminite
+research_name.thaumicbases:tbalchemy=神秘基础学：炼化
+research_stage.thaumicbases:tbalchemy.1=也许我能够对神秘锭进行改良，从而制作新的材料...
+research_stage.thaumicbases:tbalchemy.2=很好，如计划的那样我制作了一种新材料，我称它为——秘晶。
 
-research_name.thaumicbases:tbfluid=Thaumic Bases: Fluids
-research_stage.thaumicbases:tbfluid.1=I have one idea. What happens if a bucket of lava is thrown into a cauldron? Hmm, it's time to make some calculations!
-research_stage.thaumicbases:tbfluid.2=Wow, It`s strange fluid. After placed, she damage and transform in solid block...,after breaking block i did blaze rod. Yay.
-Oh, if i spill purifying fluid, Pyrofluid (yes, i call this - "Pyrofluid") freezes fluid faster!
-research_name.thaumicbases:tbplant=Thaumic Bases: Basic Plants
-research_stage.thaumicbases:tbplant.1=Oops, I dropped the seeds in the cauldron ... and what if I add some aspects?
-research_stage.thaumicbases:tbplant.2=Thaumaturhy is rich in directions it affects. Alchemy, Infusion, Enchanting... Thaumaturgy can do everything... However, most thaumaturges ignore a very important aspect - the plants and plantlife. You, however, are not "most thaumaturges". This direction of researches promises alot, you can already see the possibilities of this. Well, it is so research rich that even this fact has allowed you to figure out the creation of the first Thaumic Plant - the Sweed. This is technically a weed. However, should you let it grow for a little - it will grow to a full size, and can be harvested to drop sugar and reeds. However, it should be watched over, since it does rapidly spreads!
+research_name.thaumicbases:tbfluid=神秘基础学：流体
+research_stage.thaumicbases:tbfluid.1=我有一个想法，将一桶熔岩桶倒入蕴含魔力的坩埚会怎么样？恩，是时候进行实验了！
+research_stage.thaumicbases:tbfluid.2=哇！这真是一种奇怪的流体。它会慢慢凝固，破坏其后会掉落烈焰粉。另外，如果向其周围倒入净化之水会加快凝固。因此，我称之其为——魔力熔岩。
 
-research_name.thaumicbases:tbplant1=Thaumic Bases: Awesome Plants
-research_stage.thaumicbases:tbplant1.1=So, it's time to improve the plants, I have a long night for experiments!
+research_name.thaumicbases:tbplant=神秘基础学：基础植物
+research_stage.thaumicbases:tbplant.1=哎呀，我不小心把种子丢入坩埚里了...如果我在往其中加入一些要素会怎么样？
+research_stage.thaumicbases:tbplant.2=神秘学涉及的领域非常之广，小到坩埚炼化，大到奥术注魔...神秘学能够做任何事情...但是，大多数神秘使都忽视了一样东西，那就是——植物。这也许不是最好的研究方向，但却是最新颖的。经过试验你成功炼化出了一种新的种子，当它成熟后你能够收获到糖与甘蔗。这将有助于往后的研究以及推广。
+
+research_name.thaumicbases:tbplant1=神秘基础学：功能性植物
+research_stage.thaumicbases:tbplant1.1=是时候改良一波植物了，我想今夜将不再平凡！
 research_stage.thaumicbases:tbplant1.2=So, I spent this night and brought out a lot of plants! "§oAurelia§r" - Upon your thaumaturgic researches there has always been one aspect, that is extremely annoying to get - Auram. That one has extreme potential in crafting usage  venture to the depths of the nether to kill wisps, which is no good as well. You, however, using your plant knowledge have discovered a way of getting that aspect without doing any of other ways. This plant when exposed to the moonlight will open up it's petals to let the moonlight come in - it seems like the plant feeds of moonlight. However, due to the air of the very world it is only possible during full moon. The plant will ocassionally loose it's petals, and they can be gathered from the ground near the flower. Those petals are extremly rich on Auram essentia. However, the plant will only feed from the moon if it has a direct view over it! "§oBriar§r" - Plants are known for their medicinal uses. However, thaumaturges often do not care about this side of nature. You do care. You have managed to bring the Rose bush back to it's wild state, thus creating a Briar plant. Briar is a 1 block tall plant that will grow pretty fast. Once grown it's seed bags can be collected for a later usage. They can be combined with sugar in your Arcane Workbench to create a Rosehip Syrup. This item acts just like a better milk - it stacks up to 16, and it is known for helping thaumaturges with some warp effects. It will not work with some purely mental effects though... "§oGlieonia Seed§r" - What's the most awesome thing about thaumaturgy? Flight! Well, what is the next best thing? Warding foci? Well, what is the thrid best thing... Digging foci, really? We are talking about Nitor, okay?! Jees. Anyway, Nitor is pretty amazing - it shines brightly, creates fancy particles, all that fancy stuff! Well, there is one thing - it requires glowstone to make... A wise thaumaturge can solve this nuance! You have managed to create a plant, that once fully grown will drop 2 Glowstone dust. interestingly enough the flower does not emmit any light whatsoever, even when fully grown... Why could that be?.. "§oFluxium§r" - This plant looks funny. You had no intentions on constructing something like that, but - oh well, you are here, with this thing in your hands, it is a little too late to worry about things. You have created a flower that activly absorbs flux from nearby air - however, it instantly builds up again - and once it has collected enough flux it releases it in a form of Flux Gas above itself. You are not sure about the uses of this plant, but it's ability to absorb aspects from surroundings seems interesting, maybe it can be used as a base for something bigger?.. "§oLazullia Seeds§r" - Sometimes a thaumaturge needs some lapis for his... thaumaturgy. And sometimes a thaumaturge is just too lazy to venture down into caves just to spend a good 5 hours searching for that blue ore. You have once again used plants to aid you with this noncense. Lazullia will slowly grow and once fully grown can be harvested. Upon harvesting a thaumaturge will recieve some Lapis Lazuli alongside with a seed. "§oMetalleat Seeds§r" - Sometimes a thaumaturge needs some metallum for his ore processing. And there goes an iron ingot. Sometimes a thaumaturge needs metallum for his crafts. And there goes more iron. You have discovered a way to put an end to this misery - by infusing a regular wheat seeds in a crucible with some metallum and victus to keep the life in the seeds you have managed to create a plant, that grows exactly like wheat, but gets tough and metallic in the latest stages of growth. It then can be harvested to obtain some Iron Nuggets. This discovery asks more questions than it answeres though, and you might need to research it further... As far as you can tell you can't replicate the same with thaumium. "§oLucrite Seeds§r" - You have researched the Metalleat further and discovered, that you can create a similar crop by infusing a carrot with Lucrum. The result is a very strange crop. It functions just like the Metalleat, but takes twice as much time to grow. It is also very magic dependant - without strong enough source of magic beneath the soil it grows in it refuses to grow. Those Salis Mundus blocks seem to be just as perfect as possible. It will also accept bonemeal with much slower rate, taking 7 bonemeal to grow. However, should you let it grow and it will grow some Golden Nuggets on it's branches. Since it is a carrot it is also possible to obtain one from the crop! "§oPlax Seeds§r" - Sometimes a thaumaturge just needs to get him some string - for magical candles or for magical clothes - it does not matter that much what for. And sometimes a thaumaturge just does not want to fight spiders for endless nights or shear sheep for wool to process later. You have applied the knowledge of plants and nature you've just learned to solve the problem for you. The result is a strange crop, named Plax, which will grow on farmland in 8 stages and once fully grown will produce 3 string! It functions just like a regular wheat crop - it also needs light and will only grow on farmland. "§oRedlon Seed§r" - Even though thaumaturgy is a magical art and is not related to industry in any way a lot of magical devices can actually operate or be controlled by that mythical red dust - the Redstone. Actually redstone seems pretty magical itself. What if you combine it with a plant? Well, the result is a plant, that will slowly grow a Block Of Redstone, just like a Melon or a Pumpkin. It however requires much more time than melons or pumpkins. "§oTobacco Seeds§r" - Sometimes a thaumaturge just wants some resting from all those horrors of the thaumaturgy. He wants his mind clear and concentrated on the tasks. Other thaumaturges are known to smoke some kind of tobacco, but it harms the health of the thaumaturge a great deal, and can even cut of the link between a human and the world of magic. You do not need this. You have managed to create a plant, that functions just like a tobacco, but it is absolutely fine for your health! Unfortunately you are sure, that your plant is the only one safe, and noone, apart from you can replicate it. Oh well. To properly rest a thaumaturge like you needs 3 things - a nice house, and you should have one already, his smoking pipe and some tobacco. To properly make the tobacco a thaumaturge must grind the leaves of a plant. You might need a Pestle and Mortar to do so. You will also need your smoking pipe, but you do not want those mundane pipes, do you? You have discovered a way to properly infuse some Greatwood planks to make a perfect pipe. It is also good for your magic contact, since it has a Salis Mundus as one of it's components. By smoking the most mundane tobacco thaumaturges do not gain much. But your tobacco is not so mundane, as is your pipe. You have a small chance to get rid of some Temporary warp by casually smoking it. You are sure, that you can do stuff with the tobacco to make it more efficent, you just need to figure out - what. The tobaco is consumed in the process. The pipe chooses a first tobaco in a thaumaturge's pockets, the same way the bow chooses an arrow to shoot. A thaumaturge like you will also take some time to smoke - why the rush? "§oVoid Plant Seed§r" - Those Void Seeds are created by infusing a regular seed with a bunch of Alienis and Tenebrae. However, the seed itself looses the ability to grow - you are overinfusing it. However, it might be possible to bring the seed back to life using the knowledge of plants you've just learned! By infusing a void seed with all kinds of plantlife you have managed to return the ability to grow to the poor seed.
-research_name.thaumicbases:tbcactus=Thaumic Bases: Rainbow Cactus
-research_stage.thaumicbases:tbcactus.1=I think, if i have very more plants, maybe make experiments with cactus?
-research_stage.thaumicbases:tbcactus.2=Magic is not always strict and logical - it is magic, afterall. The same goes to life - it can take various shapes, sometimes shocking, sometimes funny. Well, you have managed to create a plant, that, pretty much, is a definition of the word 'funny'. This plant functions just like the regular cacti - must be placed on sand and grows up to 3 blocks. However, once broken it will only drop itself it it is the last cacti block left. Otherwise it will drop all kinds of dyes. however, cacti can't create certain dye types, like bonemeal and Lapis. It is also more likely to drop green dye than other dyes.
+research_name.thaumicbases:tbcactus=神秘基础学：彩虹仙人掌
+research_stage.thaumicbases:tbcactus.1=我想，我已经在植物的研究上取得了显著成效，也许也可以用仙人掌来进行实验？
+research_stage.thaumicbases:tbcactus.2=魔法往往颠覆人类的感知，但它也有好的一面。生活也是如此，每个人都以各种形式展现：有时候令人震撼，有时候令人畏惧，有时候使人感觉到乐趣。于是，你炼化出了一种植物——彩虹仙人掌，它几乎就是由"有趣"来定义的。其类似普通的仙人掌，需要种植在沙子上，且最高生长至3格高。值得注意的是，若破坏其的根部（最下方）均会完整掉落，反之则会掉落各种染料。另外，彩虹仙人掌不会掉落骨粉与青金石，且绿色染料掉率高于其他染料。
 
-research_name.thaumicbases:tbtree=Thaumic Bases: Power Gold
-research_stage.thaumicbases:tbtree.1=Not only weeds and flowers can be magically processed to create something new! Trees have that potential too! However, they are too strong on their own, and therefore they resist any simple magical additions. Infusion should do the job just fine! You have managed to create a Golden Oak tree, just as an example. This tree works just as regular Oak does, however, should it drop an apple - and that apple will be covered in gold! It, however, is impossible to get the mythical Enchanted Golden Apple. Due to being infused with Greed essentia tree will drop much less saplings, since it wants to be the only one absorbing the sunlight and water
+research_name.thaumicbases:tbtree=神秘基础学：黄金橡树
+research_stage.thaumicbases:tbtree.1=不仅只是植物与作物能够被炼化出新的东西！树木也具有这种潜力！然而，它们本身就已经十分茂盛强壮，因此它们能抵御简单的魔法炼化。不过，注魔应该能解决这个问题！你试着制造出了一棵黄金橡树树苗，其类似普通的橡树。然而，值得注意的是它所掉落出来的苹果均覆盖着一层黄金！不幸的是，你无法从它的身上获取到传说中的"附魔金苹果"。由于被灌输了Desiderium源质，其的树苗掉率将大大降低。
 
-research_name.thaumicbases:tbtree1=Thaumic Bases: Power Ender
-research_stage.thaumicbases:tbtree1.1=It`s like on Golden Tree, but leaves have ender pearl.
+research_name.thaumicbases:tbtree1=神秘基础学：末影树
+research_stage.thaumicbases:tbtree1.1=末影树与黄金橡树类似，不过它不会掉落金苹果而是掉落末影珍珠。
 
-research_name.thaumicbases:tbtree2=Thaumic Bases: Power Nether
-research_stage.thaumicbases:tbtree2.1=It`s like on Golden Tree, but leaves have magma cream.
+research_name.thaumicbases:tbtree2=神秘基础学：下界树
+research_stage.thaumicbases:tbtree2.1=下界树与黄金橡树类似，不过它不会掉落金苹果而是掉落岩浆膏。
 
-research_name.thaumicbases:tbdeco=Thaumic Bases: Decoration Blocks
-research_stage.thaumicbases:tbdeco.1=You like old blocks... I`m like old blocks. Okay, I have way make my favorite decoration
+research_name.thaumicbases:tbdeco=神秘基础学：装饰性方块
+research_stage.thaumicbases:tbdeco.1=那些复古的方块看起来很有年代感...也许它值得收藏？谁知道呢...我应该试着仿造出它们来。
 
-research_name.thaumicbases:tbdeco2=Thaumic Bases: Decoration Blocks pt2
-research_stage.thaumicbases:tbdeco2.1=Ooops, I`m forget. I make addition for "Thaumic Bases: Decoration Blocks",but this block very coolest and have power for Infusion!
+research_name.thaumicbases:tbdeco2=神秘基础学：装饰性方块（篇目II）
+research_stage.thaumicbases:tbdeco2.1=哎呀，我差点忘了一些重要的东西。这也是我为什么为"神秘基础学：装饰性方块"进行补充的原因，这些看似普通的方块却是很有用的注魔材料！
 
-research_name.thaumicbases:tbmacerator=Thaumic Bases: Macerator
-research_stage.thaumicbases:tbmacerator.1=IC2, Thermal Expansions, Mekanism, EnderIO? Phhhh, I have new solution!
-research_stage.thaumicbases:tbmacerator.2=Okay, I`m like techinical, but  thaumaturge have new way for macerator!
+research_name.thaumicbases:tbmacerator=神秘基础学：材料处理
+research_stage.thaumicbases:tbmacerator.1=IC2（工业时代2），Thermal Expansions（热力膨胀），Mekanism（通用机械），EnderIO（末影接口）？哈哈，我又有一个新的想法！
+research_stage.thaumicbases:tbmacerator.2=虽然我喜欢科技，但神秘学无疑也能实现它们。
 
-research_name.thaumicbases:tbadvmacerator=Thaumic Bases: Advanced Macerator
-research_stage.thaumicbases:tbadvmacerator.1=I try improve this research!
-research_stage.thaumicbases:tbadvmacerator.2=Okay, I found solution. Just add Aspect "Fabrico"!
+research_name.thaumicbases:tbadvmacerator=神秘基础学：高级材料处理
+research_stage.thaumicbases:tbadvmacerator.1=我正尝试改良这项研究！
+research_stage.thaumicbases:tbadvmacerator.2=经过长时间研究，我找到了一种增产的方法那就是添加——"Fabrico"要素！
 
-research_name.thaumicbases:tbexchang=Thaumic Bases: Exchange
-research_stage.thaumicbases:tbexchang.1=I like transform thing into another. I need to check something, but can I do it?
-research_stage.thaumicbases:tbexchang.2=Yay, I`m master...
+research_name.thaumicbases:tbexchang=神秘基础学：炼金交换
+research_stage.thaumicbases:tbexchang.1=我喜欢将一种东西转换成另一种东西，也许我能做到这一点。
+research_stage.thaumicbases:tbexchang.2=是的，就如计划的那样我做到了...
 
-research_name.thaumicbases:tbdouble=Thaumic Bases: Doubling
-research_stage.thaumicbases:tbdouble.1=I hate losing resources, it's time to increase them ....
-research_stage.thaumicbases:tbdouble.2=I found a way, of course, without any problems, I suffered a lot when mixing aspects, but the result was achieved. I write recipes.
+research_name.thaumicbases:tbdouble=神秘基础学：增产
+research_stage.thaumicbases:tbdouble.1=我讨厌消耗资源，是时候打算增加它们了...
+research_stage.thaumicbases:tbdouble.2=当我在研究从何开始时，我却误打误撞的完成了它。
 
-research_name.thaumicbases:tbmachanism=Thaumic Bases: Mechanics
+research_name.thaumicbases:tbmachanism=神秘基础学：Mechanics
 research_stage.thaumicbases:tbmachanism.1=Try make awesome Mechanism!
 research_stage.thaumicbases:tbmachanism.2=Thaumaturges often use their magic to infuse regular mundane items with magical force, making them better. This process is called enchanting. Thaumaturges have also discovered a way to do the same with an Infusion Altar, using it to make items stronger. However, there always seems to be a limit to the magic infused into the item... You have managed to push that limit a little bit further. You have managed to create an Overchanting table, which is able to increase the level of enchantments on the item by one. Not only could it get items closer to the desired level, it can do more - it can increase the level beyound maximum, allowing enchantments like Fortune more V, or Sharpness X.
 The device will improve the first enchantment on the item. The order is the same as for the displayment of the enchantments in the item's description. Previously buffed enchantments will be skipped - the device is not quite powerfull enough to do thinks like Sharpness XI. It does not take the enchantment into account, so thinks like Silk Touch more are possible, yet useless. To infuse the item just put it in the only slot available and start the overchanting process by using your caster on the table. Then the Praecantatio essentia will be drawn from nearby jars into the table - you will need 32 Praecantatio in total. The table also requires a player nearby, since in the middle of the process it will use 30 levels from the player in range of 6 blocks!
 Overchanting can be stopped in any time just by taking the item from the table, but the levels and the essentia will be wasted then. The table will draw Praecantatio from the range of 8 blocks, mirrors will also do the job just fine. Upon sapping experience the table will skip players with level before 30, so having multiple people with an overhaul level of 30 will not work. Any item with enchantments can be overchanted. Putting a not enchanted item in the Overchanting table does nothing.
 
-research_name.thaumicbases:tbspikes=Thaumic Bases: Simple Spikes
+research_name.thaumicbases:tbspikes=神秘基础学：铁钉
 research_stage.thaumicbases.1:tbspikes=So, I try make new system of traps
 research_stage.thaumicbases.2:tbspikes=Sometimes a thaumaturge just wants to stydy his researches. Calm, alone and without any zombies at his back. Sure, sometimes a door might just be enough. Sometimes, however, a thaumaturge may want those fools to suffer. It's a shame thaumaturgy does not offer a way of passivly killing enemies... Or does it? You have managed to create a block, that will damage everyone who steps on it. However it also tears apart items dropped by fools. There might be a way to resolve this problem... A thaumaturge may also notice, that after killing a creature the spikes get covered in blood. To wipe the blood out you need to use your Enchanted Fabric on the spikes. The fabric will get covered in blood, but it can be cleared in a crucible.
 
-research_name.thaumicbases:tbspikes1=Thaumic Bases: Advanced Spikes
+research_name.thaumicbases:tbspikes1=神秘基础学：神秘钉
 research_stage.thaumicbases:tbspikes1.1=You have managed to improve your spikes using that thaumic metal - Thaumium. Those new spikes are sharper - they will kill fools who step on them faster than the mundane iron spikes. They are also much more picky when it comes to damaging foes - they will not destroy items. They are also sensitive to Redstone signal, and therefore will not damage anyone if they are powered by it!
 
-research_name.thaumicbases:tbspikes2=Thaumic Bases: Awesome Spikes
+research_name.thaumicbases:tbspikes2=神秘基础学：虚空钉
 research_stage.thaumicbases:tbspikes2.1=You have managed to apply your knowledge of that strange metal made out of darkness to your spikes. The resulting spikes are extremely dangerous - they can almost instantly kill whoever walks over them. They will also not destroy items, just like Thaumic. They also react to the redstone the same way thaumic spikes do. They, however, are somehow much more accurate at their job, which results in foes dropping experience and aspects, just as they got killed by you. The spikes however can't hurt void metal, since they are made of it...
 
 research_name.thaumicbases:tbbloodfabric=神秘基础学：血腥布匹
@@ -224,7 +224,7 @@ research_stage.thaumicbases:tbbloodfabric.1=大多时候神秘使只想安静的
 
 research_name.thaumicbases:tbusefire=神秘基础学：火魔法
 research_stage.thaumicbases:tbusefire.1=§o营火§r - 你是否在探险的过程中忘却回家的方向？是否担心黑夜怪物成群无法入眠？现在，你大可不用担心。营火就好比一种小型信标，手持原木右击填充其（使用附带魔力的原木填充其燃烧将更为持久），然后再手持燃料右击即可使用。它会赋予你一些增益效果。
-research_stage.thaumicbases:tbusefire.2=§o火盆§r - 营火很实用，但有一个问题——那就是需要自己手动添加原木以及燃料。运用神秘学的知识加以改造，使其在不需要手动添加材料。值得注意的是，火盆在工作时需要吸收周围的Ignis源质。
+research_stage.thaumicbases:tbusefire.2=§o火盆§r - 营火很实用，但有一个问题——那就是需要自己手动添加原木以及燃料。运用神秘学的知识加以改造，使其不需要手动添加材料。值得注意的是，火盆在工作时需要吸收周围的Ignis源质。
 
 research_name.thaumicbases:tbtobacco=神秘基础学：烟草
 research_stage.thaumicbases:tbtobacco.1=§oMortal§r - Main tools for fragmentation tobacco leaves.§oSmoking Pipes§r - Pipes 2 types "Greatwood and Silverwood", "Greatwood" give more debuffs after smoking and warping.  §oTobacco Pile§r - Sometimes a thaumaturge just wants some resting from all those horrors of the thaumaturgy. He wants his mind clear and concentrated on the tasks. Other thaumaturges are known to smoke some kind of tobacco, but it harms the health of the thaumaturge a great deal, and can even cut of the link between a human and the world of magic. You do not need this. You have managed to create a plant, that functions just like a tobacco, but it is absolutely fine for your health! Unfortunately you are sure, that your plant is the only one safe, and no one, apart from you can replicate it. Oh well. To properly rest a thaumaturge like you needs 3 things - a nice house, and you should have one already, his smoking pipe and some tobacco. To properly make the tobacco a thaumaturge must grind the leaves of a plant. You might need a Pestle and Mortar to do so. You will also need your smoking pipe, but you do not want those mundane pipes, do you? You have discovered a way to properly infuse some Greatwood planks to make a perfect pipe. It is also good for your magic contact, since it has a Salis Mundus as one of it's components. By smoking the most mundane tobacco thaumaturges do not gain much. But your tobacco is not so mundane, as is your pipe. You have a small chance to get rid of some Temporary warp by casually smoking it. You are sure, that you can do stuff with the tobacco to make it more efficent, you just need to figure out - what. The tobaco is consumed in the process. The pipe chooses a first tobaco in a thaumaturge's pockets, the same way the bow chooses an arrow to shoot. A thaumaturge like you will also take some time to smoke - why the rush?

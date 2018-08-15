@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
-import thaumcraft.common.items.consumables.ItemBucketDeath;
+
 
 public class ItemPyrofluidBucket extends Item {
     public ItemPyrofluidBucket()

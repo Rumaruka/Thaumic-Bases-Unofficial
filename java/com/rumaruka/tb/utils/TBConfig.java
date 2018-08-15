@@ -6,11 +6,17 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.common.config.Configuration;
 
 public class TBConfig implements IDummyConfig {
+
+
     @Override
     public void load(Configuration config) {
         cfg = config;
-        Enchantment[]eArray = MiscUtils.enchantmentList();
-      //  eldritchBaneID = cfg.getInt("eldritchBaneEnchantmentID", "Enchantments", 100, 0, eArray.length, "");
+
+
+        allowTobacco = cfg.getBoolean("allowTobacco", "General", true, "If set to falso the tobacco will be disabled - there will be no recipes/no entries in Thaumonomicon");
+        allowcraftprimordar = cfg.getBoolean("allowcraftprimordar", "General", false, "More easy version craft primordar pearl");
+
+
 
         visoldBlocks = cfg.getInt("visCastOldStyle","Count Vis",50,5,250,"Count Vis for Crafting Old Style Vanilla Blocks");
         aspectCountForIngotCrucible = cfg.getInt("aspectCountForIngotCrucible","Count Aspect", 30,5,64,"Count Aspect For Crucible");
@@ -21,7 +27,8 @@ public class TBConfig implements IDummyConfig {
     }
     static Configuration cfg;
 
-
+    public static boolean allowTobacco;
+    public static boolean allowcraftprimordar;
 
     public static int visoldBlocks = 0;
     public static int aspectCountForIngotCrucible = 0;

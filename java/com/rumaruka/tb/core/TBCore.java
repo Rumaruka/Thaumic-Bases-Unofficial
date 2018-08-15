@@ -45,8 +45,8 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.1.250.1r";
-    public static final String dependencies = "required-after:thaumcraft@[6.1.BETA13,);required-after:dummycore@[2.4.112.3,)";
+    public static final String version = "3.1.255.2r-For TC6:B17";
+    public static final String dependencies = "required-after:thaumcraft@[6.1.BETA20,);required-after:dummycore@[2.4.112.3,)";
 
     //Networking
     public static final String serverProxy = "com.rumaruka.tb.network.proxy.TBServer";
@@ -103,7 +103,7 @@ public class TBCore {
         RES_CAT = ResearchCategories.registerCategory(catName,null,null,icon,back,back2);
         proxy.registerRenderInformation();
         TBThaumonomicon.setup();
-        TBThaumonomicon.insertAspects.call();
+
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
         RegisterHandlers.init();
     }
@@ -112,11 +112,9 @@ public class TBCore {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e) {
         proxy.Renders();
-        proxy.addEnchantmentToCreativeTab();
         TBRecipe.setup();
-
         TBOreDirection.setup();
-
+        TBThaumonomicon.insertAspects.call();
         KnowledgeTB.init.call();
 
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");

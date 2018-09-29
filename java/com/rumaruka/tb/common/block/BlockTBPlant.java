@@ -5,11 +5,8 @@ import DummyCore.Utils.BlockStateMetadata;
 
 import com.rumaruka.tb.init.TBItems;
 import com.rumaruka.tb.utils.TBConfig;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.IGrowable;
+import net.minecraft.block.*;
 
-import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
@@ -36,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
+public  class BlockTBPlant  extends BlockBush implements IGrowable {
 
 
     public int growthStages;
@@ -58,7 +55,7 @@ public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
         this.setSoundType(SoundType.PLANT);
         this.disableStats();
     }
-    public abstract int getGrowthStages();
+
 
     @Override
     protected BlockStateContainer createBlockState() {
@@ -66,6 +63,10 @@ public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
             AGE = PropertyInteger.create("age",0,getGrowthStages());
         }
         return new BlockStateContainer(this,AGE);
+    }
+
+    public int getGrowthStages() {
+        return growthStages=7;
     }
 
     @Override
@@ -95,7 +96,10 @@ public abstract class BlockTBPlant  extends BlockBush implements IGrowable {
 
         if(groM<getGrowthStages()){
             worldIn.setBlockState(pos,state.withProperty(AGE,groM+1));
+
+
         }
+        System.out.print(groM);
 
     }
 

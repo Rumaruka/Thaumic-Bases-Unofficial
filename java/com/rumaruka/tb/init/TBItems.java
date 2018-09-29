@@ -6,6 +6,7 @@ import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.tb.common.TBMaterial;
 import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.common.item.*;
+import com.rumaruka.tb.common.item.ItemSeeds;
 import com.rumaruka.tb.common.item.recourse.ItemBriarSeedbag;
 import com.rumaruka.tb.common.item.recourse.ItemTobaccoLeaves;
 import com.rumaruka.tb.common.item.recourse.TBItemNuggetThauminite;
@@ -149,16 +150,16 @@ public class TBItems {
        pyrobucket = new ItemPyrofluidBucket().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("pyrobucket");
 
 
-       plaxseed = new ItemSeeds(TBBlocks.plax,Blocks.FARMLAND).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("plaxseed");
-       sweedseed = new ItemSeeds(TBBlocks.sweed,Blocks.GRASS).setUnlocalizedName("sweedseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-       tobaccoseed = new ItemSeeds(TBBlocks.tobacco,Blocks.FARMLAND).setUnlocalizedName("tobaccoseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-       aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       plaxseed = new ItemSeeds(TBBlocks.plax,Blocks.FARMLAND).setUnlocalizedName("plaxseed");
+       sweedseed = new ItemSeeds(TBBlocks.sweed,Blocks.GRASS).setUnlocalizedName("sweedseed");
+       tobaccoseed = new ItemSeeds(TBBlocks.tobacco,Blocks.FARMLAND).setUnlocalizedName("tobaccoseed");
+       aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal");
        metalleatseed = new ItemSeeds(TBBlocks.metalleat,Blocks.FARMLAND).setUnlocalizedName("metalleatseed");
-       lazulliaseed = new ItemSeeds(TBBlocks.lazullia,Blocks.FARMLAND).setUnlocalizedName("lazulliaseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-       redlonseed = new ItemSeeds(TBBlocks.redlonstem,Blocks.FARMLAND).setUnlocalizedName("redlonseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-       lucriteseed = new ItemSeeds(TBBlocks.lucrite,Blocks.FARMLAND).setUnlocalizedName("lucriteseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-       glieoniaseed = new ItemSeeds(TBBlocks.glieonia,Blocks.FARMLAND).setUnlocalizedName("glieoniaseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-       voidseed = new ItemSeeds(TBBlocks.voidplant,Blocks.FARMLAND).setUnlocalizedName("voidseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       lazulliaseed = new ItemSeeds(TBBlocks.lazullia,Blocks.FARMLAND).setUnlocalizedName("lazulliaseed");
+       redlonseed = new ItemSeeds(TBBlocks.redlonstem,Blocks.FARMLAND).setUnlocalizedName("redlonseed");
+       lucriteseed = new ItemSeeds(TBBlocks.lucrite,Blocks.FARMLAND).setUnlocalizedName("lucriteseed");
+       glieoniaseed = new ItemSeeds(TBBlocks.glieonia,Blocks.FARMLAND).setUnlocalizedName("glieoniaseed");
+       voidseed = new ItemSeeds(TBBlocks.voidplant,Blocks.FARMLAND).setUnlocalizedName("voidseed");
        briar_seedbag = new ItemBriarSeedbag().setUnlocalizedName("briar_seedbag").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
        bloodychest = new ItemBloodyArmor(bloodyA,0,1,EntityEquipmentSlot.CHEST).setUnlocalizedName("bloodychest").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);

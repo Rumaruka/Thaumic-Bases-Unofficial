@@ -124,6 +124,6 @@ public class KnowledgeTB {
         }
 
     }
-    private static void $() {
+    public static void $() {
     }
 }

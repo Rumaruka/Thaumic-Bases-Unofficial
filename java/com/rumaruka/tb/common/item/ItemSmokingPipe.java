@@ -14,6 +14,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import thaumcraft.common.blocks.devices.BlockPedestal;
+import thaumcraft.common.items.casters.ItemCaster;
+import thaumcraft.common.items.resources.ItemMagicDust;
 
 import javax.annotation.Nullable;
 
@@ -78,20 +81,15 @@ public class ItemSmokingPipe extends Item {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
         boolean flag = !this.findTobacco(playerIn).isEmpty();
-
-        ActionResult<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory.onArrowNock(itemstack, worldIn, playerIn, handIn, flag);
-        if (ret != null) return ret;
-
-        if (!playerIn.capabilities.isCreativeMode && !flag)
+        if (!flag)
         {
             return flag ? new ActionResult(EnumActionResult.PASS, itemstack) : new ActionResult(EnumActionResult.FAIL, itemstack);
         }
-        else
+            else
         {
             playerIn.setActiveHand(handIn);
             return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
         }
-
     }
 
 
@@ -120,7 +118,7 @@ public class ItemSmokingPipe extends Item {
     @Override
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
         ItemStack tobacco = findTobacco(player);
-        if(tobacco == ItemStack.EMPTY)
+        if(tobacco.isEmpty())
             return EnumActionResult.FAIL;
         ITobacco t = ITobacco.class.cast(tobacco.getItem());
         t.performTobaccoEffect(player, tobacco, isSilverwood);
@@ -146,7 +144,7 @@ public class ItemSmokingPipe extends Item {
 
         }
 
-        return EnumActionResult.SUCCESS;
+        return super.onItemUseFirst(player, world, pos, side, hitX, hitY, hitZ, hand);
     }
 
 

@@ -3,6 +3,8 @@ package com.rumaruka.tb.init;
 
 import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.core.TBCore;
+import com.rumaruka.tb.utils.AscpectUtils;
+import com.rumaruka.tb.utils.KnowledgeTB;
 import com.rumaruka.tb.utils.OnetimeCaller;
 import com.rumaruka.tb.utils.TBConfig;
 import net.minecraft.block.Block;
@@ -13,14 +15,18 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectEventProxy;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.aspects.AspectRegistryEvent;
 import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.crafting.CrucibleRecipe;
@@ -28,12 +34,15 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 import thaumcraft.api.internal.CommonInternals;
+import thaumcraft.api.items.ItemGenericEssentiaContainer;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.api.research.*;
 import thaumcraft.common.blocks.crafting.BlockThaumatorium;
 import thaumcraft.common.blocks.misc.BlockFluidDeath;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
+import thaumcraft.common.items.consumables.ItemPhial;
+import thaumcraft.common.items.resources.ItemCrystalEssence;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 
 import java.util.List;
@@ -58,6 +67,8 @@ public class TBThaumonomicon {
     public static final Aspect SANO = new Aspect("sano",0xff2f34,new Aspect[]{Aspect.ORDER, Aspect.LIFE},new ResourceLocation(TBCore.modid,"textures/aspects/sano.png"),1);
     public static final Aspect FAMES = new Aspect("fames",0x9a0305,new Aspect[]{Aspect.VOID, Aspect.LIFE},new ResourceLocation(TBCore.modid,"textures/aspects/fames.png"),1);
     public static final Aspect MESSIS = new Aspect("messis",0xe1b371,new Aspect[]{Aspect.PLANT, Aspect.MAN},new ResourceLocation(TBCore.modid,"textures/aspects/messis.png"),1);
+
+
 
     public static void setup(){
 
@@ -396,8 +407,22 @@ public class TBThaumonomicon {
             ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.void_seed"), void_seed);
             CrucibleRecipe primordar = new CrucibleRecipe("TB.EXCHANG",new ItemStack(ItemsTC.primordialPearl),new ItemStack(ItemsTC.voidSeed),new AspectList().add(FAMES,55).add(Aspect.DESIRE,50).add(Aspect.ELDRITCH,64));
             ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.primordar"), primordar);
+
+
+
+
         }
-        }
+        CrucibleRecipe crystalM = new CrucibleRecipe("TB.EXCHANG", AscpectUtils.crystalEssence(MESSIS), new ItemStack(ItemsTC.nuggets,1,9), new AspectList().add(MESSIS,2));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.crystalM"), crystalM);
+        CrucibleRecipe crystalI = new CrucibleRecipe("TB.EXCHANG", AscpectUtils.crystalEssence(ITER), new ItemStack(ItemsTC.nuggets,1,9), new AspectList().add(ITER,2));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.crystalI"), crystalI);
+        CrucibleRecipe crystalS = new CrucibleRecipe("TB.EXCHANG", AscpectUtils.crystalEssence(SANO), new ItemStack(ItemsTC.nuggets,1,9), new AspectList().add(SANO,2));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.crystals"), crystalS);
+        CrucibleRecipe crystalF = new CrucibleRecipe("TB.EXCHANG", AscpectUtils.crystalEssence(FAMES), new ItemStack(ItemsTC.nuggets,1,9), new AspectList().add(FAMES,2));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.crystalF"), crystalF);
+        CrucibleRecipe crystalP = new CrucibleRecipe("TB.EXCHANG", AscpectUtils.crystalEssence(PANNUS), new ItemStack(ItemsTC.nuggets,1,9), new AspectList().add(PANNUS,2));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.crystalP"), crystalP);
+    }
 
 
 
@@ -425,6 +450,11 @@ public class TBThaumonomicon {
         appendAspects(new ItemStack(Items.CHORUS_FRUIT_POPPED),new AspectList().add(ITER,5));
         appendAspects(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST,26).add(Aspect.CRAFT,6).add(PANNUS,2));
         appendAspects(new ItemStack(Items.BOAT),new AspectList().add(ITER,2));
+        appendAspects(new ItemStack(Items.SPRUCE_BOAT),new AspectList().add(ITER,2));
+        appendAspects(new ItemStack(Items.BIRCH_BOAT),new AspectList().add(ITER,2));
+        appendAspects(new ItemStack(Items.JUNGLE_BOAT),new AspectList().add(ITER,2));
+        appendAspects(new ItemStack(Items.ACACIA_BOAT),new AspectList().add(ITER,2));
+        appendAspects(new ItemStack(Items.DARK_OAK_BOAT),new AspectList().add(ITER,2));
         appendAspects(new ItemStack(Blocks.RAIL),new AspectList().add(ITER,4));
         appendAspects(new ItemStack(Blocks.ACTIVATOR_RAIL),new AspectList().add(ITER,6));
         appendAspects(new ItemStack(Blocks.DETECTOR_RAIL),new AspectList().add(ITER,8));
@@ -438,6 +468,12 @@ public class TBThaumonomicon {
         appendAspects(new ItemStack(Items.MELON_SEEDS),new AspectList().add(MESSIS,4));
         appendAspects(new ItemStack(Items.PUMPKIN_SEEDS),new AspectList().add(MESSIS,4));
         appendAspects(new ItemStack(Items.BEETROOT_SEEDS),new AspectList().add(MESSIS,4));
+        ThaumcraftApiHelper.makeCrystal(PANNUS);
+        ThaumcraftApiHelper.makeCrystal(ITER);
+        ThaumcraftApiHelper.makeCrystal(SANO);
+        ThaumcraftApiHelper.makeCrystal(FAMES);
+        ThaumcraftApiHelper.makeCrystal(MESSIS);
+
     }
 
     public static AspectList primals(int amount)

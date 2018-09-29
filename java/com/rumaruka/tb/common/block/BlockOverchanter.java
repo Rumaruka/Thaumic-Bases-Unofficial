@@ -33,6 +33,8 @@ public class BlockOverchanter extends BlockContainer implements IModelRegisterer
 
     public BlockOverchanter() {
         super(Material.ROCK, MapColor.PURPLE);
+        setHardness(2.0f);
+        setHarvestLevel("pickaxe",3);
     }
 
     @Override

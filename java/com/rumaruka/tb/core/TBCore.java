@@ -31,6 +31,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import thaumcraft.api.aspects.AspectRegistryEvent;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 
@@ -69,24 +70,17 @@ public class TBCore {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
 
-
         instance = this;
-
         Core.registerModAbsolute(getClass(), name, e.getModConfigurationDirectory().getAbsolutePath(), cfg);
-
         setupModInfo(e.getModMetadata());
-
         TBFluids.init.call();
         TBBlocks.init();
         TBBlocks.InGameRegister();
-
         TBItems.init();
         TBItems.InGameRegistr();
         MinecraftForge.EVENT_BUS.register(new KnowledgeTB());
         KnowledgeTB.clInit.call();
         TBTiles.setup();
-
-
         proxy.preInit();
         FMLInterModComms.sendMessage("Wailla","register","tb");
 
@@ -98,25 +92,25 @@ public class TBCore {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
+
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new TBGuiHandler());
-       // ThaumcraftApi.registerResearchLocation(new ResourceLocation("thaumicbases:research/thaumicbases.json"));
         RES_CAT = ResearchCategories.registerCategory(catName,null,null,icon,back,back2);
         proxy.registerRenderInformation();
         TBThaumonomicon.setup();
-
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
         RegisterHandlers.init();
+
     }
 
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e) {
+
         proxy.Renders();
         TBRecipe.setup();
         TBOreDirection.setup();
-        TBThaumonomicon.insertAspects.call();
         KnowledgeTB.init.call();
-
+        TBThaumonomicon.insertAspects.call();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
 
     }
@@ -134,6 +128,7 @@ public class TBCore {
         ArrayList<String> authors = new ArrayList<String>();
         authors.add("Modbder, Rumaruka");
         meta.authorList = authors;
+
     }
     public static final String catName ="THAUMICBASES";
     public static final ResourceLocation icon = new ResourceLocation("thaumicbases","textures/thaumonomicon/bases.png");

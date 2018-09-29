@@ -37,6 +37,7 @@ public class BlockCampfire extends BlockContainer implements IModelRegisterer,IT
     public BlockCampfire( ) {
         super(Material.WOOD);
         setHardness(1F);
+        setHarvestLevel("axe",2);
         setResistance(1F);
         setSoundType(SoundType.WOOD);
     }

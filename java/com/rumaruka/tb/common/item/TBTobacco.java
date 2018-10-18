@@ -101,7 +101,7 @@ public class TBTobacco extends Item implements ITobacco {
                     smoker.addExperience(20);
                     ResearchCategory[] rc = (ResearchCategory[]) ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
                     ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                   // smoker.world.onEntityRemoved(xp);
+
                 }
             }
 

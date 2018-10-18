@@ -8,6 +8,8 @@ import net.minecraftforge.common.config.Configuration;
 public class TBConfig implements IDummyConfig {
 
 
+
+
     @Override
     public void load(Configuration config) {
         cfg = config;
@@ -16,6 +18,8 @@ public class TBConfig implements IDummyConfig {
         allowTobacco = cfg.getBoolean("allowTobacco", "General", true, "If set to falso the tobacco will be disabled - there will be no recipes/no entries in Thaumonomicon");
         allowcraftprimordar = cfg.getBoolean("allowcraftprimordar", "General", false, "More easy version craft primordar pearl");
 
+        speedMultiplierForFurnace = cfg.getInt("speedMultiplierForFurnace", "Advanced Alchemy Smeltery", 4, 0, Integer.MAX_VALUE, "This is the speed of the Advanced Alchamical Smeltery. TC's basic has 1.");
+        makeReguireAlumentium = cfg.getBoolean("makeRequireAlumentium", "Advanced Alchemy Smeltery", true, "Does the Advanced Alchemical Smeltery requires Alumentium to work faster");
 
 
         visoldBlocks = cfg.getInt("visCastOldStyle","Count Vis",50,5,250,"Count Vis for Crafting Old Style Vanilla Blocks");
@@ -29,14 +33,14 @@ public class TBConfig implements IDummyConfig {
 
     public static boolean allowTobacco;
     public static boolean allowcraftprimordar;
-
+    public static boolean makeReguireAlumentium;
     public static int visoldBlocks = 0;
     public static int aspectCountForIngotCrucible = 0;
     public static int minBlazePowderFromPyrofluid = 0;
     public static int maxBlazePowderFromPyrofluid = 0;
     public static int firstDropItemInSeeeds = 0;
     public static int extraDropItemInSeeeds = 0;
-
+    public static int speedMultiplierForFurnace;
     public static int getMaxBlazePowderFromPyrofluid() {
         return maxBlazePowderFromPyrofluid;
     }

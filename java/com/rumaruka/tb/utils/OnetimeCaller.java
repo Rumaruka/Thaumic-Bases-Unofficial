@@ -2,7 +2,7 @@ package com.rumaruka.tb.utils;
 
 public class OnetimeCaller {
 
-    // Code taking in HammerCore by APengu (Sorry, dude)
+    // Code taking in HammerCore by Zeith (Sorry, dude)
     public Runnable call;
 
     public OnetimeCaller(Runnable run)

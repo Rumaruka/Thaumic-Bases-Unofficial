@@ -46,8 +46,8 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.1.255.2r-For TC6:B17";
-    public static final String dependencies = "required-after:thaumcraft@[6.1.BETA20,);required-after:dummycore@[2.4.112.3,)";
+    public static final String version = "3.2.270.4r";
+    public static final String dependencies = "required-after:thaumcraft@[6.1.BETA26,);required-after:dummycore@[2.4.112.3,)";
 
     //Networking
     public static final String serverProxy = "com.rumaruka.tb.network.proxy.TBServer";

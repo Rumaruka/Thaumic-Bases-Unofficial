@@ -253,7 +253,7 @@ public class TBThaumonomicon {
         CrucibleRecipe cobbleToSand = new CrucibleRecipe("TB.MACERATOR",new ItemStack(Blocks.SAND,2,0),new ItemStack(Blocks.COBBLESTONE),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,5));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.cobbleToSand"),cobbleToSand);
 
-        CrucibleRecipe sandToNuggetGold = new CrucibleRecipe("TB.MACERATOR",new ItemStack(Items.GOLD_NUGGET,2,0),new ItemStack(Blocks.SAND),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,5));
+        CrucibleRecipe sandToNuggetGold = new CrucibleRecipe("TB.MACERATOR",new ItemStack(Items.GOLD_NUGGET,2,0),new ItemStack(Blocks.SAND),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,4).add(Aspect.DESIRE,2));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.sandToNuggetGold"),sandToNuggetGold);
 
         CrucibleRecipe woolToString = new CrucibleRecipe("TB.MACERATOR",new ItemStack(Items.STRING,3,0),new ItemStack(Blocks.WOOL),new AspectList().add(Aspect.ENTROPY, 25));
@@ -268,7 +268,7 @@ public class TBThaumonomicon {
         CrucibleRecipe cobbleToSandAdv = new CrucibleRecipe("TB.AdvMACERATOR",new ItemStack(Blocks.SAND,4,0),new ItemStack(Blocks.COBBLESTONE),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,10).add(Aspect.CRAFT,5));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.cobbleToSandAdv"),cobbleToSandAdv);
 
-        CrucibleRecipe sandToNuggetGoldAdv = new CrucibleRecipe("TB.AdvMACERATOR",new ItemStack(Items.GOLD_NUGGET,4,0),new ItemStack(Blocks.SAND),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,5).add(Aspect.CRAFT,5));
+        CrucibleRecipe sandToNuggetGoldAdv = new CrucibleRecipe("TB.AdvMACERATOR",new ItemStack(Items.GOLD_NUGGET,4,0),new ItemStack(Blocks.SAND),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,5).add(Aspect.CRAFT,8).add(Aspect.DESIRE, 5));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.sandToNuggetGoldAdv"),sandToNuggetGoldAdv);
 
         CrucibleRecipe woolToStringAdv = new CrucibleRecipe("TB.AdvMACERATOR",new ItemStack(Items.STRING,4,0),new ItemStack(Blocks.WOOL),new AspectList().add(Aspect.ENTROPY, 25).add(Aspect.CRAFT,10));
@@ -308,29 +308,29 @@ public class TBThaumonomicon {
         CrucibleRecipe lavaToPyro= new CrucibleRecipe("TB.FLUID",new ItemStack(TBItems.pyrobucket),new ItemStack(Items.LAVA_BUCKET),new AspectList().add(Aspect.FIRE,24).add(Aspect.MAGIC,8));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lavaToPyro"),lavaToPyro);
 
-        CrucibleRecipe seedToSweed= new CrucibleRecipe("TB.PLANT",new ItemStack(TBItems.sweedseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.PLANT,25).add(Aspect.MAGIC,8).add(Aspect.LIFE,8));
+        CrucibleRecipe seedToSweed= new CrucibleRecipe("TB.PLANT",new ItemStack(TBItems.sweedseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.PLANT,25).add(Aspect.MAGIC,15).add(Aspect.LIFE,15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.seedToSweed"),seedToSweed);
 
-        CrucibleRecipe plax= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.plaxseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.PLANT,15).add(PANNUS,5));
+        CrucibleRecipe plax= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.plaxseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.PLANT,25).add(PANNUS,20));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.sweedToPlax"),plax);
 
 
 
-        CrucibleRecipe aurelia= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBBlocks.aurelia),new ItemStack(Blocks.RED_FLOWER,1,7),new AspectList().add(Aspect.PLANT,15).add(Aspect.AURA,5).add(Aspect.ELDRITCH,4));
+        CrucibleRecipe aurelia= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBBlocks.aurelia),new ItemStack(Blocks.RED_FLOWER,1,7),new AspectList().add(Aspect.PLANT,25).add(Aspect.AURA,12).add(Aspect.DESIRE,10));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.aurelia"),aurelia);
-        CrucibleRecipe briar = new CrucibleRecipe("TB.PLANT1", new ItemStack(TBBlocks.briar), new ItemStack(Blocks.DOUBLE_PLANT,1,4), new AspectList().add(Aspect.PLANT,10).add(Aspect.LIFE,10).add(SANO,10));
+        CrucibleRecipe briar = new CrucibleRecipe("TB.PLANT1", new ItemStack(TBBlocks.briar), new ItemStack(Blocks.DOUBLE_PLANT,1,4), new AspectList().add(Aspect.PLANT,20).add(Aspect.LIFE,15).add(SANO,15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.briar"),briar);
-        CrucibleRecipe redlonbrush= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.redlonseed),new ItemStack(Items.MELON_SEEDS),new AspectList().add(Aspect.PLANT,10).add(Aspect.ENERGY,8));
+        CrucibleRecipe redlonbrush= new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.redlonseed),new ItemStack(Items.MELON_SEEDS),new AspectList().add(Aspect.PLANT,20).add(Aspect.ENERGY,16));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.roshipbrush"),redlonbrush);
-        CrucibleRecipe metallea = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.metalleatseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.ORDER,25).add(Aspect.LIFE,8).add(Aspect.METAL,8));
+        CrucibleRecipe metallea = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.metalleatseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.ORDER,25).add(Aspect.LIFE,10).add(Aspect.METAL,25));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.metallea"),metallea);
-        CrucibleRecipe  lazullia = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.lazulliaseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.SENSES,25).add(Aspect.DESIRE,8));
+        CrucibleRecipe  lazullia = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.lazulliaseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.SENSES,25).add(Aspect.DESIRE,10));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lazullia"), lazullia);
-        CrucibleRecipe  glieonia = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.glieoniaseed),new ItemStack(Blocks.RED_FLOWER,1,3),new AspectList().add(Aspect.PLANT,10).add(Aspect.MAGIC,8).add(Aspect.LIFE,4));
+        CrucibleRecipe  glieonia = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.glieoniaseed),new ItemStack(Blocks.RED_FLOWER,1,3),new AspectList().add(Aspect.PLANT,20).add(Aspect.MAGIC,15).add(Aspect.LIFE,15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.glieonia"), glieonia);
-        CrucibleRecipe fluxium = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBBlocks.flaxium),new ItemStack(Blocks.RED_FLOWER,1,2),new AspectList().add(Aspect.PLANT,10).add(Aspect.MAGIC,8).add(Aspect.ENTROPY,4));
+        CrucibleRecipe fluxium = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBBlocks.flaxium),new ItemStack(Blocks.RED_FLOWER,1,2),new AspectList().add(Aspect.PLANT,20).add(Aspect.MAGIC,15).add(Aspect.ENTROPY,25));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.fluxium"), fluxium);
-        CrucibleRecipe lucrite = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.lucriteseed),new ItemStack(Items.GOLDEN_CARROT),new AspectList().add(FAMES,10).add(Aspect.DESIRE,18).add(Aspect.LIFE,4));
+        CrucibleRecipe lucrite = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.lucriteseed),new ItemStack(Items.GOLDEN_CARROT),new AspectList().add(FAMES,20).add(Aspect.DESIRE,18).add(Aspect.LIFE,14));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lucrite"), lucrite);
 
         /*==============================================ALCHEMY END===============================================================================*/
@@ -338,19 +338,19 @@ public class TBThaumonomicon {
 
 
         /*==============================================INFUSING BEGIN=============================================================================*/
-        InfusionRecipe goldenSapling = new InfusionRecipe("TB.TREE", new ItemStack(TBBlocks.goldensapling),2,new AspectList().add(Aspect.PLANT,16).add(Aspect.DESIRE,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.APPLE),new ItemStack(Items.APPLE));
+        InfusionRecipe goldenSapling = new InfusionRecipe("TB.TREE", new ItemStack(TBBlocks.goldensapling),4,new AspectList().add(Aspect.PLANT,48).add(Aspect.DESIRE,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.GOLDEN_APPLE),new ItemStack(Items.APPLE),new ItemStack(Items.APPLE));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.goldenSapling"),goldenSapling);
-        InfusionRecipe netherSapling = new InfusionRecipe("TB.TREE2", new ItemStack(TBBlocks.nethersapling),2,new AspectList().add(Aspect.PLANT,16).add(Aspect.FIRE,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.NETHER_WART),new ItemStack(Items.NETHER_WART),new ItemStack(Items.BLAZE_POWDER),new ItemStack(Items.BLAZE_POWDER));
+        InfusionRecipe netherSapling = new InfusionRecipe("TB.TREE2", new ItemStack(TBBlocks.nethersapling),4,new AspectList().add(Aspect.PLANT,48).add(Aspect.FIRE,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.NETHER_WART),new ItemStack(Items.NETHER_WART),new ItemStack(Items.BLAZE_POWDER),new ItemStack(Items.BLAZE_POWDER));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.netherSapling"),netherSapling);
-        InfusionRecipe enderSapling = new InfusionRecipe("TB.TREE1", new ItemStack(TBBlocks.endersapling),2,new AspectList().add(Aspect.PLANT,16).add(ITER,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.ENDER_PEARL),new ItemStack(Items.ENDER_PEARL),new ItemStack(Items.ENDER_EYE),new ItemStack(Items.ENDER_EYE));
+        InfusionRecipe enderSapling = new InfusionRecipe("TB.TREE1", new ItemStack(TBBlocks.endersapling),4,new AspectList().add(Aspect.PLANT,48).add(ITER,64), new ItemStack(Blocks.SAPLING,1,0),new ItemStack(Items.ENDER_PEARL),new ItemStack(Items.ENDER_PEARL),new ItemStack(Items.ENDER_EYE),new ItemStack(Items.ENDER_EYE));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.enderSapling"),enderSapling);
-        InfusionRecipe overchanter = new InfusionRecipe("TB.MACHANISM", new ItemStack(TBBlocks.overchanter),3,new AspectList().add(primals(32)).add(Aspect.MECHANISM,32).add(Aspect.MAGIC,32).add(Aspect.MIND,32), new ItemStack(Blocks.ENCHANTING_TABLE),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockentropy),new ItemStack(TBBlocks.crystalblockorder),new ItemStack(TBBlocks.crystalblockearth),new ItemStack(TBBlocks.crystalblockwater),new ItemStack(TBBlocks.crystalblockfire),new ItemStack(TBBlocks.crystalblockair),new ItemStack(BlocksTC.metalBlockThaumium),new ItemStack(BlocksTC.metalBlockThaumium));
+        InfusionRecipe overchanter = new InfusionRecipe("TB.MACHANISM", new ItemStack(TBBlocks.overchanter),5,new AspectList().add(primals(48)).add(Aspect.MECHANISM,32).add(Aspect.MAGIC,32).add(Aspect.MIND,32), new ItemStack(Blocks.ENCHANTING_TABLE),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.dustblock),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockmixed),new ItemStack(TBBlocks.crystalblockentropy),new ItemStack(TBBlocks.crystalblockorder),new ItemStack(TBBlocks.crystalblockearth),new ItemStack(TBBlocks.crystalblockwater),new ItemStack(TBBlocks.crystalblockfire),new ItemStack(TBBlocks.crystalblockair),new ItemStack(BlocksTC.metalBlockThaumium),new ItemStack(BlocksTC.metalBlockThaumium));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.overchanter"),overchanter);
-        InfusionRecipe voidseed = new InfusionRecipe("TB.MACHANISM", new ItemStack(TBItems.voidseed),3,new AspectList().add(Aspect.DARKNESS,32).add(MESSIS,32).add(Aspect.MAGIC,32).add(Aspect.MIND,32), new ItemStack(ItemsTC.voidSeed),new ItemStack(Items.NETHER_WART),new ItemStack(Items.CARROT),new ItemStack(Items.POISONOUS_POTATO),new ItemStack(Items.MELON_SEEDS),new ItemStack(Items.PUMPKIN_SEEDS),new ItemStack(Items.WHEAT_SEEDS),new ItemStack(Items.BEETROOT_SEEDS));
+        InfusionRecipe voidseed = new InfusionRecipe("TB.VOIDSEEDS", new ItemStack(TBItems.voidseed),5,new AspectList().add(Aspect.DARKNESS,32).add(MESSIS,32).add(Aspect.MAGIC,32).add(Aspect.MIND,32), new ItemStack(ItemsTC.voidSeed),new ItemStack(Items.NETHER_WART),new ItemStack(Items.CARROT),new ItemStack(Items.POISONOUS_POTATO),new ItemStack(Items.MELON_SEEDS),new ItemStack(Items.PUMPKIN_SEEDS),new ItemStack(Items.WHEAT_SEEDS),new ItemStack(Items.BEETROOT_SEEDS));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.voidseed"),voidseed);
-        InfusionRecipe silverpipe = new InfusionRecipe("TB.TOBACCO", new ItemStack(TBItems.silverwoodpipe),4,new AspectList().add(Aspect.AURA,8).add(Aspect.ORDER,32).add(SANO,16), new ItemStack(TBItems.greatwoodpipe),new ItemStack(BlocksTC.shimmerleaf),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(ItemsTC.salisMundus),new ItemStack(ItemsTC.salisMundus),new ItemStack(ItemsTC.salisMundus));
+        InfusionRecipe silverpipe = new InfusionRecipe("TB.TOBACCO", new ItemStack(TBItems.silverwoodpipe),5,new AspectList().add(Aspect.AURA,8).add(Aspect.ORDER,32).add(SANO,16), new ItemStack(TBItems.greatwoodpipe),new ItemStack(BlocksTC.shimmerleaf),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(BlocksTC.plankSilverwood),new ItemStack(ItemsTC.salisMundus),new ItemStack(ItemsTC.salisMundus),new ItemStack(ItemsTC.salisMundus));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.silverpipe"),silverpipe);
-        InfusionRecipe herobrine = new InfusionRecipe("TB.TOOLS", new ItemStack(TBItems.herobrinesscythe),5,new AspectList().add(Aspect.AVERSION,8).add(Aspect.ENERGY,32).add(Aspect.ENERGY,16).add(Aspect.ELDRITCH,24).add(Aspect.DEATH,10), new ItemStack(ItemsTC.voidHoe),FluidUtil.getFilledBucket(new FluidStack(ConfigBlocks.FluidDeath.instance,Fluid.BUCKET_VOLUME)),new ItemStack(Items.NETHER_STAR),FluidUtil.getFilledBucket(new FluidStack(ConfigBlocks.FluidDeath.instance,Fluid.BUCKET_VOLUME)),new ItemStack(Items.NETHER_STAR));
+        InfusionRecipe herobrine = new InfusionRecipe("TB.TOOLS", new ItemStack(TBItems.herobrinesscythe),8,new AspectList().add(Aspect.AVERSION,20).add(Aspect.ENERGY,48).add(Aspect.ENERGY,20).add(Aspect.ELDRITCH,24).add(Aspect.DEATH,15), new ItemStack(ItemsTC.voidHoe),FluidUtil.getFilledBucket(new FluidStack(ConfigBlocks.FluidDeath.instance,Fluid.BUCKET_VOLUME)),new ItemStack(Items.NETHER_STAR),FluidUtil.getFilledBucket(new FluidStack(ConfigBlocks.FluidDeath.instance,Fluid.BUCKET_VOLUME)),new ItemStack(Items.NETHER_STAR), new ItemStack(BlocksTC.metalBlockVoid));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.herobrine"),herobrine);
 
 
@@ -361,7 +361,7 @@ public class TBThaumonomicon {
         if(TBConfig.allowTobacco){
         CrucibleRecipe tobacco = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.tobaccoseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.MIND,10).add(Aspect.WATER,8).add(Aspect.MAN,4).add(MESSIS,2));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.tobacco"), tobacco);
-        CrucibleRecipe catusToRC= new CrucibleRecipe("TB.CACTUS",new ItemStack(TBBlocks.rainbowcactus),new ItemStack(Blocks.CACTUS),new AspectList().add(Aspect.PLANT,25).add(Aspect.MAGIC,8));
+        CrucibleRecipe catusToRC= new CrucibleRecipe("TB.CACTUS",new ItemStack(TBBlocks.rainbowcactus),new ItemStack(Blocks.CACTUS),new AspectList().add(Aspect.PLANT,35).add(Aspect.MAGIC,15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.catusToRC"),catusToRC);
 
 

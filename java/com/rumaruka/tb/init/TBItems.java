@@ -45,6 +45,7 @@ public class TBItems {
     //Metall and Material
     public static Item nuggetthauminite;
     public static Item thauminite_ingot;
+    public static Item thauminite_plate;
 
     public static Item bloodycloth;
 
@@ -122,8 +123,9 @@ public class TBItems {
 
        nuggetthauminite = new TBItemNuggetThauminite().setUnlocalizedName("nuggetthauminite").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
        thauminite_ingot = new TBItemThauminiteIngot().setUnlocalizedName("thauminite_ingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        thauminite_plate = new TBItemThauminitePlate().setUnlocalizedName("thauminite_plate").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
-        bloodycloth = new TBBloodyCloth().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("bloodycloth");
+       bloodycloth = new TBBloodyCloth().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("bloodycloth");
 
 
 
@@ -199,6 +201,7 @@ public class TBItems {
     public static void InGameRegistr(){
         TBItems.registerItem(nuggetthauminite, nuggetthauminite.getUnlocalizedName().substring(5));
         TBItems.registerItem(thauminite_ingot,thauminite_ingot.getUnlocalizedName().substring(5));
+        TBItems.registerItem(thauminite_plate,thauminite_plate.getUnlocalizedName().substring(5));
         TBItems.registerItem(bloodycloth,bloodycloth.getUnlocalizedName().substring(5));
         TBItems.registerItem(airingot, airingot.getUnlocalizedName().substring(5));
         TBItems.registerItem(fireingot,fireingot.getUnlocalizedName().substring(5));
@@ -214,7 +217,7 @@ public class TBItems {
         TBItems.registerItem(thauminitesword,thauminitesword.getUnlocalizedName().substring(5));
         TBItems.registerItem(thauminiteshovel,thauminiteshovel.getUnlocalizedName().substring(5));
         TBItems.registerItem(thauminitehoe,thauminitehoe.getUnlocalizedName().substring(5));
-//        TBItems.registerItem(thauminiteshears,thauminiteshears.getUnlocalizedName().substring(5));
+    // TBItems.registerItem(thauminiteshears,thauminiteshears.getUnlocalizedName().substring(5));
         TBItems.registerItem(voidshears,voidshears.getUnlocalizedName().substring(5));
         TBItems.registerItem(voidfas,voidfas.getUnlocalizedName().substring(5));
 
@@ -284,6 +287,7 @@ public class TBItems {
 
         renderItems(nuggetthauminite);
         renderItems(thauminite_ingot);
+        renderItems(thauminite_plate);
         renderItems(bloodycloth);
 
         renderItems(airingot);

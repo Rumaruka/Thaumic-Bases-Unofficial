@@ -39,6 +39,7 @@ public class TBOreDirection {
         //Thaumcraft Item
         OreDictionary.registerOre("ingotThauminite", TBItems.thauminite_ingot);
         OreDictionary.registerOre("nuggetThauminite",TBItems.nuggetthauminite);
+        OreDictionary.registerOre("plateThauminite",TBItems.thauminite_plate);
         OreDictionary.registerOre("ingotVoid", new ItemStack(ItemsTC.ingots,1,1));
         //Logs
         OreDictionary.registerOre("logGolden",TBBlocks.goldenlogs);

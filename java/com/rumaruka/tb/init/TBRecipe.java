@@ -40,6 +40,7 @@ public class TBRecipe {
                 "nuggetThauminite","nuggetThauminite","nuggetThauminite"
 
         });
+
         RecipeUtils.addShapelessOreRecipe(new ItemStack(TBItems.nuggetthauminite,9,0), new Object[]{"ingotThauminite"});
 
         RecipeUtils.addShapelessOreRecipe(new ItemStack(TBBlocks.blockthauminite), new Object[]{
@@ -134,7 +135,14 @@ public class TBRecipe {
                 '#',  "ingotVoid"
 
         });
+        RecipeUtils.addShapedOreRecipe(new ItemStack(TBItems.thauminite_plate), new Object[]{
+                "   ",
+                "###",
+                "   ",
 
+                '#',  "ingotThauminite"
+
+        });
 
         RecipeUtils.addShapelessOreRecipe(new ItemStack(TBBlocks.eldritchark,5,0), new Object[]{
                 "nuggetGold","obsidian","nuggetGold",

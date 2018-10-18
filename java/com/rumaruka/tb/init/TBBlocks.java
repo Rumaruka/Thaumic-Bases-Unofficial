@@ -118,6 +118,7 @@ public class TBBlocks {
     public static Block voidplant;
 
 
+
     public static void init() {
 
         //Old Style Blocks
@@ -204,7 +205,7 @@ public class TBBlocks {
         overchanter = new BlockOverchanter().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("overchanter");
         campfire = new BlockCampfire().setUnlocalizedName("campfire").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         braizer = new BlockBraizer().setUnlocalizedName("braizer").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        //Cactus ALONE :<
+       //Cactus ALONE :<
         rainbowcactus = new BlockRainbowCactus().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("rainbowcactus");
     }
 
@@ -348,6 +349,7 @@ public class TBBlocks {
         registerRender(oldiron);
         registerRender(oldgold);
         registerRender(olddiamond);
+
 
 
         registerRender(quicksilverblock);

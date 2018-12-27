@@ -9,15 +9,17 @@ public class TBConfig implements IDummyConfig {
 
 
 
-
     @Override
     public void load(Configuration config) {
         cfg = config;
-
+        Enchantment[] eArray = MiscUtils.enchantmentList();
+        elderKnowledgeID = cfg.getInt("elderKnowledgeEnchantmentID", "Enchantments", 98, 0, eArray.length, "");
+        taintedID = cfg.getInt("taintedEnchantmentID", "Enchantments", 101, 0, eArray.length, "");
 
         allowTobacco = cfg.getBoolean("allowTobacco", "General", true, "If set to falso the tobacco will be disabled - there will be no recipes/no entries in Thaumonomicon");
         allowcraftprimordar = cfg.getBoolean("allowcraftprimordar", "General", false, "More easy version craft primordar pearl");
 
+        eldritchBaneID = cfg.getInt("eldritchBaneEnchantmentID", "Enchantments", 99, 0, eArray.length, "");
         speedMultiplierForFurnace = cfg.getInt("speedMultiplierForFurnace", "Advanced Alchemy Smeltery", 4, 0, Integer.MAX_VALUE, "This is the speed of the Advanced Alchamical Smeltery. TC's basic has 1.");
         makeReguireAlumentium = cfg.getBoolean("makeRequireAlumentium", "Advanced Alchemy Smeltery", true, "Does the Advanced Alchemical Smeltery requires Alumentium to work faster");
 
@@ -30,6 +32,9 @@ public class TBConfig implements IDummyConfig {
         extraDropItemInSeeeds = cfg.getInt("extraDropItemSeeds","Seeds Droped Chance",1, 1,10,"chance droped");
     }
     static Configuration cfg;
+    public static int eldritchBaneID;
+    public static int elderKnowledgeID;
+    public static int taintedID;
 
     public static boolean allowTobacco;
     public static boolean allowcraftprimordar;
@@ -64,4 +69,15 @@ public class TBConfig implements IDummyConfig {
         return aspectCountForIngotCrucible;
     }
 
+    public static int getEldritchBaneID() {
+        return eldritchBaneID;
+    }
+
+    public static int getElderKnowledgeID() {
+        return elderKnowledgeID;
+    }
+
+    public static int getTaintedID() {
+        return taintedID;
+    }
 }

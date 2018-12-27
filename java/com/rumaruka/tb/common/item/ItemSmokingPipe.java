@@ -1,22 +1,15 @@
 package com.rumaruka.tb.common.item;
 
 import com.rumaruka.tb.api.ITobacco;
-import com.rumaruka.tb.init.TBItems;
-import com.sun.org.apache.regexp.internal.RE;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import thaumcraft.common.blocks.devices.BlockPedestal;
-import thaumcraft.common.items.casters.ItemCaster;
-import thaumcraft.common.items.resources.ItemMagicDust;
 
 import javax.annotation.Nullable;
 

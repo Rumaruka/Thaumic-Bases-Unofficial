@@ -9,15 +9,13 @@ import com.rumaruka.tb.core.TBCore;
 import joptsimple.internal.Strings;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
+
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.LoaderException;
@@ -83,7 +81,8 @@ public class TBBlocks {
     public static Block lucrite;
     public static Block flaxium;
     public static Block briar;
-
+    public static Block glieonia;
+    public static Block voidplant;
     public static Block tobacco;
     //Spike
     public static Block ironspike;
@@ -114,8 +113,8 @@ public class TBBlocks {
     public static Block overchanter;
     public static Block campfire;
     public static Block braizer;
-    public static Block glieonia;
-    public static Block voidplant;
+
+
 
 
 
@@ -205,6 +204,7 @@ public class TBBlocks {
         overchanter = new BlockOverchanter().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("overchanter");
         campfire = new BlockCampfire().setUnlocalizedName("campfire").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         braizer = new BlockBraizer().setUnlocalizedName("braizer").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
        //Cactus ALONE :<
         rainbowcactus = new BlockRainbowCactus().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("rainbowcactus");
     }
@@ -287,6 +287,7 @@ public class TBBlocks {
         TBBlocks.registerBlock(overchanter,overchanter.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(campfire,campfire.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(braizer,braizer.getUnlocalizedName().substring(5));
+
     }
 
     @Deprecated
@@ -300,8 +301,7 @@ public class TBBlocks {
     public static Block registerBlock(Block block, String name) {
         if (block.getRegistryName() == null && Strings.isNullOrEmpty(name))
             throw new IllegalArgumentException("Attempted to register a Block with no name: " + block);
-        if (block.getRegistryName() != null && !block.getRegistryName().toString().equals(name))
-            throw new IllegalArgumentException("Attempted to register a Block with conflicting names. Old: " + block.getRegistryName() + " New: " + name);
+
         return registerBlock(block.getRegistryName() != null ? block : block.setRegistryName(name));
     }
 

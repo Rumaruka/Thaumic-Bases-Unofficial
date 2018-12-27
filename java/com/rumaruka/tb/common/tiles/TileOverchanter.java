@@ -85,7 +85,6 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                 if(ticksExisted % 20 == 0)
                 {
                     renderedLightning = new Lightning(this.world.rand, new Coord3D(0,0,0), new Coord3D(MathUtils.randomDouble(this.world.rand)/50,MathUtils.randomDouble(this.world.rand)/50,MathUtils.randomDouble(this.world.rand)/50), 0.3F, 1,0,1);
-                   // this.worldObj.playSoundEffect(pos.getX(), pos.getY(), pos.getZ(), "thaumcraft:infuserstart", 1F, 1.0F);
                     this.world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundsTC.infuserstart,SoundCategory.BLOCKS,1f,1.0f,false);
                     if(EssentiaHandler.drainEssentia(this, Aspect.MAGIC, null, 8, false, 8))
                     {
@@ -93,11 +92,17 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                         if(enchantingTime >= 16 && !this.xpAbsorbed)
                         {
                             List<EntityPlayer> players = this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX()+1, pos.getY()+1, pos.getZ()+1).expand(6, 3, 6));
+
                             if(!players.isEmpty())
                             {
+
+
                                 for(int i = 0; i < players.size(); ++i)
                                 {
                                     EntityPlayer p = players.get(i);
+
+
+
                                     if(p.experienceLevel >= 30)
                                     {
                                         p.attackEntityFrom(DamageSource.MAGIC, 8);
@@ -112,14 +117,18 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
                         if(xpAbsorbed && enchantingTime >= 32)
                         {
-                            int enchId = this.findEnchantment(inventory);
-                            Enchantment ench = Enchantment.getEnchantmentByID(enchId);
                             NBTTagList nbttaglist = this.inventory.getEnchantmentTagList();
+
                             for(int i = 0; i < nbttaglist.tagCount(); ++i)
                             {
+                                int enchId = this.findEnchantment(inventory);
+                                Enchantment ench = Enchantment.getEnchantmentByID(enchId);
                                 NBTTagCompound tag = nbttaglist.getCompoundTagAt(i);
-                                if(tag != null && Enchantment.getEnchantmentByID(enchId)==ench)
+
+
+                                if(Enchantment.getEnchantmentByID(i)==ench)
                                 {
+
 
                                     tag.setShort("lvl", (short) (Integer.valueOf(tag.getShort("lvl"))+5));
                                     NBTTagCompound stackTag = MiscUtils.getStackTag(inventory);
@@ -129,16 +138,16 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                                     }else
                                     {
                                         int[] arrayInt = stackTag.getIntArray("overchants");
-                                        int[] newArrayInt = new int[arrayInt.length+5];
+                                        int[] newArrayInt = new int[arrayInt.length+1];
                                         for(int j = 0; j < arrayInt.length; ++j)
                                         {
                                             newArrayInt[j] = arrayInt[j];
                                         }
-                                        newArrayInt[newArrayInt.length+5]=enchId;
+                                        newArrayInt[newArrayInt.length-1]=enchId;
 
                                         stackTag.setIntArray("overchants", newArrayInt);
                                     }
-                                    break;
+
                                 }
                             }
                             isEnchantingStarted = false;
@@ -158,10 +167,10 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
     }
 
 
-    public boolean canStartEnchanting(){
+    private boolean canStartEnchanting(){
         if(!this.isEnchantingStarted)
             if(!this.inventory.isEmpty()){
-                if(this.inventory.getEnchantmentTagList()!=null&& this.inventory.getEnchantmentTagList().tagCount() > 0){
+                if(this.inventory.getEnchantmentTagList().tagCount() > 0){
                     if(findEnchantment(inventory)!=-1){
                         return true;
                     }
@@ -172,25 +181,28 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
             return false;
     }
 
-    private int findEnchantment(ItemStack enchated) {
+    private  int findEnchantment(ItemStack enchated) {
         NBTTagCompound stackTag = MiscUtils.getStackTag(inventory);
         Map<Enchantment, Integer> ench = EnchantmentHelper.getEnchantments(enchated);
         Set<Enchantment> keys = ench.keySet();
         Iterator<Enchantment>$i = keys.iterator();
 
+
         while ($i.hasNext()){
             Enchantment enchantment = $i.next();
-            enchantment.getEnchantmentByID(stackTag.getShort("id"));
+            enchantment.getEnchantmentByID(stackTag.getInteger("id"));
             int j = stackTag.getShort("lvl");
 
             if(!stackTag.hasKey("overchants")){
                 return j;
             }
             int[]overchants = stackTag.getIntArray("overchants");
-            if(MathUtils.arrayContains(overchants,j));
+            if(MathUtils.arrayContains(overchants,j)){
                 continue;
+            }
+            return j;
         }
-        return -1;
+        return 1;
     }
 
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)

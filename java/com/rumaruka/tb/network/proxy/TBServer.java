@@ -1,16 +1,20 @@
 package com.rumaruka.tb.network.proxy;
 
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.obj.OBJLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class TBServer  {
 
-    public void preInit(){
+    public void preInit(FMLPreInitializationEvent e){
 
     }
 
     public void Renders(){
 
     }
+    public void init(FMLInitializationEvent e){}
     public void playGuitarSound(String sound)
     {
 
@@ -39,9 +43,7 @@ public class TBServer  {
     {
 
     }
-    public void addEnchantmentToCreativeTab(){
 
-    }
-    public void addFluidCreativetab(){}
+
     public boolean fancyGraphicsEnable(){return false;}
 }

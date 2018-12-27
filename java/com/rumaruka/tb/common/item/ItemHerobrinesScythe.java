@@ -59,7 +59,7 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
     public void onUpdate(ItemStack stk, World w, Entity entity, int slot, boolean held)
     {
         super.onUpdate(stk, w, entity, slot, held);
-        if ((stk.isItemDamaged()) && (entity != null) && (entity.ticksExisted % 20 == 0) && ((entity instanceof EntityLivingBase)))
+        if ((stk.isItemDamaged())  && (entity.ticksExisted % 20 == 0) && ((entity instanceof EntityLivingBase)))
             stk.damageItem(-1, (EntityLivingBase)entity);
     }
     public static void attack(EntityPlayer attacker, List<EntityLivingBase>doNotAttack, EntityLivingBase attacked){
@@ -81,7 +81,7 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
                     performPlayerAttackAt(attacker,mobs.get(index));
 
                     TBCore.proxy.lightning(attacker.world, attacked.posX, attacked.posY+rnd.nextDouble()*attacked.getEyeHeight(), attacked.posZ, mobs.get(index).posX, mobs.get(index).posY+rnd.nextDouble()*mobs.get(index).getEyeHeight(), mobs.get(index).posZ, 20, 2F, 10, 0);
-                    //attacker.world.playSoundAtEntity(mobs.get(index), "thaumcraft:zap", 1F, 0.8F);
+                    attacker.world.playSound((EntityPlayer) mobs.get(index),attacked.getPosition(), SoundsTC.zap,SoundCategory.AMBIENT, 1F, 0.8F);
                     attacked.world.playSound(null,attacked.getPosition(),SoundsTC.zap,SoundCategory.PLAYERS,1f,0.8f);
                     doNotAttack.add(mobs.get(index));
 
@@ -91,7 +91,7 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
 
                 }
                 mobs.remove(index);
-                continue;
+
             }
         }
     }
@@ -160,9 +160,9 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
                     if(entityLivingBase instanceof EntityDragon){
                         IEntityMultiPart  entityMultiPart = (IEntityMultiPart) ((EntityDragon) entityLivingBase).dragonPartBody;
 
-                        if(entityMultiPart !=null&& entityMultiPart instanceof EntityLivingBase){
+
                             object = entityMultiPart;
-                        }
+
                     }
                     if(!is.isEmpty()&& object instanceof EntityLivingBase){
                         is.hitEntity((EntityLivingBase) object,attacker);

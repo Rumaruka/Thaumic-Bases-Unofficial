@@ -407,11 +407,7 @@ public class TBThaumonomicon {
             ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.void_seed"), void_seed);
             CrucibleRecipe primordar = new CrucibleRecipe("TB.EXCHANG",new ItemStack(ItemsTC.primordialPearl),new ItemStack(ItemsTC.voidSeed),new AspectList().add(FAMES,55).add(Aspect.DESIRE,50).add(Aspect.ELDRITCH,64));
             ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.primordar"), primordar);
-
-
-
-
-        }
+      }
         CrucibleRecipe crystalM = new CrucibleRecipe("TB.EXCHANG", AscpectUtils.crystalEssence(MESSIS), new ItemStack(ItemsTC.nuggets,1,9), new AspectList().add(MESSIS,2));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.crystalM"), crystalM);
         CrucibleRecipe crystalI = new CrucibleRecipe("TB.EXCHANG", AscpectUtils.crystalEssence(ITER), new ItemStack(ItemsTC.nuggets,1,9), new AspectList().add(ITER,2));

@@ -4,21 +4,22 @@ import static com.rumaruka.tb.core.TBCore.*;
 
 
 import DummyCore.Core.Core;
-import com.rumaruka.tb.common.block.TBBlock;
+
+
+
+import com.rumaruka.tb.common.handlers.EnchatmentHandler;
 import com.rumaruka.tb.common.handlers.RegisterHandlers;
-import com.rumaruka.tb.common.libs.TBSounds;
+
 import com.rumaruka.tb.init.*;
-import com.rumaruka.tb.network.proxy.PacketTB;
+
 import com.rumaruka.tb.network.proxy.TBServer;
 import com.rumaruka.tb.utils.KnowledgeTB;
 import com.rumaruka.tb.utils.TBConfig;
-import net.minecraft.block.BlockSand;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.init.Blocks;
+
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
+
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -31,7 +32,11 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import thaumcraft.api.aspects.AspectRegistryEvent;
+import thaumcraft.api.casters.FocusEffect;
+import thaumcraft.api.casters.FocusEngine;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 
@@ -46,7 +51,7 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.2.270.4r";
+    public static final String version = "3.3.310.5r";
     public static final String dependencies = "required-after:thaumcraft@[6.1.BETA26,);required-after:dummycore@[2.4.112.3,)";
 
     //Networking
@@ -78,10 +83,12 @@ public class TBCore {
         TBBlocks.InGameRegister();
         TBItems.init();
         TBItems.InGameRegistr();
+
         MinecraftForge.EVENT_BUS.register(new KnowledgeTB());
         KnowledgeTB.clInit.call();
         TBTiles.setup();
-        proxy.preInit();
+        TBEnchant.setupEnchatments();
+        proxy.preInit(e);
         FMLInterModComms.sendMessage("Wailla","register","tb");
 
 
@@ -96,10 +103,11 @@ public class TBCore {
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new TBGuiHandler());
         RES_CAT = ResearchCategories.registerCategory(catName,null,null,icon,back,back2);
         proxy.registerRenderInformation();
+        MinecraftForge.EVENT_BUS.register(new EnchatmentHandler());
         TBThaumonomicon.setup();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
         RegisterHandlers.init();
-
+        proxy.init(e);
     }
 
 
@@ -112,6 +120,9 @@ public class TBCore {
         KnowledgeTB.init.call();
         TBThaumonomicon.insertAspects.call();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
+
+
+
 
     }
 

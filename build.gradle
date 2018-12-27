@@ -2,21 +2,18 @@ buildscript {
     repositories {
         jcenter()
         maven { url = "http://files.minecraftforge.net/maven" }
-
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'java'
-apply plugin: 'maven'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "3.2.270.4r"
+version = "3.3.310.5r"
 group = "com.rumaruka.tb" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "thaumicbases"
+archivesBaseName = "tb"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -37,8 +34,8 @@ minecraft {
 }
 
 dependencies {
-    compile fileTree(dir: 'lib', include: ['*.jar'])
 
+    compile fileTree(dir: 'lib', include: ['*.jar'])
 }
 
 processResources {
@@ -58,5 +55,4 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-
 }

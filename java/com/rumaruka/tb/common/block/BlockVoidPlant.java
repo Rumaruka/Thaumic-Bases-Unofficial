@@ -155,8 +155,10 @@ public class BlockVoidPlant extends BlockTBPlant {
                             for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j) {
                                 if (world.rand.nextBoolean()) {
                                     ret.add(new ItemStack(ItemsTC.voidSeed));
+
                                 }
                             }
+                            ret.add(new ItemStack(TBItems.voidseed));
 
                         }
 

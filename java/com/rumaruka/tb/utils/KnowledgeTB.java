@@ -7,6 +7,7 @@ import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.core.TBCore;
 import com.rumaruka.tb.init.TBBlocks;
 import com.rumaruka.tb.init.TBItems;
+import com.rumaruka.tb.init.TBThaumonomicon;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -27,6 +28,7 @@ public class KnowledgeTB {
 
     public static final OnetimeCaller init = new OnetimeCaller(KnowledgeTB::$init);
     public static final OnetimeCaller clInit = new OnetimeCaller(KnowledgeTB::$);
+    public static final OnetimeCaller insertAspects = new OnetimeCaller(TBThaumonomicon::$insertAspects);
 
     @SubscribeEvent
     public void commandEvent(CommandEvent ce)

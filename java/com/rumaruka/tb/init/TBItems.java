@@ -1,39 +1,33 @@
 package com.rumaruka.tb.init;
+
+
 import com.google.common.base.Strings;
+
 import com.rumaruka.tb.client.creativetabs.TBCreativeTabs;
-
-
 import com.rumaruka.tb.common.TBMaterial;
-import com.rumaruka.tb.common.block.TBBlock;
 import com.rumaruka.tb.common.item.*;
 import com.rumaruka.tb.common.item.ItemSeeds;
-
 import com.rumaruka.tb.common.item.recourse.ItemBriarSeedbag;
 import com.rumaruka.tb.common.item.recourse.ItemTobaccoLeaves;
 import com.rumaruka.tb.common.item.recourse.TBItemNuggetThauminite;
 import com.rumaruka.tb.common.item.recourse.TBItemThauminiteIngot;
-
 import com.rumaruka.tb.core.TBCore;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.*;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.*;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.client.model.obj.OBJLoader;
+
+
+
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import thaumcraft.api.casters.FocusEngine;
-import thaumcraft.common.items.tools.ItemElementalSword;
-import thaumcraft.common.items.tools.ItemThaumiumAxe;
+
+
+
 
 public class TBItems {
 
@@ -122,7 +116,8 @@ public class TBItems {
     //Mortar
     public  static  Item mortar;
 
-    //Revolver and Ukulele
+    //Revolver and Ukulele and Compass
+
 
 
 
@@ -198,8 +193,10 @@ public class TBItems {
        greatwoodpipe = new ItemSmokingPipe(false).setUnlocalizedName("greatwoodpipe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
        silverwoodpipe = new ItemSmokingPipe(true).setUnlocalizedName("silverwoodpipe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
-       mortar = new ItemMortarAndPesle().setUnlocalizedName("mortar");
-       rosehipsyrup = new ItemRosehipSyrup().setUnlocalizedName("rosehipsyrup");
+       mortar = new ItemMortarAndPesle().setUnlocalizedName("mortar").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+       rosehipsyrup = new ItemRosehipSyrup().setUnlocalizedName("rosehipsyrup").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+
 
     }
 
@@ -269,6 +266,7 @@ public class TBItems {
         TBItems.registerItem(silverwoodpipe,silverwoodpipe.getUnlocalizedName().substring(5));
 
         TBItems.registerItem(rosehipsyrup,rosehipsyrup.getUnlocalizedName().substring(5));
+
 
     }
 
@@ -357,6 +355,7 @@ public class TBItems {
 
         renderItems(voidfas);
         renderItems(voidshears);
+
 
     }
 

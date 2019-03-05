@@ -58,7 +58,7 @@ public class TBThaumonomicon {
     public ResearchStage.Knowledge THAUMICBASES = new ResearchStage.Knowledge(IPlayerKnowledge.EnumKnowledgeType.THEORY, ResearchCategories.getResearchCategory("THAUMICBASES"),5);
 
 
-    public static final OnetimeCaller insertAspects = new OnetimeCaller(TBThaumonomicon::$insertAspects);
+
 
 
 
@@ -424,7 +424,7 @@ public class TBThaumonomicon {
 
 
 
-    private static void $insertAspects()
+    public static void $insertAspects()
     {
 
 
@@ -464,11 +464,8 @@ public class TBThaumonomicon {
         appendAspects(new ItemStack(Items.MELON_SEEDS),new AspectList().add(MESSIS,4));
         appendAspects(new ItemStack(Items.PUMPKIN_SEEDS),new AspectList().add(MESSIS,4));
         appendAspects(new ItemStack(Items.BEETROOT_SEEDS),new AspectList().add(MESSIS,4));
-        ThaumcraftApiHelper.makeCrystal(PANNUS);
-        ThaumcraftApiHelper.makeCrystal(ITER);
-        ThaumcraftApiHelper.makeCrystal(SANO);
-        ThaumcraftApiHelper.makeCrystal(FAMES);
-        ThaumcraftApiHelper.makeCrystal(MESSIS);
+
+
 
     }
 

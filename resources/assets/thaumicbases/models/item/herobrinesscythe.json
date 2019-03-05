@@ -1,6 +1,130 @@
 {
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "thaumicbases:items/herobrinesscythe"
-  }
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"elements": [
+		{
+			"name": "op1",
+			"from": [6, 0, 4],
+			"to": [9, 2, 5],
+			"color": 0,
+			"faces": {
+				"north": {"uv": [0, 0, 3, 2], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 2], "texture": "#missing"},
+				"south": {"uv": [0, 0, 3, 2], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 2], "texture": "#missing"},
+				"up": {"uv": [0, 0, 3, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 3, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [7, 2, 4],
+			"to": [8, 10, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 1, 8], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 8], "texture": "#missing"},
+				"south": {"uv": [0, 0, 1, 8], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 8], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [8, 10, 4],
+			"to": [9, 14, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"south": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 4], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [9, 10, 4],
+			"to": [10, 11, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [7, 10, 4],
+			"to": [7.7, 11, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 0.7, 1], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"south": {"uv": [0, 0, 0.7, 1], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 0.7, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 0.7, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [9, 12, 4],
+			"to": [9.3, 13, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 0.3, 1], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"south": {"uv": [0, 0, 0.3, 1], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 0.3, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 0.3, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [7.6, 11, 4],
+			"to": [8.1, 12, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 0.5, 1], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"south": {"uv": [0, 0, 0.5, 1], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 0.5, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 0.5, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [5.6, 13, 4],
+			"to": [7.1, 15, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 1.5, 2], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 2], "texture": "#missing"},
+				"south": {"uv": [0, 0, 1.5, 2], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 2], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1.5, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1.5, 1], "texture": "#missing"}
+			}
+		},
+		{
+			"from": [6, 12.6, 4],
+			"to": [7, 13.7, 5],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1.1], "texture": "#missing"},
+				"east": {"uv": [0, 0, 1, 1.1], "texture": "#missing"},
+				"south": {"uv": [0, 0, 1, 1.1], "texture": "#missing"},
+				"west": {"uv": [0, 0, 1, 1.1], "texture": "#missing"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#missing"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#missing"}
+			}
+		}
+	],
+	"groups": [0, 1, 2, 3, 4, 5, 6,
+		{
+			"name": "knife",
+			"children": [7, 8]
+		}
+	]
 }

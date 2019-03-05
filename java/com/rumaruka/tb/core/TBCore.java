@@ -10,6 +10,7 @@ import DummyCore.Core.Core;
 import com.rumaruka.tb.common.handlers.EnchatmentHandler;
 import com.rumaruka.tb.common.handlers.RegisterHandlers;
 
+import com.rumaruka.tb.common.item.foci.FocusEvent;
 import com.rumaruka.tb.init.*;
 
 import com.rumaruka.tb.network.proxy.TBServer;
@@ -17,19 +18,16 @@ import com.rumaruka.tb.utils.KnowledgeTB;
 import com.rumaruka.tb.utils.TBConfig;
 
 import net.minecraft.util.ResourceLocation;
-
 import net.minecraftforge.common.MinecraftForge;
-
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -83,8 +81,8 @@ public class TBCore {
         TBBlocks.InGameRegister();
         TBItems.init();
         TBItems.InGameRegistr();
+    //    MinecraftForge.EVENT_BUS.register(new KnowledgeTB());
 
-        MinecraftForge.EVENT_BUS.register(new KnowledgeTB());
         KnowledgeTB.clInit.call();
         TBTiles.setup();
         TBEnchant.setupEnchatments();
@@ -105,9 +103,14 @@ public class TBCore {
         proxy.registerRenderInformation();
         MinecraftForge.EVENT_BUS.register(new EnchatmentHandler());
         TBThaumonomicon.setup();
+
+        KnowledgeTB.clInit.call();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
         RegisterHandlers.init();
+        TBFocus.loadFocus();
+        MinecraftForge.EVENT_BUS.register(new FocusEvent());
         proxy.init(e);
+
     }
 
 
@@ -118,7 +121,7 @@ public class TBCore {
         TBRecipe.setup();
         TBOreDirection.setup();
         KnowledgeTB.init.call();
-        TBThaumonomicon.insertAspects.call();
+        KnowledgeTB.insertAspects.call();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
 
 

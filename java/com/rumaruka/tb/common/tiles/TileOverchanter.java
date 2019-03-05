@@ -130,7 +130,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                                 {
 
 
-                                    tag.setShort("lvl", (short) (Integer.valueOf(tag.getShort("lvl"))+5));
+                                    tag.setShort("lvl", (short) (tag.getShort("lvl")+5));
                                     NBTTagCompound stackTag = MiscUtils.getStackTag(inventory);
                                     if(!stackTag.hasKey("overchants"))
                                     {

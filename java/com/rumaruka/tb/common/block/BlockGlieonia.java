@@ -50,7 +50,7 @@ public class BlockGlieonia extends BlockTBPlant {
     {
         super.updateTick(w,pos, state, rnd);
 
-        if (!w.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+        if (!w.isAreaLoaded(pos, 1)) return;
         if (w.getLightFromNeighbors(pos.up()) >= 9)
         {
             int i = state.getValue(AGE);
@@ -67,6 +67,7 @@ public class BlockGlieonia extends BlockTBPlant {
             }
         }
     }
+
     protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
     {
         float f = 1.0F;

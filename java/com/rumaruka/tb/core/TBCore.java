@@ -10,7 +10,7 @@ import DummyCore.Core.Core;
 import com.rumaruka.tb.common.handlers.EnchatmentHandler;
 import com.rumaruka.tb.common.handlers.RegisterHandlers;
 
-import com.rumaruka.tb.common.item.foci.FocusEvent;
+
 import com.rumaruka.tb.init.*;
 
 import com.rumaruka.tb.network.proxy.TBServer;
@@ -107,9 +107,8 @@ public class TBCore {
         KnowledgeTB.clInit.call();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
         RegisterHandlers.init();
-        TBFocus.loadFocus();
-        MinecraftForge.EVENT_BUS.register(new FocusEvent());
-        proxy.init(e);
+
+         proxy.init(e);
 
     }
 

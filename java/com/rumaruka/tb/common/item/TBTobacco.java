@@ -139,6 +139,8 @@ public class TBTobacco extends Item implements ITobacco {
 
         }
         if (tobbaco.getItem() == TBItems.tobacco_wispy) {
+            EntityWisp wisp = new EntityWisp(smoker.world);
+            wisp.setPositionAndRotation(smoker.posX, smoker.posY, smoker.posZ, 0, 0);
             ArrayList<Aspect> aspects = new ArrayList<Aspect>();
             Collection<Aspect> pa = Aspect.aspects.values();
             for (Aspect aspect : pa) {
@@ -146,19 +148,15 @@ public class TBTobacco extends Item implements ITobacco {
             }
 
             if (isSilverwood) {
-                EntityWisp wisp = new EntityWisp(smoker.world);
+                EntityWisp wisp1 = new EntityWisp(smoker.world);
                 wisp.setPositionAndRotation(smoker.posX, smoker.posY, smoker.posZ, 0, 0);
                 if (!smoker.world.isRemote) {
                     wisp.setType(aspects.get(smoker.world.rand.nextInt(aspects.size())).getTag());
-                    smoker.world.spawnEntity(wisp);
+                    smoker.world.spawnEntity(wisp1);
                     aspects.remove(Aspect.FLUX);
 
                 }
-                EntityWisp wispW = new EntityWisp(smoker.world);
-                wisp.setPositionAndRotation(smoker.posX, smoker.posY, smoker.posZ, 0, 0);
-                if (!smoker.world.isRemote) {
-                    wisp.setType(aspects.get(smoker.world.rand.nextInt(aspects.size())).getTag());
-                    smoker.world.spawnEntity(wispW);
+
                 }
 
             }
@@ -168,4 +166,4 @@ public class TBTobacco extends Item implements ITobacco {
 
 
     }
-}
+

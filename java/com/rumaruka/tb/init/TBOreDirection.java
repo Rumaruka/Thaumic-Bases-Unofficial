@@ -1,6 +1,7 @@
 package com.rumaruka.tb.init;
 
 import com.rumaruka.tb.common.block.FluidPyro;
+import com.rumaruka.tb.common.block.TBBlock;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
@@ -49,6 +50,10 @@ public class TBOreDirection {
         //Mortar
         OreDictionary.registerOre("pestleAndMortar", new ItemStack(TBItems.mortar));
         OreDictionary.registerOre("tobbacoLeaves", TBItems.tobacco_leaves);
+        //Planks
+        OreDictionary.registerOre("plankWood", TBBlocks.enderplanks);
+        OreDictionary.registerOre("plankWood", TBBlocks.goldenplanks);
+        OreDictionary.registerOre("plankWood", TBBlocks.netherplanks);
 
 
     }

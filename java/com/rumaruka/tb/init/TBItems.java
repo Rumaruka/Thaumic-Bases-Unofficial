@@ -116,9 +116,12 @@ public class TBItems {
     //Mortar
     public  static  Item mortar;
 
-    //Revolver and Ukulele and Compass
+    //Revolver and Bullets
+    public static Item bullet;
+    public static Item revolver_common;
 
-
+    //Pouch
+    public static Item tobacco_pouch;
 
 
     public static void init(){

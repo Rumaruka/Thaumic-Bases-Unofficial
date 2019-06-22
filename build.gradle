@@ -12,7 +12,7 @@ apply plugin: 'idea'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
-version = "3.3.325.6r"
+version = "3.3.350.6r"
 group = "com.rumaruka.tb" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "thaumicbases"
 
@@ -22,7 +22,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12.2-14.23.5.2814"
+    version = "1.12.2-14.23.5.2838"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.

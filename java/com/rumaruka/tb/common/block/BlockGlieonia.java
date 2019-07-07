@@ -2,13 +2,14 @@ package com.rumaruka.tb.common.block;
 
 import com.rumaruka.tb.init.TBItems;
 import com.rumaruka.tb.utils.TBConfig;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import thaumcraft.api.items.ItemsTC;
@@ -17,22 +18,37 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BlockGlieonia extends BlockTBPlant {
+public class BlockGlieonia extends BlockBush implements IGrowable {
 
-    public PropertyInteger AGE;
+
+
+    public int growthStages;
+    public int growthDelay;
+    public boolean requiresFarmland;
+    public  PropertyInteger AGE;
+    public ItemStack dropItem;
+    public ItemStack dropSeed;
 
     public BlockGlieonia(int stages, int delay, boolean isCrop) {
-        super(stages, delay, isCrop);
+        super();
+        growthStages = stages;
+        growthDelay = delay;
+        requiresFarmland = isCrop;
+
+        this.setTickRandomly(true);
+        this.setHardness(0.0F);
+        this.setSoundType(SoundType.PLANT);
+        this.disableStats();
     }
 
-    @Override
+
     public int getGrowthStages() {
-        return 3;
+        return growthStages;
     }
     @Override
     protected BlockStateContainer createBlockState() {
         if(AGE==null){
-            AGE = PropertyInteger.create("age",0,getGrowthStages());
+            AGE = PropertyInteger.create("age",0,3);
         }
         return new BlockStateContainer(this,AGE);
     }
@@ -135,12 +151,39 @@ public class BlockGlieonia extends BlockTBPlant {
 
     @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        int groM=state.getValue(AGE);
+        int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
+        int j = this.getMaxAge();
 
-        if(groM<getGrowthStages()){
-            worldIn.setBlockState(pos,state.withProperty(AGE,groM+1));
+        if (i > j)
+        {
+            i = j;
         }
 
+        worldIn.setBlockState(pos, this.withAge(i), 2);
+
+    }
+    protected int getBonemealAgeIncrease(World worldIn)
+    {
+        return MathHelper.getInt(worldIn.rand, 2, 5);
+    }
+
+    public int getMaxAge()
+    {
+        return growthStages;
+    }
+
+    protected int getAge(IBlockState state)
+    {
+        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+    }
+    protected PropertyInteger getAgeProperty()
+    {
+        return AGE;
+    }
+
+    public IBlockState withAge(int age)
+    {
+        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
     }
     @Override
     public List<ItemStack> getDrops(IBlockAccess w, BlockPos pos, IBlockState state, int fortune) {

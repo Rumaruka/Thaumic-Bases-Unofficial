@@ -1,15 +1,16 @@
 package com.rumaruka.tb.common.block;
 
 import com.rumaruka.tb.init.TBItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirt;
-import net.minecraft.block.BlockGrass;
+import net.minecraft.block.*;
+import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
@@ -18,11 +19,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BlockTobacco extends BlockTBPlant{
-
+public class BlockTobacco extends BlockBush implements IGrowable {
+    public int growthStages;
+    public int growthDelay;
+    public boolean requiresFarmland;
+    public PropertyInteger AGE;
+    public ItemStack dropItem;
+    public ItemStack dropSeed;
     public BlockTobacco(int stages, int delay,boolean isCrop){
-        super(stages,delay,isCrop);
+        super();
+        growthStages = stages;
+        growthDelay = delay;
+        requiresFarmland = isCrop;
+
         this.setTickRandomly(true);
+        this.setHardness(0.0F);
+        this.setSoundType(SoundType.PLANT);
+        this.disableStats();
 
 }
 
@@ -30,7 +43,22 @@ public class BlockTobacco extends BlockTBPlant{
     {
         return b != null && (b == Blocks.GRASS || b == Blocks.DIRT || b instanceof BlockGrass || b instanceof BlockDirt);
     }
+    @Override
+    protected BlockStateContainer createBlockState() {
+        if(AGE==null){
+            AGE = PropertyInteger.create("age",0,7);
+        }
+        return new BlockStateContainer(this,AGE);
+    }
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(AGE);
+    }
 
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
+    }
     @Override
     public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
         Block b = world.getBlockState(pos.down()).getBlock();
@@ -43,9 +71,9 @@ public class BlockTobacco extends BlockTBPlant{
     }
 
 
-    @Override
+
     public int getGrowthStages() {
-        return 7;
+        return growthStages;
     }
 
     public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
@@ -123,14 +151,52 @@ public class BlockTobacco extends BlockTBPlant{
 
         return f;
     }
+
+    @Override
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+        return true;
+    }
+
+    @Override
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        return true;
+    }
+
     @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        int groM=state.getValue(AGE);
+        int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
+        int j = this.getMaxAge();
 
-        if(groM<getGrowthStages()){
-            worldIn.setBlockState(pos,state.withProperty(AGE,groM+1));
+        if (i > j)
+        {
+            i = j;
         }
 
+        worldIn.setBlockState(pos, this.withAge(i), 2);
+
+    }
+    protected int getBonemealAgeIncrease(World worldIn)
+    {
+        return MathHelper.getInt(worldIn.rand, 2, 5);
+    }
+
+    public int getMaxAge()
+    {
+        return growthStages;
+    }
+
+    protected int getAge(IBlockState state)
+    {
+        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+    }
+    protected PropertyInteger getAgeProperty()
+    {
+        return AGE;
+    }
+
+    public IBlockState withAge(int age)
+    {
+        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
     }
 
     @Override

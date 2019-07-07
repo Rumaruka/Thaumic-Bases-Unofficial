@@ -26,17 +26,44 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BlockSweed extends BlockTBPlant {
+public class BlockSweed extends BlockBush implements IGrowable {
 
-
+    public int growthStages;
+    public int growthDelay;
+    public boolean requiresFarmland;
+    public  PropertyInteger AGE;
+    public ItemStack dropItem;
+    public ItemStack dropSeed;
 
 
     public  BlockSweed(int stages, int delay,boolean isCrop) {
-        super(stages,delay,isCrop);
+        super();
+        growthStages = stages;
+        growthDelay = delay;
+        requiresFarmland = isCrop;
+
         this.setTickRandomly(true);
+        this.setHardness(0.0F);
+        this.setSoundType(SoundType.PLANT);
+        this.disableStats();
 
     }
+    @Override
+    protected BlockStateContainer createBlockState() {
+        if(AGE==null){
+            AGE = PropertyInteger.create("age",0,4);
+        }
+        return new BlockStateContainer(this,AGE);
+    }
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(AGE);
+    }
 
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
+    }
     protected boolean canPlaceBlockOn(Block b)
     {
         return b != null && (b == Blocks.GRASS || b == Blocks.DIRT || b instanceof BlockGrass || b instanceof BlockDirt);
@@ -109,9 +136,19 @@ public class BlockSweed extends BlockTBPlant {
     }
 
 
-    @Override
+
     public int getGrowthStages() {
         return 3;
+    }
+
+    @Override
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+        return false;
+    }
+
+    @Override
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        return false;
     }
 
     @Override

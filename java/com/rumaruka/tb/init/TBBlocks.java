@@ -171,7 +171,7 @@ public class TBBlocks {
         pyrosolid = new BlockPyrosolid().setUnlocalizedName("pyrosolid");
         //Plant
         sweed = new BlockSweed(4,4,false).setUnlocalizedName("sweed");
-        plax = new BlockTBPlant(7, 4, true).setUnlocalizedName("plax");
+        plax = new BlockPlax(7, 4, true).setUnlocalizedName("plax");
         aurelia = new BlockAureliaPlant().setUnlocalizedName("aurelia").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         aureliapetalb = new BlockAureliaLeaf().setUnlocalizedName("aureliapetalb");
         tobacco = new BlockTobacco(7,4,true).setUnlocalizedName("tobacco");

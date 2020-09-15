@@ -3,7 +3,7 @@
   "modid": "thaumicbases",
   "name": "Thaumic Bases",
   "description": "",
-  "version": "${version}",
+  "version": "3.3.500.6r",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",

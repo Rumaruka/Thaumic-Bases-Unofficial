@@ -1,0 +1,19 @@
+
+{
+  "result": {
+    "item": "thaumicbases:crystalblockwater"
+  },
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "thaumicbases:wateringot"
+    }
+  }
+
+}

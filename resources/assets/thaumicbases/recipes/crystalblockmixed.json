@@ -1,0 +1,19 @@
+
+{
+  "result": {
+    "item": "thaumicbases:crystalblockmixed"
+  },
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "thaumicbases:mixedingot"
+    }
+  }
+
+}

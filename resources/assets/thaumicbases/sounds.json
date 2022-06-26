@@ -1,9 +1,0 @@
-{
-
-    "fire_loop": {
-    "category": "master",
-      "subtitle": "fire_loop",
-      "sounds": [ {"name": "thaumicbases:fire_loop"}   ]
-  }
-
-}

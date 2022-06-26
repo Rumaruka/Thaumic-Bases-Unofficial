@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "age=0": { "model": "thaumicbases:plax_stage0" },
+    "age=1": { "model": "thaumicbases:plax_stage1" },
+    "age=2": { "model": "thaumicbases:plax_stage2" },
+    "age=3": { "model": "thaumicbases:plax_stage3" },
+    "age=4": { "model": "thaumicbases:plax_stage4" },
+    "age=5": { "model": "thaumicbases:plax_stage5" },
+    "age=6": { "model": "thaumicbases:plax_stage6" },
+    "age=7": { "model": "thaumicbases:plax_stage7" }
+  }
+}

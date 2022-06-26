@@ -1,8 +1,0 @@
-{
-  "parent": "block/orientable",
-  "textures": {
-    "top": "thaumicbases:blocks/gold_block",
-    "side": "thaumicbases:blocks/gold_block_side",
-    "front": "thaumicbases:blocks/gold_block_side"
-  }
-}

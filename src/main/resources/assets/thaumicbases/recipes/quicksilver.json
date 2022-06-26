@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "thaumcraft:quicksilver",
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "item": "thaumicbases:quicksilverblock"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

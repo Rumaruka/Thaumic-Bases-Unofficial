@@ -1,9 +1,0 @@
-{
-  "variants": {
-    "age=0": { "model": "thaumicbases:glieonia_stage0" },
-    "age=1": { "model": "thaumicbases:glieonia_stage1" },
-    "age=2": { "model": "thaumicbases:glieonia_stage2" },
-    "age=3": { "model": "thaumicbases:glieonia_stage3" }
-
-  }
-}

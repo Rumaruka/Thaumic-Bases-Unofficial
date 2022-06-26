@@ -1,8 +1,0 @@
-{
-  "parent": "block/orientable",
-  "textures": {
-    "top": "thaumicbases:blocks/iron_block",
-    "side": "thaumicbases:blocks/iron_block_side",
-    "front": "thaumicbases:blocks/iron_block_side"
-  }
-}

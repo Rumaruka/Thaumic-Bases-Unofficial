@@ -1,0 +1,32 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "all":"thaumicbases:blocks/netherleaves"
+    },
+    "model":"leaves",
+    "transform":"forge:default-block",
+    "uvlock": true
+  },
+  "variants": {
+    "inventory": [{}],
+    "growth":{
+      "fresh":{
+
+      },
+      "growing":{
+
+      },
+      "ready":{
+        "textures": {
+          "all":"thaumicbases:blocks/netherleaves"
+        }
+      },
+      "matured":{
+        "textures": {
+          "all":"thaumicbases:blocks/netherleaves"
+        }
+      }
+    }
+  }
+}

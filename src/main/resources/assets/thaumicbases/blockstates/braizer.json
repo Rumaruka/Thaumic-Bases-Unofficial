@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory":{"model": "thaumicbases:braizer"},
+    "state=0": { "model": "thaumicbases:braizer" },
+    "state=1": { "model": "thaumicbases:braizer" },
+    "state=2": { "model": "thaumicbases:braizer" }
+
+
+  }
+}

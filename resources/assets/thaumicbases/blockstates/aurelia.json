@@ -1,9 +1,0 @@
-{
-  "variants": {
-    "inventory":{"model": "thaumicbases:aurelia_stage_close"},
-    "state=0": { "model": "thaumicbases:aurelia_stage_close" },
-    "state=1": { "model": "thaumicbases:aurelia_stage_open" }
-
-
-  }
-}

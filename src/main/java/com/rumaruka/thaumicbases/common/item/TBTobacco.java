@@ -2,6 +2,7 @@ package com.rumaruka.thaumicbases.common.item;
 
 import com.rumaruka.thaumicbases.api.ITobacco;
 import com.rumaruka.thaumicbases.init.TBItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -23,8 +24,6 @@ import java.util.Collection;
 import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.*;
 
 public class TBTobacco extends Item implements ITobacco {
-    int oProg = IPlayerKnowledge.EnumKnowledgeType.OBSERVATION.getProgression();
-
 
     public TBTobacco() {
 
@@ -66,30 +65,33 @@ public class TBTobacco extends Item implements ITobacco {
             }
         }
         if (tobbaco.getItem() == TBItems.tobacco_knowledge) {
+
+            int oProg = IPlayerKnowledge.EnumKnowledgeType.OBSERVATION.getProgression();
+            int tProg = IPlayerKnowledge.EnumKnowledgeType.THEORY.getProgression();
+
+
+            //code from thaumadditions:reconstructed
+            ResearchCategory[] rc = ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
+
             if (!smoker.world.isRemote) {
 
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ALCHEMY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("GOLEMANCY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ELDRITCH"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("INFUSION"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ARTIFICE"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ELDRITCH"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 5, IPlayerWarp.EnumWarpType.TEMPORARY);
-                ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, IPlayerWarp.EnumWarpType.NORMAL);
+                //code from thaumadditions:reconstructed
+                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 4, oProg / 3));
+                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), tProg / 8, tProg / 6));
+                ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 5, TEMPORARY);
+                ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
 
             }
 
             for (int i = 0; i < (isSilverwood ? 20 : 10); ++i) {
                 if (isSilverwood) {
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ALCHEMY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("GOLEMANCY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("INFUSION"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ARTIFICE"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, IPlayerWarp.EnumWarpType.TEMPORARY);
-                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, IPlayerWarp.EnumWarpType.NORMAL);
+
+                    //code from thaumadditions:reconstructed
+                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 4, oProg / 3));
+                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), tProg / 8, tProg / 6));
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, TEMPORARY);
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, NORMAL);
                     smoker.addExperience(20);
-                    ResearchCategory[] rc = (ResearchCategory[]) ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
 
                 }
             }
@@ -129,28 +131,30 @@ public class TBTobacco extends Item implements ITobacco {
         }
         if (tobbaco.getItem() == TBItems.tobacco_wispy) {
             EntityWisp wisp = new EntityWisp(smoker.world);
-//            wisp.setPositionAndRotation(smoker.posX, smoker.posY, smoker.posZ, 0, 0);
-            wisp.setPositionAndRotation(smoker.posX, smoker.posY + 1, smoker.posZ, 0, 0); // AeXiaohu modified
-            ArrayList<Aspect> aspects = new ArrayList<Aspect>();
+            wisp.setPositionAndRotation(smoker.posX, smoker.posY + 1.0D, smoker.posZ, 0.0F, 0.0F);
+            ArrayList<Aspect> aspects = new ArrayList<>();
             Collection<Aspect> pa = Aspect.aspects.values();
-            for (Aspect aspect : pa) {
+            for (Aspect aspect : pa)
                 aspects.add(aspect);
-            }
             if (isSilverwood) {
                 EntityWisp wisp1 = new EntityWisp(smoker.world);
-//                wisp.setPositionAndRotation(smoker.posX, smoker.posY, smoker.posZ, 0, 0);
-                wisp1.setPositionAndRotation(smoker.posX, smoker.posY + 1, smoker.posZ, 0, 0); // AeXiaohu modified
+                wisp1.setPositionAndRotation(smoker.posX, smoker.posY + 1.0D, smoker.posZ, 0.0F, 0.0F);
                 if (!smoker.world.isRemote) {
-                    wisp.setType(aspects.get(smoker.world.rand.nextInt(aspects.size())).getTag());
-                    smoker.world.spawnEntity(wisp1);
+                    wisp.setType(((Aspect)aspects.get(smoker.world.rand.nextInt(aspects.size()))).getTag());
+                    smoker.world.spawnEntity((Entity)wisp1);
                     aspects.remove(Aspect.FLUX);
-                }else{
-                    smoker.world.spawnEntity(wisp1); // AeXiaohu modified 修复精灵烟草堆不生成小精灵bug
+                } else {
+                    smoker.world.spawnEntity((Entity)wisp1);
                 }
-            }else{
-                smoker.world.spawnEntity(wisp); // AeXiaohu modified 修复精灵烟草堆不生成小精灵bug
+            } else {
+                smoker.world.spawnEntity((Entity) wisp);
             }
+
+                }
+
+            }
+
+
         }
-    }
-}
+
 

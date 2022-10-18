@@ -1,206 +1,147 @@
-package com.rumaruka.thaumicbases.common.item;
-
-import com.rumaruka.thaumicbases.api.ITobacco;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.*;
-import net.minecraft.util.*;
-import net.minecraft.util.math.Vec2f;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import thaumcraft.api.items.ItemsTC;
-
-import javax.annotation.Nullable;
-
-public class ItemSmokingPipe extends Item {
-    public boolean isSilverwood;
-
-
-    public ItemSmokingPipe(boolean silverwood) {
-
-        super();
-        isSilverwood = silverwood;
-
-        this.setFull3D();
-        this.setMaxStackSize(1);
-
-        this.addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter() {
-            @SideOnly(Side.CLIENT)
-            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
-                if (entityIn == null) {
-                    return 0.0F;
-                } else {
-                    return !(entityIn.getActiveItemStack().getItem() instanceof ItemSmokingPipe) ? 0.0F : (float) (stack.getMaxItemUseDuration() - entityIn.getItemInUseCount()) / 20.0F;
-                }
-            }
-        });
-        this.addPropertyOverride(new ResourceLocation("pulling"), new IItemPropertyGetter() {
-            @SideOnly(Side.CLIENT)
-            public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
-                return entityIn != null && entityIn.isHandActive() && entityIn.getActiveItemStack() == stack ? 1.0F : 0.0F;
-            }
-        });
-    }
-
-
-    public ItemStack findTobacco(EntityPlayer smoker) {
-        if (this.isTobacco(smoker.getHeldItem(EnumHand.OFF_HAND))) {
-            return smoker.getHeldItem(EnumHand.OFF_HAND);
-        } else if (this.isTobacco(smoker.getHeldItem(EnumHand.MAIN_HAND))) {
-            return smoker.getHeldItem(EnumHand.MAIN_HAND);
-        } else {
-            for (int i = 0; i < smoker.inventory.getSizeInventory(); ++i) {
-                ItemStack itemstack = smoker.inventory.getStackInSlot(i);
-
-                if (this.isTobacco(itemstack)) {
-                    return itemstack;
-                }
-            }
-
-            return ItemStack.EMPTY;
-        }
-    }
-
-
-    protected boolean isTobacco(ItemStack stack) {
-        return stack.getItem() instanceof TBTobacco;
-    }
-
-
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-        ItemStack itemstack = playerIn.getHeldItem(handIn);
-
-        boolean flag = !this.findTobacco(playerIn).isEmpty();
-
-        if (!flag) {
-            return flag ? new ActionResult<>(EnumActionResult.PASS, itemstack) : new ActionResult<>(EnumActionResult.FAIL, itemstack);
-        } else {
-            playerIn.setActiveHand(handIn);
-        }
-
-        return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-    }
-
-    /**
-     * AeXiaohu modified
-     * 修复烟斗对准方块才能使用，只需烟斗按住右键持续 20 tick 再松开即可使用
-     */
-    public void onPlayerStoppedUsing(ItemStack itemstack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
-        if(getMaxItemUseDuration(itemstack) - timeLeft < 20) return;
-        if (entityLiving instanceof EntityPlayer) {
-            EntityPlayer playerIn = (EntityPlayer)entityLiving;
-            ItemStack tobacco = findTobacco(playerIn);
-            if (tobacco.isEmpty())
-                return;
-            ITobacco t = (ITobacco) tobacco.getItem();
-            t.performTobaccoEffect(playerIn, tobacco, isSilverwood);
-            for (int i = 0; i < playerIn.inventory.getSizeInventory(); ++i) {
-                ItemStack stk = playerIn.inventory.getStackInSlot(i);
-                if (stk != ItemStack.EMPTY && !new ItemStack(stk.getItem()).equals(ItemStack.EMPTY) && stk.getItem() instanceof ITobacco) {
-                    getMaxItemUseDuration(stk);
-                    playerIn.inventory.decrStackSize(i, 1);
-                    break;
-                }
-            }
-            Vec3d look = Vec3d.fromPitchYawVector(new Vec2f(playerIn.rotationPitch, playerIn.rotationYaw));
-            for (int i = 0; i < 100; ++i) {
-                double x = playerIn.posX + look.x / 5;
-                double y = playerIn.posY + playerIn.getEyeHeight() + look.y / 5;
-                double z = playerIn.posZ + look.z / 5;
-                playerIn.world.spawnParticle(isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10, look.y / 10, look.z / 10);
-            }
-        }
-    } // End of modification
-
-    /**
-     * AeXiaohu modified
-     * 烟斗按住右键完成使用即可生效
-     */
-    public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
-        if (entityLiving instanceof EntityPlayer) {
-            EntityPlayer playerIn = (EntityPlayer)entityLiving;
-            ItemStack tobacco = findTobacco(playerIn);
-            if (tobacco.isEmpty())
-                return stack;
-            ITobacco t = (ITobacco) tobacco.getItem();
-            t.performTobaccoEffect(playerIn, tobacco, isSilverwood);
-            for (int i = 0; i < playerIn.inventory.getSizeInventory(); ++i) {
-                ItemStack stk = playerIn.inventory.getStackInSlot(i);
-                if (stk != ItemStack.EMPTY && !new ItemStack(stk.getItem()).equals(ItemStack.EMPTY) && stk.getItem() instanceof ITobacco) {
-                    getMaxItemUseDuration(stk);
-                    playerIn.inventory.decrStackSize(i, 1);
-                    break;
-                }
-            }
-            Vec3d look = Vec3d.fromPitchYawVector(new Vec2f(playerIn.rotationPitch, playerIn.rotationYaw));
-            for (int i = 0; i < 100; ++i) {
-                double x = playerIn.posX + look.x / 5;
-                double y = playerIn.posY + playerIn.getEyeHeight() + look.y / 5;
-                double z = playerIn.posZ + look.z / 5;
-                playerIn.world.spawnParticle(isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10, look.y / 10, look.z / 10);
-            }
-        }
-        return stack;
-    } // End of modification
-
-    public EnumAction getItemUseAction(ItemStack stack) {
-        return EnumAction.BOW;
-    }
-
-    public int getMaxItemUseDuration(ItemStack stack) {
-        return 64;
-    }
+/*     */ package com.rumaruka.thaumicbases.common.item;
+/*     */
+/*     */ import com.rumaruka.thaumicbases.api.ITobacco;
+/*     */ import javax.annotation.Nullable;
+/*     */ import net.minecraft.entity.EntityLivingBase;
+/*     */ import net.minecraft.entity.player.EntityPlayer;
+/*     */ import net.minecraft.item.EnumAction;
+/*     */ import net.minecraft.item.IItemPropertyGetter;
+/*     */ import net.minecraft.item.Item;
+/*     */ import net.minecraft.item.ItemStack;
+/*     */ import net.minecraft.util.ActionResult;
+/*     */ import net.minecraft.util.EnumActionResult;
+/*     */ import net.minecraft.util.EnumHand;
+/*     */ import net.minecraft.util.EnumParticleTypes;
+/*     */ import net.minecraft.util.ResourceLocation;
+/*     */ import net.minecraft.util.math.Vec3d;
+/*     */ import net.minecraft.world.World;
+/*     */ import net.minecraftforge.fml.relauncher.Side;
+/*     */ import net.minecraftforge.fml.relauncher.SideOnly;
+/*     */
+/*     */ public class ItemSmokingPipe extends Item {
+    /*     */   public boolean isSilverwood;
+    /*     */
+    /*     */   public ItemSmokingPipe(boolean silverwood) {
+        /*  24 */     this.isSilverwood = silverwood;
+        /*  26 */     setFull3D();
+        /*  27 */     setMaxStackSize(1);
+        /*  29 */     addPropertyOverride(new ResourceLocation("pull"), new IItemPropertyGetter() {
+            /*     */           @SideOnly(Side.CLIENT)
+            /*     */           public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
+                /*  32 */             if (entityIn == null)
+                    /*  33 */               return 0.0F;
+                /*  35 */             return !(entityIn.getActiveItemStack().getItem() instanceof ItemSmokingPipe) ? 0.0F : ((stack.getMaxItemUseDuration() - entityIn.getItemInUseCount()) / 20.0F);
+                /*     */           }
+            /*     */         });
+        /*  39 */     addPropertyOverride(new ResourceLocation("pulling"), new IItemPropertyGetter() {
+            /*     */           @SideOnly(Side.CLIENT)
+            /*     */           public float apply(ItemStack stack, @Nullable World worldIn, @Nullable EntityLivingBase entityIn) {
+                /*  42 */             return (entityIn != null && entityIn.isHandActive() && entityIn.getActiveItemStack() == stack) ? 1.0F : 0.0F;
+                /*     */           }
+            /*     */         });
+        /*     */   }
+    /*     */
+    /*     */   public ItemStack findTobacco(EntityPlayer smoker) {
+        /*  49 */     if (isTobacco(smoker.getHeldItem(EnumHand.OFF_HAND)))
+            /*  50 */       return smoker.getHeldItem(EnumHand.OFF_HAND);
+        /*  51 */     if (isTobacco(smoker.getHeldItem(EnumHand.MAIN_HAND)))
+            /*  52 */       return smoker.getHeldItem(EnumHand.MAIN_HAND);
+        /*  54 */     for (int i = 0; i < smoker.inventory.getSizeInventory(); i++) {
+            /*  55 */       ItemStack itemstack = smoker.inventory.getStackInSlot(i);
+            /*  57 */       if (isTobacco(itemstack))
+                /*  58 */         return itemstack;
+            /*     */     }
+        /*  62 */     return ItemStack.EMPTY;
+        /*     */   }
+    /*     */
+    /*     */   protected boolean isTobacco(ItemStack stack) {
+        /*  68 */     return stack.getItem() instanceof TBTobacco;
+        /*     */   }
+    /*     */
+    /*     */   public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer player, EnumHand handIn) {
+        /*  74 */     ItemStack itemstack = player.getHeldItem(handIn);
+        /*  76 */     boolean flag = !findTobacco(player).isEmpty();
+        /*  78 */     if (!flag)
+            /*  79 */       return flag ? new ActionResult(EnumActionResult.PASS, itemstack) : new ActionResult(EnumActionResult.FAIL, itemstack);
+        /*  81 */     player.setActiveHand(handIn);
+        /*  84 */     return new ActionResult(EnumActionResult.SUCCESS, itemstack);
+        /*     */   }
+    /*     */
+    /*     */   public void onPlayerStoppedUsing(ItemStack itemstack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
+        /*  92 */     if (getMaxItemUseDuration(itemstack) - timeLeft < 20)
+            /*     */       return;
+        /*  93 */     if (entityLiving instanceof EntityPlayer) {
+            /*  94 */       EntityPlayer player = (EntityPlayer)entityLiving;
+            /*  95 */       ItemStack tobacco = findTobacco(player);
+            /*  96 */       if (tobacco.isEmpty())
+                /*     */         return;
+            /*  98 */       ITobacco t = (ITobacco)tobacco.getItem();
+            /*  99 */       t.performTobaccoEffect(player, tobacco, this.isSilverwood);
+            /* 100 */       for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+                /* 101 */         ItemStack stk = player.inventory.getStackInSlot(i);
+                /* 102 */         if (stk != ItemStack.EMPTY && !(new ItemStack(stk.getItem())).equals(ItemStack.EMPTY) && stk.getItem() instanceof ITobacco) {
+                    /* 103 */           getMaxItemUseDuration(stk);
+                    /* 104 */           player.inventory.decrStackSize(i, 1);
+                    /*     */           break;
+                    /*     */         }
+                /*     */       }
+            /* 108 */       Vec3d look = entityLiving.getLookVec();
+            /* 109 */       for (int j = 0; j < 100; j++) {
+                /* 110 */         double x = player.posX + look.x / 5.0D;
+                /* 111 */         double y = player.posY + player.getEyeHeight() + look.y / 5.0D;
+                /* 112 */         double z = player.posZ + look.z / 5.0D;
+                /* 113 */         player.world.spawnParticle(this.isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10.0D, look.y / 10.0D, look.z / 10.0D, new int[0]);
+                /*     */       }
+            /*     */     }
+        /*     */   }
+    /*     */
+    /*     */   public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
+        /* 123 */     if (entityLiving instanceof EntityPlayer) {
+            /* 124 */       EntityPlayer player = (EntityPlayer)entityLiving;
+            /* 125 */       ItemStack tobacco = findTobacco(player);
+            /* 126 */       if (tobacco.isEmpty())
+                /* 127 */         return stack;
+            /* 128 */       ITobacco t = (ITobacco)tobacco.getItem();
+            /* 129 */       t.performTobaccoEffect(player, tobacco, this.isSilverwood);
+            /* 130 */       for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+                /* 131 */         ItemStack stk = player.inventory.getStackInSlot(i);
+                /* 132 */         if (stk != ItemStack.EMPTY && !(new ItemStack(stk.getItem())).equals(ItemStack.EMPTY) && stk.getItem() instanceof ITobacco) {
+                    /* 133 */           getMaxItemUseDuration(stk);
+                    /* 134 */           player.inventory.decrStackSize(i, 1);
+                    /*     */           break;
+                    /*     */         }
+                /*     */       }
+            /* 138 */       Vec3d look = entityLiving.getLookVec();
+            /* 139 */       for (int j = 0; j < 100; j++) {
+                /* 140 */         double x = player.posX + look.x / 5.0D;
+                /* 141 */         double y = player.posY + player.getEyeHeight() + look.y / 5.0D;
+                /* 142 */         double z = player.posZ + look.z / 5.0D;
+                /* 143 */         player.world.spawnParticle(this.isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10.0D, look.y / 10.0D, look.z / 10.0D, new int[0]);
+                /*     */       }
+            /*     */     }
+        /* 146 */     return stack;
+        /*     */   }
+    /*     */
+    /*     */   public EnumAction getItemUseAction(ItemStack stack) {
+        /* 150 */     return EnumAction.BOW;
+        /*     */   }
+    /*     */
+    /*     */   public int getMaxItemUseDuration(ItemStack stack) {
+        /* 154 */     return 64;
+        /*     */   }
+    /*     */
+    /*     */   public void onUsingTick(ItemStack stack, EntityLivingBase entityLiving, int count) {
+        /* 161 */     Vec3d look = entityLiving.getLookVec();
+        /* 163 */     double x = entityLiving.posX + look.x / 5.0D;
+        /* 164 */     double y = entityLiving.posY + entityLiving.getEyeHeight() + look.y / 5.0D;
+        /* 165 */     double z = entityLiving.posZ + look.z / 5.0D;
+        /* 166 */     if (count < 32)
+            /* 167 */       entityLiving.world.spawnParticle(this.isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10.0D, look.y / 10.0D, look.z / 10.0D, new int[0]);
+        /*     */   }
+    /*     */ }
 
 
-    @Override
-    public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
-
-        Vec3d look = Vec3d.fromPitchYawVector(new Vec2f(player.rotationPitch, player.rotationYaw));
-
-        double x = player.posX + look.x / 5;
-        double y = player.posY + player.getEyeHeight() + look.y / 5;
-        double z = player.posZ + look.z / 5;
-        if (count < 32)
-            player.world.spawnParticle(isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10, look.y / 10, look.z / 10);
-    }
-
-
-    /**
-     * AeXiaohu modified
-     * 修复烟斗对准方块才能使用-移除对准方块的方法
-     */
-//    @Override
-//    public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
-//        ItemStack tobacco = findTobacco(player);
-//        if (tobacco.isEmpty())
-//            return EnumActionResult.FAIL;
-//        ITobacco t = (ITobacco) tobacco.getItem();
-//        t.performTobaccoEffect(player, tobacco, isSilverwood);
-//        for (int i = 0; i < player.inventory.getSizeInventory(); ++i) {
-//            ItemStack stk = player.inventory.getStackInSlot(i);
-//            if (stk != ItemStack.EMPTY && !new ItemStack(stk.getItem()).equals(ItemStack.EMPTY) && stk.getItem() instanceof ITobacco) {
-//                getMaxItemUseDuration(stk);
-//                player.inventory.decrStackSize(i, 1);
-//                break;
-//            }
-//        }
-
-//        Vec3d look = Vec3d.fromPitchYawVector(new Vec2f(player.rotationPitch, player.rotationYaw));
-//        for (int i = 0; i < 100; ++i) {
-//            double x = player.posX + look.x / 5;
-//            double y = player.posY + player.getEyeHeight() + look.y / 5;
-//            double z = player.posZ + look.z / 5;
-//            player.world.spawnParticle(isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10, look.y / 10, look.z / 10);
-//        }
-
-//        return super.onItemUseFirst(player, world, pos, side, hitX, hitY, hitZ, hand);
-//    }
-
-
-}
-
-
-
+/* Location:              E:\thaumicbases-3.3.500.6r-feature-1.3 - 副本\!\com\rumaruka\thaumicbases\common\item\ItemSmokingPipe.class
+ * Java compiler version: 8 (52.0)
+ * JD-Core Version:       1.1.3
+ */

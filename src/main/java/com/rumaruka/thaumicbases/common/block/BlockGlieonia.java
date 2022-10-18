@@ -1,25 +1,26 @@
 package com.rumaruka.thaumicbases.common.block;
 
+import com.rumaruka.thaumicbases.init.TBItems;
 import com.rumaruka.thaumicbases.utils.TBConfig;
 import net.minecraft.block.*;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IPlantable;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class BlockGlieonia extends BlockBush implements IGrowable {
+
+
 
     public int growthStages;
     public int growthDelay;
@@ -50,18 +51,6 @@ public class BlockGlieonia extends BlockBush implements IGrowable {
             AGE = PropertyInteger.create("age",0,3);
         }
         return new BlockStateContainer(this,AGE);
-    }
-
-    // AeXiaohu modified 修复荧粉花只能种在耕地上，现在只能种在草地上
-    protected boolean canPlaceBlockOn(Block b) {
-        return b != null && (b == Blocks.GRASS || b == Blocks.DIRT || b instanceof BlockGrass || b instanceof BlockDirt);
-    }
-
-    // AeXiaohu modified 修复荧粉花只能种在耕地上，现在只能种在草地上
-    @Override
-    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-        Block b = world.getBlockState(pos.down()).getBlock();
-        return canPlaceBlockOn(b);
     }
 
     @Override
@@ -201,7 +190,9 @@ public class BlockGlieonia extends BlockBush implements IGrowable {
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
         if (w instanceof World) {
             World world = World.class.cast(w);
-            int metadata = state.getValue(AGE);
+            int metadata = ((Integer)state.getValue((IProperty)this.AGE)).intValue();
+            if (metadata < this.growthStages)
+                ret.add(new ItemStack(TBItems.glieoniaseed, 1));
             if (metadata >= growthStages - 1) {
                 for (int i = 0; i < 1; ++i)
                     if (world.rand.nextInt(growthStages) <= metadata)
@@ -209,6 +200,7 @@ public class BlockGlieonia extends BlockBush implements IGrowable {
                             for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j) {
                                 if (world.rand.nextBoolean()) {
                                     ret.add(new ItemStack(Items.GLOWSTONE_DUST,3));
+                                    ret.add(new ItemStack(TBItems.glieoniaseed,1));
                                 }
                             }
 

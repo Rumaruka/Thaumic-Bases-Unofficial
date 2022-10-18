@@ -33,6 +33,8 @@ public class BlockVoidSpike extends Block {
     public static PropertyInteger BLOODY = PropertyInteger.create("bloody",0,1);
     public BlockVoidSpike( ) {
         super(Material.IRON);
+        setHardness(2.0f);
+        setHarvestLevel("pickaxe",2);
     }
 
     @Override
@@ -96,7 +98,7 @@ public class BlockVoidSpike extends Block {
             if(!(collider instanceof EntityItem)&&!(collider instanceof EntityXPOrb))
                 if(!w.isRemote){
                     FakePlayer fake = FakePlayerFactory.get((WorldServer) w,fakeSpikeProfile);
-                    collider.attackEntityFrom(DamageSource.CACTUS,20);
+                    collider.attackEntityFrom(DamageSource.causePlayerDamage(fake),20);
                     fake.setDead();
                     fake=null;
                 }

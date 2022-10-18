@@ -25,7 +25,7 @@ public class TileBraizer extends TileEntity implements ITickable {
 
     @Override
     public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
-        return  oldState.getBlock()==newSate.getBlock() ? false: super.shouldRefresh(world, pos, oldState, newSate);
+        return oldState.getBlock() != newSate.getBlock() && super.shouldRefresh(world, pos, oldState, newSate);
     }
 
     @Override
@@ -65,21 +65,22 @@ public class TileBraizer extends TileEntity implements ITickable {
         }
         if(!this.world.isRemote)
         {
-            List<EntityLivingBase> creatures = this.world.getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX()+1, pos.getY()+1, pos.getZ()+1).expand(12, 6, 12));
-
-            for(EntityLivingBase elb : creatures)
-            {
-
-
-                if(elb instanceof EntityPlayer) {
-                    elb.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 2_500, 0, true, false));
-                    elb.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 2_500, 0, true, false));
+            List<EntityLivingBase> creatures = this.world.getEntitiesWithinAABB(EntityLivingBase.class, (new AxisAlignedBB(this.field_174879_c.func_177958_n(), this.field_174879_c.func_177956_o(), this.field_174879_c.func_177952_p(), (this.field_174879_c.func_177958_n() + 1), (this.field_174879_c.func_177956_o() + 1), (this.field_174879_c.func_177952_p() + 1))).func_72321_a(12.0D, 6.0D, 12.0D));
+            for (EntityLivingBase elb : creatures) {
+                if (elb instanceof net.minecraft.entity.player.EntityPlayer) {
+                    elb.addPotionEffect(new PotionEffect(MobEffects.field_76429_m, 2500, 0, true, false));
+                    elb.addPotionEffect(new PotionEffect(MobEffects.field_76428_l, 2500, 0, true, false));
                 }
-                if(elb instanceof EntityCreature && !(elb instanceof EntityPlayer)){
-                    elb.addPotionEffect(new PotionEffect(MobEffects.INSTANT_DAMAGE,200,2,true,false));
+                if (elb instanceof net.minecraft.entity.monster.EntityMob) {
+                    if (elb.isEntityUndead()) {
+                        elb.addPotionEffect(new PotionEffect(MobEffects.field_76432_h, 200, 2, true, false));
+                        continue;
+                    }
+                    elb.addPotionEffect(new PotionEffect(MobEffects.field_76433_i, 200, 2, true, false));
                 }
-
             }
+
+        }
         }
 
     }

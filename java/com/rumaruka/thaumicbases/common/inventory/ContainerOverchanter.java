@@ -1,6 +1,7 @@
 package com.rumaruka.thaumicbases.common.inventory;
 
-import DummyCore.Utils.ContainerInventory;
+
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.ContainerInventory;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;

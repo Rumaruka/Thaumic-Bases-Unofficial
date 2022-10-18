@@ -1,18 +1,19 @@
 package com.rumaruka.thaumicbases.utils;
 
-import DummyCore.Utils.IDummyConfig;
-import DummyCore.Utils.MiscUtils;
+
+
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.AllUtils;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraftforge.common.config.Configuration;
 
-public class TBConfig implements IDummyConfig {
+public class TBConfig   {
 
 
 
-    @Override
+
     public void load(Configuration config) {
         cfg = config;
-        Enchantment[] eArray = MiscUtils.enchantmentList();
+        Enchantment[] eArray = AllUtils.enchantmentList();
         elderKnowledgeID = cfg.getInt("elderKnowledgeEnchantmentID", "Enchantments", 98, 0, eArray.length, "");
         taintedID = cfg.getInt("taintedEnchantmentID", "Enchantments", 101, 0, eArray.length, "");
 

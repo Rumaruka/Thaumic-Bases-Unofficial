@@ -1,7 +1,7 @@
 package com.rumaruka.thaumicbases.common.block;
 
-import DummyCore.Client.IModelRegisterer;
-import DummyCore.Utils.MathUtils;
+
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.MathUtils;
 import com.rumaruka.thaumicbases.common.libs.TBSounds;
 import com.rumaruka.thaumicbases.common.tiles.TileCampfire;
 import net.minecraft.block.BlockContainer;
@@ -27,7 +27,7 @@ import java.util.Random;
 
 
 
-public class BlockCampfire extends BlockContainer implements IModelRegisterer,ITileEntityProvider {
+public class BlockCampfire extends BlockContainer implements ITileEntityProvider {
 
     public static PropertyInteger STATE = PropertyInteger.create("state", 0, 2);
 
@@ -63,7 +63,7 @@ public class BlockCampfire extends BlockContainer implements IModelRegisterer,IT
             TileCampfire tc = (TileCampfire) worldIn.getTileEntity(pos);
             if(tc.tainted)
                 FXDispatcher.INSTANCE.drawPollutionParticles(pos);
-                worldIn.spawnParticle(EnumParticleTypes.FLAME,x+0.5D+MathUtils.randomDouble(rand)/4,y,z+0.5D+MathUtils.randomDouble(rand)/4,0,0.4d,0);
+                worldIn.spawnParticle(EnumParticleTypes.FLAME,x+0.5D+ MathUtils.randomDouble(rand)/4,y,z+0.5D+MathUtils.randomDouble(rand)/4,0,0.4d,0);
             for(int i = 0 ; i<10;i++)
                 worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL,x+0.5D+MathUtils.randomDouble(rand)/4, y+0.1D, z+0.5D+MathUtils.randomDouble(rand)/4, 0, rand.nextDouble()/20, 0);
                 worldIn.playSound(x + 0.5D, y + 0.5D, z + 0.5D, TBSounds.fire_loop, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
@@ -114,9 +114,5 @@ public class BlockCampfire extends BlockContainer implements IModelRegisterer,IT
         return state.getValue(STATE);
     }
 
-    @Override
-    public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this),0,new ModelResourceLocation("thaumicbases:campfire","inventory"));
 
-    }
 }

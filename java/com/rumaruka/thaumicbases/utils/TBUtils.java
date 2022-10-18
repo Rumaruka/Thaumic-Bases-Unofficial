@@ -1,6 +1,7 @@
 package com.rumaruka.thaumicbases.utils;
 
-import DummyCore.Utils.Coord3D;
+
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.Coord3D;
 import javafx.util.Pair;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +13,7 @@ import java.util.List;
 public class TBUtils {
 
 
-    public static ArrayList<Pair<Integer,Coord3D>> loadedClientSpawners = new ArrayList<Pair<Integer,Coord3D>>();
+    public static ArrayList<Pair<Integer, Coord3D>> loadedClientSpawners = new ArrayList<Pair<Integer,Coord3D>>();
 
     public static Coord3D getClosestLoadedClientSpawner(EntityPlayer player)
     {

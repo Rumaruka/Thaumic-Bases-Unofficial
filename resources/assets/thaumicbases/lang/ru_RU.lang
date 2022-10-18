@@ -13,12 +13,7 @@ enchantment.vaporising=Vaporising
 #Containers
 tb.overchanter=Сверхзачарователь
 
-#Aspects
-tc.aspect.pannus=Кожа, Материалы
-tc.aspect.iter=Путешествие
-tc.aspect.sano=Здоровье
-tc.aspect.messis=Растение
-tc.aspect.fames=Голод
+
 #blocks
 tile.quicksilverBlock.name=Ртутный блок
 tile.quicksilverBrick.name=Ртутный кирпич

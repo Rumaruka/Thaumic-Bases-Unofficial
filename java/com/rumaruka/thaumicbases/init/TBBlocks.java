@@ -30,8 +30,6 @@ import java.lang.reflect.Constructor;
 public class TBBlocks {
 
 
-
-
     //Fluid
     public static Block pyrofluid;
     public static Block pyrosolid;
@@ -44,9 +42,6 @@ public class TBBlocks {
     public static Block crystalblockentropy;
     public static Block crystalblockmixed;
     public static Block crystalblocktainted;
-
-
-
 
 
     //ThaumcraftBlocks
@@ -104,15 +99,10 @@ public class TBBlocks {
     public static Block enderplanks;
 
 
-
-
     //Main Mechanism TB
     public static Block overchanter;
     public static Block campfire;
     public static Block braizer;
-
-
-
 
 
     public static void init() {
@@ -167,19 +157,19 @@ public class TBBlocks {
         pyrofluid = new BlockPyrofluid();
         pyrosolid = new BlockPyrosolid().setUnlocalizedName("pyrosolid");
         //Plant
-        sweed = new BlockSweed(4,4,false).setUnlocalizedName("sweed");
+        sweed = new BlockSweed(4, 4, false).setUnlocalizedName("sweed");
         plax = new BlockPlax(7, 4, true).setUnlocalizedName("plax");
         aurelia = new BlockAureliaPlant().setUnlocalizedName("aurelia").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         aureliapetalb = new BlockAureliaLeaf().setUnlocalizedName("aureliapetalb");
-        tobacco = new BlockTobacco(7,4,true).setUnlocalizedName("tobacco");
-        metalleat = new BlockMetalleat(7,8,true).setUnlocalizedName("metalleat");
-        lazullia = new BlockLazullia(7,16,true).setUnlocalizedName("lazullia");
+        tobacco = new BlockTobacco(7, 4, true).setUnlocalizedName("tobacco");
+        metalleat = new BlockMetalleat(7, 8, true).setUnlocalizedName("metalleat");
+        lazullia = new BlockLazullia(7, 16, true).setUnlocalizedName("lazullia");
         redlonstem = new BlockRedlonStem(Blocks.REDSTONE_BLOCK).setUnlocalizedName("redlonstem");
-        lucrite = new BlockLucritePlant(7,16,true).setUnlocalizedName("lucrite");
+        lucrite = new BlockLucritePlant(7, 16, true).setUnlocalizedName("lucrite");
         flaxium = new BlockFlaxium().setUnlocalizedName("flaxium");
         briar = new BlockTBBush().setUnlocalizedName("briar");
-        glieonia = new BlockGlieonia(3,12,false).setUnlocalizedName("glieonia");
-        voidplant = new BlockVoidPlant(3,32,true).setUnlocalizedName("voidplant");
+        glieonia = new BlockGlieonia(3, 12, false).setUnlocalizedName("glieonia");
+        voidplant = new BlockVoidPlant(3, 32, true).setUnlocalizedName("voidplant");
         //Tree
         goldenlogs = new BlockTBLog().setUnlocalizedName("goldenlogs").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         goldenleaves = new BlockTBLeaves(0).setUnlocalizedName("goldenleaves").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -238,63 +228,61 @@ public class TBBlocks {
         TBBlocks.registerBlock(crystalblocktainted, ItemBlockCrystal.class, crystalblocktainted.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(pyrofluid,pyrofluid.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(pyrosolid,pyrosolid.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(pyrofluid, pyrofluid.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(pyrosolid, pyrosolid.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(rainbowcactus,rainbowcactus.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(plax,plax.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(sweed,sweed.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(aurelia,aurelia.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(aureliapetalb,aureliapetalb.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(tobacco,tobacco.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(metalleat,metalleat.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(lazullia,lazullia.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(redlonstem,redlonstem.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(lucrite,lucrite.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(flaxium,flaxium.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(briar,briar.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(glieonia,glieonia.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(voidplant,voidplant.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(rainbowcactus, rainbowcactus.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(plax, plax.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(sweed, sweed.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(aurelia, aurelia.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(aureliapetalb, aureliapetalb.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(tobacco, tobacco.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(metalleat, metalleat.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(lazullia, lazullia.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(redlonstem, redlonstem.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(lucrite, lucrite.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(flaxium, flaxium.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(briar, briar.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(glieonia, glieonia.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(voidplant, voidplant.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(ironspike,ironspike.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(thaumspike,thaumspike.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(voidspike,voidspike.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(ironspike, ironspike.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(thaumspike, thaumspike.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(voidspike, voidspike.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(goldenlogs,goldenlogs.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(goldenleaves,goldenleaves.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(goldensapling,goldensapling.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(goldenplanks,goldenplanks.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(goldenlogs, goldenlogs.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(goldenleaves, goldenleaves.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(goldensapling, goldensapling.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(goldenplanks, goldenplanks.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(endersapling,endersapling.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(enderlogs,enderlogs.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(enderleaves,enderleaves.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(enderplanks,enderplanks.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(endersapling, endersapling.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(enderlogs, enderlogs.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(enderleaves, enderleaves.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(enderplanks, enderplanks.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(nethersapling,nethersapling.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(netherlogs,netherlogs.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(netherleaves,netherleaves.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(netherplanks,netherplanks.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(nethersapling, nethersapling.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(netherlogs, netherlogs.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(netherleaves, netherleaves.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(netherplanks, netherplanks.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(overchanter,overchanter.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(campfire,campfire.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(braizer,braizer.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(overchanter, overchanter.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(campfire, campfire.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(braizer, braizer.getUnlocalizedName().substring(5));
 
     }
 
-    @Deprecated
     public static Block registerBlock(Block block) {
         ForgeRegistries.BLOCKS.register(block);
         ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
         return block;
     }
 
-    @Deprecated
     public static Block registerBlock(Block block, String name) {
         if (block.getRegistryName() == null && Strings.isNullOrEmpty(name))
             throw new IllegalArgumentException("Attempted to register a Block with no name: " + block);
@@ -302,7 +290,6 @@ public class TBBlocks {
         return registerBlock(block.getRegistryName() != null ? block : block.setRegistryName(name));
     }
 
-    @Deprecated
     public static Block registerBlock(Block block, Class<? extends ItemBlock> itemclass, String name, Object... itemCtorArgs) {
         if (Strings.isNullOrEmpty(name)) {
             throw new IllegalArgumentException("Attempted to register a block with no name: " + block);
@@ -346,7 +333,6 @@ public class TBBlocks {
         registerRender(oldiron);
         registerRender(oldgold);
         registerRender(olddiamond);
-
 
 
         registerRender(quicksilverblock);
@@ -422,7 +408,8 @@ public class TBBlocks {
         Item item = Item.getItemFromBlock(block);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(TBCore.modid + ":" + item.getUnlocalizedName().substring(5), "inventory"));
     }
-    public static void renderBlockItems(Item i){
+
+    public static void renderBlockItems(Item i) {
 
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(i, 0, new ModelResourceLocation(
                 TBCore.modid + ":" + i.getUnlocalizedName().substring(5), "inventory"));

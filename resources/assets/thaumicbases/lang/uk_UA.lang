@@ -13,12 +13,7 @@ enchantment.vaporising=Vaporising
 #Containers
 tb.overchanter=Сверхчарівний стіл
 
-#Aspects
-tc.aspect.pannus=Шкіра, Матеріали
-tc.aspect.iter=Подорож
-tc.aspect.sano=Здоров'я
-tc.aspect.messis=Рослина
-tc.aspect.fames=Голод
+
 #blocks
 tile.quicksilverBlock.name=Ртутний блок
 tile.quicksilverBrick.name=Ртутна цегла

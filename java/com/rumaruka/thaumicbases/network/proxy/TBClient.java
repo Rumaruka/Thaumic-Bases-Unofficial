@@ -1,6 +1,5 @@
 package com.rumaruka.thaumicbases.network.proxy;
 
-import DummyCore.Utils.ASMManager;
 
 
 
@@ -62,11 +61,10 @@ public class TBClient extends TBServer {
 
     @SuppressWarnings({ "unchecked", "deprecation" })
     @Override
-    public void registerRenderInformation()
-    {
-       ClientRegistry.bindTileEntitySpecialRenderer(TileOverchanter.class, new RenderOverchanter());
-       ClientRegistry.bindTileEntitySpecialRenderer(TileCampfire.class, new RenderCampfire());
-       MinecraftForge.EVENT_BUS.register(new HerobrinesScytheMH());
+    public void registerRenderInformation() {
+        ClientRegistry.bindTileEntitySpecialRenderer(TileOverchanter.class, new RenderOverchanter());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileCampfire.class, new RenderCampfire());
+        MinecraftForge.EVENT_BUS.register(new HerobrinesScytheMH());
 
 
 
@@ -79,23 +77,8 @@ public class TBClient extends TBServer {
 
 
        */
+    }
 
-    }
-    @Override
-    public void lightning(World world, double sx, double sy, double sz, double ex, double ey, double ez, int dur, float curve, int speed, int type)
-    {
-        FXArc efa = new FXArc(world, sx, sy, sz, ex, ey, ez, 0.1F, 0.0F, 0.1F, 0.1F);
-        try
-        {
-            Field f = FXDispatcher.class.getDeclaredField(ASMManager.chooseByEnvironment("particleMaxAge", "field_70547_e"));
-            f.setAccessible(true);
-            f.setInt(efa, dur);
-        }catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-        FMLClientHandler.instance().getClient().effectRenderer.addEffect(efa);
-    }
 
 
     @Override

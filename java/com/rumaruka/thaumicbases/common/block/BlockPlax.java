@@ -163,7 +163,7 @@ public class BlockPlax extends BlockBush implements IGrowable {
         return ret;
 }
 
-    protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
+    private static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
     {
         float f = 1.0F;
         BlockPos blockpos = pos.down();

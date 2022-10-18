@@ -43,7 +43,6 @@ public class BlockAureliaPlant extends BlockBush {
 
        boolean underSky = w.canBlockSeeSky(pos.up());
         boolean night = !w.isDaytime();
-       // boolean isFullMoon = w.provider.getMoonPhase(w.getWorldTime())==0;
         boolean isOpen =state.getValue(STATE)==1;
 
         if(night&&underSky){
@@ -73,7 +72,10 @@ public class BlockAureliaPlant extends BlockBush {
                 EnumFacing dir = EnumFacing.fromAngle(2+w.rand.nextInt(4));
 
                 BlockPos posN = pos.offset(dir);
-                w.setBlockState(posN, TBBlocks.aureliapetalb.getDefaultState());
+                if(w.isAirBlock(posN)){
+                    w.setBlockState(posN, TBBlocks.aureliapetalb.getDefaultState());
+
+                }
 
         }
     }

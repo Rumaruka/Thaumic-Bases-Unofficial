@@ -1,7 +1,7 @@
 package com.rumaruka.thaumicbases.common.block;
 
-import DummyCore.Client.IModelRegisterer;
-import DummyCore.Utils.MathUtils;
+
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.MathUtils;
 import com.rumaruka.thaumicbases.common.libs.TBSounds;
 import com.rumaruka.thaumicbases.common.tiles.TileBraizer;
 import net.minecraft.block.BlockContainer;
@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 
-public class BlockBraizer extends BlockContainer implements ITileEntityProvider,IModelRegisterer {
+public class BlockBraizer extends BlockContainer implements ITileEntityProvider {
     public static PropertyInteger STATE = PropertyInteger.create("state", 0, 1);
 
     public BlockBraizer() {
@@ -47,7 +47,7 @@ public class BlockBraizer extends BlockContainer implements ITileEntityProvider,
             int y = pos.getY();
             int z = pos.getZ();
 
-            w.spawnParticle(EnumParticleTypes.FLAME, x+0.5D+MathUtils.randomDouble(r)/4, y+0.6D, z+0.5D+MathUtils.randomDouble(r)/4, 0, 0.04D, 0);
+            w.spawnParticle(EnumParticleTypes.FLAME, x+0.5D+ MathUtils.randomDouble(r)/4, y+0.6D, z+0.5D+MathUtils.randomDouble(r)/4, 0, 0.04D, 0);
             for(int i = 0; i < 2; ++i)
                 w.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x+0.5D+MathUtils.randomDouble(r)/4, y+0.7D, z+0.5D+MathUtils.randomDouble(r)/4, 0, r.nextDouble()/20, 0);
             w.playSound(x + 0.5D, y + 0.5D, z + 0.5D, TBSounds.fire_loop, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
@@ -92,10 +92,6 @@ public class BlockBraizer extends BlockContainer implements ITileEntityProvider,
         return state.getValue(STATE);
     }
 
-    @Override
-    public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this),0,new ModelResourceLocation("thaumicbases:campfire","inventory"));
 
-    }
 
 }

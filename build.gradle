@@ -8,8 +8,6 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'idea'
-//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
 
 version = "3.3.500.6r"
@@ -24,7 +22,7 @@ compileJava {
 minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
-    
+
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
     // stable_#            stables are built at the discretion of the MCP team.
@@ -33,10 +31,19 @@ minecraft {
     mappings = "snapshot_20171003"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
+repositories {
 
+    maven {
+        url "https://cursemaven.com"
+    }
+
+}
 dependencies {
 
-    compile fileTree(dir: 'lib', include: ['*.jar'])
+   implementation "curse.maven:baubles-227083:2518667"
+   implementation "curse.maven:thaumcraft-223628:2629023"
+
+
 }
 
 processResources {
@@ -47,11 +54,12 @@ processResources {
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+        include 'mcmod.info'
+
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'

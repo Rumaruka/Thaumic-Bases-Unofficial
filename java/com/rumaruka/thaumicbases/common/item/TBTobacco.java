@@ -66,14 +66,13 @@ public class TBTobacco extends Item implements ITobacco {
             }
         }
         if (tobbaco.getItem() == TBItems.tobacco_knowledge) {
+            int oProg = IPlayerKnowledge.EnumKnowledgeType.OBSERVATION.getProgression();
+            int tProg = IPlayerKnowledge.EnumKnowledgeType.THEORY.getProgression();
+            ResearchCategory[] rc = ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
             if (!smoker.world.isRemote) {
 
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ALCHEMY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("GOLEMANCY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ELDRITCH"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("INFUSION"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ARTIFICE"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ELDRITCH"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
+                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 4, oProg / 3));
+                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), tProg / 8, tProg / 6));
                 ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 5, IPlayerWarp.EnumWarpType.TEMPORARY);
                 ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, IPlayerWarp.EnumWarpType.NORMAL);
 
@@ -81,15 +80,11 @@ public class TBTobacco extends Item implements ITobacco {
 
             for (int i = 0; i < (isSilverwood ? 20 : 10); ++i) {
                 if (isSilverwood) {
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ALCHEMY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("GOLEMANCY"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("INFUSION"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ARTIFICE"), MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
+                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)],MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
+                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
                     ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, IPlayerWarp.EnumWarpType.TEMPORARY);
                     ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, IPlayerWarp.EnumWarpType.NORMAL);
                     smoker.addExperience(20);
-                    ResearchCategory[] rc = (ResearchCategory[]) ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
-                    ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 3, oProg / 2));
 
                 }
             }
@@ -115,7 +110,8 @@ public class TBTobacco extends Item implements ITobacco {
             if (!smoker.world.isRemote) {
                 if (!isSilverwood) {
                     ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1 + smoker.world.rand.nextInt(3), TEMPORARY);
-                    if (smoker.world.rand.nextFloat() <= 0.4F) ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
+                    if (smoker.world.rand.nextFloat() <= 0.4F)
+                        ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
                 } else {
                     ItemStack stk = smoker.getHeldItemMainhand();
                     if (stk != ItemStack.EMPTY) {
@@ -129,7 +125,7 @@ public class TBTobacco extends Item implements ITobacco {
         }
         if (tobbaco.getItem() == TBItems.tobacco_wispy) {
             EntityWisp wisp = new EntityWisp(smoker.world);
-            wisp.setPositionAndRotation(smoker.posX, smoker.posY, smoker.posZ, 0, 0);
+            wisp.setPositionAndRotation(smoker.posX, smoker.posY + 1.0d, smoker.posZ, 0, 0);
             ArrayList<Aspect> aspects = new ArrayList<Aspect>();
             Collection<Aspect> pa = Aspect.aspects.values();
             for (Aspect aspect : pa) {
@@ -138,20 +134,21 @@ public class TBTobacco extends Item implements ITobacco {
 
             if (isSilverwood) {
                 EntityWisp wisp1 = new EntityWisp(smoker.world);
-                wisp.setPositionAndRotation(smoker.posX, smoker.posY, smoker.posZ, 0, 0);
+                wisp.setPositionAndRotation(smoker.posX, smoker.posY + 1.0d, smoker.posZ, 0, 0);
                 if (!smoker.world.isRemote) {
                     wisp.setType(aspects.get(smoker.world.rand.nextInt(aspects.size())).getTag());
                     smoker.world.spawnEntity(wisp1);
                     aspects.remove(Aspect.FLUX);
-
+                } else {
+                    smoker.world.spawnEntity( wisp1);
                 }
-
-                }
-
+            } else {
+                smoker.world.spawnEntity(wisp);
             }
-
-
         }
+
+
+    }
 
 
     }

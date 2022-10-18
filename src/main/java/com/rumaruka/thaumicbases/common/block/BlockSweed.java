@@ -2,17 +2,22 @@ package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.utils.TBConfig;
 import net.minecraft.block.*;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 
 import java.util.ArrayList;
@@ -134,37 +139,24 @@ public class BlockSweed extends BlockBush implements IGrowable {
         return 3;
     }
 
-    // AeXiaohu modified 增加蔗糖草可用骨粉催生特性
     @Override
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return true;
+        return false;
     }
 
-    // AeXiaohu modified 增加蔗糖草可用骨粉催生特性
     @Override
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        return true;
-    }
-
-    // AeXiaohu modified 获取蔗糖草每次生长阶段范围
-    protected int getAgeIncrease(World worldIn) {
-        return MathHelper.getInt(worldIn.rand, 1, 2);
+        return false;
     }
 
     @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        int groM=state.getValue(AGE);
 
-        // AeXiaohu modified 修改蔗糖草每次生长阶段范围
-//        int groM=state.getValue(AGE);
-//        if(groM<getGrowthStages()){
-//            worldIn.setBlockState(pos,state.withProperty(AGE,groM+1));
-//        }
-        if(state.getValue(AGE) < getGrowthStages()){
-            int groM = state.getValue(AGE) + this.getAgeIncrease(worldIn);
-            if (groM > getGrowthStages()) groM = getGrowthStages();
-            worldIn.setBlockState(pos, state.withProperty(AGE, groM));
+        if(groM<getGrowthStages()){
+            worldIn.setBlockState(pos,state.withProperty(AGE,groM+1));
         }
-        // End of modification
+
     }
 
     public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
@@ -172,9 +164,9 @@ public class BlockSweed extends BlockBush implements IGrowable {
         super.updateTick(w,pos, state, rnd);
         if(state.getValue(AGE)<3&&!w.isRemote)
         {
-            EnumFacing dir = EnumFacing.fromAngle(2+w.rand.nextInt(4));
+            EnumFacing dir = EnumFacing.getFront(2+w.rand.nextInt(4));
 
-           BlockPos posN = pos.offset(dir);
+            BlockPos posN = pos.offset(dir);
 
 
             if(canPlaceBlockOn(w.getBlockState(posN.down()).getBlock()) && w.isAirBlock(posN))
@@ -182,6 +174,7 @@ public class BlockSweed extends BlockBush implements IGrowable {
         }
 
     }
+
 
     @Override
     public List<ItemStack> getDrops(IBlockAccess w, BlockPos pos, IBlockState state, int fortune) {
@@ -200,8 +193,8 @@ public class BlockSweed extends BlockBush implements IGrowable {
                     if (world.rand.nextBoolean())
                         ret.add(new ItemStack(Items.SUGAR));
                 for (int i = 0; i < TBConfig.extraDropItemInSeeeds + fortune; ++i)
-                if (world.rand.nextBoolean())
-                    ret.add(new ItemStack(Items.REEDS));
+                    if (world.rand.nextBoolean())
+                        ret.add(new ItemStack(Items.REEDS));
 
 
 

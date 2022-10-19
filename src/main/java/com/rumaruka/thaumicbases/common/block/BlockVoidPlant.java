@@ -1,7 +1,7 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import com.rumaruka.thaumicbases.utils.TBConfig;
+
 import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
@@ -199,7 +199,7 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
             if (metadata >= growthStages - 1) {
                     if (world.rand.nextInt(growthStages) <= metadata)
                         if (dropSeed != ItemStack.EMPTY){
-                            for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j) {
+                            for (int j = 0; j < 4 + fortune; ++j) {
                                 if (world.rand.nextBoolean()) {
                                     ret.add(new ItemStack(ItemsTC.voidSeed));
 

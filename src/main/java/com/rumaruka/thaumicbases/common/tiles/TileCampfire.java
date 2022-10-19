@@ -1,6 +1,6 @@
 package com.rumaruka.thaumicbases.common.tiles;
 
-import DummyCore.Utils.MiscUtils;
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.AllUtils;
 import com.rumaruka.thaumicbases.common.block.BlockCampfire;
 
 import net.minecraft.block.Block;
@@ -170,7 +170,6 @@ public class TileCampfire extends TileEntity implements ITickable {
             tg.setInteger("x", this.pos.getX());
             tg.setInteger("y", this.pos.getY());
             tg.setInteger("z", this.pos.getZ());
-            MiscUtils.syncTileEntity(tg, 0);
         }else
             --syncTimer;
 

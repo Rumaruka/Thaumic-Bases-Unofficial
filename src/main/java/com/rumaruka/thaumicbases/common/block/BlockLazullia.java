@@ -1,7 +1,7 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import com.rumaruka.thaumicbases.utils.TBConfig;
+
 import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 //public class BlockLazullia extends BlockBush implements IGrowable {
-public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu modified 修复青金草为作物类型，使傀儡能正确识别
+public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu modified
 
     public int growthStages;
     public int growthDelay;
@@ -213,7 +213,7 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
             if (metadata >= growthStages - 1) {
                     if (world.rand.nextInt(growthStages) <= metadata)
                         if (dropSeed != ItemStack.EMPTY) {
-                            for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j) {
+                            for (int j = 0; j < 4 + fortune; ++j) {
                                 if (world.rand.nextBoolean()) {
                                     ret.add(new ItemStack(Items.DYE, 1, 4));
                                     ret.add(new ItemStack(TBItems.lazulliaseed, 1));

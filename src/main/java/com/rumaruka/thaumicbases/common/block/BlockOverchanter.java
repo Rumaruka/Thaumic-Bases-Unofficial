@@ -1,6 +1,5 @@
 package com.rumaruka.thaumicbases.common.block;
 
-import DummyCore.Client.IModelRegisterer;
 import com.rumaruka.thaumicbases.common.tiles.TileOverchanter;
 import com.rumaruka.thaumicbases.core.TBCore;
 import com.rumaruka.thaumicbases.init.TBGuiHandler;
@@ -23,7 +22,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 
-public class BlockOverchanter extends BlockContainer implements IModelRegisterer,ITileEntityProvider {
+public class BlockOverchanter extends BlockContainer implements ITileEntityProvider {
     protected static final AxisAlignedBB AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.75D, 1.0D);
 
     private static boolean keepInventory;
@@ -122,11 +121,5 @@ public class BlockOverchanter extends BlockContainer implements IModelRegisterer
         }
 
         super.breakBlock(worldIn, pos, state);
-    }
-
-
-    @Override
-    public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this),0,new ModelResourceLocation("thaumicbases:overchanter","inventory"));
     }
 }

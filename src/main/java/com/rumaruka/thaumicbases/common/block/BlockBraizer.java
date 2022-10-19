@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.common.block;
 
-import DummyCore.Client.IModelRegisterer;
-import DummyCore.Utils.MathUtils;
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.MathUtils;
 import com.rumaruka.thaumicbases.common.libs.TBSounds;
 import com.rumaruka.thaumicbases.common.tiles.TileBraizer;
 import net.minecraft.block.BlockContainer;
@@ -24,7 +23,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 
-public class BlockBraizer extends BlockContainer implements ITileEntityProvider,IModelRegisterer {
+public class BlockBraizer extends BlockContainer implements ITileEntityProvider {
     public static PropertyInteger STATE = PropertyInteger.create("state", 0, 1);
 
     public BlockBraizer() {
@@ -90,12 +89,6 @@ public class BlockBraizer extends BlockContainer implements ITileEntityProvider,
     @Override
     public int getMetaFromState(IBlockState state) {
         return state.getValue(STATE);
-    }
-
-    @Override
-    public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this),0,new ModelResourceLocation("thaumicbases:campfire","inventory"));
-
     }
 
 }

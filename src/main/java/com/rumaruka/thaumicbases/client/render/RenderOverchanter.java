@@ -17,16 +17,8 @@ public class RenderOverchanter extends TileEntitySpecialRenderer {
         if(!overchanter.inventory.isEmpty()){
             GlStateManager.pushMatrix();
             int time = Minecraft.getMinecraft().player !=null ? Minecraft.getMinecraft().player.ticksExisted:0;
-           //DrawUtils.renderItemStack_Full(overchanter.inventory,0,0,0,time%360+partialTicks,0,1,1,1,1,1,1);
 
             GlStateManager.popMatrix();
-        }
-
-        if(overchanter.renderedLightning !=null){
-            GlStateManager.pushMatrix();
-            overchanter.renderedLightning.render(x+1D, y+1D, z+1D, partialTicks);
-            GlStateManager.popMatrix();
-
         }
     }
 }

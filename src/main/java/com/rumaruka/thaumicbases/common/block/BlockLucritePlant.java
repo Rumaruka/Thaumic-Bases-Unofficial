@@ -2,7 +2,7 @@ package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBItems;
-import com.rumaruka.thaumicbases.utils.TBConfig;
+
 import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Random;
 
 //public class BlockLucritePlant extends BlockBush implements IGrowable {
-public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXiaohu modified 修复生金草为作物类型，使傀儡能正确识别
+public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXiaohu modified
     public int growthStages;
     public int growthDelay;
     public boolean requiresFarmland;
@@ -225,22 +225,22 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
 
                         // AeXiaohu modified 修复生金草成熟后收获不掉落种子
                         if (dropSeed != ItemStack.EMPTY) {
-                            for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j){
+                            for (int j = 0; j < 4 + fortune; ++j){
                                 if (world.rand.nextBoolean()){
                                     ret.add(new ItemStack(Items.GOLD_NUGGET, 3));
                                     ret.add(new ItemStack(TBItems.lucriteseed, 1));
                                 }
                             }
-                            for (int j = 0; j < TBConfig.extraDropItemInSeeeds + fortune; ++j) {
+                            for (int j = 0; j < 1 + fortune; ++j) {
                                 if (world.rand.nextBoolean())
                                     ret.add(new ItemStack(Items.GOLDEN_CARROT, 1));
                             }
                         } // End of modification
 
-//                for (int i = 0; i < TBConfig.firstDropItemInSeeeds + fortune; ++i)
+//                for (int i = 0; i < 4 + fortune; ++i)
 //                    if (world.rand.nextBoolean())
 //                        ret.add(new ItemStack(Items.GOLD_NUGGET, 3));
-//                for (int i = 0; i < TBConfig.extraDropItemInSeeeds + fortune; ++i)
+//                for (int i = 0; i < 1 + fortune; ++i)
 //                    if (world.rand.nextBoolean())
 //                        ret.add(new ItemStack(Items.GOLDEN_CARROT, 1));
             }

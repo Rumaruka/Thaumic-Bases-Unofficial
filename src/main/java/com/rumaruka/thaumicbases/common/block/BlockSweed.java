@@ -1,6 +1,6 @@
 package com.rumaruka.thaumicbases.common.block;
 
-import com.rumaruka.thaumicbases.utils.TBConfig;
+
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -189,10 +189,10 @@ public class BlockSweed extends BlockBush implements IGrowable {
                         if (dropSeed != null)
                             ret.add(dropSeed.copy());
 
-                for (int i = 0; i < TBConfig.firstDropItemInSeeeds + fortune; ++i)
+                for (int i = 0; i < 4 + fortune; ++i)
                     if (world.rand.nextBoolean())
                         ret.add(new ItemStack(Items.SUGAR));
-                for (int i = 0; i < TBConfig.extraDropItemInSeeeds + fortune; ++i)
+                for (int i = 0; i < 1 + fortune; ++i)
                     if (world.rand.nextBoolean())
                         ret.add(new ItemStack(Items.REEDS));
 

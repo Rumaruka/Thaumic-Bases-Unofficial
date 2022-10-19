@@ -1,11 +1,9 @@
 package com.rumaruka.thaumicbases.common.tiles;
 
-import DummyCore.Utils.Coord3D;
-import DummyCore.Utils.Lightning;
-import DummyCore.Utils.MathUtils;
-import DummyCore.Utils.MiscUtils;
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.AllUtils;
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.MathUtils;
 import com.rumaruka.thaumicbases.common.inventory.ContainerOverchanter;
-import com.rumaruka.thaumicbases.utils.TBConfig;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -36,13 +34,11 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
 
     public ItemStack inventory = ItemStack.EMPTY;
-    public int enchantingTime;
-    public boolean xpAbsorbed;
-    public boolean isEnchantingStarted;
-    public int syncTimer;
-    int ticksExisted;
-
-    public Lightning renderedLightning;
+    private int enchantingTime;
+    private boolean xpAbsorbed;
+    private boolean isEnchantingStarted;
+    private int syncTimer;
+    private int ticksExisted;
 
 
     @Override
@@ -63,7 +59,6 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
             tg.setInteger("x", this.pos.getX());
             tg.setInteger("y", this.pos.getY());
             tg.setInteger("z", this.pos.getZ());
-            MiscUtils.syncTileEntity(tg, 0);
         }else
             --syncTimer;
 
@@ -72,14 +67,12 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
             isEnchantingStarted = false;
             xpAbsorbed = false;
             enchantingTime = 0;
-            renderedLightning = null;
         }else
         {
             if(this.isEnchantingStarted)
             {
                 if(ticksExisted % 20 == 0)
                 {
-                    renderedLightning = new Lightning(this.world.rand, new Coord3D(0,0,0), new Coord3D(MathUtils.randomDouble(this.world.rand)/50,MathUtils.randomDouble(this.world.rand)/50,MathUtils.randomDouble(this.world.rand)/50), 0.3F, 1,0,1);
                     this.world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundsTC.infuserstart,SoundCategory.BLOCKS,1f,1.0f,false);
                     if(EssentiaHandler.drainEssentia(this, Aspect.MAGIC, null, 8, false, 8))
                     {
@@ -141,8 +134,8 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 //                                    }
 //                                }
                                 if (tag != null && Enchantment.getEnchantmentByID(tag.getShort("id")) == ench) {
-                                    tag.setShort("lvl", (short) (tag.getShort("lvl") + TBConfig.getOverchanterEnchantmentLevel()));
-                                    NBTTagCompound stackTag = MiscUtils.getStackTag(inventory);
+                                    tag.setShort("lvl", (short) (tag.getShort("lvl") + 1));
+                                    NBTTagCompound stackTag = AllUtils.getStackTag(this.inventory);
                                     if (!stackTag.hasKey("overchants")) {
                                         stackTag.setIntArray("overchants", new int[]{enchId});
                                     } else {
@@ -161,7 +154,6 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                             isEnchantingStarted = false;
                             xpAbsorbed = false;
                             enchantingTime = 0;
-                            renderedLightning = null;
                             this.world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundsTC.wand,SoundCategory.BLOCKS,1f,1.0f,false);
                         }
 
@@ -190,7 +182,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
     }
 
     private  int findEnchantment(ItemStack enchated) {
-        NBTTagCompound stackTag = MiscUtils.getStackTag(inventory);
+        NBTTagCompound stackTag = AllUtils.getStackTag(this.inventory);
         Map<Enchantment, Integer> ench = EnchantmentHelper.getEnchantments(enchated);
         Set<Enchantment> keys = ench.keySet();
         Iterator<Enchantment>$i = keys.iterator();
@@ -336,10 +328,8 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
         if(canStartEnchanting()&&entityPlayer.isSneaking())
         {
             isEnchantingStarted = true;
-            //entityPlayer.swingingHand(EnumHand.MAIN_HAND);
             entityPlayer.swingArm(EnumHand.MAIN_HAND);
             syncTimer = 0;
-            //this.worldObj.playSoundEffect(pos.getX(), pos.getY(), pos.getZ(), "thaumcraft:craftstart", 0.5F, 1.0F);
             this.world.playSound(pos.getX(), pos.getY(), pos.getZ(),SoundsTC.craftstart,SoundCategory.BLOCKS,0.5f,1.0f,false);
             return true;
         }
@@ -392,7 +382,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
     }
     public String getGuiID()
     {
-        return "minecraft:overchanter";
+        return "thaumicbases:overchanter";
     }
 
 }

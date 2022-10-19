@@ -3,6 +3,9 @@ package com.rumaruka.thaumicbases.network.proxy;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.network.INetHandler;
+import net.minecraft.network.NetHandlerPlayServer;
 
 public class TBServer  {
 
@@ -45,4 +48,11 @@ public class TBServer  {
 
 
     public boolean fancyGraphicsEnable(){return false;}
+
+    public EntityPlayer getPlayerOnSide(INetHandler handler) {
+        if(handler instanceof NetHandlerPlayServer) {
+            return ((NetHandlerPlayServer)handler).player;
+        }
+        return null;
+    }
 }

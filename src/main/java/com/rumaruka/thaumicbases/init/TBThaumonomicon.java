@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.init;
 
 
-import com.rumaruka.thaumicbases.utils.TBConfig;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -53,32 +52,32 @@ public class TBThaumonomicon {
 
 
 /*==============================================ARCANE CRAFTING BEGIN=============================================================================*/
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobble"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobble"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 , new ItemStack(TBBlocks.oldcobble,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.COBBLESTONE)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobbleMossy"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobbleMossy"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 , new ItemStack(TBBlocks.oldcobblemossy,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.MOSSY_COBBLESTONE)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGravel"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGravel"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 , new ItemStack(TBBlocks.oldgravel,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.GRAVEL)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldBrick"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldBrick"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 , new ItemStack(TBBlocks.oldbrick,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.BRICK_BLOCK)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldLapis"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldLapis"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 , new ItemStack(TBBlocks.oldlapis,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.LAPIS_BLOCK)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldIron"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldIron"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 .add(Aspect.ENTROPY,1)
                 .add(Aspect.EARTH,1)
                 .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.oldiron,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.IRON_BLOCK)  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGold"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGold"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 .add(Aspect.ENTROPY,1)
                 .add(Aspect.EARTH,1)
                 .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.oldgold,6), new Object[] { "# #", "# #", "# #",
                 Character.valueOf('#'), new ItemStack(Blocks.GOLD_BLOCK)}));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldDiamond"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", TBConfig.visoldBlocks, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldDiamond"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 .add(Aspect.ENTROPY,1)
                 .add(Aspect.EARTH,1)
                 .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.olddiamond,6), new Object[] { "# #", "# #", "# #",
@@ -173,28 +172,28 @@ public class TBThaumonomicon {
         CrucibleRecipe thauminiteRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.thauminite_ingot),new ItemStack(ItemsTC.ingots,1,0),new AspectList().add(Aspect.MAGIC, 10).add(Aspect.EARTH, 15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Thauminite"),thauminiteRec);
 
-        CrucibleRecipe airingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.airingot),ConfigItems.AIR_CRYSTAL,new AspectList().add(Aspect.AIR, TBConfig.aspectCountForIngotCrucible));
+        CrucibleRecipe airingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.airingot),ConfigItems.AIR_CRYSTAL,new AspectList().add(Aspect.AIR, 30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Air_Ingot"),airingotRec);
 
-        CrucibleRecipe fireingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.fireingot),ConfigItems.FIRE_CRYSTAL,new AspectList().add(Aspect.FIRE, TBConfig.aspectCountForIngotCrucible));
+        CrucibleRecipe fireingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.fireingot),ConfigItems.FIRE_CRYSTAL,new AspectList().add(Aspect.FIRE, 30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Fire_Ingot"),fireingotRec);
 
-        CrucibleRecipe wateringotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.wateringot),ConfigItems.WATER_CRYSTAL,new AspectList().add(Aspect.WATER, TBConfig.aspectCountForIngotCrucible));
+        CrucibleRecipe wateringotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.wateringot),ConfigItems.WATER_CRYSTAL,new AspectList().add(Aspect.WATER, 30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Water_Ingot"),wateringotRec);
 
-        CrucibleRecipe earthingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.earthingot),ConfigItems.EARTH_CRYSTAL,new AspectList().add(Aspect.EARTH, TBConfig.aspectCountForIngotCrucible));
+        CrucibleRecipe earthingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.earthingot),ConfigItems.EARTH_CRYSTAL,new AspectList().add(Aspect.EARTH, 30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Earth_Ingot"),earthingotRec);
 
-        CrucibleRecipe orderingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.orderingot),ConfigItems.ORDER_CRYSTAL,new AspectList().add(Aspect.ORDER, TBConfig.aspectCountForIngotCrucible));
+        CrucibleRecipe orderingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.orderingot),ConfigItems.ORDER_CRYSTAL,new AspectList().add(Aspect.ORDER, 30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Order_Ingot"),orderingotRec);
 
-        CrucibleRecipe entropyingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.entropyingot), ConfigItems.ENTROPY_CRYSTAL,new AspectList().add(Aspect.ENTROPY, TBConfig.aspectCountForIngotCrucible));
+        CrucibleRecipe entropyingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.entropyingot), ConfigItems.ENTROPY_CRYSTAL,new AspectList().add(Aspect.ENTROPY, 30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Entropy_Ingot"),entropyingotRec);
 
         CrucibleRecipe mixedingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.mixedingot),new ItemStack(Items.IRON_INGOT),new AspectList().add(Aspect.EARTH, 16).add(Aspect.AIR,16).add(Aspect.WATER,16).add(Aspect.FIRE,16).add(Aspect.ENTROPY,16).add(Aspect.ORDER,16));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Mixed_Ingot"),mixedingotRec);
 
-        CrucibleRecipe taintedingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.taintedingot), ConfigItems.FLUX_CRYSTAL,new AspectList().add(Aspect.FLUX, TBConfig.aspectCountForIngotCrucible));
+        CrucibleRecipe taintedingotRec = new CrucibleRecipe("TB.ALCHEMY",new ItemStack(TBItems.taintedingot), ConfigItems.FLUX_CRYSTAL,new AspectList().add(Aspect.FLUX, 30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.Tain_Ingot"),taintedingotRec);
 
         CrucibleRecipe gravelToFlint = new CrucibleRecipe("TB.MACERATOR",new ItemStack(Items.FLINT,2,0),new ItemStack(Blocks.GRAVEL),new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH,5));
@@ -308,7 +307,6 @@ public class TBThaumonomicon {
         /*==============================================INFUSING END=============================================================================*/
 
         /*TOBACCO INIT*/
-        if(TBConfig.allowTobacco){
         CrucibleRecipe tobacco = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.tobaccoseed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.MIND,20).add(Aspect.WATER,25).add(Aspect.MAN,10));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.tobacco"), tobacco);
         CrucibleRecipe catusToRC= new CrucibleRecipe("TB.CACTUS",new ItemStack(TBBlocks.rainbowcactus),new ItemStack(Blocks.CACTUS),new AspectList().add(Aspect.PLANT,60).add(Aspect.MAGIC,30));
@@ -351,14 +349,6 @@ public class TBThaumonomicon {
                         "   "
                         ,Character.valueOf('P'), new ItemStack(TBItems.tobacco_pile),Character.valueOf('s'), "seedsStems"}));
 
-        }
-        if(TBConfig.allowcraftprimordar) {
-            CrucibleRecipe void_seed = new CrucibleRecipe("TB.EXCHANG",new ItemStack(ItemsTC.voidSeed),new ItemStack(Items.WHEAT_SEEDS),new AspectList().add(Aspect.FLUX,30).add(Aspect.ELDRITCH,45));
-            ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.void_seed"), void_seed);
-            CrucibleRecipe primordar = new CrucibleRecipe("TB.EXCHANG",new ItemStack(ItemsTC.primordialPearl),new ItemStack(ItemsTC.voidSeed),new AspectList().add(Aspect.DESIRE,55).add(Aspect.ELDRITCH,64));
-            ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.primordar"), primordar);
-      }
-
     }
 
 
@@ -383,11 +373,8 @@ public class TBThaumonomicon {
 
         appendAspects(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST,26).add(Aspect.CRAFT,6));
         appendAspects(new ItemStack(TBItems.briar_seedbag), new AspectList().add(Aspect.PLANT,5).add(Aspect.LIFE,5));
-        if(TBConfig.allowTobacco) {
             appendAspects(new ItemStack(TBItems.tobacco_pile), new AspectList().add(Aspect.PLANT, 3).add(Aspect.MAN, 3).add(Aspect.ENTROPY, 1));
             appendAspects(new ItemStack(TBItems.tobacco_leaves), new AspectList().add(Aspect.PLANT, 5).add(Aspect.MAN, 5));
-
-        }
     }
 
     public static AspectList primals(int amount)

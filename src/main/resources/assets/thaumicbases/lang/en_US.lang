@@ -14,13 +14,6 @@ enchantment.tainted=Tainted
 enchantment.vaporising=Vaporising
 #Containers
 tb.overchanter=Overchanter
-
-#Aspects
-tc.aspect.pannus=Cloth, Material, Covering
-tc.aspect.iter=Travel, Journey
-tc.aspect.sano=Health
-tc.aspect.messis=Plants
-tc.aspect.fames=Hungers
 #blocks
 tile.quicksilverBlock.name=Block of Quicksilver
 tile.quicksilverBrick.name=Quicksilver Brick

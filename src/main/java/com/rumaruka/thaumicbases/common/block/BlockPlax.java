@@ -1,8 +1,10 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import com.rumaruka.thaumicbases.utils.TBConfig;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -19,7 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 //public class BlockPlax extends BlockBush implements IGrowable {
-public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu modified 修复纤化草为作物类型，使傀儡能正确识别
+public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu modified
 
     public int growthStages;
     public int growthDelay;
@@ -149,7 +151,7 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
             if (metadata >= growthStages - 1) {
                     if (world.rand.nextInt(growthStages) <= metadata)
                         if (dropSeed != ItemStack.EMPTY){
-                            for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j) {
+                            for (int j = 0; j < 4 + fortune; ++j) {
                                 if (world.rand.nextBoolean()) {
                                     ret.add(new ItemStack(Items.STRING,3));
                                     ret.add(new ItemStack(TBItems.plaxseed, 1));

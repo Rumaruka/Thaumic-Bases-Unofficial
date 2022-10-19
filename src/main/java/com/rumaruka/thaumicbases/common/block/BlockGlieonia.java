@@ -1,7 +1,7 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import com.rumaruka.thaumicbases.utils.TBConfig;
+
 import net.minecraft.block.*;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -197,7 +197,7 @@ public class BlockGlieonia extends BlockBush implements IGrowable {
                 for (int i = 0; i < 1; ++i)
                     if (world.rand.nextInt(growthStages) <= metadata)
                         if (dropSeed != ItemStack.EMPTY){
-                            for (int j = 0; j < TBConfig.firstDropItemInSeeeds + fortune; ++j) {
+                            for (int j = 0; j < 4 + fortune; ++j) {
                                 if (world.rand.nextBoolean()) {
                                     ret.add(new ItemStack(Items.GLOWSTONE_DUST,3));
                                     ret.add(new ItemStack(TBItems.glieoniaseed,1));

@@ -1,9 +1,6 @@
 package com.rumaruka.thaumicbases.init;
 
-import DummyCore.Client.GuiCommon;
-
-
-
+import com.rumaruka.thaumicbases.api.dummycore_remove.client.GuiCommon;
 import com.rumaruka.thaumicbases.common.inventory.ContainerOverchanter;
 import com.rumaruka.thaumicbases.common.tiles.TileOverchanter;
 import net.minecraft.entity.player.EntityPlayer;

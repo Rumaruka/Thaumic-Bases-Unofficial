@@ -205,7 +205,11 @@ public class BlockTobacco extends BlockBush implements IGrowable {
         if (w instanceof World) {
             World world = World.class.cast(w);
             int metadata = state.getValue(AGE);
+            if (metadata < growthStages) {
+                ret.add(new ItemStack(TBItems.tobaccoseed, 1));
+            }
             if (metadata >= growthStages - 1) {
+
                 for (int i = 0; i < 1; ++i)
                     if (world.rand.nextInt(growthStages) <= metadata)
                         if (dropSeed != ItemStack.EMPTY){

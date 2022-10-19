@@ -27,6 +27,8 @@ public class BlockIronSpike  extends Block {
 
     public BlockIronSpike(){
         super(Material.IRON);
+        setHardness(2.0f);
+        setHarvestLevel("pickaxe",2);
     }
 
     @Override

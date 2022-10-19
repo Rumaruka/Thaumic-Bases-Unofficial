@@ -206,6 +206,9 @@ public class BlockLazullia extends BlockBush implements IGrowable {
         if (w instanceof World) {
             World world = World.class.cast(w);
             int metadata = state.getValue(AGE);
+            if (metadata < growthStages) {
+                ret.add(new ItemStack(TBItems.lazulliaseed, 1));
+            }
             if (metadata >= growthStages - 1) {
                 for (int i = 0; i < 1; ++i)
                     if (world.rand.nextInt(growthStages) <= metadata)

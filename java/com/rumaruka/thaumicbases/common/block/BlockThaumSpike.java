@@ -26,6 +26,8 @@ public class BlockThaumSpike extends Block {
     public static PropertyInteger BLOODY = PropertyInteger.create("bloody",0,1);
     public BlockThaumSpike( ) {
         super(Material.IRON);
+        setHardness(2.0f);
+        setHarvestLevel("pickaxe",2);
     }
 
     @Override

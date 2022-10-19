@@ -1,6 +1,6 @@
 {
-  "parent": "block/crop",
+  "parent": "block/cross",
   "textures": {
-    "crop": "thaumicbases:blocks/aurelia_open"
+    "cross": "thaumicbases:blocks/aurelia_open"
   }
 }

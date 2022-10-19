@@ -1,6 +1,7 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBBlocks;
+import com.rumaruka.thaumicbases.init.TBItems;
 import com.rumaruka.thaumicbases.utils.TBConfig;
 import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyInteger;
@@ -213,6 +214,9 @@ public class BlockLucritePlant extends BlockBush implements IGrowable {
         if (w instanceof World) {
             World world = World.class.cast(w);
             int metadata = state.getValue(AGE);
+            if (metadata < growthStages) {
+                ret.add(new ItemStack(TBItems.metalleatseed, 1));
+            }
             if (metadata >= growthStages - 1) {
                 for (int i = 0; i < 1 + fortune; ++i)
                     if (world.rand.nextInt(growthStages) <= metadata)

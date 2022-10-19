@@ -1,6 +1,6 @@
 {
-  "parent": "block/crop",
+  "parent": "block/cross",
   "textures": {
-    "crop": "thaumicbases:blocks/glieonia_stage_2"
+    "cross": "thaumicbases:blocks/glieonia_stage_2"
   }
 }

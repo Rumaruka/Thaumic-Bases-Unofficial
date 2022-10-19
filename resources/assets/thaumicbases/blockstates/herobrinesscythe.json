@@ -1,43 +1,28 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "thaumicbases:herobrinesscythe"
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "thaumicbases:items/herobrines_scythe"
   },
-  "variants": {
-    "inventory": [
-      {
-        "transform": {
-          "thirdperson_lefthand": {
-            "rotation": [ { "x": 0 }, { "y": 0 }, { "z": 0 } ],
-            "translation": [ 0, -0.1, 0.1 ],
-            "scale": 0.02
-          },
-          "thirdperson_righthand": {
-            "rotation": [ { "x": 0 }, { "y": 0 }, { "z": 0 } ],
-            "translation": [ 0, -0.1, 0.1 ],
-            "scale": 0.02
-          },
-          "gui": {
-            "rotation": [ { "x": 0 }, { "y":0 }, { "z": -75 } ],
-            "translation": [ -0.2, -0.2, 0 ],
-            "scale": 0.02
-          },
-          "firstperson_righthand": {
-            "rotation": [ { "x": 180 }, { "y": 180 }, { "z": 170 } ],
-            "translation": [ 0, -0.1, 0 ],
-            "scale": 0.02
-          },
-          "firstperson_lefthand": {
-            "rotation": [ { "x": 180 }, { "y": 180 }, { "z": 170 } ],
-            "translation": [ 0, -0.1, 0 ],
-            "scale": 0.02
-          },
-          "ground": {
-            "rotation": [ { "x": 45 }, { "y": 0 }, { "z": 0 } ],
-            "scale": 0.02
-          }
-        }
-      }
-    ]
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [180, 90, -145],
+      "translation": [0, 6, 0],
+      "scale": [1.0, 1.0, 1.0]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [180, -90, 145],
+      "translation": [0, 6, 0],
+      "scale": [1.0, 1.0, 1.0]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 90, 50],
+      "translation": [0, 5, 2],
+      "scale": [0.7, 0.7, 0.7]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, -90, -50],
+      "translation": [0, 5, 2],
+      "scale": [0.7, 0.7, 0.7]
+    }
   }
 }

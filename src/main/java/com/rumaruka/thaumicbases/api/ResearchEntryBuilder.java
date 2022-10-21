@@ -1,5 +1,4 @@
 package com.rumaruka.thaumicbases.api;
-import com.rumaruka.thaumicbases.utils.KnowledgeTB;
 import net.minecraft.item.ItemStack;
 import thaumcraft.api.research.ResearchAddendum;
 import thaumcraft.api.research.ResearchEntry;
@@ -100,7 +99,6 @@ public class ResearchEntryBuilder {
             throw new IllegalStateException("Already built!");
         ResearchEntry re = entry;
         entry = null;
-        KnowledgeTB.addResearchToCategory(re);
         return re;
     }
 }

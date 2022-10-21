@@ -124,18 +124,6 @@ public class TBItems {
 
         bloodycloth = new TBBloodyCloth().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("bloodycloth");
 
-
-
-        airingot = new TBAirIngot().setUnlocalizedName("airingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        fireingot = new TBFireIngot().setUnlocalizedName("fireingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        wateringot = new TBWaterIngot().setUnlocalizedName("wateringot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        earthingot = new TBEarthIngot().setUnlocalizedName("earthingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        orderingot = new TBOrderIngot().setUnlocalizedName("orderingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        entropyingot = new TBEntropyIngot().setUnlocalizedName("entropyingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        mixedingot = new TBMixedIngot().setUnlocalizedName("mixedingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        taintedingot = new TBTaintedIngot().setUnlocalizedName("taintedingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-
-
         thauminiteaxe =  new ItemThauminiteAxe(TBMaterial.thauminite).setUnlocalizedName("thauminiteaxe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         thauminitehoe =  new ItemThauminiteHoe(TBMaterial.thauminite).setUnlocalizedName("thauminitehoe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         thauminitepickaxe =  new ItemThauminitePickaxe(TBMaterial.thauminite).setUnlocalizedName("thauminitepickaxe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -144,9 +132,6 @@ public class TBItems {
 
         voidshears = new ItemVoidSheard().setUnlocalizedName("voidshears").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         voidfas = new ItemVoidFlintAndSteel().setUnlocalizedName("voidfas").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-
-
-        pyrobucket = new ItemPyrofluidBucket().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("pyrobucket");
 
 
         plaxseed = new ItemSeeds(TBBlocks.plax,Blocks.FARMLAND).setUnlocalizedName("plaxseed");
@@ -204,14 +189,6 @@ public class TBItems {
         TBItems.registerItem(thauminite_ingot,thauminite_ingot.getUnlocalizedName().substring(5));
         TBItems.registerItem(thauminite_plate,thauminite_plate.getUnlocalizedName().substring(5));
         TBItems.registerItem(bloodycloth,bloodycloth.getUnlocalizedName().substring(5));
-        TBItems.registerItem(airingot, airingot.getUnlocalizedName().substring(5));
-        TBItems.registerItem(fireingot,fireingot.getUnlocalizedName().substring(5));
-        TBItems.registerItem(earthingot, earthingot.getUnlocalizedName().substring(5));
-        TBItems.registerItem(wateringot,wateringot.getUnlocalizedName().substring(5));
-        TBItems.registerItem(orderingot, orderingot.getUnlocalizedName().substring(5));
-        TBItems.registerItem(entropyingot,entropyingot.getUnlocalizedName().substring(5));
-        TBItems.registerItem(mixedingot, mixedingot.getUnlocalizedName().substring(5));
-        TBItems.registerItem(taintedingot,taintedingot.getUnlocalizedName().substring(5));
 
         TBItems.registerItem(thauminiteaxe,thauminiteaxe.getUnlocalizedName().substring(5));
         TBItems.registerItem(thauminitepickaxe,thauminitepickaxe.getUnlocalizedName().substring(5));
@@ -221,8 +198,6 @@ public class TBItems {
 
         TBItems.registerItem(voidshears,voidshears.getUnlocalizedName().substring(5));
         TBItems.registerItem(voidfas,voidfas.getUnlocalizedName().substring(5));
-
-        TBItems.registerItem(pyrobucket,pyrobucket.getUnlocalizedName().substring(5));
 
         TBItems.registerItem(plaxseed,plaxseed.getUnlocalizedName().substring(5));
         TBItems.registerItem(sweedseed,sweedseed.getUnlocalizedName().substring(5));
@@ -293,22 +268,11 @@ public class TBItems {
         renderItems(thauminite_plate);
         renderItems(bloodycloth);
 
-        renderItems(airingot);
-        renderItems(fireingot);
-        renderItems(earthingot);
-        renderItems(wateringot);
-        renderItems(orderingot);
-        renderItems(entropyingot);
-        renderItems(mixedingot);
-        renderItems(taintedingot);
-
         renderItems(thauminiteaxe);
         renderItems(thauminitepickaxe);
         renderItems(thauminiteshovel);
         renderItems(thauminitesword);
         renderItems(thauminitehoe);
-
-        renderItems(pyrobucket);
 
         renderItems(plaxseed);
         renderItems(sweedseed);

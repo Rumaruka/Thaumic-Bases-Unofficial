@@ -4,13 +4,10 @@ import com.rumaruka.thaumicbases.common.handlers.EnchatmentHandler;
 import com.rumaruka.thaumicbases.common.handlers.RegisterHandlers;
 import com.rumaruka.thaumicbases.init.*;
 import com.rumaruka.thaumicbases.network.proxy.TBServer;
-import com.rumaruka.thaumicbases.utils.KnowledgeTB;
 
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
@@ -18,7 +15,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 
 
@@ -58,10 +54,6 @@ public class TBCore {
         TBItems.init();
         TBItems.InGameRegistr();
 
-
-        MinecraftForge.EVENT_BUS.register(new KnowledgeTB());
-
-        KnowledgeTB.clInit.call();
         TBTiles.setup();
         TBEnchant.setupEnchatments();
         proxy.preInit(e);
@@ -77,12 +69,10 @@ public class TBCore {
     public void init(FMLInitializationEvent e) {
 
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new TBGuiHandler());
-        RES_CAT = ResearchCategories.registerCategory(catName,null,null,icon,back,back2);
         proxy.registerRenderInformation();
         MinecraftForge.EVENT_BUS.register(new EnchatmentHandler());
         TBThaumonomicon.setup();
-
-        KnowledgeTB.clInit.call();
+TBResearch.registerResearch();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
         RegisterHandlers.init();
         TBOreDictionary.setup();
@@ -96,17 +86,10 @@ public class TBCore {
 
         proxy.Renders();
 
-
-        KnowledgeTB.init.call();
-        KnowledgeTB.insertAspects.call();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
 
 
 
 
 }
-    public static final String catName ="THAUMICBASES";
-    public static final ResourceLocation icon = new ResourceLocation("thaumicbases","textures/thaumonomicon/bases.png");
-    public static final ResourceLocation back = new ResourceLocation("thaumicbases","textures/thaumonomicon/background.png");
-    public static final ResourceLocation back2 = new ResourceLocation("thaumcraft","textures/gui/gui_research_back_over.png");
 }

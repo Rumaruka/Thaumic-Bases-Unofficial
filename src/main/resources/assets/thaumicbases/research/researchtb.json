@@ -1,0 +1,795 @@
+{
+    "entries": [
+      {
+        "key": "TB.FIRST",
+        "name": "research_name.thaumicbases:thaumicbases",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:textures/thaumonomicon/bases.png"
+        ],"meta":["HIDDEN", "SPIKY"],
+        "parents": [
+         "FIRSTSTEPS"
+        ],
+        "location": [
+          0,
+          0
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:thaumicbases.1",
+            "required_knowledge": [
+              "OBSERVATION;BASICS;1"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:thaumicbases.2"
+          }
+        ]
+      },
+      {
+        "key": "TB.ALCHEMY",
+        "name": "research_name.thaumicbases:tbalchemy",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:thauminite_ingot"
+        ],
+        "parents": [
+         "TB.FIRST"
+        ],
+        "location": [
+          0,
+          2
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbalchemy.1",
+            "required_item": [
+              "thaumcraft:ingot;4;0"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbalchemy.2",
+            "recipes": ["thaumicbases:thauminite_ingot"]
+          }
+        ]
+      },
+      {
+        "key": "TB.FLUID",
+        "name": "research_name.thaumicbases:tbfluid",
+        "category": "THAUMICBASES",
+        "icons": [
+          "forge:bucketfilled;1;0;{FluidName: \"pyro\", Amount: 1000}"
+        ],
+        "parents": [
+          "TB.FIRST","TB.ALCHEMY"
+        ],
+        "location": [
+          2,
+          2
+        ],
+        "stages": [
+          {
+            "text": "research_stage_thaumicbases:tbfluid.1",
+            "required_knowledge": ["OBSERVATION;ALCHEMY;1", "THEORY;ALCHEMY;1"],
+            "required_item": [
+              "minecraft:lava_bucket", "minecraft:water_bucket"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbfluid.2",
+            "recipes": ["TB.lavaToPyro"]
+          }
+        ]
+      },
+      {
+        "key": "TB.DECO",
+        "name": "research_name.thaumicbases:tbdeco",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:olddiamond"
+        ],
+        "parents": [
+          "TB.FIRST"
+        ],
+        "location": [
+          -2, 4
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbdeco.1",
+            "required_knowledge": [
+              "OBSERVATION;BASICS;1"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbdeco.1",
+            "recipes": [
+              "TB.DecoOldCobble",
+              "TB.DecoOldCobbleMossy",
+              "TB.DecoOldGravel",
+              "TB.DecoOldBrick",
+              "TB.DecoOldLapis",
+              "TB.DecoOldIron",
+              "TB.DecoOldGold",
+              "TB.DecoOldDiamond"
+            ]
+          }
+        ]
+      },{
+        "key": "TB.DECO2",
+        "name": "research_name.thaumicbases:tbdeco2",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:dustblock"
+        ],"meta":["ROUND"],
+        "parents": [
+          "TB.DECO"
+        ],
+        "location": [
+          -2, 6
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbdeco2.1",
+            "required_knowledge": [
+              "OBSERVATION;BASICS;1"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbdeco2.1",
+            "recipes": ["thaumicbases:quicksilverblock","thaumicbases:quicksilverbrick","thaumicbases:irongreatwood","thaumicbases:eldritchark","TB.SMB","TB.SMBReturn"]
+          }
+        ]
+      },
+      {
+        "key": "TB.MACERATOR",
+        "name": "research_name.thaumicbases:tbmacerator",
+        "category": "THAUMICBASES",
+        "icons": [
+          "minecraft:gravel"
+        ],
+        "parents": [
+          "TB.ALCHEMY"
+        ],
+        "location": [
+          0, 4
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbmacerator.1",
+            "required_knowledge": [
+              "THEORY;ALCHEMY;1"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbmacerator.2",
+            "recipes": ["TB.gravelToFlint","TB.cobbleToSand","TB.sandToNuggetGold","TB.woolToString","TB.rodToPower"]
+          }
+        ]
+      },
+      {
+        "key": "TB.AdvMACERATOR",
+        "name": "research_name.thaumicbases:tbadvmacerator",
+        "category": "THAUMICBASES",
+        "icons": [
+          "minecraft:gravel", "minecraft:sand"
+        ],
+        "parents": [
+          "TB.MACERATOR"
+        ],
+        "location": [
+          2,4
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbadvmacerator.1",
+            "required_knowledge": [
+              "THEORY;ALCHEMY;1",
+              "THEORY;BASICS;1"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbadvmacerator.2",
+            "recipes": ["TB.gravelToFlintAdv","TB.cobbleToSandAdv","TB.sandToNuggetGoldAdv","TB.woolToStringAdv","TB.rodToPowerAdv"]
+          }
+        ]
+      },
+      {
+        "key": "TB.EXCHANG",
+        "name": "research_name.thaumicbases:tbexchang",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumcraft:quicksilver"
+        ],
+        "parents": [
+          "TB.MACERATOR"
+        ],
+        "location": [
+          0,6
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbexchang.1",
+            "required_knowledge": [
+              "OBSERVATION;ALCHEMY;2",
+              "THEORY;ALCHEMY;2"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbexchang.2",
+            "recipes": ["TB.powderToRod","TB.saplingToAmber","TB.silverToQuicksilver","TB.bonemealToBONE","TB.greenTOCactus","TB.primordar","TB.void_seed","TB.crystalM","TB.crystalI","TB.crystals","TB.crystalF","TB.crystalP"]
+          }
+        ]
+      },
+      {
+        "key": "TB.DOUBLE",
+        "name": "research_name.thaumicbases:tbdouble",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumcraft:salis_mundus"
+        ],
+        "parents": [
+          "TB.EXCHANG"
+        ],
+        "location": [
+          0,8
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbdouble.1",
+            "required_item": [
+"thaumcraft:salis_mundus"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbdouble.2",
+            "recipes": ["TB.doubleMundus","TB.doubleArrow","TB.doubleIronCluster","TB.doubleGoldCluster","TB.doubleCinnabarCluster","TB.doubleQuartzCluster","TB.doubleQuartzCluster1"]
+          }
+        ]
+      },
+      {
+        "key": "TB.EXCHANG",
+        "name": "research_name.thaumicbases:tbexchang",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumcraft:quicksilver"
+        ],
+        "parents": [
+          "TB.MACERATOR"
+        ],
+        "location": [
+          0,6
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbexchang.1",
+            "required_knowledge": [
+              "OBSERVATION;ALCHEMY;2",
+              "THEORY;ALCHEMY;2"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbexchang.2",
+            "recipes": ["TB.powderToRod","TB.saplingToAmber","TB.silverToQuicksilver","TB.bonemealToBONE","TB.greenTOCactus","TB.primordar","TB.void_seed","TB.crystalM","TB.crystalI","TB.crystals","TB.crystalF","TB.crystalP"]
+          }
+        ]
+      },
+      {
+        "key": "TB.PLANT",
+        "name": "research_name.thaumicbases:tbplant",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:sweedseed"
+        ],
+        "parents": [
+          "TB.FLUID"
+        ],
+        "location": [
+          4, 2
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbplant.1",
+            "required_knowledge": [
+              "THEORY;BASICS;1"
+            ],
+            "required_item": [
+              "minecraft:wheat;10;0", "minecraft:wheat_seeds;10;0"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbplant.2",
+            "recipes": ["TB.seedToSweed"]
+          }
+        ]
+      },
+      {
+        "key": "TB.PLANT1",
+        "name": "research_name.thaumicbases:tbplant1",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:plaxseed"
+        ],
+        "parents": [
+          "TB.PLANT"
+        ],
+        "location": [
+          6, 2
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbplant1.1",
+            "required_knowledge": [
+              "OBSERVATION;ALCHEMY;1",
+              "THEORY;ALCHEMY;2"
+            ],
+            "required_item": [
+              "minecraft:wheat_seeds;10;0", "minecraft:pumpkin;2;0", "minecraft:melon_block;2;0", "minecraft:red_flower;10;0", "minecraft:yellow_flower;10;0"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbplant1.2",
+            "recipes": ["TB.sweedToPlax","TB.aurelia","TB.roshipbrush","TB.metallea","TB.lazullia","TB.glieonia","TB.lucrite","TB.briar","TB.tobacco", "TB.syrop"]
+          }
+        ]
+      },
+      {
+        "key": "TB.VOIDSEEDS",
+        "name": "research_name.thaumicbases:tbvoidseed",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:voidseed"
+        ],
+        "parents": [
+          "TB.PLANT1", "UNLOCKELDRITCH"
+        ],
+        "location": [
+          6, 4
+        ],"meta":["ROUND", "HIDDEN"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbvoidseed.1",
+            "required_knowledge": [
+              "OBSERVATION;ALCHEMY;1",
+              "THEORY;ALCHEMY;1",
+              "THEORY;ELDRITCH;1"
+            ],
+            "required_item": [
+              "thaumcraft:void_seed;4;0"
+            ],
+            "warp": 2
+          },
+          {
+            "text": "research_stage.thaumicbases:tbvoidseed.2",
+            "recipes": ["TB.voidseed","thaumicbases:voidshears","thaumicbases:voidfas"]
+          }
+        ]
+      },
+      {
+        "key": "TB.VOIDSEEDS",
+        "name": "research_name.thaumicbases:tbvoidseed",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:voidseed"
+        ],
+        "parents": [
+          "TB.PLANT1", "UNLOCKELDRITCH"
+        ],
+        "location": [
+          6, 4
+        ],"meta":["ROUND", "HIDDEN"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbvoidseed.1",
+            "required_knowledge": [
+              "OBSERVATION;ALCHEMY;1",
+              "THEORY;ALCHEMY;1",
+              "THEORY;ELDRITCH;1"
+            ],
+            "required_item": [
+              "thaumcraft:void_seed;4;0"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbvoidseed.2",
+            "recipes": ["TB.voidseed","thaumicbases:voidshears","thaumicbases:voidfas"]
+          }
+        ]
+      },
+      {
+        "key": "TB.TOBACCO",
+        "name": "research_name.thaumicbases:tbtobacco",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:tobacco_leaves"
+        ],
+        "parents": [
+          "TB.PLANT"
+        ],
+        "location": [
+          6, 0
+        ],"meta":["ROUND", "REVERSE"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbtobacco.1",
+            "required_item": [
+              "thaumicbases:tobaccoseed;1;0"
+            ],
+            "recipes": ["TB.greatpipe","thaumicbases:tobacco_pile","TB.mortal","TB.silverpipe"]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbtobacco.2",
+            "recipes": ["TB.greatpipe","thaumicbases:tobacco_pile","TB.mortal","TB.silverpipe","TB.angry","TB.eldritchtobacco","TB.hunger","TB.wisdom","TB.miner","TB.tainted","TB.wispy"]
+          }
+        ]
+      },
+      {
+        "key": "TB.VOIDSEEDS",
+        "name": "research_name.thaumicbases:tbvoidseed",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:voidseed"
+        ],
+        "parents": [
+          "TB.PLANT1", "UNLOCKELDRITCH"
+        ],
+        "location": [
+          6, 4
+        ],"meta":["ROUND", "HIDDEN"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbvoidseed.1",
+            "required_knowledge": [
+              "OBSERVATION;ALCHEMY;1",
+              "THEORY;ALCHEMY;1",
+              "THEORY;ELDRITCH;1"
+            ],
+            "required_item": [
+              "thaumcraft:void_seed;4;0"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbvoidseed.2",
+            "recipes": ["TB.voidseed","thaumicbases:voidshears","thaumicbases:voidfas"]
+          }
+        ]
+      },
+      {
+        "key": "TB.TOBACCO",
+        "name": "research_name.thaumicbases:tbtobacco",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:tobacco_leaves"
+        ],
+        "parents": [
+          "TB.PLANT"
+        ],
+        "location": [
+          6, 0
+        ],"meta":["ROUND", "REVERSE"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbtobacco.1",
+            "required_item": [
+              "thaumicbases:tobaccoseed;1;0"
+            ],
+            "recipes": ["TB.greatpipe","thaumicbases:tobacco_pile","TB.mortal","TB.silverpipe"]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbtobacco.2",
+            "recipes": ["TB.greatpipe","thaumicbases:tobacco_pile","TB.mortal","TB.silverpipe","TB.angry","TB.eldritchtobacco","TB.hunger","TB.wisdom","TB.miner","TB.tainted","TB.wispy"]
+          }
+        ]
+      },
+      {
+        "key": "TB.CACTUS",
+        "name": "research_name.thaumicbases:tbcactus",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:rainbowcactus"
+        ],
+        "parents": [
+          "TB.PLANT1"
+        ],
+        "location": [
+          8, 2
+        ],"meta":["ROUND"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbcactus.1",
+            "required_knowledge": [
+              "THEORY;BASICS;1"
+            ],
+            "required_item": [
+              "minecraft:cactus;1;0", "minecraft:dye;1;1", "minecraft:dye;1;5", "minecraft:dye;1;7", "minecraft:dye;1;9"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbcactus.2",
+            "recipes": ["TB.catusToRC"]
+          }
+        ]
+      },
+      {
+        "key": "TB.TREE",
+        "name": "research_name.thaumicbases:tbtree",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:goldensapling"
+        ],
+        "parents": [
+          "TB.CACTUS"
+        ],
+        "location": [
+          10, 2
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbtree.1","required_item": [
+            "minecraft:sapling;1;0", "minecraft:gold_block;2;0"
+          ],
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbtree.1",
+            "recipes": ["TB.goldenSapling"]
+          }
+        ]
+      },
+      {
+        "key": "TB.TREE1",
+        "name": "research_name.thaumicbases:tbtree1",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:endersapling"
+        ],
+        "parents": [
+          "TB.TREE"
+        ],
+        "location": [
+          10, 0
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbtree1.1",
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ],"required_item": [
+            "minecraft:sapling;1;0", "minecraft:ender_eye;5;0"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbtree1.1",
+            "recipes": ["TB.enderSapling"]
+          }
+        ]
+      },
+      {
+        "key": "TB.TREE2",
+        "name": "research_name.thaumicbases:tbtree2",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:nethersapling"
+        ],
+        "parents": [
+          "TB.TREE"
+        ],
+        "location": [
+          10, 4
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbtree2.1",
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ],"required_item": [
+            "minecraft:sapling;1;0", "minecraft:netherrack;10;0"
+          ],
+            "warp": 3
+          },
+          {
+            "text": "research_stage.thaumicbases:tbtree2.1",
+            "recipes": ["TB.netherSapling"]
+          }
+        ]
+      },
+      {
+        "key": "TB.MACHANISM",
+        "name": "research_name.thaumicbases:tbmachanism",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:overchanter"
+        ],
+        "parents": [
+          "TB.FIRST", "INFUSION"
+        ],
+        "location": [
+          0, -2
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbmachanism.1",
+            "required_knowledge": [
+              "THEORY;INFUSION;1"
+            ],"required_item": [
+            "minecraft:enchanting_table;1;0", "minecraft:bookshelf;3;0"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbmachanism.2",
+            "recipes": ["TB.overchanter"]
+          }
+        ]
+      },
+      {
+        "key": "TB.SPIKE",
+        "name": "research_name.thaumicbases:tbspikes",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:ironspike"
+        ],
+        "parents": [
+          "TB.MACHANISM"
+        ],
+        "location": [
+          0,-4
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbspikes.1",
+            "required_knowledge": [
+              "OBSERVATION;ARTIFICE;1"
+            ],"required_craft": [
+            "minecraft:heavy_weighted_pressure_plate;1;0"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbspikes.2",
+            "recipes": ["TB.IronSpike"]
+          }
+        ]
+      },
+      {
+        "key": "TB.SPIKE1",
+        "name": "research_name.thaumicbases:tbspikes1",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:thaumspike"
+        ],
+        "parents": [
+          "TB.SPIKE", "TB.MACHANISM"
+        ],
+        "location": [
+          2,-4
+        ],"meta":["ROUND"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbspikes1.1",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2"
+            ],"required_item": [
+            "thaumcraft:ingot;1;0"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbspikes1.1",
+            "recipes": ["TB.ThaumSpike"]
+          }
+        ]
+      },
+      {
+        "key": "TB.SPIKE2",
+        "name": "research_name.thaumicbases:tbspikes2",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:voidspike"
+        ],
+        "parents": [
+          "TB.SPIKE", "UNLOCKELDRITCH", "TB.MACHANISM"
+        ],
+        "location": [
+          -2,-4
+        ],"meta":["ROUND"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbspikes2.1",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;1",
+              "THEORY;ELDRITCH;1"
+            ],"required_item": [
+            "thaumcraft:ingot;1;1"
+          ],
+            "warp": 4
+          },
+          {
+            "text": "research_stage.thaumicbases:tbspikes2.1",
+            "recipes": ["TB.VoidSpike"]
+          }
+        ]
+      },
+      {
+        "key": "TB.BloodFabric",
+        "name": "research_name.thaumicbases:tbbloodfabric",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:bloodycloth"
+        ],
+        "parents": [
+          "TB.SPIKE"
+        ],
+        "location": [
+          0, -6
+        ],"meta":["ROUND"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbbloodfabric.1",
+            "required_knowledge": [
+              "OBSERVATION;ARTIFICE;1"
+            ],"required_item": [
+            "thaumicbases:bloodycloth;1;0"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbbloodfabric.1",
+            "recipes": ["TB.BCHEST","TB.BLEGS","TB.BBOOTS"]
+          }
+        ]
+      },
+      {
+        "key": "TB.UseFire",
+        "name": "research_name.thaumicbases:tbusefire",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:braizer"
+        ],
+        "parents": [
+          "TB.BloodFabric"
+        ],
+        "location": [
+          0,-8
+        ],"meta":["ROUND"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbusefire.1",
+            "required_knowledge": [
+              "OBSERVATION;ARTIFICE;2"
+            ],"required_item": [
+            "minecraft:brewing_stand;1;0"
+          ],
+            "recipes": ["TB.camp"]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbusefire.2",
+            "recipes": ["TB.camp","TB.braizer"]
+          }
+        ]
+      },
+      {
+        "key": "TB.TOOLS",
+        "name": "research_name.thaumicbases:tbtools",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:thauminitepickaxe"
+        ],
+        "parents": [
+          "TB.UseFire", "UNLOCKELDRITCH"
+        ],
+        "location": [
+          0,-10
+        ],"meta":["HEX", "HIDDEN"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:tbtools.1","required_craft": [
+            "thaumicbases:thauminitesword"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:tbtools.1",
+            "recipes": ["thaumicbases:thauminiteshovel","thaumicbases:thauminitesword","thaumicbases:thauminitepickaxe","thaumicbases:thauminiteaxe","thaumicbases:thauminitehoe","thaumicbases:thauminitechest","thaumicbases:thauminitelegs","thaumicbases:thauminitehelmet","thaumicbases:thauminiteboots","TB.herobrine"]
+          }
+        ]
+      }
+    ]
+}

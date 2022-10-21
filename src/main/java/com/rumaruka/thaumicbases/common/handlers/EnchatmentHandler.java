@@ -19,6 +19,7 @@ import thaumcraft.api.entities.IEldritchMob;
 import thaumcraft.api.entities.ITaintedMob;
 import thaumcraft.api.potions.PotionFluxTaint;
 import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchCategory;
 
 public class EnchatmentHandler {
 
@@ -33,11 +34,9 @@ public class EnchatmentHandler {
 
                 if (EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund) > 0) {
                     int enchLevel = EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund);
-                    ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ALCHEMY"), MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
-                    ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("GOLEMANCY"), MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
-                    ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ELDRITCH"), MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
-                    ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("INFUSION"), MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
-                    ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, ResearchCategories.getResearchCategory("ARTIFICE"), MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
+                    ResearchCategory[] rc = ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
+                    ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
+                    ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
 
                 }
 

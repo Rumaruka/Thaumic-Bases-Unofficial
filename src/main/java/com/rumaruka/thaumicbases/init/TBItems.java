@@ -109,11 +109,8 @@ public class TBItems {
 
     //Mortar
     public  static  Item mortar;
-
-
-
-
-
+    public static Item revolver;
+    public static Item bullet;
 
 
     public static void init(){
@@ -179,7 +176,8 @@ public class TBItems {
         mortar = new ItemMortarAndPesle().setUnlocalizedName("mortar").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         rosehipsyrup = new ItemRosehipSyrup().setUnlocalizedName("rosehipsyrup").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
-
+        revolver = new ItemRevolver().setUnlocalizedName("revolver").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        bullet = new ItemBullet().setUnlocalizedName("bullet").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
     }
 
 
@@ -239,7 +237,8 @@ public class TBItems {
 
         TBItems.registerItem(rosehipsyrup,rosehipsyrup.getUnlocalizedName().substring(5));
 
-
+        TBItems.registerItem(revolver,revolver.getUnlocalizedName().substring(5));
+        TBItems.registerItem(bullet,bullet.getUnlocalizedName().substring(5));
     }
 
 
@@ -317,7 +316,8 @@ public class TBItems {
         renderItems(voidfas);
         renderItems(voidshears);
 
-
+        renderItems(revolver);
+        renderItems(bullet);
     }
 
 

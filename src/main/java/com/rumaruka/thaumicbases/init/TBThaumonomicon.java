@@ -3,8 +3,11 @@ package com.rumaruka.thaumicbases.init;
 
 import com.rumaruka.thaumicbases.common.block.FluidPyro;
 import com.rumaruka.thaumicbases.common.block.TBBlock;
+import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
+import com.rumaruka.thaumicbases.common.enchantment.InfusionEnchantmentRecipeGun;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
@@ -16,16 +19,15 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
-import thaumcraft.api.crafting.CrucibleRecipe;
-import thaumcraft.api.crafting.InfusionRecipe;
-import thaumcraft.api.crafting.ShapedArcaneRecipe;
-import thaumcraft.api.crafting.ShapelessArcaneRecipe;
+import thaumcraft.api.crafting.*;
 import thaumcraft.api.internal.CommonInternals;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.api.research.*;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
+import thaumcraft.common.lib.crafting.InfusionEnchantmentRecipe;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
+import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 import java.util.List;
 
@@ -306,7 +308,33 @@ public class TBThaumonomicon {
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.herobrine"),herobrine);
 
 
+        InfusionEnchantmentRecipeGun IEGTAINT = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.TAINT, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(ItemsTC.salisMundus)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGTAINT"), (InfusionRecipe)IEGTAINT);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGTAINTFAKE"), new InfusionEnchantmentRecipeGun(IEGTAINT, new ItemStack(TBItems.revolver)));
 
+        InfusionEnchantmentRecipeGun IEGHEAVY = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.HEAVY, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(Items.IRON_SWORD)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGHEAVY"), (InfusionRecipe)IEGHEAVY);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGHEAVYFAKE"), new InfusionEnchantmentRecipeGun(IEGHEAVY, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGPOWER = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.POWER, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(Items.FIRE_CHARGE)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGPOWER"), (InfusionRecipe)IEGPOWER);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGPOWERFAKE"), new InfusionEnchantmentRecipeGun(IEGPOWER, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGSMITE = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.SMITE, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(ItemsTC.quicksilver)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGSMITE"), (InfusionRecipe)IEGSMITE);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGSMITEFAKE"), new InfusionEnchantmentRecipeGun(IEGSMITE, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGBOART = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.BOART, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(Items.FERMENTED_SPIDER_EYE)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOART"), (InfusionRecipe)IEGBOART);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOARTFAKE"), new InfusionEnchantmentRecipeGun(IEGBOART, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGBOE = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.BOE, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(ItemsTC.voidSword)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOE"), (InfusionRecipe)IEGBOE);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOEFAKE"), new InfusionEnchantmentRecipeGun(IEGBOE, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGDUELING = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.DUELING, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(Items.GHAST_TEAR)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGDUELING"), (InfusionRecipe)IEGDUELING);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGDUELINGFAKE"), new InfusionEnchantmentRecipeGun(IEGDUELING, new ItemStack(TBItems.revolver)));
         /*==============================================INFUSING END=============================================================================*/
 
         /*TOBACCO INIT*/

@@ -1,5 +1,6 @@
 package com.rumaruka.thaumicbases.common.handlers;
 
+import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
 import com.rumaruka.thaumicbases.init.TBEnchant;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -8,11 +9,17 @@ import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.entities.IEldritchMob;
@@ -78,6 +85,27 @@ public class EnchatmentHandler {
             }
 
 
+        }
+    }
+
+    @SideOnly(value = Side.CLIENT)
+    @SubscribeEvent
+    public void tooltipEvent(ItemTooltipEvent event) {
+        event.getItemStack();
+        NBTTagList nbttaglist = EnumInfusionEnchantmentGun.getInfusionEnchantmentTagList(event.getItemStack());
+        if(nbttaglist != null) {
+            for(int j = 0; j < nbttaglist.tagCount(); ++j) {
+                short k = nbttaglist.getCompoundTagAt(j).getShort("id");
+                short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
+                if(k < 0 || k >= EnumInfusionEnchantmentGun.values().length)
+                    continue;
+                String s = TextFormatting.GOLD + I18n
+                        .translateToLocal("enchantment.infusion." + EnumInfusionEnchantmentGun.values()[k].toString());
+                if(EnumInfusionEnchantmentGun.values()[k].maxLevel > 1) {
+                    s = s + " " + I18n.translateToLocal("enchantment.level." + l);
+                }
+                event.getToolTip().add(1, s);
+            }
         }
     }
 }

@@ -295,3 +295,11 @@ item.tb.shardCluster.entropy.name=Entropy Crystal Cluster
 item.tb.shardCluster.mixed.name=Mixed Crystal Cluster
 item.tb.shardCluster.tainted.name=Tainted Crystal Cluster
 item.tb.bracelet.brass=Brass Bracelet
+
+enchantment.infusion.TAINT=Taint
+enchantment.infusion.POWER=Power
+enchantment.infusion.HEAVY=Heavy
+enchantment.infusion.SMITE=Silver
+enchantment.infusion.BOE=Bane of Eldritch
+enchantment.infusion.BOART=Bane of Arthropods
+enchantment.infusion.DUELING=Dueling

@@ -335,6 +335,19 @@ public class TBThaumonomicon {
         InfusionEnchantmentRecipeGun IEGDUELING = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.DUELING, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(Items.GHAST_TEAR)), new ItemStack((Item)Items.ENCHANTED_BOOK));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGDUELING"), (InfusionRecipe)IEGDUELING);
         ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGDUELINGFAKE"), new InfusionEnchantmentRecipeGun(IEGDUELING, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGWISE = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.WISE, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(ItemsTC.brain)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGWISE"), (InfusionRecipe)IEGWISE);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGWISEFAKE"), new InfusionEnchantmentRecipeGun(IEGWISE, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGEFFICIENCY = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.EFFICIENCY, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(ItemsTC.amber)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGEFFICIENCY"), (InfusionRecipe)IEGEFFICIENCY);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGEFFICIENCYFAKE"), new InfusionEnchantmentRecipeGun(IEGEFFICIENCY, new ItemStack(TBItems.revolver)));
+
+        InfusionEnchantmentRecipeGun IEGSPEED = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.SPEED, (new AspectList()).add(Aspect.FIRE, 1), new IngredientNBTTC(new ItemStack(Items.RABBIT_FOOT)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEED"), (InfusionRecipe)IEGSPEED);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEEDFAKE"), new InfusionEnchantmentRecipeGun(IEGSPEED, new ItemStack(TBItems.revolver)));
+
         /*==============================================INFUSING END=============================================================================*/
 
         /*TOBACCO INIT*/

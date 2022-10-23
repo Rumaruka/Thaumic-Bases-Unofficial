@@ -8,24 +8,23 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.IThrowableEntity;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.entities.IEldritchMob;
 import thaumcraft.api.potions.PotionFluxTaint;
+import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.common.lib.SoundsTC;
 
 
@@ -35,23 +34,27 @@ public class EntityRevolverBullet extends EntityThrowable {
         shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0, 1.5F, 1.0F);
     }
 
-    @Override
     public void onUpdate() {
+        if (this.world.isRemote)
+            FXDispatcher.INSTANCE.sparkle((float)this.posX, (float)this.posY, (float)this.posZ, 4.0F, 4.0F, 4.0F);
+        if (this.world.isRemote)
+            FXDispatcher.INSTANCE.sparkle((float)(this.posX - this.motionX / 20.0D), (float)(this.posY - this.motionY / 20.0D), (float)(this.posZ - this.motionZ / 20.0D), 4.0F, 4.0F, 4.0F);
+        if (this.ticksExisted >= 200)
+            setDead();
         super.onUpdate();
-        makeTrail();
     }
 
-    private void makeTrail() {
-        for (int i = 0; i < 5; i++) {
-            double dx = posX + 0.5 * (rand.nextDouble() - rand.nextDouble());
-            double dy = posY + 0.5 * (rand.nextDouble() - rand.nextDouble());
-            double dz = posZ + 0.5 * (rand.nextDouble() - rand.nextDouble());
 
-            double s1 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.17F;
-            double s2 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.80F;
-            double s3 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.69F;
-
-            world.spawnParticle(EnumParticleTypes.END_ROD, dx, dy, dz, s1, s2, s3);
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void handleStatusUpdate(byte id) {
+        if (id == 3) {
+            int itemId = Item.getIdFromItem(TBItems.bullet);
+            for (int i = 0; i < 8; ++i) {
+                this.world.spawnParticle(EnumParticleTypes.END_ROD, this.posX, this.posY, this.posZ, rand.nextGaussian() * 0.05D, rand.nextDouble() * 0.2D, rand.nextGaussian() * 0.05D, itemId);
+            }
+        } else {
+            super.handleStatusUpdate(id);
         }
     }
 

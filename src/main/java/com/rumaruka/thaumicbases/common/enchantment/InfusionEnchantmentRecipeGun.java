@@ -96,6 +96,30 @@ public class InfusionEnchantmentRecipeGun extends InfusionRecipe{
                     cool = true;
                 }
             }
+            if(!cool && central.getItem() instanceof ItemRevolver && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(central, EnumInfusionEnchantmentGun.SPEED) <= 0 && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(central, EnumInfusionEnchantmentGun.Accuracy) <= 0){
+                at = "revolver_effect";
+                if(this.enchantment.toolClasses.contains(at)){
+                    cool = true;
+                }
+            }
+            if(!cool && central.getItem() instanceof ItemRevolver && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(central, EnumInfusionEnchantmentGun.EFFICIENCY) <= 0 && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(central, EnumInfusionEnchantmentGun.Accuracy) <= 0){
+                at = "revolver_speed";
+                if(this.enchantment.toolClasses.contains(at)){
+                    cool = true;
+                }
+            }
+            if(!cool && central.getItem() instanceof ItemRevolver && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(central, EnumInfusionEnchantmentGun.WISE) <= 0){
+                at = "revolver_taint";
+                if(this.enchantment.toolClasses.contains(at)){
+                    cool = true;
+                }
+            }
+            if(!cool && central.getItem() instanceof ItemRevolver && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(central, EnumInfusionEnchantmentGun.TAINT) <= 0){
+                at = "revolver_wise";
+                if(this.enchantment.toolClasses.contains(at)){
+                    cool = true;
+                }
+            }
             if(!cool && central.getItem() instanceof IRechargable && this.enchantment.toolClasses.contains("chargable")){
                 cool = true;
             }

@@ -1,6 +1,8 @@
 package com.rumaruka.thaumicbases.common.handlers;
 
 import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
+import com.rumaruka.thaumicbases.common.enchantment.InfusionEnchantmentRecipeGun;
+import com.rumaruka.thaumicbases.common.item.ItemRevolver;
 import com.rumaruka.thaumicbases.init.TBEnchant;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -36,11 +38,15 @@ public class EnchatmentHandler {
             EntityPlayer attacker = (EntityPlayer) e.getSource().getTrueSource();
             ItemStack mainHund = attacker.getHeldItemMainhand();
 
-            if (!mainHund.isEmpty() && mainHund.getItem() instanceof ItemSword) {
+            if (!mainHund.isEmpty() && (mainHund.getItem() instanceof ItemSword || mainHund.getItem() instanceof ItemRevolver)) {
 
 
-                if (EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund) > 0) {
-                    int enchLevel = EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund);
+                if (EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund) > 0 || EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(mainHund, EnumInfusionEnchantmentGun.WISE) > 0) {
+                    int enchLevel = 0;
+                    if(mainHund.getItem() instanceof ItemSword)
+                    enchLevel = EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund);
+                    if(mainHund.getItem() instanceof ItemRevolver)
+                        enchLevel = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(mainHund, EnumInfusionEnchantmentGun.WISE);
                     ResearchCategory[] rc = ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
                     ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
                     ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));

@@ -1,29 +1,20 @@
 itemGroup.thaumicbases=Thaumic Bases
 tc.research_category.THAUMICBASES=Thaumic Bases
 
-
-
 #tooltip
 tb.tooltip.aer=Test
 tb.tooltip.fire=Test 2
 #enchantments
-enchantment.elderKnowledge=Elder Wisdom
-enchantment.eldritchBane=Eldritch Bane
-enchantment.magicTouch=Magic Touched
-enchantment.tainted=Tainted
-enchantment.vaporising=Vaporising
-#Containers
-tb.overchanter=Overchanter
+enchantment.minecraft.thaumicbases.elderKnowledge.desc=Adds a chance to obtain Observation Points to your Thaumonomicon.
+enchantment.minecraft.thaumicbases.eldritchBane.desc=Increases damage against otherworldy mobs such as Endermen and Eldritch Guardians.
+enchantment.minecraft.thaumicbases.magicTouch.desc=(unavailable until reimplemented)
+enchantment.minecraft.thaumicbases.tainted.desc=Applies a chance to poison a mob with taint.
+enchantment.minecraft.thaumicbases.vaporising.desc=(unavailable until reimplemented)
 
-#Aspects
-tc.aspect.pannus=Cloth, Material, Covering
-tc.aspect.iter=Travel, Journey
-tc.aspect.sano=Health, Healing
-tc.aspect.messis=Plants
-tc.aspect.fames=Hunger
+#Containers
+tb.overchanter=Overchanting Table
+
 #blocks
-tile.quicksilverBlock.name=Block of Quicksilver
-tile.quicksilverBrick.name=Quicksilver Brick
 tile.crystalblockfire.name=Fire Crystal Block
 tile.crystalblockwater.name=Water Crystal Block
 tile.crystalblockearth.name=Earth Crystal Block
@@ -32,64 +23,61 @@ tile.crystalblockorder.name=Order Crystal Block
 tile.crystalblockentropy.name=Entropy Crystal Block
 tile.crystalblockmixed.name=Primal Crystal Block
 tile.crystalblocktainted.name=Tainted Crystal Block
-tile.dustBlock.name=Sussy Mundus Block
 tile.pyro.name=Pyrofluid
 tile.blockthauminite.name=Block of Thauminite
-tile.eldritchark.name=Gold Etched Obsidian
-tile.irongreatwood.name=Iron Framed Greatwood
 tile.plax.name=Plax Crop
-tile.aurelia.name=Aurelia
+tile.aurelia.name=Aurelia Flower
 tile.aureliapetalb.name=Aurelia Petal
 tile.metalleat.name=Metalleat Crop
 tile.lucrite.name=Lucrite Crop
-tile.knose.name=Rosa Mysteria
 tile.sweed.name=Sweed Crop
 tile.lazullia.name=Lazullia Crop
-tile.rainbowCactus.name=Rainbow Cacti
+tile.rainbowCactus.name=Rainbow Cactus
 tile.redlonstem.name=Redlon Stem
-tile.ashroom.name=Primal Shroom
 tile.flaxium.name=Fluxium
 tile.glieonia.name=Glieonia Crop
 tile.briar.name=Briar Flowerbush
 tile.tobacco.name=Tobacco Crop
-tile.voidPlant.name=Void Crop
+tile.voidPlant.name=Void Seed Crop
 tile.ironspike.name=Iron Spikes
 tile.thaumspike.name=Thaumium Spikes
 tile.voidspike.name=Void Spikes
-tile.goldensapling.name=Golden Apple Sapling
-tile.goldenleaves.name=Golden Apple Leaves
-tile.goldenlogs.name=Golden Apple Wood
-tile.goldenplanks.name=Golden Apple Planks
 tile.overchanter.name=Overchanting Table
 tile.oldcobble.name=Ancient Cobblestone
 tile.oldgravel.name=Ancient Gravel
 tile.oldcobblemossy.name=Ancient Mossy Cobblestone
-tile.advAlchFurnace.name=Advanced Alchemical Furnace
-//tile.entityDeconstructor.name=Entity Deconstructor
 tile.oldiron.name=Ancient Iron Block
 tile.olddiamond.name=Ancient Diamond Block
 tile.oldgold.name=Ancient Gold Block
 tile.oldlapis.name=Ancient Lapis Lazuli Block
 tile.oldbrick.name=Ancient Bricks
+tile.quicksilverBlock.name=Block of Quicksilver
+tile.quicksilverBrick.name=Quicksilver Brick
+tile.eldritchark.name=Gold-Etched Obsidian
+tile.irongreatwood.name=Iron-Framed Greatwood
+tile.dustBlock.name=Salis Mundus Block
 tile.thaumicRelocator.name=Thaumic Relocator
-tile.tb.voidblock.name=Void Metal Block
-tile.nethersapling.name=Hellish Oak Sapling
-tile.endersapling.name=Ender Oak Sapling
-tile.netherlogs.name=Hellish Oak Wood
-tile.enderlogs.name=Ender Oak Wood
-tile.netherleaves.name=Hellish Oak Leaves
-tile.enderleaves.name=Ender Oak Leaves
-tile.enderplanks.name=Ender Wood Planks
-tile.netherplanks.name=Hellish Wood Planks
-tile.rainbowcactus.name=Rainbow Cactus
-tile.campfire.name=Thaumaturge's Campfire
-tile.braizer.name=Thaumaturge's Brazier
+tile.enderlogs.name=Enden Wood
+tile.enderleaves.name=Enden Leaves
+tile.endersapling.name=Enden Sapling
+tile.enderplanks.name=Enden Wood Planks
+tile.netherlogs.name=Infernal Wood
+tile.netherleaves.name=Infernal Leaves
+tile.nethersapling.name=Infernal Sapling
+tile.netherplanks.name=Infernal Planks
+tile.goldensapling.name=Golden Apple Sapling
+tile.goldenleaves.name=Golden Apple Leaves
+tile.goldenlogs.name=Golden Apple Wood
+tile.goldenplanks.name=Golden Apple Planks
+tile.campfire.name=Magical Campfire
+tile.braizer.name=Magical Brazier
+tile.pyrosolid.name=Crystallized Pyrofluid
+fluid.pyro=Pyrofluid
 
 #items
 item.nuggetthauminite.name=Thauminite Nugget
 item.thauminite_ingot.name=Thauminite Ingot
 item.thauminite_plate.name=Thauminite Plate
-item.aureliapetal.name=Aurelia Petal
 item.thauminiteaxe.name=Thauminite Axe
 item.thauminitehoe.name=Thauminite Hoe
 item.thauminiteshovel.name=Thauminite Shovel
@@ -100,173 +88,54 @@ item.thauminitehelmet.name=Thauminite Helmet
 item.thauminitechest.name=Thauminite Chestplate
 item.thauminitelegs.name=Thauminite Leggings
 item.thauminiteboots.name=Thauminite Boots
-item.briar_seedbag.name=Briar Seedpod
-item.tobacco_leaves.name=Tobacco Leaves Pile
-item.pyrobucket.name=Pyrofluid Bucket
-item.pyrobucket.name=Pyrofluid Bucket
-fluid.pyro=Liquid Pyrofluid
-tile.pyrosolid.name=Crystallized Pyrofluid
+item.briar_seedbag.name=Briar Seed Bag
+item.rosehipsyrup.name=Rosehip Syrup
+item.pyrobucket.name=Bucket of Pyrofluid
+item.aureliapetal.name=Aurelia Petal
 item.plaxseed.name=Plax Seeds
 item.metalleatseed.name=Metalleat Seeds
 item.lucriteseed.name=Lucrite Seeds
-item.fireingot.name=Ignis Fragment
-item.wateringot.name=Aqua Fragment
-item.earthingot.name=Terra Fragment
-item.airingot.name=Aer Fragment
-item.orderingot.name=Ordo Fragment
-item.entropyingot.name=Perditio Fragment
-item.mixedingot.name=Primal Fragment
-item.taintedingot.name=Tainted Fragment
 item.sweedseed.name=Sweed Seeds
 item.lazulliaseed.name=Lazullia Seeds
 item.redlonseed.name=Redlon Seed
 item.glieoniaseed.name=Glieonia Seed
-item.rosehipsyrup.name=Rosehip Syrup
+item.voidseed.name=Void Plant Seed
+item.tobaccoseed.name=Tobacco Seeds
+item.mortar.name=Pestle And Mortar
 item.greatwoodpipe.name=Greatwood Puffpipe
 item.silverwoodpipe.name=Silverwood Puffpipe
+item.tobacco_leaves.name=Tobacco Leaf
 item.tobacco_pile.name=Tobacco Pile
-item.tobacco_eldritch.name=Voidseer Tobacco
-item.tobacco_fighting.name=Berserk Tobacco
+item.tobacco_eldritch.name=Voidseer's Tobacco
+item.tobacco_fighting.name=Berserken Tobacco
 item.tobacco_hunger.name=Nourishing Tobacco
-item.tobacco_knowledge.name=Enlightened Tobacco
-item.tobacco_mining.name=Geologist Tobacco
+item.tobacco_knowledge.name=Enlightening Tobacco
+item.tobacco_mining.name=Miner's Tobacco
 item.tobacco_sanity.name=Prudent Tobacco
 item.tobacco_tainted.name=Fetid Tobacco
 item.tobacco_wispy.name=Wispy Tobacco
-item.tobaccoseed.name=Tobacco Seeds
-item.mortar.name=Pestle And Mortar
-item.voidseed.name=Void Plant Seed
-item.bloodycloth.name=Stained Enchanted Fabric
+item.bloodycloth.name=Bloody Enchanted Fabric
 item.bloodychest.name=Bloody Thaumaturge's Robe
 item.bloodylegs.name=Bloody Thaumaturge's Leggings
 item.bloodyboots.name=Bloody Thaumaturge's Boots
-item.concentratedTaint.name=Concentrated Taint Flask
-item.activationFoci.name=Wand Focus: Activation
-item.fluxFoci.name=Wand Focus: Flux Scrubber
-item.drainFoci.name=Wand Focus: Liquid Drain
-item.experienceFoci.name=Wand Focus: Experience
 item.herobrinesscythe.name=Scythe Of The White-Eyed One
 item.voidshears.name=Void Shears
 item.voidfas.name=Void Flint and Steel
-
-#Researchs
-research_name.thaumicbases:thaumicbases=A New Chapter
-research_stage.thaumicbases:thaumicbases.1=Opening this segment of the Thaumonomicon, I am bewildered to see pages that I can't see. The strange part of it is, is that I can see this simple part of the chapter. Perhaps looking more into §lBasic§r parts of this chapter will aide me in revealing the knowledge hiding within these pages.
-research_stage.thaumicbases:thaumicbases.2=There we are! Upon sifting through some of my notes whilst searching for Basic research, my mind opened up to learning more about this unusual art. Now that I can read some more of the pages, I believe it's time to look a little further. 
-
-research_name.thaumicbases:tbalchemy=Basic Alchemy
-research_stage.thaumicbases:tbalchemy.1=Something feels wrong... maybe my tests with Alchemical Metallurgy was but a fluke. From my research of creating Thaumium, it feels rather dull in terms of power. Something tells me that I could make this more powerful, but how could I do so? Perhaps these "fragments" could help me, maybe?
-research_stage.thaumicbases:tbalchemy.2=While the fragments were useless to me in my search for a stronger metal, I was able to pinpoint a use for them in a different page. Nonetheless, I have finally made something more powerful than Thaumium! I can't really think of a good name, so I will call it Thauminite. This metal should be a lot sturdier than Diamond as well as having much more potency in enchanting, and the armor I can make out of it gives me a Vis Discount! However... I can't seem to find many more uses for it outside of tools, if I was really desperate for a better option. Perhaps I should look more into what the properties of the tools I can create from this could be.
-
-research_name.thaumicbases:tbfluid=Liquid Blaze
-research_stage.thaumicbases:tbfluid.1=Fluids are not often researched within the arts of miracle-working, however... this page seems to be hinting at something called "Pyrofluid". While it sounds rather silly, it may house some incredible use! Perhaps studying the fluids that I already know could help me understand this more.
-research_stage.thaumicbases:tbfluid.2=Voilà! After breaking my back and brain to create this fluid, I deem my work of massacring Blazes to be concluded. No more Spawner camping, no more turning into KFT. Upon placing this fluid down, I found several things. Firstly, it burns. Do not come into contact with this fluid. I miss having a foot. Secondly, the fluid appears to crystallize slowly over time. However... I had been foolish enough to slip on one of my notes, tossing the bucket of fluid into my Arcane Spa, retriving it shows something rather pleasant! While I lost a small portion of the mind-cleansing fluid in my spa, I did get a solidified version of Pyrofluid. Breaking it with my pickaxe results in a generous handful of Blaze Powder. It does not appear to work with the Fortune Enchantment.
-
-research_name.thaumicbases:tbplant=Sweed
-research_stage.thaumicbases:tbplant.1=Growing Sugar Cane is a chore, not only does it have to be in a certain format to be the most efficient possible, but I'm also not willing to wait as long for more to grow. Studying the way wheat grows, I could theoretically create a seed that grows like sugarcane, providing me with both sugar and Sugar Cane.
-research_stage.thaumicbases:tbplant.2=Thaumaturgy is rich in the knowledge it holds, and powerful in the ways that knowledge can be used. Alchemy, Infusion, Enchanting... Thaumaturgy can seemingly do just about anything. However, most Thaumaturges ignore a very subtle but vital aspect of life as a whole - plants. I, however, am not most Thaumaturges. This brand new discovery holds incredible potential for me, now that I know I can manipulate plant matter into something that I can shape myself. Let's see science try to explain that! I call this new plant the "Sweed"(I need a better name for this), and while it's technically a weed, it comes with a "sweet" deal! While it's a rather infestious species of plant, with the correct amount of case going into keeping it contained, I can get a plant that will bring me a lot of sugar and Sugar Cane overtime!... or so I thought, it seems now that this "Sweed" goes in only one direction, South. It also appears to not... really infect other areas, it doesn't spread out. Thankfully I don't have to manage it all that much, but it's rather disappointing. Oh well, maybe next experiment will hold more fruit to it.
-
-research_name.thaumicbases:tbplant1=Further Herbology
-research_stage.thaumicbases:tbplant1.1=Sweed was a disappointment, no doubt. However, that won't make me give up on plants just yet. I feel as if there's more of a diligant nature to these handfuls of seeds that I hold in my hand. Perhaps I should study more than just seeds, I should study flowers, I should study some of the crops that I grow. There's gotta be something that I can do!
-research_stage.thaumicbases:tbplant1.2=After an exhausting night of studying flowers and some of my crops, I've managed to create a few, hopefully very useful, plants. I'm not feeling all too confident after the Sweed incident... but perhaps this research could be of some use! God I hope so... I'm nearing my limits with failures on these products.<BR>§l§nPlax Seeds§r - My idea for the Plax Seeds was that I could get a handful of string from this crop, and get a seed from it... however, I got 2 handfuls and 2 seeds. What a delight! Something actually better happening than what I expect it to be!<BR>§l§nAurelia§r - This plant has proven extreme use and worth of my time! Originally, the idea was for the plant to shed petals that would allow me to make use of Aurum Essentia, since it's so god damn annoying to get. However, after some renditions of failed flowers, I finally had one that conveniently worked during the Night.<BR>§l§nRedlon Seed§r - This one is working as it should, my plan was to make an, essentially, regrowable source of redstone similar to how my Melons and Pumpkins grew, and with this recent development of this "Redlon" (which is just a block of Redstone Dust). It turned out to be an incredible success! This might be it, this might be my turning point!<BR>§l§nMetalleat Seed§r - Much like the Plax Seeds, however it drops Iron Nuggets instead. Iron Nuggets are a lot more managable for a plant to grow than a full ingot of iron.<BR>§l§nLazullia Seed§r - This plant is also similar in concept to the Plax Seeds, however, I get Lapis Lazuli gems instead of string, quite handy for Enchanting and Sensus Essentia!<BR>§l§nGlieona Seed§r - This one works a little worse than most. However it's not too terrible, I simply am unable to get a seed from its harvest. This crop was meant to give me a handful of glowstone upon its growth and its seed. However I am without a seed from its growth.<BR>§l§nFluxium§r - This... particular plant very occasionaly produces flux gas from its buds, why the hell would I use this inferior type of plant?! It does nothing but pollute my air, and makes rifts spawn occasionally... unless there's a bigger picture to it that I do not yet understand?<BR>§l§nLucrite Seeds§r - Similar to the Plax seeds... however, instead of string, it's golden nuggets, along with a bonus of a Golden Carrot! One thing that I noted while trying it out is that it instantly withers away when I place it on farmland, I have to have it under a Salis... fucking god, SUSSY Mundus Block, in order for it to work.<BR>§l§nBriar Flowerbush§r - This is similar to a berry bush. It grows unusual podling flowers that don't seem to allow it to reproduce though... which is odd for a name like "Briar Seedpod", however... this leads me to the creation of a very delicious syrup that I'm dubbing §l§nRosehip Syrup§r! This syrup acts similarly to milk, and removes any and all bad effects. However, its benefit is that I can keep all of my good buffs with me! No more having to sacrifice potion ingredients because of my incompetence at cures. This is the cure-all!<BR>§l§nTobacco Seed§r - This is more thoroughly explained in the "Now Where is my Pipe?" section that I wrote in a different page of the Thaumonomicon. In short, it didn't work at all the way it was supposed to.
-
-research_name.thaumicbases:tbcactus=Rainbow Cactus
-research_stage.thaumicbases:tbcactus.1=Cacti are almost conceptually useless in practical theory. They poke you, destroy items are dropped from monsters. These little buggers are not good for a thaumaturge such as myself, I don't need my robes getting caught in its thorns! So how about I give a Cactus more purpose than being just the ugliest thing in the world?
-research_stage.thaumicbases:tbcactus.2=Well, I couldn't fix the ugly part. However, I have been able to negate its other two downsides! The Rainbow Cactus is a plant that allows me to grow my own dyes, and with that comes uses of its own! Breaking a cactus block that grown above the cacti I placed down on sand grants me a plentiful handful of dyes. It also seems to replicate itself much like regular Cacti, in theory I could use this to duplicate the cacti and make a farm out of it.
-
-research_name.thaumicbases:tbtree=Garden of the Golden Fruits
-research_stage.thaumicbases:tbtree.1=I've heard of a way to make an apple tree work for me in a far better way. Sure, Apples are quite a nice snack, but what other heal benefits do I get out of it than the sweetness of a freshly picked fruit? I've come up with a theory in which I can make a tree that exclusively grows Golden Apples. After having had created such a thing, I have made it so any and all apples that fall from these branches will be Golden, and delicious! While I am unable to get the Legendary "Enchanted Golden Apple", these will have to do for right now. I'm sure there's a way that I can get this shiny beauty of a fruit to shine a little more!
-
-research_name.thaumicbases:tbtree1=Garden of the Pearls
-research_stage.thaumicbases:tbtree1.1=Similar in concept to the Golden Apple Tree, however I replaced the apples with Ender Pearls and Ender Eyes respectively. Theoretically, I should be able to harvest the fragile Ender Pearls within the leaves if I am careful.
-
-research_name.thaumicbases:tbtree2=Garden of the Molten
-research_stage.thaumicbases:tbtree2.1=Similar in concept to the Golden Apple Tree and the Ender Oak Tree, however I replaced the apples with Nether Wart and Blaze Powder respectively. Theoretically, I should be able to harvest the molten Magma Cream within the leaves if I am careful.
-
-research_name.thaumicbases:tbdeco=Old but Good
-research_stage.thaumicbases:tbdeco.1=Have you ever been so god damn lazy to not install a texture pack that you just make old, shitty blocks and slap a purpose on it? Yeah, I was bored and just decided "screw it, I don't feel like using common sense". Now I have this. 
-
-research_name.thaumicbases:tbdeco2=Old but Stabilizing
-research_stage.thaumicbases:tbdeco2.1=While my previous judgement of older blocks was rather... unethical. I can say for certain these blocks may prove to be a little more interesting in my eyes, as it's not as dull as the olden blocks of a past age that I do not wish to remember. They hold a little more purpose than just being old textures... wait... what the fuck happened to my Salis Mundus Block?
-
-research_name.thaumicbases:tbmacerator=Crucible Crushing
-research_stage.thaumicbases:tbmacerator.1=I need some alternate ways of getting the materials I want, I can't get them myself, but I do have an idea as to how I'm gonna get them. Considering common logic of how some of these materials are normally gotten, this should theoretically be how I achieve such a thing.
-research_stage.thaumicbases:tbmacerator.2=Similar to a Macerator, I have achieved the ability to break down certain things, however... it's incredibly inefficient and doesn't guarantee that I can get what I need... wait. How the hell can I make gold out of Sand?
-
-research_name.thaumicbases:tbadvmacerator=Advanced Crucible Crushing
-research_stage.thaumicbases:tbadvmacerator.1=What I'm getting is not enough, I need to make more of these products. I need to do better, I need to be better. Time can only tell when I'm going to make my next big screw up, and I can't let it be soon. How am I going to fabricate more of what I'm trying to crush?
-research_stage.thaumicbases:tbadvmacerator.2=I looked back at the word "fabricate" for some reason before I began writing more theories, and the word stuck to my mind like glue. Then it hit me while I was researching machines. In order to Fabricate, I need Fabrico. I just need to sort out how I will manage to get the Herba vis out of the system. I should still have a few Quartz Slivers left over.
-
-research_name.thaumicbases:tbexchang=Refined Compression
-research_stage.thaumicbases:tbexchang.1=For someone who has done so much in this world, I can't seem to be satisfied with what I'm doing. Is it because I'm greedy? Am I becoming an idolater to insanity that's becoming blind to the truth of righteousness? I can't focus on that right now, my mind is trying to play tricks on me. I need to focus. I want to reconstruct some of the various materials that I've broken down before, so how will I do so? I'm gonna have to see.
-research_stage.thaumicbases:tbexchang.2=After contemplating a bit with myself about what I am doing, I managed to get my thoughts together. These additional crucible recipes should allow me to duplicate my resources further than I could before! I... I think I need to take some time in the Arcane Spa, I don't think I'm doing too well.
-
-research_name.thaumicbases:tbdouble=Avarice and Ambition
-research_stage.thaumicbases:tbdouble.1=Without a proper way to double my resources, as far as I'm aware, I'm gonna need to take advantage of the materials that I can currently take advantage of. I can't just create a machine or a formula that turns stone into ore, or ore into more ore... however... that doesn't mean that I can't create more clusters out of ore!
-research_stage.thaumicbases:tbdouble.2=I've found a way! It mainly has to do with doubling the essentia I put into the system, but nothing a little item arranging and Quartz Slivers can't fix. This should theoretically allow me to create more of what I've been trying to make in the first place. Clusters are now doubled! With a good Infernal Furnace setup in place, this could be the easiest and most efficient way of smelting that a Thaumaturge could dream of! 
-
-research_name.thaumicbases:tbmachanism=Beyond Enchanting
-research_stage.thaumicbases:tbmachanism.1=Try make awesome Mechanism! <- For some reason, this was written in the book when I opened the page to write about my next idea. I also can't seem to erase the text either, though I don't believe I can erase any of the things I write down in this book anyway. My new idea for this particular section is a current struggle for more power on my tools and weapons, and the most I can do is simply Level 5... however, who is to stop me from going above and beyond? Who dares to stop me at the pinnacle of my power?! I'm, seemingly, the only one ballsy enough to go beyond enchanting.
-research_stage.thaumicbases:tbmachanism.2=The Overchanting Table! This creation has taken a lot of time. I just hope it was worth my time. The theoretical concept of this machine is that any enchanted item that is at its maximum enchantment level (ex. Sharpness V, Protection IV), should get its enchantment level increased by 1. I've acknowledged the possibility of Instability, mainly because in order for this machine to work, I need to put in Praecantatio Essentia. However, testing it... it doesn't even do that. It just consumes all of my Praecantatio Essentia, and without a damn result along the lines other than an empty jar, and a big "fuck you" to me apparently. So much for being anything useful.
-
-research_name.thaumicbases:tbspikes=Iron Spikes
-research_stage.thaumicbases:tbspikes.1=Pesky mobs try to hinder my quest for intelligence. There must be a way that I can prevent this from happening, and the basic design I have down is a set of spikes that these foolish mobs can run into and stumble over. I shall oversee how this concept will work in my favor, but what could be used as an example of something that can trap things? Pressure plates?
-research_stage.thaumicbases:tbspikes.2=My plan came together rather nicely! A set of Iron Spikes with a consistent amount of damage that cannot, however, be placed in any other way than upright. These spikes also tend to tear through things that mobs drop and completely consume them. I'm not very happy about the result, but there's always room for improvement when starting out with an idea.
-
-research_name.thaumicbases:tbspikes1=Thaumium Spikes
-research_stage.thaumicbases:tbspikes1.1=I managed to reinforce my spikes with Thaumium, in theory, this will make the spikes a lot sharper, and far more deadly. These spikes also have 2 additional benefits to them, the first one being that it won't rip apart mob drops, and the second being that I can activate and deactivate them with a bit of connection to redstone!
-
-research_name.thaumicbases:tbspikes2=Void Spikes
-research_stage.thaumicbases:tbspikes2.1=They call me a madman, and for what? The use of Void to torture my foes to death? These Void Spikes should deal a massive amount of damage to regular mobs, killing them almost instantly. Similar to its Thaumium predecessor, this set of spikes does not skewer mob drops, along with being able to be activated and decativated with Redstone. These are surely going to be what I need to finally create my monster grinder... surely now I can make them pay.
-
-research_name.thaumicbases:tbbloodfabric=Blood... Magic?
-research_stage.thaumicbases:tbbloodfabric.1=As I use more of my spikes, I'm starting to notice how messy they get. I should probably clean the spikes off, as they're rather... disgusting looking. Unfortunately, I'm not sure if I can get the blood off of the fabric, but I think I can do more with this than just wiping off the blood. I've created a set of clothes with... a rather odd set of bonuses, but they're helpful nonetheless.<BR>The §l§nBloody Thaumaturge Robes§r give me a vitality boost! Leaving me a fair bit healthier and more ready to endure the forces that are surely to come after me with monster blood drenched on these robes.<BR>The §l§nBloody Thaumaturge Leggings§r keep me in place, as to not get knocked around like a ball.<BR>Finally, the §l§nBloody Thaumaturge Boots§r give me an incredible speed boost! Allowing me to run wild as I escape the dangers of what lurks within when I look too deep into the Abyss. Now I just need a set of Bloody Goggles to match my bloody clothes... wait that makes me sound like a criminal.
-
-research_name.thaumicbases:tbusefire=A Lit Bonfire
-research_stage.thaumicbases:tbusefire.1=Alone at night while scavenging for things to research out in the wilderness proves to be a fatal flaw I have as someone that needs to know all I can. I don't need another arrow to the head, I need knowledge! An arrow can't provide me with new and mind-breaking discoveries so I can witness the world shape to my liking. However, how can I do that? It's not like I can just place down a bonfire and rest at it... or can I?
-research_stage.thaumicbases:tbusefire.2=§lThe Campfire§r - As a Thaumaturge, I know one thing. The fact that the world is going against me in the cruelest ways possible. Through failures in experiments and the horrors that lie beyond the veil of the mortal eye, I can't seem to catch a break. However, who said I couldn't bite back? While out and about, I can set up a campfire nearby to allow me to rest and regain my thoughts a little. Normal wood work fine, however, magical logs do me more wonders for a quick and easy rest for a longer duration. Mobs nearby do not run away despite its purifying scent.
-§lThe Brazier§r - The Campfire was a rather large success on my end, however... it feels rather tedious to gather large amounts of Magical Wood to burn into the fire and then rinse and repeat. Plus a campfire can't be used inside, it would fill my researching facility with smoke! Along side my research for the Campfire, I've created a Brazier that should theoretically drain nearby jars of Ignis essentia, and light a smokeless, rejuvinating light to my environment.
-
-research_name.thaumicbases:tbtobacco=Now Where Could My Pipe Be?
-research_stage.thaumicbases:tbtobacco.1=Drug use is bad, if someone somehow finds this book and decides to take a look at it, I hope they know that I do not condone the use of drugs, especially tobacco products and hard drugs. However... I can't seem to find a good way to relax, I'm getting desperate. While drugs normally do not exist outside of the Vishroom, it doesn't really let me relax. I need something to soothe my aching and anxious mind. I really hoped I wouldn't have to go to bad habits and possible addiction.
-research_stage.thaumicbases:tbtobacco.2=§l§nMortar§r - I have carved out a sturdier bowl for tobacco crushing. Yet I also could swear that I've crushed something else with this before. Maybe flowers?<BR>§l§nSmoking Pipes§r - I have created two types of pipes from the research I've made, and as much as I don't want to use them. I can't stop myself now, I'm too stressed.<BR>The §l§nGreatwood Puffpipe§r should allow me to take quick puffs of tobacco to soothe my head... or so I thought. It turns out any tobacco I use... isn't used by it. The §l§nSilverwood Puffpipe§r suffers the same unusability, I can only hope it gets fixed soon.<BR>§l§nTobacco Piles§r - I've created an assortment of 9 different tobaccos.<BR>The §l§nVoidseer Tobacco§r should've allowed me to give my enemies a whole new meaning of "If looks could kill", the Deadly Gaze I should've received from the tobacco should've strengthened my gaze to wither my enemies away.<BR>The §l§nBerserk Tobacco§r should've allowed my muscles to become more viable in combat, letting me shred through my opponents with a clean sweep of a sword slash. The<BR>§l§nNourishing Tobacco§r should've allowed me to saturate my hunger, and prolong the time it takes before I need to eat again... that doesn't sound very healthy now that I'm thinking about it, maybe it's good it didn't work.<BR>The §l§nEnlightened Tobacco§r should've let me have revelations beyond my imagination, giving me random research that I could use in future endeavors. Alas not all good things can be done by doing bad things.<BR>The §l§nGeologist Tobacco§r should've allowed me to break the earth a lot faster, especially with a pickaxe!<BR>The §l§nPrudent Tobacco§r should've allowed me to be rid of all the dwindling madness that has plagued my mind.<BR>The §l§nFetid Tobacco§r should've given me temporary warp... and yet it didn't. A Silverwood Puffpipe also shouldn't survive use of this Tobacco.<BR>The §l§nWispy Tobacco§r should've spawned a wisp from my puffs... thank god THAT didn't happen.<BR>Conclusionally, this research has proven to be useless, as none of the items I had researched work at all. Maybe the carving I used is jammed? Maybe I'm using it wrong? Whatever the case is, I can't use this research... I need to find ways to relax, my brain is throbbing.
-
-research_name.thaumicbases:tbtools=Speak Not of Him
-research_stage.thaumicbases:tbtools.1=While roaming through a village, I hear a fable from one of the villagers who seemed to be rambling on about something. Legends tell of a man who doesn't exist, a person without presence, a being without being. His name is "Herobrine" according to the villager that was telling the story, once he said the name, the villagers gathered around in fear. I can tell this Herobrine guy could be a real problem if he were to come into existence. Appearences, possessions, theft, markings. I can feel a reminiscense of these such happenings when holding the Nether Star, however... it could hold some meaning. If holding a vis crystal can tell me about my path to miracle-working, then there's gotta be something in that feeling with the Nether Star.
-research_stage.thaumicbases:tbtools.2=This weapon I have created... it feels powerful. I can almost take any undead mob down with one foul sweep of this Scythe, further enchanting could provide me with the power to vanquish them with a single swing. However, I've been noticing that people have began to run away from me after having had used it for so long, I wonder what the cause is. Is there something in my eyes? It's also fairly light for being a massive scy- wait, no this is a god damn toothpick. 
-
-research_name.thaumicbases:voidseeds=Growing Darkness
-research_stage.thaumicbases:voidseeds.1=Void Metal, an impressively valuable asset to my arsenal since I also have a lack of common sense when it comes to these Rifts that have been appearing around my base. Although it's due to my mistakes, I have no one to blame but myself. However, my mistakes could be the big reason I become more powerful. As a Thaumaturge, one of the things I've learned from my experiences is "Knowledge is Power", and it's taken quite the literal way too! So whether mistakes are made, or I become superiorly intelligent from my successes, I think I've hatched an idea. These §lVoid Seeds§r might be the key to growing my own darkness without having to pollute the aura.
-research_stage.thaumicbases:voidseeds.2=Thanks to my ingenius observation with plant matter, I have created a catalyst of a plant seed that should produce a few Void Seeds from its complete growth, and thankfully no side effects should come from it as well! Let's just hope I can manage further without many more mistakes. 
-
-#Messages
-
-
-#Foci enchantments
-
-
-
-#Items
 item.revolver.name=Thaumaturge's Revolver
-#Enchantments for the revolver
-revolverUpgrade.ACCURACY.name=Accuracy
-revolverUpgrade.POWER.name=Power
-revolverUpgrade.SILVER.name=Silver
-revolverUpgrade.POISONED.name=Poisoned
-revolverUpgrade.BANE_OF_ATROPODS.name=Bane of Arthropods
-revolverUpgrade.BANE_OF_ELDRITCH.name=Bane of Eldritch
-revolverUpgrade.PIERCING.name=Piercing
-revolverUpgrade.DUELING.name=Dueling
-revolverUpgrade.TAINTED.name=Tainted
-revolverUpgrade.PRIMAL.name=Primal
-revolverUpgrade.SPEED.name=Speed
-revolverUpgrade.EFFICIENCY.name=Efficiency
-revolverUpgrade.ELDRITCH.name=Eldritch
-revolverUpgrade.VOID.name=Void
-revolverUpgrade.KNOWLEDGE.name=Knowledge
-revolverUpgrade.HEAVY.name=Heavy
+item.bullet.name=Revolver Bullet
 
-#Items
+#Enchantments for Revolver
+enchantment.infusion.BOART.name=Spider-Killer
+enchantment.infusion.BOE.name=Purifying
+enchantment.infusion.DUELING.name=Dueling
+enchantment.infusion.WISE.name=Mind-Sapping
+enchantment.infusion.EFFECT.name=Reservation
+enchantment.infusion.POWER.name=Empowered
+enchantment.infusion.SMITE.name=Silver-Cased
+enchantment.infusion.SPEED.name=Fastshot
+enchantment.infusion.TAINT.name=Taint-Imbued
+
+#Unused so far
 item.tb.spawnercompass.name=Thauminite Compass
 item.tb.ukulele.0.name=Magical Ukulele
 item.tb.ukulele.1.name=Old Magical Ukulele
@@ -277,15 +146,29 @@ item.tb.ukulele.5.name=Bard's Magical Ukulele
 item.tb.ukulele.6.name=Demonic Magical Ukulele
 item.tb.ukulele.7.name=Fairytale Ukulele
 item.tb.ukulele.8.name=Comfortable Magical Ukulele
+item.concentratedTaint.name=Concentrated Taint Flask
+
+#Ukelele Types
 tb.ukulele.type.simple=Sometimes the simplest one is enough
-tb.ukulele.type.knowledge=Classical music with a bit of knowledge
-tb.ukulele.type.calming=Heard the best near the bath
-tb.ukulele.type.electric=...And his music was electric!
+tb.ukulele.type.knowledge=Knowledge is Power.
+tb.ukulele.type.calming=I'm drowsy...
+tb.ukulele.type.electric=Feels like I'm walking on Sunshine!
 tb.ukulele.type.resistance=Nothing can harm me!
-tb.ukulele.type.buffing=A cool party addition
-tb.ukulele.type.confusion=Something you might not want to hear
-tb.ukulele.type.growth=Plants love music too!
-tb.ukulele.type.love=Animals are all getting 'in the mood'
+tb.ukulele.type.buffing=Roll to seduce the dragon.
+tb.ukulele.type.confusion=What was I doing again?
+tb.ukulele.type.growth=Sincerely, the Zombies.
+tb.ukulele.type.love=Get a room!
+
+item.fireingot.name=Ignis Fragment
+item.wateringot.name=Aqua Fragment
+item.earthingot.name=Terra Fragment
+item.airingot.name=Aer Fragment
+item.orderingot.name=Ordo Fragment
+item.entropyingot.name=Perditio Fragment
+item.mixedingot.name=Primal Fragment
+item.taintedingot.name=Tainted Fragment
+tile.primalshroom.name=Primal Shroom
+tile.knose.name=Rosa Mysteria
 item.tb.shardCluster.fire.name=Fire Crystal Cluster
 item.tb.shardCluster.water.name=Water Crystal Cluster
 item.tb.shardCluster.earth.name=Earth Crystal Cluster
@@ -295,11 +178,135 @@ item.tb.shardCluster.entropy.name=Entropy Crystal Cluster
 item.tb.shardCluster.mixed.name=Mixed Crystal Cluster
 item.tb.shardCluster.tainted.name=Tainted Crystal Cluster
 item.tb.bracelet.brass=Brass Bracelet
+item.tb.bracelet.thaumium=Thaumium Bracelet
+item.tb.bracelet.void=Void Bracelet
+item.tb.bracelet.primal=Primal Bracelet
+item.tb.bracelet.thauminite=Thauminite Bracelet
 
-enchantment.infusion.TAINT=Taint
-enchantment.infusion.POWER=Power
-enchantment.infusion.HEAVY=Heavy
-enchantment.infusion.SMITE=Silver
-enchantment.infusion.BOE=Bane of Eldritch
-enchantment.infusion.BOART=Bane of Arthropods
-enchantment.infusion.DUELING=Dueling
+focus.thaumicbases.activation.name=Access
+focus.thaumicbases.activation.text=Allows access to a block you bind the focus to.
+focus.thaumicbases.activation.radius=Radius
+
+focus.thaumicbases.fluxScrub.name=Scrub
+focus.thaumicbases.fluxScrub.text=Cleanses the air of Flux, warping your mind in exchange.
+focus.thaumicbases.fluxScrub.warpWash=Cleans Warp
+focus.thaumicbases.fluxScrub.warpWash_no=No
+focus.thaumicbases.fluxScrub.warpWash_Yes=Yes
+focus.thaumicbases.fluxScrub.crystallize=Crystallize Flux
+focus.thaumicbases.fluxScrub.crystallize_no=No
+focus.thaumicbases.fluxScrub.crystallize_yes=Yes
+
+focus.thaumicbases.liquiddrain.name=Drain
+focus.thaumicbases.liquiddrain.text=Halts liquid flow temporarily.
+focus.thaumicbases.liquiddrain.absorb=Void Liquid
+focus.thaumicbases.liquiddrain.absorb_No=No
+focus.thaumicbases.liquiddrain.absorb_Yes=Yes
+
+focus.thaumicbases.experience.name=Experience
+focus.thaumicbases.experience.text=Extracts blocks and destroys mobs to be turned into experience.
+focus.thaumicbases.experience.power=Power
+
+#Researchs
+research_name.thaumicbases:tbases=A New Chapter
+research_stage.thaumicbases:tbases.1=Opening this segment of the Thaumonomicon, I am bewildered to see pages that I can't see. The strange part of it is, is that I can see this simple part of the chapter. Perhaps looking more into §lBasic§r parts of this chapter will aide me in revealing the knowledge hiding within these pages.
+research_stage.thaumicbases:tbases.2=There we are! Upon sifting through some of my notes whilst searching for Basic research, my mind opened up to learning more about this unusual art. Now that I can read some more of the pages, I believe it's time to look a little further. 
+
+research_name.thaumicbases:alc=Basic Alchemy
+research_stage.thaumicbases:alc.1=Something feels wrong... maybe my tests with Alchemical Metallurgy was but a fluke. From my research of creating Thaumium, it feels rather dull in terms of power. Something tells me that I could make this more powerful, but how could I do so? Perhaps these "fragments" could help me, maybe?
+research_stage.thaumicbases:alc.2=While the fragments were useless to me in my search for a stronger metal, I was able to pinpoint a use for them in a different page. Nonetheless, I have finally made something more powerful than Thaumium! I can't really think of a good name, so I will call it Thauminite. This metal should be a lot sturdier than Diamond as well as having much more potency in enchanting, and the armor I can make out of it gives me a Vis Discount! However... I can't seem to find many more uses for it outside of tools, if I was really desperate for a better option. Perhaps I should look more into what the properties of the tools I can create from this could be.
+
+research_name.thaumicbases:pyrof=Liquid Blaze
+research_stage.thaumicbases:pyrof.1=Fluids are not often researched within the arts of miracle-working, however... this page seems to be hinting at something called "Pyrofluid". While it sounds rather silly, it may house some incredible use! Perhaps studying the fluids that I already know could help me understand this more.
+research_stage.thaumicbases:pyrof.2=Voilà! After breaking my back and brain to create this fluid, I deem my work of massacring Blazes to be concluded. No more Spawner camping, no more turning into KFT. Upon placing this fluid down, I found several things. Firstly, it burns. Do not come into contact with this fluid. I miss having a foot. Secondly, the fluid appears to crystallize slowly over time. However... I had been foolish enough to slip on one of my notes, tossing the bucket of fluid into my Arcane Spa, retriving it shows something rather pleasant! While I lost a small portion of the mind-cleansing fluid in my spa, I did get a solidified version of Pyrofluid. Breaking it with my pickaxe results in a generous handful of Blaze Powder. It does not appear to work with the Fortune Enchantment.
+
+research_name.thaumicbases:sweed=Sweed
+research_stage.thaumicbases:sweed.1=Sugar Cane can be a chore to grow, even at it's most efficient. Finding a way to grow it faster is nothing but a headache that I don't need along with the several others I experience. Studying the growth of plants might be a topic I should research whilst making my roundabouts with my Golems. I do dearly enjoy watching them work.
+research_stage.thaumicbases:sweed.2=With the success of plant growth research, I am able to announce that I've managed to make a magical plant with Thaumaturgy! The running name I have for it currently is "Sweed", however, I may come up with a better name in future times. Sweed is a very interesting crop, as it acts as a "weed with a sweet deal to it". What this means is that it infests a grassy area around it, growing and repopulating very quickly. It's best to be careful that I don't place this seed down in an open grassy area as it'll kill the plantlife in that area very quickly, but keeping it contained is an incredible benefit to have. This crop will normally yield around 1-3 handfuls of sugar per crop yield with the occasional chance of being able to uproot a handful of Sugar Cane reeds. Not perfect, but with a good setup, I could likely make it more efficient than even the best of sugar cane farms! While not currently working as intended, it appears to make some interesting patterns, and if you're lucky, maybe it'll be in the shape of a heart!
+
+research_name.thaumicbases:plant=Further Herbology
+research_stage.thaumicbases:plant.1=I feel as if there's more of a diligant nature to these handfuls of seeds that I hold in my hand. Perhaps I should study more than just seeds, I should study flowers, I should study some of the crops that I grow. There's gotta be something that I can do!
+research_stage.thaumicbases:plant.2=After an exhausting night of studying flowers and some of my crops, I've managed to create a few, hopefully very useful, plants. With these designs, I should be able to get much use from these new crop plants I've conceptualized.<BR>§7§l§nPlax Seeds§r - My idea for the Plax Seeds was that I could get a handful of string from this crop, and get a seed from it... however, I got roughly §n6-11§r strands of string and about §n1-4§r seeds. What a delight! Something actually better happening than what I expect it to be! However it does appear to yield nothing at times.<BR>§d§l§nAurelia§r - This plant has proven extreme use and worth of my time! Originally, the idea was for the plant to shed petals that would allow me to make use of Aurum Essentia, since it's so god damn annoying to get. However, after some renditions of failed flowers, I finally had one that conveniently worked during the Night.<BR>§4§l§nRedlon Seed§r - This one is working as it should, my plan was to make an, essentially, regrowable source of redstone similar to how my Melons and Pumpkins grew, and with the recent development of this "Redlon" (which is just a block of Redstone Dust). It turned out to be an incredible success! This might be it, this might be my turning point!<BR>§8§l§nMetalleat Seed§r - Much like the Plax Seeds, however it drops Iron Nuggets instead. Iron Nuggets are a lot more managable for a plant to grow than a full ingot of iron. The yield is roughly §n6-9§r Iron Nuggets per crop harvest and about §n1-3§r seeds per crop harvest.<BR>§1§l§nLazullia Seed§r - This plant is also similar in concept to the Plax Seeds, however, I get Lapis Lazuli gems instead of string, quite handy for Enchanting and Sensus Essentia! This plant yields roughly §n0-3§r Lapis Lazuli gems per yield and §n0-2§r Lazullia Seeds per yield.<BR>§2§l§nGlieona Seed§r - This one works vastly better than my previous iterations of the seed. This crop yields me roughly §n3-12§r Glowstone Dust upon its growth and §n0-2§r Glieonia Seeds. One thing to note, however is that this plant will only work when grown on Grass.<BR>§5§l§nFluxium§r - This... particular plant very occasionaly produces flux gas from its buds, why the hell would I use this inferior type of plant?! It does nothing but pollute my air, and makes rifts spawn occasionally... unless there's a bigger picture to it that I do not yet understand? Perhaps I could use it to feed the rifts that I've already grown instead of making Flux Nukes.<BR>§c§l§nLucrite Seeds§r - Similar to the Plax seeds... however, instead of string, it grows roughly §n3-9§r Golden Nuggets per harvest yield, along with a bonus of a Golden Carrot, how splendid! One thing that I noted while trying it out is that it refuses to grow when I placed it on farmland, I have to have it under a Salis Mundus Block, in order for it to work.<BR>§a§l§nBriar Flowerbush§r - This is similar to a berry bush. It grows unusual podling flowers that don't seem to allow it to reproduce though... which is odd for a name like "Briar Seedpod", however... this leads me to the creation of a very delicious syrup that I'm dubbing §nRosehip Syrup§r! This syrup acts similarly to milk, and removes any and all effects. However, its benefit is that I can keep all of my good buffs with me! No more having to sacrifice potion ingredients because of my incompetence at cures. This is the cure-all!<BR>§2§l§nTobacco Seed§r - This is more thoroughly explained in the "Now Where is my Pipe?" section that I wrote in a different page of the Thaumonomicon. Upon it's yield, it produces roughly §n1-2§r usable Tobacco Leaves and §n0-2§r Tobacco Seeds.
+
+research_name.thaumicbases:tobacco=Now Where Could My Pipe Be?
+research_stage.thaumicbases:tobacco.1=Drug use is bad, if someone somehow finds this book and decides to take a look at it, I hope they know that I do not condone the use of drugs, especially tobacco products and hard drugs. However... I can't seem to find a good way to relax, I'm getting desperate. While drugs normally do not exist outside of the Vishroom, it doesn't really let me relax. I need something to soothe my aching and anxious mind. I really hoped I wouldn't have to go to bad habits and possible addiction.
+research_stage.thaumicbases:tobacco.2=§l§nMortar§r - I have carved out a sturdier bowl for tobacco crushing. Yet I also could swear that I've crushed something else with this before. Maybe flowers?<BR>§l§nSmoking Pipes§r - I have created two types of pipes from the research I've made, and as much as I don't want to use them. I can't stop myself now, I'm too stressed.<BR>The §o§nGreatwood Puffpipe§r should allow me to take quick puffs of tobacco to soothe my head, unfortunately it isn't the best at using the tobacco I created to its fullest extent, smoking using this pipe will still have the downsides of typical tobacco in general. The §o§nSilverwood Puffpipe§r, however, negates most of the negative effects of the Tobaccos without sacrificing my lungs! Not only will the tobaccos have a stronger positive effect on me, they will last a while longer too.<BR>§l§nTobacco Piles§r - I've created an assortment of 9 different tobaccos, each with special effects that will need to be addressed, I need to make sure I don't mix these up.<BR>The §5§o§nVoidseer's Tobacco§r allows me to give my enemies a whole new meaning of "If looks could kill", the Deadly Gaze I should've received from the tobacco strengthens my gaze to wither my enemies away, I best be careful to not look at my allies after I've smoked this.<BR>The §4§o§nBerserker Tobacco§r allows my muscles to become more viable in combat, letting me shred through my opponents with a clean sweep of a sword slash. I feel as if I could slay a thousand.<BR>The §c§o§nNourishing Tobacco§r allows me to satiate my hunger, and prolong the time it takes before I need to eat again... that doesn't sound very healthy now that I'm thinking about it, but it will allow me to focus more on my research... and possibly bake brownies with this.<BR>The §7§o§nEnlightened Tobacco§r allows me to have revelations beyond my imagination, giving me random research that I could use in future endeavors. Something whispers in my ears as the smoke of this tobacco clears however...<BR>The §8§o§nGeologist Tobacco§r allows me to break the earth a lot faster, especially with a pickaxe! I surely hope this is not what they mean by "miner's lung"<BR>The §b§o§nPrudent Tobacco§r allows me to be rid of some of the dwindling madness that stirs within my head. Maybe... maybe for once I'll be able to sleep well without something haunting my dreams.<BR>The §5§o§nFetid Tobacco§r is the most dubious of the Tobaccos I've made thus far, giving me temporary warp from smoking it, why I would need it seems unfeasible, but I am a madman, I may come up with a use for it. A side note to put down as well, the Silverwood Puffpipe does not survive from the use of this wretched tobacco, however seemingly negates it in its entirity.<BR>The §3§o§nWispy Tobacco§r, oddly, spawns a Wisp upon its use. Why I would use this is also a similar question to the Fetid Tobacco, why I would want Wisps in my vicinity is a surefire question.<BR>Maybe now I won't have to waste so much Purifying Fluid, unfortunately that doesn't mitigate my sudden urge to make baked goods with this Tobacco put into it as well.
+
+research_name.thaumicbases:voidseeds=Growing Darkness
+research_stage.thaumicbases:voidseeds.1=Void Metal, an impressively valuable asset to my arsenal since I also have a lack of common sense when it comes to these Rifts that have been appearing around my base. Although it's due to my mistakes, I have no one to blame but myself. However, my mistakes could be the big reason I become more powerful. As a Thaumaturge, one of the things I've learned from my experiences is "Knowledge is Power", and it's taken quite the literal way too! So whether mistakes are made, or I become superiorly intelligent from my successes, I think I've hatched an idea. These §lVoid Seeds§r might be the key to growing my own darkness without having to pollute the aura.
+research_stage.thaumicbases:voidseeds.2=Thanks to my ingenius observation with plant matter, I have created a catalyst of a plant seed that should produce a few Void Seeds from its complete growth, and thankfully no side effects should come from it as well! Let's just hope I can manage further without many more mistakes. 
+
+research_name.thaumicbases:raincac=Rainbow Cactus
+research_stage.thaumicbases:raincac.1=Cacti are almost conceptually useless in practical theory. They poke you, destroy items are dropped from monsters. These little buggers are not good for a thaumaturge such as myself, I don't need my robes getting caught in its thorns! So how about I give a Cactus more purpose than being just the ugliest thing in the world?
+research_stage.thaumicbases:raincac.2=Well, I couldn't fix the ugly part, in fact I think I made it worse... However, I have been able to negate its other two downsides! The Rainbow Cactus is a plant that allows me to grow my own dyes, and with that comes uses of its own! Breaking a cactus block that grown above the cacti I placed down on sand grants me a plentiful handful of dyes, however, it will not yield items like Cocoa Beans, Lapis Lazuli, Ink Sacs, and Bonemeal. This cactus appears to grow very slowly in comparison to regular cactus however. Likely due to needing more nutrients in order to grow.
+
+research_name.thaumicbases:goldtree=Garden of Golden Fruit
+research_stage.thaumicbases:goldtree.1=I've heard of a way to make an apple tree work for me in a far better way. Sure, Apples are quite a nice snack, but what other healing benefits do I get out of it than the sweetness of a freshly picked fruit? I've come up with a theory in which I can make a tree that exclusively grows Golden Apples. Though, I will have plan out how this goes about, considering these apples may be too heavy for weak tree branches to handle.
+research_stage.thaumicbases:goldtree.2=After having had thought of such a thing, I have made a Golden Tree in which any and all apples that fall from the golden branches will be Golden, and delicious! While I am unable to get the Legendary "Enchanted Golden Apple", these will have to do for right now. I'm sure there's a way that I can get this shiny beauty of a fruit to shine a little more! Something worth noting from the transmutation of the sapling I used, is that the Wood from it may be a little sturdier than your average oak. Something I should consider noting...
+
+research_name.thaumicbases:endtree=Garden of Pearlescent Fruit
+research_stage.thaumicbases:endtree.1=From looking at the Golden Apple Tree, I've realized what a breakthrough this is. I've managed to make a tree that grows an entirely impossible fruit! Something embossed in gold to be of ultimate power, and on top of the fact that this can be farmed like many other trees makes this revelation more astounding than most Thaumaturges can dream of! I best calm my ego before it gets to the best of me, but something I've been wondering about is Ender Pearls. The Ender Pearl is extracted from...<BR>After having had a mental breakdown about where Ender Pearls come from, I will not write specifically where they come from, but focus on how I can get them without... viewing it in the worst way possible. I've come up with a solid theory of how to do so, and it involves the Eye of Ender.
+research_stage.thaumicbases:endtree.2=Similar in concept to the Golden Apple Tree, however I replaced the apples with Ender Pearls and Ender Eyes respectively. Theoretically, I should be able to harvest the fragile Ender Pearls within the leaves if I am careful.
+
+research_name.thaumicbases:inftree=Garden of Magmatic Fruit
+research_stage.thaumicbases:inftree.1=From looking at the Golden Apple Tree, I've realized what a breakthrough this is. I've managed to make a tree that grows an entirely impossible fruit! Something embossed in gold to be of ultimate power, and on top of the fact that this can be farmed like many other trees makes this revelation more astounding than most Thaumaturges can dream of! I best calm my ego before it gets to the best of me, but something I've been wondering about is Magma Cream. Magma Cream is the mutilated, correctly extracted carcass of a molten Magma Cube, and while it may not be all that pleasant to think of, it's not as bad in comparison to figuring out where Ender Pearls come from. I've come up with a theory as to how to get Magma Cream more efficiently in comparison to slaughtering many. 
+research_stage.thaumicbases:inftree.2=Similar in concept to the Golden Apple Tree, however I replaced the apples with Nether Wart and Blaze Powder respectively. Theoretically, I should be able to harvest the molten Magma Cream within the leaves if I am careful.
+
+research_name.thaumicbases:deco=Old News
+research_stage.thaumicbases:deco.1=From what I've learned about the ancient past of the world I've lived in, this world used to look a lot different from what I've read in the local Village Library, debatably bad to some, but I am not one to judge the taste of those who enjoy nostalgic things. I still do not get why I've had the idea of bringing those textures back to the modern day... is this the modern day?
+research_stage.thaumicbases:deco.2=Nothing a little bit of vis and elbowgrease won't... make ancient? I didn't think that would sound so dumb reading it back to myself, but regardless... I've managed to replicate the look of ancient blocks of similar ones that many knew from the past. I feel self-conscious about wrinkles on my face suddenly.
+
+research_name.thaumicbases:deco2=Like a Glove
+research_stage.thaumicbases:deco2.1=These blocks may not appeal all that look upon it, but that doesn't mean that I can't make blocks that'll appeal to my fellow colleagues. I've constructed an idea for thaumic blocks that can be made into something I can decorate with! Though... what materials could I use?
+research_stage.thaumicbases:deco2.2=While older textures are nice to some, I've managed to create blocks that fit the needs of a Thaumaturge a little more. While the blocks I've utilized have been rather useless to me before when building my Infusion Altar. These blocks should help me make my altar look a little less ugly in comparison, along with the Altar being far more stable than before! 
+
+research_name.thaumicbases:macerator=Crucible Crushing
+research_stage.thaumicbases:macerator.1=I need some alternate ways of getting the materials I want, I can't get them myself, but I do have an idea as to how I'm gonna get them. Considering common logic of how some of these materials are normally gotten, this should theoretically be how I achieve such a thing.
+research_stage.thaumicbases:macerator.2=Similar to a Macerator, I have achieved the ability to break down certain things, however... it's incredibly inefficient and doesn't guarantee that I can get what I need... wait. How the hell can I make gold out of Sand?
+
+research_name.thaumicbases:advmacerator=Advanced Crucible Crushing
+research_stage.thaumicbases:advmacerator.1=What I'm getting is not enough, I need to make more of these products. I have to do better, I need to be better. Time can only tell when I'm going to make my next big screw up, and I can't let it be soon. How am I going to fabricate more of what I'm trying to crush?
+research_stage.thaumicbases:advmacerator.2=I looked back at the word "fabricate" for some reason before I began writing more theories, and the word stuck to my mind like glue. Then it hit me while I was researching machines. In order to Fabricate, I need Fabrico. I just need to sort out how I will manage to get the Herba vis out of the system. I should still have a few Quartz Slivers left over.
+
+research_name.thaumicbases:compress=Refined Compression
+research_stage.thaumicbases:compress.1=Without a proper way to double my resources, as far as I'm aware, I'm gonna need to take advantage of the materials that I can currently take advantage of. I can't just create a machine or a formula that turns stone into ore, or ore into more ore. However, that doesn't mean that I can't create more clusters out of ore!
+research_stage.thaumicbases:compress.2=After contemplating a bit with myself about what I am doing, I managed to get my thoughts together. These additional crucible recipes should allow me to duplicate my resources further than I could before! With throwing in certain bits of Blaze Powder, I can yield up to 3 additional Blaze Rods upon using it at a Catalyst, what a deal! Along with other recipes yielding varying amounts of an object, it still proves to me that I'm able to create things out of nothing! Just like a Thaumaturge is able to do at their best! I should reward myself with being able to relax in the Arcane Spa.
+
+research_name.thaumicbases:tbdouble=Avarice and Ambition
+research_stage.thaumicbases:tbdouble.1=For someone who has done so much in this world, I can't seem to be satisfied with what I'm doing. Is it because I'm greedy? Am I becoming an idolater to insanity that's becoming blind to the truth of righteousness? I can't focus on that right now, my mind is trying to play tricks on me. I need to focus. I want to reconstruct some of the various materials that I've broken down before, so how will I do so? I'm gonna have to see.
+research_stage.thaumicbases:tbdouble.2=I've found a way! It mainly has to do with doubling the essentia I put into the system, but nothing a little item arranging and Quartz Slivers can't fix. This should theoretically allow me to create more of what I've been trying to make in the first place. Clusters are now doubled! With a good Infernal Furnace setup in place, this could be the easiest and most efficient way of smelting that a Thaumaturge could dream of! 
+
+research_name.thaumicbases:overchant=Beyond Enchanting
+research_stage.thaumicbases:overchant.1=Try make awesome Mechanism! <- For some reason, this was written in the book when I opened the page to write about my next idea. I also can't seem to erase the text either, though I don't believe I can erase any of the things I write down in this book anyway. Side thoughts aside, my new idea for this particular section is a current struggle for more power on my tools and weapons, and the most I can do is simply Level 5... however, who is to stop me from going above and beyond? Who dares to stop me at the pinnacle of my power?! I'm, seemingly, the only one ballsy enough to go beyond enchanting.
+research_stage.thaumicbases:overchant.2=I've sketched out a rough idea of what this device I'm dubbing "The Overchanting Table", the idea of this particular... machine? Can I even call this a machine? I can't look into the philosophies of it, I need to explain this. First and foremost, when using this machine, it will zap experience from your vessel, around 40% of your health, so be sure to have full health when doing this, as it ignores even the strongest of armors, regenerative items may help with mitigating that issue. With the warning out of the way, the Overchanting Table allows me to take enchantments that I've previously created using Enchanting Table, such as "Sharpness V" and "Unbreaking III" and amping up its power by 1. The Overchanting Table will ignore previously empowered enchantments in favor of ones that can be upgraded. One thing to note about it however, is that it will only upgrade one at a time. It's best if I make sure my Experience is above 30 for each instance that I overenchant an item. This machine will keep consuming essentia if you do not have the appropriate level of experience, so do keep that in mind! With a machine like this, I could make something truly worth beholding!
+
+research_name.thaumicbases:spikes=Iron Spikes
+research_stage.thaumicbases:spikes.1=Pesky mobs try to hinder my quest for intelligence. There must be a way that I can prevent this from happening, and the basic design I have down is a set of spikes that these foolish mobs can run into and stumble over. I shall oversee how this concept will work in my favor, but what could be used as an example of something that can trap things? Pressure plates?
+research_stage.thaumicbases:spikes.2=My plan came together rather nicely! A set of Iron Spikes with a consistent amount of damage that cannot, however, be placed in any other way than upright. These spikes also tend to tear through things that mobs drop and completely consume them. I'm not very happy about the result, but there's always room for improvement when starting out with an idea.
+
+research_name.thaumicbases:thaumspikes=Thaumium Spikes
+research_stage.thaumicbases:thaumspikes.1=While the Iron Spikes were more or less a success in some places, that doesn't mitigate my dissatisfaction with its current place of utility. The Iron Spikes' biggest downfall when put into use is the fact that it causes any and all of the stuff I can scavenge from mob kills to be rendered useless because of how long they spend getting stabbed by the spikes. Along with the ability to not be able to deactivate them when I need to crossover them. From previously working with Thaumium and seeing its capabilities, perhaps it's worth experimenting embossing my spikes with Thaumium to upgrade them.
+research_stage.thaumicbases:thaumspikes.2=I managed to reinforce my spikes with Thaumium, in theory, this will make the spikes a lot sharper, and far more deadly. These spikes also have 2 additional benefits to them, the first one being that it won't rip apart mob drops unlike its predecessor, and the second being that I can activate and deactivate them with a bit of connection to redstone! These spikes surely can't be improved anymore than what they can be... right? I think not.
+
+research_name.thaumicbases:voidspikes=Void Spikes
+research_stage.thaumicbases:voidspikes.1=Void metal, while low in durability, makes up for it with it's incredible ability to mend itself back together and resharpen itself as well! As it is a metal that derives from the never-ending void itself, and studying how much it hurts to poke a Flux Rift, I can conclude that this next theory should be worth some salt. While Thaumium normally doesn't resonate well with Void Metal, I think I can do something to make them play nicely together. 
+research_stage.thaumicbases:voidspikes.2=They call me a madman, and for what? The use of Void to torture my foes to death? These Void Spikes should deal a massive amount of damage to regular mobs, killing them almost instantly. Similar to its Thaumium predecessor, this set of spikes does not skewer mob drops, along with being able to be activated and decativated with Redstone. These spikes are as powerful as they can get, with the void metal being able to synchronize with it's desire to eat away at the natural, its power is unmatched compared to its Thaumium counterpart. Surely now, I can make them pay.
+
+research_name.thaumicbases:bloodfabric=Blood... Magic?
+research_stage.thaumicbases:bloodfabric.1=My spikes seem to be getting bloodied from the monster's I've executed it with. And while I do quite enjoy the fact they're being made into mince from their blunders, I do wish that the spikes did not get as gruesome as they looked when I see the corpses of the undead in the morning, burning to a gruesome crisp. I tried scrubbing it off with wool, and sponge, but the blood does nothing but persist on it. I tried it on fresh kills, but it does nothing more than make me look like a fool that could stab their finger at any point. Though... I haven't considered using Enchanted Fabric yet.
+research_stage.thaumicbases:bloodfabric.2=As I use more of my spikes, I'm starting to notice how messy they get. I should probably clean the spikes off, as they're rather... disgusting looking. Unfortunately, I'm not sure if I can get the blood off of the fabric, but I think I can do more with this than just wiping off the blood. I've created a set of clothes with... a rather odd set of bonuses, but they're helpful nonetheless.<BR>The §l§nBloody Thaumaturge Robes§r give me a vitality boost! Leaving me a fair bit healthier and more ready to endure the forces that are surely to come after me with monster blood drenched on these robes.<BR>The §l§nBloody Thaumaturge Leggings§r keep me in place, as to not get knocked around like a ball.<BR>Finally, the §l§nBloody Thaumaturge Boots§r give me an incredible speed boost! Allowing me to run wild as I escape the dangers of what lurks within when I look too deep into the Abyss. Now I just need a set of Bloody Goggles to match my bloody clothes... wait that makes me sound like a §5criminal§r.
+
+research_name.thaumicbases:firemagic=A Lit Bonfire
+research_stage.thaumicbases:firemagic.1=Long nights are a struggle when you're surrounded by monster's out to harm you, I can't even get a decent nights sleep with them banging on my walls to break through! If only there was a way for me to make them silence theirselves so I can move on with my research in the morning.
+research_stage.thaumicbases:firemagic.2=I've constructed a strange oddity, a §l§nCampfire§r with a seemingly helpful, but maybe malicious property to it. While my original plan for this campfire was to scare mobs away, this campfire redirects it's smoke and flame to whip at mobs and smite them with the mighty power of gods! That'll show those pesky monsters. The §l§nBrazier§r on the other hand, is a lot safer for indoor use. Not only will the Brazier give Monsters what they sought after, but it also rejuvinates my body beyond my own belief! Finally, I can now focus on my research in peace.
+
+research_name.thaumicbases:scythe=Speak Not of Him
+research_stage.thaumicbases:scythe.1=While roaming through a village, I hear a fable from one of the villagers who seemed to be rambling on about something. Legends tell of a man who doesn't exist, a person without presence, a being without being. His name is "Herobrine" according to the villager that was telling the story, once he said the name, the villagers gathered around in fear. I can tell this Herobrine guy could be a real problem if he were to come into existence. Appearences, possessions, theft, markings. I can feel a reminiscense of these such happenings when holding the Nether Star, however... it could hold some meaning. If holding a vis crystal can tell me about my path to miracle-working, then there's gotta be something in that feeling with the Nether Star. 
+research_stage.thaumicbases:scythe.2=The Nether Star proved to be an immaculately useful resource to study! And what came of it? So much more than I could've imagined! I call it the "Scythe of the White-Eyed One". While not being Minecraft's Grim Reaper, this scythe has proven itself to be an incredibly powerful weapon, not only does it repair itself far faster, thanks to the properties of the Void Hoe in which I infused it from, on top of the extra void metal and Nether Star I've used to shape the blade, you'll never break it! Along with the wondeful benefit of having it neve break, the Scythe also packs damage far greater than any tool I've previously created, making it a true beast of a tool to use. Further enchanting may further enhance the terror I can reek upon this unholy world.
+
+research_name.thaumicbases:revolver=The Rootin Tootin Point
+research_stage.thaumicbases:revolver.1=A lack of weaponry and utility on their belt makes a Thaumaturge a dead Thaumaturge. Unfortunately, I am close to being that Thaumaturge as of right now if I don't have a better way, something straight to the point and something I can tinker with later to make better. My current tools do not suffice this purpose as well, despite being enchantable, but beyond that they don't hold much other power to their name. I should study projectiles more, as I had done so with my spells.
+research_stage.thaumicbases:revolver.2=A stretch, this may be, but this may be a solution to my problems with defense! It's a small but powerful ranged weapon that I can modify to my will, I dub it to be the "§lThaumaturge's Revolver§r"! In order for me to use the Revolver, it will require me to load bullets into the gun itself. Each shot fired will hit for an excruciating amount of damage to my foe, and can be modified depending on what I infuse enchant it with. I better leave my bookish malarkey in the dusty old library, for I have an adventure to get on with!
+
+research_name.thaumicbases:revupgrades=Kill the Past
+research_stage.thaumicbases:revupgrades.1=As previously mentioned in my section about the Thaumaturge's Revolver, I spoke of upgrades to the revolver... thinking about it now, I don't quite have the idea of what can be done to upgrade a gun, especially a Revolver such as this one. The only way I could think of learning about artillery augmentation would be through more study, perhaps I should take a visit to the village library and see if the librarian has any information on guns.
+research_stage.thaumicbases:revupgrades.2=Creativity is the limit of man, but not for a Thaumaturge. Despite my previous cloud of uninventiveness, I've managed to think of some properties of a Revolver that could quite possibly make it more useful than just the base gun itself! Allow me to explain it in further detail.<PAGE>§lRevolver Upgrade: Spider-Killer§r<DIV>This particular upgrade to the revolver focuses its power on the creepy crawlies of the world, such as Spiders and Silverfish. Instead of having to burn down my house to cleanse them, I just need to get a good aim at their head, and fire away until they're gone! This upgrade cannot be combined with different upgrades, such as §lEmpowered§r, §lPurifying§r, §lDueling§r, and §lSilver-Cased§r.<PAGE>§lRevolver Upgrade: Purifying§r<DIV>This particular enchantment allows me to do more damage to the creatures of the Otherworld. While roaming through possible Eldritch Dimensions, I may encounter rather monstrous creatures that want me to perish and deform to their will. Yet I shall not let that happen, a bullet to their head should do the trick! This enchantment cannot be used in tangent with §lEmpowered§r, §lSpider-Killer§r, §lDueling§r, and §lSilver-Cased§r.<PAGE>§lRevolver Upgrade: Dueling§r<DIV>This upgrade allows me to improve damage against other people, including Thaumaturges such as myself who may be misbehaving. This upgrade cannot be used alongside §lEmpowered§r, §lSpider-Killer§r, §lPurifying§r, and §lSilver-Cased§r.<PAGE>§lRevolver Upgrade: Mind-Sapping§r<DIV>This gives each bullet I fire a chance to reveal the secrets of the world when killing a creature. It's like life-steal but for intelligent people! No, there are no nerds here. This upgrade doesn't allow the gun to be combined with the §lTainted§r upgrade.<PAGE>§lRevolver Upgrade: Reservation§r<DIV>This upgrade, oddly enough, creates a duplicate bullet at random to be kept behind when firing a bullet, increasing how many shots my Revolver can fire before I need to reload it! This upgrade cannot be used in tangent with the upgrade §lFastshot§r.<PAGE>§lRevolver Upgrade: Empowered§r<DIV>This upgrade gives a straight boost to the damage each bullet does, while weaker than augmenting it to be powerful against certain enemies, it beats not having many downsides other than less damage to other enemies. This upgrade cannot be used in tangent with §lSpider-Killer§r, §lPurifying§r, §lSilver-Cased§r, and §lDueling§r.<Page>§lRevolver Upgrade: Silver-Cased§r<DIV>This upgrade turns the undead into a fine red mist when I fire at them, making places like the Nether Fortress and Caves a lot less spooky to traverse! Werewolves and Demons are sure to hate this sunslammer!<PAGE>§lRevolver Upgrade: Fastshot§r<DIV>This upgrade makes the bullets I fire fly faster than I can see! Then again I couldn't see a bullet to begin with, so I don't know if this is entirely true! This upgrade will not work with the §lReservation§r upgrade.<PAGE>Revolver Upgrade: Taint-Imbued<DIV>This upgrade allows for me to weaponize the disgusting Taint into being a useful weapon against Non-Tainted enemies, but has reduced damage against Tainted enemies. Oddly enough it also has a chance to inflict the deadly Taint Poison into the veins of my foes too! This upgrade is not compatible with the §lMind-Sapping§r upgrade.

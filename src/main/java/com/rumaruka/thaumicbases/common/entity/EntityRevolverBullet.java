@@ -1,6 +1,7 @@
 package com.rumaruka.thaumicbases.common.entity;
 
 import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
+import com.rumaruka.thaumicbases.common.item.ItemRevolver;
 import com.rumaruka.thaumicbases.init.TBItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -13,6 +14,7 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -27,34 +29,43 @@ import thaumcraft.api.potions.PotionFluxTaint;
 import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.common.lib.SoundsTC;
 
+import java.util.Objects;
+
 
 public class EntityRevolverBullet extends EntityThrowable {
+    public EntityRevolverBullet(World world) {
+        super(world);
+    }
+
+    public EntityRevolverBullet(World world, double x, double y, double z) {
+        super(world, x, y, z);
+    }
+
     public EntityRevolverBullet(World world, EntityLivingBase thrower) {
         super(world, thrower);
         shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0, 1.5F, 1.0F);
     }
 
+    @Override
     public void onUpdate() {
-        if (this.world.isRemote)
-            FXDispatcher.INSTANCE.sparkle((float)this.posX, (float)this.posY, (float)this.posZ, 4.0F, 4.0F, 4.0F);
-        if (this.world.isRemote)
-            FXDispatcher.INSTANCE.sparkle((float)(this.posX - this.motionX / 20.0D), (float)(this.posY - this.motionY / 20.0D), (float)(this.posZ - this.motionZ / 20.0D), 4.0F, 4.0F, 4.0F);
-        if (this.ticksExisted >= 200)
-            setDead();
         super.onUpdate();
+        makeTrail();
     }
 
+    private void makeTrail() {
+        for (int i = 0; i < 100; i++) {
+            double dx = posX + world.rand.nextDouble();
+            double dy = posY + world.rand.nextDouble();
+            double dz = posZ + world.rand.nextDouble();
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void handleStatusUpdate(byte id) {
-        if (id == 3) {
-            int itemId = Item.getIdFromItem(TBItems.bullet);
-            for (int i = 0; i < 8; ++i) {
-                this.world.spawnParticle(EnumParticleTypes.END_ROD, this.posX, this.posY, this.posZ, rand.nextGaussian() * 0.05D, rand.nextDouble() * 0.2D, rand.nextGaussian() * 0.05D, itemId);
-            }
-        } else {
-            super.handleStatusUpdate(id);
+            double s1 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.17F;  // color
+            double s2 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.80F;  // color
+            double s3 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.69F;  // color
+
+            this.world.spawnParticle(EnumParticleTypes.END_ROD, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+            world.playSound(posX + 0.5D,
+                    posY + .5D,
+                    posZ + 0.5D, SoundsTC.zap, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
         }
     }
 
@@ -62,70 +73,68 @@ public class EntityRevolverBullet extends EntityThrowable {
     protected void onImpact(RayTraceResult object) {
         if (this.isDead) return;
 
-        if (!this.world.isRemote && object.typeOfHit == RayTraceResult.Type.BLOCK) {
-            if (noClip) return;
-            if (this.world.isBlockNormalCube(object.getBlockPos(), true))
-                this.setDead();
-            else {
-                IBlockState b = this.world.getBlockState(new BlockPos(object.getBlockPos().getX(), object.getBlockPos().getY(), object.getBlockPos().getZ()));
-                Block b1 = b.getBlock();
-                int meta = this.world.getBlockState(new BlockPos(object.getBlockPos().getX(), object.getBlockPos().getY(), object.getBlockPos().getZ())).getBlock().getMetaFromState(b);
-
-                for (int i = 0; i < 100; ++i)
-                    this.world.spawnParticle(
-                            EnumParticleTypes.END_ROD,
-                            object.getBlockPos().getX() + world.rand.nextDouble(),
-                            object.getBlockPos().getY() + world.rand.nextDouble(),
-                            object.getBlockPos().getZ() + world.rand.nextDouble(),
-                            0,
-                            0,
-                            0);
-
-                world.playSound(object.getBlockPos().getX() + 0.5D,
-                        object.getBlockPos().getY() + 0.5D,
-                        object.getBlockPos().getZ() + 0.5D, SoundsTC.zap, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
-            }
-        }
         if (object.typeOfHit == RayTraceResult.Type.ENTITY) {
             Entity e = object.entityHit;
-            if (e instanceof EntityLivingBase && e != this.thrower && !(e instanceof EntityRevolverBullet)) {
+            if (e instanceof EntityLivingBase && e != this.thrower && thrower instanceof EntityPlayer) {
                 EntityLivingBase elb = (EntityLivingBase) e;
                 float initialDamage = 14;
 
-                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.SMITE) > 0)
+                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.SMITE) > 0)
                 {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.SMITE);
+                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.SMITE);
                 }
 
-                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.BOART) > 0)
+                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.SMITE) > 0)
                 {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.BOART);
+                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.SMITE);
                 }
 
-                if (e instanceof IEldritchMob && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.BOE) > 0)
+                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOART) > 0)
                 {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.BOE);
+                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOART);
                 }
 
-                if ((e instanceof EntityPlayer ||  ((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.ILLAGER) && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.DUELING) > 0)
+                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(Objects.requireNonNull(this.getThrower()).getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOART) > 0)
                 {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.DUELING);
+                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOART);
                 }
 
-                if (EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.POWER) > 0)
+                if (e instanceof IEldritchMob && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOE) > 0)
                 {
-                    initialDamage = (float) (14 + 1.5 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.POWER));
+                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOE);
                 }
 
-                elb.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), initialDamage);
-                ((EntityLivingBase) e).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 100, 0, true, false));
+                if (e instanceof IEldritchMob && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOE) > 0)
+                {
+                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOE);
+                }
+
+
+                if (EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.POWER) > 0)
+                {
+                    initialDamage = (float) (14 + 1.5 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.POWER));
+                }
+
+                if (EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.POWER) > 0)
+                {
+                    initialDamage = (float) (14 + 1.5 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.POWER));
+                }
+
+                elb.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), initialDamage);
+
                 boolean destroy = true;
+int leveltaint = 0;
+                if(this.thrower.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof ItemRevolver)
+                leveltaint = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.TAINT);
 
-                int leveltaint = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.getThrower().getHeldItem(this.getThrower().getActiveHand()), EnumInfusionEnchantmentGun.TAINT);
+                if(this.thrower.getHeldItem(EnumHand.OFF_HAND).getItem() instanceof ItemRevolver)
+                    leveltaint = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.TAINT);
 
                 if(leveltaint > 0)
                     ((EntityLivingBase) e).addPotionEffect(new PotionEffect(PotionFluxTaint.instance, leveltaint * 100, leveltaint - 1, true, false));
-                if (destroy) this.setDead();
+
+                this.world.setEntityState(this, (byte) 3);
+                this.setDead();
             }
         }
     }

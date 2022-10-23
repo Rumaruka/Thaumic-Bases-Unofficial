@@ -19,17 +19,17 @@ import java.util.List;
 import java.util.Set;
 
 public enum EnumInfusionEnchantmentGun{
-    TAINT(ImmutableSet.of("revolver_taint"), 3, ""),
-    HEAVY(ImmutableSet.of("revolver"), 5, ""),
-    POWER(ImmutableSet.of("revolver_power"), 5, ""),
-    BOART(ImmutableSet.of("revolver_boart"), 5, ""),
-    DUELING(ImmutableSet.of("revolver_dueling"), 5, ""),
-    SMITE(ImmutableSet.of("revolver_smite"), 5, ""),
-    BOE(ImmutableSet.of("revolver_boe"), 5, ""),
-    EFFICIENCY(ImmutableSet.of("revolver_effect"), 5, ""),
-    SPEED(ImmutableSet.of("revolver_speed"), 5, ""),
-    WISE(ImmutableSet.of("revolver_wise"), 5, ""),
-    Accuracy(ImmutableSet.of("revolver_accuracy"), 3, "");
+    TAINT(ImmutableSet.of("revolver_taint"), 3, "TB.REVOLVER.2"),
+    HEAVY(ImmutableSet.of("revolver"), 5, "TB.REVOLVER.2"),
+    POWER(ImmutableSet.of("revolver_power"), 5, "TB.REVOLVER.2"),
+    BOART(ImmutableSet.of("revolver_boart"), 5, "TB.REVOLVER.2"),
+    DUELING(ImmutableSet.of("revolver_dueling"), 5, "TB.REVOLVER.2"),
+    SMITE(ImmutableSet.of("revolver_smite"), 5, "TB.REVOLVER.2"),
+    BOE(ImmutableSet.of("revolver_boe"), 5, "TB.REVOLVER.2"),
+    EFFICIENCY(ImmutableSet.of("revolver_effect"), 5, "TB.REVOLVER.2"),
+    SPEED(ImmutableSet.of("revolver_speed"), 5, "TB.REVOLVER.2"),
+    WISE(ImmutableSet.of("revolver_wise"), 5, "TB.REVOLVER.2"),
+    Accuracy(ImmutableSet.of("revolver_accuracy"), 3, "TB.REVOLVER.2");
 
     public Set<String> toolClasses;
     public int maxLevel;

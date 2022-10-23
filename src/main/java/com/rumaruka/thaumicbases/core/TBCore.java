@@ -1,10 +1,12 @@
 package com.rumaruka.thaumicbases.core;
 
+import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.handlers.EnchatmentHandler;
 import com.rumaruka.thaumicbases.common.handlers.RegisterHandlers;
 import com.rumaruka.thaumicbases.init.*;
 import com.rumaruka.thaumicbases.network.proxy.TBServer;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -15,6 +17,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import thaumcraft.api.research.ResearchCategory;
 
 
@@ -24,7 +27,7 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.4.100.0";
+    public static final String version = "3.5.000.0";
     public static final String dependencies = "required-after:thaumcraft@[6.1.BETA26,)";
 
     //Networking
@@ -53,7 +56,7 @@ public class TBCore {
         TBBlocks.InGameRegister();
         TBItems.init();
         TBItems.InGameRegistr();
-
+        EntityRegistry.registerModEntity(new ResourceLocation(TBCore.modid + ":" + "bullet"), EntityRevolverBullet.class, "revolver_bullet", 0, TBCore.instance, 32, 1, true);
         TBTiles.setup();
         TBEnchant.setupEnchatments();
         proxy.preInit(e);

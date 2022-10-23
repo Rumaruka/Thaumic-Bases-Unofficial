@@ -46,7 +46,7 @@ public class ItemRevolver extends Item{
             if (!world.isRemote) {
                 world.spawnEntity(new EntityRevolverBullet(world, player));
                 player.getCooldownTracker().setCooldown(TBItems.revolver, 40 / (EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(player.getHeldItem(hand), EnumInfusionEnchantmentGun.SPEED) + 1 ));
-                if(!player.isCreative() && r.nextDouble()<= (1 - 0.2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(player.getHeldItem(hand), EnumInfusionEnchantmentGun.EFFICIENCY)))
+                if(!player.isCreative() && r.nextDouble()<= (1 - 0.1 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(player.getHeldItem(hand), EnumInfusionEnchantmentGun.EFFICIENCY)))
                 stack.shrink(1);
             }
 

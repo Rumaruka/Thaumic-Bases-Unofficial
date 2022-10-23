@@ -2,23 +2,30 @@ package com.rumaruka.thaumicbases.common.handlers;
 
 import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
 import com.rumaruka.thaumicbases.common.enchantment.InfusionEnchantmentRecipeGun;
+import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.item.ItemRevolver;
 import com.rumaruka.thaumicbases.init.TBEnchant;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -47,6 +54,8 @@ public class EnchatmentHandler {
                     enchLevel = EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund);
                     if(mainHund.getItem() instanceof ItemRevolver)
                         enchLevel = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(mainHund, EnumInfusionEnchantmentGun.WISE);
+                    if(attacker.getHeldItemOffhand().getItem() instanceof ItemRevolver)
+                        enchLevel = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(attacker.getHeldItemOffhand(), EnumInfusionEnchantmentGun.WISE);
                     ResearchCategory[] rc = ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
                     ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
                     ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));

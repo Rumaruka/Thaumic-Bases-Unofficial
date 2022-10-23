@@ -73,6 +73,11 @@ public class EntityRevolverBullet extends EntityThrowable {
     protected void onImpact(RayTraceResult object) {
         if (this.isDead) return;
 
+        if (!this.world.isRemote && object.typeOfHit == RayTraceResult.Type.BLOCK) {
+            if (noClip) return;
+            if (this.world.isBlockNormalCube(object.getBlockPos(), true))
+                this.setDead();
+        }
         if (object.typeOfHit == RayTraceResult.Type.ENTITY) {
             Entity e = object.entityHit;
             if (e instanceof EntityLivingBase && e != this.thrower && thrower instanceof EntityPlayer) {

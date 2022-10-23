@@ -291,8 +291,6 @@ public class TBThaumonomicon {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lazullia"), lazullia);
         CrucibleRecipe  glieonia = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.glieoniaseed),new ItemStack(Blocks.RED_FLOWER,1,3),new AspectList().add(Aspect.PLANT,20).add(Aspect.MAGIC,15).add(Aspect.LIFE,15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.glieonia"), glieonia);
-        CrucibleRecipe fluxium = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBBlocks.flaxium),new ItemStack(Blocks.RED_FLOWER,1,2),new AspectList().add(Aspect.PLANT,20).add(Aspect.MAGIC,15).add(Aspect.ENTROPY,25));
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.fluxium"), fluxium);
         CrucibleRecipe lucrite = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.lucriteseed),new ItemStack(Items.GOLDEN_CARROT),new AspectList().add(Aspect.MAGIC,20).add(Aspect.DESIRE,18).add(Aspect.LIFE,14));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lucrite"), lucrite);
         /*==============================================ALCHEMY END===============================================================================*/
@@ -376,7 +374,6 @@ public class TBThaumonomicon {
         InfusionEnchantmentRecipeGun IEGSPEED = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.SPEED, (new AspectList()).add(Aspect.AIR, 30).add(Aspect.MOTION, 30), new IngredientNBTTC(new ItemStack(ItemsTC.mechanismSimple)), new ItemStack((Item)Items.ENCHANTED_BOOK));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEED"), (InfusionRecipe)IEGSPEED);
         ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEEDFAKE"), new InfusionEnchantmentRecipeGun(IEGSPEED, rev10));
-
         /*==============================================INFUSING END=============================================================================*/
 
         /*TOBACCO INIT*/

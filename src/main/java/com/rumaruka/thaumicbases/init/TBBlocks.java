@@ -76,7 +76,6 @@ public class TBBlocks {
     public static Block lazullia;
     public static Block redlonstem;
     public static Block lucrite;
-    public static Block flaxium;
     public static Block briar;
     public static Block glieonia;
     public static Block voidplant;
@@ -176,7 +175,6 @@ public class TBBlocks {
         lazullia = new BlockLazullia(7,16,true).setUnlocalizedName("lazullia");
         redlonstem = new BlockRedlonStem(Blocks.REDSTONE_BLOCK).setUnlocalizedName("redlonstem");
         lucrite = new BlockLucritePlant(7,16,true).setUnlocalizedName("lucrite");
-        flaxium = new BlockFlaxium().setUnlocalizedName("flaxium");
         briar = new BlockTBBush().setUnlocalizedName("briar");
         glieonia = new BlockGlieonia(3,12,false).setUnlocalizedName("glieonia");
 
@@ -255,7 +253,6 @@ public class TBBlocks {
         TBBlocks.registerBlock(lazullia,lazullia.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(redlonstem,redlonstem.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(lucrite,lucrite.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(flaxium,flaxium.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(briar,briar.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(glieonia,glieonia.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(voidplant,voidplant.getUnlocalizedName().substring(5));
@@ -384,7 +381,6 @@ public class TBBlocks {
         registerRender(lazullia);
         registerRender(lucrite);
         registerRender(redlonstem);
-        registerRender(flaxium);
         registerRender(briar);
         registerRender(glieonia);
         registerRender(voidplant);

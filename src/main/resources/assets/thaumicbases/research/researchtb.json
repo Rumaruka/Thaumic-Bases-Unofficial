@@ -49,7 +49,7 @@
           },
           {
             "text": "research_stage.thaumicbases:alc.2",
-            "recipes": ["thaumicbases:thauminite_ingot"]
+            "recipes": ["TB.Air_Ingot","TB.Fire_Ingot","TB.Water_Ingot","TB.Earth_Ingot","TB.Order_Ingot","TB.Entropy_Ingot","TB.Mixed_Ingot","TB.Tain_Ingot","TB.Thauminite"]
           }
         ]
       },

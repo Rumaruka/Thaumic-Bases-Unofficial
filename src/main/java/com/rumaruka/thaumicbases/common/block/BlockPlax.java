@@ -72,7 +72,7 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
 
     @Override
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return true;
+        return !this.isMaxAge(state);
     }
 
     @Override

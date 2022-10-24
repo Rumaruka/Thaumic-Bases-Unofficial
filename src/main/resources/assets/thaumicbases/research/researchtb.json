@@ -329,7 +329,7 @@
           },
           {
             "text": "research_stage.thaumicbases:plant.2",
-            "recipes": ["TB.sweedToPlax","TB.aurelia","TB.roshipbrush","TB.metallea","TB.lazullia","TB.glieonia","TB.lucrite","TB.briar","TB.tobacco", "TB.syrop"]
+            "recipes": ["TB.sweedToPlax","TB.knoze","TB.aurelia","TB.roshipbrush","TB.metallea","TB.lazullia","TB.glieonia","TB.lucrite","TB.briar","TB.tobacco", "TB.syrop"]
           }
         ]
       },
@@ -344,8 +344,8 @@
           "TB.PLANT1", "UNLOCKELDRITCH"
         ],
         "location": [
-          6, 4
-        ],"meta":["ROUND", "HIDDEN"],
+          7, 4
+        ],"meta":["ROUND", "REVERSE", "HIDDEN"],
         "stages": [
           {
             "text": "research_stage.thaumicbases:voidseeds.1",
@@ -376,7 +376,7 @@
           "TB.PLANT1"
         ],
         "location": [
-          6, 0
+          5, 0
         ],"meta":["ROUND", "REVERSE"],
         "stages": [
           {
@@ -393,33 +393,6 @@
         ]
       },
       {
-        "key": "TB.TOBACCO",
-        "name": "research_name.thaumicbases:tbtobacco",
-        "category": "THAUMICBASES",
-        "icons": [
-          "thaumicbases:tobacco_leaves"
-        ],
-        "parents": [
-          "TB.PLANT"
-        ],
-        "location": [
-          6, 0
-        ],"meta":["ROUND", "REVERSE"],
-        "stages": [
-          {
-            "text": "research_stage.thaumicbases:tbtobacco.1",
-            "required_item": [
-              "thaumicbases:tobaccoseed;1;0"
-            ],
-            "recipes": ["TB.greatpipe","thaumicbases:tobacco_pile","TB.mortal","TB.silverpipe"]
-          },
-          {
-            "text": "research_stage.thaumicbases:tbtobacco.2",
-            "recipes": ["TB.greatpipe","thaumicbases:tobacco_pile","TB.mortal","TB.silverpipe","TB.angry","TB.eldritchtobacco","TB.hunger","TB.wisdom","TB.miner","TB.tainted","TB.wispy"]
-          }
-        ]
-      },
-      {
         "key": "TB.CACTUS",
         "name": "research_name.thaumicbases:raincac",
         "category": "THAUMICBASES",
@@ -430,8 +403,8 @@
           "TB.PLANT1"
         ],
         "location": [
-          8, 2
-        ],"meta":["ROUND"],
+          7, 0
+        ],"meta":["ROUND", "REVERSE"],
         "stages": [
           {
             "text": "research_stage.thaumicbases:raincac.1",
@@ -456,10 +429,10 @@
           "thaumicbases:goldensapling"
         ],
         "parents": [
-          "TB.CACTUS"
+          "TB.PLANT1"
         ],
         "location": [
-          10, 2
+          9, 2
         ],
         "stages": [
           {
@@ -487,7 +460,7 @@
           "TB.TREE"
         ],
         "location": [
-          10, 0
+          9, 0
         ],
         "stages": [
           {
@@ -515,7 +488,7 @@
           "TB.TREE"
         ],
         "location": [
-          10, 4
+          9, 4
         ],
         "stages": [
           {
@@ -782,6 +755,34 @@
             "text": "research_stage.thaumicbases:revupgrades.2",
             "recipes": ["thaumicbases:IEGTAINTFAKE","thaumicbases:IEGHEAVYFAKE","thaumicbases:thaumicbases:IEGPOWERFAKE","thaumicbases:IEGSMITEFAKE","thaumicbases:IEGBOARTFAKE","thaumicbases:IEGBOEFAKE","thaumicbases:IEGDUELINGFAKE","thaumicbases:IEGWISEFAKE","thaumicbases:IEGEFFICIENCYFAKE","thaumicbases:IEGSPEEDFAKE"]
           }
+        ]
+      },
+      {
+        "key": "TB.KNOWLEDGE",
+        "name": "research_name.thaumicbases:curioscraft",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:knowledge_shard"
+        ],
+        "parents": [
+          "TB.PLANT1"
+        ],
+        "location": [
+          5, 4
+        ],"meta":["HIDDEN", "ROUND", "REVERSE"],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:curioscraft.1","required_knowledge": [
+            "THEORY;BASICS;1", "THEORY;AUROMANCY;1", "THEORY;INFUSION;1", "THEORY;ARTIFICE;1", "THEORY;GOLEMANCY;1"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:curioscraft.2",
+            "recipes": ["TB.c0","TB.c1","TB.c2","TB.c4","TB.c5","TB.c3"]
+          }
+        ],
+        "addenda": [
+          {"text": "research_stage.thaumicbases:curioscraft.3","required_research":["BASEELDRITCH"]}
         ]
       }
     ]

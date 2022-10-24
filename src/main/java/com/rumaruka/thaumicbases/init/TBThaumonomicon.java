@@ -293,6 +293,21 @@ public class TBThaumonomicon {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.glieonia"), glieonia);
         CrucibleRecipe lucrite = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.lucriteseed),new ItemStack(Items.GOLDEN_CARROT),new AspectList().add(Aspect.MAGIC,20).add(Aspect.DESIRE,18).add(Aspect.LIFE,14));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lucrite"), lucrite);
+        CrucibleRecipe knoze = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.knozeseed),new ItemStack(Blocks.DOUBLE_PLANT,1,4),new AspectList().add(Aspect.MIND,60).add(Aspect.ENERGY,20).add(Aspect.LIFE,30));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.knoze"), knoze);
+
+        CrucibleRecipe curio0 = new CrucibleRecipe("TB.KNOWLEDGE",new ItemStack(ItemsTC.curio, 1, 0),new ItemStack(TBItems.knowledge_shard),new AspectList().add(Aspect.MAGIC,30).add(Aspect.CRAFT, 10));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.c0"), curio0);
+        CrucibleRecipe curio1 = new CrucibleRecipe("TB.KNOWLEDGE",new ItemStack(ItemsTC.curio, 1, 1),new ItemStack(TBItems.knowledge_shard),new AspectList().add(Aspect.BEAST,30).add(Aspect.CRAFT,10));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.c1"), curio1);
+        CrucibleRecipe curio2 = new CrucibleRecipe("TB.KNOWLEDGE",new ItemStack(ItemsTC.curio, 1, 2),new ItemStack(TBItems.knowledge_shard),new AspectList().add(Aspect.DEATH,30).add(Aspect.CRAFT,10));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.c2"), curio2);
+        CrucibleRecipe curio3 = new CrucibleRecipe("TB.KNOWLEDGE&&BASEELDRITCH",new ItemStack(ItemsTC.curio, 1, 3),new ItemStack(TBItems.knowledge_shard),new AspectList().add(Aspect.ELDRITCH,30).add(Aspect.DESIRE, 10));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.c3"), curio3);
+        CrucibleRecipe curio4 = new CrucibleRecipe("TB.KNOWLEDGE",new ItemStack(ItemsTC.curio, 1, 4),new ItemStack(TBItems.knowledge_shard),new AspectList().add(Aspect.MIND,30).add(Aspect.CRAFT, 10));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.c4"), curio4);
+        CrucibleRecipe curio5 = new CrucibleRecipe("TB.KNOWLEDGE",new ItemStack(ItemsTC.curio, 1, 5),new ItemStack(TBItems.knowledge_shard),new AspectList().add(Aspect.FLUX,30).add(Aspect.CRAFT, 10));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.c5"), curio5);
         /*==============================================ALCHEMY END===============================================================================*/
 
 
@@ -445,6 +460,7 @@ public class TBThaumonomicon {
         appendAspects(new ItemStack(TBItems.briar_seedbag), new AspectList().add(Aspect.PLANT,5).add(Aspect.LIFE,5));
             appendAspects(new ItemStack(TBItems.tobacco_pile), new AspectList().add(Aspect.PLANT, 3).add(Aspect.MAN, 3).add(Aspect.ENTROPY, 1));
             appendAspects(new ItemStack(TBItems.tobacco_leaves), new AspectList().add(Aspect.PLANT, 5).add(Aspect.MAN, 5));
+        appendAspects(new ItemStack(TBItems.knowledge_shard), new AspectList().add(Aspect.MIND, 15));
     }
 
     public static AspectList primals(int amount)

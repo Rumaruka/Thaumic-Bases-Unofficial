@@ -6,12 +6,12 @@ import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.common.TBMaterial;
 import com.rumaruka.thaumicbases.common.item.*;
 import com.rumaruka.thaumicbases.common.item.ItemSeeds;
-import com.rumaruka.thaumicbases.common.item.recourse.ItemBriarSeedbag;
-import com.rumaruka.thaumicbases.common.item.recourse.ItemTobaccoLeaves;
-import com.rumaruka.thaumicbases.common.item.recourse.TBItemNuggetThauminite;
-import com.rumaruka.thaumicbases.common.item.recourse.TBItemThauminiteIngot;
+import com.rumaruka.thaumicbases.common.item.TBBloodyCloth;
+import com.rumaruka.thaumicbases.common.item.recourse.*;
 
 import com.rumaruka.thaumicbases.core.TBCore;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
@@ -24,6 +24,8 @@ import net.minecraft.item.ItemArmor.*;
 
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+
+import java.util.Arrays;
 
 
 public class TBItems {
@@ -111,7 +113,10 @@ public class TBItems {
     public  static  Item mortar;
     public static Item revolver;
     public static Item bullet;
+public static Item knozeseed;
+    public static Item knowledge_shard;
 
+    public static Block[] crystalBlock = new Block[]{TBBlocks.crystalblocktainted, TBBlocks.crystalblockentropy, TBBlocks.crystalblockorder, TBBlocks.crystalblockearth, TBBlocks.crystalblockfire, TBBlocks.crystalblockair, TBBlocks.crystalblockwater, TBBlocks.crystalblockmixed};
 
     public static void init(){
 
@@ -140,11 +145,14 @@ public class TBItems {
         redlonseed = new ItemSeeds(TBBlocks.redlonstem,Blocks.FARMLAND).setUnlocalizedName("redlonseed");
         lucriteseed = new ItemSeeds(TBBlocks.lucrite,Blocks.FARMLAND).setUnlocalizedName("lucriteseed");
 
-//        glieoniaseed = new ItemSeeds(TBBlocks.glieonia,Blocks.FARMLAND).setUnlocalizedName("glieoniaseed");
         glieoniaseed = new ItemSeeds(TBBlocks.glieonia,Blocks.GRASS).setUnlocalizedName("glieoniaseed"); // AeXiaohu modified 修复荧粉花只能种在耕地上，现在只能种在草地上
+
+        knozeseed = new ItemKnozeSeeds(TBBlocks.knoze).setUnlocalizedName("knozeseed");
 
         voidseed = new ItemSeeds(TBBlocks.voidplant,Blocks.FARMLAND).setUnlocalizedName("voidseed");
         briar_seedbag = new ItemBriarSeedbag().setUnlocalizedName("briar_seedbag").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+        knowledge_shard = new ItemKnowledgeShard().setUnlocalizedName("knowledge_shard").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
         bloodychest = new ItemBloodyArmor(bloodyA,0,1,EntityEquipmentSlot.CHEST).setUnlocalizedName("bloodychest").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         bloodylegs = new ItemBloodyArmor(bloodyA,0,2, EntityEquipmentSlot.LEGS).setUnlocalizedName("bloodylegs").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -208,6 +216,8 @@ public class TBItems {
         TBItems.registerItem(glieoniaseed,glieoniaseed.getUnlocalizedName().substring(5));
         TBItems.registerItem(voidseed,voidseed.getUnlocalizedName().substring(5));
 
+        TBItems.registerItem(knozeseed,knozeseed.getUnlocalizedName().substring(5));
+
         TBItems.registerItem(bloodychest,bloodychest.getUnlocalizedName().substring(5));
         TBItems.registerItem(bloodylegs,bloodylegs.getUnlocalizedName().substring(5));
         TBItems.registerItem(bloodyboots,bloodyboots.getUnlocalizedName().substring(5));
@@ -239,6 +249,7 @@ public class TBItems {
 
         TBItems.registerItem(revolver,revolver.getUnlocalizedName().substring(5));
         TBItems.registerItem(bullet,bullet.getUnlocalizedName().substring(5));
+        TBItems.registerItem(knowledge_shard,knowledge_shard.getUnlocalizedName().substring(5));
     }
 
 
@@ -284,6 +295,7 @@ public class TBItems {
         renderItems(voidseed);
         renderItems(redlonseed);
 
+        renderItems(knozeseed);
 
         renderItems(bloodychest);
         renderItems(bloodylegs);
@@ -318,6 +330,8 @@ public class TBItems {
 
         renderItems(revolver);
         renderItems(bullet);
+
+        renderItems(knowledge_shard);
     }
 
 

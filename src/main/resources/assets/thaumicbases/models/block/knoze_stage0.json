@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "thaumicbases:blocks/knoze_stage_0"
+  }
+}

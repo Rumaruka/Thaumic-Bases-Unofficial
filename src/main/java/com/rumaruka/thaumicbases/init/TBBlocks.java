@@ -110,7 +110,7 @@ public class TBBlocks {
     public static Block campfire;
     public static Block braizer;
 
-
+    public static Block knoze;
 
 
 
@@ -177,8 +177,8 @@ public class TBBlocks {
         lucrite = new BlockLucritePlant(7,16,true).setUnlocalizedName("lucrite");
         briar = new BlockTBBush().setUnlocalizedName("briar");
         glieonia = new BlockGlieonia(3,12,false).setUnlocalizedName("glieonia");
+        knoze = new BlockknozeSeed(3,12,false).setUnlocalizedName("knoze");
 
-//        voidplant = new BlockVoidPlant(3,32,true).setUnlocalizedName("voidplant");
         voidplant = new BlockVoidPlant(7,32,true).setUnlocalizedName("voidplant"); // AeXiaohu modified 修改虚空草生长为7个阶段，使傀儡能正确识别
 
         //Tree
@@ -257,6 +257,7 @@ public class TBBlocks {
         TBBlocks.registerBlock(glieonia,glieonia.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(voidplant,voidplant.getUnlocalizedName().substring(5));
 
+        TBBlocks.registerBlock(knoze,knoze.getUnlocalizedName().substring(5));
 
         TBBlocks.registerBlock(ironspike,ironspike.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(thaumspike,thaumspike.getUnlocalizedName().substring(5));
@@ -385,6 +386,7 @@ public class TBBlocks {
         registerRender(glieonia);
         registerRender(voidplant);
 
+        registerRender(knoze);
 
         registerRender(ironspike);
         registerRender(thaumspike);

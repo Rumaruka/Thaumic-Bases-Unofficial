@@ -156,7 +156,7 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
 
     @Override
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return true;
+        return !this.isMaxAge(state);
     }
 
     @Override

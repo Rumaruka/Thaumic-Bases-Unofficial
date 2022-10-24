@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -81,6 +82,8 @@ public class ItemRevolver extends Item{
         }
     }
 
+@Override
+public EnumRarity getRarity(final ItemStack stack){return EnumRarity.UNCOMMON;}
 
     protected boolean isBullet(ItemStack stack)
     {

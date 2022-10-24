@@ -139,9 +139,9 @@ public class BlockGlieonia extends BlockBush implements IGrowable {
         return f;
     }
 
-    @Override
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return true;
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
+    {
+        return (Integer) state.getValue(AGE) != 3;
     }
 
     @Override

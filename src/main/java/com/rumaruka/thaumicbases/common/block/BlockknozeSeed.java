@@ -1,24 +1,33 @@
 package com.rumaruka.thaumicbases.common.block;
 
+import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBItems;
-
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
+import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import thaumcraft.api.items.ItemsTC;
+import thaumcraft.api.ThaumcraftApiHelper;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.crafting.IngredientNBTTC;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-//public class BlockVoidPlant extends BlockBush implements IGrowable {
-public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaohu modified 修复虚空草为作物类型，使傀儡能正确识别
+public class BlockknozeSeed extends BlockBush implements IGrowable {
+
+
 
     public int growthStages;
     public int growthDelay;
@@ -27,7 +36,7 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
     public ItemStack dropItem;
     public ItemStack dropSeed;
 
-    public BlockVoidPlant(int stages, int delay, boolean isCrop) {
+    public BlockknozeSeed(int stages, int delay, boolean isCrop) {
         super();
         growthStages = stages;
         growthDelay = delay;
@@ -46,16 +55,25 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
     @Override
     protected BlockStateContainer createBlockState() {
         if(AGE==null){
-//            AGE = PropertyInteger.create("age",0,3);
-            AGE = PropertyInteger.create("age",0,7); // AeXiaohu modified 注意 voidplant.json 也增加到了7个生长阶段
+            AGE = PropertyInteger.create("age",0,3);
         }
         return new BlockStateContainer(this,AGE);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(AGE);
+    }
+
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
     }
     public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
     {
         super.updateTick(w,pos, state, rnd);
 
-        if (!w.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+        if (!w.isAreaLoaded(pos, 1)) return;
         if (w.getLightFromNeighbors(pos.up()) >= 9)
         {
             int i = state.getValue(AGE);
@@ -72,6 +90,7 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
             }
         }
     }
+
     protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
     {
         float f = 1.0F;
@@ -127,20 +146,9 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
         return f;
     }
 
-    @Override
-    public int getMetaFromState(IBlockState state) {
-        return state.getValue(AGE);
-    }
-
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
-    }
-
-
-    @Override
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return !this.isMaxAge(state);
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
+    {
+        return (Integer) state.getValue(AGE) != 3;
     }
 
     @Override
@@ -161,9 +169,16 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
         worldIn.setBlockState(pos, this.withAge(i), 2);
 
     }
+
+    @Override
+    protected boolean canSustainBush(IBlockState state) {
+        return (state == TBBlocks.crystalblockmixed.getDefaultState()) || (state == TBBlocks.crystalblockair.getDefaultState()) || (state == TBBlocks.crystalblockfire.getDefaultState()) || (state == TBBlocks.crystalblockwater.getDefaultState()) || (state == TBBlocks.crystalblocktainted.getDefaultState()) || (state == TBBlocks.crystalblockorder.getDefaultState()) || (state == TBBlocks.crystalblockentropy.getDefaultState()) || (state == TBBlocks.crystalblockearth.getDefaultState());
+    }
+
+
     protected int getBonemealAgeIncrease(World worldIn)
     {
-        return MathHelper.getInt(worldIn.rand, 2, 5);
+        return MathHelper.getInt(worldIn.rand, 1, 2);
     }
 
     public int getMaxAge()
@@ -173,7 +188,7 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
 
     protected int getAge(IBlockState state)
     {
-        return  state.getValue(this.getAgeProperty());
+        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
     }
     protected PropertyInteger getAgeProperty()
     {
@@ -184,28 +199,44 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
     {
         return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
     }
-
-
     @Override
     public List<ItemStack> getDrops(IBlockAccess w, BlockPos pos, IBlockState state, int fortune) {
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-
         if (w instanceof World) {
             World world = World.class.cast(w);
-            int metadata = state.getValue(AGE);
-            if (metadata < growthStages) {
-                ret.add(new ItemStack(TBItems.voidseed, 1));
-            }
+            ret.add(new ItemStack(TBItems.knozeseed, 1));
+            int metadata = ((Integer)state.getValue((IProperty)this.AGE)).intValue();
             if (metadata >= growthStages - 1) {
+                ret.add(new ItemStack(TBItems.knowledge_shard));
+                for (int i = 0; i < 1; ++i)
                     if (world.rand.nextInt(growthStages) <= metadata)
                         if (dropSeed != ItemStack.EMPTY){
                             for (int j = 0; j < 4 + fortune; ++j) {
-                                if (world.rand.nextBoolean()) {
-                                    ret.add(new ItemStack(ItemsTC.voidSeed));
-
+                                if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockfire) {
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.FIRE));
+                                }
+                                if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockwater) {
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.WATER));
+                                }
+                                if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockearth) {
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.EARTH));
+                                }
+                                if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockair) {
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.AIR));
+                                }
+                                if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockorder) {
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY));
+                                }
+                                if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockentropy) {
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.ORDER));
+                                }
+                                if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblocktainted) {
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX));
+                                }
+                                if (world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockmixed) {
+                                    ret.add(new ItemStack(TBItems.knowledge_shard, 1));
                                 }
                             }
-                            ret.add(new ItemStack(TBItems.voidseed));
 
                         }
 

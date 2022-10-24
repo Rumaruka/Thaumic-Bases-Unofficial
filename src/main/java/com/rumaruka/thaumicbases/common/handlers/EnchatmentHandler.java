@@ -4,7 +4,9 @@ import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
 import com.rumaruka.thaumicbases.common.enchantment.InfusionEnchantmentRecipeGun;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.item.ItemRevolver;
+import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBEnchant;
+import com.rumaruka.thaumicbases.init.TBItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -12,6 +14,7 @@ import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -30,6 +33,11 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectEventProxy;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.aspects.AspectRegistryEvent;
+import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.entities.IEldritchMob;
 import thaumcraft.api.entities.ITaintedMob;
@@ -122,5 +130,20 @@ public class EnchatmentHandler {
                 event.getToolTip().add(1, s);
             }
         }
+    }
+
+    @SubscribeEvent
+    public void registerAspects(AspectRegistryEvent event) {
+        AspectEventProxy proxy = event.register;
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.aureliapetal),new AspectList().add(Aspect.AURA,10));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.goldenleaves),new AspectList().add(Aspect.PLANT,5));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.enderleaves),new AspectList().add(Aspect.PLANT,5));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.netherleaves),new AspectList().add(Aspect.PLANT,5));
+
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST,26).add(Aspect.CRAFT,6));
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.briar_seedbag), new AspectList().add(Aspect.PLANT,5).add(Aspect.LIFE,5));
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_pile), new AspectList().add(Aspect.PLANT, 3).add(Aspect.MAN, 3).add(Aspect.ENTROPY, 1));
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_leaves), new AspectList().add(Aspect.PLANT, 5).add(Aspect.MAN, 5));
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.knowledge_shard), new AspectList().add(Aspect.MIND, 15));
     }
 }

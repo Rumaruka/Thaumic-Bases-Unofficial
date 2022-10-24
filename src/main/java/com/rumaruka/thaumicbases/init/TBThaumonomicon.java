@@ -436,33 +436,6 @@ public class TBThaumonomicon {
 
     }
 
-
-
-
-
-    public static void $insertAspects()
-    {
-
-
-        appendAspects(new ItemStack(BlocksTC.vishroom), new AspectList().add(Aspect.FLUX, 2));
-        appendAspects(new ItemStack(Items.LEATHER), new AspectList());
-        appendAspects(new ItemStack(Items.RABBIT_HIDE), new AspectList());
-        appendAspects(new ItemStack(Items.LEATHER_BOOTS), new AspectList());
-        appendAspects(new ItemStack(Items.LEATHER_CHESTPLATE), new AspectList());
-        appendAspects(new ItemStack(Items.LEATHER_HELMET), new AspectList());
-        appendAspects(new ItemStack(Items.LEATHER_LEGGINGS), new AspectList());
-        appendAspects(new ItemStack(TBItems.aureliapetal),new AspectList().add(Aspect.AURA,10));
-        appendAspects(new ItemStack(TBBlocks.goldenleaves),new AspectList().add(Aspect.PLANT,5));
-        appendAspects(new ItemStack(TBBlocks.enderleaves),new AspectList().add(Aspect.PLANT,5));
-        appendAspects(new ItemStack(TBBlocks.netherleaves),new AspectList().add(Aspect.PLANT,5));
-
-        appendAspects(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST,26).add(Aspect.CRAFT,6));
-        appendAspects(new ItemStack(TBItems.briar_seedbag), new AspectList().add(Aspect.PLANT,5).add(Aspect.LIFE,5));
-            appendAspects(new ItemStack(TBItems.tobacco_pile), new AspectList().add(Aspect.PLANT, 3).add(Aspect.MAN, 3).add(Aspect.ENTROPY, 1));
-            appendAspects(new ItemStack(TBItems.tobacco_leaves), new AspectList().add(Aspect.PLANT, 5).add(Aspect.MAN, 5));
-        appendAspects(new ItemStack(TBItems.knowledge_shard), new AspectList().add(Aspect.MIND, 15));
-    }
-
     public static AspectList primals(int amount)
     {
         return new AspectList().add(Aspect.AIR, amount).add(Aspect.WATER, amount).add(Aspect.EARTH, amount).add(Aspect.FIRE, amount).add(Aspect.ORDER, amount).add(Aspect.ENTROPY, amount);

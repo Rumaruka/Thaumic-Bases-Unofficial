@@ -295,6 +295,8 @@ public class TBThaumonomicon {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.lucrite"), lucrite);
         CrucibleRecipe knoze = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBItems.knozeseed),new ItemStack(Blocks.DOUBLE_PLANT,1,4),new AspectList().add(Aspect.MIND,60).add(Aspect.ENERGY,20).add(Aspect.LIFE,30));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.knoze"), knoze);
+        CrucibleRecipe ashroom = new CrucibleRecipe("TB.PLANT1",new ItemStack(TBBlocks.ashroom),new ItemStack(BlocksTC.vishroom),new AspectList().add(Aspect.ENTROPY,10).add(Aspect.AURA,5));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.ashroom"), ashroom);
 
         CrucibleRecipe curio0 = new CrucibleRecipe("TB.KNOWLEDGE",new ItemStack(ItemsTC.curio, 1, 0),new ItemStack(TBItems.knowledge_shard),new AspectList().add(Aspect.MAGIC,30).add(Aspect.CRAFT, 10));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.c0"), curio0);

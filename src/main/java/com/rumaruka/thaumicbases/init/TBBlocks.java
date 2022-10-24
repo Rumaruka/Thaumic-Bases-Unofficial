@@ -111,7 +111,7 @@ public class TBBlocks {
     public static Block braizer;
 
     public static Block knoze;
-
+    public static Block ashroom;
 
 
     public static void init() {
@@ -176,6 +176,7 @@ public class TBBlocks {
         redlonstem = new BlockRedlonStem(Blocks.REDSTONE_BLOCK).setUnlocalizedName("redlonstem");
         lucrite = new BlockLucritePlant(7,16,true).setUnlocalizedName("lucrite");
         briar = new BlockTBBush().setUnlocalizedName("briar");
+        ashroom = new BlockAshroom(3,12,false).setUnlocalizedName("ashroom");
         glieonia = new BlockGlieonia(3,12,false).setUnlocalizedName("glieonia");
         knoze = new BlockknozeSeed(3,12,false).setUnlocalizedName("knoze");
 
@@ -254,6 +255,7 @@ public class TBBlocks {
         TBBlocks.registerBlock(redlonstem,redlonstem.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(lucrite,lucrite.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(briar,briar.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(ashroom,ashroom.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(glieonia,glieonia.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(voidplant,voidplant.getUnlocalizedName().substring(5));
 
@@ -387,6 +389,7 @@ public class TBBlocks {
         registerRender(voidplant);
 
         registerRender(knoze);
+        registerRender(ashroom);
 
         registerRender(ironspike);
         registerRender(thaumspike);

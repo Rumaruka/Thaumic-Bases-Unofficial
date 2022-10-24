@@ -73,6 +73,7 @@ tile.campfire.name=Magical Campfire
 tile.braizer.name=Magical Brazier
 tile.pyrosolid.name=Crystallized Pyrofluid
 tile.knoze.name=Rosa Mysteria
+tile.ashroom.name=Primal Shroom
 fluid.pyro=Pyrofluid
 
 #items

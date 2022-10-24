@@ -329,7 +329,7 @@
           },
           {
             "text": "research_stage.thaumicbases:plant.2",
-            "recipes": ["TB.sweedToPlax","TB.knoze","TB.aurelia","TB.roshipbrush","TB.metallea","TB.lazullia","TB.glieonia","TB.lucrite","TB.briar","TB.tobacco", "TB.syrop"]
+            "recipes": ["TB.sweedToPlax","TB.knoze","TB.aurelia","TB.roshipbrush","TB.metallea","TB.lazullia","TB.glieonia","TB.lucrite","TB.briar","TB.tobacco", "TB.syrop", "TB.ashroom"]
           }
         ]
       },

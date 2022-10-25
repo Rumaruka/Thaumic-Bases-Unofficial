@@ -225,10 +225,10 @@ public class BlockknozeSeed extends BlockBush implements IGrowable {
                                     ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.AIR));
                                 }
                                 if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockorder) {
-                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY));
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.ORDER));
                                 }
                                 if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblockentropy) {
-                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.ORDER));
+                                    ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY));
                                 }
                                 if (world.rand.nextBoolean() && world.getBlockState(pos.down(1)).getBlock() == TBBlocks.crystalblocktainted) {
                                     ret.add(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX));

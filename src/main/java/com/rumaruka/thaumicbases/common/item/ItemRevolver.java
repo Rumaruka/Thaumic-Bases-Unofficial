@@ -2,8 +2,10 @@ package com.rumaruka.thaumicbases.common.item;
 
 
 import com.google.common.collect.Multimap;
+import com.rumaruka.thaumicbases.api.IRevolver;
 import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
+import com.rumaruka.thaumicbases.common.libs.TBSounds;
 import com.rumaruka.thaumicbases.init.TBItems;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -23,7 +25,7 @@ import thaumcraft.common.lib.SoundsTC;
 import java.util.Random;
 import java.util.UUID;
 
-public class ItemRevolver extends Item{
+public class ItemRevolver extends Item implements IRevolver {
     protected float attackSpeed;
 
     public ItemRevolver() {
@@ -42,7 +44,7 @@ public class ItemRevolver extends Item{
         if (flag) {
             return ActionResult.newResult(EnumActionResult.FAIL, player.getHeldItem(hand));
         } else {
-            player.playSound(SoundsTC.zap, 1.0F, (world.rand.nextFloat() - world.rand.nextFloat()) * 0.2F + 1.0F);
+            player.playSound(TBSounds.revolver_shot, 1.0F, (world.rand.nextFloat() - world.rand.nextFloat()) * 0.2F + 1.0F);
 
             if (!world.isRemote) {
                 world.spawnEntity(new EntityRevolverBullet(world, player));
@@ -98,4 +100,9 @@ public EnumRarity getRarity(final ItemStack stack){return EnumRarity.UNCOMMON;}
     }
 
     public EnumAction getItemUseAction(ItemStack stack) {return EnumAction.BOW;}
+
+    @Override
+    public float getZoom(ItemStack item) {
+        return 0.75F;
+    }
 }

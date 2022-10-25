@@ -682,7 +682,7 @@
         "name": "research_name.thaumicbases:scythe",
         "category": "THAUMICBASES",
         "icons": [
-          "thaumicbases:thauminitepickaxe"
+          "thaumicbases:herobrinesscythe"
         ],
         "parents": [
           "TB.MACHANISM", "UNLOCKELDRITCH"
@@ -693,12 +693,12 @@
         "stages": [
           {
             "text": "research_stage.thaumicbases:scythe.1","required_craft": [
-            "thaumicbases:thauminitesword"
+            "thaumicbases:herobrinesscythe"
           ]
           },
           {
             "text": "research_stage.thaumicbases:scythe.2",
-            "recipes": ["thaumicbases:thauminiteshovel","thaumicbases:thauminitesword","thaumicbases:thauminitepickaxe","thaumicbases:thauminiteaxe","thaumicbases:thauminitehoe","thaumicbases:thauminitechest","thaumicbases:thauminitelegs","thaumicbases:thauminitehelmet","thaumicbases:thauminiteboots","TB.herobrine"]
+            "recipes": ["TB.herobrine"]
           }
         ]
       },
@@ -753,7 +753,7 @@
           },
           {
             "text": "research_stage.thaumicbases:revupgrades.2",
-            "recipes": ["thaumicbases:IEGTAINTFAKE","thaumicbases:IEGHEAVYFAKE","thaumicbases:thaumicbases:IEGPOWERFAKE","thaumicbases:IEGSMITEFAKE","thaumicbases:IEGBOARTFAKE","thaumicbases:IEGBOEFAKE","thaumicbases:IEGDUELINGFAKE","thaumicbases:IEGWISEFAKE","thaumicbases:IEGEFFICIENCYFAKE","thaumicbases:IEGSPEEDFAKE"]
+            "recipes": ["thaumicbases:IEGPOWERFAKE","thaumicbases:IEGTAINTFAKE","thaumicbases:IEGHEAVYFAKE","thaumicbases:thaumicbases:IEGPOWERFAKE","thaumicbases:IEGSMITEFAKE","thaumicbases:IEGBOARTFAKE","thaumicbases:IEGBOEFAKE","thaumicbases:IEGDUELINGFAKE","thaumicbases:IEGWISEFAKE","thaumicbases:IEGEFFICIENCYFAKE","thaumicbases:IEGSPEEDFAKE","thaumicbases:IEGACCURACYFAKE"]
           }
         ]
       },
@@ -773,7 +773,7 @@
         "stages": [
           {
             "text": "research_stage.thaumicbases:curioscraft.1","required_knowledge": [
-            "THEORY;BASICS;1", "THEORY;AUROMANCY;1", "THEORY;INFUSION;1", "THEORY;ARTIFICE;1", "THEORY;GOLEMANCY;1"
+            "THEORY;BASICS;1", "THEORY;AUROMANCY;1", "THEORY;INFUSION;1", "THEORY;ARTIFICE;1", "THEORY;GOLEMANCY;1", "THEORY;ALCHEMY;1"
           ]
           },
           {

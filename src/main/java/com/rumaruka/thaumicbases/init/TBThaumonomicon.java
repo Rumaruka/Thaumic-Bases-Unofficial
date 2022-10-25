@@ -391,6 +391,13 @@ public class TBThaumonomicon {
         InfusionEnchantmentRecipeGun IEGSPEED = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.SPEED, (new AspectList()).add(Aspect.AIR, 30).add(Aspect.MOTION, 30), new IngredientNBTTC(new ItemStack(ItemsTC.mechanismSimple)), new ItemStack((Item)Items.ENCHANTED_BOOK));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEED"), (InfusionRecipe)IEGSPEED);
         ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEEDFAKE"), new InfusionEnchantmentRecipeGun(IEGSPEED, rev10));
+
+        ItemStack rev11 = new ItemStack(TBItems.revolver);
+        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev11, EnumInfusionEnchantmentGun.ACCURACY, 1);
+        InfusionEnchantmentRecipeGun IEGACCURACY = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.ACCURACY, (new AspectList()).add(Aspect.ORDER, 30).add(Aspect.SENSES, 30), new IngredientNBTTC(new ItemStack(ItemsTC.visResonator)), new ItemStack((Item)Items.ENCHANTED_BOOK));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGACCURACY"), (InfusionRecipe)IEGACCURACY);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGACCURACYFAKE"), new InfusionEnchantmentRecipeGun(IEGACCURACY, rev11));
+
         /*==============================================INFUSING END=============================================================================*/
 
         /*TOBACCO INIT*/

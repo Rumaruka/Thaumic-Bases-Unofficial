@@ -29,7 +29,7 @@ public enum EnumInfusionEnchantmentGun{
     EFFICIENCY(ImmutableSet.of("revolver_effect"), 5, "TB.REVOLVER.2"),
     SPEED(ImmutableSet.of("revolver_speed"), 5, "TB.REVOLVER.2"),
     WISE(ImmutableSet.of("revolver_wise"), 5, "TB.REVOLVER.2"),
-    Accuracy(ImmutableSet.of("revolver_accuracy"), 3, "TB.REVOLVER.2");
+    ACCURACY(ImmutableSet.of("revolver_accuracy"), 3, "TB.REVOLVER.2");
 
     public Set<String> toolClasses;
     public int maxLevel;

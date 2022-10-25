@@ -21,7 +21,7 @@ public class ItemRosehipSyrup extends Item
 {
     public ItemRosehipSyrup()
     {
-        this.setMaxStackSize(1);
+        this.setMaxStackSize(16);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.rumaruka.thaumicbases.common.handlers;
 
+import com.rumaruka.thaumicbases.api.IRevolver;
 import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
 import com.rumaruka.thaumicbases.common.enchantment.InfusionEnchantmentRecipeGun;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
@@ -24,6 +25,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraftforge.client.event.FOVUpdateEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -145,5 +147,13 @@ public class EnchatmentHandler {
         proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_pile), new AspectList().add(Aspect.PLANT, 3).add(Aspect.MAN, 3).add(Aspect.ENTROPY, 1));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_leaves), new AspectList().add(Aspect.PLANT, 5).add(Aspect.MAN, 5));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.knowledge_shard), new AspectList().add(Aspect.MIND, 15));
+    }
+
+    @SubscribeEvent
+    public void onBowFOV(FOVUpdateEvent event) {
+        if (event.getEntity().getHeldItemMainhand().getItem() == TBItems.revolver && event.getEntity().isSneaking()) {
+            event.setNewfov((float) (0.50F - EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(event.getEntity().getHeldItemMainhand(), EnumInfusionEnchantmentGun.ACCURACY) * 0.1));
+        }else if(event.getEntity().getHeldItemOffhand().getItem() == TBItems.revolver && event.getEntity().isSneaking())
+            event.setNewfov((float) (0.50F - EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(event.getEntity().getHeldItemOffhand(), EnumInfusionEnchantmentGun.ACCURACY) * 0.1));
     }
 }

@@ -43,7 +43,7 @@ public class EntityRevolverBullet extends EntityThrowable {
 
     public EntityRevolverBullet(World world, EntityLivingBase thrower) {
         super(world, thrower);
-        shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0, 1.5F, 1.0F);
+        shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0, 5.0F, 1.0F);
     }
 
     @Override

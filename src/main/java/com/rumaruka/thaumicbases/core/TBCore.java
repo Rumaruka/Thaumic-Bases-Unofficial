@@ -27,7 +27,7 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.5.100.0";
+    public static final String version = "3.5.200.0";
     public static final String dependencies = "required-after:thaumcraft@[6.1.BETA26,)";
 
     //Networking

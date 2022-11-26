@@ -6,6 +6,8 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -38,6 +40,18 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
         this.disableStats();
 
 }
+
+    @Override
+    protected Item getSeed()
+    {
+        return TBItems.tobaccoseed;
+    }
+
+    @Override
+    protected Item getCrop()
+    {
+        return TBItems.tobacco_leaves;
+    }
 
     protected boolean canPlaceBlockOn(Block b)
     {

@@ -143,10 +143,9 @@ public class TBTobacco extends Item implements ITobacco {
                     wisp.setType(((Aspect)aspects.get(smoker.world.rand.nextInt(aspects.size()))).getTag());
                     smoker.world.spawnEntity((Entity)wisp1);
                     aspects.remove(Aspect.FLUX);
-                } else {
-                    smoker.world.spawnEntity((Entity)wisp1);
                 }
             } else {
+                if(!smoker.world.isRemote)
                 smoker.world.spawnEntity((Entity) wisp);
             }
 

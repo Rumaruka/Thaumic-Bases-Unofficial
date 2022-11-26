@@ -6,6 +6,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -39,6 +40,17 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
         this.disableStats();
     }
 
+    @Override
+    protected Item getSeed()
+    {
+        return TBItems.voidseed;
+    }
+
+    @Override
+    protected Item getCrop()
+    {
+        return ItemsTC.voidSeed;
+    }
 
     public int getGrowthStages() {
         return growthStages;

@@ -9,6 +9,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
@@ -41,6 +42,18 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
         this.setHardness(0.0F);
         this.setSoundType(SoundType.PLANT);
         this.disableStats();
+    }
+
+    @Override
+    protected Item getSeed()
+    {
+        return TBItems.plaxseed;
+    }
+
+    @Override
+    protected Item getCrop()
+    {
+        return Items.STRING;
     }
 
     @Override

@@ -8,6 +8,8 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -44,6 +46,12 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
     @Override
     public int getMetaFromState(IBlockState state) {
         return state.getValue(AGE);
+    }
+
+    @Override
+    protected Item getSeed()
+    {
+        return TBItems.lazulliaseed;
     }
 
     @Override

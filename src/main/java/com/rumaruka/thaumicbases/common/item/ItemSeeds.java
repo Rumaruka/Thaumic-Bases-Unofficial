@@ -53,7 +53,7 @@ public class ItemSeeds extends Item implements IPlantable {
     @Override
     public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
 
-        return this.crops == Blocks.NETHER_WART ? EnumPlantType.Nether:EnumPlantType.Crop;
+        return EnumPlantType.Crop;
     }
 
     @Override

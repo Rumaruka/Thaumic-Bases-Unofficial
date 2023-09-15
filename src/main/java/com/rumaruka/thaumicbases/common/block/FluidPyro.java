@@ -9,11 +9,7 @@ public class FluidPyro extends Fluid {
 
     public FluidPyro() {
         super("pyro",  new ResourceLocation("thaumicbases:blocks/fluid_pyro_still"), new ResourceLocation( "thaumicbases:blocks/fluid_pyro_flow"));
-
         setUnlocalizedName("pyro");
-
-
-
     }
 
     @Override

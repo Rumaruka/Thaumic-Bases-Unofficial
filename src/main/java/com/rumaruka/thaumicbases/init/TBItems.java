@@ -5,13 +5,11 @@ import com.google.common.base.Strings;
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.common.TBMaterial;
 import com.rumaruka.thaumicbases.common.item.*;
-import com.rumaruka.thaumicbases.common.item.ItemSeeds;
 import com.rumaruka.thaumicbases.common.item.TBBloodyCloth;
 import com.rumaruka.thaumicbases.common.item.recourse.*;
 
 import com.rumaruka.thaumicbases.core.TBCore;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
@@ -24,8 +22,6 @@ import net.minecraft.item.ItemArmor.*;
 
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-
-import java.util.Arrays;
 
 
 public class TBItems {

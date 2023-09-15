@@ -148,7 +148,7 @@ public class BlockknozeSeed extends BlockBush implements IGrowable {
 
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
     {
-        return (Integer) state.getValue(AGE) != 3;
+        return state.getValue(AGE) != 3;
     }
 
     @Override
@@ -188,7 +188,7 @@ public class BlockknozeSeed extends BlockBush implements IGrowable {
 
     protected int getAge(IBlockState state)
     {
-        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+        return state.getValue(this.getAgeProperty());
     }
     protected PropertyInteger getAgeProperty()
     {
@@ -197,13 +197,13 @@ public class BlockknozeSeed extends BlockBush implements IGrowable {
 
     public IBlockState withAge(int age)
     {
-        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+        return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
     @Override
     public List<ItemStack> getDrops(IBlockAccess w, BlockPos pos, IBlockState state, int fortune) {
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
         if (w instanceof World) {
-            World world = World.class.cast(w);
+            World world = (World) w;
             ret.add(new ItemStack(TBItems.knozeseed, 1));
             int metadata = ((Integer)state.getValue((IProperty)this.AGE)).intValue();
             if (metadata >= growthStages - 1) {

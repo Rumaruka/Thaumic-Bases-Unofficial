@@ -1,7 +1,6 @@
 buildscript {
     repositories {
-//        maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url = 'https://lss233.littleservice.cn/repositories/minecraft' }
+       maven { url = 'https://files.minecraftforge.net/maven' }
         mavenCentral()
     }
     dependencies {
@@ -22,6 +21,11 @@ archivesBaseName = "thaumicbases"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
+repositories {
+    mavenCentral()
+
+    maven { url "https://www.cursemaven.com"}
+}
 
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
@@ -64,7 +68,8 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
-    implementation fileTree(dir: 'lib', include: ['*.jar'])
+    implementation 'curse.maven:thaumcraft-223628:2629023'
+    implementation 'curse.maven:baubles-227083:2518667'
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"

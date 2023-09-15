@@ -20,16 +20,6 @@ public class BlockTBLog extends BlockLog {
         this.setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
     }
 
-    @Override
-    public boolean isWood(IBlockAccess world, BlockPos pos) {
-        return true;
-    }
-
-    @Override
-    public boolean canSustainLeaves(IBlockState state, IBlockAccess world, BlockPos pos) {
-        return true;
-    }
-
     @Nonnull
     @Override
     public IBlockState getStateFromMeta(int meta) {

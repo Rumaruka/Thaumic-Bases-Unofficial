@@ -139,7 +139,7 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
 
     protected int getAge(IBlockState state)
     {
-        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+        return state.getValue(this.getAgeProperty());
     }
     protected PropertyInteger getAgeProperty()
     {
@@ -148,7 +148,7 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
 
     public IBlockState withAge(int age)
     {
-        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+        return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
     @Override
@@ -156,7 +156,7 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 
         if (w instanceof World) {
-            World world = World.class.cast(w);
+            World world = (World) w;
             int metadata = state.getValue(AGE);
             if (metadata < growthStages) {
                 ret.add(new ItemStack(TBItems.plaxseed, 1));

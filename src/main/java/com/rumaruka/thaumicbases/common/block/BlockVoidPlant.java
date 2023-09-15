@@ -194,7 +194,7 @@ public class BlockVoidPlant extends BlockCrops implements IGrowable { // AeXiaoh
 
     public IBlockState withAge(int age)
     {
-        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+        return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
 

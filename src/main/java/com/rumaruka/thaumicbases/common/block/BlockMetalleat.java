@@ -72,7 +72,7 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
     }
     protected boolean canPlaceBlockOn(Block b)
     {
-        return b != null && (b == Blocks.GRASS || b == Blocks.DIRT || b instanceof BlockGrass || b instanceof BlockDirt);
+        return (b instanceof BlockFarmland);
     }
     public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
     {
@@ -202,7 +202,7 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
 
     protected int getAge(IBlockState state)
     {
-        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+        return state.getValue(this.getAgeProperty());
     }
     protected PropertyInteger getAgeProperty()
     {
@@ -211,7 +211,7 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
 
     public IBlockState withAge(int age)
     {
-        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+        return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
     @Override
@@ -219,7 +219,7 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 
         if (w instanceof World) {
-            World world = World.class.cast(w);
+            World world = (World) w;
             int metadata = state.getValue(AGE);
             if (metadata < growthStages) {
                 ret.add(new ItemStack(TBItems.metalleatseed, 1));

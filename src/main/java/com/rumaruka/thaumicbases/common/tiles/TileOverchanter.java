@@ -79,7 +79,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                         ++enchantingTime;
                         if(enchantingTime >= 16 && !this.xpAbsorbed)
                         {
-                            List<EntityPlayer> players = this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX()+1, pos.getY()+1, pos.getZ()+1).expand(6, 3, 6));
+                            List<EntityPlayer> players = this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX()+1, pos.getY()+1, pos.getZ()+1).expand(6, 3, 6).expand(-6, -3, -6));
 
                             if(!players.isEmpty())
                             {
@@ -141,9 +141,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                                     } else {
                                         int[] arrayInt = stackTag.getIntArray("overchants");
                                         int[] newArrayInt = new int[arrayInt.length + 1];
-                                        for (int j = 0; j < arrayInt.length; ++j) {
-                                            newArrayInt[j] = arrayInt[j];
-                                        }
+                                        System.arraycopy(arrayInt, 0, newArrayInt, 0, arrayInt.length);
                                         newArrayInt[newArrayInt.length - 1] = enchId;
                                         stackTag.setIntArray("overchants", newArrayInt);
                                     }
@@ -171,9 +169,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
         if(!this.isEnchantingStarted)
             if(!this.inventory.isEmpty()){
                 if(this.inventory.getEnchantmentTagList().tagCount() > 0){
-                    if(findEnchantment(inventory)!=-1){
-                        return true;
-                    }
+                    return findEnchantment(inventory) != -1;
 
                 }
 
@@ -325,7 +321,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
     @Override
     public boolean onCasterRightClick(World world, ItemStack itemStack, EntityPlayer entityPlayer, BlockPos blockPos, EnumFacing enumFacing, EnumHand enumHand) {
-        if(canStartEnchanting()&&entityPlayer.isSneaking())
+        if(canStartEnchanting() && entityPlayer.isSneaking())
         {
             isEnchantingStarted = true;
             entityPlayer.swingArm(EnumHand.MAIN_HAND);

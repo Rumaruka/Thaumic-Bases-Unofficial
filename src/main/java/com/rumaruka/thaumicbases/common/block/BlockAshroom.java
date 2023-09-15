@@ -2,16 +2,14 @@ package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.IGrowable;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -20,12 +18,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.common.blocks.essentia.BlockSmelter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BlockAshroom extends BlockBush implements IGrowable, IPlantable {
+public class BlockAshroom extends BlockCrops {
 
 
 
@@ -37,7 +36,7 @@ public class BlockAshroom extends BlockBush implements IGrowable, IPlantable {
     public ItemStack dropSeed;
 
     public BlockAshroom(int stages, int delay, boolean isCrop) {
-        super(Material.LEAVES);
+        super();
         growthStages = stages;
         growthDelay = delay;
         requiresFarmland = isCrop;
@@ -46,8 +45,18 @@ public class BlockAshroom extends BlockBush implements IGrowable, IPlantable {
         this.setHardness(0.0F);
         this.setSoundType(SoundType.PLANT);
         this.disableStats();
+
     }
 
+    protected Item getSeed()
+    {
+        return null;
+    }
+
+    protected Item getCrop()
+    {
+        return Item.getItemFromBlock(this);
+    }
 
     public int getGrowthStages() {
         return growthStages;
@@ -148,12 +157,7 @@ public class BlockAshroom extends BlockBush implements IGrowable, IPlantable {
 
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
     {
-        return (Integer) state.getValue(AGE) != 3;
-    }
-
-    @Override
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        return true;
+        return state.getValue(AGE) != 3;
     }
 
     @Override
@@ -186,7 +190,7 @@ public class BlockAshroom extends BlockBush implements IGrowable, IPlantable {
 
     protected int getAge(IBlockState state)
     {
-        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+        return state.getValue(this.getAgeProperty());
     }
     protected PropertyInteger getAgeProperty()
     {
@@ -195,18 +199,18 @@ public class BlockAshroom extends BlockBush implements IGrowable, IPlantable {
 
     public IBlockState withAge(int age)
     {
-        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+        return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
     @Override
     public List<ItemStack> getDrops(IBlockAccess w, BlockPos pos, IBlockState state, int fortune) {
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
         if (w instanceof World) {
-            World world = World.class.cast(w);
+            World world = (World) w;
             ret.add(new ItemStack(TBBlocks.ashroom, 1));
-            int metadata = (Integer) state.getValue((IProperty) this.AGE);
+            int metadata = state.getValue(this.AGE);
             if (metadata >= 3) {
-                    ThaumcraftApi.internalMethods.addVis(world, pos, 5 + world.rand.nextInt(10));
+                ThaumcraftApi.internalMethods.addVis(world, pos, 5 + world.rand.nextInt(10));
             }
         }
         return ret;
@@ -218,21 +222,4 @@ public class BlockAshroom extends BlockBush implements IGrowable, IPlantable {
         return EnumPlantType.Plains;
     }
 
-    @Override
-    public IBlockState getPlant(IBlockAccess world, BlockPos pos)
-    {
-        IBlockState state = world.getBlockState(pos);
-
-        if (state.getBlock() != this)
-        {
-            return this.getDefaultState();
-        }
-
-        return state;
-    }
-    @Override
-    public int damageDropped(IBlockState state)
-    {
-        return 0;
-    }
 }

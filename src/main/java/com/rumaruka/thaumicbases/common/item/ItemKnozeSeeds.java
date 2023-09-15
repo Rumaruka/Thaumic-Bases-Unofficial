@@ -2,12 +2,16 @@ package com.rumaruka.thaumicbases.common.item;
 
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.common.block.TBBlock;
+import com.rumaruka.thaumicbases.common.block.TBBlockCrytal;
+import com.rumaruka.thaumicbases.common.itemblocks.ItemBlockCrystal;
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -18,19 +22,22 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 
-public class ItemKnozeSeeds extends Item implements IPlantable {
+import javax.annotation.Nonnull;
+
+public class ItemKnozeSeeds extends ItemSeeds {
 
 
     public Block crops;
 
     public ItemKnozeSeeds(Block crops){
-
+        super(crops, new TBBlockCrytal(Material.GLASS, false));
         this.crops = crops;
         this.setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
     }
 
     @Override
+    @Nonnull
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack stack = player.getHeldItem(hand);
         if(facing != EnumFacing.UP){
@@ -53,12 +60,11 @@ public class ItemKnozeSeeds extends Item implements IPlantable {
     @Override
     public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
 
-        return this.crops == Blocks.NETHER_WART ? EnumPlantType.Nether:EnumPlantType.Crop;
+        return EnumPlantType.Crop;
     }
 
     @Override
     public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
-
         return this.crops.getDefaultState();
     }
 }

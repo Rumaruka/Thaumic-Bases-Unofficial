@@ -180,11 +180,6 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
     }
 
     @Override
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        return true;
-    }
-
-    @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
@@ -197,10 +192,6 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
         worldIn.setBlockState(pos, this.withAge(i), 2);
 
     }
-    protected int getBonemealAgeIncrease(World worldIn)
-    {
-        return MathHelper.getInt(worldIn.rand, 2, 5);
-    }
 
     public int getMaxAge()
     {
@@ -209,7 +200,7 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
 
     protected int getAge(IBlockState state)
     {
-        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+        return state.getValue(this.getAgeProperty());
     }
     protected PropertyInteger getAgeProperty()
     {
@@ -218,7 +209,7 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
 
     public IBlockState withAge(int age)
     {
-        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+        return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
     @Override
@@ -249,13 +240,6 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
                                     ret.add(new ItemStack(Items.GOLDEN_CARROT, 1));
                             }
                         } // End of modification
-
-//                for (int i = 0; i < 4 + fortune; ++i)
-//                    if (world.rand.nextBoolean())
-//                        ret.add(new ItemStack(Items.GOLD_NUGGET, 3));
-//                for (int i = 0; i < 1 + fortune; ++i)
-//                    if (world.rand.nextBoolean())
-//                        ret.add(new ItemStack(Items.GOLDEN_CARROT, 1));
             }
         }
         return ret;

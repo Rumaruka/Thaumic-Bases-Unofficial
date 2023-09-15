@@ -25,13 +25,6 @@ public class BlockAureliaPlant extends BlockBush {
         this.setSoundType(SoundType.PLANT);
     }
 
-
-    @Override
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT;
-    }
-
-
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Item.getItemFromBlock(TBBlocks.aurelia);
@@ -42,11 +35,10 @@ public class BlockAureliaPlant extends BlockBush {
     public void checkForMoonlight(World w, BlockPos pos,IBlockState state){
 
        boolean underSky = w.canBlockSeeSky(pos.up());
-        boolean night = !w.isDaytime();
-       // boolean isFullMoon = w.provider.getMoonPhase(w.getWorldTime())==0;
+        boolean isFullMoon = w.provider.getMoonPhase(w.getWorldTime())==0;
         boolean isOpen =state.getValue(STATE)==1;
 
-        if(night&&underSky){
+        if(isFullMoon&&underSky){
 
             w.setBlockState(pos,state.withProperty(STATE,1));
             w.markBlockRangeForRenderUpdate(pos.down().west().north(),pos.up().east().south());
@@ -62,28 +54,32 @@ public class BlockAureliaPlant extends BlockBush {
 
     }
 
+    public int tickRate(World w)
+    {
+        return 10;
+    }
+
+    public int findSutableGround(World w, int x, int y, int z)
+    {
+        while(w.isAirBlock(new BlockPos(x,y,z)) && y > 0 && !w.isSideSolid(new BlockPos(x, y, z), EnumFacing.UP))
+            --y;
+
+        return y;
+    }
+
     @Override
-    public void updateTick(World w, BlockPos pos, IBlockState state, Random rand) {
-
-        checkForMoonlight(w,pos,state);
-
-
+    public void updateTick(World w, BlockPos pos, IBlockState state, Random rand)
+        {
+            checkForMoonlight(w,pos,state);
             if(state.getValue(STATE)>0&&!w.isRemote)
             {
-                EnumFacing dir = EnumFacing.fromAngle(2+w.rand.nextInt(4));
-
-                BlockPos posN = pos.offset(dir);
-
-                /**
-                 * AeXiaohu modified
-                 * 修复灵气花周围无视其他方块直接强制设置成灵气花瓣
-                 * 改成为空气时才允许设置灵气花瓣
-                 */
-                // w.setBlockState(posN, TBBlocks.aureliapetalb.getDefaultState());
-                if(w.isAirBlock(posN)) w.setBlockState(posN, TBBlocks.aureliapetalb.getDefaultState()); // End of modification
-
+                int rndX = pos.getX() + w.rand.nextInt(8) - w.rand.nextInt(8);
+                int rndZ = pos.getZ() + w.rand.nextInt(8) - w.rand.nextInt(8);
+                int rndY = findSutableGround(w,rndX,pos.getY()+2,rndZ)+1;
+                if(rndY > 2)
+                    w.setBlockState(new BlockPos(rndX, rndY, rndZ), TBBlocks.aureliapetalb.getDefaultState());
+            }
         }
-    }
 
     @Override
     public boolean isOpaqueCube(IBlockState state) {

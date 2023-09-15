@@ -2,7 +2,6 @@ package com.rumaruka.thaumicbases.common.item;
 
 import com.rumaruka.thaumicbases.api.ITobacco;
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -12,7 +11,6 @@ import net.minecraft.util.math.MathHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
-import thaumcraft.api.capabilities.IPlayerWarp;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 import thaumcraft.common.entities.monster.EntityWisp;
@@ -21,7 +19,8 @@ import thaumcraft.common.lib.potions.PotionDeathGaze;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.*;
+import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.NORMAL;
+import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.TEMPORARY;
 
 public class TBTobacco extends Item implements ITobacco {
 
@@ -89,9 +88,7 @@ public class TBTobacco extends Item implements ITobacco {
                     //code from thaumadditions:reconstructed
                     ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 4, oProg / 3));
                     ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), tProg / 8, tProg / 6));
-                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, TEMPORARY);
-                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 0, NORMAL);
-                    smoker.addExperience(20);
+                    smoker.addExperience(1);
 
                 }
             }
@@ -140,13 +137,13 @@ public class TBTobacco extends Item implements ITobacco {
                 EntityWisp wisp1 = new EntityWisp(smoker.world);
                 wisp1.setPositionAndRotation(smoker.posX, smoker.posY + 1.0D, smoker.posZ, 0.0F, 0.0F);
                 if (!smoker.world.isRemote) {
-                    wisp.setType(((Aspect)aspects.get(smoker.world.rand.nextInt(aspects.size()))).getTag());
-                    smoker.world.spawnEntity((Entity)wisp1);
+                    wisp.setType(aspects.get(smoker.world.rand.nextInt(aspects.size())).getTag());
+                    smoker.world.spawnEntity(wisp1);
                     aspects.remove(Aspect.FLUX);
                 }
             } else {
                 if(!smoker.world.isRemote)
-                smoker.world.spawnEntity((Entity) wisp);
+                smoker.world.spawnEntity(wisp);
             }
 
                 }

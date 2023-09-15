@@ -17,7 +17,7 @@ import thaumcraft.api.items.IVisDiscountGear;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class ItemBloodyArmor extends ItemArmor implements IVisDiscountGear,IRechargable {
+public class ItemBloodyArmor extends ItemArmor implements IVisDiscountGear {
 
 
     public static final UUID ATTACK_DAMAGE_MODIFIER = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
@@ -36,16 +36,6 @@ public class ItemBloodyArmor extends ItemArmor implements IVisDiscountGear,IRech
         return discount[aType];
     }
     static final int[] discount = new int[]{6,5,4,3};
-
-    @Override
-    public int getMaxCharge(ItemStack itemStack, EntityLivingBase entityLivingBase) {
-        return 10;
-    }
-
-    @Override
-    public EnumChargeDisplay showInHud(ItemStack itemStack, EntityLivingBase entityLivingBase) {
-        return EnumChargeDisplay.NORMAL;
-    }
 
     @Nullable
     @Override

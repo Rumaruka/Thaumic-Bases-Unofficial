@@ -36,12 +36,12 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
     {
         this.crop = crop;
         this.setTickRandomly(true);
-        this.setCreativeTab((CreativeTabs)null);
+        this.setCreativeTab(null);
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-        return STEM_AABB[((Integer)state.getValue(AGE)).intValue()];
+        return STEM_AABB[state.getValue(AGE)];
     }
 
     /**
@@ -50,7 +50,7 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
      */
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        int i = state.getValue(AGE).intValue();
+        int i = state.getValue(AGE);
         state = state.withProperty(FACING, EnumFacing.UP);
 
         for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
@@ -83,15 +83,15 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
         if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
         {
-            float f = this.getGrowthChance(this, worldIn, pos);
+            float f = getGrowthChance(this, worldIn, pos);
 
             if(ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0))
             {
-                int i = state.getValue(AGE).intValue();
+                int i = state.getValue(AGE);
 
                 if (i < 7)
                 {
-                    IBlockState newState = state.withProperty(AGE, Integer.valueOf(i + 1));
+                    IBlockState newState = state.withProperty(AGE, i + 1);
                     worldIn.setBlockState(pos, newState, 2);
                 }
                 else
@@ -120,8 +120,8 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
 
     public void growStem(World worldIn, BlockPos pos, IBlockState state)
     {
-        int i = state.getValue(AGE).intValue() + MathHelper.getInt(worldIn.rand, 2, 5);
-        worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(Math.min(7, i))), 2);
+        int i = state.getValue(AGE) + MathHelper.getInt(worldIn.rand, 2, 5);
+        worldIn.setBlockState(pos, state.withProperty(AGE, Math.min(7, i)), 2);
     }
 
     /**
@@ -140,7 +140,7 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
 
             if (item != null)
             {
-                int i = state.getValue(AGE).intValue();
+                int i = state.getValue(AGE);
 
                 for (int j = 0; j < 3; ++j)
                 {
@@ -185,7 +185,7 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
      */
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
     {
-        return (Integer) state.getValue(AGE) != 7;
+        return state.getValue(AGE) != 7;
     }
 
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
@@ -203,7 +203,7 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
      */
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(AGE, Integer.valueOf(meta));
+        return this.getDefaultState().withProperty(AGE, meta);
     }
 
     /**
@@ -211,12 +211,12 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
      */
     public int getMetaFromState(IBlockState state)
     {
-        return ((Integer)state.getValue(AGE)).intValue();
+        return state.getValue(AGE);
     }
 
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {AGE, FACING});
+        return new BlockStateContainer(this, AGE, FACING);
     }
     protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
     {

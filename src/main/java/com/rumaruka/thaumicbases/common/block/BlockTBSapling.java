@@ -28,7 +28,7 @@ public class BlockTBSapling extends BlockBush implements IGrowable {
 
 
 
-    public static final PropertyInteger STAGE = PropertyInteger.create((String) "stage", (int) 0, (int) 1);
+    public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552, 0.0, 0.09999999403953552, 0.8999999761581421, 0.800000011920929, 0.8999999761581421);
     public int type;
     public BlockTBSapling(int i) {
@@ -110,11 +110,6 @@ public class BlockTBSapling extends BlockBush implements IGrowable {
         if (!worldGenerator.generate(worldIn, rand, pos.add(i, 0, j))) {
             worldIn.setBlockState(pos, state, 4);
         }
-    }
-
-    @Override
-    public int damageDropped(IBlockState state) {
-        return 0;
     }
 
     @Override

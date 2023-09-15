@@ -72,12 +72,12 @@ public class BlockVoidSpike extends Block {
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.CUTOUT;
     }
-    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock)
+    public void observedNeighborChange(IBlockState observerState, World world, BlockPos observerPos, Block changedBlock, BlockPos changedBlockPos)
     {
-        if(worldIn.isAirBlock(pos.down()))
+        if(world.isAirBlock(observerPos.down()))
         {
-            this.dropBlockAsItem(worldIn, pos, state, 0);
-            worldIn.setBlockToAir(pos);
+            this.dropBlockAsItem(world, observerPos, observerState, 0);
+            world.setBlockToAir(observerPos);
         }
     }
 
@@ -119,7 +119,7 @@ public class BlockVoidSpike extends Block {
         if(meta!=1)
             return false;
         ItemStack itemstack = playerIn.getHeldItem(hand);
-        if(itemstack==null){
+        if(itemstack.isEmpty()){
             return false;
         }
 

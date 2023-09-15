@@ -240,26 +240,26 @@ public class TBBlocks {
         TBBlocks.registerBlock(crystalblocktainted, ItemBlockCrystal.class, crystalblocktainted.getUnlocalizedName().substring(5));
 
 
-        TBBlocks.registerBlock(pyrofluid,pyrofluid.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(pyrofluid,pyrofluid.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(pyrosolid,pyrosolid.getUnlocalizedName().substring(5));
 
 
         TBBlocks.registerBlock(rainbowcactus,rainbowcactus.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(plax,plax.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(sweed,sweed.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(plax,plax.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(sweed,sweed.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(aurelia,aurelia.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(aureliapetalb,aureliapetalb.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(tobacco,tobacco.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(metalleat,metalleat.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(lazullia,lazullia.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(redlonstem,redlonstem.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(lucrite,lucrite.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(aureliapetalb,aureliapetalb.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(tobacco,tobacco.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(metalleat,metalleat.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(lazullia,lazullia.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(redlonstem,redlonstem.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(lucrite,lucrite.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(briar,briar.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(ashroom,ashroom.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(glieonia,glieonia.getUnlocalizedName().substring(5));
-        TBBlocks.registerBlock(voidplant,voidplant.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(glieonia,glieonia.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(voidplant,voidplant.getUnlocalizedName().substring(5));
 
-        TBBlocks.registerBlock(knoze,knoze.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlockWithoutItem(knoze,knoze.getUnlocalizedName().substring(5));
 
         TBBlocks.registerBlock(ironspike,ironspike.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(thaumspike,thaumspike.getUnlocalizedName().substring(5));
@@ -294,6 +294,12 @@ public class TBBlocks {
     public static Block registerBlock(Block block) {
         ForgeRegistries.BLOCKS.register(block);
         ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+        return block;
+    }
+
+    public static Block registerBlockWithoutItem(Block block, String name) {
+        block.setRegistryName(name);
+        ForgeRegistries.BLOCKS.register(block);
         return block;
     }
 

@@ -6,11 +6,15 @@ import com.rumaruka.thaumicbases.api.IRevolver;
 import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.libs.TBSounds;
+import com.rumaruka.thaumicbases.core.TBCore;
+import com.rumaruka.thaumicbases.init.TBGuiHandler;
 import com.rumaruka.thaumicbases.init.TBItems;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.ContainerPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
@@ -19,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import thaumcraft.common.lib.SoundsTC;
 
@@ -57,7 +62,21 @@ public class ItemRevolver extends Item implements IRevolver {
         }
     }
 
-    //查找子弹是否在背包函数
+    public boolean onEntitySwing(EntityLivingBase entityLiving, ItemStack stack)
+    {
+        if(!entityLiving.world.isRemote)
+        {
+            if(entityLiving instanceof EntityPlayer)
+            {
+                if(entityLiving.isSneaking() && entityLiving.getHeldItem(EnumHand.MAIN_HAND) == this.getDefaultInstance())
+                {
+                    ((EntityPlayer) entityLiving).openGui(TBCore.instance, TBGuiHandler.REVOLVER, entityLiving.world, MathHelper.floor(entityLiving.posX), MathHelper.floor(entityLiving.posY), MathHelper.floor(entityLiving.posZ));
+                }
+            }
+        }
+        return false;
+    }
+
     protected ItemStack findAmmo(EntityPlayer player)
     {
         if (this.isBullet(player.getHeldItem(EnumHand.OFF_HAND)))

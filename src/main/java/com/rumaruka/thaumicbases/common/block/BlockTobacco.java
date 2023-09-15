@@ -173,7 +173,7 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
 
     @Override
     public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        return true;
+        return !this.isMaxAge(state);
     }
 
     @Override

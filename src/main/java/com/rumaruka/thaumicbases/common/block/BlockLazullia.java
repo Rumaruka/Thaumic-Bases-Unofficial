@@ -31,12 +31,12 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
     public PropertyInteger AGE;
     public ItemStack dropItem;
     public ItemStack dropSeed;
+
     public BlockLazullia(int stages, int delay, boolean isCrop) {
         super();
         growthStages = stages;
         growthDelay = delay;
         requiresFarmland = isCrop;
-
         this.setTickRandomly(true);
         this.setHardness(0.0F);
         this.setSoundType(SoundType.PLANT);
@@ -163,7 +163,7 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
 
     @Override
     public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return true;
+        return !this.isMaxAge(state);
     }
 
     @Override

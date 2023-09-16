@@ -1,11 +1,11 @@
 package com.rumaruka.thaumicbases.core;
 
+import com.rumaruka.thaumicbases.api.RevolverUpgrade;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.handlers.EnchatmentHandler;
 import com.rumaruka.thaumicbases.common.handlers.RegisterHandlers;
 import com.rumaruka.thaumicbases.init.*;
 import com.rumaruka.thaumicbases.network.proxy.TBServer;
-
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -70,17 +70,15 @@ public class TBCore {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
-
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new TBGuiHandler());
-        proxy.registerRenderInformation();
         MinecraftForge.EVENT_BUS.register(new EnchatmentHandler());
         TBThaumonomicon.setup();
-TBResearch.registerResearch();
+        TBResearch.registerResearch();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");
         RegisterHandlers.init();
         TBOreDictionary.setup();
+        RevolverUpgrade.initConflictingMappings();
         proxy.init(e);
-
     }
 
 

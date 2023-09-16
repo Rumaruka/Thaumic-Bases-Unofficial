@@ -4,10 +4,9 @@ package com.rumaruka.thaumicbases.init;
 import com.google.common.base.Strings;
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.common.TBMaterial;
-import com.rumaruka.thaumicbases.common.item.*;
 import com.rumaruka.thaumicbases.common.item.TBBloodyCloth;
+import com.rumaruka.thaumicbases.common.item.*;
 import com.rumaruka.thaumicbases.common.item.recourse.*;
-
 import com.rumaruka.thaumicbases.core.TBCore;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -15,11 +14,10 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.*;
-import net.minecraft.item.ItemArmor.*;
-
-
-
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemSeeds;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -39,15 +37,6 @@ public class TBItems {
 
     public static Item bloodycloth;
 
-    //Ex-Fragments
-    public static Item airingot;
-    public static Item fireingot;
-    public static Item wateringot;
-    public static Item earthingot;
-    public static Item orderingot;
-    public static Item entropyingot;
-    public static Item mixedingot;
-    public static Item taintedingot;
     //Tools
     public static Item thauminiteaxe;
     public static Item thauminitepickaxe;
@@ -180,7 +169,7 @@ public static Item knozeseed;
         mortar = new ItemMortarAndPesle().setUnlocalizedName("mortar").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         rosehipsyrup = new ItemRosehipSyrup().setUnlocalizedName("rosehipsyrup").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
-        revolver = new ItemRevolver().setUnlocalizedName("revolver").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        revolver = new ItemRevolver().setUnlocalizedName("revolver").setMaxStackSize(1).setMaxDamage(1561).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         bullet = new ItemBullet().setUnlocalizedName("bullet").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
     }
 
@@ -324,13 +313,11 @@ public static Item knozeseed;
         renderItems(voidfas);
         renderItems(voidshears);
 
-        renderItems(revolver);
         renderItems(bullet);
 
         renderItems(knowledge_shard);
+        renderItems(revolver);
     }
-
-
 
     public static void renderItems(Item i){
 

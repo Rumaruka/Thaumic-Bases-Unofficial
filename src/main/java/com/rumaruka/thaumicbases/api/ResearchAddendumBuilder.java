@@ -1,9 +1,10 @@
 package com.rumaruka.thaumicbases.api;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.research.ResearchAddendum;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 public class ResearchAddendumBuilder {
     private ResearchAddendum entry = new ResearchAddendum();
 

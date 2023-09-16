@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.common.enchantment;
 
 
-import baubles.api.IBauble;
 import com.google.common.collect.Multimap;
 import com.rumaruka.thaumicbases.common.item.ItemRevolver;
 import com.rumaruka.thaumicbases.utils.Aspects;
@@ -9,7 +8,6 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.Ingredient;

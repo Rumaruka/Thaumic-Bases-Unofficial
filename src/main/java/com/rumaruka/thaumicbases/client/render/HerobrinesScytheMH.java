@@ -1,12 +1,13 @@
 package com.rumaruka.thaumicbases.client.render;
 
-import javax.vecmath.Matrix4f;
 import com.rumaruka.thaumicbases.init.TBItems;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
-import net.minecraftforge.common.model.TRSRTransformation;
-import org.lwjgl.util.vector.Vector3f;
 import net.minecraft.client.renderer.block.model.ItemTransformVec3f;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.model.TRSRTransformation;
+import org.lwjgl.util.vector.Vector3f;
+
+import javax.vecmath.Matrix4f;
 
 public class HerobrinesScytheMH  {
 

@@ -3,7 +3,6 @@ package com.rumaruka.thaumicbases.init;
 import com.rumaruka.thaumicbases.common.enchantment.EnchantmentElderKnowledge;
 import com.rumaruka.thaumicbases.common.enchantment.EnchantmentEldritchBane;
 import com.rumaruka.thaumicbases.common.enchantment.EnchantmentTainted;
-
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;

@@ -11,6 +11,6 @@ public class TBTiles {
     public static void setup(){
        GameRegistry.registerTileEntity(TileOverchanter.class,"thaumicbases.overchanter");
        GameRegistry.registerTileEntity(TileCampfire.class,"thaumicbases.campfire");
-        GameRegistry.registerTileEntity(TileBraizer.class, "thaumicbases.brazier");
+       GameRegistry.registerTileEntity(TileBraizer.class, "thaumicbases.brazier");
     }
 }

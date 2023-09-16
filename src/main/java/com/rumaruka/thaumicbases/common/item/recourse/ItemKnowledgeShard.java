@@ -7,8 +7,6 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-import java.util.Random;
-
 public class ItemKnowledgeShard extends net.minecraft.item.Item {
     public ItemKnowledgeShard(){
 

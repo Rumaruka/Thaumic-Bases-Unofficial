@@ -3,7 +3,6 @@ package com.rumaruka.thaumicbases.common.tiles;
 import com.rumaruka.thaumicbases.api.dummycore_remove.utils.AllUtils;
 import com.rumaruka.thaumicbases.api.dummycore_remove.utils.MathUtils;
 import com.rumaruka.thaumicbases.common.inventory.ContainerOverchanter;
-
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,7 +19,6 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.casters.IInteractWithCaster;
@@ -28,7 +26,10 @@ import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.lib.events.EssentiaHandler;
 
 import javax.annotation.Nullable;
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class TileOverchanter extends TileEntityLockable implements IInventory, IInteractWithCaster, ITickable {
 
@@ -113,26 +114,6 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                                 Enchantment ench = Enchantment.getEnchantmentByID(enchId);
                                 NBTTagCompound tag = nbttaglist.getCompoundTagAt(i);
 
-
-                                /**
-                                 * AeXiaohu modified
-                                 * 修复超吟附魔台无限附魔,也可以自定义附魔提升等级 1/2
-                                 */
-//                                if (Enchantment.getEnchantmentByID(i) == ench) {
-//                                    tag.setShort("lvl", (short) (tag.getShort("lvl") + 5));
-//                                    NBTTagCompound stackTag = MiscUtils.getStackTag(inventory);
-//                                    if (!stackTag.hasKey("overchants")) {
-//                                        stackTag.setIntArray("overchants", new int[]{enchId});
-//                                    } else {
-//                                        int[] arrayInt = stackTag.getIntArray("overchants");
-//                                        int[] newArrayInt = new int[arrayInt.length + 1];
-//                                        for (int j = 0; j < arrayInt.length; ++j) {
-//                                            newArrayInt[j] = arrayInt[j];
-//                                        }
-//                                        newArrayInt[newArrayInt.length - 1] = enchId;
-//                                        stackTag.setIntArray("overchants", newArrayInt);
-//                                    }
-//                                }
                                 if (tag != null && Enchantment.getEnchantmentByID(tag.getShort("id")) == ench) {
                                     tag.setShort("lvl", (short) (tag.getShort("lvl") + 1));
                                     NBTTagCompound stackTag = AllUtils.getStackTag(this.inventory);
@@ -183,25 +164,6 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
         Set<Enchantment> keys = ench.keySet();
         Iterator<Enchantment>$i = keys.iterator();
 
-        /**
-         * AeXiaohu modified
-         * 修复超吟附魔台无限附魔,也可以自定义附魔提升等级 2/2
-         */
-//        while ($i.hasNext()) {
-//            Enchantment enchantment = $i.next();
-//            enchantment.getEnchantmentByID(stackTag.getInteger("id"));
-//            int j = stackTag.getShort("lvl");
-//
-//            if (!stackTag.hasKey("overchants")) {
-//                return j;
-//            }
-//            int[] overchants = stackTag.getIntArray("overchants");
-//            if (MathUtils.arrayContains(overchants, j)) {
-//                continue;
-//            }
-//            return j;
-//        }
-//        return 1;
         while ($i.hasNext()) {
             int i = Enchantment.getEnchantmentID($i.next());
             if (!stackTag.hasKey("overchants")) {
@@ -363,7 +325,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
     @Nullable
     @Override
     public ITextComponent getDisplayName() {
-        return new TextComponentTranslation(getName());
+        return null;
     }
 
     @Override

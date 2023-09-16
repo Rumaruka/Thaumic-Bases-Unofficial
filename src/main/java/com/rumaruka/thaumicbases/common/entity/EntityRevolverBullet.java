@@ -1,164 +1,174 @@
 package com.rumaruka.thaumicbases.common.entity;
 
-import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
+import com.rumaruka.thaumicbases.api.RevolverUpgrade;
 import com.rumaruka.thaumicbases.common.item.ItemRevolver;
-import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import com.rumaruka.thaumicbases.utils.Pair;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.init.MobEffects;
-import net.minecraft.item.Item;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.IThrowableEntity;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import thaumcraft.api.entities.IEldritchMob;
-import thaumcraft.api.potions.PotionFluxTaint;
 import thaumcraft.client.fx.FXDispatcher;
-import thaumcraft.common.lib.SoundsTC;
 
-import java.util.Objects;
+import java.util.ArrayList;
 
+public class EntityRevolverBullet extends EntityThrowable
+{
+    public Entity shooter;
+    public ItemStack revolver;
+    ArrayList<Pair<RevolverUpgrade,Integer>> upgrades = new ArrayList<>();
+    public boolean isPrimal;
 
-public class EntityRevolverBullet extends EntityThrowable {
-    public EntityRevolverBullet(World world) {
-        super(world);
+    public EntityRevolverBullet(World w)
+    {
+        super(w);
     }
 
-    public EntityRevolverBullet(World world, double x, double y, double z) {
-        super(world, x, y, z);
-    }
+    public EntityRevolverBullet(World w, EntityLivingBase shooter)
+    {
+        super(w, shooter);
+        revolver = shooter.getHeldItemMainhand();
+        this.shooter = shooter;
+        if(!revolver.isEmpty() && revolver.getItem() instanceof ItemRevolver)
+        {
+            upgrades = ItemRevolver.getAllUpgradesFor(revolver);
+            boolean allowNoclip = false;
+            float speedIndex = 1;
+            for(Pair<RevolverUpgrade,Integer> p : upgrades)
+            {
+                if(!allowNoclip)
+                    allowNoclip = p.getFirst().bulletNoclip((EntityPlayer) shooter, revolver, p.getSecond());
 
-    public EntityRevolverBullet(World world, EntityLivingBase thrower) {
-        super(world, thrower);
-        shoot(thrower, thrower.rotationPitch, thrower.rotationYaw, 0, 5.0F, 1.0F);
-    }
+                speedIndex = (float) p.getFirst().modifySpeed((EntityPlayer) shooter, revolver, speedIndex, p.getSecond());
 
-    @Override
-    public void onUpdate() {
-        super.onUpdate();
-        makeTrail();
-    }
+                if(p.getFirst() == RevolverUpgrade.primal)
+                    isPrimal = true;
+            }
+            if(allowNoclip)
+                noClip = true;
 
-    private void makeTrail() {
-        for (int i = 0; i < 100; i++) {
-            double dx = posX + world.rand.nextDouble();
-            double dy = posY + world.rand.nextDouble();
-            double dz = posZ + world.rand.nextDouble();
+            this.motionX *=3;
+            this.motionY *=3;
+            this.motionZ *=3;
 
-            double s1 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.17F;  // color
-            double s2 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.80F;  // color
-            double s3 = ((rand.nextFloat() * 0.5F) + 0.5F) * 0.69F;  // color
-
-            this.world.spawnParticle(EnumParticleTypes.END_ROD, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
-            world.playSound(posX + 0.5D,
-                    posY + .5D,
-                    posZ + 0.5D, SoundsTC.zap, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
+            this.motionX *= speedIndex;
+            this.motionY *= speedIndex;
+            this.motionZ *= speedIndex;
         }
     }
 
-    @Override
-    protected void onImpact(RayTraceResult object) {
-        if (this.isDead) return;
+    public void onUpdate()
+    {
+        if(this.world.isRemote)
+            FXDispatcher.INSTANCE.sparkle((float)posX, (float)posY, (float)posZ, 4, 0, 0);
 
-        if (!this.world.isRemote && object.typeOfHit == RayTraceResult.Type.BLOCK) {
-            if (noClip) return;
-            if (this.world.isBlockNormalCube(object.getBlockPos(), true))
+        if(this.world.isRemote)
+            FXDispatcher.INSTANCE.sparkle((float)(posX-motionX/20), (float)(posY-motionY/20), (float)(posZ-motionZ/20), 4, 0, 0);
+
+        if(this.ticksExisted >= 200) //<- loop exit for primal
+            this.setDead();
+
+        super.onUpdate();
+
+        if(isPrimal && !isDead)
+        {
+            ++ticksExisted;
+            onUpdate(); //<- loop to turn into a hit-scan
+        }
+    }
+
+    protected float getGravityVelocity()
+    {
+        return isPrimal ? 0 : 0.01F;
+    }
+
+    @Override
+    protected void onImpact(RayTraceResult object)
+    {
+        if(this.isDead)
+            return;
+
+        if(world.isRemote)
+            return;
+
+        if(!this.world.isRemote && object.typeOfHit == RayTraceResult.Type.BLOCK)
+        {
+            if(noClip)
+                return;
+            if(this.world.isBlockNormalCube(object.getBlockPos(), true))
                 this.setDead();
         }
-        if (object.typeOfHit == RayTraceResult.Type.ENTITY) {
+
+        if(object.typeOfHit == RayTraceResult.Type.ENTITY)
+        {
             Entity e = object.entityHit;
-            if (e instanceof EntityLivingBase && e != this.thrower && thrower instanceof EntityPlayer) {
+            if(e == shooter)
+                return;
+
+            if(e instanceof EntityLivingBase && e != this.shooter && !(e instanceof EntityRevolverBullet))
+            {
                 EntityLivingBase elb = (EntityLivingBase) e;
                 float initialDamage = 14;
+                for(Pair<RevolverUpgrade,Integer> p : upgrades)
+                    initialDamage = p.getFirst().modifyDamage_start(elb, revolver, initialDamage, p.getSecond());
 
-                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.SMITE) > 0)
-                {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.SMITE);
-                }
+                for(Pair<RevolverUpgrade,Integer> p : upgrades)
+                    initialDamage = p.getFirst().modifyDamage_end(elb, revolver, initialDamage, p.getSecond());
 
-                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.UNDEAD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.SMITE) > 0)
-                {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.SMITE);
-                }
-
-                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOART) > 0)
-                {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOART);
-                }
-
-                if (((EntityLivingBase) e).getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(Objects.requireNonNull(this.getThrower()).getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOART) > 0)
-                {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOART);
-                }
-
-                if (e instanceof IEldritchMob && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOE) > 0)
-                {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.BOE);
-                }
-
-                if (e instanceof IEldritchMob && EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOE) > 0)
-                {
-                    initialDamage = 14 + 2 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.BOE);
-                }
-
-
-                if (EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.POWER) > 0)
-                {
-                    initialDamage = (float) (14 + 1.5 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.POWER));
-                }
-
-                if (EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.POWER) > 0)
-                {
-                    initialDamage = (float) (14 + 1.5 * EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.POWER));
-                }
-
-                elb.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), initialDamage);
+                elb.attackEntityFrom(new RevolverDamage("revolver"), initialDamage);
 
                 boolean destroy = true;
-int leveltaint = 0;
-                if(this.thrower.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof ItemRevolver)
-                leveltaint = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.MAIN_HAND), EnumInfusionEnchantmentGun.TAINT);
 
-                if(this.thrower.getHeldItem(EnumHand.OFF_HAND).getItem() instanceof ItemRevolver)
-                    leveltaint = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(this.thrower.getHeldItem(EnumHand.OFF_HAND), EnumInfusionEnchantmentGun.TAINT);
+                for(Pair<RevolverUpgrade,Integer> p : upgrades)
+                {
+                    if(destroy)
+                        destroy = p.getFirst().afterhit(elb, (EntityPlayer) shooter, revolver, initialDamage, p.getSecond());
+                    else
+                        p.getFirst().afterhit(elb, (EntityPlayer) shooter, revolver, initialDamage, p.getSecond());
+                }
 
-                if(leveltaint > 0)
-                    ((EntityLivingBase) e).addPotionEffect(new PotionEffect(PotionFluxTaint.instance, leveltaint * 100, leveltaint - 1, true, false));
-
-                this.world.setEntityState(this, (byte) 3);
-                this.setDead();
+                if(destroy)
+                    this.setDead();
             }
         }
     }
 
-    @Override
-    public boolean attackEntityFrom(DamageSource source, float amount) {
-        super.attackEntityFrom(source, amount);
+    public static class RevolverDamage extends DamageSource
+    {
 
-        if (!this.world.isRemote && source.getTrueSource() != null) {
-            Vec3d vec3d = source.getTrueSource().getLookVec();
-            // reflect faster and more accurately
-            this.shoot(vec3d.x, vec3d.y, vec3d.z, 1.5F, 0.1F);  // reflect faster and more accurately
-
-            if (source.getImmediateSource() instanceof EntityLivingBase) {
-                this.thrower = (EntityLivingBase) source.getImmediateSource();
-            }
-            return true;
+        public RevolverDamage(String damage) {
+            super(damage);
         }
 
-        return false;
+    }
+
+    public void writeEntityToNBT(NBTTagCompound tag)
+    {
+        super.writeEntityToNBT(tag);
+        if(revolver != null)
+        {
+            NBTTagCompound revolverTag = new NBTTagCompound();
+            revolver.writeToNBT(revolverTag);
+            tag.setTag("revolverTag", revolverTag);
+        }
+        tag.setBoolean("noclip", noClip);
+        tag.setBoolean("primal", isPrimal);
+    }
+
+    public void readEntityFromNBT(NBTTagCompound tag)
+    {
+        super.readEntityFromNBT(tag);
+
+        if(tag.hasKey("revolverTag"))
+        {
+            revolver = new ItemStack(tag.getCompoundTag("revolverTag"));
+            upgrades = ItemRevolver.getAllUpgradesFor(revolver);
+        }
+        noClip = tag.getBoolean("noclip");
+        isPrimal = tag.getBoolean("primal");
     }
 }

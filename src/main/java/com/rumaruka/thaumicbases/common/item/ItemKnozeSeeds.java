@@ -1,16 +1,12 @@
 package com.rumaruka.thaumicbases.common.item;
 
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
-import com.rumaruka.thaumicbases.common.block.TBBlock;
 import com.rumaruka.thaumicbases.common.block.TBBlockCrytal;
-import com.rumaruka.thaumicbases.common.itemblocks.ItemBlockCrystal;
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
@@ -20,7 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
-import net.minecraftforge.common.IPlantable;
 
 import javax.annotation.Nonnull;
 

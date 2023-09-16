@@ -1,13 +1,14 @@
 package com.rumaruka.thaumicbases.common.inventory;
 
-
-import com.rumaruka.thaumicbases.common.item.ItemBullet;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.common.blocks.essentia.BlockJarItem;
 
 public class InventoryRevolver implements IInventory
 {
@@ -22,7 +23,7 @@ public class InventoryRevolver implements IInventory
 
     public int getSizeInventory()
     {
-        return 64;
+        return 1;
     }
 
     @Override
@@ -37,13 +38,13 @@ public class InventoryRevolver implements IInventory
 
     public ItemStack decrStackSize(int slot, int amount)
     {
-        if (inventory[0] != null)
+        if (inventory[0] != ItemStack.EMPTY)
         {
             if (inventory[0].getCount() <= amount)
             {
                 ItemStack stk = inventory[0];
-                inventory[0] = null;
-                revolverContainer.onCraftMatrixChanged(this);
+                inventory[0] = ItemStack.EMPTY;
+                this.markDirty();
                 return stk;
             }
 
@@ -51,19 +52,18 @@ public class InventoryRevolver implements IInventory
 
             if (inventory[0].getCount() == 0)
             {
-                inventory[0] = null;
+                inventory[0] = ItemStack.EMPTY;
             }
 
-            revolverContainer.onCraftMatrixChanged(this);
+            this.markDirty();
             return var3;
         }
-        return null;
+        return ItemStack.EMPTY;
     }
 
     public void setInventorySlotContents(int slot, ItemStack stack)
     {
         inventory[0] = stack;
-        revolverContainer.onCraftMatrixChanged(this);
     }
 
     public int getInventoryStackLimit()
@@ -71,16 +71,17 @@ public class InventoryRevolver implements IInventory
         return 1;
     }
 
-    public boolean isUseableByPlayer(EntityPlayer player)
+    public boolean isUsableByPlayer(EntityPlayer player)
     {
         return true;
     }
 
-    public boolean isItemValidForSlot(int slot, ItemStack bullet)
+    public boolean isItemValidForSlot(int slot, ItemStack jar)
     {
-        if (bullet != null && bullet.getItem() instanceof ItemBullet && bullet.hasTagCompound())
+        if (!jar.isEmpty() && jar.getItem() instanceof BlockJarItem && jar.hasTagCompound())
         {
-            if (bullet.getCount() >= 0)
+            AspectList aspects = ((BlockJarItem)jar.getItem()).getAspects(jar);
+            if (aspects != null && aspects.size() > 0 && aspects.getAmount(Aspect.AVERSION) > 0)
                 return true;
         }
         return false;
@@ -101,11 +102,7 @@ public class InventoryRevolver implements IInventory
     public void closeInventory(){}
 
     @Override
-    public void markDirty(){}
-
-    @Override
-    public boolean isUsableByPlayer(EntityPlayer player) {
-        return false;
+    public void markDirty(){
     }
 
     @Override
@@ -154,13 +151,12 @@ public class InventoryRevolver implements IInventory
 
     @Override
     public ItemStack removeStackFromSlot(int index) {
-        if (this.inventory[0] != null)
+        if (this.inventory[0] != ItemStack.EMPTY)
         {
             ItemStack stk = this.inventory[0];
-            this.inventory[0] = null;
+            this.inventory[0] = ItemStack.EMPTY;
             return stk;
         }
-        return null;
+        return ItemStack.EMPTY;
     }
-
 }

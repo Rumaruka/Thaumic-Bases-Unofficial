@@ -1,16 +1,11 @@
 package com.rumaruka.thaumicbases.common.tiles;
 
-import com.rumaruka.thaumicbases.api.dummycore_remove.utils.AllUtils;
 import com.rumaruka.thaumicbases.common.block.BlockCampfire;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
-
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
@@ -28,7 +23,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.potions.PotionFluxTaint;
-import java.util.*;
+
+import java.util.List;
 
 
 public class TileCampfire extends TileEntity implements ITickable {

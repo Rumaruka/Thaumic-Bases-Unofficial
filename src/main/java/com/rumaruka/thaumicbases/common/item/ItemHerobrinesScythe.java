@@ -50,7 +50,6 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-//        tooltip.add(ChatFormatting.ITALIC +"Well, they’re nothing..."); //Do not translate this line, it is a reference to TheAtlanticCraft's song - The Herobrine
         tooltip.add(ChatFormatting.ITALIC +"Well, they're nothing..."); // AeXiaohu modified 修复白瞳者之镰描述乱码
     }
     public void onUpdate(ItemStack stk, World w, Entity entity, int slot, boolean held)
@@ -59,7 +58,9 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
         if ((stk.isItemDamaged())  && (entity.ticksExisted % 20 == 0) && ((entity instanceof EntityLivingBase)))
             stk.damageItem(-1, (EntityLivingBase)entity);
     }
-    public static void attack(EntityPlayer attacker, List<EntityLivingBase>doNotAttack, EntityLivingBase attacked){
+
+    public static void attack(EntityPlayer attacker, List<EntityLivingBase> doNotAttack, EntityLivingBase attacked)
+    {
         AxisAlignedBB aabb = new AxisAlignedBB(attacked.posX-1, attacked.posY-1, attacked.posZ-1, attacked.posX+1, attacked.posY+1, attacked.posZ+1).expand(6, 6, 6);
 
         List<EntityLivingBase> mobs = attacked.world.getEntitiesWithinAABB(EntityLivingBase.class, aabb);
@@ -78,8 +79,8 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
                     performPlayerAttackAt(attacker,mobs.get(index));
 
                     TBCore.proxy.lightning(attacker.world, attacked.posX, attacked.posY+rnd.nextDouble()*attacked.getEyeHeight(), attacked.posZ, mobs.get(index).posX, mobs.get(index).posY+rnd.nextDouble()*mobs.get(index).getEyeHeight(), mobs.get(index).posZ, 20, 2F, 10, 0);
-                    attacker.world.playSound((EntityPlayer) mobs.get(index),attacked.getPosition(), SoundsTC.zap,SoundCategory.AMBIENT, 1F, 0.8F);
-                    attacked.world.playSound(null,attacked.getPosition(),SoundsTC.zap,SoundCategory.PLAYERS,1f,0.8f);
+                    attacker.world.playSound(null, attacked.getPosition(), SoundsTC.zap,SoundCategory.AMBIENT, 1F, 0.8F);
+
                     doNotAttack.add(mobs.get(index));
 
                     attack(attacker,doNotAttack,mobs.get(index));
@@ -88,16 +89,16 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
 
                 }
                 mobs.remove(index);
-
+                continue;
             }
         }
-    }
 
+    }
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-        if(player.isEntityAlive()&& player instanceof IMob){
-            attack(player,new ArrayList<EntityLivingBase>(), (EntityLivingBase) entity);
+        if(entity.isEntityAlive()&& entity instanceof IMob){
+            attack(player, new ArrayList<>(), (EntityLivingBase) entity);
         }
         return super.onLeftClickEntity(stack,player,entity);
     }

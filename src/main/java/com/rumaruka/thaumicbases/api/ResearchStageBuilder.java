@@ -1,12 +1,13 @@
 package com.rumaruka.thaumicbases.api;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.research.ResearchStage;
 import thaumcraft.api.research.ResearchStage.Knowledge;
 import thaumcraft.common.lib.research.ResearchManager;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 public class ResearchStageBuilder {
     private ResearchStage entry = new ResearchStage();
 

@@ -1,36 +1,25 @@
 package com.rumaruka.thaumicbases.common.handlers;
 
-import com.rumaruka.thaumicbases.api.IRevolver;
 import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
-import com.rumaruka.thaumicbases.common.enchantment.InfusionEnchantmentRecipeGun;
-import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.item.ItemRevolver;
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBEnchant;
 import com.rumaruka.thaumicbases.init.TBItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.translation.I18n;
-import net.minecraftforge.client.event.FOVUpdateEvent;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -39,7 +28,6 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectEventProxy;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.AspectRegistryEvent;
-import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.entities.IEldritchMob;
 import thaumcraft.api.entities.ITaintedMob;
@@ -147,13 +135,5 @@ public class EnchatmentHandler {
         proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_pile), new AspectList().add(Aspect.PLANT, 3).add(Aspect.MAN, 3).add(Aspect.ENTROPY, 1));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_leaves), new AspectList().add(Aspect.PLANT, 5).add(Aspect.MAN, 5));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.knowledge_shard), new AspectList().add(Aspect.MIND, 15));
-    }
-
-    @SubscribeEvent
-    public void onBowFOV(FOVUpdateEvent event) {
-        if (event.getEntity().getHeldItemMainhand().getItem() == TBItems.revolver && event.getEntity().isSneaking()) {
-            event.setNewfov((float) (0.50F - EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(event.getEntity().getHeldItemMainhand(), EnumInfusionEnchantmentGun.ACCURACY) * 0.1));
-        }else if(event.getEntity().getHeldItemOffhand().getItem() == TBItems.revolver && event.getEntity().isSneaking())
-            event.setNewfov((float) (0.50F - EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(event.getEntity().getHeldItemOffhand(), EnumInfusionEnchantmentGun.ACCURACY) * 0.1));
     }
 }

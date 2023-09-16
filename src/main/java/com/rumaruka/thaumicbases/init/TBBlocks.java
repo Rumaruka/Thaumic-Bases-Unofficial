@@ -5,13 +5,11 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ObjectArrays;
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.common.block.*;
-
-
 import com.rumaruka.thaumicbases.common.itemblocks.ItemBlockCrystal;
 import com.rumaruka.thaumicbases.core.TBCore;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;

@@ -1,17 +1,14 @@
 package com.rumaruka.thaumicbases.common.item;
 
 import com.google.common.collect.Multimap;
-
 import com.rumaruka.thaumicbases.init.TBItems;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import thaumcraft.api.items.IRechargable;
 import thaumcraft.api.items.IVisDiscountGear;
 
 import javax.annotation.Nullable;

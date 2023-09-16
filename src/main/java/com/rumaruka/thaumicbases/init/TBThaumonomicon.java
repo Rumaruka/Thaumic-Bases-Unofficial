@@ -1,14 +1,8 @@
 package com.rumaruka.thaumicbases.init;
 
 
-import com.rumaruka.thaumicbases.common.block.FluidPyro;
-import com.rumaruka.thaumicbases.common.block.TBBlock;
-import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
-import com.rumaruka.thaumicbases.common.enchantment.InfusionEnchantmentRecipeGun;
-import com.rumaruka.thaumicbases.common.item.ItemRevolver;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
@@ -23,12 +17,11 @@ import thaumcraft.api.capabilities.IPlayerKnowledge;
 import thaumcraft.api.crafting.*;
 import thaumcraft.api.internal.CommonInternals;
 import thaumcraft.api.items.ItemsTC;
-import thaumcraft.api.research.*;
+import thaumcraft.api.research.ResearchCategories;
+import thaumcraft.api.research.ResearchStage;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
-import thaumcraft.common.lib.crafting.InfusionEnchantmentRecipe;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
-import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 import java.util.List;
 
@@ -60,74 +53,73 @@ public class TBThaumonomicon {
 
 /*==============================================ARCANE CRAFTING BEGIN=============================================================================*/
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobble"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
-                , new ItemStack(TBBlocks.oldcobble,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.COBBLESTONE)  }));
+                , new ItemStack(TBBlocks.oldcobble,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.COBBLESTONE)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobbleMossy"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
-                , new ItemStack(TBBlocks.oldcobblemossy,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.MOSSY_COBBLESTONE)  }));
+                , new ItemStack(TBBlocks.oldcobblemossy,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.MOSSY_COBBLESTONE)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGravel"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
-                , new ItemStack(TBBlocks.oldgravel,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.GRAVEL)  }));
+                , new ItemStack(TBBlocks.oldgravel,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.GRAVEL)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldBrick"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
-                , new ItemStack(TBBlocks.oldbrick,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.BRICK_BLOCK)  }));
+                , new ItemStack(TBBlocks.oldbrick,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.BRICK_BLOCK)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldLapis"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
-                , new ItemStack(TBBlocks.oldlapis,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.LAPIS_BLOCK)  }));
+                , new ItemStack(TBBlocks.oldlapis,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.LAPIS_BLOCK)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldIron"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 .add(Aspect.ENTROPY,1)
                 .add(Aspect.EARTH,1)
-                .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.oldiron,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.IRON_BLOCK)  }));
+                .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.oldiron,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.IRON_BLOCK)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldGold"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 .add(Aspect.ENTROPY,1)
                 .add(Aspect.EARTH,1)
-                .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.oldgold,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.GOLD_BLOCK)}));
+                .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.oldgold,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.GOLD_BLOCK)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldDiamond"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 .add(Aspect.ENTROPY,1)
                 .add(Aspect.EARTH,1)
-                .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.olddiamond,6), new Object[] { "# #", "# #", "# #",
-                Character.valueOf('#'), new ItemStack(Blocks.DIAMOND_BLOCK)}));
+                .add(Aspect.ORDER, 1), new ItemStack(TBBlocks.olddiamond,6), "# #", "# #", "# #",
+                '#', new ItemStack(Blocks.DIAMOND_BLOCK)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.SMB"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO2", 65, new AspectList()
 ,
 
-                new ItemStack(TBBlocks.dustblock), new Object[] { "sss", "sss", "sss",
-                Character.valueOf('s'), new ItemStack(ItemsTC.salisMundus)}));
+                new ItemStack(TBBlocks.dustblock), "sss", "sss", "sss",
+                's', new ItemStack(ItemsTC.salisMundus)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.SMBReturn"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO2", 50, new AspectList()
 ,
 
-                new ItemStack(ItemsTC.salisMundus,9,0), new Object[] { "   ", " s ", "   ",
-                Character.valueOf('s'), new ItemStack(TBBlocks.dustblock)}));
+                new ItemStack(ItemsTC.salisMundus,9,0), "   ", " s ", "   ",
+                's', new ItemStack(TBBlocks.dustblock)));
 
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.IronSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE",20, new AspectList()
                 .add(Aspect.FIRE,1)
-                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.ironspike,1), new Object[] { " i ", "iIi", "IpI",
-                Character.valueOf('i'), "nuggetIron", Character.valueOf('I'),new ItemStack(Items.IRON_INGOT), Character.valueOf('p'),new ItemStack(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)  }));
+                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.ironspike,1), " i ", "iIi", "IpI",
+                'i', "nuggetIron", 'I',new ItemStack(Items.IRON_INGOT), 'p',new ItemStack(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.ThaumSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE1",20, new AspectList()
                 .add(Aspect.FIRE,1)
-                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.thaumspike,1), new Object[] { " t ", "tTt", "TsT",
-                Character.valueOf('t'), new ItemStack(ItemsTC.nuggets,1,6), Character.valueOf('T'),new ItemStack(ItemsTC.ingots,1,0), Character.valueOf('s'),new ItemStack(TBBlocks.ironspike)  }));
+                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.thaumspike,1), " t ", "tTt", "TsT",
+                't', new ItemStack(ItemsTC.nuggets,1,6), 'T',new ItemStack(ItemsTC.ingots,1,0), 's',new ItemStack(TBBlocks.ironspike)));
 
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.VoidSpike"), new ShapedArcaneRecipe(defaultGroup, "TB.SPIKE2",20, new AspectList()
                 .add(Aspect.FIRE,1)
-                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.voidspike,1), new Object[] { " v ", "vVv", "VsV",
-                Character.valueOf('v'), new ItemStack(ItemsTC.nuggets,1,7), Character.valueOf('V'),new ItemStack(ItemsTC.ingots,1,1), Character.valueOf('s'),new ItemStack(TBBlocks.thaumspike)  }));
+                .add(Aspect.ENTROPY, 1), new ItemStack(TBBlocks.voidspike,1), " v ", "vVv", "VsV",
+                'v', new ItemStack(ItemsTC.nuggets,1,7), 'V',new ItemStack(ItemsTC.ingots,1,1), 's',new ItemStack(TBBlocks.thaumspike)));
 
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.BCHEST"), new ShapedArcaneRecipe(defaultGroup, "TB.BloodFabric",50, new AspectList()
                 .add(Aspect.AIR,2)
-                    , new ItemStack(TBItems.bloodychest,1), new Object[] { "# #", "###", "###",
-                Character.valueOf('#'), new ItemStack(TBItems.bloodycloth)}));
+                    , new ItemStack(TBItems.bloodychest,1), "# #", "###", "###",
+                '#', new ItemStack(TBItems.bloodycloth)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.BLEGS"), new ShapedArcaneRecipe(defaultGroup, "TB.BloodFabric",50, new AspectList()
                 .add(Aspect.WATER,2)
-                , new ItemStack(TBItems.bloodylegs,1), new Object[]
-                { "###",
-                        "# #", "# #",
-                Character.valueOf('#'), new ItemStack(TBItems.bloodycloth)}));
+                , new ItemStack(TBItems.bloodylegs,1), "###",
+                "# #", "# #",
+                '#', new ItemStack(TBItems.bloodycloth)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.BBOOTS"), new ShapedArcaneRecipe(defaultGroup, "TB.BloodFabric",50, new AspectList()
                 .add(Aspect.EARTH,1)
-                , new ItemStack(TBItems.bloodyboots,1), new Object[] { "# #", "# #", "   ",
-                Character.valueOf('#'), new ItemStack(TBItems.bloodycloth)}));
+                , new ItemStack(TBItems.bloodyboots,1), "# #", "# #", "   ",
+                '#', new ItemStack(TBItems.bloodycloth)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.mortal"), new ShapelessArcaneRecipe(defaultGroup, "TB.TOBACCO",25, new AspectList()
                 , new ItemStack(TBItems.mortar,1),
                 new Object[] {
@@ -141,40 +133,35 @@ public class TBThaumonomicon {
                 .add(Aspect.ENTROPY,2)
                 .add(Aspect.FIRE,2)
                 , new ItemStack(TBBlocks.campfire,1),
-                new Object[] {
                 "SSS",
                 "CUC",
                 "GGG",
-                Character.valueOf('S'), new ItemStack(Items.STICK),Character.valueOf('U'), new ItemStack(Items.COAL),Character.valueOf('C'), new ItemStack(Blocks.COBBLESTONE),Character.valueOf('G'), new ItemStack(Blocks.GRAVEL)}));
+                'S', new ItemStack(Items.STICK), 'U', new ItemStack(Items.COAL), 'C', new ItemStack(Blocks.COBBLESTONE), 'G', new ItemStack(Blocks.GRAVEL)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.braizer"), new ShapedArcaneRecipe(defaultGroup, "TB.UseFire",50, new AspectList()
                 .add(Aspect.ENTROPY,3)
                 .add(Aspect.FIRE,3)
                 , new ItemStack(TBBlocks.braizer,1),
-                new Object[] {
-                        "SUS",
-                        " A ",
-                        "SSS",
-                        Character.valueOf('S'), new ItemStack(BlocksTC.slabArcaneStone),Character.valueOf('U'), new ItemStack(Items.COAL),Character.valueOf('A'), new ItemStack(BlocksTC.stoneArcane)}));
+                "SUS",
+                " A ",
+                "SSS",
+                'S', new ItemStack(BlocksTC.slabArcaneStone), 'U', new ItemStack(Items.COAL), 'A', new ItemStack(BlocksTC.stoneArcane)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.greatpipe"), new ShapedArcaneRecipe(defaultGroup, "TB.TOBACCO",50, new AspectList()
                 .add(primals(1))
 
                 , new ItemStack(TBItems.greatwoodpipe,1),
-                new Object[] {
-                        "gs ",
-                        " gg",
-                        Character.valueOf('s'), new ItemStack(ItemsTC.salisMundus),Character.valueOf('g'), new ItemStack(BlocksTC.plankGreatwood)}));
+                "gs ",
+                " gg",
+                's', new ItemStack(ItemsTC.salisMundus), 'g', new ItemStack(BlocksTC.plankGreatwood)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.syrop"), new ShapedArcaneRecipe(defaultGroup, "TB.PLANT1",50, new AspectList()
                 , new ItemStack(TBItems.rosehipsyrup,1),
-                new Object[] {
-                        "pSs",
-                        Character.valueOf('s'), new ItemStack(Items.SUGAR),Character.valueOf('p'), new ItemStack(ItemsTC.phial), Character.valueOf('S'),new ItemStack(TBItems.briar_seedbag)}));
+                "pSs",
+                's', new ItemStack(Items.SUGAR), 'p', new ItemStack(ItemsTC.phial), 'S',new ItemStack(TBItems.briar_seedbag)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.bullet"), new ShapedArcaneRecipe(defaultGroup, "TB.REVOLVER",80, new AspectList()
                 , new ItemStack(TBItems.bullet,16),
-                new Object[] {
-                        "m",
-                        "c",
-                        "b",
-                        Character.valueOf('m'), new ItemStack(TBItems.nuggetthauminite),Character.valueOf('c'), new IngredientNBTTC(ThaumcraftApiHelper.makeCrystal(Aspect.AVERSION)), Character.valueOf('b'),new ItemStack(ItemsTC.plate,1,0)}));
+                "m",
+                "c",
+                "b",
+                'm', new ItemStack(TBItems.nuggetthauminite), 'c', new IngredientNBTTC(ThaumcraftApiHelper.makeCrystal(Aspect.AVERSION)), 'b',new ItemStack(ItemsTC.plate,1,0)));
 
 
 
@@ -332,72 +319,133 @@ public class TBThaumonomicon {
         InfusionRecipe revolver = new InfusionRecipe("TB.REVOLVER", new ItemStack(TBItems.revolver),8,new AspectList().add(Aspect.FIRE,100).add(Aspect.TOOL,30).add(Aspect.MECHANISM,30).add(Aspect.METAL,75).add(Aspect.ENERGY,100).add(Aspect.AVERSION,250)  , new ItemStack(BlocksTC.metalBlockBrass),new ItemStack(ItemsTC.turretPlacer, 1, 0),new ItemStack(Items.GUNPOWDER),new ItemStack(Blocks.REDSTONE_TORCH),new ItemStack(BlocksTC.logGreatwood), new ItemStack(Items.FIRE_CHARGE),new ItemStack(Items.GUNPOWDER), new ItemStack(TBItems.bullet),new ItemStack(Items.GUNPOWDER), new ItemStack(Items.FIRE_CHARGE), new ItemStack(BlocksTC.logGreatwood),new ItemStack(ItemsTC.mechanismComplex), new ItemStack(Items.GUNPOWDER));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.revolver"),revolver);
 
-        ItemStack rev1 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev1, EnumInfusionEnchantmentGun.TAINT, 1);
-        InfusionEnchantmentRecipeGun IEGTAINT = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.TAINT, (new AspectList()).add(Aspect.AVERSION, 30).add(Aspect.FLUX, 30), new IngredientNBTTC(new ItemStack(TBBlocks.crystalblocktainted)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGTAINT"), (InfusionRecipe)IEGTAINT);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGTAINTFAKE"), new InfusionEnchantmentRecipeGun(IEGTAINT, rev1));
-
-        ItemStack rev2 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev2, EnumInfusionEnchantmentGun.HEAVY, 1);
-        InfusionEnchantmentRecipeGun IEGHEAVY = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.HEAVY, (new AspectList()).add(Aspect.AVERSION, 30).add(Aspect.METAL, 30), new IngredientNBTTC(new ItemStack(Blocks.ANVIL)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGHEAVY"), (InfusionRecipe)IEGHEAVY);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGHEAVYFAKE"), new InfusionEnchantmentRecipeGun(IEGHEAVY, rev2));
-
-        ItemStack rev3 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev3, EnumInfusionEnchantmentGun.POWER, 1);
-        InfusionEnchantmentRecipeGun IEGPOWER = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.POWER, (new AspectList()).add(Aspect.AVERSION, 60), new IngredientNBTTC(new ItemStack(Items.FIRE_CHARGE)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGPOWER"), (InfusionRecipe)IEGPOWER);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGPOWERFAKE"), new InfusionEnchantmentRecipeGun(IEGPOWER, rev3));
-
-        ItemStack rev4 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev4, EnumInfusionEnchantmentGun.SMITE, 1);
-        InfusionEnchantmentRecipeGun IEGSMITE = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.SMITE, (new AspectList()).add(Aspect.AVERSION, 30).add(Aspect.UNDEAD, 15).add(Aspect.DEATH, 15), new IngredientNBTTC(new ItemStack(ItemsTC.quicksilver)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGSMITE"), (InfusionRecipe)IEGSMITE);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGSMITEFAKE"), new InfusionEnchantmentRecipeGun(IEGSMITE, rev4));
-
-        ItemStack rev5 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev5, EnumInfusionEnchantmentGun.BOART, 1);
-        InfusionEnchantmentRecipeGun IEGBOART = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.BOART, (new AspectList()).add(Aspect.AVERSION, 30).add(Aspect.UNDEAD, 15).add(Aspect.TRAP, 15), new IngredientNBTTC(new ItemStack(Items.FERMENTED_SPIDER_EYE)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOART"), (InfusionRecipe)IEGBOART);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOARTFAKE"), new InfusionEnchantmentRecipeGun(IEGBOART, rev5));
-
-        ItemStack rev6 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev6, EnumInfusionEnchantmentGun.BOE, 1);
-        InfusionEnchantmentRecipeGun IEGBOE = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.BOE, (new AspectList()).add(Aspect.AVERSION, 30).add(Aspect.ELDRITCH, 30), new IngredientNBTTC(new ItemStack(ItemsTC.voidSword)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOE"), (InfusionRecipe)IEGBOE);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGBOEFAKE"), new InfusionEnchantmentRecipeGun(IEGBOE, rev6));
-
-        ItemStack rev7 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev7, EnumInfusionEnchantmentGun.DUELING, 1);
-        InfusionEnchantmentRecipeGun IEGDUELING = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.DUELING, (new AspectList()).add(Aspect.DEATH, 30).add(Aspect.MAN, 30), new IngredientNBTTC(new ItemStack(Items.GHAST_TEAR)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGDUELING"), (InfusionRecipe)IEGDUELING);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGDUELINGFAKE"), new InfusionEnchantmentRecipeGun(IEGDUELING, rev7));
-
-        ItemStack rev8 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev8, EnumInfusionEnchantmentGun.WISE, 1);
-        InfusionEnchantmentRecipeGun IEGWISE = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.WISE, (new AspectList()).add(Aspect.AURA, 30).add(Aspect.MIND, 30), new IngredientNBTTC(new ItemStack(ItemsTC.brain)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGWISE"), (InfusionRecipe)IEGWISE);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGWISEFAKE"), new InfusionEnchantmentRecipeGun(IEGWISE, rev8));
-
-        ItemStack rev9 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev9, EnumInfusionEnchantmentGun.EFFICIENCY, 1);
-        InfusionEnchantmentRecipeGun IEGEFFICIENCY = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.EFFICIENCY, (new AspectList()).add(Aspect.TOOL, 30).add(Aspect.DESIRE, 30), new IngredientNBTTC(new ItemStack(Items.RABBIT_FOOT)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGEFFICIENCY"), (InfusionRecipe)IEGEFFICIENCY);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGEFFICIENCYFAKE"), new InfusionEnchantmentRecipeGun(IEGEFFICIENCY, rev9));
-
-        ItemStack rev10 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev10, EnumInfusionEnchantmentGun.SPEED, 1);
-        InfusionEnchantmentRecipeGun IEGSPEED = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.SPEED, (new AspectList()).add(Aspect.AIR, 30).add(Aspect.MOTION, 30), new IngredientNBTTC(new ItemStack(ItemsTC.mechanismSimple)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEED"), (InfusionRecipe)IEGSPEED);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGSPEEDFAKE"), new InfusionEnchantmentRecipeGun(IEGSPEED, rev10));
-
-        ItemStack rev11 = new ItemStack(TBItems.revolver);
-        EnumInfusionEnchantmentGun.addInfusionEnchantment(rev11, EnumInfusionEnchantmentGun.ACCURACY, 1);
-        InfusionEnchantmentRecipeGun IEGACCURACY = new InfusionEnchantmentRecipeGun(EnumInfusionEnchantmentGun.ACCURACY, (new AspectList()).add(Aspect.ORDER, 30).add(Aspect.SENSES, 30), new IngredientNBTTC(new ItemStack(ItemsTC.visResonator)), new ItemStack((Item)Items.ENCHANTED_BOOK));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("thaumicbases:IEGACCURACY"), (InfusionRecipe)IEGACCURACY);
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation("thaumicbases:IEGACCURACYFAKE"), new InfusionEnchantmentRecipeGun(IEGACCURACY, rev11));
-
+       // RevolverInfusionRecipe accuracyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.accuracy, 1, new AspectList().add(Aspect.ORDER, 8).add(Aspect.SENSES,8), new ItemStack[]{
+       //         new ItemStack(Blocks.GLASS_PANE,1,0),
+       //         new ItemStack(Items.CARROT,1,0),
+       //         new ItemStack(Blocks.GLASS_PANE,1,0),
+       //         new ItemStack(Blocks.GLASS_PANE,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Blocks.GLASS_PANE,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.accuracy"),accuracyRec);
+//
+       // RevolverInfusionRecipe atropodsRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.atropodsBane, 1, new AspectList().add(Aspect.DEATH, 8).add(Aspect.BEAST, 8).add(Aspect.CRAFT, 8), new ItemStack[]{
+       //         new ItemStack(Items.SPIDER_EYE,1,0),
+       //         new ItemStack(Items.FERMENTED_SPIDER_EYE,1,0),
+       //         new ItemStack(Items.SPIDER_EYE,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.atropodsBane"),atropodsRec);
+//
+       // RevolverInfusionRecipe eldritchBRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.eldritchBane, 2, new AspectList().add(Aspect.DEATH, 8).add(Aspect.ELDRITCH, 8), new ItemStack[]{
+       //         new ItemStack(Items.ENDER_EYE,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.ENDER_PEARL,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.eldritchBRec"),eldritchBRec);
+//
+       // RevolverInfusionRecipe duelingRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.dueling, 2, new AspectList().add(Aspect.DEATH, 8).add(Aspect.MAN, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.BED,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.GHAST_TEAR,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.duelingRec"),duelingRec);
+//
+       // RevolverInfusionRecipe efficiencyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.efficiency, 0, new AspectList().add(Aspect.ORDER, 8).add(Aspect.EXCHANGE, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.BLAZE_POWDER,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.ENCHANTED_BOOK,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.efficiencyRec"),efficiencyRec);
+//
+       // RevolverInfusionRecipe eldritchRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.eldritch, 5, new AspectList().add(Aspect.ELDRITCH, 8).add(Aspect.VOID, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.eldritchEye,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(ItemsTC.eldritchEye,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.eldritchRec"),eldritchRec);
+//
+       // RevolverInfusionRecipe heavyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.heavy, 0, new AspectList().add(Aspect.AVERSION, 8).add(Aspect.METAL, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.IRON_SWORD,1, OreDictionary.WILDCARD_VALUE),
+       //         new ItemStack(ItemsTC.salisMundus,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.heavyRec"),heavyRec);
+//
+       // RevolverInfusionRecipe knowledgeRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.knowledge, 0, new AspectList().add(Aspect.MIND, 8).add(Aspect.AURA, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.scribingTools,1,OreDictionary.WILDCARD_VALUE),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.BOOK,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.PAPER,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.knowledgeRec"),knowledgeRec);
+//
+       // RevolverInfusionRecipe piercingRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.piercig, 12, new AspectList().add(Aspect.AVERSION, 32).add(Aspect.AIR, 64), new ItemStack[]{
+       //         new ItemStack(TBBlocks.crystalblockfire,1,0),
+       //         new ItemStack(TBBlocks.crystalblockwater,1,0),
+       //         new ItemStack(TBBlocks.crystalblockair,1,0),
+       //         new ItemStack(Items.DIAMOND_SWORD,1,OreDictionary.WILDCARD_VALUE),
+       //         new ItemStack(TBBlocks.crystalblockearth,1,0),
+       //         new ItemStack(TBBlocks.crystalblockentropy,1,0),
+       //         new ItemStack(TBBlocks.crystalblockorder,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.piercingRec"),piercingRec);
+//
+       // RevolverInfusionRecipe powerRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.power, 2, new AspectList().add(Aspect.AVERSION, 16), new ItemStack[]{
+       //         new ItemStack(Items.GUNPOWDER),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.FIRE_CHARGE),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.FIREWORKS,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.powerRec"),powerRec);
+//
+       // RevolverInfusionRecipe primalRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.primal, 12, new AspectList().add(Aspect.AVERSION, 64).add(primals(64)).add(Aspect.ENERGY, 64), new ItemStack[]{
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(ItemsTC.primordialPearl,1,0),
+       //         new ItemStack(Items.DIAMOND_SWORD),
+       //         new ItemStack(ItemsTC.primordialPearl,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.primalRec"),primalRec);
+//
+       // RevolverInfusionRecipe silverRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.silver, 0, new AspectList().add(Aspect.DEATH, 8).add(Aspect.BEAST, 8).add(Aspect.UNDEAD, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(ItemsTC.quicksilver,1,0),
+       //         new ItemStack(ItemsTC.quicksilver,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.silverRec"),silverRec);
+//
+       // RevolverInfusionRecipe speedRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.speed, 2, new AspectList().add(Aspect.MOTION, 8).add(Aspect.AIR, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(Items.FEATHER),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.speedRec"),speedRec);
+//
+       // RevolverInfusionRecipe taintedRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.tainted, 4, new AspectList().add(Aspect.FLUX, 8).add(Aspect.AVERSION, 8), new ItemStack[]{
+       //         new ItemStack(BlocksTC.crystalTaint,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0),
+       //         new ItemStack(BlocksTC.crystalTaint,1,0),
+       //         new ItemStack(ItemsTC.salisMundus,1,0)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.taintedRec"),taintedRec);
+//
+       // RevolverInfusionRecipe voidRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.uvoid, 4, new AspectList().add(Aspect.VOID, 8).add(Aspect.TOOL, 8), new ItemStack[]{
+       //         new ItemStack(ItemsTC.ingots,1,1),
+       //         new ItemStack(ItemsTC.ingots,1,1),
+       //         new ItemStack(ItemsTC.ingots,1,1),
+       //         new ItemStack(ItemsTC.ingots,1,1),
+       //         new ItemStack(ItemsTC.ingots,1,1)
+       // });
+       // ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.voidRec"),voidRec);
         /*==============================================INFUSING END=============================================================================*/
 
         /*TOBACCO INIT*/
@@ -426,22 +474,20 @@ public class TBThaumonomicon {
                 .add(Aspect.ENTROPY,1)
 
                 , new ItemStack(TBItems.tobacco_sanity,1),
-                new Object[] {
-                        "P  ",
-                        "   ",
-                        "   "
-                        ,Character.valueOf('P'), new ItemStack(TBItems.tobacco_pile)}));
+                "P  ",
+                "   ",
+                "   "
+                , 'P', new ItemStack(TBItems.tobacco_pile)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.hunger"), new ShapedArcaneRecipe(defaultGroup, "TB.TOBACCO",10, new AspectList()
                 .add(Aspect.ORDER,1)
                 .add(Aspect.AIR,1)
                 .add(Aspect.ENTROPY,1)
 
                 , new ItemStack(TBItems.tobacco_hunger,1),
-                new Object[] {
-                        "Ps ",
-                        "   ",
-                        "   "
-                        ,Character.valueOf('P'), new ItemStack(TBItems.tobacco_pile),Character.valueOf('s'), "seedsStems"}));
+                "Ps ",
+                "   ",
+                "   "
+                , 'P', new ItemStack(TBItems.tobacco_pile),'s', "seedsStems"));
 
     }
 

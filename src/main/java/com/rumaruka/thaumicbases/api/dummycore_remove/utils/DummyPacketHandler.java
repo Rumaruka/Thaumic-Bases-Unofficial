@@ -1,8 +1,11 @@
 package com.rumaruka.thaumicbases.api.dummycore_remove.utils;
+
 import com.rumaruka.thaumicbases.api.dummycore_remove.event.DummyEvent_OnPacketRecieved;
 import com.rumaruka.thaumicbases.core.TBCore;
 import io.netty.channel.ChannelHandler;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
@@ -57,4 +60,14 @@ public class DummyPacketHandler implements IMessageHandler<DummyPacketIMSG, IMes
         TBCore.network.sendToServer(message);
     }
 
+    public static void playSoundOnServer(World w, String sound, double x, double y, double z, float volume, float pitch)
+    {
+        NBTTagCompound tg = new NBTTagCompound();
+        tg.setString("snd", sound);
+        tg.setDouble("x", x);
+        tg.setDouble("y", y);
+        tg.setDouble("z", z);
+        tg.setFloat("v", volume);
+        tg.setFloat("p", pitch);
+    }
 }

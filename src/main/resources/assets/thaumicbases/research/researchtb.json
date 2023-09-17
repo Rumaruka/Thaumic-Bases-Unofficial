@@ -772,14 +772,13 @@
         "location": [
           4,
           -2
-        ],"meta":["HIDDEN"],
-        "warp": 2,
+        ],
         "stages": [
           {
             "text": "research_stage.thaumicbases:thaumanvil.1",
             "required_knowledge": [
-              "THEORY;ARTIFICE;2",
-              "THEORY;ELDRITCH;2"
+              "OBSERVATION;ARTIFICE;2",
+              "THEORY;ARTIFICE;1"
             ],
             "required_item": [
               "minecraft:anvil"
@@ -810,13 +809,14 @@
           {
             "text": "research_stage.thaumicbases:voidanvil.1",
             "required_knowledge": [
-              "OBSERVATION;ARTIFICE;2",
-              "THEORY;ARTIFICE;1"
+              "THEORY;ARTIFICE;2",
+              "THEORY;ELDRITCH;2"
             ],"required_item": [
             "minecraft:anvil;1;2",
             "thaumicbases:thaumic_anvil;1;2",
             "thaumcraft::ingot;1;1"
-          ]
+          ],"meta":["HIDDEN"],
+            "warp": 2
           },
           {
             "text": "research_stage.thaumicbases:voidanvil.2",

@@ -5,7 +5,7 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentElderKnowledge extends Enchantment {
-    public EnchantmentElderKnowledge(Rarity rarityIn, int id, int weight) {
+    public EnchantmentElderKnowledge(Rarity rarityIn) {
         super(rarityIn, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
     }
 

@@ -116,12 +116,11 @@ public class TBTobacco extends Item implements ITobacco {
                     ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1 + smoker.world.rand.nextInt(3), TEMPORARY);
                     if (smoker.world.rand.nextFloat() <= 0.4F) ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
                 } else {
-                    ItemStack stk = smoker.getHeldItemMainhand();
-                    if (stk != ItemStack.EMPTY) {
+                    ItemStack stk = smoker.getHeldItem(smoker.getActiveHand());
+                    if (stk.getItem() == TBItems.silverwoodpipe) {
                         smoker.renderBrokenItemStack(stk);
-                        smoker.inventory.setInventorySlotContents(smoker.inventory.currentItem, ItemStack.EMPTY);
+                        stk.shrink(1);
                     }
-                    return;
                 }
             }
 

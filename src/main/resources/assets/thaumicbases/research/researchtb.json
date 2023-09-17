@@ -248,33 +248,6 @@
         ]
       },
       {
-        "key": "TB.EXCHANG",
-        "name": "research_name.thaumicbases:tbexchang",
-        "category": "THAUMICBASES",
-        "icons": [
-          "thaumcraft:quicksilver"
-        ],
-        "parents": [
-          "TB.MACERATOR"
-        ],
-        "location": [
-          0,6
-        ],
-        "stages": [
-          {
-            "text": "research_stage.thaumicbases:tbexchang.1",
-            "required_knowledge": [
-              "OBSERVATION;ALCHEMY;2",
-              "THEORY;ALCHEMY;2"
-            ]
-          },
-          {
-            "text": "research_stage.thaumicbases:tbexchang.2",
-            "recipes": ["TB.powderToRod","TB.saplingToAmber","TB.silverToQuicksilver","TB.bonemealToBONE","TB.greenTOCactus","TB.primordar","TB.void_seed","TB.crystalM","TB.crystalI","TB.crystals","TB.crystalF","TB.crystalP"]
-          }
-        ]
-      },
-      {
         "key": "TB.PLANT",
         "name": "research_name.thaumicbases:sweed",
         "category": "THAUMICBASES",
@@ -783,6 +756,72 @@
         ],
         "addenda": [
           {"text": "research_stage.thaumicbases:curioscraft.3","required_research":["BASEELDRITCH"]}
+        ]
+      },
+      {
+        "key": "TB.THAUMANVIL",
+        "name": "research_name.thaumicbases:thaumanvil",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:thaumic_anvil"
+        ],
+        "parents": [
+          "TB.SPIKE1",
+          "METALLURGY"
+        ],
+        "location": [
+          4,
+          -2
+        ],"meta":["HIDDEN"],
+        "warp": 2,
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:thaumanvil.1",
+            "required_knowledge": [
+              "THEORY;ARTIFICE;2",
+              "THEORY;ELDRITCH;2"
+            ],
+            "required_item": [
+              "minecraft:anvil"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:thaumanvil.2",
+            "recipes": [
+              "TB.thaumAnvil"
+            ]
+          }
+        ]
+      },
+      {
+        "key": "TB.VOIDANVIL",
+        "name": "research_name.thaumicbases:voidanvil",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:void_anvil"
+        ],
+        "parents": [
+          "TB.THAUMANVIL", "BASEELDRITCH"
+        ],
+        "location": [
+          6, -2
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:voidanvil.1",
+            "required_knowledge": [
+              "OBSERVATION;ARTIFICE;2",
+              "THEORY;ARTIFICE;1"
+            ],"required_item": [
+            "minecraft:anvil;1;2",
+            "thaumicbases:thaumic_anvil;1;2",
+            "thaumcraft::ingot;1;1"
+          ]
+          },
+          {
+            "text": "research_stage.thaumicbases:voidanvil.2",
+            "recipes": ["TB.voidAnvil"]
+          }
         ]
       }
     ]

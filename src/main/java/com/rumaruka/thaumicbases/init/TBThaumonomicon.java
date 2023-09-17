@@ -120,6 +120,14 @@ public class TBThaumonomicon {
                 .add(Aspect.EARTH,1)
                 , new ItemStack(TBItems.bloodyboots,1), "# #", "# #", "   ",
                 '#', new ItemStack(TBItems.bloodycloth)));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.thaumAnvil"), new ShapedArcaneRecipe(defaultGroup, "TB.THAUMANVIL",50, new AspectList()
+                .add(primals(3))
+                , new ItemStack(TBBlocks.thaumicAnvil,1)
+                , "BBB"
+                , " B "
+                , "III",
+                'B', new ItemStack(BlocksTC.metalBlockThaumium),
+                'I', new ItemStack(ItemsTC.ingots)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.mortal"), new ShapelessArcaneRecipe(defaultGroup, "TB.TOBACCO",25, new AspectList()
                 , new ItemStack(TBItems.mortar,1),
                 new Object[] {
@@ -318,6 +326,9 @@ public class TBThaumonomicon {
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.herobrine"),herobrine);
         InfusionRecipe revolver = new InfusionRecipe("TB.REVOLVER", new ItemStack(TBItems.revolver),8,new AspectList().add(Aspect.FIRE,100).add(Aspect.TOOL,30).add(Aspect.MECHANISM,30).add(Aspect.METAL,75).add(Aspect.ENERGY,100).add(Aspect.AVERSION,250)  , new ItemStack(BlocksTC.metalBlockBrass),new ItemStack(ItemsTC.turretPlacer, 1, 0),new ItemStack(Items.GUNPOWDER),new ItemStack(Blocks.REDSTONE_TORCH),new ItemStack(BlocksTC.logGreatwood), new ItemStack(Items.FIRE_CHARGE),new ItemStack(Items.GUNPOWDER), new ItemStack(TBItems.bullet),new ItemStack(Items.GUNPOWDER), new ItemStack(Items.FIRE_CHARGE), new ItemStack(BlocksTC.logGreatwood),new ItemStack(ItemsTC.mechanismComplex), new ItemStack(Items.GUNPOWDER));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.revolver"),revolver);
+
+        InfusionRecipe voidAnvil = new InfusionRecipe("TB.VOIDANVIL", new ItemStack(TBBlocks.voidAnvil),6,new AspectList().add(Aspect.TOOL,125).add(Aspect.MAGIC,125).add(Aspect.ELDRITCH,75).add(Aspect.METAL,75) , new ItemStack(TBBlocks.thaumicAnvil),new ItemStack(BlocksTC.metalBlockVoid),new ItemStack(BlocksTC.metalBlockVoid),new ItemStack(BlocksTC.metalBlockVoid),new ItemStack(BlocksTC.metalBlockVoid),new ItemStack(BlocksTC.metalBlockVoid),new ItemStack(BlocksTC.metalBlockVoid));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.voidAnvil"),voidAnvil);
 
        // RevolverInfusionRecipe accuracyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.accuracy, 1, new AspectList().add(Aspect.ORDER, 8).add(Aspect.SENSES,8), new ItemStack[]{
        //         new ItemStack(Blocks.GLASS_PANE,1,0),

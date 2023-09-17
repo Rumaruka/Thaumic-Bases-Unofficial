@@ -1,8 +1,8 @@
 {
-  "parent":  "thaumicbases:block/thaumanvil",
+  "parent": "thaumicbases:block/thaumic_anvil",
   "textures": {
     "particle": "thaumicbases:blocks/base",
     "body": "thaumicbases:blocks/base",
-    "top": "thaumicbases:blocks/top_damaged_2"
+    "top": "thaumicbases:blocks/top_damaged_0"
   }
 }

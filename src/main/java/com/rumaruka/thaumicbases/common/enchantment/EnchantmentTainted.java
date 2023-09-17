@@ -5,7 +5,7 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentTainted extends Enchantment {
-    public EnchantmentTainted(Rarity rarityIn, int id, int weight) {
+    public EnchantmentTainted(Rarity rarityIn) {
         super(rarityIn, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
     }
 

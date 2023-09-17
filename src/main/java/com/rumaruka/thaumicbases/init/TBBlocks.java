@@ -6,6 +6,7 @@ import com.google.common.collect.ObjectArrays;
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.common.block.*;
 import com.rumaruka.thaumicbases.common.itemblocks.ItemBlockCrystal;
+import com.rumaruka.thaumicbases.common.itemblocks.ItemTBAnvilBlock;
 import com.rumaruka.thaumicbases.core.TBCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -110,7 +111,8 @@ public class TBBlocks {
 
     public static Block knoze;
     public static Block ashroom;
-
+    public static Block thaumicAnvil;
+    public static Block voidAnvil;
 
     public static void init() {
 
@@ -204,6 +206,8 @@ public class TBBlocks {
 
         //Cactus ALONE :<
         rainbowcactus = new BlockRainbowCactus().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("rainbowcactus");
+        thaumicAnvil = new BlockThaumicAnvil().setHardness(5.0F).setResistance(2000.0F).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("thaumic_anvil");
+        voidAnvil = new BlockVoidAnvil().setHardness(5.0F).setResistance(2000.0F).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("void_anvil");
     }
 
 
@@ -236,7 +240,8 @@ public class TBBlocks {
         TBBlocks.registerBlock(crystalblockentropy, ItemBlockCrystal.class, crystalblockentropy.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(crystalblockmixed, ItemBlockCrystal.class, crystalblockmixed.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(crystalblocktainted, ItemBlockCrystal.class, crystalblocktainted.getUnlocalizedName().substring(5));
-
+        TBBlocks.registerBlock(thaumicAnvil, ItemTBAnvilBlock.class, thaumicAnvil.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(voidAnvil, ItemTBAnvilBlock.class, voidAnvil.getUnlocalizedName().substring(5));
 
         TBBlocks.registerBlockWithoutItem(pyrofluid,pyrofluid.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(pyrosolid,pyrosolid.getUnlocalizedName().substring(5));
@@ -382,6 +387,7 @@ public class TBBlocks {
         registerRender(plax);
         registerRender(sweed);
         registerRender(aurelia);
+        renderBlockItems(Item.getItemFromBlock(aurelia));
         registerRender(aureliapetalb);
         registerRender(tobacco);
         registerRender(metalleat);
@@ -424,12 +430,24 @@ public class TBBlocks {
         registerRender(overchanter);
         registerRender(campfire);
         registerRender(braizer);
+        registerAnvilRender(thaumicAnvil, 0);
+        registerAnvilRender(thaumicAnvil, 1);
+        registerAnvilRender(thaumicAnvil, 2);
+        registerAnvilRender(voidAnvil, 0);
+        registerAnvilRender(voidAnvil, 1);
+        registerAnvilRender(voidAnvil, 2);
     }
 
     public static void registerRender(Block block) {
         Item item = Item.getItemFromBlock(block);
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(TBCore.modid + ":" + item.getUnlocalizedName().substring(5), "inventory"));
     }
+
+    public static void registerAnvilRender(Block block, int meta) {
+        Item item = Item.getItemFromBlock(block);
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(TBCore.modid + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+    }
+
     public static void renderBlockItems(Item i){
 
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(i, 0, new ModelResourceLocation(

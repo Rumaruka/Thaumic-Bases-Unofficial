@@ -1,6 +1,6 @@
 {
-  "parent": "block/crop",
+  "parent": "block/cross",
   "textures": {
-    "crop": "thaumicbases:blocks/thaumspike"
+    "cross": "thaumicbases:blocks/thaumspike"
   }
 }

@@ -7,7 +7,7 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
 public class EnchantmentEldritchBane extends net.minecraft.enchantment.Enchantment {
-    public EnchantmentEldritchBane(Rarity rarityIn,  int id, int weight) {
+    public EnchantmentEldritchBane(Rarity rarityIn) {
         super(rarityIn, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
     }
 

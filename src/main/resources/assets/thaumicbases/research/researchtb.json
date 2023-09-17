@@ -814,7 +814,7 @@
             ],"required_item": [
             "minecraft:anvil;1;2",
             "thaumicbases:thaumic_anvil;1;2",
-            "thaumcraft::ingot;1;1"
+            "thaumcraft:ingot;1;1"
           ],"meta":["HIDDEN"],
             "warp": 2
           },

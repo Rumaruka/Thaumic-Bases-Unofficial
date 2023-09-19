@@ -423,6 +423,32 @@
         ]
       },
       {
+        "key": "TB.TREE3",
+        "name": "research_name.thaumicbases:peaceTree",
+        "category": "THAUMICBASES",
+        "icons": [
+          "thaumicbases:peacesapling"
+        ],
+        "parents": [
+          "TB.TREE", "LAMPFERTILITY"
+        ],
+        "location": [
+          11, 2
+        ],
+        "stages": [
+          {
+            "text": "research_stage.thaumicbases:peaceTree.1",
+            "required_knowledge": [
+              "THEORY;INFUSION;2"
+            ]
+          },
+          {
+            "text": "research_stage.thaumicbases:peaceTree.2",
+            "recipes": ["TB.peaceSapling"]
+          }
+        ]
+      },
+      {
         "key": "TB.TREE1",
         "name": "research_name.thaumicbases:endtree",
         "category": "THAUMICBASES",
@@ -474,7 +500,7 @@
             "warp": 3
           },
           {
-            "text": "research_stage.thaumicbases:inftree.1",
+            "text": "research_stage.thaumicbases:inftree.2",
             "recipes": ["TB.netherSapling"]
           }
         ]

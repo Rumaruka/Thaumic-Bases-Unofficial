@@ -96,6 +96,11 @@ public class TBBlocks {
     public static Block nethersapling;
     public static Block netherplanks;
 
+    public static Block peacelogs;
+    public static Block peaceleaves;
+    public static Block peacesapling;
+    public static Block peaceplanks;
+
     public static Block enderlogs;
     public static Block enderleaves;
     public static Block endersapling;
@@ -187,6 +192,10 @@ public class TBBlocks {
         goldenleaves = new BlockTBLeaves(0).setUnlocalizedName("goldenleaves").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         goldenplanks = new BlockTBPlanks().setUnlocalizedName("goldenplanks").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         goldensapling = new BlockTBSapling(0).setUnlocalizedName("goldensapling").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        peacesapling = new BlockTBSapling(3).setUnlocalizedName("peacesapling").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        peaceleaves = new BlockTBLeaves(3).setUnlocalizedName("peaceleaves").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        peaceplanks = new BlockTBPlanks().setUnlocalizedName("peaceplanks").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        peacelogs = new BlockTBLog().setUnlocalizedName("peacelogs").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         nethersapling = new BlockTBSapling(1).setUnlocalizedName("nethersapling").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         netherleaves = new BlockTBLeaves(1).setUnlocalizedName("netherleaves").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         netherplanks = new BlockTBPlanks().setUnlocalizedName("netherplanks").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -285,6 +294,12 @@ public class TBBlocks {
         TBBlocks.registerBlock(netherlogs,netherlogs.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(netherleaves,netherleaves.getUnlocalizedName().substring(5));
         TBBlocks.registerBlock(netherplanks,netherplanks.getUnlocalizedName().substring(5));
+
+
+        TBBlocks.registerBlock(peacesapling,peacesapling.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(peacelogs,peacelogs.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(peaceleaves,peaceleaves.getUnlocalizedName().substring(5));
+        TBBlocks.registerBlock(peaceplanks,peaceplanks.getUnlocalizedName().substring(5));
 
 
         TBBlocks.registerBlock(overchanter,overchanter.getUnlocalizedName().substring(5));
@@ -425,6 +440,14 @@ public class TBBlocks {
         registerRender(netherlogs);
         registerRender(netherleaves);
         registerRender(netherplanks);
+
+
+
+        registerRender(peacesapling);
+        renderBlockItems(Item.getItemFromBlock(peacesapling));
+        registerRender(peacelogs);
+        registerRender(peaceleaves);
+        registerRender(peaceplanks);
 
 
         registerRender(overchanter);

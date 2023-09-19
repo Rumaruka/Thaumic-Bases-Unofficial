@@ -122,7 +122,7 @@ public static Item knozeseed;
 
 
         plaxseed = new ItemSeeds(TBBlocks.plax,Blocks.FARMLAND).setUnlocalizedName("plaxseed");
-        sweedseed = new ItemSeeds(TBBlocks.sweed,Blocks.GRASS).setUnlocalizedName("sweedseed");
+        sweedseed = new ItemGrassSeeds(TBBlocks.sweed).setUnlocalizedName("sweedseed");
         tobaccoseed = new ItemSeeds(TBBlocks.tobacco,Blocks.FARMLAND).setUnlocalizedName("tobaccoseed");
         aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal");
         metalleatseed = new ItemSeeds(TBBlocks.metalleat,Blocks.FARMLAND).setUnlocalizedName("metalleatseed");
@@ -130,7 +130,7 @@ public static Item knozeseed;
         redlonseed = new ItemSeeds(TBBlocks.redlonstem,Blocks.FARMLAND).setUnlocalizedName("redlonseed");
         lucriteseed = new ItemSeeds(TBBlocks.lucrite,Blocks.FARMLAND).setUnlocalizedName("lucriteseed");
 
-        glieoniaseed = new ItemSeeds(TBBlocks.glieonia,Blocks.GRASS).setUnlocalizedName("glieoniaseed"); // AeXiaohu modified 修复荧粉花只能种在耕地上，现在只能种在草地上
+        glieoniaseed = new ItemGrassSeeds(TBBlocks.glieonia).setUnlocalizedName("glieoniaseed"); // AeXiaohu modified 修复荧粉花只能种在耕地上，现在只能种在草地上
 
         knozeseed = new ItemKnozeSeeds(TBBlocks.knoze).setUnlocalizedName("knozeseed");
 

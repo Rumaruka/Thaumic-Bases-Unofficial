@@ -129,6 +129,7 @@ public class EnchatmentHandler {
         proxy.registerComplexObjectTag(new ItemStack(TBBlocks.goldenleaves),new AspectList().add(Aspect.PLANT,5));
         proxy.registerComplexObjectTag(new ItemStack(TBBlocks.enderleaves),new AspectList().add(Aspect.PLANT,5));
         proxy.registerComplexObjectTag(new ItemStack(TBBlocks.netherleaves),new AspectList().add(Aspect.PLANT,5));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.peaceleaves),new AspectList().add(Aspect.PLANT,5));
 
         proxy.registerComplexObjectTag(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST,26).add(Aspect.CRAFT,6));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.briar_seedbag), new AspectList().add(Aspect.PLANT,5).add(Aspect.LIFE,5));

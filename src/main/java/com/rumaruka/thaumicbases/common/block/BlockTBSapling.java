@@ -101,6 +101,9 @@ public class BlockTBSapling extends BlockBush implements IGrowable {
             case 2:
                 worldGenerator = new TBTreeBuilder(true, TBBlocks.endersapling, TBBlocks.enderleaves, TBBlocks.enderlogs);
                 break;
+            case 3:
+                worldGenerator = new TBTreeBuilder(true, TBBlocks.peacesapling, TBBlocks.peaceleaves, TBBlocks.peacelogs);
+                break;
 
 
         }

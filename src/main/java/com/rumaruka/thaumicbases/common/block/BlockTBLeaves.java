@@ -1,29 +1,30 @@
 package com.rumaruka.thaumicbases.common.block;
 
+import com.rumaruka.thaumicbases.api.dummycore_remove.utils.MathUtils;
 import com.rumaruka.thaumicbases.init.TBBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.BlockPlanks;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.IStringSerializable;
-import net.minecraft.util.NonNullList;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.IShearable;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
     public enum LeafGrowth implements IStringSerializable {
         FRESH(0), GROWING(1), READY(2), MATURED(3);
 
-        private int meta;
+        private final int meta;
 
         LeafGrowth(int meta) {
             this.meta = meta;
@@ -80,11 +81,25 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
     }
 
     public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-        return 60;
+        if(this == TBBlocks.netherleaves)
+            return 0;
+
+        return super.getFlammability(world, pos, face);
     }
 
     public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-        return 30;
+        if(this == TBBlocks.netherleaves)
+            return 0;
+
+        return super.getFireSpreadSpeed(world, pos, face);
+    }
+
+    public boolean isFireSource(World world, BlockPos pos, EnumFacing side)
+    {
+        if(this == TBBlocks.netherleaves)
+            return true;
+
+        return super.isFireSource(world, pos, side);
     }
 
     public boolean isOpaqueCube(IBlockState state) {
@@ -97,11 +112,215 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
 
     @SideOnly(value=Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-        list.add(new ItemStack((Block)this));
+        list.add(new ItemStack(this));
     }
 
     protected ItemStack getSilkTouchDrop(IBlockState state) {
-        return new ItemStack((Block)this);
+        return new ItemStack(this);
+    }
+
+    public void spawnAction(World w, Random rnd, BlockPos pos)
+    {
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
+        if(this == TBBlocks.peaceleaves)// TODO
+        {
+            if(rnd.nextDouble() > 0.03D)
+                return;
+
+            int dy = y;
+            Biome base = w.getBiome(new BlockPos(x,0, z));
+            if(base != null)
+            {
+                List<Biome.SpawnListEntry> l = base.getSpawnableList(EnumCreatureType.CREATURE);
+                if(l != null && !l.isEmpty())
+                {
+                    Biome.SpawnListEntry entry = l.get(rnd.nextInt(l.size()));
+                    if(entry != null && entry.entityClass != null)
+                    {
+                        Class<?> c = entry.entityClass;
+                        if(EntityLiving.class.isAssignableFrom(c))
+                        {
+                            try
+                            {
+                                EntityLiving el = (EntityLiving) c.getConstructor(World.class).newInstance(w);
+                                while(--y >= dy-6)
+                                {
+                                    el.setPositionAndRotation(x+0.5D, y, z+0.5D, 0, 0);
+                                    if(el.getCanSpawnHere())
+                                    {
+                                        w.spawnEntity(el);
+                                        break;
+                                    }
+                                    continue;
+                                }
+                            }catch(Exception e)
+                            {
+                                FMLLog.warning("[TB]Tried to create an entity of class "+c+" but failed! The exception is listed below:");
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if(this == TBBlocks.netherleaves)
+        {
+            int dy = y;
+            while(--y >= dy-8)
+            {
+                Block b = w.getBlockState(new BlockPos(x,y,z)).getBlock();
+                if(!b.isAir(w.getBlockState(pos), w, new BlockPos(x, y, z)))
+                {
+                    boolean netheric = b instanceof BlockNetherrack || b instanceof BlockSoulSand || b == Blocks.QUARTZ_BLOCK;
+                    if(netheric && rnd.nextDouble() <= 0.05D)
+                    {
+                        Biome hellBiome = Biomes.HELL;
+                        List<Biome.SpawnListEntry> l = rnd.nextBoolean() ? hellBiome.getSpawnableList(EnumCreatureType.CREATURE) : hellBiome.getSpawnableList(EnumCreatureType.MONSTER);
+                        if(l != null && !l.isEmpty())
+                        {
+                            Biome.SpawnListEntry entry = l.get(rnd.nextInt(l.size()));
+                            if(entry != null && entry.entityClass != null)
+                            {
+                                Class<?> c = entry.entityClass;
+                                if(EntityLiving.class.isAssignableFrom(c))
+                                {
+                                    try
+                                    {
+                                        EntityLiving el = (EntityLiving) c.getConstructor(World.class).newInstance(w);
+
+                                        el.setPositionAndRotation(x+0.5D, y+1, z+0.5D, 0, 0);
+                                        el.onInitialSpawn(w.getDifficultyForLocation(new BlockPos(el)), null);
+
+                                        if(el.getCanSpawnHere())
+                                        {
+                                            w.spawnEntity(el);
+                                            break;
+                                        }
+
+                                    }catch(Exception e)
+                                    {
+                                        FMLLog.warning("[TB]Tried to create an entity of class "+c+" but failed! The exception is listed below:");
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                        }
+
+                        break;
+                    }
+                    boolean flag = b instanceof BlockDirt || b instanceof BlockGrass || b instanceof BlockGravel || b instanceof BlockSand || b instanceof BlockStone;
+                    if(!flag)
+                    {
+                        ItemStack stk = new ItemStack(b,1,getMetaFromState(w.getBlockState(pos)));
+                        if(!stk.isEmpty()&&stk.getItem()!=null)
+                            if(OreDictionary.getOreIDs(stk) != null && OreDictionary.getOreIDs(stk).length > 0)
+                            {
+                                OreDict:for(int i = 0; i < OreDictionary.getOreIDs(stk).length; ++i)
+                                {
+                                    int id = OreDictionary.getOreIDs(stk)[i];
+                                    if(id != -1)
+                                    {
+                                        String ore = OreDictionary.getOreName(id);
+                                        if(ore != null && ! ore.isEmpty())
+                                        {
+                                            flag = ore.contains("dirt") || ore.contains("grass") || ore.contains("sand") || ore.contains("gravel") || ore.contains("stone");
+                                            if(flag)
+                                                break;
+                                        }
+                                    }
+                                }
+                            }
+                    }
+                    if(flag)
+                    {
+                        double random = rnd.nextDouble();
+                        Block setTo = random <= 0.6D ? Blocks.NETHERRACK : random <= 0.9D ? Blocks.SOUL_SAND : Blocks.QUARTZ_ORE;
+                        w.setBlockState(new BlockPos(x, y, z), setTo.getDefaultState());
+                        break;
+                    }
+                }
+            }
+        }
+        if(this == TBBlocks.enderleaves)
+        {
+            int dy = y;
+            while(--y >= dy-11)
+            {
+                Block b = w.getBlockState(new BlockPos(x, y, z)).getBlock();
+                if(!b.isAir(w.getBlockState(pos), w, new BlockPos(x, y, z)))
+                {
+                    boolean end = b == Blocks.END_STONE || b instanceof BlockObsidian;
+                    if(end && rnd.nextDouble() <= 0.02D)
+                    {
+                        Biome hellBiome = Biomes.SKY;
+                        List<Biome.SpawnListEntry> l = rnd.nextBoolean() ? hellBiome.getSpawnableList(EnumCreatureType.CREATURE) : hellBiome.getSpawnableList(EnumCreatureType.MONSTER);
+                        if(l != null && !l.isEmpty())
+                        {
+                            Biome.SpawnListEntry entry = l.get(rnd.nextInt(l.size()));
+                            if(entry != null && entry.entityClass != null)
+                            {
+                                Class<?> c = entry.entityClass;
+                                if(EntityLiving.class.isAssignableFrom(c))
+                                {
+                                    try
+                                    {
+                                        EntityLiving el = (EntityLiving) c.getConstructor(World.class).newInstance(w);
+
+                                        el.setPositionAndRotation(x+0.5D, y+1, z+0.5D, 0, 0);
+                                        el.onInitialSpawn(w.getDifficultyForLocation(new BlockPos(el)), null);
+
+                                        if(w.isAirBlock(new BlockPos(x, y+1, z)))
+                                        {
+                                            w.spawnEntity(el);
+                                            break;
+                                        }
+
+                                    }catch(Exception e)
+                                    {
+                                        FMLLog.warning("[TB]Tried to create an entity of class "+c+" but failed! The exception is listed below:");
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                        }
+
+                        break;
+                    }
+                    boolean flag = b instanceof BlockDirt || b instanceof BlockGrass || b instanceof BlockGravel || b instanceof BlockSand || b instanceof BlockStone && !(b instanceof BlockObsidian) && !(b == Blocks.END_STONE);
+                    if(!flag)
+                    {
+                        ItemStack stk = new ItemStack(b,1,getMetaFromState(w.getBlockState(pos)));
+                        if(!stk.isEmpty()&&stk.getItem()!=null)
+                            if(OreDictionary.getOreIDs(stk) != null && OreDictionary.getOreIDs(stk).length > 0)
+                            {
+                                OreDict:for(int i = 0; i < OreDictionary.getOreIDs(stk).length; ++i)
+                                {
+                                    int id = OreDictionary.getOreIDs(stk)[i];
+                                    if(id != -1)
+                                    {
+                                        String ore = OreDictionary.getOreName(id);
+                                        if(ore != null && ! ore.isEmpty())
+                                        {
+                                            flag = ore.contains("dirt") || ore.contains("grass") || ore.contains("sand") || ore.contains("gravel") || ore.contains("stone");
+                                            if(flag)
+                                                break;
+                                        }
+                                    }
+                                }
+                            }
+                    }
+                    if(flag)
+                    {
+                        double random = rnd.nextDouble();
+                        Block setTo = random <= 0.9D ? Blocks.END_STONE : Blocks.OBSIDIAN;
+                        w.setBlockState(new BlockPos(x, y, z), setTo.getDefaultState());
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
@@ -193,6 +412,8 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
                 } else {
                     this.destroy(worldIn, pos);
                 }
+
+                spawnAction(worldIn, rand, pos);
             }
         } // End of modification
 
@@ -235,17 +456,6 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
             spawnAsEntity(worldIn, pos, new ItemStack(Items.GOLDEN_APPLE, 1));
     }
 
-    public void dropMagmacream(World worldIn, BlockPos pos, IBlockState state, int chance)
-    {
-
-        if (leafType==1&& worldIn.rand.nextInt(chance)<60)
-            spawnAsEntity(worldIn, pos, new ItemStack(Items.MAGMA_CREAM, 1));
-    }
-    public void dropEnderpearl(World world,BlockPos pos, IBlockState state, int chance){
-        if(leafType==2&& world.rand.nextInt(chance)<60){
-            spawnAsEntity(world,pos,new ItemStack(Items.ENDER_PEARL,1));
-        }
-    }
     @Override
     public int tickRate(World world) {
         return 8;
@@ -256,10 +466,42 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
         return 0;
     }
 
+    @SideOnly(Side.CLIENT)
+    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    {
+        if (worldIn.isRaining() && !worldIn.canBlockSeeSky(pos.down()) && rand.nextInt(15) == 1)
+        {
+            double d0 = pos.getX() + rand.nextFloat();
+            double d1 = pos.getY() - 0.05D;
+            double d2 = pos.getZ() + rand.nextFloat();
+            worldIn.spawnParticle(EnumParticleTypes.DRIP_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+        }
 
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
 
-    public int getFlammability(IBlockAccess world, int x, int y, int z, int metadata, EnumFacing face) {
-        return 150;
+        if(this == TBBlocks.goldenleaves)
+            worldIn.spawnParticle(EnumParticleTypes.REDSTONE, x+ rand.nextDouble(), y+ rand.nextDouble(), z+ rand.nextDouble(), 1, 1, 0);
+
+        if(this == TBBlocks.peaceleaves && rand.nextFloat() <= 0.01F)
+            worldIn.spawnParticle(EnumParticleTypes.HEART, x+ rand.nextDouble(), y+ rand.nextDouble(), z+ rand.nextDouble(), 0, 10, 0);
+
+        if(this == TBBlocks.netherleaves)
+        {
+            if(worldIn.isAirBlock(new BlockPos(x, y-1, z)))
+                worldIn.spawnParticle(EnumParticleTypes.DRIP_LAVA, x+ rand.nextDouble(), y, z+ rand.nextDouble(), 0, 0, 0);
+        }
+
+        if(this == TBBlocks.enderleaves)
+            worldIn.spawnParticle(EnumParticleTypes.PORTAL, x+ rand.nextDouble(), y+ rand.nextDouble(), z+ rand.nextDouble(), MathUtils.randomDouble(rand), MathUtils.randomDouble(rand), MathUtils.randomDouble(rand));
+    }
+
+    public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
+        if(this == TBBlocks.netherleaves)
+            return true;
+
+        return super.isFlammable(world, pos, face);
     }
 
     @Override
@@ -299,7 +541,9 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
             case 2:
                 ret.add(new ItemStack(TBBlocks.enderleaves, 1, 0));
                 break;
-
+            case 3:
+                ret.add(new ItemStack(TBBlocks.peaceleaves, 1, 0));
+                break;
         }
         return ret;
     }
@@ -381,6 +625,8 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
             ret.add(new ItemStack(TBBlocks.nethersapling));
         if(leafType==2&&rand.nextInt(chance)==0)
             ret.add(new ItemStack(TBBlocks.endersapling));
+        if(leafType==3&&rand.nextInt(chance)==0)
+            ret.add(new ItemStack(TBBlocks.peacesapling));
 
         chance = 200;
         if (fortune > 0)
@@ -390,10 +636,9 @@ public class BlockTBLeaves extends BlockLeaves implements IShearable { // End of
         }
 
         this.captureDrops(true);
-        if (world instanceof World)
-            this.dropApple((World)world, pos, state, chance);
-            this.dropEnderpearl((World) world,pos,state,chance);
-            this.dropMagmacream((World) world,pos,state,chance);
+        if (world instanceof World) {
+            this.dropApple((World) world, pos, state, chance);
+        }
         ret.addAll(this.captureDrops(false));
         return ret;
     }

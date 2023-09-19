@@ -1,8 +1,13 @@
 package com.rumaruka.thaumicbases.common.block;
 
+import com.rumaruka.thaumicbases.init.TBBlocks;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
@@ -56,6 +61,35 @@ public class BlockTBLog extends BlockLog {
         }
 
         return i;
+    }
+
+    public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+        if(this == TBBlocks.netherlogs)
+            return 0;
+
+        return super.getFireSpreadSpeed(world, pos, face);
+    }
+
+    public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
+        if(this == TBBlocks.netherlogs)
+            return true;
+
+        return super.isFlammable(world, pos, face);
+    }
+
+    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+        if(this == TBBlocks.netherleaves)
+            return 0;
+
+        return super.getFlammability(world, pos, face);
+    }
+
+    public boolean isFireSource(World world, BlockPos pos, EnumFacing side)
+    {
+        if(this == TBBlocks.netherlogs)
+            return true;
+
+        return super.isFireSource(world, pos, side);
     }
 
     @Nonnull

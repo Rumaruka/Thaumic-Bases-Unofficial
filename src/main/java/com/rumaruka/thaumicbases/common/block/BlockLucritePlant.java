@@ -2,19 +2,19 @@ package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IPlantable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,11 +40,6 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
         this.disableStats();
     }
 
-    protected boolean canPlaceBlockOn(Block b)
-    {
-        return b != null && (b == Blocks.GRASS || b == Blocks.DIRT || b instanceof BlockGrass || b instanceof BlockDirt);
-    }
-
     @Override
     protected BlockStateContainer createBlockState() {
         if(AGE==null){
@@ -65,15 +60,14 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
         return Items.GOLD_NUGGET;
     }
 
-    @Override
-    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-        Block b = world.getBlockState(pos.down()).getBlock();
-        return canPlaceBlockOn(b);
-    }
     public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
     {
         super.updateTick(w,pos, state, rnd);
 
+        if (rnd.nextInt(3) == 0)
+        {
+            this.checkAndDropBlock(w, pos, state);
+        }
         if (!w.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (w.getLightFromNeighbors(pos.up()) >= 9)
         {

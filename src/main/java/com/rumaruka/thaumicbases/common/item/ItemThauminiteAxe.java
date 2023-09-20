@@ -10,7 +10,7 @@ public class ItemThauminiteAxe extends ItemAxe  {
 
 
     public ItemThauminiteAxe(ToolMaterial enumtoolmaterial) {
-        super(enumtoolmaterial,8.0F, -3.0F);
+        super(enumtoolmaterial,9.8F, -3.0F);
     }
 
     @Override

@@ -1,25 +1,24 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IPlantable;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-//public class BlockMetalleat extends BlockBush implements IGrowable {
 public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaohu modified
 
 
@@ -68,10 +67,7 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
     public IBlockState getStateFromMeta(int meta) {
         return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
     }
-    protected boolean canPlaceBlockOn(Block b)
-    {
-        return (b instanceof BlockFarmland);
-    }
+
     public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
     {
         super.updateTick(w,pos, state, rnd);
@@ -147,11 +143,6 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
 
         return f;
     }
-    @Override
-    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-        Block b = world.getBlockState(pos.down()).getBlock();
-        return canPlaceBlockOn(b);
-    }
 
     @Override
     public int tickRate(World worldIn) {
@@ -166,16 +157,6 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
 
 
     @Override
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
-        return !this.isMaxAge(state);
-    }
-
-    @Override
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-        return true;
-    }
-
-    @Override
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
@@ -187,10 +168,6 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
 
         worldIn.setBlockState(pos, this.withAge(i), 2);
 
-    }
-    protected int getBonemealAgeIncrease(World worldIn)
-    {
-        return MathHelper.getInt(worldIn.rand, 2, 5);
     }
 
     public int getMaxAge()

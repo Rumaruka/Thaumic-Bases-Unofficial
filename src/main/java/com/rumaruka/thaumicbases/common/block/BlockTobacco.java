@@ -1,19 +1,19 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCrops;
+import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IPlantable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,11 +51,6 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
     {
         return TBItems.tobacco_leaves;
     }
-
-    protected boolean canPlaceBlockOn(Block b)
-    {
-        return b != null && (b == Blocks.GRASS || b == Blocks.DIRT || b instanceof BlockGrass || b instanceof BlockDirt);
-    }
     @Override
     protected BlockStateContainer createBlockState() {
         if(AGE==null){
@@ -71,11 +66,6 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
     @Override
     public IBlockState getStateFromMeta(int meta) {
         return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
-    }
-    @Override
-    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-        Block b = world.getBlockState(pos.down()).getBlock();
-        return canPlaceBlockOn(b);
     }
 
     @Override

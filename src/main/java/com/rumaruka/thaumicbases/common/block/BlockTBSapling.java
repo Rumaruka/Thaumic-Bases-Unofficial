@@ -3,6 +3,7 @@ package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.init.TBBlocks;
+import com.rumaruka.thaumicbases.utils.generation.TBBigTreeBuilder;
 import com.rumaruka.thaumicbases.utils.generation.TBTreeBuilder;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -96,10 +97,10 @@ public class BlockTBSapling extends BlockBush implements IGrowable {
                 worldGenerator = new TBTreeBuilder(true, TBBlocks.goldensapling, TBBlocks.goldenleaves, TBBlocks.goldenlogs);
                 break;
             case 1:
-                worldGenerator = new TBTreeBuilder(true, TBBlocks.nethersapling, TBBlocks.netherleaves, TBBlocks.netherlogs);
+                worldGenerator = new TBBigTreeBuilder(true, 6, TBBlocks.nethersapling, TBBlocks.netherlogs, TBBlocks.netherleaves);
                 break;
             case 2:
-                worldGenerator = new TBTreeBuilder(true, TBBlocks.endersapling, TBBlocks.enderleaves, TBBlocks.enderlogs);
+                worldGenerator = new TBBigTreeBuilder(true, 4, TBBlocks.endersapling, TBBlocks.enderlogs, TBBlocks.enderleaves);
                 break;
             case 3:
                 worldGenerator = new TBTreeBuilder(true, TBBlocks.peacesapling, TBBlocks.peaceleaves, TBBlocks.peacelogs);

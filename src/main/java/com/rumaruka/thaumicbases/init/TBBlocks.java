@@ -410,6 +410,7 @@ public class TBBlocks {
         registerRender(lucrite);
         registerRender(redlonstem);
         registerRender(briar);
+        registerAnvilRender(briar, 1);
         registerRender(glieonia);
         registerRender(voidplant);
 

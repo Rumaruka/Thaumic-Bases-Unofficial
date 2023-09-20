@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "thaumicbases:blocks/briar/stage_3_bot"
+  }
+}

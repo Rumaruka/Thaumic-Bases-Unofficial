@@ -1,8 +1,26 @@
 {
-	"credit": "Made with Blockbench",
 	"textures": {
 		"revolverBasic1": "thaumicbases:items/revolverbasic1"
 	},
+	"overrides": [
+		{
+			"predicate": {
+				"thaumicbases:void": 1
+			},
+			"model": "thaumicbases:item/revolver_void"
+		},
+		{
+			"predicate": {
+				"thaumicbases:primal": 1
+			},
+			"model": "thaumicbases:item/revolver_primal"
+		},
+		{
+			"predicate": {
+				"thaumicbases:taint": 1
+			},
+			"model": "thaumicbases:item/revolver_taint"
+		}],
 	"elements": [
 		{
 			"name": "Voxels",

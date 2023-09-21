@@ -1,7 +1,5 @@
 package com.rumaruka.thaumicbases.common.handlers;
 
-import com.rumaruka.thaumicbases.common.enchantment.EnumInfusionEnchantmentGun;
-import com.rumaruka.thaumicbases.common.item.ItemRevolver;
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBEnchant;
 import com.rumaruka.thaumicbases.init.TBItems;
@@ -12,17 +10,11 @@ import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectEventProxy;
@@ -43,17 +35,13 @@ public class EnchatmentHandler {
             EntityPlayer attacker = (EntityPlayer) e.getSource().getTrueSource();
             ItemStack mainHund = attacker.getHeldItemMainhand();
 
-            if (!mainHund.isEmpty() && (mainHund.getItem() instanceof ItemSword || mainHund.getItem() instanceof ItemRevolver)) {
+            if (!mainHund.isEmpty() && (mainHund.getItem() instanceof ItemSword)) {
 
 
-                if (EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund) > 0 || EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(mainHund, EnumInfusionEnchantmentGun.WISE) > 0) {
+                if (EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund) > 0) {
                     int enchLevel = 0;
                     if(mainHund.getItem() instanceof ItemSword)
-                    enchLevel = EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund);
-                    if(mainHund.getItem() instanceof ItemRevolver)
-                        enchLevel = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(mainHund, EnumInfusionEnchantmentGun.WISE);
-                    if(attacker.getHeldItemOffhand().getItem() instanceof ItemRevolver)
-                        enchLevel = EnumInfusionEnchantmentGun.getInfusionEnchantmentLevel(attacker.getHeldItemOffhand(), EnumInfusionEnchantmentGun.WISE);
+                        enchLevel = EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund);
                     ResearchCategory[] rc = ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
                     ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
                     ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
@@ -98,27 +86,6 @@ public class EnchatmentHandler {
             }
 
 
-        }
-    }
-
-    @SideOnly(value = Side.CLIENT)
-    @SubscribeEvent
-    public void tooltipEvent(ItemTooltipEvent event) {
-        event.getItemStack();
-        NBTTagList nbttaglist = EnumInfusionEnchantmentGun.getInfusionEnchantmentTagList(event.getItemStack());
-        if(nbttaglist != null) {
-            for(int j = 0; j < nbttaglist.tagCount(); ++j) {
-                short k = nbttaglist.getCompoundTagAt(j).getShort("id");
-                short l = nbttaglist.getCompoundTagAt(j).getShort("lvl");
-                if(k < 0 || k >= EnumInfusionEnchantmentGun.values().length)
-                    continue;
-                String s = TextFormatting.GOLD + I18n
-                        .translateToLocal("enchantment.infusion." + EnumInfusionEnchantmentGun.values()[k].toString());
-                if(EnumInfusionEnchantmentGun.values()[k].maxLevel > 1) {
-                    s = s + " " + I18n.translateToLocal("enchantment.level." + l);
-                }
-                event.getToolTip().add(1, s);
-            }
         }
     }
 

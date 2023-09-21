@@ -4,6 +4,13 @@ tc.research_category.THAUMICBASES=Thaumic Bases
 #tooltip
 tb.tooltip.aer=Test
 tb.tooltip.fire=Test 2
+#enchantment
+enchantment.elderKnowledge=Elder Knowledge
+enchantment.eldritchBane=Eldritch Bane
+enchantment.magicTouch=Magic Touch
+enchantment.tainted=Tainted
+enchantment.vaporisin=Vaporising
+
 #enchantments
 enchantment.elderKnowledge.desc=Adds a chance to obtain Observation Points to your Thaumonomicon.
 enchantment.eldritchBane.desc=Increases damage against otherworldy mobs such as Endermen and Eldritch Guardians.
@@ -139,17 +146,22 @@ item.knozeseed.name=Rosa Mysteria Sprout
 item.knowledge_shard.name=Knowledge Shard
 
 #Enchantments for Revolver
-enchantment.infusion.ACCURACY=Sharpshooter
-enchantment.infusion.BOART=Spider-Killer
-enchantment.infusion.BOE=Purifying
-enchantment.infusion.DUELING=Dueling
-enchantment.infusion.HEAVY=Armwhack
-enchantment.infusion.EFFICIENCY=Reservation
-enchantment.infusion.POWER=Empowered
-enchantment.infusion.SMITE=Silver-Cased
-enchantment.infusion.SPEED=Fastshot
-enchantment.infusion.TAINT=Taint-Imbued
-enchantment.infusion.WISE=Mind-Sapping
+revolverUpgrade.ACCURACY.name=Accuracy
+revolverUpgrade.POWER.name=Power
+revolverUpgrade.SILVER.name=Silver
+revolverUpgrade.POISONED.name=Poisoned
+revolverUpgrade.BANE_OF_ATROPODS.name=Bane of Atropods
+revolverUpgrade.BANE_OF_ELDRITCH.name=Bane of Eldritch
+revolverUpgrade.PIERCING.name=Piercing
+revolverUpgrade.DUELING.name=Dueling
+revolverUpgrade.TAINTED.name=Tainted
+revolverUpgrade.PRIMAL.name=Primal
+revolverUpgrade.SPEED.name=Speed
+revolverUpgrade.EFFICIENCY.name=Efficiency
+revolverUpgrade.ELDRITCH.name=Eldritch
+revolverUpgrade.VOID.name=Void
+revolverUpgrade.KNOWLEDGE.name=Knowledge
+revolverUpgrade.HEAVY.name=Heavy
 
 #Unused so far
 item.tb.spawnercompass.name=Thauminite Compass

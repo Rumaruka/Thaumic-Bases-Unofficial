@@ -29,7 +29,9 @@ public class TBSounds {
 
 
         fire_loop = getRegisteredSoundEvent("thaumicbases:fire_loop");
-
+        revolver_shot = getRegisteredSoundEvent("thaumicbases:revolver_shot");
+        revolver_no_ammo = getRegisteredSoundEvent("thaumicbases:revolver_no_ammo");
+        revolver_reload = getRegisteredSoundEvent("thaumicbases:revolver_reload");
 
 
     }

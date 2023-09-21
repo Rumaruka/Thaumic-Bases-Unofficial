@@ -4,6 +4,23 @@
     "category": "master",
       "subtitle": "fire_loop",
       "sounds": [ {"name": "thaumicbases:fire_loop"}   ]
-  }
+  },
 
+  "revolver_shot": {
+    "category": "master",
+    "subtitle": "revolver_shot",
+    "sounds": [ {"name": "thaumicbases:revolver_shot"}   ]
+  },
+
+  "revolver_no_ammo": {
+    "category": "master",
+    "subtitle": "revolver_no_ammo",
+    "sounds": [ {"name": "thaumicbases:revolver_no_ammo"}   ]
+  },
+
+  "revolver_reload": {
+    "category": "master",
+    "subtitle": "revolver_reload",
+    "sounds": [ {"name": "thaumicbases:revolver_reload"}   ]
+  }
 }

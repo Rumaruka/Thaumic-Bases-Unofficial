@@ -43,16 +43,13 @@ public class RevolverInfusionRecipe extends InfusionRecipe{
 			if(up.conflictsWith(upgrade))
 				return false;
 		}
-		
+
 		if(ItemRevolver.getUpgradeLevel(central, upgrade)+1 > upgrade.getMaxLevel())
 			return false;
 		
-		if (getRecipeInput() == null) 
+		if (getRecipeInput() == null)
 			return false;
-		
-		if(this.research.length() <= 0)
-			return false;
-		
+
 		if (!ThaumcraftCapabilities.getKnowledge(player).isResearchKnown(this.research))
 			return false;
 		
@@ -89,7 +86,7 @@ public class RevolverInfusionRecipe extends InfusionRecipe{
 				return false;
 		}
 		
-		return ii.size() == 0;
+		return (this.getRecipeInput() == Ingredient.EMPTY || this.getRecipeInput().apply(central)) && RecipeMatcher.findMatches(input, this.getComponents()) != null;
 	}
 	
 	public Object getRecipeOutput() {

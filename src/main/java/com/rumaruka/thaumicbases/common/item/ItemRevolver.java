@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import com.rumaruka.thaumicbases.api.RevolverUpgrade;
 import com.rumaruka.thaumicbases.api.dummycore_remove.utils.DummyPacketHandler;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
+import com.rumaruka.thaumicbases.common.libs.TBSounds;
 import com.rumaruka.thaumicbases.core.TBCore;
 import com.rumaruka.thaumicbases.init.TBGuiHandler;
 import com.rumaruka.thaumicbases.init.TBItems;
@@ -22,9 +23,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
@@ -43,6 +42,12 @@ import java.util.UUID;
 
 public class ItemRevolver extends Item implements IWarpingGear
 {
+	public ItemRevolver(){
+		addPropertyOverride(new ResourceLocation(TBCore.modid, "void"), (stack, worldIn, entityIn) -> ItemRevolver.getUpgradeLevel(stack, RevolverUpgrade.uvoid) > 0? 1F : 0F);
+		addPropertyOverride(new ResourceLocation(TBCore.modid, "primal"), (stack, worldIn, entityIn) -> ItemRevolver.getUpgradeLevel(stack, RevolverUpgrade.primal) > 0? 1F : 0F);
+		addPropertyOverride(new ResourceLocation(TBCore.modid, "taint"), (stack, worldIn, entityIn) -> ItemRevolver.getUpgradeLevel(stack, RevolverUpgrade.tainted) > 0? 1F : 0F);
+	}
+
 	public static void addUpgrade(ItemStack stk, RevolverUpgrade upgrade, int level)
 	{
 		if(stk.hasTagCompound() && stk.getTagCompound().hasKey("tb.upgrades"))
@@ -143,7 +148,7 @@ public class ItemRevolver extends Item implements IWarpingGear
 			if(stk.isEmpty() || stk.getItemDamage() > stk.getMaxDamage())
 				return null;
 			
-			DummyPacketHandler.playSoundOnServer(w, "thaumicbases:revolver.shot", user.posX, user.posY, user.posZ, 3, 1F);
+			w.playSound(null, user.getPosition(), TBSounds.revolver_shot, SoundCategory.PLAYERS, 3, 1F);
 
 			stk.getTagCompound().setDouble("barrelRotation", stk.getTagCompound().getDouble("barrelRotation")+45);
 
@@ -157,7 +162,7 @@ public class ItemRevolver extends Item implements IWarpingGear
 
 				if(jar.isEmpty())
 				{
-					DummyPacketHandler.playSoundOnServer(w, "thaumicbases:revolver.click", user.posX, user.posY, user.posZ, 3, 2F);
+					w.playSound(null, user.getPosition(), TBSounds.revolver_no_ammo, SoundCategory.PLAYERS, 3, 2F);
 					stk.getTagCompound().setDouble("barrelRotation", stk.getTagCompound().getDouble("barrelRotation")+45);
 
 					return super.onItemRightClick(w, user, handIn);
@@ -208,7 +213,7 @@ public class ItemRevolver extends Item implements IWarpingGear
 				if(addShots)
 				{
 					stk.getTagCompound().setInteger("shots", addedShots < 0 ? 1 : addedShots);
-					DummyPacketHandler.playSoundOnServer(w, "thaumicbases:revolver.reload", user.posX, user.posY, user.posZ, 3, 2F);
+					w.playSound(null, user.getPosition(), TBSounds.revolver_reload, SoundCategory.PLAYERS, 3, 2F);
 				}
 
 				if(aspects != null && aspects.visSize() > 0)
@@ -226,7 +231,7 @@ public class ItemRevolver extends Item implements IWarpingGear
 				}
 			}else
 			{
-				DummyPacketHandler.playSoundOnServer(w, "thaumicbases:revolver.click", user.posX, user.posY, user.posZ, 3, 2F);
+				w.playSound(null, user.getPosition(), TBSounds.revolver_reload, SoundCategory.PLAYERS, 3, 2F);
 			}
 		}
 		return super.onItemRightClick(w, user, handIn);

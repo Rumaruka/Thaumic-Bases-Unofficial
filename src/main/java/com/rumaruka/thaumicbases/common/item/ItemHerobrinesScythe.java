@@ -61,7 +61,7 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
 
     public static void attack(EntityPlayer attacker, List<EntityLivingBase> doNotAttack, EntityLivingBase attacked)
     {
-        AxisAlignedBB aabb = new AxisAlignedBB(attacked.posX-1, attacked.posY-1, attacked.posZ-1, attacked.posX+1, attacked.posY+1, attacked.posZ+1).expand(6, 6, 6);
+        AxisAlignedBB aabb = new AxisAlignedBB(attacked.posX-1, attacked.posY-1, attacked.posZ-1, attacked.posX+1, attacked.posY+1, attacked.posZ+1).expand(6, 6, 6).expand(-6, -6, -6);
 
         List<EntityLivingBase> mobs = attacked.world.getEntitiesWithinAABB(EntityLivingBase.class, aabb);
 

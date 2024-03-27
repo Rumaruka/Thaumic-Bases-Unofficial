@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.api.dummycore_remove.utils.MathUtils;
-import com.rumaruka.thaumicbases.common.libs.TBSounds;
 import com.rumaruka.thaumicbases.common.tiles.TileCampfire;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
@@ -17,13 +16,14 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import thaumcraft.client.fx.FXDispatcher;
+import thaumcraft.common.lib.SoundsTC;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 
 
-public class BlockCampfire extends BlockContainer implements ITileEntityProvider {
+public class BlockCampfire extends BlockContainer implements ITileEntityProvider{
 
     public static PropertyInteger STATE = PropertyInteger.create("state", 0, 2);
 
@@ -48,55 +48,59 @@ public class BlockCampfire extends BlockContainer implements ITileEntityProvider
         return new TileCampfire();
     }
 
-    @Override
-    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-
-        if(stateIn.getValue(STATE)>1) {
-
+    public void randomDisplayTick(IBlockState state, World w, BlockPos pos, Random r)
+    {
+        if(this.getMetaFromState(state) > 1)
+        {
             int x = pos.getX();
             int y = pos.getY();
             int z = pos.getZ();
-            TileCampfire tc = (TileCampfire) worldIn.getTileEntity(pos);
+            TileCampfire tc = (TileCampfire) w.getTileEntity(pos);
             if(tc.tainted)
                 FXDispatcher.INSTANCE.drawPollutionParticles(pos);
-                worldIn.spawnParticle(EnumParticleTypes.FLAME,x+0.5D+MathUtils.randomDouble(rand)/4,y,z+0.5D+MathUtils.randomDouble(rand)/4,0,0.4d,0);
-            for(int i = 0 ; i<10;i++)
-                worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL,x+0.5D+MathUtils.randomDouble(rand)/4, y+0.1D, z+0.5D+MathUtils.randomDouble(rand)/4, 0, rand.nextDouble()/20, 0);
-                worldIn.playSound(x + 0.5D, y + 0.5D, z + 0.5D, TBSounds.fire_loop, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
 
-                if(stateIn.getValue(STATE)==2){
-                    setLightLevel(10f);
-                }
+            w.spawnParticle(EnumParticleTypes.FLAME, x+0.5D+MathUtils.randomDouble(r)/4, y, z+0.5D+MathUtils.randomDouble(r)/4, 0, 0.04D, 0);
+            for(int i = 0; i < 10; ++i)
+                w.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x+0.5D+MathUtils.randomDouble(r)/4, y+0.1D, z+0.5D+MathUtils.randomDouble(r)/4, 0, r.nextDouble()/20, 0);
+
+            w.playSound(x+0.5D, y+0.5D, z+0.5D, SoundsTC.pump, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
         }
-
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if(worldIn.isRemote)
+    public boolean onBlockActivated(World w, BlockPos pos, IBlockState state, EntityPlayer p, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
+    {
+        if(w.isRemote)
             return true;
-        TileCampfire fire = (TileCampfire) worldIn.getTileEntity(pos);
-        ItemStack stk = playerIn.getHeldItemMainhand();
+
+        TileCampfire fire = (TileCampfire) w.getTileEntity(pos);
+        ItemStack stk = p.getHeldItem(hand);
         boolean added = fire.addLog(stk);
-
-        if(!added){
+        if(!added)
             added = fire.addFuel(stk);
-        }
-        if(fire.burnTime==0 && fire.logTime==0){
-            state.withProperty(STATE,0);
-        }
-        if(added){
-            playerIn.inventory.decrStackSize(playerIn.inventory.currentItem,1);
-            if(playerIn.openContainer!=null){
-                playerIn.openContainer.detectAndSendChanges();
-                playerIn.inventory.markDirty();
-                return true;
 
-            }
-
+        if(added)
+        {
+            p.inventory.decrStackSize(p.inventory.currentItem, 1);
+            if(p.openContainer != null)
+                p.openContainer.detectAndSendChanges();
+            p.inventory.markDirty();
+            return true;
         }
+
         return false;
     }
+
+    public BlockRenderLayer getBlockLayer()
+    {
+        return BlockRenderLayer.CUTOUT_MIPPED;
+    }
+
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
+
     @Override
     protected BlockStateContainer createBlockState() {
         if(STATE==null){

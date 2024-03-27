@@ -91,7 +91,7 @@ public class BlockVoidSpike extends Block {
                 return;
             if(collider instanceof EntityPlayer){
                 ItemStack boots = ((EntityPlayer) collider).inventory.armorInventory.get(0);
-                if(boots.isEmpty() && boots.getItem() instanceof ItemVoidArmor)
+                if(!boots.isEmpty() && boots.getItem() instanceof ItemVoidArmor)
                     return;
             }
 
@@ -110,7 +110,7 @@ public class BlockVoidSpike extends Block {
                 w.setBlockState(pos, this.getStateFromMeta(1));
         }
     }
-    public static final GameProfile fakeSpikeProfile = new GameProfile(UUID.randomUUID(),"[TB]Spikes");
+    public static final GameProfile fakeSpikeProfile = new GameProfile(UUID.randomUUID(),"ThaumicBases_Spikes");
 
     @Override
     public boolean onBlockActivated(World w, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {

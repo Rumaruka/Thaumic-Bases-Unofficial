@@ -140,22 +140,22 @@ public class TBThaumonomicon {
                 new ItemStack(Blocks.WOODEN_SLAB),
                 new ItemStack(Blocks.WOODEN_SLAB)
  }));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.camp"), new ShapedArcaneRecipe(defaultGroup, "TB.UseFire",50, new AspectList()
-                .add(Aspect.ENTROPY,2)
-                .add(Aspect.FIRE,2)
-                , new ItemStack(TBBlocks.campfire,1),
-                "SSS",
-                "CUC",
-                "GGG",
-                'S', new ItemStack(Items.STICK), 'U', new ItemStack(Items.COAL), 'C', new ItemStack(Blocks.COBBLESTONE), 'G', new ItemStack(Blocks.GRAVEL)));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.braizer"), new ShapedArcaneRecipe(defaultGroup, "TB.UseFire",50, new AspectList()
-                .add(Aspect.ENTROPY,3)
-                .add(Aspect.FIRE,3)
-                , new ItemStack(TBBlocks.braizer,1),
-                "SUS",
-                " A ",
-                "SSS",
-                'S', new ItemStack(BlocksTC.slabArcaneStone), 'U', new ItemStack(Items.COAL), 'A', new ItemStack(BlocksTC.stoneArcane)));
+        //ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.camp"), new ShapedArcaneRecipe(defaultGroup, "TB.UseFire",50, new AspectList()
+        //        .add(Aspect.ENTROPY,2)
+        //        .add(Aspect.FIRE,2)
+        //        , new ItemStack(TBBlocks.campfire,1),
+        //        "SSS",
+        //        "CUC",
+        //        "GGG",
+        //        'S', new ItemStack(Items.STICK), 'U', new ItemStack(Items.COAL), 'C', new ItemStack(Blocks.COBBLESTONE), 'G', new ItemStack(Blocks.GRAVEL)));
+        //ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.braizer"), new ShapedArcaneRecipe(defaultGroup, "TB.UseFire",50, new AspectList()
+        //        .add(Aspect.ENTROPY,3)
+        //        .add(Aspect.FIRE,3)
+        //        , new ItemStack(TBBlocks.braizer,1),
+        //        "SUS",
+        //        " A ",
+        //        "SSS",
+        //        'S', new ItemStack(BlocksTC.slabArcaneStone), 'U', new ItemStack(Items.COAL), 'A', new ItemStack(BlocksTC.stoneArcane)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.greatpipe"), new ShapedArcaneRecipe(defaultGroup, "TB.TOBACCO",50, new AspectList()
                 .add(primals(1))
 
@@ -490,9 +490,7 @@ public class TBThaumonomicon {
                 .add(Aspect.ENTROPY,1)
 
                 , new ItemStack(TBItems.tobacco_sanity,1),
-                "P  ",
-                "   ",
-                "   "
+                "P"
                 , 'P', new ItemStack(TBItems.tobacco_pile)));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.hunger"), new ShapedArcaneRecipe(defaultGroup, "TB.TOBACCO",10, new AspectList()
                 .add(Aspect.ORDER,1)
@@ -500,9 +498,7 @@ public class TBThaumonomicon {
                 .add(Aspect.ENTROPY,1)
 
                 , new ItemStack(TBItems.tobacco_hunger,1),
-                "Ps ",
-                "   ",
-                "   "
+                "Ps"
                 , 'P', new ItemStack(TBItems.tobacco_pile),'s', "seedsStems"));
 
     }

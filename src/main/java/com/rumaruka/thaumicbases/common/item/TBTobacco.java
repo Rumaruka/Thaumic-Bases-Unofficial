@@ -74,25 +74,18 @@ public class TBTobacco extends Item implements ITobacco {
 
             if (!smoker.world.isRemote) {
 
-                //code from thaumadditions:reconstructed
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 4, oProg / 3));
-                ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), tProg / 8, tProg / 6));
-                ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 5, TEMPORARY);
-                ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
-
-            }
-
-            for (int i = 0; i < (isSilverwood ? 20 : 10); ++i) {
-                if (isSilverwood) {
-
-                    //code from thaumadditions:reconstructed
+                for (int i = 0; i < (isSilverwood ? 20 : 10); ++i) {
                     ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), oProg / 4, oProg / 3));
                     ThaumcraftApi.internalMethods.addKnowledge(smoker, IPlayerKnowledge.EnumKnowledgeType.THEORY, rc[smoker.getRNG().nextInt(rc.length)], MathHelper.getInt(smoker.getRNG(), tProg / 8, tProg / 6));
-                    smoker.addExperience(1);
+                }
 
+                if (isSilverwood) {
+                    smoker.addExperienceLevel(1);
+                } else {
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 2, TEMPORARY);
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
                 }
             }
-
         }
         if (tobbaco.getItem() == TBItems.tobacco_mining) {
             if (!smoker.world.isRemote) {
@@ -106,15 +99,18 @@ public class TBTobacco extends Item implements ITobacco {
             if (!smoker.world.isRemote) {
 
                 ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, -1, TEMPORARY);
-                if (isSilverwood) ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, -1, NORMAL);
-                ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, -1, TEMPORARY);
+                if (isSilverwood) {
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, -1, NORMAL);
+                    ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, -1, TEMPORARY);
+                }
             }
         }
         if (tobbaco.getItem() == TBItems.tobacco_tainted) {
             if (!smoker.world.isRemote) {
                 if (!isSilverwood) {
                     ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1 + smoker.world.rand.nextInt(3), TEMPORARY);
-                    if (smoker.world.rand.nextFloat() <= 0.4F) ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
+                    if (smoker.world.rand.nextFloat() <= 0.4F)
+                        ThaumcraftApi.internalMethods.addWarpToPlayer(smoker, 1, NORMAL);
                 } else {
                     ItemStack stk = smoker.getHeldItem(smoker.getActiveHand());
                     if (stk.getItem() == TBItems.silverwoodpipe) {
@@ -128,10 +124,8 @@ public class TBTobacco extends Item implements ITobacco {
         if (tobbaco.getItem() == TBItems.tobacco_wispy) {
             EntityWisp wisp = new EntityWisp(smoker.world);
             wisp.setPositionAndRotation(smoker.posX, smoker.posY + 1.0D, smoker.posZ, 0.0F, 0.0F);
-            ArrayList<Aspect> aspects = new ArrayList<>();
             Collection<Aspect> pa = Aspect.aspects.values();
-            for (Aspect aspect : pa)
-                aspects.add(aspect);
+            ArrayList<Aspect> aspects = new ArrayList<>(pa);
             if (isSilverwood) {
                 EntityWisp wisp1 = new EntityWisp(smoker.world);
                 wisp1.setPositionAndRotation(smoker.posX, smoker.posY + 1.0D, smoker.posZ, 0.0F, 0.0F);
@@ -141,15 +135,15 @@ public class TBTobacco extends Item implements ITobacco {
                     aspects.remove(Aspect.FLUX);
                 }
             } else {
-                if(!smoker.world.isRemote)
-                smoker.world.spawnEntity(wisp);
+                if (!smoker.world.isRemote)
+                    smoker.world.spawnEntity(wisp);
             }
-
-                }
-
-            }
-
 
         }
+
+    }
+
+
+}
 
 

@@ -9,13 +9,11 @@ public class EnchantmentTainted extends Enchantment {
         super(rarityIn, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
     }
 
-    public int getMaxLevel()
-    {
+    public int getMaxLevel() {
         return 3;
     }
 
-    public boolean canApplyTogether(Enchantment ench)
-    {
+    public boolean canApplyTogether(Enchantment ench) {
         return !(ench instanceof EnchantmentElderKnowledge);
     }
 }

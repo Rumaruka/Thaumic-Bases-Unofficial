@@ -727,7 +727,7 @@
           },
           {
             "text": "research_stage.thaumicbases:revolver.2",
-            "recipes": ["TB.revolver","TB.bullet"]
+            "recipes": ["TB.revolver"]
           }
         ]
       },

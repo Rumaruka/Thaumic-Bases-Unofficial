@@ -24,9 +24,8 @@ public class TBClient extends TBServer {
 
     @Override
     public void preInit(FMLPreInitializationEvent e) {
-        ModelLoader.setCustomStateMapper(TBBlocks.pyrofluid,new StateMap.Builder().ignore(BlockFluidBase.LEVEL).build());
+        ModelLoader.setCustomStateMapper(TBBlocks.pyrofluid, new StateMap.Builder().ignore(BlockFluidBase.LEVEL).build());
     }
-
 
 
     @Override
@@ -41,7 +40,7 @@ public class TBClient extends TBServer {
         TBBlocks.Render();
         TBItems.Renders();
 
-}
+    }
 
     public void registerRenderInformation() {
         ClientRegistry.bindTileEntitySpecialRenderer(TileOverchanter.class, new RenderOverchanter());

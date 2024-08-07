@@ -2,7 +2,7 @@ package com.rumaruka.thaumicbases.core;
 
 import com.rumaruka.thaumicbases.api.RevolverUpgrade;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
-import com.rumaruka.thaumicbases.common.handlers.EnchatmentHandler;
+import com.rumaruka.thaumicbases.common.handlers.EnchantmentHandler;
 import com.rumaruka.thaumicbases.common.handlers.RegisterHandlers;
 import com.rumaruka.thaumicbases.init.*;
 import com.rumaruka.thaumicbases.network.proxy.TBServer;
@@ -27,7 +27,7 @@ public class TBCore {
 
     public static final String modid = "thaumicbases";
     public static final String name = "Thaumic Bases";
-    public static final String version = "3.5.200.1";
+    public static final String version = "3.5.232.0";
     public static final String dependencies = "required-after:thaumcraft@[6.1.BETA26,)";
 
     //Networking
@@ -71,7 +71,7 @@ public class TBCore {
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, new TBGuiHandler());
-        MinecraftForge.EVENT_BUS.register(new EnchatmentHandler());
+        MinecraftForge.EVENT_BUS.register(new EnchantmentHandler());
         TBThaumonomicon.setup();
         TBResearch.registerResearch();
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumbases");

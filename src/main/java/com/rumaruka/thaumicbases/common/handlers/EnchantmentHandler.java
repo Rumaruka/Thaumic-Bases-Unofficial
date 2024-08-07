@@ -27,7 +27,7 @@ import thaumcraft.api.potions.PotionFluxTaint;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 
-public class EnchatmentHandler {
+public class EnchantmentHandler {
 
     @SubscribeEvent
     public void onMobDeath(LivingDeathEvent e) {
@@ -40,7 +40,7 @@ public class EnchatmentHandler {
 
                 if (EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund) > 0) {
                     int enchLevel = 0;
-                    if(mainHund.getItem() instanceof ItemSword)
+                    if (mainHund.getItem() instanceof ItemSword)
                         enchLevel = EnchantmentHelper.getEnchantmentLevel(TBEnchant.elderKnowledge, mainHund);
                     ResearchCategory[] rc = ResearchCategories.researchCategories.values().toArray(new ResearchCategory[0]);
                     ThaumcraftApi.internalMethods.addKnowledge(attacker, IPlayerKnowledge.EnumKnowledgeType.OBSERVATION, rc[attacker.getRNG().nextInt(rc.length)], MathHelper.getInt(attacker.getRNG(), enchLevel, enchLevel + 1));
@@ -92,14 +92,14 @@ public class EnchatmentHandler {
     @SubscribeEvent
     public void registerAspects(AspectRegistryEvent event) {
         AspectEventProxy proxy = event.register;
-        proxy.registerComplexObjectTag(new ItemStack(TBItems.aureliapetal),new AspectList().add(Aspect.AURA,10));
-        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.goldenleaves),new AspectList().add(Aspect.PLANT,5));
-        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.enderleaves),new AspectList().add(Aspect.PLANT,5));
-        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.netherleaves),new AspectList().add(Aspect.PLANT,5));
-        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.peaceleaves),new AspectList().add(Aspect.PLANT,5));
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.aureliapetal), new AspectList().add(Aspect.AURA, 10));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.goldenleaves), new AspectList().add(Aspect.PLANT, 5));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.enderleaves), new AspectList().add(Aspect.PLANT, 5));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.netherleaves), new AspectList().add(Aspect.PLANT, 5));
+        proxy.registerComplexObjectTag(new ItemStack(TBBlocks.peaceleaves), new AspectList().add(Aspect.PLANT, 5));
 
-        proxy.registerComplexObjectTag(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST,26).add(Aspect.CRAFT,6));
-        proxy.registerComplexObjectTag(new ItemStack(TBItems.briar_seedbag), new AspectList().add(Aspect.PLANT,5).add(Aspect.LIFE,5));
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.bloodycloth), new AspectList().add(Aspect.BEAST, 26).add(Aspect.CRAFT, 6));
+        proxy.registerComplexObjectTag(new ItemStack(TBItems.briar_seedbag), new AspectList().add(Aspect.PLANT, 5).add(Aspect.LIFE, 5));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_pile), new AspectList().add(Aspect.PLANT, 3).add(Aspect.MAN, 3).add(Aspect.ENTROPY, 1));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.tobacco_leaves), new AspectList().add(Aspect.PLANT, 5).add(Aspect.MAN, 5));
         proxy.registerComplexObjectTag(new ItemStack(TBItems.knowledge_shard), new AspectList().add(Aspect.MIND, 15));

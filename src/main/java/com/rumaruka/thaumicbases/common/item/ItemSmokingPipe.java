@@ -71,22 +71,17 @@ public class ItemSmokingPipe extends Item {
         if (entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entityLiving;
             ItemStack tobacco = findTobacco(player);
-            if (tobacco.isEmpty())
-                return stack;
-            ITobacco t = (ITobacco) tobacco.getItem();
-            t.performTobaccoEffect(player, tobacco, this.isSilverwood);
-            int i = player.inventory.getSlotFor(tobacco);
-            ItemStack stk = player.inventory.getStackInSlot(i);
-            if (stk != ItemStack.EMPTY && !stk.isEmpty() && stk.getItem() instanceof ITobacco) {
-                getMaxItemUseDuration(stk);
-                player.inventory.decrStackSize(i, 1);
-            }
-            Vec3d look = entityLiving.getLookVec();
-            for (int j = 0; j < 100; j++) {
-                double x = player.posX + look.x / 5.0D;
-                double y = player.posY + player.getEyeHeight() + look.y / 5.0D;
-                double z = player.posZ + look.z / 5.0D;
-                player.world.spawnParticle(this.isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10.0D, look.y / 10.0D, look.z / 10.0D);
+            if (!tobacco.isEmpty()) {
+                ITobacco t = (ITobacco) tobacco.getItem();
+                t.performTobaccoEffect(player, tobacco, this.isSilverwood);
+                tobacco.shrink(1);
+                Vec3d look = entityLiving.getLookVec();
+                for (int j = 0; j < 100; j++) {
+                    double x = player.posX + look.x / 5.0D;
+                    double y = player.posY + player.getEyeHeight() + look.y / 5.0D;
+                    double z = player.posZ + look.z / 5.0D;
+                    player.world.spawnParticle(this.isSilverwood ? EnumParticleTypes.EXPLOSION_NORMAL : EnumParticleTypes.SMOKE_NORMAL, x, y, z, look.x / 10.0D, look.y / 10.0D, look.z / 10.0D);
+                }
             }
         }
         return stack;

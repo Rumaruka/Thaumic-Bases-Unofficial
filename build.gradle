@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 
-version = "3.5.300.0"
+version = "3.5.300.1"
 group = "com.rumaruka.thaumicbases" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "thaumicbases"
 

@@ -1,89 +1,104 @@
-#####zh_CN by Determancer#####
+#####zh_CN by fakeginkgo（凑合看吧，英语又很差嘛。但是我会为您忠实的翻译所有文本）#####
 
 itemGroup.thaumicbases=神秘基础学
 tc.research_category.THAUMICBASES=神秘基础学
-
-
 
 #悬浮提示
 tb.tooltip.aer=测试
 tb.tooltip.fire=测试 2
 #附魔
-enchantment.elderKnowledge=古老智慧
-enchantment.eldritchBane=邪术杀手
+enchantment.elderKnowledge=睿智
+enchantment.eldritchBane=异域杀手
 enchantment.magicTouch=魔法之触
 enchantment.tainted=腐化
-enchantment.vaporising=蒸发
+enchantment.vaporisin=蒸发
+
+#附魔备注
+enchantment.elderKnowledge.desc=增加魔导手册中观察点获得的几率
+enchantment.eldritchBane.desc=增加对末影人和邪术守卫等异域怪物的伤害。
+enchantment.minecraft.thaumicbases.magicTouch.desc=(在重新实现之前不可用)
+enchantment.tainted.desc=有一定几率使目标染上腐毒。
+enchantment.minecraft.thaumicbases.vaporising.desc=(在重新实现之前不可用)
+
 #容器
 tb.overchanter=超吟附魔台
-#blocks
-tile.quicksilverBlock.name=水银块
-tile.quicksilverBrick.name=水银砖块
+
+#方块
+tile.crystalblockfire.name=火之魔晶块
 tile.crystalblockwater.name=水之魔晶块
 tile.crystalblockearth.name=地之魔晶块
 tile.crystalblockair.name=风之魔晶块
 tile.crystalblockorder.name=秩序魔晶块
-tile.crystalblockentropy.name=混沌魔晶块
-tile.crystalblockmixed.name=元始魔晶块
+tile.crystalblockentropy.name=混沌之魔晶块
+tile.crystalblockmixed.name=复相魔晶块
 tile.crystalblocktainted.name=腐化魔晶块
-tile.dustBlock.name=世界盐块
 tile.pyro.name=魔力熔岩
 tile.blockthauminite.name=秘晶块
-tile.eldritchark.name=镶金黑曜石
-tile.irongreatwood.name=镶铁宏伟之木
 tile.plax.name=纤化草
 tile.aurelia.name=灵气花
 tile.aureliapetalb.name=灵气花瓣
-tile.metalleat.name=蕴铁草
-tile.lucrite.name=生金草
-tile.knose.name=神秘蔷薇
-tile.sweed.name=蔗糖草
+tile.metalleat.name=金属草
+tile.lucrite.name=炼金草
+tile.sweed.name=芦苇
 tile.lazullia.name=青金草
-tile.rainbowCactus.name=彩虹仙人掌
+tile.rainbowcactus.name=彩虹仙人掌
 tile.redlonstem.name=红石瓜茎
-tile.ashroom.name=始源蘑菇
 tile.flaxium.name=咒波花
-tile.glieonia.name=荧粉花
-tile.briar.name=野蔷薇
+tile.glieonia.name=荧光花
+tile.briar.name=治愈草
 tile.tobacco.name=烟草
-tile.voidPlant.name=虚空草
+tile.voidPlant.name=虚空植物
 tile.ironspike.name=铁钉
 tile.thaumspike.name=神秘钉
 tile.voidspike.name=虚空钉
+tile.overchanter.name=超吟附魔台
+tile.oldcobble.name=远古原石
+tile.oldgravel.name=远古沙砾
+tile.oldcobblemossy.name=远古苔石
+tile.oldiron.name=远古铁块
+tile.olddiamond.name=远古钻块
+tile.oldgold.name=远古金块
+tile.oldlapis.name=远古青金石块
+tile.oldbrick.name=远古砖块
+tile.quicksilverBlock.name=水银块
+tile.quicksilverBrick.name=水银砖块
+tile.eldritchark.name=镶金黑曜石
+tile.irongreatwood.name=镶框宏伟木
+tile.dustBlock.name=世界盐块
+tile.thaumicRelocator.name=扩展奥术悬浮台
+tile.enderlogs.name=末影树原木
+tile.enderleaves.name=末影树树叶
+tile.endersapling.name=末影树苗
+tile.enderplanks.name=末影树木板
+tile.netherlogs.name=地狱树原木
+tile.netherleaves.name=地狱树树叶
+tile.nethersapling.name=地狱树苗
+tile.netherplanks.name=地狱木板
 tile.goldensapling.name=黄金橡树树苗
 tile.goldenleaves.name=黄金橡树树叶
 tile.goldenlogs.name=黄金橡树原木
-tile.goldenplanks.name=黄金橡木木板
-tile.overchanter.name=超吟附魔台
-tile.oldcobble.name=古老圆石
-tile.oldgravel.name=古老砂砾
-tile.oldcobblemossy.name=古老苔石
-tile.advAlchFurnace.name=高级炼金炉
-//tile.entityDeconstructor.name=实体解构仪
-tile.oldiron.name=古老铁块
-tile.olddiamond.name=古老钻石块
-tile.oldgold.name=古老金块
-tile.oldlapis.name=古老青金石块
-tile.oldbrick.name=古老砖块
-tile.thaumicRelocator.name=神秘移位器
-tile.tb.voidblock.name=虚空金属块
-tile.nethersapling.name=地狱橡树树苗
-tile.endersapling.name=末影橡树树苗
-tile.netherlogs.name=地狱橡木原木
-tile.enderlogs.name=末影橡木原木
-tile.netherleaves.name=地狱橡树树叶
-tile.enderleaves.name=末影橡树树叶
-tile.enderplanks.name=末影橡木木板
-tile.netherplanks.name=地狱橡木木板
-tile.rainbowcactus.name=彩虹仙人掌
-tile.campfire.name=神秘使营火
-tile.braizer.name=神秘使火盆
+tile.goldenplanks.name=黄金橡树木板
+tile.peacelogs.name=和平树原木
+tile.peaceleaves.name=和平树树叶
+tile.peacesapling.name=和平树苗
+tile.peaceplanks.name=和平树木板
+tile.campfire.name=奥术营火
+tile.braizer.name=奥术火盆
+tile.pyrosolid.name=魔力熔岩结晶
+tile.knoze.name=神秘玫瑰芽
+tile.ashroom.name=始源蘑菇
+fluid.pyro=魔力熔岩
+tile.thaumic_anvil.intact.name=神秘砧
+tile.thaumic_anvil.slightly_damaged.name=轻微损坏的神秘砧
+tile.thaumic_anvil.very_damaged.name=严重损坏的神秘砧
+tile.void_anvil.intact.name=虚空砧
+tile.void_anvil.slightly_damaged.name=轻微损坏的虚空砧
+tile.void_anvil.very_damaged.name=严重损坏的的虚空砧
 
-#items
+#道具
 item.nuggetthauminite.name=秘晶粒
 item.thauminite_ingot.name=秘晶锭
 item.thauminite_plate.name=秘晶板
-item.aureliapetal.name=灵气花瓣
 item.thauminiteaxe.name=秘晶斧
 item.thauminitehoe.name=秘晶锄
 item.thauminiteshovel.name=秘晶锹
@@ -94,134 +109,245 @@ item.thauminitehelmet.name=秘晶头盔
 item.thauminitechest.name=秘晶胸甲
 item.thauminitelegs.name=秘晶护腿
 item.thauminiteboots.name=秘晶靴子
-item.briar_seedbag.name=野蔷薇种子囊
-item.tobacco_leaves.name=烟叶堆
+item.briar_seedbag.name=治愈花种子囊
+item.rosehipsyrup.name=玫瑰果浆
 item.pyrobucket.name=魔力熔岩桶
-fluid.pyro=魔力熔岩
-tile.pyrosolid.name=魔力熔岩固体
-item.plaxseed.name=纤化草种
-item.metalleatseed.name=蕴铁草种
-item.lucriteseed.name=生金草种
-item.fireingot.name=火之碎片
-item.wateringot.name=水之碎片
-item.earthingot.name=地之碎片
-item.airingot.name=风之碎片
-item.orderingot.name=秩序碎片
-item.entropyingot.name=混沌碎片
-item.mixedingot.name=元始碎片
-item.taintedingot.name=腐化碎片
-item.sweedseed.name=蔗糖草种
-item.lazulliaseed.name=青金草种
-item.redlonseed.name=红石瓜种
-item.glieoniaseed.name=荧粉花种
-item.rosehipsyrup.name=蔷薇糖浆
-item.greatwoodpipe.name=宏伟之木烟斗
-item.silverwoodpipe.name=银木烟斗
-item.tobacco_pile.name=烟草堆
-item.tobacco_eldritch.name=邪术烟草堆
-item.tobacco_fighting.name=愤怒烟草堆
-item.tobacco_hunger.name=饱和烟草堆
-item.tobacco_knowledge.name=睿智烟草堆
-item.tobacco_mining.name=矿工烟草堆
-item.tobacco_sanity.name=休弛烟草堆
-item.tobacco_tainted.name=腐化烟草堆
-item.tobacco_wispy.name=精灵烟草堆
+item.aureliapetal.name=灵气花瓣
+item.plaxseed.name=纤化种子
+item.metalleatseed.name=金属草种子
+item.lucriteseed.name=炼金种子
+item.sweedseed.name=芦苇种子
+item.lazulliaseed.name=青金草种子
+item.redlonseed.name=红石瓜种子
+item.glieoniaseed.name=荧光花种子
+item.voidseed.name=虚空植物种子
 item.tobaccoseed.name=烟草种子
-item.mortar.name=研钵
-item.voidseed.name=虚空草种
-item.bloodycloth.name=血渍魔力布匹
-item.bloodychest.name=血渍神秘使法袍
-item.bloodylegs.name=血渍神秘使护腿
-item.bloodyboots.name=血渍神秘使之靴
-item.concentratedTaint.name=浓缩腐化瓶
-item.activationFoci.name=Wand Focus: Activation
-item.fluxFoci.name=Wand Focus: Flux Scrubber
-item.drainFoci.name=Wand Focus: Liquid Drain
-item.experienceFoci.name=Wand Focus: Experience
+item.mortar.name=杵与臼
+item.greatwoodpipe.name=宏伟木烟斗
+item.silverwoodpipe.name=银树烟斗
+item.tobacco_leaves.name=烟叶
+item.tobacco_pile.name=烟草堆
+item.tobacco_eldritch.name=凝视者烟草堆
+item.tobacco_fighting.name=狂战士烟草堆
+item.tobacco_hunger.name=滋养烟草堆
+item.tobacco_knowledge.name=启迪烟草堆
+item.tobacco_mining.name=矿工烟草堆
+item.tobacco_sanity.name=审慎烟草堆
+item.tobacco_tainted.name=污染烟草堆
+item.tobacco_wispy.name=精灵烟草堆
+item.bloodycloth.name=血腥布匹
+item.bloodychest.name=血腥神秘使法袍
+item.bloodylegs.name=血腥神秘使护腿
+item.bloodyboots.name=血腥神秘使之靴
 item.herobrinesscythe.name=白瞳者之镰
 item.voidshears.name=虚空剪刀
 item.voidfas.name=虚空打火石
+item.revolver.name=奥术左轮枪
+item.bullet.name=左轮枪弹
+item.knozeseed.name=神秘玫瑰芽
+item.knowledge_shard.name=知识碎片
+
+#奥术左轮枪附魔
+revolverUpgrade.ACCURACY.name=精准
+revolverUpgrade.POWER.name=威力
+revolverUpgrade.SILVER.name=银弹
+revolverUpgrade.POISONED.name=淬毒
+revolverUpgrade.BANE_OF_ATROPODS.name=节肢杀手
+revolverUpgrade.BANE_OF_ELDRITCH.name=异域杀手
+revolverUpgrade.PIERCING.name=穿刺
+revolverUpgrade.DUELING.name=决斗
+revolverUpgrade.TAINTED.name=污染
+revolverUpgrade.PRIMAL.name=始源
+revolverUpgrade.SPEED.name=速度
+revolverUpgrade.EFFICIENCY.name=效率
+revolverUpgrade.ELDRITCH.name=邪术
+revolverUpgrade.VOID.name=虚空
+revolverUpgrade.KNOWLEDGE.name=睿智
+revolverUpgrade.HEAVY.name=重装
+
+#至今未使用
+item.tb.spawnercompass.name=秘晶指南针
+item.tb.ukulele.0.name=奥术四弦琴
+item.tb.ukulele.1.name=远古奥术四弦琴
+item.tb.ukulele.2.name=忠诚奥术四弦琴
+item.tb.ukulele.3.name=电子奥术四弦琴
+item.tb.ukulele.4.name=无极奥术四弦琴
+item.tb.ukulele.5.name=史诗奥术四弦琴
+item.tb.ukulele.6.name=入魔奥术四弦琴
+item.tb.ukulele.7.name=童话奥术四弦琴
+item.tb.ukulele.8.name=安逸奥术四弦琴
+item.concentratedTaint.name=浓缩腐化瓶
+
+#四弦琴种类
+tb.ukulele.type.simple=有时，简单就够了
+tb.ukulele.type.knowledge=知识就是力量
+tb.ukulele.type.calming=我昏昏欲睡.
+tb.ukulele.type.electric=有如日光下漫步
+tb.ukulele.type.resistance=我无人能挡！
+tb.ukulele.type.buffing=通过翻滚引诱一条龙
+tb.ukulele.type.confusion=我又在做什么了？
+tb.ukulele.type.growth=我说真的……那个僵尸。
+tb.ukulele.type.love=开个房间！
+
+tile.primalshroom.name=始源蘑菇
+tile.knose.name=神秘玫瑰芽
+item.tb.shardCluster.fire.name=火之魔晶
+item.tb.shardCluster.water.name=水之魔晶
+item.tb.shardCluster.earth.name=地之魔晶
+item.tb.shardCluster.air.name=风之魔晶
+item.tb.shardCluster.order.name=秩序魔晶
+item.tb.shardCluster.entropy.name=混沌魔晶
+item.tb.shardCluster.mixed.name=复相魔晶
+item.tb.shardCluster.tainted.name=腐化魔晶
+item.tb.bracelet.brass=黄铜手镯
+item.tb.bracelet.thaumium=神秘手镯
+item.tb.bracelet.void=虚空手镯
+item.tb.bracelet.primal=元始手镯
+item.tb.bracelet.thauminite=秘晶手镯
+
+focus.thaumicbases.activation.name=远程交互
+focus.thaumicbases.activation.text=允许交互你核心绑定的方块
+focus.thaumicbases.activation.radius=半径
+
+focus.thaumicbases.fluxScrub.name=咒波净化
+focus.thaumicbases.fluxScrub.text=以扭曲己身，净化灵气场的咒波。
+focus.thaumicbases.fluxScrub.warpWash=清理扭曲
+focus.thaumicbases.fluxScrub.warpWash_no=否
+focus.thaumicbases.fluxScrub.warpWash_Yes=是
+focus.thaumicbases.fluxScrub.crystallize=结晶化咒波
+focus.thaumicbases.fluxScrub.crystallize_no=否
+focus.thaumicbases.fluxScrub.crystallize_yes=是
+
+focus.thaumicbases.liquiddrain.name=蒸发
+focus.thaumicbases.liquiddrain.text=暂停液体流动
+focus.thaumicbases.liquiddrain.absorb=销毁流体
+focus.thaumicbases.liquiddrain.absorb_No=否
+focus.thaumicbases.liquiddrain.absorb_Yes=是
+
+focus.thaumicbases.experience.name=经验
+focus.thaumicbases.experience.text=获取方块，击杀怪物，将其转化为经验
+focus.thaumicbases.experience.power=效能
 
 #Researchs
-research_name.thaumicbases:thaumicbases=神秘基础学：初步探索
-research_stage.thaumicbases:thaumicbases.1=好，我很难理解这个新页面提供的内容。我能学到些什么，来找到自己问题的答案吗？哼呣，与书册的主体部分不同，这里的一切都是开放的。很有意思！
-research_stage.thaumicbases:thaumicbases.2=我做到了！做到了什么？哈，我解锁了新的研究！
+research_name.thaumicbases:tbases=新的篇章
+research_stage.thaumicbases:tbases.1=翻开魔导手册这一分支，我不知所措的注视着那些隐藏的页面。奇怪的是，我可以看懂这一分支的通俗的部分。也许更多地研究本章的§l基础§r部分将有助于我揭示这些页面中隐藏的知识。
+research_stage.thaumicbases:tbases.2=我做到了！在搜索基础研究的同时，我仔细阅读了一些笔记，我的开始更多地了解这种不寻常的工艺。现在我可以读懂更多的页面了，我认为是时候加深了解了。
 
-research_name.thaumicbases:tbalchemy=神秘基础学：炼金术
-research_stage.thaumicbases:tbalchemy.1=如果我制作了神秘锭，那么哼呣......
-research_stage.thaumicbases:tbalchemy.2=很好，我弄出来了新玩意，我写下合成表。哇，我制成了新的金属——秘晶
+research_name.thaumicbases:alc=进阶炼金术
+research_stage.thaumicbases:alc.1=感觉有些不对劲……也许我对炼金术冶金的试验只是侥幸。从我对创造神秘锭的研究来看，它在力量方面感觉相当迟钝。有什么告诉我，我可以让它更强大，但我应该怎么做呢？也许这些“碎片”可以帮助我，也许……
+research_stage.thaumicbases:alc.2=虽然这些碎片对我寻找更坚固的金属毫无用处，但我在其他方面上找到了它们的用途。尽管如此，我终于做出了比神秘锭更强大的东西！我实在想不出一个好名字，所以我就叫它秘晶。这种金属应该比钻石坚固得多，在导魔方面也有更大的力量，用它制作的盔甲赋予了魔力减免！然而……如果我真的迫切需要一个更好的选择，除了工具之外，我似乎找不到更多的用途。也许我应该更多地研究一下我可以用它制造的工具的性质。
 
-research_name.thaumicbases:tbfluid=神秘基础学：魔法液体
-research_stage.thaumicbases:tbfluid.1=我有个主意。把一桶熔岩扔进坩埚会发生什么？哼呣，是时候预测一下了！
-research_stage.thaumicbases:tbfluid.2=哇，这种液体真是奇异。放置后，她会逐渐耗损并凝固......打碎凝固的方块我就能整到烈焰棒。<BR>哦，如果我倒下净化之水，魔力熔岩（没错，我称之为“魔力熔岩”）会更快地凝结！
-research_name.thaumicbases:tbplant=神秘基础学：基础植物
-research_stage.thaumicbases:tbplant.1=哎呀，我把种子丢到了坩埚里......如果我加些要素进去呢？
-research_stage.thaumicbases:tbplant.2=神秘学所涉甚广。炼金术，奥术注魔，附魔......神秘学无所不能......然而，大多神秘使都忽略了一个重要的方面——植物和植物的生命。不过你可并非那“大多数神秘使”。这一研究方向前景美好，你已经看到了其中蕴含的无限可能。如此丰富的研究前景让你研制了第一种神秘植物的生产方法——蔗糖草。这种植物就技术上而言是一种杂草。不过，你只要让它生长一段时间——它将长成完整的尺寸，采收后会掉落糖和甘蔗。但务必密切监测其生长，因为它蔓延得相当之快！
+research_name.thaumicbases:pyrof=魔力熔岩
+research_stage.thaumicbases:pyrof.1=然而，在奇术的研究中，流体并不经常被提及……这个页面似乎暗示了一种叫做“魔力熔岩”的流体。虽然听起来很愚蠢，但它可能有一些不可思议的用途！也许研究我已知的流体可以帮助我更好地理解它。
+research_stage.thaumicbases:pyrof.2=瞧！在费尽心力来制造这种液体后，我认为我杀戮烈焰人的工作已经结束了。再也不会在刷怪笼附近露营，也不会再被烧成全家桶。倒出这种液体后，我发现了几点。首先，它会燃烧起来。不要踏入这种液体。我会失去双脚。其次，这种液体似乎随着时间缓慢结晶。然而……我有次愚蠢到竟然把一桶液体带进了我的奥术浴场，接下来的研究显示了一些相当有趣的事情。虽然我的奥术浴场损失了一部分净化之水，但我确实得到了结晶的魔力熔岩。用我的镐凿开它，得到了不少的火焰粉。不过时运附魔似乎在此不起作用。
 
-research_name.thaumicbases:tbplant1=神秘基础学：奇妙植物
-research_stage.thaumicbases:tbplant1.1=那么，是时候升级植物了，我会花上一个漫长的夜晚来进行试验！
-research_stage.thaumicbases:tbplant1.2=我花了一整晚，整出来了一大堆对新植物！<PAGE>“§o灵气花§r”<DIV>在神秘学研究的探索之旅中，有种要素相当难以获得——Auram。这种要素在合成用途上深具潜力。为了获得它冒险去下界击杀精灵，可算不上什么好主意。但你用植物学的知识发现了一种获得该要素的方法，无需再花费其他工夫。该植物在月光照耀下，会打开花瓣迎入月光——似乎这种植物通过吸收月光生长。不过，由于世间的空气影响，只有在满月期间才会如此。灵气花偶尔会掉落其花瓣，在花的四周即可收集它们。这些花瓣富含Auram源质。不过，这种植物只在上方直接露天时才会吸收月光！<PAGE>“§o野蔷薇§r”<DIV>植物的药用功能广为人知。然而，神秘使却常常对这一植物天性缺乏关注。但你关心此事。你设法使玫瑰丛还原其野生的状态，如此一来研制出了野蔷薇植株。野蔷薇是1格高的植株，生长迅速。一旦成熟，即可收集其种子囊以供使用。将种子囊和糖在奥术工作台中混合起来可制成蔷薇糖浆。这种糖浆就像是更加强效的牛奶——它的最大堆叠数为16，并因能够帮助神秘使缓解扭曲效果而闻名。但它对一些纯粹的精神效果没有疗效......<PAGE>“§o荧粉花种§r”<DIV>神秘使最令人敬畏的能力是什么？是飞翔！那么第二好的能力是什么？守护核心？行吧，那么第三好的呢......挖掘核心，你确定？我们应该说闪耀之光，好吗？！天啊。无论如何，闪耀之光简直绝妙——它散发光辉，产生绝妙的粒子效果，具有各种奇妙的特质！好吧，倒是有件事——它需要用荧石粉来制作.....一位明智的神秘使可以解决这一难题！你设法研制了一种植物，一旦成熟就会掉落2个荧石粉。有趣的是荧粉花本身不会发光，即便成熟时也是如此......为什么会这样呢？...<PAGE>“§o咒波花§r”<DIV>这种植株看上去很有趣。你本无构造这类玩意的意图，但是——哦好吧，不知怎的你站在这，手里拿着这东西，现在担心已经太晚了。你创造了一种主动吸收周围空气里咒波的花——但是，吸收后咒波量会立刻复原——并且它在收集到足够的咒波后，会将其以咒波雾团的形式从顶部全部释放出去。你不太确定这种植物能拿来做些什么，但它吸收周围环境要素的能力看起来很有趣，也许这种花能作为某种更杰出成果的研制基础？...<PAGE>“§o青金草种§r”<DIV>有时候，神秘使需要一些青金石来进行他的......神秘学研究。而且有时候，神秘使实在懒得冒险进入矿洞，浪费5小时的大好时光去搜寻那蓝色的矿石。你再次使用植物来解决了自己的烦恼。青金草会缓慢生长，成熟后即可采收。采收时，神秘使会拿到一些青金石和青金草种。<PAGE>“§o蕴铁草种§r”<DIV>有时候神秘使需要Metallum源质来进行矿物处理。而这需要一枚铁锭。有时候神秘使需要Mettalum源质来进行合成。而这就需要更多的铁。你找到了一种方法来摆平这种苦恼——通过将寻常的小麦种子丢入坩埚，向中注入一些Metallum源质和Victus源质以维持其生命，你制成了一种植物，它会像小麦一样生长，但在生长的最后阶段会变得坚硬且富含金属。采收它即可获得一些铁粒。这一发现带来的问题比答案更多，你可能需要进一步研究......不过据你所知，你没法用同种方法来量产神秘锭。<PAGE>“§o生金草种§r”<DIV>你进一步研究了蕴铁草，由此发现可以通过向金胡萝卜注入Lucrum要素来制成一种类似的作物。研究的成果是种非常奇异的作物。它的功能与蕴铁草相似，但需要花两倍的时间才能成熟。此外它还非常依赖魔力——在其所生长的泥土下方缺少魔力源时，它会停止生长。世界盐块似乎完全符合要求。它在接受骨粉催熟的生长速率也更低，需要7份骨粉才能成熟。不过，一旦你让它长成，它会在枝叶上长出金粒。由于生金草本质上是金胡萝卜，所以在收获时也会拿到一颗金胡萝卜！<PAGE>“§o纤化草种§r”<DIV>有时神秘使只需要拿到一些线——用于制作魔法蜡烛或魔法布匹——做什么都无所谓了。而有时候神秘使实在不想在漫漫长夜里跟蜘蛛搏斗，或者拿剪刀从羊身上剪毛以待进一步处理。你已经运用先前学到的植物和自然相关的知识来解决了这一问题。研究的成果是一种奇异的作物，名为纤化草，能够种在耕地上，经过8个生长阶段后成熟，采收时就可以获得3根线！它的机能与寻常的小麦作物类似——它也需要光，并且仅能在耕地上生长。<PAGE>“§o红石瓜种§r”<DIV>即便神秘学是一门魔法的艺术，与工业毫不相干，但许多魔法仪器仍然能够用那种神秘的红色粉末来操作或控制——那便是红石。说实话，红石本身就堪称魔法了。如果把它和植物混合在一起呢？那么，产出的成果是一种植物，就像是西瓜和南瓜一样，这种植物会缓慢地长出红石块。但它生长所需的时间远超西瓜和南瓜。<PAGE>“§o烟草草种§r”<DIV>有时候，神秘使只想从神秘学带来的所有恐怖中暂求一时安息。他想让自己的头脑清醒，专心于自己的工作之中。众所周知，其他的神秘使会抽烟，但这严重损害了神秘使的健康，甚至会切断人类和魔法世界的联系。你不需要这玩意。你设法研制了一种植物，功能与烟草相似，但绝对有利于你的健康！可惜的是，你很确信，你的植株是唯一一种安全的烟草，除了你之外没有人能复制它们。那就这样吧。为了让一位神秘使真正得到休息，你需要3种东西——一座漂亮的房子（而你应该已经有了），神秘使的烟斗，和一些烟草。要正确的制成烟草，神秘使需要磨碎植物的叶子。你可能需要杵和臼来完成这项工作。你也需要自己的烟斗，但你并不想用起凡俗的烟斗，对吧？你找到了正确地注入银木木板以制成完美烟斗的方法。这对你接触魔法也有好处，因为这种烟斗的组分里包含了世界盐。那些吸着凡俗烟草的神秘使可得不到这么多好处。但你的烟草超凡脱俗，你的烟斗也同样如此。借由惬意的享受烟草，你有小几率能够除去一些临时扭曲。你很确信的是，你还能对烟草做些改动，让它们更加强效，而你只需要弄清楚——具体怎么做。烟草在抽烟时会被消耗。烟斗会选择神秘使口袋里的第一种烟草，与弓在选择要发射的箭矢时的机制相同。像你一样的神秘使也要花些时间才能抽完一管烟——何必那么匆忙呢？<PAGE>“§o虚空草种§r”<DIV>向寻常的种子中注入Alienis和Tenebrae源质，即可制成那种虚空种子。然而，它本身丧失了生长的能力——你给它注魔时太过头了。不过，也许能够用你先前所学的植物方面的知识让它恢复生机！通过向虚空种子中注入所有类型的可生长植物，你设法让这可怜的种子重新获得了生长的能力。
-research_name.thaumicbases:tbcactus=神秘基础学：彩虹仙人掌
-research_stage.thaumicbases:tbcactus.1=我在想，既然我有了这么多的植物，也许应该进一步对仙人掌做些试验？
-research_stage.thaumicbases:tbcactus.2=魔法并非总是严格且合乎逻辑的——毕竟它是魔法。生命也同样如此——它缤纷多姿，有时令人惊讶，有时显得滑稽。你设法创造了一种植物，它很大程度上符合“滑稽”一词的定义。这种植物功能和寻常的仙人掌相似——必须放在沙子上，最高可长到3格。但是，一旦被破坏，它仅会掉落自身，其上方生长的部分则会掉落各种染料。不过，彩虹仙人掌无法生产个别染料，例如古粉和青金石。此外，比起各种染料，它更大可能会掉落绿色染料。
+research_name.thaumicbases:sweed=芦苇
+research_stage.thaumicbases:sweed.1=虽然甘蔗用途广泛，但是甘蔗的种植可是一件苦差事。找到一种方法使他更快地生长，只不过是一个比较头痛的问题。也许研究植物的生长是我应该在和我的傀儡遛弯的时候思考的一个问题。我非常喜欢观察他们忙碌的样子。
+research_stage.thaumicbases:sweed.2=随着植物生长研究的成功，我可以宣布，我已经成功地用神秘学理论制作了一种神奇的植物！我目前为它起的名字是“芦苇”，不过，我可能会在未来想出一个更好的名字。芦苇是一种非常有趣的植物，因为它是一种“有甜味的杂草”。这意味着它会蔓延到周围的草地，迅速生长和繁殖。最好小心，我不能把这颗种子放在开阔的草地上，因为它的蔓延会很快杀死该地区的植物，但收集它有一个意外的好处。这种作物通常每株可生产约1-3个糖，偶尔有机会拔起一把甘蔗。虽然有缺点，但如果培植得当，也许我会让它比最好的甘蔗农场更有效率！虽然目前没有按预期工作，但它似乎会形成一些有趣的图案，如果你幸运的话，它会是心形的！
 
-research_name.thaumicbases:tbtree=神秘基础学：黄金果力
-research_stage.thaumicbases:tbtree.1=能被魔法处理来创造新作物的植株可不仅仅是杂草和花朵！树也具备这种潜能！但是，它们本身过于茁壮，因此对简单的魔法增效具有抗性。注魔应该能解决这一问题！你设法生产一棵黄金橡树，以此作为参考案例。这种树运作机理和普通橡树一样，不过一旦它掉落苹果——这些苹果表面都是覆金的！但它无法掉落传说中的附魔金苹果。由于被注入了贪婪源质，黄金橡树掉落的树苗更少，这是因为它希望成为唯一吸收阳光和水分的独苗
+research_name.thaumicbases:plant=进阶草药学
+research_stage.thaumicbases:plant.1=我觉得我手中的这把种子更具勤勉的本性。也许我应该了解的不仅仅是种子，我应该学习花，我应该研究我种植的一些作物。我一定能做点什么！
+research_stage.thaumicbases:plant.2=在经过了一整晚疲惫的植物研究之后，我设法创造了一些，希望是非常有用的植物。有了这些设计，我应该能够从我理论中的这些新作物中获利。<PAGE>§7§l§n纤化麦§r - 我对Plax Seeds的设想是，我可以从这株作物中得到一把纤维，然后从中得到一粒它的种子……然而实际上我得到了大约 §n6-11§r 个线和约§n1-4§r粒种子. 真令人喜悦！实际上比我预期的要好！然而，有时它似乎什么也没产生<PAGE>§a§l§n神秘玫瑰芽§r -神秘玫瑰芽是我做过的有趣的东西之一，一旦我播下种子，它似乎就会排斥我播种的土壤，几乎立刻枯萎。我用世界盐块在土壤下方放置进行了类似于播种炼金草的试验，结果同样糟糕。我尝试直接播种在世界盐块上，但它的茎秆太羸弱，无法长出任何东西。所有的希望似乎都破灭了，直到我设想把它播种在我制作的水晶块上。水晶块稳定了我的注魔祭坛，那么为什么他们不能稳固神秘玫瑰芽呢？经过测试，神秘玫瑰芽的长势令人愉快！神秘玫瑰芽的产物，取决于你把它播种在哪种块上，一个很好的例子是神秘玫瑰芽在火之魔晶块下收割植物时会给我火之水晶碎片，其他魔晶块也会掉落各自的魔力水晶碎片。复相魔晶块将收获一些奇怪的碎纸片，我为什么想要它们，这对我来说尚未明确，但当我用手压碎它们时，它们确实提供了丰富的经验产出。<PAGE>§d§l§n灵气花§r -事实证明，这种植物非常有用，值得我花时间！最初，我的想法是让植物脱落花瓣，这样我就可以收获灵气要素了，因为灵气要素太™难得了。然而，在做了几次失败的尝试后，我终于得到了一朵只有在晚上才能绽放的花。<PAGE>§4§l§n红石瓜种子§r – 这次的收获如我的设想，我的设想制造一种，类似于西瓜和南瓜的生长方式，基本上可再生的红石来源。直到最近的制造出这种“红石瓜”（它只是一块红石而已）。结果取得了难得的成功！这可能是我的转折点！<PAGE>§8§l§n金属草§r - 就像纤化麦一样，但它会掉落铁粒。对于植物来说，铁粒比一整锭铁更容易形成。这种植物每株产量大约§n6-9§r个铁粒，每次作物收获约为§n1-3§r粒种子。<PAGE>§1§l§n青金草§r - 这种植物在理论上也与纤化麦相似，但是，我得到的是青金石而不是线，这对附魔和获取感知源质来说非常方便！这种植物每株产量大约§n0-3§r个青金石和§n0-2§r 粒种子。<PAGE>§2§l§n荧光花§r - 这个比我之前的种子要好得多。这种植物每株产量大约§n3-12§r萤石粉和§n0-2§r粒种子。然而，有一点需要注意的是，这种植物只有在草方块上才能生长。<PAGE>§c§l§n炼金草§r - 与纤化麦相似……然而，它收获的不是丝，而是金粒，这种植物每株产量大约§n3-9§r个金粒，还有一个金胡萝卜，太好了！我在试着播种时注意到，当我把它播种在耕地上时，它不能生长，我必须世界盐放置在耕地之下，才能维持它正常生长。<PAGE>§a§l§n治愈草§r – 它和浆果丛很像。它开出不同寻常的带荚的花，似乎不能借此繁殖……然而，对于像“治愈草”这样的名字来说，这很奇怪……我借此制造了一种非常美味的糖浆，我称之为§c§n玫瑰果浆§r！这种糖浆的作用类似于牛奶，可以消除任何所有的影响。但是，它的好处是我可以保留所有正面效果！再也不用因不擅长解毒而浪费药水了。就像万灵药！<PAGE>§2§l§n烟草§r - 我在魔导手册的另一页上写的“我的烟斗现在在哪里?”一节对此有更详尽的注解。这种植物每株产量大约§n1-2§r片烟叶和§n1-2§r个烟草种子。<PAGE>§l§n§c女§r§l§n§6台§r§l§n§e氵§a§l§n原§r§9§l§n-§r§5§l§n-§r §l§n§7蘑菇§r - 起初，这种奇怪的真菌似乎没有产生任何发挥其作用的迹象，直到我看了看我的魔道透镜的Vis 总数。我现在可以说，这种始源蘑菇向空气中释放了§n5-15§r 点vis！对于需要摄取vis进行快速合成物品神秘使来说非常有用。
 
-research_name.thaumicbases:tbtree1=神秘基础学：末影果力
-research_stage.thaumicbases:tbtree1.1=末影橡树和黄金树类似，但树叶会掉落末影珍珠。
+research_name.thaumicbases:tobacco=我的烟斗现在在哪里?
+research_stage.thaumicbases:tobacco.1=吸毒是不好的，如果有人偶然发现这本书并决定看一看，我希望他们知道我不容忍使用毒品，特别是烟草产品和硬性毒品。然而……我似乎找不到一个放松的好方法，我快绝望了。虽然毒品通常不存在于纤毛菇之外，但它也没有真正让我放松。我需要一些东西来抚慰我痛苦和焦虑的心灵。我真的希望我不会养成坏习惯和吸食上瘾。
+research_stage.thaumicbases:tobacco.2=§l§n杵与臼§r -我雕刻了一个结实的碗来碾碎烟草。但是……我发誓，我以前用这个玩意儿粉碎过其他东西。也许是花瓣？……<PAGE>§l§n烟斗§r - 我根据自己的研究制作了两种的烟斗，尽管我不想使它们。我现在无法自控，我压力太大了。<BR>The §o§n宏伟木烟斗§r 应该可以让我快速吸一口烟草来舒缓我的头痛，不幸的是，这并不是我充分利用烟草的最佳方式，使用这种烟斗吸烟仍然会有一般烟草的缺点。§o§n银树烟斗§r, 然而，它在不损害肺部的情况下，抵消了烟草的大部分负面效果！烟草不仅会对我产生更强的正面效果，而且会持续更长时间。<PAGE>§l§n烟草堆§r - 我创造了9种不同的烟草，每种烟草都能发挥不同的特殊效果，我需要确保我不会把它们弄混.<BR> §5§o§n凝视者烟草堆§r 让我的敌人留下一个全新的印象，就像俗话说的那样——“如果眼神可以杀人”，我应该从烟草中获取的凝视的意念会增强我的死亡凝视，让我的敌人枯萎，凋零，我最好小心，在抽完这种烟后不要看我的盟友。<BR> §4§o§n狂战士烟草堆§r 让我的肌肉在战斗中更加强健，我能够用剑刃横扫对手。我觉得我能一骑当千。<BR> §c§o§n滋养烟草堆§r 让我可以填饱肚子，延长我再次进食的时间……现在想想，这听起来不太健康，但这会让我更专注于我的研究……可能还会用它来烤布朗尼。<BR> §7§o§n启迪烟草堆§r 出乎意料的给予我启迪，给我随机方向的研究点，以备在未来使用。然而，当这种烟草的烟雾散去时，我耳边仿佛有什么东西在轻声低语……<BR> §8§o§n矿工烟草堆§r 让我能更快地挖掘，尤其是用镐！我当然希望这不是他们所说的拥有“矿工肺”的意思<BR> §b§o§n审慎烟草堆§r 这让我摆脱了脑海中逐渐萎缩的疯狂念头。也许，吧……也许这一次我能睡个好觉，不会有什么东西萦绕在我的梦里。<BR> §5§o§n污染烟草堆§r这是我迄今为止制作的烟草中最可疑的一种，让我暂时摆脱了烟瘾，为什么我需要它看上去难以实现，但我并非常人，我可能会想出一个使用它的方法。还有一点需要注意的是，尽管银树烟斗似乎完全否定了这种古怪的烟草，但是银树烟斗并不能因此得以存留。<BR> §3§o§n精灵烟草堆§r, 奇怪的是，在吸食时产生一个小精灵。为什么我要使用它，也是一个和使用污染烟草堆同样的问题，为什么我想让小精灵出现在我的附近，则是一个必然的问题。<BR>也许现在我不必浪费那么多净化之水了，不幸的是，这并不能缓解我突然想要用这种烟草做烘焙食品的冲动。
 
-research_name.thaumicbases:tbtree2=神秘基础学：下界果力
-research_stage.thaumicbases:tbtree2.1=地狱橡树和黄金树类似，但树叶会掉落岩浆膏。
+research_name.thaumicbases:voidseeds=培植虚空
+research_stage.thaumicbases:voidseeds.1=虚空金属，对我的武器库来说也是一笔非常有价值的资产，不过也归功于我对基地周边出现的裂缝缺乏认识。虽然这是由于我的错误，但除了我自己，我不能责怪任何人。然而，我的错误可能是我变得更强大的主要原因。作为一名神秘使，我从自己的经历中学到的一件事是“知识就是力量”，这也是字面意思！所以，无论是犯了错误，还是我从成功中变得更加聪明，我都认为我已经想出了一个主意。 这些§l虚空种子§r 可能是我在不污染灵气场的情况下配置自己的虚空的关键。
+research_stage.thaumicbases:voidseeds.2=由于我对植物物质的天才观察，我合成了一种植物种子去催化虚空种子的增殖，它应该在完全生长的过程中产生一些虚空种子，谢天谢地，它也不会产生任何副作用！我们只希望我能在没有更多错误的情况下继续前进。
 
-research_name.thaumicbases:tbdeco=神秘基础学：装饰性方块
-research_stage.thaumicbases:tbdeco.1=你喜欢老方块......我喜欢老方块。好的，我有办法制作我至爱的装饰方块
+research_name.thaumicbases:raincac=彩虹仙人掌
+research_stage.thaumicbases:raincac.1=仙人掌在实际理论中几乎没有概念上的用处。他们戳你，摧毁怪物掉落的物品。这些小玩意对我这样的神秘使不好，我可不想我的袍子被它的刺刺破！与其让它成为世界上最没用的东西，不如赋予仙人掌更多的意义。
+research_stage.thaumicbases:raincac.2=好吧，我无法修复丑陋的部分，事实上，我想我让它变得更糟了……然而，我已经能够改变它的另外两个缺点！彩虹仙人掌是一种可以让我自己种植各种染料的植物！打破底层的彩虹仙人掌上方生长的仙人掌，可以给我提供大量的染料，然而，它不会产生可可豆、青金石、墨囊和骨粉等物品。然而，与普通仙人掌相比，这种仙人掌似乎生长得非常缓慢。可能是因为生长需要更多的营养。
 
-research_name.thaumicbases:tbdeco2=神秘基础学：装饰性方块（篇目II）
-research_stage.thaumicbases:tbdeco2.1=哎呀，我忘了。我给“神秘学：装饰性方块”添了点内容，但这些炫酷的方块能够给注魔提供增益！
+research_name.thaumicbases:goldtree=金苹果的果园
+research_stage.thaumicbases:goldtree.1=我听说有一种方法可以让苹果树更好的为我所用。当然，苹果是一种很好的零食，但除了新鲜采摘的水果的甜味，我还能从中得到什么其他的治疗益处呢？我提出了一个理论，在这个理论中，我可以造出一棵只长金苹果的树。不过，考虑到这些苹果可能太重，虚弱的树枝无法承受，我会展开研究。
+research_stage.thaumicbases:goldtree.2=考虑了这样的因素之后，我制造出了一棵黄金橡树，从金色的头枝上落下来的所有苹果都是金苹果的，非常美味！虽然我无法获得传说中的“附魔金苹果”，但现在只能这么做了。我相信有也许一种方法可以让这种闪闪发光的水果更加闪亮！通过我对此树枝条的观察，它的木材可能比普通橡树更坚固。有件事我应该考虑一下……
 
-research_name.thaumicbases:tbmacerator=神秘基础学：打粉机
-research_stage.thaumicbases:tbmacerator.1=工业时代2，热力膨胀，通用机械，末影接口？噗哈哈哈，我有了新的解决方案！
-research_stage.thaumicbases:tbmacerator.2=是的，我喜欢科技，但神秘使有打粉机的新方法！
+research_name.thaumicbases:endtree=末影珍珠果园
+research_stage.thaumicbases:endtree.1=看着这棵金苹果树，我意识到这是一个多么大突破。我成功地造出了一棵结出完全不可能果实的树！金色的覆层仍然具有强大力量，而且它可以像其他树木一样种植，这一事实使这一发现比大多数神秘使所能想象的更令人震惊！在自我达到最佳状态之前，我最好先冷静下来，但我一直想要末影珍珠。那么末影珍珠是从……<BR>在对末影珍珠的来源感到崩溃后，我不会具体写它们的来源，而是专注于如何在没有抵达…的情况下获得它们……最糟糕的情况。我已经想出了一个关于如何做到这一点的坚实理论，它涉及末影之眼.
+research_stage.thaumicbases:endtree.2=在理论上与金苹果树相似，但我分别用末影珍珠和末影之眼代替了苹果。理论上，如果我小心一点，我应该可以在树叶之间收获脆弱的末影珍珠。
 
-research_name.thaumicbases:tbadvmacerator=神秘基础学：高级打粉机
-research_stage.thaumicbases:tbadvmacerator.1=我试着改进这项研究！
-research_stage.thaumicbases:tbadvmacerator.2=好，我搞定了。只需要再加入“Fabrico”要素！
+research_name.thaumicbases:inftree=岩浆膏果园
+research_stage.thaumicbases:inftree.1=看着这棵金苹果树，我意识到这是一个多么大突破。我成功地造出了一棵结出完全不可能果实的树！金色的覆层仍然具有强大力量，而且它可以像其他树木一样种植，这一事实使这一发现比大多数神秘使所能想象的更令人震惊！在自我达到最佳状态之前，我最好先冷静下来。但我一直想要岩浆膏。岩浆膏是熔化的岩浆怪的残缺，精制而来尸体，虽然想象起来可能并不那么愉快，但与搞清楚末影珍珠的来源相比，它并没有那么糟糕。我提出了一个理论，比起屠杀许多岩浆怪，如何才能更有效地获得岩浆膏。
+research_stage.thaumicbases:inftree.2=在理论上与金苹果树相似，但我分别用地狱疣和烈焰粉代替了金苹果。理论上，如果我小心一点，我应该可以在树叶之间收获岩浆膏。
 
-research_name.thaumicbases:tbexchang=神秘基础学：炼金交换
-research_stage.thaumicbases:tbexchang.1=我喜欢把一件物品转化成另一件。我得检验一些东西，但我办得到吗？
-research_stage.thaumicbases:tbexchang.2=耶，我简直是这方面的大师......
+research_name.thaumicbases:peaceTree=和平树
+research_stage.thaumicbases:peaceTree.1=你已经注意到，所有种类的动物都能被光所吸引。也注意到，动物可能会刷新出现在不同的地方。
+research_stage.thaumicbases:peaceTree.2= 你已经研究了这种效应，并设法创造了一棵能吸引各种动物的树。与树木生长的生物群落相对应的动物将随机出现在树叶下。然而，你应该控制他们的数量，因为动物会源源不断地出现！
 
-research_name.thaumicbases:tbdouble=神秘基础学：增产
-research_stage.thaumicbases:tbdouble.1=我痛恨浪费资源。是时候增加其产量了......
-research_stage.thaumicbases:tbdouble.2=我找到办法了，当然，无疑地，我在混合要素时糟了点罪，但结果还是达成了。我写下了合成表。
+research_name.thaumicbases:deco=来自旧时代的好消息
+research_stage.thaumicbases:deco.1=从我对我所生活的世界的旧时代的了解来看，这个世界过去与我在村庄图书馆读到的世界有很大的不同，对一些人来说可能很糟糕，但我不是一个热衷评判那些具有怀旧品味的人。我仍然不明白为什么我会产生把这些纹理带回现代的想法……也许这算是现代吗?
+research_stage.thaumicbases:deco.2=没有什么是不可能的，只需要一点点的VIS和油脂…就可以使他看上去来自旧时代…?我不认为这听起来很傻，但不管怎样……我成功地复制了旧时代方块的外观，许多人从以前就见过类似的方块。我突然对脸上的皱纹感到难为情。
 
-research_name.thaumicbases:tbmachanism=神秘基础学：机械学
-research_stage.thaumicbases:tbmachanism.1=试着造些新器械！
-research_stage.thaumicbases:tbmachanism.2=神秘使经常用他们的魔法为寻常的凡俗之物注入魔法，使其获得魔法的力量，焕然一新。这种过程被称为附魔。神秘使也发现了用注魔祭坛完成同样进程的方法，用它来让物品更加强力。但是，注入物品的魔法似乎是有极限的......你设法扩展了这一极限。你制造了超吟附魔台，能够让物品上的附魔提升一级。它不仅仅能让物品的附魔等级距离所需等级更近一步，还有更强的威能——它能够使附魔等级突破最大等级，使得诸如时运V或锋利X此类的附魔成为可能。<BR>这台设备会升级物品上的首个附魔。附魔的顺序与物品描述中的显示顺序一致。先前已经加强的附魔会被跳过——超吟附魔台还没有强力到能够考虑锋利XI的地步。它不会将附魔类型纳入考虑范围，所以像是精准采集之类的附魔也会得到等级的提升，虽然这全然无用。为了超吟一件物品，只需将其放入超吟附魔台唯一可用的槽位，然后通过对超吟附魔台使用法师护手即可开始超吟附魔进程。随后，超吟附魔台会从附近的源质罐子中抽取Praecantatio源质——你总共需要提供32点Praecantatio要素。超吟附魔台还需要一个玩家待在旁边，因为超吟附魔的过程中它会从6格范围内的玩家身上抽取30级的经验！<BR>通过将物品从超吟附魔台中取出，可用随时停止超吟附魔，但已经抽取的经验和源质将会被浪费。超吟附魔台抽取Praecantatio的范围是8格，源质之镜也能在其中正常发挥作用。抽取经验时，超吟附魔台会跳过等级不满30的玩家，所以多个玩家即便总经验等级超过了30也不会奏效。任何带有附魔的物品都能够进行超吟附魔。将未附魔的物品放入超吟附魔台，则什么都不会发生。
+research_name.thaumicbases:deco2=就像手套一样…
+research_stage.thaumicbases:deco2.1=这些方块看上去可能不会吸引所有人，但这并不意味着我不能制作出吸引同僚的方块。我有一个想法，可以把神秘学方块做成我装饰方块!尽管……我应该采用什么材料?
+research_stage.thaumicbases:deco2.2=虽然旧时代的纹理对一些人来说很好，但我设法创建了更适合神秘使需求的块。虽然以前在搭建注魔祭坛时使用的方块对稳定性来说相当无用。相比之下，这些方块应该能让我的祭坛看起来不那么难看，祭坛也比以前稳定得多！
 
-research_name.thaumicbases:tbspikes=神秘基础学：普通钉
-research_stage.thaumicbases:tbspikes.1=没错，我正试着做出新的陷阱系统
-research_stage.thaumicbases:tbspikes.2=有时候神秘使只想好好做自己的研究。安静而孤独地专心于自己的工作，而不担心僵尸在背后虎视眈眈。当然，有时候一扇门就够了。但有时候，神秘使可能也想让这些打扰他的蠢货吃点苦头。遗憾的是，神秘学并未提供一种被动地击杀敌人的方法......又或者已经有了？你设法做成了一种方块，它会伤害任何踏在上方的生物。但它也会撕碎蠢货们的掉落物。应该有办法解决这一问题......神秘使可能还会注意到，击杀生物后尖钉上沾满了鲜血。你需要对尖钉使用魔力布匹来擦除鲜血。随后布匹会沾上血渍，但能用炼药锅来洗去血渍。
+research_name.thaumicbases:macerator=坩埚-粉碎机
+research_stage.thaumicbases:macerator.1=我需要一些替代方法来获得我想要的材料，我自己无法获得，但我确实知道该如何获得它们。通过考虑这些材料通常是如何获得的，我也会在理论上实现同样的事情。
+research_stage.thaumicbases:macerator.2=与凡俗的打粉机类似，我已经发现了分解某些东西的能力，然而……它的效率非常低，不能保证我能得到我需要的东西……等等，我怎样才能把沙子转化成金子？
 
-research_name.thaumicbases:tbspikes1=神秘基础学：高级钉
-research_stage.thaumicbases:tbspikes1.1=你设法用神秘金属——神秘锭升级了你的尖钉。这些新的尖钉更加锋利——它们比起凡俗的铁钉，会更快速地击杀踏及它们的蠢货。在伤害强敌时，它们的表现会更为出色——并且它们不会破坏物品。神秘钉也会对红石信号作出反应，在被红石充能时不会对其上生物造成伤害。
+research_name.thaumicbases:advmacerator=进阶坩埚-粉碎机
+research_stage.thaumicbases:advmacerator.1=我得到的还不够，我需要产出更多的产品。我必须做得更好，我必须要做得更好！但是时间只能告诉我什么时候会犯下 下一个大错误，我不会让它那么快发生。我该如何炼制更多我想粉碎的东西？
+research_stage.thaumicbases:advmacerator.2=在我开始写下更多的理论之前，由于某些原因，我回头看了看“合成”这个词，这个词就像胶水一样在我的脑海里挥之不去。当我在研究机器的时候突然想到。为了合成，我需要工艺要素(Fabrico)。现在我只需要弄明白我如何把多余的植物要素（Herba）从体系中取出来。我应该还剩下一些石英碎片。
 
-research_name.thaumicbases:tbspikes2=神秘基础学：绝妙的钉
-research_stage.thaumicbases:tbspikes2.1=你设法把自己关于由黑暗制成的奇特金属的知识应用在了尖钉之上。最终成品的尖钉极其危险——它们几乎能瞬间击杀走过它们的生物。就像神秘钉一样，虚空钉也不会摧毁物品。它们也像神秘钉一样，会对红石信号作出反应。但它们以某种方式专精于自身的工作，于是击杀的敌人会掉落经验和要素，就像是你亲手击杀一样。但虚空钉不会伤害虚空金属，因为它们是由其制成的......
+research_name.thaumicbases:compress=压缩精炼
+research_stage.thaumicbases:compress.1=据我所知，如果没有一种适当的方法来倍增我的资源，我就需要利用我目前可以利用的材料。我不能只是创造一台机器或一个配方，把石头变成矿石，或者把矿石变成更多的矿石。然而，这并不意味着我不能从矿石中创造更多的矿簇！
+research_stage.thaumicbases:compress.2=在对自己正在做的事情进行了一些思考后，我设法把自己的思路集中起来。这些附加的坩埚配方应该能让我比以前更进一步地复制我拥有的资源！在触媒上加入一定量的烈焰粉，我最多可以额外产生3个烈焰棒，真是划算！与其他炼金配方一样，它展现出我能够无中生有地创造东西！就像神秘使能够做到的一样！我应该犒赏自己，在奥术浴场放松身心。
 
-research_name.thaumicbases:tbbloodfabric=神秘基础学：血渍布匹
-research_stage.thaumicbases:tbbloodfabric.1=有时候神秘使只想好好做自己的研究。安静而孤独地专心于自己的工作，而不担心僵尸在背后虎视眈眈。当然，有时候一扇门就够了。但有时候，神秘使可能也想让这些打扰他的蠢货吃点苦头。遗憾的是，神秘学并未提供一种被动地击杀敌人的方法......又或者已经有了？你设法做成了一种方块，它会伤害任何踏在上方的生物。但它也会撕碎蠢货们的掉落物。应该有办法解决这一问题......神秘使可能还会注意到，击杀生物后尖钉上沾满了鲜血。你需要对尖钉使用魔力布匹来擦除鲜血。随后布匹会沾上血渍，但能用炼药锅来洗去血渍。
+research_name.thaumicbases:tbdouble=贪婪的野心
+research_stage.thaumicbases:tbdouble.1=人生在世，我对自己所做的事情似乎并不满意。是因为我的贪婪吗?我是否正在成为疯狂的邪术崇拜者，从而对正义的真相视而不见? 由于精神状态的作弄，我现在无法集中精力。我需要集中精神思考。我想重构一些我之前分解过的材料，我该怎么做呢?我得看看……
+research_stage.thaumicbases:tbdouble.2=我找到办法了！只需要体系中投入的要素加倍，没有什么是改变点配方和石英碎片无法解决的。从理论上讲，这应该能让我创造出更多我投入的东西。矿簇现在翻了一倍！基于一台好的炼狱熔炉，这可能是神秘使梦想中最简单、最有效的冶炼方式！
 
-research_name.thaumicbases:tbusefire=神秘基础学：火魔法
-research_stage.thaumicbases:tbusefire.1=§o营火§r<DIV>如果一个普通人在森林附近游荡，而此时天色渐暗，他又与家园相距甚远，无法到床上安然入睡，那么他很可能会被困在黑暗之中，被那些怪物重重包围。可你是个神秘使，当然能解决这种问题！你找到了制作营火的方法！为了点亮营火，你首先需要手持原木右击它——魔法原木可能会燃烧更长时间。接下来，只需向其中放入任何燃料即可。现在，这是个小巧的信标了！
-research_stage.thaumicbases:tbusefire.2=§o营火§r<DIV>如果一个普通人在森林附近游荡，而此时天色渐暗，他又与家园相距甚远，无法到床上安然入睡，那么他很可能会被困在黑暗之中，被那些怪物重重包围。可你是个神秘使，当然能解决这种问题！你找到了制作营火的方法！为了点亮营火，你首先需要手持原木右击它——魔法原木可能会燃烧更长时间。接下来，只需向其中放入任何燃料即可。现在，这是个小巧的信标了！<PAGE>§o火盆§r<DIV>好吧，营火确实不错，但有个问题——它太依赖手动操作了。你得给它加原木，还得给它添燃料。也许神秘学能够在这个问题上帮到你？而它确实能！你改进了营火的构造。火盆会发挥同样的作用，但它无需手动添加原木和燃料——它需要从附近的源质罐子和源质之镜中抽取Ignis源质。
+research_name.thaumicbases:overchant=超越附魔的极限
+research_stage.thaumicbases:overchant.1=尝试一下有意思的机制! <- 出于某种原因，当我翻开下一页写下我的下一个想法时，就写在手册里。我似乎不能移除文字，尽管我不相信我可以移除我写在手册里的任何东西。撇开其他想法不谈，我对于这一章的新想法是让我的工具和武器获得更多的力量，而我所能做的最多就是等级五的附魔……然而，谁能阻止我超越呢?谁能在我力量已至巅峰的时候阻止我!看来，我是唯一有胆量超越附魔极限的人。
+research_stage.thaumicbases:overchant.2=我已经勾勒出了这个装置的大致理论，我将其命名为“超吟附魔台”，这是个特别的…机器吗?我能称它为机器吗?我不能深究其中的哲理，我需要解释一下。<BR>首先, §l§n当启动这个装置时它会吸取你血脉的经验，约占你血量的40%，所以在这样做时一定要保持血量充足，因为它甚至无视了最好的盔甲§r, 生命恢复药剂和一些设备可能有助于缓解这个问题<PAGE>有了这个警告，超吟附魔台会使我的附魔，比如“§l§n锋利V§r”和“§l§n耐久III§r”，将其等级提高1。超吟附魔台将会忽略之前被升级过的魔咒，转而升级那些能够升级的魔咒。<BR>然而，有一点需要注意，它一次只能升级一个魔咒。我最好确保我的经验值在每次启动超吟附魔台时都超过30。<BR>§l§n如果没有适当的经验等级，这台机器将持续消耗源质，所以请记住这一点!§r<BR>有了这样的机器，我可以做出真正值得一看的东西！
 
-research_name.thaumicbases:tbtobacco=神秘基础学：烟草
-research_stage.thaumicbases:tbtobacco.1=§o研钵§r<DIV>用于研磨烟叶的主要工具。<PAGE>§o烟斗§r<DIV>有两种类型的烟斗：“宏伟之木”和“银木”。宏伟之木烟斗会在抽烟和获得扭曲后给予更多负面效果。<PAGE>§o烟草堆§r<DIV>有时候，神秘使只想从神秘学带来的所有恐怖中暂求一时安息。他想让自己的头脑清醒，专心于自己的工作之中。众所周知，其他的神秘使会抽烟，但这严重损害了神秘使的健康，甚至会切断人类和魔法世界的联系。你不需要这玩意。你设法研制了一种植物，功能与烟草相似，但绝对有利于你的健康！可惜的是，你很确信，你的植株是唯一一种安全的烟草，除了你之外没有人能复制它们。那就这样吧。为了让一位神秘使真正得到休息，你需要3种东西——一座漂亮的房子（而你应该已经有了），神秘使的烟斗，和一些烟草。要正确的制成烟草，神秘使需要磨碎植物的叶子。你可能需要杵和臼来完成这项工作。你也需要自己的烟斗，但你并不想用起凡俗的烟斗，对吧？你找到了正确地注入银木木板以制成完美烟斗的方法。这对你接触魔法也有好处，因为这种烟斗的组分里包含了世界盐。那些吸着凡俗烟草的神秘使可得不到这么多好处。但你的烟草超凡脱俗，你的烟斗也同样如此。借由惬意的享受烟草，你有小几率能够除去一些临时扭曲。你很确信的是，你还能对烟草做些改动，让它们更加强效，而你只需要弄清楚——具体怎么做。烟草在抽烟时会被消耗。烟斗会选择神秘使口袋里的第一种烟草，与弓在选择要发射的箭矢时的机制相同。像你一样的神秘使也要花些时间才能抽完一管烟——何必那么匆忙呢？
-research_stage.thaumicbases:tbtobacco.2=§o愤怒烟草堆§r<DIV>你很久以前听说过某种狂暴的战士，他们习惯于在战斗前抽烟。他们是极其可怕的战士——没有痛觉，又怀着无可阻挡的盛怒，每次出征都会将其敌人撕成碎片。他们逝去已久，但他们战斗中狂怒的秘密呢？你发现了一种方法，可以通过给自己的烟草注入所需的魔法，来获得他们的一丝狂怒。战前抽烟——你就能把敌人粉碎，就像那些战士一样！<PAGE>§o休弛烟草堆§r<DIV>没错，大多数神秘使会吸食各种草木来“放松”。你不需要这种放松，绝不。他们是群蠢货，如果继续这么做不久就会失去他们的魔力！但是，你的头脑也需要从扭曲之中放松一下。诚然，寻常的烟草能做到这一点，但你能做得更好，不是吗？......你研制了一种完美的烟草，能够放松你的心神并移除临时扭曲。<PAGE>§o睿智烟草堆§r<DIV>你已然跨越了烟草的放松特性。向烟草中注入知识是个绝妙的主意——你设法制成了一种烟草，在抽过这种烟后，你的头脑会变得像水晶一样澄澈清晰。这种效果只会持续寥寥数秒，但已经远足以做出一两个惊人的发现了。然而，你有些担心，也许你同样会看到恐怖之物，它们正在腐蚀你的心智......这个嘛，没有风险，就没有回报，对吧？<PAGE>§o邪术烟草堆§r<DIV>你找到了向寻常烟草粉中注入邪术能量的方法。其成品抽起来可能是安全的，但神秘使在抽下这种烟后视线在一段时间内会变得冷酷而残忍。有这种视线的神秘使不应该注视生灵。这么做可能会吸引到“邪术族”的注意，但几率很低。烟草也能导致神智上的问题！ <PAGE>§o饱和烟草堆§r<DIV>你找到了终结饥饿的方法。抽下这种含有额外种子和一些元始要素的烟草，可以欺骗自己的头脑，让它以为身体已经饱餐了一顿。你可能会猜测这非常危险，因为身体并未真的摄入食物，但情况危急时这也许能帮助你多撑一会儿。但它会对你的身体产生负面影响，所以你应该谨慎使用它。<PAGE>§o精灵烟草堆§r<DIV>如果你将一些魔力注入烟草，会发生什么？这是个有趣的问题，但结果更是堪称奇妙！你找到了正确地向烟草中注入魔力的方法。成品似乎抽起来非常安全——它本身不携带任何负面效果。但是，抽完这种烟后，一只小巧的生灵会从你的烟斗里弹出来——一只精灵。它也会显得有些愤怒——你认为这可能是因为精灵不喜欢密闭空间。又或许烟气本身才是原因？<PAGE>§o矿工烟草堆§r<DIV>你听说过某些神秘的草木，能够给予吸食者力量，让他们能够空手在一秒内击碎大石！这是典型的东方古老故事。也许在区区一秒内击退石头是不可能的，但你设法研制了一种烟草，它至少能够帮助你更加得心应手地挖矿。在你下矿前，抽下这种烟，你应该就能够比寻常更快速的采掘石头和矿石。当然了，一段时间后效果会消失。<PAGE>§o腐化烟草堆§r<DIV>你不太确定自己为何甚至要发现这个。没错，你现在可以向烟草中注入腐化成分，这会永远地改变其性质，如此一来，任何抽这种烟的人的头脑都会被腐化所侵蚀，万千黑暗的恐怖之物将会在他的脑海中浮现，但这到底有什么用途？腐化的烟草碎片也会在烟斗上留下微小的痕迹。你对这些痕迹如何影响银木这类的物件很感兴趣......但恐怕不会有什么好事。
+research_name.thaumicbases:spikes=铁钉
+research_stage.thaumicbases:spikes.1=讨厌的怪物试图阻碍我对知识的探索。我一定能设法避免这种情况发生，我的基本构想是设计一组尖刺，使那些愚蠢的怪物可以踩到或是绊倒。我思考这个理论的用途，但是怎样寻找一个例子呢?压力板?
+research_stage.thaumicbases:spikes.2=我的计划很顺利！我制造一组能够造成一定伤害的铁钉，但只能朝上放置。这些刺也刺穿怪物的凋落物，并完全破坏它们。我对结果不太满意，但一个想法产生后总有改进的空间。
 
-research_name.thaumicbases:tbtools=神秘基础学：工具
-research_stage.thaumicbases:tbtools.1=更多的神秘使工具，在合成秘晶剑后，你会知道更加炫酷的玩意！
+research_name.thaumicbases:thaumspikes=神秘钉
+research_stage.thaumicbases:thaumspikes.1=虽然铁钉在某些地方或多或少取得了成功，但这并不能减轻我对其当前缺陷的不满。当使用铁刺时，最大的缺点便是它会导致怪物身上掉落的所有东西被损毁，变得毫无用处，因为怪物需要花费很长时间才能被铁刺完全刺穿。而且当我需要停止的时候也不能解除它们。从之前与神秘锭的研究和它的能力来看，也许值得用神秘锭来升级我的铁钉。
+research_stage.thaumicbases:thaumspikes.2=我用神秘锭升级了我的铁钉，理论上说这会让尖刺更锋利，更致命。神秘钉也有2个额外的优点，第一个是它不会像铁锭那样刺穿怪物掉落物，第二个是我可以通过与红石来激活和停用它们!这些尖刺肯定不能再提高了。对吧?但是我不这么认为。
+
+research_name.thaumicbases:voidspikes=虚空钉
+research_stage.thaumicbases:voidspikes.1=虚空金属，虽然耐久性低，但它具有令人难以置信的自我修复和自发锋利的能力！!由于它是一种来自无尽的虚空的金属，并且考察了接触咒波裂隙的伤害，我可以得出结论，下一个理论应该是有价值的。虽然神秘锭通常不会与虚空金属产生很好的共鸣，但我认为我可以做些什么让它们很好地融合在一起。
+research_stage.thaumicbases:voidspikes.2=他们把我称作疯子，为什么?因为我用虚空力量把那些敌人折磨致死?这些虚空钉应该对普通生物造成大量伤害，几乎立即杀死他们。与它的前身神秘钉类似，这组尖刺不会损害怪物掉落物，并且可以被红石开启和关闭。这些尖刺是我所能得到的最强大的，由于这种虚空金属能够与它吞噬自然的欲望同步，它的力量与它的神秘钉是无法比拟的。现在，我可以让他们付出代价了。
+
+research_name.thaumicbases:bloodfabric=血……魔法?
+research_stage.thaumicbases:bloodfabric.1=我的钉板似乎被怪物的献血浸透。虽然我确实很喜欢它们被钉板变作肉末的事实，但我确实希望这些钉板不要像 我早上看到的不死生物烧焦的残骸 那样可怕。我试着用羊毛和海绵把它擦掉，但血却没有消失无踪，只是粘在上面。我试着把血迹涂在新鲜的残骸身上，但只会让我看起来像个随时可能刺伤他们手指的傻瓜。尽管……我还没考虑过使用魔力布匹擦拭。
+research_stage.thaumicbases:bloodfabric.2=随着我使用更多的钉板，我开始注意到它们有多脏乱。我可能应该把钉板清理掉，因为它们相当……恶心的样子。不幸的是，我不确定我是否能把布匹上的血迹擦掉，但我认为我能做的不仅仅是擦掉血迹。我用……做了一套衣服……有一些违反常规的意外收获，但它们确实很有帮助。<PAGE>§l§n血腥神秘使法袍§r 给我注入活力，这让我更健康，也让我更能容忍那些让我沾染血的力量<BR> §l§n血腥神秘使护腿§r 把我固定原地，以免像球一样被攻击撞飞。<BR>最后 §l§n血腥神秘使之靴§r让我以一个难以置信的速度行进!当我过于深入邪术，让我如逃离潜于心中危险那般狂野地奔跑。<BR>现在我只需要一套血腥的护目镜来搭配我的血腥衣服……等等，这会让我看起来像个§5杀人犯§r.
+
+research_name.thaumicbases:firemagic=点燃的篝火
+research_stage.thaumicbases:firemagic.1=当你被试图伤害你怪物包围时，漫长的夜晚就是一场战斗，我甚至无法在他们想要破门而入的情况下睡个好觉！要是我有办法让他们安静就好了，这样我早上就可以继续我的研究了。
+research_stage.thaumicbases:firemagic.2=我制造了一个古怪的玩意，一个看似有用，但可能携带恶念的§l§n奥术营火§r 但这个营火重构他的烟与火焰，以神的强大力量鞭打怪物!让那些讨厌的怪物看看这个吧。.<BR> 另一方面,  §l§n奥术火盆§r在室内使用要安全得多。火盆不仅能给怪物们教训，还能让我的身体恢复活力，让我自己都无法相信!终于，我可以安心地做我的研究了。
+
+research_name.thaumicbases:scythe=不要谈论……他
+research_stage.thaumicbases:scythe.1=在一个村庄漫游时，我听到一个村民讲述的漫无边际的传说。那个传说描述了一个不存在的人，一个没有存在的人。据讲故事的村民说，他的名字叫“Herobrine”，刚刚说出这个名字，村民们都惊恐的围了过来。我告诉你，如果这个叫Herobrine的人真的存在的话，他可能会成为一个真正的麻烦。包括外貌、财产、盗窃、记号。然而，当我拿着那颗下界之星时，我能感觉到对这些的回忆……它可能具备某种意义。如果触碰到魔力水晶碎片可以向我揭示创造秘书的奥义，那么在那颗下界之星上我一定也感受到了某种相同的感受。
+research_stage.thaumicbases:scythe.2=下界之星被证实是在研究的参考中非常有用！结果我得到的启示比我想象的要多得多！我得到了称之为“白瞳者之镰”的武器。虽然不是《我的世界》中的死神，但这把镰刀被证明是一种非常强大的武器，它不仅能更快地自我修复，这要归功于我从中注入的虚空锄的特性，再加上我用来塑造刀刃的额外虚空金属和下界之星，你永远不会折断他！除了坚不可摧的神奇益处外，镰的伤害也远远大于我以前创造的任何工具，使其成为一个真正的恐怖的工具。进一步的附魔可能会进一步增强我在这个邪恶世界上散发的恐怖气息。
+
+research_name.thaumicbases:revolver=The Rootin Tootin Point
+research_stage.thaumicbases:revolver.1=武器装备的缺乏和腰带上的实用性使得神秘使变得死亡。不幸的是，如果我没有更好的方法，那么我现在就很接近那类神秘使了，如果我没有更好的方法，那么我可以在以后的时间里修补一些东西，使其变得更好。我目前的工具也不能满足这一目的，尽管它们是可附魔的，但除此之外，它们并没有什么其他的力量。我应该更多地研究投射物，就像我研究核心的法术一样。
+research_stage.thaumicbases:revolver.2=这可能有点夸张，但这可能是解决我防守问题的办法这是一种轻型但强大的远程武器，我可以根据自己的意愿进行修改，我称之为"§l奥术左轮枪§r"!使用左轮手枪之前，我需要把子弹装进枪里。每次射击都会对我的敌人造成难以承受的伤害，并且可以根据我给它注入的魔法进行修改。<PAGE>我最好把我的书呆子气留在尘土飞扬的旧图书馆里，因为我有一场冒险要继续！
+
+research_name.thaumicbases:revupgrades=埋葬过去
+research_stage.thaumicbases:revupgrades.1=正如我之前提到的奥术左轮枪，我谈到了升级左轮手枪…现在想想，我不太知道该怎么升级一把枪，尤其是像这样的左轮手枪。我能想到的学习火炮增强的唯一方法就是通过更多的学习，也许我应该去村里的图书馆看看图书管理员是否有关于枪支的信息。
+research_stage.thaumicbases:revupgrades.2=创造力是人类的极限，但对于神秘使来说却不是。尽管我之前缺乏创造力，但我设法想出了左轮手枪的一些特性，这些特性很可能使它比基础左轮枪本身更有用！虽然最初对枪的工作原理不满意，但这些魔法应该能缓解我认为之前降低枪性能的很多问题。尽管它在发射时功率很高，尽管它的子弹制造简单，但它仍然感觉不像是适合神秘使的工具。这些升级应该给我更多我自己做的感觉，允许我进一步详细解释它。<PAGE>§l左轮枪升级：精准§r<DIV>意识到自己的手有多不稳定后，我决定进行这次升级，以减轻我糟糕的精准度，并在瞄准时自动进行矫正。幸运的是，这将确保我能够真正击中目标，而不是他们旁边的墙。<DIV>§o不兼容升级§r: §l速度§r, §l效率§r<BR>§o等级§r: 1-5<PAGE>§l左轮枪升级：节肢杀手§r<DIV>这款左轮手枪的特殊升级将其力量集中在世界上令人毛骨悚然的爬行动物身上，如蜘蛛和蠹虫。我不必烧毁我的房子来清理它们，我只需要瞄准它们的头部，然后开火，直到它们消失！<DIV>§o不兼容升级§r: §l威力§r, §l异域杀手§r, §l决斗§r, 和 §l银弹§r<BR>§等级§r: 1-5<PAGE>§l左轮枪升级： 异域杀手§r<DIV>这种特殊的魔法使我能够对异世界的生物造成更多的伤害。当我漫游在可能存在的邪术世界时，我应该会遇到相当可怕的生物，他们会蓄意让我扭曲甚至死亡。然而，我不会让这种情况发生，用一颗子弹教会他们，他们不能扭曲我的意愿。<DIV>§o不兼容升级§r: §l威力§r, §l节肢杀手§r, §l决斗§r, 和§l银弹§r<BR>§o等级§r: 1-5<PAGE>§l左轮枪升级：决斗§r<DIV>这次升级使我能够提高对其他人类的伤害，包括像我这样可能行为不端的神秘使。<DIV>§o不兼容升级§r:§l威力§r, §l节肢杀手§r, §l异域杀手§r, §l银弹§r<BR>§o等级§r:1-5<PAGE>§l左轮枪升级： 睿智§r<DIV>这让我发射的每一颗子弹都有机会在杀死生物时揭示世界的秘密。这就像偷窃生命，但对聪明人来说！不，这里没有书呆子，我们都很老练。<DIV>§o不兼容升级§r:§l污染§r<BR>§o等级§r:1-3.<PAGE>§l左轮枪升级： 效率§r<DIV>奇怪的是，这次升级在发射子弹后随机复制一发子弹，增加了我的左轮手枪在需要重新装弹之前可以发射的子弹数！<DIV>§o左轮枪升级：§r: §l速度§r, §精准§r <BR>§o等级§r:1-5<PAGE>§l左轮枪升级：威力§r<DIV>这种升级直接提升了每颗子弹的伤害，虽然这个升级的伤害 比起专杀某类生物的升级 的威力要弱些，但它总归没有太多缺点。<DIV>§o不兼容升级§r: §l节肢杀手§r, §l异域杀手§r, §l银弹§r, 和 §l决斗§r<BR>§o等级§r: 1-5<PAGE>§l左轮枪升级：银弹§r<DIV>当我向亡灵开火时，这次升级会将他们变成一团绯红的血雾，使穿越下界要塞和洞穴等地方变得不那么恐怖！狼人和恶魔肯定会讨厌这类神圣杀手！<DIV>§o不兼容升级§r:<BR>§o等级§r: 1-5<PAGE>§l左轮枪升级： 速度§r<DIV>这次升级让我发射的子弹飞得比我看到的更快！然后，我一开始就看不到子弹，所以我不知道这是否完全正确！§o不兼容升级§r:§l效率§<BR>§o等级§r: 1-5<PAGE>§l左轮枪升级：污染§r<DIV>这个升级可以将我恶心的腐化武器化，成为对付非腐化生物的有效武器，但对腐化生物的伤害会降低。奇怪的是，它也有机会对我的敌人造成致命的腐毒!§o不兼容升级§r: §l睿智§r<BR>§o等级§r: 1-3
+
+research_name.thaumicbases:curioscraft=珍品仿制
+research_stage.thaumicbases:curioscraft.1=作为一个神秘使，我对知识的追求是众所周知，我是否应该拥有这些知识不是别人的事，而是我自己的事。我遇到的问题是，我的研究变得乏味且耗时（而且耗费物资），这让我更难获得工作所需的知识。然而，这并不是一个大问题，因为我之前研究过一种名为“神秘玫瑰芽”的神秘植物，神秘玫瑰芽掉落了这些奇怪的……几乎是古人的珍品。通过在手中碾碎这些“知识碎片”，我可以获得经验。然而……这让我想知道我能做些什么来进一步增强知识碎片中包含的体验与只是。 我知道如何从开采琥珀矿石中和前往§o一个寒冷空旷的存在位面§r 来获得珍品的方法。事实证明，这给了我不同类型的珍品。我不知道为什么我以前没有尝试过自己制造珍品。.
+research_stage.thaumicbases:curioscraft.2=根据我最近对知识碎片的实验发现，我发现了一个配方，在这个配方中，知识碎片充当催化剂来塑造我自己的珍品。加入不同的种类的源质，让我能够做出不同类型的珍品！当然，这需要我根据各个学科的知识要素去制造不同的珍品，例如，如果我想要一个奥术珍品，我需要用神秘学要素对其进行炼金。光明珍品需要一些与智力有关的东西。扭曲珍品需要用扭曲相关要素来制作。每个配方都在各自的标签上做了标记，用来获得更多信息。
+research_stage.thaumicbases:curioscraft.3=奇怪的是，邪术珍品不能与合成要素共鸣的很好，然而，在与异域要素一起进行其他方面的测试后，发现它与贪婪要素的效果最好。在花了一点时间思考为什么之后，我总结了一些关于邪术世界的事情。传说中有一片人的眼睛看不见的土地，在那片土地上有异界之人的身影，那不是世界的尽头，而是一个被称作“虚空”的地方。像这样的地方通常情况下是非常危险和不稳定的，在那个世界存在一个蕴含古代力量的遗迹。不幸的是，如果我不能亲眼见证，我还不能取得更多的见解，这是另一个世界的事。值得注意的是，这个珍品应该与我创建的许多其他有趣的东西相似。
+
+research_name.thaumicbases:thaumanvil=神秘砧
+research_stage.thaumicbases:thaumanvil.1=你被那些铁砧惹恼了。它们在几次敲击后就会破坏，它们正在消耗你的心力，就像黑洞一样吞噬你的经验!
+research_stage.thaumicbases:thaumanvil.2=你已经应用了你的炼金术知识，也就是被称为神秘锭，来创造一个更好的铁砧!神秘砧耐久度比铁砧长得多，而且还能保持全部的功能! <BR>神秘锭毕竟不是凡俗的铁块-它可以一次性吸收更多经验，将铁砧的最大工作等级提升至60级。似乎在这里修理物品没有惩罚-它总是像你第一次修理一样!
+
+research_name.thaumicbases:voidanvil=虚空砧
+research_stage.thaumicbases:voidanvil.1=嗯，虽然神秘砧很好，但它最后也用坏了。也许没有那么快，但它仍然坏了。然而，自从你解锁了虚空金属后，你就有了一个想法。如果你想用它做一个铁砧呢？
+research_stage.thaumicbases:voidanvil.2=结果相当的……有趣<BR>首先，你新制造的铁砧保留了虚空金属的主要特性——自我修复的能力。如果你在铁砧旁边进行区块更新，虚空砧会自动修复自己。然而，虚空砧的功能却有很大差异——这里的任何操作，无论你是重命名物品还是结合强效的附魔书，都需要消耗7级经验。 <PAGE>虚空砧似乎也没有重复修理物品的惩罚，就像神秘砧一样。<BR>在修理过程中，你看到一些虚空的金属渗入了工具的裂缝中。当然，这没什么好担心的，对吧？
 
 #################################################################

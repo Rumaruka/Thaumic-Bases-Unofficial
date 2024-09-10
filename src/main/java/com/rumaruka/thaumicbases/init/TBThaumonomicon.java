@@ -3,6 +3,7 @@ package com.rumaruka.thaumicbases.init;
 
 import com.rumaruka.thaumicbases.api.RevolverUpgrade;
 import com.rumaruka.thaumicbases.common.handlers.RevolverInfusionRecipe;
+import static com.rumaruka.thaumicbases.init.TBFluids.FLUID_PYRO;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -17,7 +18,10 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
-import thaumcraft.api.crafting.*;
+import thaumcraft.api.crafting.CrucibleRecipe;
+import thaumcraft.api.crafting.InfusionRecipe;
+import thaumcraft.api.crafting.ShapedArcaneRecipe;
+import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 import thaumcraft.api.internal.CommonInternals;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.api.research.ResearchCategories;
@@ -27,8 +31,6 @@ import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 
 import java.util.List;
-
-import static com.rumaruka.thaumicbases.init.TBFluids.FLUID_PYRO;
 
 
 public class TBThaumonomicon {

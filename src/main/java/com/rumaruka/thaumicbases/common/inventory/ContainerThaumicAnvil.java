@@ -13,13 +13,12 @@ import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import static net.minecraftforge.common.ForgeHooks.onAnvilRepair;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
-
-import static net.minecraftforge.common.ForgeHooks.onAnvilRepair;
 
 public class ContainerThaumicAnvil extends ContainerRepair{
 

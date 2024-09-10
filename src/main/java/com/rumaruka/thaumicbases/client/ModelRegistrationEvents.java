@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.client;
 
 import com.rumaruka.thaumicbases.core.TBCore;
-
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.common.Mod;

@@ -3,7 +3,6 @@ package com.rumaruka.thaumicbases.common.item;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.rumaruka.thaumicbases.api.RevolverUpgrade;
-import com.rumaruka.thaumicbases.api.dummycore_remove.utils.DummyPacketHandler;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.libs.TBSounds;
 import com.rumaruka.thaumicbases.core.TBCore;

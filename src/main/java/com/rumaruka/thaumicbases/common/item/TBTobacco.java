@@ -11,6 +11,8 @@ import net.minecraft.util.math.MathHelper;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.capabilities.IPlayerKnowledge;
+import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.NORMAL;
+import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.TEMPORARY;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchCategory;
 import thaumcraft.common.entities.monster.EntityWisp;
@@ -18,9 +20,6 @@ import thaumcraft.common.lib.potions.PotionDeathGaze;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.NORMAL;
-import static thaumcraft.api.capabilities.IPlayerWarp.EnumWarpType.TEMPORARY;
 
 public class TBTobacco extends Item implements ITobacco {
 

@@ -6,8 +6,7 @@
       "particle": "thaumicbases:blocks/rcside",
       "bottom": "thaumicbases:blocks/rcbottom",
       "top": "thaumicbases:blocks/rctop",
-      "side": "thaumicbases:blocks/rcside",
-      "particle":"thaumicbases:blocks/rcside"
+      "side": "thaumicbases:blocks/rcside"
     }
   },
   "variants": {
@@ -25,7 +24,15 @@
       "4" : { },
       "5" : { },
       "6" : { },
-      "7" : { }
+      "7" : { },
+      "8" : { },
+      "9" : { },
+      "10" : { },
+      "11" : { },
+      "12" : { },
+      "13" : { },
+      "14" : { },
+      "15" : { }
 
     }
   }

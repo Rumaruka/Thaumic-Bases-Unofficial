@@ -1,6 +1,5 @@
 package com.rumaruka.thaumicbases.common.item;
 
-import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,7 +24,6 @@ public class ItemGrassSeeds extends ItemSeeds {
     public ItemGrassSeeds(Block crops){
         super(crops, Blocks.GRASS);
         this.crops = crops;
-        this.setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
     }
 
     @Override

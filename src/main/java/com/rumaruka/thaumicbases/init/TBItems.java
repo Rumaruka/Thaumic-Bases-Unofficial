@@ -94,6 +94,7 @@ public class TBItems {
     //Mortar
     public static Item mortar;
     public static Item revolver;
+    //public static Item ukulele;
     public static Item knozeseed;
     public static Item knowledge_shard;
 
@@ -117,20 +118,20 @@ public class TBItems {
         voidfas = new ItemVoidFlintAndSteel().setUnlocalizedName("voidfas").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
 
-        plaxseed = new ItemSeeds(TBBlocks.plax, Blocks.FARMLAND).setUnlocalizedName("plaxseed");
-        sweedseed = new ItemGrassSeeds(TBBlocks.sweed).setUnlocalizedName("sweedseed");
-        tobaccoseed = new ItemSeeds(TBBlocks.tobacco, Blocks.FARMLAND).setUnlocalizedName("tobaccoseed");
-        aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal");
-        metalleatseed = new ItemSeeds(TBBlocks.metalleat, Blocks.FARMLAND).setUnlocalizedName("metalleatseed");
-        lazulliaseed = new ItemSeeds(TBBlocks.lazullia, Blocks.FARMLAND).setUnlocalizedName("lazulliaseed");
-        redlonseed = new ItemSeeds(TBBlocks.redlonstem, Blocks.FARMLAND).setUnlocalizedName("redlonseed");
-        lucriteseed = new ItemSeeds(TBBlocks.lucrite, Blocks.FARMLAND).setUnlocalizedName("lucriteseed");
+        plaxseed = new ItemSeeds(TBBlocks.plax, Blocks.FARMLAND).setUnlocalizedName("plaxseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        sweedseed = new ItemGrassSeeds(TBBlocks.sweed).setUnlocalizedName("sweedseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        tobaccoseed = new ItemSeeds(TBBlocks.tobacco, Blocks.FARMLAND).setUnlocalizedName("tobaccoseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        metalleatseed = new ItemSeeds(TBBlocks.metalleat, Blocks.FARMLAND).setUnlocalizedName("metalleatseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        lazulliaseed = new ItemSeeds(TBBlocks.lazullia, Blocks.FARMLAND).setUnlocalizedName("lazulliaseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        redlonseed = new ItemSeeds(TBBlocks.redlonstem, Blocks.FARMLAND).setUnlocalizedName("redlonseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        lucriteseed = new ItemSeeds(TBBlocks.lucrite, Blocks.FARMLAND).setUnlocalizedName("lucriteseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
-        glieoniaseed = new ItemGrassSeeds(TBBlocks.glieonia).setUnlocalizedName("glieoniaseed"); // AeXiaohu modified 修复荧粉花只能种在耕地上，现在只能种在草地上
+        glieoniaseed = new ItemGrassSeeds(TBBlocks.glieonia).setUnlocalizedName("glieoniaseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs); // AeXiaohu modified 修复荧粉花只能种在耕地上，现在只能种在草地上
 
         knozeseed = new ItemKnozeSeeds(TBBlocks.knoze).setUnlocalizedName("knozeseed");
 
-        voidseed = new ItemSeeds(TBBlocks.voidplant, Blocks.FARMLAND).setUnlocalizedName("voidseed");
+        voidseed = new ItemSeeds(TBBlocks.voidplant, Blocks.FARMLAND).setUnlocalizedName("voidseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         briar_seedbag = new ItemBriarSeedbag().setUnlocalizedName("briar_seedbag").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
         knowledge_shard = new ItemKnowledgeShard().setUnlocalizedName("knowledge_shard").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -165,6 +166,7 @@ public class TBItems {
         rosehipsyrup = new ItemRosehipSyrup().setUnlocalizedName("rosehipsyrup").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
         revolver = new ItemRevolver().setUnlocalizedName("revolver").setMaxStackSize(1).setMaxDamage(1561).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        //ukulele = new ItemUkulele().setUnlocalizedName("ukulele").setMaxStackSize(1).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
     }
 
 
@@ -226,6 +228,7 @@ public class TBItems {
         TBItems.registerItem(rosehipsyrup, rosehipsyrup.getUnlocalizedName().substring(5));
 
         TBItems.registerItem(revolver, revolver.getUnlocalizedName().substring(5));
+        //TBItems.registerItem(ukulele, ukulele.getUnlocalizedName().substring(5));
         TBItems.registerItem(knowledge_shard, knowledge_shard.getUnlocalizedName().substring(5));
     }
 
@@ -306,6 +309,4 @@ public class TBItems {
                 TBCore.modid + ":" + i.getUnlocalizedName().substring(5), "inventory"));
 
     }
-
-
 }

@@ -34,6 +34,7 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
 
     public BlockRedlonStem(Block crop)
     {
+        this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0).withProperty(FACING, EnumFacing.UP));
         this.crop = crop;
         this.setTickRandomly(true);
         this.setCreativeTab(null);

@@ -43,7 +43,7 @@ public class BlockSweed extends BlockBush implements IGrowable {
     @Override
     protected BlockStateContainer createBlockState() {
         if(AGE==null){
-            AGE = PropertyInteger.create("age",0,4);
+            AGE = PropertyInteger.create("age",0,3);
         }
         return new BlockStateContainer(this,AGE);
     }

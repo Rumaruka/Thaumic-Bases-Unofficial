@@ -180,12 +180,12 @@ public class TBBlocks {
         lazullia = new BlockLazullia(7,16,true).setUnlocalizedName("lazullia");
         redlonstem = new BlockRedlonStem(Blocks.REDSTONE_BLOCK).setUnlocalizedName("redlonstem");
         lucrite = new BlockLucritePlant(7,16,true).setUnlocalizedName("lucrite");
-        briar = new BlockTBBush().setUnlocalizedName("briar");
-        ashroom = new BlockAshroom(3,12,false).setUnlocalizedName("ashroom");
+        briar = new BlockTBBush().setUnlocalizedName("briar").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        ashroom = new BlockAshroom(3,12,false).setUnlocalizedName("ashroom").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         glieonia = new BlockGlieonia(3,12,false).setUnlocalizedName("glieonia");
         knoze = new BlockknozeSeed(3,12,false).setUnlocalizedName("knoze");
 
-        voidplant = new BlockVoidPlant(7,32,true).setUnlocalizedName("voidplant"); // AeXiaohu modified 修改虚空草生长为7个阶段，使傀儡能正确识别
+        voidplant = new BlockVoidPlant(7,32,true).setUnlocalizedName("voidplant");
 
         //Tree
         goldenlogs = new BlockTBLog().setUnlocalizedName("goldenlogs").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);

@@ -26,12 +26,6 @@ public class GuiRevolver extends GuiContainer
 		this.blockedSlot = inv.currentItem;
 	}
 
-	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-		drawDefaultBackground();
-		super.drawScreen(mouseX, mouseY, partialTicks);
-		renderHoveredToolTip(mouseX, mouseY);
-	}
-
 	//Draw a cross above the revolver
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseZ)
 	{

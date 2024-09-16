@@ -13,6 +13,7 @@
   },
   "variants": {
     "inventory": [{}],
-    "normal": [{}]
+    "normal": [
+      {}]
   }
 }

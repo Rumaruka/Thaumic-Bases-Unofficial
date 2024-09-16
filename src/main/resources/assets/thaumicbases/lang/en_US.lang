@@ -163,18 +163,16 @@ revolverUpgrade.VOID.name=Void
 revolverUpgrade.KNOWLEDGE.name=Knowledge
 revolverUpgrade.HEAVY.name=Heavy
 
-#Unused so far
-item.tb.spawnercompass.name=Thauminite Compass
-item.tb.ukulele.0.name=Magical Ukulele
-item.tb.ukulele.1.name=Old Magical Ukulele
-item.tb.ukulele.2.name=Trusty Magical Ukulele
-item.tb.ukulele.3.name=Electro-Magical Ukulele
-item.tb.ukulele.4.name=Magical Ukulele of Invincibility
-item.tb.ukulele.5.name=Bard's Magical Ukulele
-item.tb.ukulele.6.name=Demonic Magical Ukulele
-item.tb.ukulele.7.name=Fairytale Ukulele
-item.tb.ukulele.8.name=Comfortable Magical Ukulele
-item.concentratedTaint.name=Concentrated Taint Flask
+#Ukulele
+item.ukulele.name.0=Magical Ukulele
+item.ukulele.name.1=Old Magical Ukulele
+item.ukulele.name.2=Trusty Magical Ukulele
+item.ukulele.name.3=Electro-Magical Ukulele
+item.ukulele.name.4=Magical Ukulele of Invincibility
+item.ukulele.name.5=Bard's Magical Ukulele
+item.ukulele.name.6=Demonic Magical Ukulele
+item.ukulele.name.7=Fairytale Ukulele
+item.ukulele.name.8=Comfortable Magical Ukulele
 
 #Ukelele Types
 tb.ukulele.type.simple=Sometimes the simplest one is enough
@@ -186,6 +184,11 @@ tb.ukulele.type.buffing=Roll to seduce the dragon.
 tb.ukulele.type.confusion=What was I doing again?
 tb.ukulele.type.growth=Sincerely, the Zombies.
 tb.ukulele.type.love=Get a room!
+
+#Unused so far
+item.tb.spawnercompass.name=Thauminite Compass
+item.concentratedTaint.name=Concentrated Taint Flask
+
 
 tile.primalshroom.name=Primal Shroom
 tile.knose.name=Rosa Mysteria
@@ -347,3 +350,7 @@ research_stage.thaumicbases:thaumanvil.2=You have applied your knowledge of the 
 research_name.thaumicbases:voidanvil=Void metal Anvil
 research_stage.thaumicbases:voidanvil.1=Well, the Thaumium anvil is all well and good, but it also breaks. Maybe not that fast, but it still does. However, you have had an idea since you've unlocked that Void metal. What if you try to make an anvil out of that one?
 research_stage.thaumicbases:voidanvil.2=The results are... Interesting.<BR>First of all, your new-made anvil has kept the main property of the void metal - the ability to repare itself. The anvil will automatically repare itself, should you cause a block update right next to it. The anvil however acts much different - any operation here, no matter if you are renaming stuff or combining extremely efficient enchanted books always costs the same 7 levels of XP. <PAGE>The anvil also seems to have no cost increase penalty, just as the thaumium one does.<BR>Whlist reparing you have seen some void metal flowing into the cracks of your tools. Sure that is nothing to worry about, right?
+
+research_name.thaumicbases:ukulele=Magical Ukulele
+research_stage.thaumicbases:ukulele.1=Thaumaturgy and music. Music and thaumaturgy. Sure, you can listen to your 'cat' music record all days while researching, but... Is that it? There is an arcane ear, which can sence the most pale nodes and interact with then... Once you caught yourself standing near your research table and... singing a very simple song. This gave you an idea though.
+research_stage.thaumicbases:ukulele.2=You have been experimenting for a while now and this is what you have came up with. The guitar, you are choosing to call 'ukulele', even though it is not one. This is a very interesting construction - created both  from resources and magic. It is very resistant to damage and thus can't break. It also seems to be vis attractive, just as a wand. You can finally make your music now! You are sure that the most simple one can be 'enchanted' to make use of vis stored in it..<PAGE>confusion<BR>By infusing the ukulele with all sorts of dark twisted things you have managed to alter the music it plays. It will temporary warp the minds of anyone hearingthe music, causing them to randomly change target of their attacks, panic or even loose consciousness!<PAGE>buffing<BR>By infusing the ukulele with all sorts of potions you have managed to create a very interesting effect. Whoever hears the song you play will get buffed by those potions!<PAGE>sanity<BR>This infusion of the ukulele calms the mids of everyone hearing it, therefore reducing their warp level and giving them a long lasting warp ward effect.<PAGE>live<BR>This infusion makes a very interesting effect on the animals - they will start falling in love with eachother while they are hearing the song of this ukulele.<PAGE>electric<BR>You have infused your guitar with all sorts of 'electric' things. The effect isvery interesting - while you are playing this guitar it shoots rapid lightnings at the entity you are looking at. Also it sounds cool.<PAGE>resistance<BR>This infusion seems to be the best you have achieved so far. It is very... micromanagement requiring though. As you start playing it your health seems to freeze in place - it will not go down as long as you keep playing the ukulele. Neither will it go up though...<PAGE>growth<BR>This infusion causes plants in a huge range around you to hear you playing and start growing faster, similar to lamp of growth.<PAGE>knowledge<BR>This infusion makes everyone hearing the ukulele to start thinking.You are sure that it can help you with your researches.

@@ -165,20 +165,18 @@ revolverUpgrade.VOID.name=虚空
 revolverUpgrade.KNOWLEDGE.name=睿智
 revolverUpgrade.HEAVY.name=重装
 
-#至今未使用
-item.tb.spawnercompass.name=秘晶指南针
-item.tb.ukulele.0.name=奥术四弦琴
-item.tb.ukulele.1.name=远古奥术四弦琴
-item.tb.ukulele.2.name=忠诚奥术四弦琴
-item.tb.ukulele.3.name=电子奥术四弦琴
-item.tb.ukulele.4.name=无极奥术四弦琴
-item.tb.ukulele.5.name=史诗奥术四弦琴
-item.tb.ukulele.6.name=入魔奥术四弦琴
-item.tb.ukulele.7.name=童话奥术四弦琴
-item.tb.ukulele.8.name=安逸奥术四弦琴
-item.concentratedTaint.name=浓缩腐化瓶
+#尤克里里
+item.ukulele.name.0=奥术尤克里里
+item.ukulele.name.1=远古奥术尤克里里
+item.ukulele.name.2=忠诚奥术尤克里里
+item.ukulele.name.3=电子奥术尤克里里
+item.ukulele.name.4=无极奥术尤克里里
+item.ukulele.name.5=史诗奥术尤克里里
+item.ukulele.name.6=入魔奥术尤克里里
+item.ukulele.name.7=童话奥术尤克里里
+item.ukulele.name.8=安逸奥术尤克里里
 
-#四弦琴种类
+#尤克里里描述
 tb.ukulele.type.simple=有时，简单就够了
 tb.ukulele.type.knowledge=知识就是力量
 tb.ukulele.type.calming=我昏昏欲睡.
@@ -188,6 +186,11 @@ tb.ukulele.type.buffing=通过翻滚引诱一条龙
 tb.ukulele.type.confusion=我又在做什么了？
 tb.ukulele.type.growth=我说真的……那个僵尸。
 tb.ukulele.type.love=开个房间！
+
+#至今未使用
+item.tb.spawnercompass.name=秘晶指南针
+item.concentratedTaint.name=浓缩腐化瓶
+
 
 tile.primalshroom.name=始源蘑菇
 tile.knose.name=神秘玫瑰芽

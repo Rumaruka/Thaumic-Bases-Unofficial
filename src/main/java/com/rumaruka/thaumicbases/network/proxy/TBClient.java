@@ -1,9 +1,6 @@
 package com.rumaruka.thaumicbases.network.proxy;
 
-import com.rumaruka.thaumicbases.client.render.HerobrinesScytheMH;
-import com.rumaruka.thaumicbases.client.render.RenderBullet;
-import com.rumaruka.thaumicbases.client.render.RenderCampfire;
-import com.rumaruka.thaumicbases.client.render.RenderOverchanter;
+import com.rumaruka.thaumicbases.client.render.*;
 import com.rumaruka.thaumicbases.common.entity.EntityRevolverBullet;
 import com.rumaruka.thaumicbases.common.tiles.TileCampfire;
 import com.rumaruka.thaumicbases.common.tiles.TileOverchanter;
@@ -25,6 +22,8 @@ public class TBClient extends TBServer {
     @Override
     public void preInit(FMLPreInitializationEvent e) {
         ModelLoader.setCustomStateMapper(TBBlocks.pyrofluid, new StateMap.Builder().ignore(BlockFluidBase.LEVEL).build());
+        TBItems.revolver.setTileEntityItemStackRenderer(new RenderRevolver());
+        TBItems.ukulele.setTileEntityItemStackRenderer(new ItemUkuleleRenderer());
     }
 
 

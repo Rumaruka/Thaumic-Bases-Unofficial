@@ -33,10 +33,10 @@ public class RevolverUpgrade {
     public final String text_id;
     public int instability;
 
-    public static final ResourceLocation eldritchTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolverDarkMetalEldritch.png");
-    public static final ResourceLocation primalTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolverGunPrimalUV.png");
-    public static final ResourceLocation taintedTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolverGunTaintedUV.png");
-    public static final ResourceLocation voidTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolverHandleVoidUV.png");
+    public static final ResourceLocation eldritchTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolverdarkmetaleldritch.png");
+    public static final ResourceLocation primalTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolvergunprimaluv.png");
+    public static final ResourceLocation taintedTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolverguntainteduv.png");
+    public static final ResourceLocation voidTextures = new ResourceLocation("thaumicbases","textures/items/revolver/revolverhandlevoiduv.png");
 
     public final ArrayList<RevolverUpgrade> conflicts = new ArrayList<RevolverUpgrade>();
 

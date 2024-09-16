@@ -94,7 +94,7 @@ public class TBItems {
     //Mortar
     public static Item mortar;
     public static Item revolver;
-    //public static Item ukulele;
+    public static Item ukulele;
     public static Item knozeseed;
     public static Item knowledge_shard;
 
@@ -166,7 +166,7 @@ public class TBItems {
         rosehipsyrup = new ItemRosehipSyrup().setUnlocalizedName("rosehipsyrup").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
         revolver = new ItemRevolver().setUnlocalizedName("revolver").setMaxStackSize(1).setMaxDamage(1561).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        //ukulele = new ItemUkulele().setUnlocalizedName("ukulele").setMaxStackSize(1).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        ukulele = new ItemUkulele().setUnlocalizedName("ukulele").setHasSubtypes(true).setMaxStackSize(1).setMaxDamage(0).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
     }
 
 
@@ -228,7 +228,7 @@ public class TBItems {
         TBItems.registerItem(rosehipsyrup, rosehipsyrup.getUnlocalizedName().substring(5));
 
         TBItems.registerItem(revolver, revolver.getUnlocalizedName().substring(5));
-        //TBItems.registerItem(ukulele, ukulele.getUnlocalizedName().substring(5));
+        TBItems.registerItem(ukulele, ukulele.getUnlocalizedName().substring(5));
         TBItems.registerItem(knowledge_shard, knowledge_shard.getUnlocalizedName().substring(5));
     }
 

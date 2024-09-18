@@ -1151,7 +1151,7 @@
         },
         {
           "text": "research_stage.thaumicbases:ukulele.2",
-          "recipes": ["TB.Ukulele", "TB.Ukulele.Knowledge", "TB.Ukulele.Buffs", "TB.Ukulele.Love", "TB.Ukulele.Growth", "TB.Ukulele.Confusion", "TB.Ukulele.Electric", "TB.Ukulele.Resistance",  "B.Ukulele.Sanity"]
+          "recipes": ["TB.Ukulele", "TB.Ukulele.Knowledge", "TB.Ukulele.Sanity", "TB.Ukulele.Buffs", "TB.Ukulele.Love", "TB.Ukulele.Growth", "TB.Ukulele.Confusion", "TB.Ukulele.Electric", "TB.Ukulele.Resistance"]
         }
       ]
     }

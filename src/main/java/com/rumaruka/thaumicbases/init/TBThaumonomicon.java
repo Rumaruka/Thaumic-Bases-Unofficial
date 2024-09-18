@@ -8,6 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.PotionType;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
@@ -384,9 +385,9 @@ public class TBThaumonomicon {
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.powerRec"), powerRec);
 
         RevolverInfusionRecipe primalRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.primal, 12, new AspectList().add(Aspect.AVERSION, 64).add(primals(64)).add(Aspect.ENERGY, 64), new ItemStack(ItemsTC.salisMundus, 1, 0),
-                new ItemStack(ItemsTC.primordialPearl, 1, 0),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
                 new ItemStack(Items.DIAMOND_SWORD),
-                new ItemStack(ItemsTC.primordialPearl, 1, 0),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.primalRec"), primalRec);
 
@@ -458,7 +459,7 @@ public class TBThaumonomicon {
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.Ukulele.Electric"), electricUkuleleRec);
 
         InfusionRecipe resistanceUkuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele, 1, 4), 8, new AspectList().add(Aspect.AURA, 64).add(Aspect.PROTECT, 160).add(Aspect.LIFE, 64).add(Aspect.EXCHANGE, 90), new ItemStack(TBItems.ukulele, 1, 0), new ItemStack(ItemsTC.causalityCollapser),
-                new ItemStack(ItemsTC.primordialPearl, 1, 0),
+                Ingredient.fromItem(ItemsTC.primordialPearl),
                 new ItemStack(ItemsTC.causalityCollapser, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.Ukulele.Resistance"), resistanceUkuleleRec);
 

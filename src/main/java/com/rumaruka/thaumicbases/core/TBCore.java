@@ -21,8 +21,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import thaumcraft.api.research.ResearchCategory;
 
 
-
-@Mod(modid = TBCore.modid, name = TBCore.name, version = TBCore.version,dependencies = TBCore.dependencies)
+@Mod(modid = TBCore.modid, name = TBCore.name, version = TBCore.version, dependencies = TBCore.dependencies)
 public class TBCore {
 
     public static final String modid = "thaumicbases";
@@ -40,6 +39,7 @@ public class TBCore {
     public static TBServer proxy;
 
     public static SimpleNetworkWrapper network;
+
     static {
         FluidRegistry.enableUniversalBucket(); // Must be called before preInit
     }
@@ -60,9 +60,7 @@ public class TBCore {
         TBTiles.setup();
         TBEnchant.setupEnchatments();
         proxy.preInit(e);
-        FMLInterModComms.sendMessage("Wailla","register","thaumicbases");
-
-
+        FMLInterModComms.sendMessage("Wailla", "register", "thaumicbases");
 
 
     }
@@ -88,9 +86,7 @@ public class TBCore {
         proxy.Renders();
 
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
+        proxy.postInit(e);
 
-
-
-
-}
+    }
 }

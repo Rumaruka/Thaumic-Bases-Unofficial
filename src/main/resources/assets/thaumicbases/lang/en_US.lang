@@ -185,6 +185,13 @@ tb.ukulele.type.confusion=What was I doing again?
 tb.ukulele.type.growth=Sincerely, the Zombies.
 tb.ukulele.type.love=Get a room!
 
+#Golems
+golem.material.thauminite=Thauminite
+golem.material.text.thauminite=This golem is crafted from thauminite. It shares many characteristics with thaumium, but has a diamond structure. It is sturdier and more resistant to damage, but lighter
+
+#Death Message
+death.attack.revolver=%1$s was shot by %2$s
+
 #Unused so far
 item.tb.spawnercompass.name=Thauminite Compass
 item.concentratedTaint.name=Concentrated Taint Flask

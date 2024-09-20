@@ -10,6 +10,7 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import thaumcraft.client.fx.FXDispatcher;
@@ -119,7 +120,7 @@ public class EntityRevolverBullet extends EntityThrowable
                 for(Pair<RevolverUpgrade,Integer> p : upgrades)
                     initialDamage = p.getFirst().modifyDamage_end(elb, revolver, initialDamage, p.getSecond());
 
-                elb.attackEntityFrom(new RevolverDamage("revolver"), initialDamage);
+                elb.attackEntityFrom(new RevolverDamage("revolver", shooter), initialDamage);
 
                 boolean destroy = true;
 
@@ -137,11 +138,11 @@ public class EntityRevolverBullet extends EntityThrowable
         }
     }
 
-    public static class RevolverDamage extends DamageSource
+    public static class RevolverDamage extends EntityDamageSource
     {
 
-        public RevolverDamage(String damage) {
-            super(damage);
+        public RevolverDamage(String damage, Entity sourceEntity) {
+            super(damage, sourceEntity);
         }
 
     }

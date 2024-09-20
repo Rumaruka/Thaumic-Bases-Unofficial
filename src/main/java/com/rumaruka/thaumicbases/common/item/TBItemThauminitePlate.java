@@ -1,4 +1,6 @@
 package com.rumaruka.thaumicbases.common.item;
 
-public class TBItemThauminitePlate extends net.minecraft.item.Item {
+import net.minecraft.item.Item;
+
+public class TBItemThauminitePlate extends Item {
 }

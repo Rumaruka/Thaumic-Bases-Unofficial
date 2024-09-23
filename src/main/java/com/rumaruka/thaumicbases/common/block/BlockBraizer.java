@@ -29,26 +29,21 @@ public class BlockBraizer extends BlockContainer implements ITileEntityProvider 
         setResistance(1F);
     }
 
-
-
-
-
-
     @Override
     public void randomDisplayTick(IBlockState stateIn, World w, BlockPos pos, Random r) {
 
-        if(stateIn.getValue(STATE)==1) {
+        if (stateIn.getValue(STATE) == 1) {
 
             int x = pos.getX();
             int y = pos.getY();
             int z = pos.getZ();
 
-            w.spawnParticle(EnumParticleTypes.FLAME, x+0.5D+MathUtils.randomDouble(r)/4, y+0.6D, z+0.5D+MathUtils.randomDouble(r)/4, 0, 0.04D, 0);
-            for(int i = 0; i < 2; ++i)
-                w.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x+0.5D+MathUtils.randomDouble(r)/4, y+0.7D, z+0.5D+MathUtils.randomDouble(r)/4, 0, r.nextDouble()/20, 0);
+            w.spawnParticle(EnumParticleTypes.FLAME, x + 0.5D + MathUtils.randomDouble(r) / 4, y + 0.6D, z + 0.5D + MathUtils.randomDouble(r) / 4, 0, 0.04D, 0);
+            for (int i = 0; i < 2; ++i)
+                w.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, x + 0.5D + MathUtils.randomDouble(r) / 4, y + 0.7D, z + 0.5D + MathUtils.randomDouble(r) / 4, 0, r.nextDouble() / 20, 0);
             w.playSound(x + 0.5D, y + 0.5D, z + 0.5D, TBSounds.fire_loop, SoundCategory.BLOCKS, 0.1F, 0.1F, false);
 
-            if(stateIn.getValue(STATE)==1){
+            if (stateIn.getValue(STATE) == 1) {
                 setLightLevel(10f);
             }
         }
@@ -75,12 +70,13 @@ public class BlockBraizer extends BlockContainer implements ITileEntityProvider 
     public TileEntity createNewTileEntity(World worldIn, int meta) {
         return new TileBraizer();
     }
+
     @Override
     protected BlockStateContainer createBlockState() {
-        if(STATE==null){
-            STATE = PropertyInteger.create("state",0,1);
+        if (STATE == null) {
+            STATE = PropertyInteger.create("state", 0, 1);
         }
-        return new BlockStateContainer(this,STATE);
+        return new BlockStateContainer(this, STATE);
     }
 
     @Override

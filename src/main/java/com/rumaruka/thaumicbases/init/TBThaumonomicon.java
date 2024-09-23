@@ -9,7 +9,6 @@ import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.potion.PotionType;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
@@ -28,7 +27,6 @@ import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 import thaumcraft.api.internal.CommonInternals;
 import thaumcraft.api.items.ItemsTC;
-import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
@@ -42,9 +40,6 @@ public class TBThaumonomicon {
     static ResourceLocation defaultGroup = new ResourceLocation("");
 
     public static void setup() {
-
-        ResearchCategories.registerCategory(catName, null, null, icon, back, back2);
-
         /*==============================================ARCANE CRAFTING BEGIN=============================================================================*/
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.DecoOldCobble"), new ShapedArcaneRecipe(defaultGroup, "TB.DECO", 50, new AspectList()
                 , new ItemStack(TBBlocks.oldcobble, 6), "# #", "# #", "# #",
@@ -582,13 +577,6 @@ public class TBThaumonomicon {
             CommonInternals.objectTags.put(CommonInternals.generateUniqueItemstackId(stack), al);
         }
     }
-
-
-    public static final String catName = "THAUMICBASES";
-    public static final ResourceLocation icon = new ResourceLocation("thaumicbases", "textures/thaumonomicon/bases.png");
-    public static final ResourceLocation back = new ResourceLocation("thaumicbases", "textures/thaumonomicon/background.png");
-    public static final ResourceLocation back2 = new ResourceLocation("thaumcraft", "textures/gui/gui_research_back_over.png");
-
 }
 
 

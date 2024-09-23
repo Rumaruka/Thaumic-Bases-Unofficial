@@ -84,7 +84,7 @@
       ],
       "stages": [
         {
-          "text": "research_stage_thaumicbases:pyrof.1",
+          "text": "research_stage.thaumicbases:pyrof.1",
           "required_knowledge": [
             "OBSERVATION;ALCHEMY;1",
             "THEORY;ALCHEMY;1"

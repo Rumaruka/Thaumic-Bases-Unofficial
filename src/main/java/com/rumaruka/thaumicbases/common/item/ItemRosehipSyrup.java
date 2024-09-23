@@ -30,10 +30,8 @@ public class ItemRosehipSyrup extends Item {
         if (!worldIn.isRemote)
             entityLiving.curePotionEffects(stack); // FORGE - move up so stack.shrink does not turn stack into air
         if (entityLiving instanceof EntityPlayer) {
-            this.removeNegativeEffect(entityLiving);
+            removeNegativeEffect(entityLiving);
             ThaumcraftApi.internalMethods.addWarpToPlayer((EntityPlayer) entityLiving, -4, IPlayerWarp.EnumWarpType.TEMPORARY);
-
-
         }
 
         if (entityLiving instanceof EntityPlayer && !((EntityPlayer) entityLiving).capabilities.isCreativeMode) {
@@ -44,9 +42,8 @@ public class ItemRosehipSyrup extends Item {
     }
 
     public static void removeNegativeEffect(EntityLivingBase entity) {
-        List<Potion> potions = new ArrayList<>();
-        potions.addAll(entity.getActivePotionMap().keySet());
-        potions.stream().filter(potion -> potion.isBadEffect()).forEach(entity::removeActivePotionEffect);
+        List<Potion> potions = new ArrayList<>(entity.getActivePotionMap().keySet());
+        potions.stream().filter(Potion::isBadEffect).forEach(entity::removeActivePotionEffect);
     }
 
 
@@ -62,5 +59,20 @@ public class ItemRosehipSyrup extends Item {
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         playerIn.setActiveHand(handIn);
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(handIn));
+    }
+
+    public boolean hasContainerItem(ItemStack stack)
+    {
+        return true;
+    }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        return new ItemStack(ItemsTC.phial);
+    }
+
+    @Override
+    public Item setContainerItem(Item containerItem) {
+        return ItemsTC.phial;
     }
 }

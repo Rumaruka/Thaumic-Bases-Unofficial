@@ -171,8 +171,7 @@ public class BlockSweed extends BlockBush implements IGrowable {
 
     @Override
     public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-        Block b = world.getBlockState(pos.down()).getBlock();
-        return canPlaceBlockOn(b);
+        return canPlaceBlockOn(this);
     }
 
     @Override

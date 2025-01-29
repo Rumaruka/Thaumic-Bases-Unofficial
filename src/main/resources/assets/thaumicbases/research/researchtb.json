@@ -903,6 +903,9 @@
           "text": "research_stage.thaumicbases:scythe.1",
           "required_craft": [
             "thaumicbases:herobrinesscythe"
+          ],
+          "recipes": [
+            "TB.herobrine"
           ]
         },
         {
@@ -1134,24 +1137,41 @@
         "thaumicbases:ukulele"
       ],
       "parents": [
-        "TB.SPIKE","ARCANEEAR","INFUSION"
+        "TB.SPIKE",
+        "ARCANEEAR",
+        "INFUSION"
       ],
       "location": [
-        -2, -6
-      ],"meta":["HIDDEN"],
+        -2,
+        -6
+      ],
+      "meta": [
+        "HIDDEN"
+      ],
       "stages": [
         {
           "text": "research_stage.thaumicbases:ukulele.1",
           "required_knowledge": [
             "THEORY;BASICS;2",
             "THEORY;INFUSION;2"
-          ],"required_item": [
-          "minecraft:noteblock"
-        ]
+          ],
+          "required_item": [
+            "minecraft:noteblock"
+          ]
         },
         {
           "text": "research_stage.thaumicbases:ukulele.2",
-          "recipes": ["TB.Ukulele", "TB.Ukulele.Knowledge", "TB.Ukulele.Sanity", "TB.Ukulele.Buffs", "TB.Ukulele.Love", "TB.Ukulele.Growth", "TB.Ukulele.Confusion", "TB.Ukulele.Electric", "TB.Ukulele.Resistance"]
+          "recipes": [
+            "TB.Ukulele",
+            "TB.Ukulele.Knowledge",
+            "TB.Ukulele.Sanity",
+            "TB.Ukulele.Buffs",
+            "TB.Ukulele.Love",
+            "TB.Ukulele.Growth",
+            "TB.Ukulele.Confusion",
+            "TB.Ukulele.Electric",
+            "TB.Ukulele.Resistance"
+          ]
         }
       ]
     }

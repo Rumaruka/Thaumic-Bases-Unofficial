@@ -1,6 +1,5 @@
 package com.rumaruka.thaumicbases.init;
 
-
 import com.rumaruka.thaumicbases.api.RevolverUpgrade;
 import com.rumaruka.thaumicbases.common.handlers.RevolverInfusionRecipe;
 import static com.rumaruka.thaumicbases.init.TBFluids.FLUID_PYRO;
@@ -33,9 +32,7 @@ import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
 
 import java.util.List;
 
-
 public class TBThaumonomicon {
-
 
     static ResourceLocation defaultGroup = new ResourceLocation("");
 
@@ -520,23 +517,16 @@ public class TBThaumonomicon {
         InfusionRecipe wispy = new InfusionRecipe("TB.TOBACCO", new ItemStack(TBItems.tobacco_wispy), 2, new AspectList().add(Aspect.AURA, 10).add(Aspect.MAGIC, 10), new ItemStack(TBItems.tobacco_pile), new ItemStack(ItemsTC.salisMundus), ConfigItems.AIR_CRYSTAL);
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.wispy"), wispy);
 
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.relax"), new ShapedArcaneRecipe(defaultGroup, "TB.TOBACCO", 10, new AspectList()
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.relax"), new ShapelessArcaneRecipe(defaultGroup, "TB.TOBACCO", 10, new AspectList()
                 .add(Aspect.ORDER, 1)
+                .add(Aspect.FIRE, 1)
+                , new ItemStack(TBItems.tobacco_sanity, 1)
+                , new Object[]{new ItemStack(TBItems.tobacco_pile)}));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.hunger"), new ShapelessArcaneRecipe(defaultGroup, "TB.TOBACCO", 10, new AspectList()
                 .add(Aspect.AIR, 1)
                 .add(Aspect.ENTROPY, 1)
-
-                , new ItemStack(TBItems.tobacco_sanity, 1),
-                "P"
-                , 'P', new ItemStack(TBItems.tobacco_pile)));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation("TB.hunger"), new ShapedArcaneRecipe(defaultGroup, "TB.TOBACCO", 10, new AspectList()
-                .add(Aspect.ORDER, 1)
-                .add(Aspect.AIR, 1)
-                .add(Aspect.ENTROPY, 1)
-
                 , new ItemStack(TBItems.tobacco_hunger, 1),
-                "Ps"
-                , 'P', new ItemStack(TBItems.tobacco_pile), 's', "seedsStems"));
-
+                new Object[]{new ItemStack(TBItems.tobacco_pile)}));
     }
 
     public static AspectList primals(int amount) {

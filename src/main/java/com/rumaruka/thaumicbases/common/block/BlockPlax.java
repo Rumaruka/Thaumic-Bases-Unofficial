@@ -21,17 +21,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-//public class BlockPlax extends BlockBush implements IGrowable {
 public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu modified
 
     public int growthStages;
     public int growthDelay;
     public boolean requiresFarmland;
-    public  PropertyInteger AGE;
+    public PropertyInteger AGE;
     public ItemStack dropItem;
     public ItemStack dropSeed;
 
-    public BlockPlax(int stages, int delay,boolean isCrop){
+    public BlockPlax(int stages, int delay, boolean isCrop) {
         super();
 
         growthStages = stages;
@@ -45,36 +44,35 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
     }
 
     @Override
-    protected Item getSeed()
-    {
+    protected Item getSeed() {
         return TBItems.plaxseed;
     }
 
     @Override
-    protected Item getCrop()
-    {
+    protected Item getCrop() {
         return Items.STRING;
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-        if(AGE==null){
-            AGE=PropertyInteger.create("age",0,7);
+        if (AGE == null) {
+            AGE = PropertyInteger.create("age", 0, 7);
         }
-        return new BlockStateContainer(this,AGE);
+        return new BlockStateContainer(this, AGE);
     }
+
     public int getGrowthStages() {
         return growthStages;
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return    state.getValue(AGE);
+        return state.getValue(AGE);
     }
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
+        return getDefaultState().withProperty(AGE, Math.min(growthStages, meta));
     }
 
     @Override
@@ -96,18 +94,16 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
     @Override
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         super.updateTick(worldIn, pos, state, rand);
-        if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-        if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
-        {
+        if (!worldIn.isAreaLoaded(pos, 1))
+            return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+        if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
             int i = state.getValue(AGE);
 
-            if (i < this.getGrowthStages())
-            {
+            if (i < this.getGrowthStages()) {
                 float f = getGrowthChance(this, worldIn, pos);
 
-                if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0))
-                {
-                    worldIn.setBlockState(pos, state.withProperty(AGE,i+1), 2);
+                if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int) (25.0F / f) + 1) == 0)) {
+                    worldIn.setBlockState(pos, state.withProperty(AGE, i + 1), 2);
                     net.minecraftforge.common.ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
                 }
             }
@@ -119,35 +115,31 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
 
-        if (i > j)
-        {
+        if (i > j) {
             i = j;
         }
 
         worldIn.setBlockState(pos, this.withAge(i), 2);
 
     }
-    protected int getBonemealAgeIncrease(World worldIn)
-    {
+
+    protected int getBonemealAgeIncrease(World worldIn) {
         return MathHelper.getInt(worldIn.rand, 2, 5);
     }
 
-    public int getMaxAge()
-    {
+    public int getMaxAge() {
         return growthStages;
     }
 
-    protected int getAge(IBlockState state)
-    {
+    protected int getAge(IBlockState state) {
         return state.getValue(this.getAgeProperty());
     }
-    protected PropertyInteger getAgeProperty()
-    {
+
+    protected PropertyInteger getAgeProperty() {
         return AGE;
     }
 
-    public IBlockState withAge(int age)
-    {
+    public IBlockState withAge(int age) {
         return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
@@ -162,46 +154,40 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
                 ret.add(new ItemStack(TBItems.plaxseed, 1));
             }
             if (metadata >= growthStages - 1) {
-                    if (world.rand.nextInt(growthStages) <= metadata)
-                        if (dropSeed != ItemStack.EMPTY){
-                            for (int j = 0; j < 4 + fortune; ++j) {
-                                if (world.rand.nextBoolean()) {
-                                    ret.add(new ItemStack(Items.STRING,3));
-                                    ret.add(new ItemStack(TBItems.plaxseed, 1));
-                                }
+                if (world.rand.nextInt(growthStages) <= metadata)
+                    if (dropSeed != ItemStack.EMPTY) {
+                        for (int j = 0; j < 4 + fortune; ++j) {
+                            if (world.rand.nextBoolean()) {
+                                ret.add(new ItemStack(Items.STRING, 3));
+                                ret.add(new ItemStack(TBItems.plaxseed, 1));
                             }
-
                         }
+
+                    }
 
             }
         }
         return ret;
-}
+    }
 
-    protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
-    {
+    protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos) {
         float f = 1.0F;
         BlockPos blockpos = pos.down();
 
-        for (int i = -1; i <= 1; ++i)
-        {
-            for (int j = -1; j <= 1; ++j)
-            {
+        for (int i = -1; i <= 1; ++i) {
+            for (int j = -1; j <= 1; ++j) {
                 float f1 = 0.0F;
                 IBlockState iblockstate = worldIn.getBlockState(blockpos.add(i, 0, j));
 
-                if (iblockstate.getBlock().canSustainPlant(iblockstate, worldIn, blockpos.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable)blockIn))
-                {
+                if (iblockstate.getBlock().canSustainPlant(iblockstate, worldIn, blockpos.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable) blockIn)) {
                     f1 = 1.0F;
 
-                    if (iblockstate.getBlock().isFertile(worldIn, blockpos.add(i, 0, j)))
-                    {
+                    if (iblockstate.getBlock().isFertile(worldIn, blockpos.add(i, 0, j))) {
                         f1 = 3.0F;
                     }
                 }
 
-                if (i != 0 || j != 0)
-                {
+                if (i != 0 || j != 0) {
                     f1 /= 4.0F;
                 }
 
@@ -216,16 +202,12 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
         boolean flag = blockIn == worldIn.getBlockState(blockpos3).getBlock() || blockIn == worldIn.getBlockState(blockpos4).getBlock();
         boolean flag1 = blockIn == worldIn.getBlockState(blockpos1).getBlock() || blockIn == worldIn.getBlockState(blockpos2).getBlock();
 
-        if (flag && flag1)
-        {
+        if (flag && flag1) {
             f /= 2.0F;
-        }
-        else
-        {
+        } else {
             boolean flag2 = blockIn == worldIn.getBlockState(blockpos3.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.south()).getBlock() || blockIn == worldIn.getBlockState(blockpos3.south()).getBlock();
 
-            if (flag2)
-            {
+            if (flag2) {
                 f /= 2.0F;
             }
         }

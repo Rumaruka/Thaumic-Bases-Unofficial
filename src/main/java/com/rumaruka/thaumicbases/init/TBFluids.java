@@ -12,17 +12,13 @@ public class TBFluids {
 
     public static final OnetimeCaller init = new OnetimeCaller(TBFluids::$init);
 
-    private static void $init()
-    {
+    private static void $init() {
 
         addFluid(FLUID_PYRO);
     }
 
-    private static void addFluid(Fluid fl)
-    {
+    private static void addFluid(Fluid fl) {
         FluidRegistry.registerFluid(fl);
         FluidRegistry.addBucketForFluid(fl);
-
-
     }
 }

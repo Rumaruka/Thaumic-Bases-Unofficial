@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,11 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
     @Override
     public int getMetaFromState(IBlockState state) {
         return state.getValue(AGE);
+    }
+
+    @Override
+    protected Item getCrop() {
+        return OreDictionary.getOres("gemLapis").get(0).getItem();
     }
 
     @Override

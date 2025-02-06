@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class BlockAureliaLeaf extends Block {
-    public BlockAureliaLeaf( ) {
+    public BlockAureliaLeaf() {
         super(Material.PLANTS);
         setLightLevel(0.3f);
         setSoundType(SoundType.PLANT);
@@ -29,10 +29,8 @@ public class BlockAureliaLeaf extends Block {
     }
 
 
-
     @Override
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
         return new ItemStack(TBItems.aureliapetal);
     }
 
@@ -53,12 +51,11 @@ public class BlockAureliaLeaf extends Block {
 
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-      return TBItems.aureliapetal;
+        return TBItems.aureliapetal;
     }
 
     @Nullable
-    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
-    {
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
         return NULL_AABB;
     }
 }

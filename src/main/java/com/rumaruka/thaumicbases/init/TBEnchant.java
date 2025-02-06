@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class TBEnchant {
 
-    public static void setupEnchatments(){
+    public static void setupEnchatments() {
         eldritchBane = new EnchantmentEldritchBane(Enchantment.Rarity.RARE).setName("eldritchBane");
         eldritchBane.setRegistryName(new ResourceLocation(TBCore.modid, "thaumicbases.eldritchBane"));
         ForgeRegistries.ENCHANTMENTS.register(eldritchBane);

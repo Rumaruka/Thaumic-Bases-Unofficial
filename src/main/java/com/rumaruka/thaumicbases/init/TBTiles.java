@@ -1,6 +1,5 @@
 package com.rumaruka.thaumicbases.init;
 
-//import com.rumaruka.thaumicbases.common.tiles.TileOverchanter;
 import com.rumaruka.thaumicbases.common.tiles.TileBraizer;
 import com.rumaruka.thaumicbases.common.tiles.TileCampfire;
 import com.rumaruka.thaumicbases.common.tiles.TileOverchanter;

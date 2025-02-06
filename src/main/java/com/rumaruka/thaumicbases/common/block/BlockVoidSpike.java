@@ -125,7 +125,7 @@ public class BlockVoidSpike extends Block {
             return false;
         }
 
-        playerIn.inventory.decrStackSize(playerIn.inventory.currentItem, 1);
+        itemstack.shrink(1);
         if (!playerIn.inventory.addItemStackToInventory(new ItemStack(TBItems.bloodycloth)))
             playerIn.dropItem(new ItemStack(TBItems.bloodycloth), false);
         w.setBlockState(pos, this.getStateFromMeta(meta - 1));

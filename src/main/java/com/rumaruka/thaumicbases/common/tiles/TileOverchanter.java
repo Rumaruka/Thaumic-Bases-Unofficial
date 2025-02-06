@@ -46,12 +46,14 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
     public int getSizeInventory() {
         return 1;
     }
+
     @Override
     public void update() {
 
+        this.world.notifyBlockUpdate(this.pos, this.world.getBlockState(pos), world.getBlockState(pos), 2);
+
         ++ticksExisted;
-        if(syncTimer <= 0)
-        {
+        if (syncTimer <= 0) {
             syncTimer = 100;
             NBTTagCompound tg = new NBTTagCompound();
             tg.setInteger("0", enchantingTime);
@@ -60,42 +62,32 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
             tg.setInteger("x", this.pos.getX());
             tg.setInteger("y", this.pos.getY());
             tg.setInteger("z", this.pos.getZ());
-        }else
+        } else
             --syncTimer;
 
-        if(this.inventory.isEmpty())
-        {
+        if (this.inventory.isEmpty()) {
             isEnchantingStarted = false;
             xpAbsorbed = false;
             enchantingTime = 0;
-        }else
-        {
-            if(this.isEnchantingStarted)
-            {
-                if(ticksExisted % 20 == 0)
-                {
-                    this.world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundsTC.infuserstart,SoundCategory.BLOCKS,1f,1.0f,false);
-                    if(EssentiaHandler.drainEssentia(this, Aspect.MAGIC, null, 8, false, 8))
-                    {
+        } else {
+            if (this.isEnchantingStarted) {
+                if (ticksExisted % 20 == 0) {
+                    this.world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsTC.infuserstart, SoundCategory.BLOCKS, 1f, 1.0f, false);
+                    if (EssentiaHandler.drainEssentia(this, Aspect.MAGIC, null, 8, false, 8)) {
                         ++enchantingTime;
-                        if(enchantingTime >= 16 && !this.xpAbsorbed)
-                        {
-                            List<EntityPlayer> players = this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX()+1, pos.getY()+1, pos.getZ()+1).expand(6, 3, 6).expand(-6, -3, -6));
+                        if (enchantingTime >= 16 && !this.xpAbsorbed) {
+                            List<EntityPlayer> players = this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1).expand(6, 3, 6).expand(-6, -3, -6));
 
-                            if(!players.isEmpty())
-                            {
+                            if (!players.isEmpty()) {
 
 
-                                for(int i = 0; i < players.size(); ++i)
-                                {
+                                for (int i = 0; i < players.size(); ++i) {
                                     EntityPlayer p = players.get(i);
 
 
-
-                                    if(p.experienceLevel >= 30)
-                                    {
+                                    if (p.experienceLevel >= 30) {
                                         p.attackEntityFrom(DamageSource.MAGIC, 8);
-                                        this.world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundsTC.zap,SoundCategory.BLOCKS,1f,1.0f,false);
+                                        this.world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsTC.zap, SoundCategory.BLOCKS, 1f, 1.0f, false);
                                         p.experienceLevel -= 30;
                                         xpAbsorbed = true;
                                         break;
@@ -104,12 +96,10 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                             }
                         }
 
-                        if(xpAbsorbed && enchantingTime >= 32)
-                        {
+                        if (xpAbsorbed && enchantingTime >= 32) {
                             NBTTagList nbttaglist = this.inventory.getEnchantmentTagList();
 
-                            for(int i = 0; i < nbttaglist.tagCount(); ++i)
-                            {
+                            for (int i = 0; i < nbttaglist.tagCount(); ++i) {
                                 int enchId = this.findEnchantment(inventory);
                                 Enchantment ench = Enchantment.getEnchantmentByID(enchId);
                                 NBTTagCompound tag = nbttaglist.getCompoundTagAt(i);
@@ -133,11 +123,10 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                             isEnchantingStarted = false;
                             xpAbsorbed = false;
                             enchantingTime = 0;
-                            this.world.playSound(pos.getX(),pos.getY(),pos.getZ(),SoundsTC.wand,SoundCategory.BLOCKS,1f,1.0f,false);
+                            this.world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsTC.wand, SoundCategory.BLOCKS, 1f, 1.0f, false);
                         }
 
-                    }else
-                    {
+                    } else {
                         --enchantingTime;
                     }
                 }
@@ -146,10 +135,10 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
     }
 
 
-    private boolean canStartEnchanting(){
-        if(!this.isEnchantingStarted)
-            if(!this.inventory.isEmpty()){
-                if(this.inventory.getEnchantmentTagList().tagCount() > 0){
+    private boolean canStartEnchanting() {
+        if (!this.isEnchantingStarted)
+            if (!this.inventory.isEmpty()) {
+                if (this.inventory.getEnchantmentTagList().tagCount() > 0) {
                     return findEnchantment(inventory) != -1;
 
                 }
@@ -158,11 +147,11 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
         return false;
     }
 
-    private  int findEnchantment(ItemStack enchated) {
+    private int findEnchantment(ItemStack enchated) {
         NBTTagCompound stackTag = AllUtils.getStackTag(this.inventory);
         Map<Enchantment, Integer> ench = EnchantmentHelper.getEnchantments(enchated);
         Set<Enchantment> keys = ench.keySet();
-        Iterator<Enchantment>$i = keys.iterator();
+        Iterator<Enchantment> $i = keys.iterator();
 
         while ($i.hasNext()) {
             int i = Enchantment.getEnchantmentID($i.next());
@@ -178,8 +167,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
     }
 
-    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
-    {
+    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
         enchantingTime = pkt.getNbtCompound().getInteger("0");
         xpAbsorbed = pkt.getNbtCompound().getBoolean("1");
         isEnchantingStarted = pkt.getNbtCompound().getBoolean("2");
@@ -197,12 +185,10 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
     @Override
     public ItemStack decrStackSize(int index, int count) {
-        if (!this.inventory.isEmpty())
-        {
+        if (!this.inventory.isEmpty()) {
             ItemStack itemstack;
 
-            if (this.inventory.getMaxStackSize() <= count)
-            {
+            if (this.inventory.getMaxStackSize() <= count) {
                 itemstack = this.inventory;
                 this.inventory = ItemStack.EMPTY;
                 this.markDirty();
@@ -210,8 +196,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
             }
             itemstack = this.inventory.splitStack(count);
 
-            if (this.inventory.getMaxStackSize() == 0)
-            {
+            if (this.inventory.getMaxStackSize() == 0) {
                 this.inventory = ItemStack.EMPTY;
             }
 
@@ -274,7 +259,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
         super.writeToNBT(compound);
 
         compound.setInteger("enchTime", enchantingTime);
-        compound.setBoolean("xpAbsorbed",xpAbsorbed);
+        compound.setBoolean("xpAbsorbed", xpAbsorbed);
         compound.setBoolean("enchStarted", isEnchantingStarted);
 
         compound.setTag("itm", inventory.serializeNBT());
@@ -283,12 +268,11 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
     @Override
     public boolean onCasterRightClick(World world, ItemStack itemStack, EntityPlayer entityPlayer, BlockPos blockPos, EnumFacing enumFacing, EnumHand enumHand) {
-        if(canStartEnchanting() && entityPlayer.isSneaking())
-        {
+        if (canStartEnchanting() && entityPlayer.isSneaking()) {
             isEnchantingStarted = true;
             entityPlayer.swingArm(EnumHand.MAIN_HAND);
             syncTimer = 0;
-            this.world.playSound(pos.getX(), pos.getY(), pos.getZ(),SoundsTC.craftstart,SoundCategory.BLOCKS,0.5f,1.0f,false);
+            this.world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsTC.craftstart, SoundCategory.BLOCKS, 0.5f, 1.0f, false);
             return true;
         }
         return false;
@@ -311,11 +295,8 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
     @Override
     public void clear() {
-        inventory= ItemStack.EMPTY;
-
+        inventory = ItemStack.EMPTY;
     }
-
-
 
     @Override
     public String getName() {
@@ -334,12 +315,11 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
     }
 
 
-    public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn)
-    {
+    public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
         return new ContainerOverchanter(playerInventory, this);
     }
-    public String getGuiID()
-    {
+
+    public String getGuiID() {
         return "thaumicbases:overchanter";
     }
 

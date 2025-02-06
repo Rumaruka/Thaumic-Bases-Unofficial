@@ -23,17 +23,18 @@ import thaumcraft.api.items.ItemsTC;
 
 public class BlockThaumSpike extends Block {
 
-    public static PropertyInteger BLOODY = PropertyInteger.create("bloody",0,1);
-    public BlockThaumSpike( ) {
+    public static PropertyInteger BLOODY = PropertyInteger.create("bloody", 0, 1);
+
+    public BlockThaumSpike() {
         super(Material.IRON);
         setHardness(2.0f);
-        setHarvestLevel("pickaxe",2);
+        setHarvestLevel("pickaxe", 2);
     }
 
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         float f = 0.0625F;
-        return new AxisAlignedBB(0, 0, 0, 1, 1-f, 1);
+        return new AxisAlignedBB(0, 0, 0, 1, 1 - f, 1);
     }
 
     @Override
@@ -53,7 +54,7 @@ public class BlockThaumSpike extends Block {
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(BLOODY,meta);
+        return this.getDefaultState().withProperty(BLOODY, meta);
     }
 
     @Override
@@ -66,26 +67,22 @@ public class BlockThaumSpike extends Block {
         return BlockRenderLayer.CUTOUT;
     }
 
-    public void observedNeighborChange(IBlockState observerState, World world, BlockPos observerPos, Block changedBlock, BlockPos changedBlockPos)
-    {
-        if(world.isAirBlock(observerPos.down()))
-        {
+    public void observedNeighborChange(IBlockState observerState, World world, BlockPos observerPos, Block changedBlock, BlockPos changedBlockPos) {
+        if (world.isAirBlock(observerPos.down())) {
             this.dropBlockAsItem(world, observerPos, observerState, 0);
             world.setBlockToAir(observerPos);
         }
     }
 
-
-
     @Override
     public void onEntityCollidedWithBlock(World w, BlockPos pos, IBlockState state, Entity collider) {
         int meta = state.getValue(BLOODY);
-        if(meta == 0 || meta ==1){
-            if(w.isBlockIndirectlyGettingPowered(pos)>0|| w.isBlockIndirectlyGettingPowered(pos.down())>0||w.isBlockPowered(pos))
+        if (meta == 0 || meta == 1) {
+            if (w.isBlockIndirectlyGettingPowered(pos) > 0 || w.isBlockIndirectlyGettingPowered(pos.down()) > 0 || w.isBlockPowered(pos))
                 return;
-            if(!(collider instanceof EntityItem))
-                 collider.attackEntityFrom(DamageSource.CACTUS,14);
-            if(meta == 0 && collider instanceof EntityLivingBase && ((EntityLivingBase) collider).getHealth() <= 0)
+            if (!(collider instanceof EntityItem))
+                collider.attackEntityFrom(DamageSource.CACTUS, 14);
+            if (meta == 0 && collider instanceof EntityLivingBase && ((EntityLivingBase) collider).getHealth() <= 0)
                 w.setBlockState(pos, this.getStateFromMeta(1));
         }
     }
@@ -94,34 +91,33 @@ public class BlockThaumSpike extends Block {
     public boolean onBlockActivated(World w, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         int meta = state.getValue(BLOODY);
 
-        if(meta!=1)
+        if (meta != 1)
             return false;
         ItemStack itemstack = playerIn.getHeldItem(hand);
-        if(itemstack.isEmpty()){
+        if (itemstack.isEmpty()) {
             return false;
         }
 
-        if(itemstack.getItem() != ItemsTC.fabric){
+        if (itemstack.getItem() != ItemsTC.fabric) {
             return false;
         }
 
-        playerIn.inventory.decrStackSize(playerIn.inventory.currentItem,1);
-        if(!playerIn.inventory.addItemStackToInventory(new ItemStack(TBItems.bloodycloth)))
-            playerIn.dropItem(new ItemStack(TBItems.bloodycloth),false);
-        w.setBlockState(pos, this.getStateFromMeta(meta-1));
+        itemstack.shrink(1);
+        if (!playerIn.inventory.addItemStackToInventory(new ItemStack(TBItems.bloodycloth)))
+            playerIn.dropItem(new ItemStack(TBItems.bloodycloth), false);
+        w.setBlockState(pos, this.getStateFromMeta(meta - 1));
         return true;
     }
 
-    public int damageDropped(int par1)
-    {
+    public int damageDropped(int par1) {
         return par1 == 1 ? 0 : par1 == 3 ? 2 : par1 == 5 ? 4 : par1;
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-        if(BLOODY ==null){
-            BLOODY = PropertyInteger.create("bloody",0,1);
+        if (BLOODY == null) {
+            BLOODY = PropertyInteger.create("bloody", 0, 1);
         }
-        return new BlockStateContainer(this,BLOODY);
+        return new BlockStateContainer(this, BLOODY);
     }
 }

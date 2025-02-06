@@ -25,23 +25,20 @@ import net.minecraftforge.common.ForgeHooks;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockRedlonStem  extends BlockBush implements IGrowable
-{
+public class BlockRedlonStem extends BlockBush implements IGrowable {
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
     public static final PropertyDirection FACING = BlockTorch.FACING;
     private final Block crop;
-    protected static final AxisAlignedBB[] STEM_AABB = new AxisAlignedBB[] {new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.125D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.25D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.375D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.5D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.625D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.75D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.875D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 0.625D)};
+    protected static final AxisAlignedBB[] STEM_AABB = new AxisAlignedBB[]{new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.125D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.25D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.375D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.5D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.625D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.75D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 0.875D, 0.625D), new AxisAlignedBB(0.375D, 0.0D, 0.375D, 0.625D, 1.0D, 0.625D)};
 
-    public BlockRedlonStem(Block crop)
-    {
+    public BlockRedlonStem(Block crop) {
         this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0).withProperty(FACING, EnumFacing.UP));
         this.crop = crop;
         this.setTickRandomly(true);
         this.setCreativeTab(null);
     }
 
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return STEM_AABB[state.getValue(AGE)];
     }
 
@@ -49,15 +46,12 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
      * Get the actual Block state of this Block at the given position. This applies properties not visible in the
      * metadata, such as fence connections.
      */
-    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
+    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
         int i = state.getValue(AGE);
         state = state.withProperty(FACING, EnumFacing.UP);
 
-        for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
-        {
-            if (worldIn.getBlockState(pos.offset(enumfacing)).getBlock() == this.crop && i == 7)
-            {
+        for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
+            if (worldIn.getBlockState(pos.offset(enumfacing)).getBlock() == this.crop && i == 7) {
                 state = state.withProperty(FACING, enumfacing);
                 break;
             }
@@ -68,39 +62,31 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
 
     @Override
     public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-        worldIn.spawnParticle(EnumParticleTypes.REDSTONE, pos.getX()+rand.nextDouble(), pos.getY()+rand.nextDouble(), pos.getZ()+rand.nextDouble(), 0, 0, 0);
+        worldIn.spawnParticle(EnumParticleTypes.REDSTONE, pos.getX() + rand.nextDouble(), pos.getY() + rand.nextDouble(), pos.getZ() + rand.nextDouble(), 0, 0, 0);
     }
 
-    protected boolean canSustainBush(IBlockState state)
-    {
+    protected boolean canSustainBush(IBlockState state) {
         return state.getBlock() == Blocks.FARMLAND;
     }
 
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
+    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
         super.updateTick(worldIn, pos, state, rand);
 
 
-        if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-        if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
-        {
+        if (!worldIn.isAreaLoaded(pos, 1))
+            return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+        if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
             float f = getGrowthChance(this, worldIn, pos);
 
-            if(ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0))
-            {
+            if (ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int) (25.0F / f) + 1) == 0)) {
                 int i = state.getValue(AGE);
 
-                if (i < 7)
-                {
+                if (i < 7) {
                     IBlockState newState = state.withProperty(AGE, i + 1);
                     worldIn.setBlockState(pos, newState, 2);
-                }
-                else
-                {
-                    for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
-                    {
-                        if (worldIn.getBlockState(pos.offset(enumfacing)).getBlock() == this.crop)
-                        {
+                } else {
+                    for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
+                        if (worldIn.getBlockState(pos.offset(enumfacing)).getBlock() == this.crop) {
                             return;
                         }
                     }
@@ -109,8 +95,7 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
                     IBlockState soil = worldIn.getBlockState(pos.down());
                     Block block = soil.getBlock();
 
-                    if (worldIn.isAirBlock(pos) && (block.canSustainPlant(soil, worldIn, pos.down(), EnumFacing.UP, this) || block == Blocks.DIRT || block == Blocks.GRASS))
-                    {
+                    if (worldIn.isAirBlock(pos) && (block.canSustainPlant(soil, worldIn, pos.down(), EnumFacing.UP, this) || block == Blocks.DIRT || block == Blocks.GRASS)) {
                         worldIn.setBlockState(pos, this.crop.getDefaultState());
                     }
                 }
@@ -119,8 +104,7 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
         }
     }
 
-    public void growStem(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public void growStem(World worldIn, BlockPos pos, IBlockState state) {
         int i = state.getValue(AGE) + MathHelper.getInt(worldIn.rand, 2, 5);
         worldIn.setBlockState(pos, state.withProperty(AGE, Math.min(7, i)), 2);
     }
@@ -128,25 +112,20 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
     /**
      * Spawns this Block's drops into the World as EntityItems.
      */
-    public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune)
-    {
+    public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune) {
         super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
     }
 
     @Override
-    public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune)
-    {
+    public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
         {
             Item item = this.getSeedItem();
 
-            if (item != null)
-            {
+            if (item != null) {
                 int i = state.getValue(AGE);
 
-                for (int j = 0; j < 3; ++j)
-                {
-                    if (RANDOM.nextInt(15) <= i)
-                    {
+                for (int j = 0; j < 3; ++j) {
+                    if (RANDOM.nextInt(15) <= i) {
                         drops.add(new ItemStack(item));
                     }
                 }
@@ -155,28 +134,22 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
     }
 
     @Nullable
-    protected Item getSeedItem()
-    {
-        if (this.crop == Blocks.REDSTONE_BLOCK)
-        {
+    protected Item getSeedItem() {
+        if (this.crop == Blocks.REDSTONE_BLOCK) {
             return TBItems.redlonseed;
-        }
-        else
-        {
-            return  null;
+        } else {
+            return null;
         }
     }
 
     /**
      * Get the Item that this Block should drop when harvested.
      */
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Items.AIR;
     }
 
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
         Item item = this.getSeedItem();
         return item == null ? ItemStack.EMPTY : new ItemStack(item);
     }
@@ -184,65 +157,54 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
     /**
      * Whether this IGrowable can grow
      */
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
-    {
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
         return state.getValue(AGE) != 7;
     }
 
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
-    {
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         return true;
     }
 
-    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
-    {
+    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         this.growStem(worldIn, pos, state);
     }
 
     /**
      * Convert the given metadata into a BlockState for this Block
      */
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(AGE, meta);
     }
 
     /**
      * Convert the BlockState into the correct metadata value
      */
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
         return state.getValue(AGE);
     }
 
-    protected BlockStateContainer createBlockState()
-    {
+    protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, AGE, FACING);
     }
-    protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
-    {
+
+    protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos) {
         float f = 1.0F;
         BlockPos blockpos = pos.down();
 
-        for (int i = -1; i <= 1; ++i)
-        {
-            for (int j = -1; j <= 1; ++j)
-            {
+        for (int i = -1; i <= 1; ++i) {
+            for (int j = -1; j <= 1; ++j) {
                 float f1 = 0.0F;
                 IBlockState iblockstate = worldIn.getBlockState(blockpos.add(i, 0, j));
 
-                if (iblockstate.getBlock().canSustainPlant(iblockstate, worldIn, blockpos.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable)blockIn))
-                {
+                if (iblockstate.getBlock().canSustainPlant(iblockstate, worldIn, blockpos.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable) blockIn)) {
                     f1 = 1.0F;
 
-                    if (iblockstate.getBlock().isFertile(worldIn, blockpos.add(i, 0, j)))
-                    {
+                    if (iblockstate.getBlock().isFertile(worldIn, blockpos.add(i, 0, j))) {
                         f1 = 3.0F;
                     }
                 }
 
-                if (i != 0 || j != 0)
-                {
+                if (i != 0 || j != 0) {
                     f1 /= 4.0F;
                 }
 
@@ -257,16 +219,12 @@ public class BlockRedlonStem  extends BlockBush implements IGrowable
         boolean flag = blockIn == worldIn.getBlockState(blockpos3).getBlock() || blockIn == worldIn.getBlockState(blockpos4).getBlock();
         boolean flag1 = blockIn == worldIn.getBlockState(blockpos1).getBlock() || blockIn == worldIn.getBlockState(blockpos2).getBlock();
 
-        if (flag && flag1)
-        {
+        if (flag && flag1) {
             f /= 2.0F;
-        }
-        else
-        {
+        } else {
             boolean flag2 = blockIn == worldIn.getBlockState(blockpos3.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.south()).getBlock() || blockIn == worldIn.getBlockState(blockpos3.south()).getBlock();
 
-            if (flag2)
-            {
+            if (flag2) {
                 f /= 2.0F;
             }
         }

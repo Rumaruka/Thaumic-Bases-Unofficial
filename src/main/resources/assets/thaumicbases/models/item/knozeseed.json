@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "thaumicbases:items/knoze_seed"
+    "layer0": "thaumicbases:items/knose_seed"
   }
 }

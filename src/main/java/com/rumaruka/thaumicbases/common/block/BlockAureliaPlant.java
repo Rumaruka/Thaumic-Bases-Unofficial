@@ -16,9 +16,9 @@ import java.util.Random;
 
 public class BlockAureliaPlant extends BlockBush {
 
-    private PropertyInteger STATE = PropertyInteger.create("state",0,1);
+    private PropertyInteger STATE = PropertyInteger.create("state", 0, 1);
 
-    public BlockAureliaPlant(){
+    public BlockAureliaPlant() {
         super(Material.PLANTS);
         this.setTickRandomly(true);
         this.setLightLevel(0.5f);
@@ -31,22 +31,20 @@ public class BlockAureliaPlant extends BlockBush {
     }
 
 
+    public void checkForMoonlight(World w, BlockPos pos, IBlockState state) {
 
-    public void checkForMoonlight(World w, BlockPos pos,IBlockState state){
+        boolean underSky = w.canBlockSeeSky(pos.up());
+        boolean isFullMoon = w.provider.getMoonPhase(w.getWorldTime()) == 0;
+        boolean isOpen = state.getValue(STATE) == 1;
 
-       boolean underSky = w.canBlockSeeSky(pos.up());
-        boolean isFullMoon = w.provider.getMoonPhase(w.getWorldTime())==0;
-        boolean isOpen =state.getValue(STATE)==1;
+        if (isFullMoon && underSky && !w.isDaytime()) {
 
-        if(isFullMoon&&underSky&&!w.isDaytime()){
+            w.setBlockState(pos, state.withProperty(STATE, 1));
+            w.markBlockRangeForRenderUpdate(pos.down().west().north(), pos.up().east().south());
 
-            w.setBlockState(pos,state.withProperty(STATE,1));
-            w.markBlockRangeForRenderUpdate(pos.down().west().north(),pos.up().east().south());
-
-        }
-        else {
-            if(isOpen){
-                w.setBlockState(pos, state.withProperty(STATE,0));
+        } else {
+            if (isOpen) {
+                w.setBlockState(pos, state.withProperty(STATE, 0));
                 w.markBlockRangeForRenderUpdate(pos.down().west().north(), pos.up().east().south());
             }
         }
@@ -54,32 +52,28 @@ public class BlockAureliaPlant extends BlockBush {
 
     }
 
-    public int tickRate(World w)
-    {
+    public int tickRate(World w) {
         return 10;
     }
 
-    public int findSutableGround(World w, int x, int y, int z)
-    {
-        while(w.isAirBlock(new BlockPos(x,y,z)) && y > 0 && !w.isSideSolid(new BlockPos(x, y, z), EnumFacing.UP))
+    public int findSutableGround(World w, int x, int y, int z) {
+        while (w.isAirBlock(new BlockPos(x, y, z)) && y > 0 && !w.isSideSolid(new BlockPos(x, y, z), EnumFacing.UP))
             --y;
 
         return y;
     }
 
     @Override
-    public void updateTick(World w, BlockPos pos, IBlockState state, Random rand)
-        {
-            checkForMoonlight(w,pos,state);
-            if(state.getValue(STATE)>0&&!w.isRemote)
-            {
-                int rndX = pos.getX() + w.rand.nextInt(8) - w.rand.nextInt(8);
-                int rndZ = pos.getZ() + w.rand.nextInt(8) - w.rand.nextInt(8);
-                int rndY = findSutableGround(w,rndX,pos.getY()+2,rndZ)+1;
-                if(rndY > 2)
-                    w.setBlockState(new BlockPos(rndX, rndY, rndZ), TBBlocks.aureliapetalb.getDefaultState());
-            }
+    public void updateTick(World w, BlockPos pos, IBlockState state, Random rand) {
+        checkForMoonlight(w, pos, state);
+        if (state.getValue(STATE) > 0 && !w.isRemote) {
+            int rndX = pos.getX() + w.rand.nextInt(8) - w.rand.nextInt(8);
+            int rndZ = pos.getZ() + w.rand.nextInt(8) - w.rand.nextInt(8);
+            int rndY = findSutableGround(w, rndX, pos.getY() + 2, rndZ) + 1;
+            if (rndY > 2)
+                w.setBlockState(new BlockPos(rndX, rndY, rndZ), TBBlocks.aureliapetalb.getDefaultState());
         }
+    }
 
     @Override
     public boolean isOpaqueCube(IBlockState state) {
@@ -92,13 +86,11 @@ public class BlockAureliaPlant extends BlockBush {
     }
 
 
-
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(STATE,Math.min(0,meta));
+        return getDefaultState().withProperty(STATE, Math.min(0, meta));
 
     }
-
 
 
     @Override
@@ -108,9 +100,9 @@ public class BlockAureliaPlant extends BlockBush {
 
     @Override
     protected BlockStateContainer createBlockState() {
-        if(STATE ==null){
-            STATE = PropertyInteger.create("state",0,1);
+        if (STATE == null) {
+            STATE = PropertyInteger.create("state", 0, 1);
         }
-        return new BlockStateContainer(this,STATE);
+        return new BlockStateContainer(this, STATE);
     }
 }

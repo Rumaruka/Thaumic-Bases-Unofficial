@@ -6,7 +6,7 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.init.Enchantments;
 import net.minecraft.inventory.EntityEquipmentSlot;
 
-public class EnchantmentEldritchBane extends net.minecraft.enchantment.Enchantment {
+public class EnchantmentEldritchBane extends Enchantment {
     public EnchantmentEldritchBane(Rarity rarityIn) {
         super(rarityIn, EnumEnchantmentType.WEAPON, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND});
     }
@@ -18,16 +18,11 @@ public class EnchantmentEldritchBane extends net.minecraft.enchantment.Enchantme
 
     @Override
     public int getMinEnchantability(int enchantmentLevel) {
-        return 1+enchantmentLevel*5;
+        return 1 + enchantmentLevel * 5;
     }
 
     @Override
-    protected boolean canApplyTogether(Enchantment ench) {
-        return this !=ench&&ench!= Enchantments.SMITE&&ench!=Enchantments.BANE_OF_ARTHROPODS&&ench!=Enchantments.SHARPNESS&&!(ench instanceof EnchantmentDamage);
-    }
-
-    @Override
-    public boolean isAllowedOnBooks() {
-        return true;
+    public boolean canApplyTogether(Enchantment ench) {
+        return this != ench && ench != Enchantments.SMITE && ench != Enchantments.BANE_OF_ARTHROPODS && ench != Enchantments.SHARPNESS && !(ench instanceof EnchantmentDamage);
     }
 }

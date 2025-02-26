@@ -1,35 +1,29 @@
 package com.rumaruka.thaumicbases.common.block;
 
-import com.rumaruka.thaumicbases.init.TBBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockCrops;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.ForgeHooks;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.client.fx.FXDispatcher;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-public class BlockAshroom extends BlockCrops {
-
+public class BlockAshroom extends BlockBush implements IGrowable {
 
 
     public int growthStages;
     public int growthDelay;
     public boolean requiresFarmland;
-    public  PropertyInteger AGE;
+    public PropertyInteger AGE;
     public ItemStack dropItem;
-    public ItemStack dropSeed;
 
     public BlockAshroom(int stages, int delay, boolean isCrop) {
         super();
@@ -44,25 +38,20 @@ public class BlockAshroom extends BlockCrops {
 
     }
 
-    protected Item getSeed()
-    {
-        return null;
-    }
-
-    protected Item getCrop()
-    {
-        return Item.getItemFromBlock(this);
-    }
-
     public int getGrowthStages() {
         return growthStages;
     }
+
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        return true;
+    }
+
     @Override
     protected BlockStateContainer createBlockState() {
-        if(AGE==null){
-            AGE = PropertyInteger.create("age",0,3);
+        if (AGE == null) {
+            AGE = PropertyInteger.create("age", 0, 3);
         }
-        return new BlockStateContainer(this,AGE);
+        return new BlockStateContainer(this, AGE);
     }
 
     @Override
@@ -72,30 +61,30 @@ public class BlockAshroom extends BlockCrops {
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
+        return getDefaultState().withProperty(AGE, Math.min(growthStages, meta));
     }
-    public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
-    {
-        super.updateTick(w,pos, state, rnd);
+
+    public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd) {
+        super.updateTick(w, pos, state, rnd);
 
         if (!w.isAreaLoaded(pos, 1)) return;
-        if (w.getLightFromNeighbors(pos.up()) >= 9)
-        {
+        if (w.getLightFromNeighbors(pos.up()) >= 9) {
             int i = state.getValue(AGE);
 
-            if (i < getGrowthStages())
-            {
+            if (i < getGrowthStages()) {
                 float f = getGrowthChance(this, w, pos);
 
-                if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(w, pos, state, rnd.nextInt((int)(25.0F / f) + 1) == 0))
-                {
-                    w.setBlockState(pos,state.withProperty(AGE,i+1));
-                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(w, pos, state, w.getBlockState(pos));
+                if (ForgeHooks.onCropsGrowPre(w, pos, state, rnd.nextInt((int) (25.0F / f) + 1) == 0)) {
+                    w.setBlockState(pos, state.withProperty(AGE, i + 1));
+                    ForgeHooks.onCropsGrowPost(w, pos, state, w.getBlockState(pos));
                 }
             }
         }
     }
 
+    /**
+     * copied from BlockCrops.getGrowthChance
+     * */
     protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
     {
         float f = 1.0F;
@@ -151,8 +140,7 @@ public class BlockAshroom extends BlockCrops {
         return f;
     }
 
-    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
-    {
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
         return state.getValue(AGE) != 3;
     }
 
@@ -166,55 +154,44 @@ public class BlockAshroom extends BlockCrops {
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
 
-        if (i > j)
-        {
+        if (i > j) {
             i = j;
         }
 
         worldIn.setBlockState(pos, this.withAge(i), 2);
-
     }
-    protected int getBonemealAgeIncrease(World worldIn)
-    {
+
+    protected int getBonemealAgeIncrease(World worldIn) {
         return MathHelper.getInt(worldIn.rand, 1, 2);
     }
 
-    public int getMaxAge()
-    {
+    public int getMaxAge() {
         return growthStages;
     }
 
-    protected int getAge(IBlockState state)
-    {
+    protected int getAge(IBlockState state) {
         return state.getValue(this.getAgeProperty());
     }
-    protected PropertyInteger getAgeProperty()
-    {
+
+    protected PropertyInteger getAgeProperty() {
         return AGE;
     }
 
-    public IBlockState withAge(int age)
-    {
+    public IBlockState withAge(int age) {
         return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
-    @Override
-    public List<ItemStack> getDrops(IBlockAccess w, BlockPos pos, IBlockState state, int fortune) {
-        ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-        if (w instanceof World) {
-            World world = (World) w;
-            ret.add(new ItemStack(TBBlocks.ashroom, 1));
-            int metadata = state.getValue(this.AGE);
-            if (metadata >= 3) {
-                ThaumcraftApi.internalMethods.addVis(world, pos, 5 + world.rand.nextInt(10));
-            }
+    public void onBlockDestroyedByPlayer(World world, BlockPos pos, IBlockState state) {
+        if (state.getValue(this.AGE) >= 3) {
+            ThaumcraftApi.internalMethods.addVis(world, pos, 5 + world.rand.nextInt(10));
         }
-        return ret;
+        if (world.isRemote) {
+            FXDispatcher.INSTANCE.burst(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 1);
+        }
     }
 
     @Override
-    public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos)
-    {
+    public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
         return EnumPlantType.Plains;
     }
 

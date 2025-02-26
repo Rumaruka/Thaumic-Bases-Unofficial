@@ -3,6 +3,7 @@ package com.rumaruka.thaumicbases.common.enchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 
 public class EnchantmentTainted extends Enchantment {
     public EnchantmentTainted(Rarity rarityIn) {
@@ -14,6 +15,11 @@ public class EnchantmentTainted extends Enchantment {
     }
 
     public boolean canApplyTogether(Enchantment ench) {
-        return !(ench instanceof EnchantmentElderKnowledge);
+        return ench != this && !(ench instanceof EnchantmentElderKnowledge);
+    }
+
+    public boolean canApply(ItemStack stack)
+    {
+        return false;
     }
 }

@@ -49,9 +49,6 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
 
     @Override
     public void update() {
-
-        this.world.notifyBlockUpdate(this.pos, this.world.getBlockState(pos), world.getBlockState(pos), 2);
-
         ++ticksExisted;
         if (syncTimer <= 0) {
             syncTimer = 100;

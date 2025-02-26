@@ -18,8 +18,8 @@ public class ItemVoidSheard extends ItemShears implements IWarpingGear {
     @Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
-        if ((stack.isItemDamaged()) && (entityIn != null) && (entityIn.ticksExisted % 20 == 0) && ((entityIn instanceof EntityLivingBase)))
-            stack.damageItem(-1, (EntityLivingBase)entityIn);
+        if (stack.isItemDamaged() && entityIn.ticksExisted % 20 == 0 && entityIn instanceof EntityLivingBase)
+            stack.damageItem(-1, (EntityLivingBase) entityIn);
     }
 
     @Override

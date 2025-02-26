@@ -3,8 +3,8 @@ package com.rumaruka.thaumicbases.common.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class ItemMortarAndPesle extends Item {
-    public ItemMortarAndPesle(){
+public class ItemMortarAndPestle extends Item {
+    public ItemMortarAndPestle() {
         //setMaxDamage(256);
         setMaxStackSize(1);
 

@@ -6,17 +6,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import thaumcraft.api.crafting.IInfusionStabiliser;
+import thaumcraft.api.crafting.IInfusionStabiliserExt;
 
-public class TBBlockCrytal extends TBBlock implements IInfusionStabiliser {
-
-
-
-
-
-
+public class TBBlockCrytal extends TBBlock implements IInfusionStabiliserExt {
 
     public TBBlockCrytal(Material m, boolean b) {
-        super(m,b);
+        super(m, b);
 
         setSoundType(SoundType.GLASS);
 

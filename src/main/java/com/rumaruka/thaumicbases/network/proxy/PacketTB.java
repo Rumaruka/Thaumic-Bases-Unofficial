@@ -10,10 +10,11 @@ public class PacketTB implements IMessage {
     int id;
     NBTTagCompound sent;
 
-    public PacketTB(){
+    public PacketTB() {
 
     }
-    public PacketTB(NBTTagCompound tag, int i){
+
+    public PacketTB(NBTTagCompound tag, int i) {
         id = i;
         sent = tag;
 
@@ -22,7 +23,7 @@ public class PacketTB implements IMessage {
     @Override
     public void fromBytes(ByteBuf buf) {
 
-        id = ByteBufUtils.readVarInt(buf,1);
+        id = ByteBufUtils.readVarInt(buf, 1);
         sent = ByteBufUtils.readTag(buf);
 
     }
@@ -30,8 +31,8 @@ public class PacketTB implements IMessage {
     @Override
     public void toBytes(ByteBuf buf) {
 
-        ByteBufUtils.writeVarInt(buf,id,1);
-        ByteBufUtils.writeTag(buf,sent);
+        ByteBufUtils.writeVarInt(buf, id, 1);
+        ByteBufUtils.writeTag(buf, sent);
 
     }
 }

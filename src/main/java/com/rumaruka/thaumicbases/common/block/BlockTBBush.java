@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public  class BlockTBBush extends BlockBush implements IPlantable, IGrowable
+public  class BlockTBBush extends BlockBush implements IGrowable
 {
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
     public int growthStages = 8;

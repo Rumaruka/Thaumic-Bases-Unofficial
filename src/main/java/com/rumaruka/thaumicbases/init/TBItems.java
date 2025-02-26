@@ -4,9 +4,7 @@ package com.rumaruka.thaumicbases.init;
 import com.google.common.base.Strings;
 import com.rumaruka.thaumicbases.client.creativetabs.TBCreativeTabs;
 import com.rumaruka.thaumicbases.common.TBMaterial;
-import com.rumaruka.thaumicbases.common.item.TBBloodyCloth;
 import com.rumaruka.thaumicbases.common.item.*;
-import com.rumaruka.thaumicbases.common.item.recourse.*;
 import com.rumaruka.thaumicbases.core.TBCore;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -102,11 +100,11 @@ public class TBItems {
 
     public static void init() {
 
-        nuggetthauminite = new TBItemNuggetThauminite().setUnlocalizedName("nuggetthauminite").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        thauminite_ingot = new TBItemThauminiteIngot().setUnlocalizedName("thauminite_ingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        thauminite_plate = new TBItemThauminitePlate().setUnlocalizedName("thauminite_plate").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        nuggetthauminite = new Item().setUnlocalizedName("nuggetthauminite").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        thauminite_ingot = new Item().setUnlocalizedName("thauminite_ingot").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        thauminite_plate = new Item().setUnlocalizedName("thauminite_plate").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
-        bloodycloth = new TBBloodyCloth().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("bloodycloth");
+        bloodycloth = new Item().setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs).setUnlocalizedName("bloodycloth");
 
         thauminiteaxe = new ItemThauminiteAxe(TBMaterial.thauminite).setUnlocalizedName("thauminiteaxe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         thauminitehoe = new ItemThauminiteHoe(TBMaterial.thauminite).setUnlocalizedName("thauminitehoe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -121,7 +119,7 @@ public class TBItems {
         plaxseed = new ItemSeeds(TBBlocks.plax, Blocks.FARMLAND).setUnlocalizedName("plaxseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         sweedseed = new ItemGrassSeeds(TBBlocks.sweed).setUnlocalizedName("sweedseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         tobaccoseed = new ItemSeeds(TBBlocks.tobacco, Blocks.FARMLAND).setUnlocalizedName("tobaccoseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        aureliapetal = new ItemAureliaPetal().setUnlocalizedName("aureliapetal").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        aureliapetal = new Item().setUnlocalizedName("aureliapetal").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         metalleatseed = new ItemSeeds(TBBlocks.metalleat, Blocks.FARMLAND).setUnlocalizedName("metalleatseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         lazulliaseed = new ItemSeeds(TBBlocks.lazullia, Blocks.FARMLAND).setUnlocalizedName("lazulliaseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         redlonseed = new ItemSeeds(TBBlocks.redlonstem, Blocks.FARMLAND).setUnlocalizedName("redlonseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -132,7 +130,7 @@ public class TBItems {
         knozeseed = new ItemKnozeSeeds(TBBlocks.knoze).setUnlocalizedName("knozeseed");
 
         voidseed = new ItemSeeds(TBBlocks.voidplant, Blocks.FARMLAND).setUnlocalizedName("voidseed").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        briar_seedbag = new ItemBriarSeedbag().setUnlocalizedName("briar_seedbag").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        briar_seedbag = new Item().setUnlocalizedName("briar_seedbag").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
         knowledge_shard = new ItemKnowledgeShard().setUnlocalizedName("knowledge_shard").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
@@ -157,12 +155,12 @@ public class TBItems {
         tobacco_sanity = new TBTobacco().setUnlocalizedName("tobacco_sanity").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         tobacco_tainted = new TBTobacco().setUnlocalizedName("tobacco_tainted").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         tobacco_wispy = new TBTobacco().setUnlocalizedName("tobacco_wispy").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        tobacco_leaves = new ItemTobaccoLeaves().setUnlocalizedName("tobacco_leaves").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        tobacco_leaves = new Item().setUnlocalizedName("tobacco_leaves").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
         greatwoodpipe = new ItemSmokingPipe(false).setUnlocalizedName("greatwoodpipe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         silverwoodpipe = new ItemSmokingPipe(true).setUnlocalizedName("silverwoodpipe").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
-        mortar = new ItemMortarAndPesle().setUnlocalizedName("mortar").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+        mortar = new ItemMortarAndPestle().setUnlocalizedName("mortar").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         rosehipsyrup = new ItemRosehipSyrup().setUnlocalizedName("rosehipsyrup").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
 
         revolver = new ItemRevolver().setUnlocalizedName("revolver").setMaxStackSize(1).setMaxDamage(1561).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);

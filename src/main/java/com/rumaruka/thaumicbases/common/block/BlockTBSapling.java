@@ -28,31 +28,31 @@ import java.util.Random;
 public class BlockTBSapling extends BlockBush implements IGrowable {
 
 
-
-
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552, 0.0, 0.09999999403953552, 0.8999999761581421, 0.800000011920929, 0.8999999761581421);
     public int type;
+
     public BlockTBSapling(int i) {
         this.type = i;
         this.setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE,0));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, 0));
         this.setSoundType(SoundType.PLANT);
     }
 
     @Override
     public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
         IBlockState soil = worldIn.getBlockState(pos.down());
-        return type !=3 ? super.canPlaceBlockAt(worldIn, pos) && soil.getBlock().canSustainPlant(soil,worldIn,pos.down(),EnumFacing.UP,this) : soil.getBlock()== Blocks.GRASS;
+        return type != 3 ? super.canPlaceBlockAt(worldIn, pos) && soil.getBlock().canSustainPlant(soil, worldIn, pos.down(), EnumFacing.UP, this) : soil.getBlock() == Blocks.GRASS;
     }
 
     @Override
     public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
-        return type == 3 ? this.canSustainBush(worldIn.getBlockState(pos.down())) : super.canBlockStay(worldIn, pos, state);    }
+        return type == 3 ? this.canSustainBush(worldIn.getBlockState(pos.down())) : super.canBlockStay(worldIn, pos, state);
+    }
 
     @Override
     public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-        return type != 3 ? state.getBlock() == Blocks.GRASS || state.getBlock() == Blocks.DIRT || state.getBlock() == Blocks.FARMLAND:state.getBlock() == Blocks.GRASS ;
+        return type != 3 ? state.getBlock() == Blocks.GRASS || state.getBlock() == Blocks.DIRT || state.getBlock() == Blocks.FARMLAND : state.getBlock() == Blocks.GRASS;
     }
 
     @Override
@@ -80,15 +80,15 @@ public class BlockTBSapling extends BlockBush implements IGrowable {
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
         if (state.getValue(STAGE) == 0) {
             worldIn.setBlockState(pos, state.cycleProperty(STAGE), 4);
-        }else {
+        } else {
             generateTree(worldIn, pos, state, rand);
         }
     }
 
     private void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        if(!TerrainGen.saplingGrowTree(worldIn,rand,pos))
+        if (!TerrainGen.saplingGrowTree(worldIn, rand, pos))
             return;
-        WorldGenerator worldGenerator = rand.nextInt(10)==0? new WorldGenBigTree(false):new WorldGenTrees(true);
+        WorldGenerator worldGenerator = rand.nextInt(10) == 0 ? new WorldGenBigTree(false) : new WorldGenTrees(true);
         int i = 0;
         int j = 0;
         boolean flag = false;
@@ -119,7 +119,7 @@ public class BlockTBSapling extends BlockBush implements IGrowable {
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(STAGE,meta);
+        return this.getDefaultState().withProperty(STAGE, meta);
     }
 
     @Override
@@ -129,6 +129,6 @@ public class BlockTBSapling extends BlockBush implements IGrowable {
 
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this,STAGE);
+        return new BlockStateContainer(this, STAGE);
     }
 }

@@ -13,23 +13,16 @@ import java.util.List;
 public class RegisterHandlers {
 
     @Mod.EventBusSubscriber(modid = TBCore.modid)
-    public static class Sounds
-    {
+    public static class Sounds {
         public static final List<SoundEvent> SOUNDS = new LinkedList<>();
 
-        static void add(SoundEvent sound)
-        {
-            SOUNDS.add(sound);
-        }
-
         @SubscribeEvent
-        public static void registerItems(final RegistryEvent.Register<SoundEvent> event)
-        {
+        public static void registerItems(final RegistryEvent.Register<SoundEvent> event) {
             SOUNDS.stream().forEach(sound -> event.getRegistry().register(sound));
         }
     }
 
-    public static void init(){
+    public static void init() {
         TBSounds.registerSounds();
     }
 

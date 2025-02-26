@@ -1,8 +1,5 @@
 package com.rumaruka.thaumicbases.common.block;
 
-
-
-
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -11,9 +8,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import thaumcraft.api.crafting.IInfusionStabiliser;
+import thaumcraft.api.crafting.IInfusionStabiliserExt;
 
-
-public class TBBlock extends Block implements IInfusionStabiliser  {
+public class TBBlock extends Block implements IInfusionStabiliserExt {
 
     boolean isGlass;
     boolean stabilise;
@@ -22,13 +19,12 @@ public class TBBlock extends Block implements IInfusionStabiliser  {
     public TBBlock(Material m, boolean b) {
         super(m);
 
-
         isGlass = b;
         this.blockSoundType = SoundType.STONE;
     }
 
 
-    public TBBlock stabilise(){
+    public TBBlock stabilise() {
         stabilise = true;
         return this;
     }
@@ -44,27 +40,21 @@ public class TBBlock extends Block implements IInfusionStabiliser  {
     }
 
 
-
-
     public boolean canStabaliseInfusion(World world, BlockPos paramBlockPos) {
         return stabilise;
     }
 
-
-
-
-
-
-
-
-
-    public Block setSoundType(SoundType sound)
-    {
+    public Block setSoundType(SoundType sound) {
         this.blockSoundType = sound;
         return this;
     }
-    public SoundType getSoundType()
-    {
+
+    public SoundType getSoundType() {
         return this.blockSoundType;
+    }
+
+    @Override
+    public float getStabilizationAmount(World world, BlockPos blockPos) {
+        return 0.1F;
     }
 }

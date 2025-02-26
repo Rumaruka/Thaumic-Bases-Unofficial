@@ -14,7 +14,7 @@ public class ContainerOverchanter extends ContainerInventory {
 
     @Override
     public void setupSlots() {
-        this.addSlotToContainer(new Slot(this.inv,0,80,20));
+        this.addSlotToContainer(new Slot(this.inv, 0, 80, 20));
         this.setupPlayerInventory();
     }
 

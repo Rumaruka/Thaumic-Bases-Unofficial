@@ -15,13 +15,13 @@ public class EnchantmentElderKnowledge extends Enchantment {
     }
 
     @Override
-    public int getMinEnchantability(int enchantmentLevel) {
-        return 1+enchantmentLevel*5;
+    public int getMinEnchantability(int lvl) {
+        return 1 + lvl * 5;
     }
 
     @Override
-    protected boolean canApplyTogether(Enchantment ench) {
-        return true;
+    public boolean canApplyTogether(Enchantment ench) {
+        return !(ench instanceof EnchantmentElderKnowledge) && !(ench instanceof EnchantmentTainted);
     }
 
     @Override

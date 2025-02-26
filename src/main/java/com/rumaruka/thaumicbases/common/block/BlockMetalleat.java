@@ -28,7 +28,8 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
     public PropertyInteger AGE;
     public ItemStack dropItem;
     public ItemStack dropSeed;
-    public BlockMetalleat(int stages, int delay,boolean isCrop ) {
+
+    public BlockMetalleat(int stages, int delay, boolean isCrop) {
         super();
         growthStages = stages;
         growthDelay = delay;
@@ -39,116 +40,39 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
         this.setSoundType(SoundType.PLANT);
         this.disableStats();
     }
+
     @Override
     public int getMetaFromState(IBlockState state) {
         return state.getValue(AGE);
     }
 
     @Override
-    protected Item getSeed()
-    {
+    protected Item getSeed() {
         return TBItems.metalleatseed;
     }
 
     @Override
-    protected Item getCrop()
-    {
+    protected Item getCrop() {
         return Items.IRON_NUGGET;
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-        if(AGE==null){
-            AGE = PropertyInteger.create("age",0,7);
+        if (AGE == null) {
+            AGE = PropertyInteger.create("age", 0, 7);
         }
-        return new BlockStateContainer(this,AGE);
+        return new BlockStateContainer(this, AGE);
     }
+
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
-    }
-
-    public void updateTick(World w, BlockPos pos, IBlockState state, Random rnd)
-    {
-        super.updateTick(w,pos, state, rnd);
-
-        if (!w.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-        if (w.getLightFromNeighbors(pos.up()) >= 9)
-        {
-            int i = state.getValue(AGE);
-
-            if (i < getGrowthStages())
-            {
-                float f = getGrowthChance(this, w, pos);
-
-                if(net.minecraftforge.common.ForgeHooks.onCropsGrowPre(w, pos, state, rnd.nextInt((int)(25.0F / f) + 1) == 0))
-                {
-                    w.setBlockState(pos,state.withProperty(AGE,i+1));
-                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(w, pos, state, w.getBlockState(pos));
-                }
-            }
-        }
-    }
-    protected static float getGrowthChance(Block blockIn, World worldIn, BlockPos pos)
-    {
-        float f = 1.0F;
-        BlockPos blockpos = pos.down();
-
-        for (int i = -1; i <= 1; ++i)
-        {
-            for (int j = -1; j <= 1; ++j)
-            {
-                float f1 = 0.0F;
-                IBlockState iblockstate = worldIn.getBlockState(blockpos.add(i, 0, j));
-
-                if (iblockstate.getBlock().canSustainPlant(iblockstate, worldIn, blockpos.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable)blockIn))
-                {
-                    f1 = 1.0F;
-
-                    if (iblockstate.getBlock().isFertile(worldIn, blockpos.add(i, 0, j)))
-                    {
-                        f1 = 3.0F;
-                    }
-                }
-
-                if (i != 0 || j != 0)
-                {
-                    f1 /= 4.0F;
-                }
-
-                f += f1;
-            }
-        }
-
-        BlockPos blockpos1 = pos.north();
-        BlockPos blockpos2 = pos.south();
-        BlockPos blockpos3 = pos.west();
-        BlockPos blockpos4 = pos.east();
-        boolean flag = blockIn == worldIn.getBlockState(blockpos3).getBlock() || blockIn == worldIn.getBlockState(blockpos4).getBlock();
-        boolean flag1 = blockIn == worldIn.getBlockState(blockpos1).getBlock() || blockIn == worldIn.getBlockState(blockpos2).getBlock();
-
-        if (flag && flag1)
-        {
-            f /= 2.0F;
-        }
-        else
-        {
-            boolean flag2 = blockIn == worldIn.getBlockState(blockpos3.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.north()).getBlock() || blockIn == worldIn.getBlockState(blockpos4.south()).getBlock() || blockIn == worldIn.getBlockState(blockpos3.south()).getBlock();
-
-            if (flag2)
-            {
-                f /= 2.0F;
-            }
-        }
-
-        return f;
+        return getDefaultState().withProperty(AGE, Math.min(growthStages, meta));
     }
 
     @Override
     public int tickRate(World worldIn) {
-        return 1200+worldIn.rand.nextInt(1200);
+        return 1200 + worldIn.rand.nextInt(1200);
     }
-
 
 
     public int getGrowthStages() {
@@ -161,8 +85,7 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
 
-        if (i > j)
-        {
+        if (i > j) {
             i = j;
         }
 
@@ -170,22 +93,19 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
 
     }
 
-    public int getMaxAge()
-    {
+    public int getMaxAge() {
         return growthStages;
     }
 
-    protected int getAge(IBlockState state)
-    {
+    protected int getAge(IBlockState state) {
         return state.getValue(this.getAgeProperty());
     }
-    protected PropertyInteger getAgeProperty()
-    {
+
+    protected PropertyInteger getAgeProperty() {
         return AGE;
     }
 
-    public IBlockState withAge(int age)
-    {
+    public IBlockState withAge(int age) {
         return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
@@ -200,16 +120,16 @@ public class BlockMetalleat extends BlockCrops implements IGrowable { // AeXiaoh
                 ret.add(new ItemStack(TBItems.metalleatseed, 1));
             }
             if (metadata >= growthStages - 1) {
-                    if (world.rand.nextInt(growthStages) <= metadata)
-                        if (dropSeed != ItemStack.EMPTY){
-                            for (int j = 0; j < 4 + fortune; ++j) {
-                                if (world.rand.nextBoolean()) {
-                                    ret.add(new ItemStack(Items.IRON_NUGGET,3));
-                                    ret.add(new ItemStack(TBItems.metalleatseed, 1));
-                                }
+                if (world.rand.nextInt(growthStages) <= metadata)
+                    if (dropSeed != ItemStack.EMPTY) {
+                        for (int j = 0; j < 4 + fortune; ++j) {
+                            if (world.rand.nextBoolean()) {
+                                ret.add(new ItemStack(Items.IRON_NUGGET, 3));
+                                ret.add(new ItemStack(TBItems.metalleatseed, 1));
                             }
-
                         }
+
+                    }
 
             }
         }

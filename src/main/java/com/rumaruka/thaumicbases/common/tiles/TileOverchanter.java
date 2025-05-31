@@ -73,7 +73,7 @@ public class TileOverchanter extends TileEntityLockable implements IInventory, I
                     if (EssentiaHandler.drainEssentia(this, Aspect.MAGIC, null, 8, false, 8)) {
                         ++enchantingTime;
                         if (enchantingTime >= 16 && !this.xpAbsorbed) {
-                            List<EntityPlayer> players = this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1).expand(6, 3, 6).expand(-6, -3, -6));
+                            List<EntityPlayer> players = this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1).grow(6, 3, 6));
 
                             if (!players.isEmpty()) {
 

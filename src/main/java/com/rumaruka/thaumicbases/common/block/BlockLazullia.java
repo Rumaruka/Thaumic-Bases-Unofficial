@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -117,7 +116,7 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
             if (metadata < growthStages) {
                 ret.add(new ItemStack(TBItems.lazulliaseed, 1));
             }
-            if (metadata >= growthStages - 1) {
+            else if (metadata >= growthStages - 1) {
                 if (world.rand.nextInt(growthStages) <= metadata)
                     if (dropSeed != ItemStack.EMPTY) {
                         for (int j = 0; j < 4 + fortune; ++j) {

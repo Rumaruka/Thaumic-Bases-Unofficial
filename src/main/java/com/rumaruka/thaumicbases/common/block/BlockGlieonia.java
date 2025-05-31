@@ -194,7 +194,7 @@ public class BlockGlieonia extends BlockBush implements IGrowable {
             int metadata = state.getValue(this.AGE);
             if (metadata < this.growthStages)
                 ret.add(new ItemStack(TBItems.glieoniaseed, 1));
-            if (metadata >= growthStages - 1) {
+            else if (metadata >= growthStages - 1) {
                 for (int i = 0; i < 1; ++i)
                     if (world.rand.nextInt(growthStages) <= metadata)
                         if (dropSeed != ItemStack.EMPTY){

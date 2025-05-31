@@ -7,7 +7,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import thaumcraft.api.crafting.IInfusionStabiliser;
 import thaumcraft.api.crafting.IInfusionStabiliserExt;
 
 public class TBBlock extends Block implements IInfusionStabiliserExt {

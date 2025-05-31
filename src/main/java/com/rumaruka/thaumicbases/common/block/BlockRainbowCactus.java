@@ -19,32 +19,23 @@ import java.util.List;
 
 public class BlockRainbowCactus extends BlockCactus  {
 
-
     //TODO: Nope int`s not drugs, it`s RAINBOW CACTUS
 
-
     public BlockRainbowCactus() {
-        super();
         setSoundType(SoundType.CLOTH);
-
-
-
     }
-
-
 
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
     {
 
     }
 
-
     @Override
     public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
         if(world instanceof World)
         {
-            World w = World.class.cast(world);
+            World w = (World) world;
             if(w.getBlockState(pos.down()).getBlock() != this)
             {
                 ret.add(new ItemStack(this,1,0));
@@ -68,29 +59,10 @@ public class BlockRainbowCactus extends BlockCactus  {
         return super.canSustainPlant(state,world,pos,direction,plantable);
     }
 
-
-
     public List<IBlockState> listPossibleStates(Block b) {
         ArrayList<IBlockState> ret = new ArrayList<IBlockState>();
         for(int i = 0; i < 15; ++i)
             ret.add(this.getStateFromMeta(i));
         return ret;
     }
-
-    @Override
-    public boolean isOpaqueCube(IBlockState state) {
-        return false;
-    }
-
-    @Override
-    public boolean isFullCube(IBlockState state) {
-        return false;
-    }
-
-    @Override
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT;
-    }
-
-
 }

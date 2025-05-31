@@ -407,7 +407,11 @@ public class TBThaumonomicon {
                 new ItemStack(ItemsTC.ingots, 1, 1));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.voidRec"), voidRec);
 
-        InfusionRecipe ukuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele), 5, new AspectList().add(Aspect.SENSES, 250).add(Aspect.ENERGY, 250).add(Aspect.MAN, 125).add(Aspect.TOOL, 160), new ItemStack(BlocksTC.logGreatwood, 1, 0), new ItemStack(Blocks.NOTEBLOCK),
+        InfusionRecipe ukuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele),
+                5,
+                new AspectList().add(Aspect.SENSES, 100).add(Aspect.ENERGY, 100).add(Aspect.MAN, 75).add(Aspect.TOOL, 60),
+                new ItemStack(BlocksTC.logGreatwood, 1, 0),
+                new ItemStack(Blocks.NOTEBLOCK),
                 new ItemStack(Blocks.JUKEBOX),
                 new ItemStack(Blocks.NOTEBLOCK),
                 new ItemStack(BlocksTC.arcaneEar, 1, 0),

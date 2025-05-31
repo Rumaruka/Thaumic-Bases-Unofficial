@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -13,7 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -104,10 +102,6 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
 
     }
 
-    protected int getBonemealAgeIncrease(World worldIn) {
-        return MathHelper.getInt(worldIn.rand, 2, 5);
-    }
-
     public int getMaxAge() {
         return growthStages;
     }
@@ -133,8 +127,7 @@ public class BlockPlax extends BlockCrops implements IGrowable { // AeXiaohu mod
             int metadata = state.getValue(AGE);
             if (metadata < growthStages) {
                 ret.add(new ItemStack(TBItems.plaxseed, 1));
-            }
-            if (metadata >= growthStages - 1) {
+            } else if (metadata >= growthStages - 1) {
                 if (world.rand.nextInt(growthStages) <= metadata)
                     if (dropSeed != ItemStack.EMPTY) {
                         for (int j = 0; j < 4 + fortune; ++j) {

@@ -5,7 +5,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import thaumcraft.api.crafting.IInfusionStabiliser;
 import thaumcraft.api.crafting.IInfusionStabiliserExt;
 
 public class TBBlockCrytal extends TBBlock implements IInfusionStabiliserExt {
@@ -23,6 +22,16 @@ public class TBBlockCrytal extends TBBlock implements IInfusionStabiliserExt {
     @Override
     public boolean canStabaliseInfusion(World world, BlockPos paramBlockPos) {
         return true;
+    }
+
+    @Override
+    public boolean hasSymmetryPenalty(World world, BlockPos pos1, BlockPos pos2) {
+        return false;
+    }
+
+    @Override
+    public float getSymmetryPenalty(World world, BlockPos pos) {
+        return 0.0F;
     }
 }
 

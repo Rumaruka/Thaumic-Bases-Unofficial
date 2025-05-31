@@ -76,8 +76,7 @@ public class ItemUkulele extends Item implements IRechargable {
             10 * 20
     };
 
-    public String getItemStackDisplayName(ItemStack stack)
-    {
+    public String getItemStackDisplayName(ItemStack stack) {
         return I18n.translateToLocal(this.getUnlocalizedNameInefficiently(stack) + ".name." + this.getDamage(stack));
     }
 
@@ -94,7 +93,7 @@ public class ItemUkulele extends Item implements IRechargable {
             player.world.spawnParticle(EnumParticleTypes.NOTE, player.posX + lookVec.x / 5 + MathUtils.randomDouble(itemRand) / 2, player.posY + 1 + lookVec.y / 2 + MathUtils.randomDouble(itemRand) / 10 + 0.1D, player.posZ + lookVec.z / 2 + MathUtils.randomDouble(itemRand) / 5, itemRand.nextDouble(), itemRand.nextDouble(), itemRand.nextDouble());
             if (player.world.isRemote && TBEventHandler.clientUkuleleSoundPlayDelay <= 0) {
                 TBEventHandler.clientUkuleleSoundPlayDelay = soundDelays[Math.min(stack.getItemDamage(), soundDelays.length - 1)];
-                TBCore.proxy.playGuitarSound("thaumicbases:guitar." + types[Math.min(stack.getItemDamage(), types.length - 1)]);
+                player.world.playSound(null, player.getPosition(), new SoundEvent(new ResourceLocation(TBCore.modid, "guitar." + types[Math.min(stack.getItemDamage(), types.length - 1)])), SoundCategory.PLAYERS, 1.0F, 0.5F);
             }
             if (stack.getItemDamage() == 1 && RechargeHelper.getCharge(stack) > 0) {
                 if (count % 80 == 0) {

@@ -1,7 +1,6 @@
 package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -11,7 +10,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -27,7 +25,8 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
     public PropertyInteger AGE;
     public ItemStack dropItem;
     public ItemStack dropSeed;
-    public BlockTobacco(int stages, int delay,boolean isCrop){
+
+    public BlockTobacco(int stages, int delay, boolean isCrop) {
         super();
         growthStages = stages;
         growthDelay = delay;
@@ -38,26 +37,26 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
         this.setSoundType(SoundType.PLANT);
         this.disableStats();
 
-}
+    }
 
     @Override
-    protected Item getSeed()
-    {
+    protected Item getSeed() {
         return TBItems.tobaccoseed;
     }
 
     @Override
-    protected Item getCrop()
-    {
+    protected Item getCrop() {
         return TBItems.tobacco_leaves;
     }
+
     @Override
     protected BlockStateContainer createBlockState() {
-        if(AGE==null){
-            AGE = PropertyInteger.create("age",0,7);
+        if (AGE == null) {
+            AGE = PropertyInteger.create("age", 0, 7);
         }
-        return new BlockStateContainer(this,AGE);
+        return new BlockStateContainer(this, AGE);
     }
+
     @Override
     public int getMetaFromState(IBlockState state) {
         return state.getValue(AGE);
@@ -65,12 +64,12 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(AGE,Math.min(growthStages,meta));
+        return getDefaultState().withProperty(AGE, Math.min(growthStages, meta));
     }
 
     @Override
     public int tickRate(World worldIn) {
-        return 1200+worldIn.rand.nextInt(1200);
+        return 1200 + worldIn.rand.nextInt(1200);
     }
 
     public int getGrowthStages() {
@@ -92,36 +91,30 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
 
-        if (i > j)
-        {
+        if (i > j) {
             i = j;
         }
 
         worldIn.setBlockState(pos, this.withAge(i), 2);
 
     }
-    protected int getBonemealAgeIncrease(World worldIn)
-    {
-        return MathHelper.getInt(worldIn.rand, 2, 5);
-    }
 
-    public int getMaxAge()
-    {
+    
+
+    public int getMaxAge() {
         return growthStages;
     }
 
-    protected int getAge(IBlockState state)
-    {
-        return ((Integer)state.getValue(this.getAgeProperty())).intValue();
+    protected int getAge(IBlockState state) {
+        return state.getValue(this.getAgeProperty());
     }
-    protected PropertyInteger getAgeProperty()
-    {
+
+    protected PropertyInteger getAgeProperty() {
         return AGE;
     }
 
-    public IBlockState withAge(int age)
-    {
-        return this.getDefaultState().withProperty(this.getAgeProperty(), Integer.valueOf(age));
+    public IBlockState withAge(int age) {
+        return this.getDefaultState().withProperty(this.getAgeProperty(), age);
     }
 
     @Override
@@ -129,18 +122,18 @@ public class BlockTobacco extends BlockCrops implements IGrowable { // AeXiaohu 
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
 
         if (w instanceof World) {
-            World world = World.class.cast(w);
+            World world = (World) w;
             int metadata = state.getValue(AGE);
             if (metadata < growthStages) {
                 ret.add(new ItemStack(TBItems.tobaccoseed, 1));
             }
-            if (metadata >= growthStages - 1) {
-                    if (world.rand.nextInt(growthStages) <= metadata)
-                        if (dropSeed != ItemStack.EMPTY){
-                            ret.add(new ItemStack(TBItems.tobacco_leaves));
-                            ret.add(new ItemStack(TBItems.tobaccoseed));
+            else if (metadata >= growthStages - 1) {
+                if (world.rand.nextInt(growthStages) <= metadata)
+                    if (dropSeed != ItemStack.EMPTY) {
+                        ret.add(new ItemStack(TBItems.tobacco_leaves));
+                        ret.add(new ItemStack(TBItems.tobaccoseed));
 
-                        }
+                    }
 
                 for (int i = 0; i < 2 + fortune; ++i)
                     if (world.rand.nextBoolean()) {

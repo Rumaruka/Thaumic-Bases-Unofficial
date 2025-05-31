@@ -2,7 +2,6 @@ package com.rumaruka.thaumicbases.common.block;
 
 import com.rumaruka.thaumicbases.init.TBBlocks;
 import com.rumaruka.thaumicbases.init.TBItems;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -129,10 +128,8 @@ public class BlockLucritePlant extends BlockCrops implements IGrowable { // AeXi
             if (metadata < growthStages) {
                 ret.add(new ItemStack(TBItems.lucriteseed, 1));
             }
-            if (metadata >= growthStages - 1) {
+            else if (metadata >= growthStages - 1) {
                 if (world.rand.nextInt(growthStages) <= metadata)
-//                        if (dropSeed != null)
-//                            ret.add(dropSeed.copy());
 
                     // AeXiaohu modified 修复生金草成熟后收获不掉落种子
                     if (dropSeed != ItemStack.EMPTY) {

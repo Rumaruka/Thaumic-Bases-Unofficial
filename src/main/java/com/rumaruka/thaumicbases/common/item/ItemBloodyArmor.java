@@ -48,7 +48,7 @@ public class ItemBloodyArmor extends ItemArmor implements IVisDiscountGear {
 
     @Override
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-        return super.getIsRepairable(toRepair, repair) || toRepair.equals(new ItemStack(TBItems.bloodycloth, 1, 0));
+        return super.getIsRepairable(toRepair, repair) || toRepair.getItem() == TBItems.bloodycloth;
     }
 
     @Override

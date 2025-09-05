@@ -16,15 +16,11 @@ import java.util.UUID;
 
 public class ItemBloodyArmor extends ItemArmor implements IVisDiscountGear {
 
-
-    public static final UUID ATTACK_DAMAGE_MODIFIER = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
     int aType;
-    public ItemStack repairMaterial = ItemStack.EMPTY;
-    public ItemBloodyArmor(ArmorMaterial mat,int renderIndexIn,int aType ,EntityEquipmentSlot equipmentSlotIn) {
 
-
-        super(mat, 0,equipmentSlotIn);
-        TBItems.bloodyA=mat;
+    public ItemBloodyArmor(ArmorMaterial mat, int renderIndexIn, int aType, EntityEquipmentSlot equipmentSlotIn) {
+        super(mat, 0, equipmentSlotIn);
+        TBItems.bloodyA = mat;
         this.aType = aType;
     }
 
@@ -32,7 +28,8 @@ public class ItemBloodyArmor extends ItemArmor implements IVisDiscountGear {
     public int getVisDiscount(ItemStack itemStack, EntityPlayer entityPlayer) {
         return discount[aType];
     }
-    static final int[] discount = new int[]{6,5,4,3};
+
+    static final int[] discount = new int[]{6, 5, 4, 3};
 
     @Nullable
     @Override
@@ -49,26 +46,24 @@ public class ItemBloodyArmor extends ItemArmor implements IVisDiscountGear {
 
     }
 
-
-
     @Override
     public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
-       return true;
+        return super.getIsRepairable(toRepair, repair) || toRepair.equals(new ItemStack(TBItems.bloodycloth, 1, 0));
     }
 
     @Override
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
-       Multimap<String,AttributeModifier> map = super.getAttributeModifiers(slot,stack);
-       if(stack.getItem()==TBItems.bloodychest && slot==EntityEquipmentSlot.CHEST){
-           map.put(SharedMonsterAttributes.MAX_HEALTH.getName(), new AttributeModifier(UUID.fromString("96042c45-dfe3-4366-b93b-84663c4d828d"), "MAX HEALTH", 0.4F, 2));
-       }
-       if(stack.getItem()==TBItems.bloodylegs&& slot==EntityEquipmentSlot.LEGS){
-           map.put(SharedMonsterAttributes.KNOCKBACK_RESISTANCE.getName(), new AttributeModifier(UUID.fromString("e4e1d8b2-87f2-44f5-8f24-e1876060a04c"), "KNOCKBACK RESISTANCE", 1F, 2));
-       }
-       if(stack.getItem()==TBItems.bloodyboots&& slot==EntityEquipmentSlot.FEET){
-           map.put(SharedMonsterAttributes.MOVEMENT_SPEED.getName(), new AttributeModifier(UUID.fromString("f6d1384c-74c3-4cce-9a80-11b91dbd4ff4"), "MOVEMENT SPEED", 0.5F, 2));
+        Multimap<String, AttributeModifier> map = super.getAttributeModifiers(slot, stack);
+        if (stack.getItem() == TBItems.bloodychest && slot == EntityEquipmentSlot.CHEST) {
+            map.put(SharedMonsterAttributes.MAX_HEALTH.getName(), new AttributeModifier(UUID.fromString("96042c45-dfe3-4366-b93b-84663c4d828d"), "MAX HEALTH", 0.4F, 2));
+        }
+        if (stack.getItem() == TBItems.bloodylegs && slot == EntityEquipmentSlot.LEGS) {
+            map.put(SharedMonsterAttributes.KNOCKBACK_RESISTANCE.getName(), new AttributeModifier(UUID.fromString("e4e1d8b2-87f2-44f5-8f24-e1876060a04c"), "KNOCKBACK RESISTANCE", 1F, 2));
+        }
+        if (stack.getItem() == TBItems.bloodyboots && slot == EntityEquipmentSlot.FEET) {
+            map.put(SharedMonsterAttributes.MOVEMENT_SPEED.getName(), new AttributeModifier(UUID.fromString("f6d1384c-74c3-4cce-9a80-11b91dbd4ff4"), "MOVEMENT SPEED", 0.5F, 2));
 
-       }
-       return map;
+        }
+        return map;
     }
 }

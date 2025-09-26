@@ -1,28 +1,108 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "builtin/entity",
-	"display": {
-		"thirdperson_righthand": {
-			"translation": [-4, 2.5, -2.5],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"thirdperson_lefthand": {
-			"translation": [3.25, 2.5, -2.5],
-			"scale": [0.4, 0.4, 0.4]
-		},
-		"ground": {
-			"translation": [-3.625, 13, 4.75],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"gui": {
-			"rotation": [45, -45, 0],
-			"translation": [-5.5, 2, 0],
-			"scale": [0.5, 0.5, 0.5]
-		},
-		"fixed": {
-			"rotation": [45, -45, 0],
-			"translation": [-5.5, 2, 0],
-			"scale": [0.5, 0.5, 0.5]
-		}
-	}
+  "parent": "thaumicbases:item/revolver_base",
+  "textures": {
+    "all": "thaumicbases:items/revolver/base",
+    "particle": "thaumicbases:items/revolver/base"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "thaumicbases:void": 1,
+        "thaumicbases:primal": 0,
+        "thaumicbases:taint": 0,
+        "thaumicbases:eldritch": 0
+      },
+      "model": "thaumicbases:item/revolver_void"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 0,
+        "thaumicbases:primal": 0,
+        "thaumicbases:taint": 0,
+        "thaumicbases:eldritch": 1
+      },
+      "model": "thaumicbases:item/revolver_eldritch"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 1,
+        "thaumicbases:primal": 0,
+        "thaumicbases:taint": 0,
+        "thaumicbases:eldritch": 1
+      },
+      "model": "thaumicbases:item/revolver_void_eldritch"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 0,
+        "thaumicbases:primal": 1,
+        "thaumicbases:taint": 0,
+        "thaumicbases:eldritch": 0
+      },
+      "model": "thaumicbases:item/revolver_primal"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 0,
+        "thaumicbases:primal": 0,
+        "thaumicbases:taint": 1,
+        "thaumicbases:eldritch": 0
+      },
+      "model": "thaumicbases:item/revolver_taint"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 1,
+        "thaumicbases:primal": 1,
+        "thaumicbases:taint": 0,
+        "thaumicbases:eldritch": 0
+      },
+      "model": "thaumicbases:item/revolver_void_primal"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 1,
+        "thaumicbases:primal": 0,
+        "thaumicbases:taint": 1,
+        "thaumicbases:eldritch": 0
+      },
+      "model": "thaumicbases:item/revolver_void_taint"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 0,
+        "thaumicbases:primal": 1,
+        "thaumicbases:taint": 0,
+        "thaumicbases:eldritch": 1
+      },
+      "model": "thaumicbases:item/revolver_eldritch_primal"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 0,
+        "thaumicbases:primal": 0,
+        "thaumicbases:taint": 1,
+        "thaumicbases:eldritch": 1
+      },
+      "model": "thaumicbases:item/revolver_eldritch_taint"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 1,
+        "thaumicbases:primal": 1,
+        "thaumicbases:taint": 0,
+        "thaumicbases:eldritch": 1
+      },
+      "model": "thaumicbases:item/revolver_void_eldritch_primal"
+    },
+    {
+      "predicate": {
+        "thaumicbases:void": 1,
+        "thaumicbases:primal": 0,
+        "thaumicbases:taint": 1,
+        "thaumicbases:eldritch": 1
+      },
+      "model": "thaumicbases:item/revolver_void_eldritch_taint"
+    }
+  ]
 }

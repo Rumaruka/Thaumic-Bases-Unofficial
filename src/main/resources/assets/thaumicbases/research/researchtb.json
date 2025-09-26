@@ -921,7 +921,7 @@
       "name": "research_name.thaumicbases:revolver",
       "category": "THAUMICBASES",
       "icons": [
-        "thaumicbases:textures/thaumonomicon/revolver.png"
+        "thaumicbases:revolver"
       ],
       "parents": [
         "TB.SPIKE1",

@@ -144,7 +144,7 @@ public class ItemUkulele extends Item implements IRechargable {
                 double dy = player.posY + MathUtils.randomDouble(itemRand) * 16;
                 double dz = player.posZ + MathUtils.randomDouble(itemRand) * 16;
                 if (player.world.isRemote && player.world.rand.nextDouble() <= 0.1D)
-                    new FXDispatcher().arcLightning(player.posX, player.posY - 1, player.posZ, dx, dy, dz, 0.2F, 0.5F, 1, 1);
+                    new FXDispatcher().arcLightning(player.posX, player.posY + 0.5, player.posZ, dx, dy, dz, 0.2F, 0.5F, 1, 1);
 
                 f:
                 for (int i = 1; i <= 16; ++i) {
@@ -172,7 +172,7 @@ public class ItemUkulele extends Item implements IRechargable {
                         if (attack) {
                             e.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) player), 6);
                             if (player.world.isRemote)
-                                new FXDispatcher().arcLightning(player.posX, player.posY - 1, player.posZ, e.posX, e.posY, e.posZ, 0.2F, 0.5F, 1, 1);
+                                new FXDispatcher().arcLightning(player.posX, player.posY + 0.5, player.posZ, e.posX, e.posY, e.posZ, 0.2F, 0.5F, 1, 1);
 
                             player.world.playSound(player.posX, player.posY, player.posZ, SoundsTC.jacobs, SoundCategory.PLAYERS, 1, player.world.rand.nextFloat() * 2, false);
                             player.world.playSound(e.posX, e.posY, e.posZ, SoundsTC.jacobs, SoundCategory.PLAYERS, 1, player.world.rand.nextFloat() * 2, false);

@@ -23,7 +23,7 @@ public class TBClient extends TBServer {
     public void preInit(FMLPreInitializationEvent e) {
         ModelLoader.setCustomStateMapper(TBBlocks.pyrofluid, new StateMap.Builder().ignore(BlockFluidBase.LEVEL).build());
         TBItems.revolver.setTileEntityItemStackRenderer(new RenderRevolver());
-        TBItems.ukulele.setTileEntityItemStackRenderer(new ItemUkuleleRenderer());
+        //TBItems.ukulele.setTileEntityItemStackRenderer(new ItemUkuleleRenderer());
     }
 
 

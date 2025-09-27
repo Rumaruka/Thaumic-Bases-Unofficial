@@ -204,7 +204,7 @@ public class TBThaumonomicon {
         CrucibleRecipe cobbleToSandAdv = new CrucibleRecipe("TB.AdvMACERATOR", new ItemStack(Blocks.SAND, 4, 0), new ItemStack(Blocks.COBBLESTONE), new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH, 10).add(Aspect.CRAFT, 5));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.cobbleToSandAdv"), cobbleToSandAdv);
 
-        CrucibleRecipe sandToNuggetGoldAdv = new CrucibleRecipe("TB.AdvMACERATOR", new ItemStack(Items.GOLD_NUGGET, 4, 0), new ItemStack(Blocks.SAND), new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH, 5).add(Aspect.CRAFT, 8).add(Aspect.DESIRE, 5));
+        CrucibleRecipe sandToNuggetGoldAdv = new CrucibleRecipe("TB.AdvMACERATOR", new ItemStack(Items.GOLD_NUGGET, 4, 0), new ItemStack(Blocks.SAND), new AspectList().add(Aspect.ENTROPY, 10).add(Aspect.EARTH, 5).add(Aspect.CRAFT, 20).add(Aspect.DESIRE, 5));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.sandToNuggetGoldAdv"), sandToNuggetGoldAdv);
 
         CrucibleRecipe woolToStringAdv = new CrucibleRecipe("TB.AdvMACERATOR", new ItemStack(Items.STRING, 4, 0), new ItemStack(Blocks.WOOL), new AspectList().add(Aspect.ENTROPY, 25).add(Aspect.CRAFT, 10));
@@ -213,10 +213,10 @@ public class TBThaumonomicon {
         CrucibleRecipe rodToPowerAdv = new CrucibleRecipe("TB.AdvMACERATOR", new ItemStack(Items.BLAZE_POWDER, 5, 0), new ItemStack(Items.BLAZE_ROD), new AspectList().add(Aspect.ENTROPY, 30).add(Aspect.CRAFT, 15));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.rodToPowerAdv"), rodToPowerAdv);
 
-        CrucibleRecipe silverToQuicksilver = new CrucibleRecipe("TB.EXCHANG", new ItemStack(ItemsTC.quicksilver, 3, 0), new ItemStack(BlocksTC.logSilverwood), new AspectList().add(Aspect.ORDER, 8).add(Aspect.MAGIC, 8));
+        CrucibleRecipe silverToQuicksilver = new CrucibleRecipe("TB.EXCHANG", new ItemStack(ItemsTC.quicksilver, 3, 0), new ItemStack(BlocksTC.logSilverwood), new AspectList().add(Aspect.ORDER, 20).add(Aspect.MAGIC, 20));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.silverToQuicksilver"), silverToQuicksilver);
 
-        CrucibleRecipe saplingToAmber = new CrucibleRecipe("TB.EXCHANG", new ItemStack(ItemsTC.amber, 3, 0), new ItemStack(Blocks.SAPLING, 1, 1), new AspectList().add(Aspect.TRAP, 8));
+        CrucibleRecipe saplingToAmber = new CrucibleRecipe("TB.EXCHANG", new ItemStack(ItemsTC.amber, 3, 0), new ItemStack(Blocks.SAPLING, 1, 1), new AspectList().add(Aspect.TRAP, 20));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation("TB.saplingToAmber"), saplingToAmber);
 
         CrucibleRecipe powderToRod = new CrucibleRecipe("TB.EXCHANG", new ItemStack(Items.BLAZE_ROD, 1, 0), new ItemStack(Items.BLAZE_POWDER, 1, 0), new AspectList().add(Aspect.FIRE, 15).add(Aspect.ALCHEMY, 5).add(Aspect.ENERGY, 5).add(Aspect.ENTROPY, 1));
@@ -309,7 +309,7 @@ public class TBThaumonomicon {
         InfusionRecipe voidAnvil = new InfusionRecipe("TB.VOIDANVIL", new ItemStack(TBBlocks.voidAnvil), 6, new AspectList().add(Aspect.TOOL, 125).add(Aspect.MAGIC, 125).add(Aspect.ELDRITCH, 75).add(Aspect.METAL, 75), new ItemStack(TBBlocks.thaumicAnvil), new ItemStack(BlocksTC.metalBlockVoid), new ItemStack(BlocksTC.metalBlockVoid), new ItemStack(BlocksTC.metalBlockVoid), new ItemStack(BlocksTC.metalBlockVoid), new ItemStack(BlocksTC.metalBlockVoid), new ItemStack(BlocksTC.metalBlockVoid));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.voidAnvil"), voidAnvil);
 
-        RevolverInfusionRecipe accuracyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.accuracy, 1, new AspectList().add(Aspect.ORDER, 8).add(Aspect.SENSES, 8), new ItemStack(Blocks.GLASS_PANE, 1, 0),
+        RevolverInfusionRecipe accuracyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.accuracy, 1, new AspectList().add(Aspect.ORDER, 20).add(Aspect.SENSES, 20), new ItemStack(Blocks.GLASS_PANE, 1, 0),
                 new ItemStack(Items.CARROT, 1, 0),
                 new ItemStack(Blocks.GLASS_PANE, 1, 0),
                 new ItemStack(Blocks.GLASS_PANE, 1, 0),
@@ -317,50 +317,51 @@ public class TBThaumonomicon {
                 new ItemStack(Blocks.GLASS_PANE, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.accuracy"), accuracyRec);
 
-        RevolverInfusionRecipe atropodsRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.atropodsBane, 1, new AspectList().add(Aspect.DEATH, 8).add(Aspect.BEAST, 8).add(Aspect.CRAFT, 8), new ItemStack(Items.SPIDER_EYE, 1, 0),
+        RevolverInfusionRecipe atropodsRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.atropodsBane, 1, new AspectList().add(Aspect.DEATH, 20).add(Aspect.BEAST, 20).add(Aspect.CRAFT, 20), new ItemStack(Items.SPIDER_EYE, 1, 0),
                 new ItemStack(Items.FERMENTED_SPIDER_EYE, 1, 0),
                 new ItemStack(Items.SPIDER_EYE, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.atropodsBane"), atropodsRec);
 
-        RevolverInfusionRecipe eldritchBRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.eldritchBane, 2, new AspectList().add(Aspect.DEATH, 8).add(Aspect.ELDRITCH, 8), new ItemStack(Items.ENDER_EYE, 1, 0),
+        RevolverInfusionRecipe eldritchBRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.eldritchBane, 2, new AspectList().add(Aspect.DEATH, 20).add(Aspect.ELDRITCH, 20), new ItemStack(Items.ENDER_EYE, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.ENDER_PEARL, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.eldritchBRec"), eldritchBRec);
 
-        RevolverInfusionRecipe duelingRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.dueling, 2, new AspectList().add(Aspect.DEATH, 8).add(Aspect.MAN, 8), new ItemStack(ItemsTC.salisMundus, 1, 0),
+        RevolverInfusionRecipe duelingRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.dueling, 2, new AspectList().add(Aspect.DEATH, 20).add(Aspect.MAN, 20), new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.BED, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.GHAST_TEAR, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.duelingRec"), duelingRec);
 
-        RevolverInfusionRecipe efficiencyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.efficiency, 0, new AspectList().add(Aspect.ORDER, 8).add(Aspect.EXCHANGE, 8), new ItemStack(ItemsTC.salisMundus, 1, 0),
+        RevolverInfusionRecipe efficiencyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.efficiency, 0, new AspectList().add(Aspect.ORDER, 20).add(Aspect.EXCHANGE, 20), new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.BLAZE_POWDER, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.ENCHANTED_BOOK, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.efficiencyRec"), efficiencyRec);
 
-        RevolverInfusionRecipe eldritchRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.eldritch, 5, new AspectList().add(Aspect.ELDRITCH, 8).add(Aspect.VOID, 8), new ItemStack(ItemsTC.eldritchEye, 1, 0),
+        RevolverInfusionRecipe eldritchRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.eldritch, 5, new AspectList().add(Aspect.ELDRITCH, 20).add(Aspect.VOID, 20),
+                new ItemStack(ItemsTC.voidSeed, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
-                new ItemStack(ItemsTC.eldritchEye, 1, 0),
+                new ItemStack(ItemsTC.voidSeed, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.eldritchRec"), eldritchRec);
 
-        RevolverInfusionRecipe heavyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.heavy, 0, new AspectList().add(Aspect.AVERSION, 8).add(Aspect.METAL, 8), new ItemStack(ItemsTC.salisMundus, 1, 0),
+        RevolverInfusionRecipe heavyRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.heavy, 0, new AspectList().add(Aspect.AVERSION, 20).add(Aspect.METAL, 20), new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.IRON_SWORD, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.heavyRec"), heavyRec);
 
-        RevolverInfusionRecipe knowledgeRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.knowledge, 0, new AspectList().add(Aspect.MIND, 8).add(Aspect.AURA, 8), new ItemStack(ItemsTC.scribingTools, 1, OreDictionary.WILDCARD_VALUE),
+        RevolverInfusionRecipe knowledgeRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.knowledge, 0, new AspectList().add(Aspect.MIND, 20).add(Aspect.AURA, 20), new ItemStack(ItemsTC.scribingTools, 1, OreDictionary.WILDCARD_VALUE),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.BOOK, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.PAPER, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.knowledgeRec"), knowledgeRec);
 
-        RevolverInfusionRecipe piercingRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.piercig, 12, new AspectList().add(Aspect.AVERSION, 32).add(Aspect.AIR, 64), new ItemStack(TBBlocks.crystalblockfire, 1, 0),
+        RevolverInfusionRecipe piercingRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.piercig, 12, new AspectList().add(Aspect.AVERSION, 50).add(Aspect.AIR, 100), new ItemStack(TBBlocks.crystalblockfire, 1, 0),
                 new ItemStack(TBBlocks.crystalblockwater, 1, 0),
                 new ItemStack(TBBlocks.crystalblockair, 1, 0),
                 new ItemStack(Items.DIAMOND_SWORD, 1, OreDictionary.WILDCARD_VALUE),
@@ -369,38 +370,39 @@ public class TBThaumonomicon {
                 new ItemStack(TBBlocks.crystalblockorder, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.piercingRec"), piercingRec);
 
-        RevolverInfusionRecipe powerRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.power, 2, new AspectList().add(Aspect.AVERSION, 16), new ItemStack(Items.GUNPOWDER),
+        RevolverInfusionRecipe powerRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.power, 2, new AspectList().add(Aspect.AVERSION, 30),
+                new ItemStack(Items.GUNPOWDER),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.FIRE_CHARGE),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.FIREWORKS, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.powerRec"), powerRec);
 
-        RevolverInfusionRecipe primalRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.primal, 12, new AspectList().add(Aspect.AVERSION, 64).add(primals(64)).add(Aspect.ENERGY, 64), new ItemStack(ItemsTC.salisMundus, 1, 0),
+        RevolverInfusionRecipe primalRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.primal, 12, new AspectList().add(Aspect.AVERSION, 100).add(primals(100)).add(Aspect.ENERGY, 100), new ItemStack(ItemsTC.salisMundus, 1, 0),
                 Ingredient.fromItem(ItemsTC.primordialPearl),
                 new ItemStack(Items.DIAMOND_SWORD),
                 Ingredient.fromItem(ItemsTC.primordialPearl),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.primalRec"), primalRec);
 
-        RevolverInfusionRecipe silverRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.silver, 0, new AspectList().add(Aspect.DEATH, 8).add(Aspect.BEAST, 8).add(Aspect.UNDEAD, 8), new ItemStack(ItemsTC.salisMundus, 1, 0),
+        RevolverInfusionRecipe silverRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.silver, 0, new AspectList().add(Aspect.DEATH, 20).add(Aspect.BEAST, 20).add(Aspect.UNDEAD, 20), new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(ItemsTC.quicksilver, 1, 0),
                 new ItemStack(ItemsTC.quicksilver, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.silverRec"), silverRec);
 
-        RevolverInfusionRecipe speedRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.speed, 2, new AspectList().add(Aspect.MOTION, 8).add(Aspect.AIR, 8), new ItemStack(ItemsTC.salisMundus, 1, 0),
+        RevolverInfusionRecipe speedRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.speed, 2, new AspectList().add(Aspect.MOTION, 20).add(Aspect.AIR, 20), new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(Items.FEATHER),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.speedRec"), speedRec);
 
-        RevolverInfusionRecipe taintedRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.tainted, 4, new AspectList().add(Aspect.FLUX, 8).add(Aspect.AVERSION, 8), new ItemStack(BlocksTC.crystalTaint, 1, 0),
+        RevolverInfusionRecipe taintedRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.tainted, 4, new AspectList().add(Aspect.FLUX, 20).add(Aspect.AVERSION, 20), new ItemStack(BlocksTC.crystalTaint, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(BlocksTC.crystalTaint, 1, 0),
                 new ItemStack(ItemsTC.salisMundus, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.REVOLVER.taintedRec"), taintedRec);
 
-        RevolverInfusionRecipe voidRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.uvoid, 4, new AspectList().add(Aspect.VOID, 8).add(Aspect.TOOL, 8), new ItemStack(ItemsTC.ingots, 1, 1),
+        RevolverInfusionRecipe voidRec = new RevolverInfusionRecipe("TB.REVOLVER.2", RevolverUpgrade.uvoid, 4, new AspectList().add(Aspect.VOID, 20).add(Aspect.TOOL, 20), new ItemStack(ItemsTC.ingots, 1, 1),
                 new ItemStack(ItemsTC.ingots, 1, 1),
                 new ItemStack(ItemsTC.ingots, 1, 1),
                 new ItemStack(ItemsTC.ingots, 1, 1),
@@ -434,7 +436,7 @@ public class TBThaumonomicon {
                 new ItemStack(ItemsTC.thaumonomicon, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.Ukulele.Knowledge"), knowledgeUkuleleRec);
 
-        InfusionRecipe sanityUkuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele, 1, 2), 6, new AspectList().add(Aspect.AURA, 160).add(Aspect.LIFE, 90).add(Aspect.ORDER, 64).add(Aspect.MIND, 30), new ItemStack(TBItems.ukulele, 1, 0), new ItemStack(ItemsTC.salisMundus, 1, 0),
+        InfusionRecipe sanityUkuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele, 1, 2), 6, new AspectList().add(Aspect.AURA, 160).add(Aspect.LIFE, 90).add(Aspect.ORDER, 100).add(Aspect.MIND, 30), new ItemStack(TBItems.ukulele, 1, 0), new ItemStack(ItemsTC.salisMundus, 1, 0),
                 new ItemStack(ItemsTC.bathSalts),
                 new ItemStack(ItemsTC.salisMundus, 1, 0),
                 FluidUtil.getFilledBucket(new FluidStack(ConfigBlocks.FluidPure.instance, Fluid.BUCKET_VOLUME)),
@@ -444,7 +446,7 @@ public class TBThaumonomicon {
                 FluidUtil.getFilledBucket(new FluidStack(ConfigBlocks.FluidPure.instance, Fluid.BUCKET_VOLUME)));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.Ukulele.Sanity"), sanityUkuleleRec);
 
-        InfusionRecipe electricUkuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele, 1, 3), 3, new AspectList().add(Aspect.AURA, 40).add(Aspect.AIR, 90).add(Aspect.ENERGY, 64).add(Aspect.ENTROPY, 30).add(Aspect.AVERSION, 60), new ItemStack(TBItems.ukulele, 1, 0), new ItemStack(ItemsTC.focus2),
+        InfusionRecipe electricUkuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele, 1, 3), 3, new AspectList().add(Aspect.AURA, 40).add(Aspect.AIR, 90).add(Aspect.ENERGY, 100).add(Aspect.ENTROPY, 30).add(Aspect.AVERSION, 60), new ItemStack(TBItems.ukulele, 1, 0), new ItemStack(ItemsTC.focus2),
                 new ItemStack(TBBlocks.crystalblockair),
                 new ItemStack(BlocksTC.mirrorEssentia, 1, 0),
                 new ItemStack(TBBlocks.crystalblockentropy, 1, 0),
@@ -454,7 +456,7 @@ public class TBThaumonomicon {
                 new ItemStack(TBBlocks.crystalblockentropy));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.Ukulele.Electric"), electricUkuleleRec);
 
-        InfusionRecipe resistanceUkuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele, 1, 4), 8, new AspectList().add(Aspect.AURA, 64).add(Aspect.PROTECT, 160).add(Aspect.LIFE, 64).add(Aspect.EXCHANGE, 90), new ItemStack(TBItems.ukulele, 1, 0), new ItemStack(ItemsTC.causalityCollapser),
+        InfusionRecipe resistanceUkuleleRec = new InfusionRecipe("TB.Ukulele", new ItemStack(TBItems.ukulele, 1, 4), 8, new AspectList().add(Aspect.AURA, 100).add(Aspect.PROTECT, 160).add(Aspect.LIFE, 100).add(Aspect.EXCHANGE, 90), new ItemStack(TBItems.ukulele, 1, 0), new ItemStack(ItemsTC.causalityCollapser),
                 Ingredient.fromItem(ItemsTC.primordialPearl),
                 new ItemStack(ItemsTC.causalityCollapser, 1, 0));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation("TB.Ukulele.Resistance"), resistanceUkuleleRec);

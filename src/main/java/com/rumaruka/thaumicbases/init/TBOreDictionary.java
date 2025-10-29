@@ -14,5 +14,7 @@ public class TBOreDictionary {
         OreDictionary.registerOre("logWood", TBBlocks.goldenlogs);
         OreDictionary.registerOre("logWood", TBBlocks.enderlogs);
         OreDictionary.registerOre("logWood", TBBlocks.peacelogs);
+
+        OreDictionary.registerOre("nuggetLapis", TBItems.lapis_shard);
     }
 }

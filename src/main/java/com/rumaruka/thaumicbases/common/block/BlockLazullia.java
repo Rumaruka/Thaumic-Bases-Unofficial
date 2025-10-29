@@ -7,13 +7,11 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +44,7 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
 
     @Override
     protected Item getCrop() {
-        return OreDictionary.getOres("gemLapis").get(0).getItem();
+        return TBItems.lapis_shard;
     }
 
     @Override
@@ -115,13 +113,12 @@ public class BlockLazullia extends BlockCrops implements IGrowable { // AeXiaohu
             int metadata = state.getValue(AGE);
             if (metadata < growthStages) {
                 ret.add(new ItemStack(TBItems.lazulliaseed, 1));
-            }
-            else if (metadata >= growthStages - 1) {
+            } else if (metadata >= growthStages - 1) {
                 if (world.rand.nextInt(growthStages) <= metadata)
                     if (dropSeed != ItemStack.EMPTY) {
                         for (int j = 0; j < 4 + fortune; ++j) {
                             if (world.rand.nextBoolean()) {
-                                ret.add(new ItemStack(Items.DYE, 1, 4));
+                                ret.add(new ItemStack(TBItems.lapis_shard, 7));
                                 ret.add(new ItemStack(TBItems.lazulliaseed, 1));
                             }
                         }

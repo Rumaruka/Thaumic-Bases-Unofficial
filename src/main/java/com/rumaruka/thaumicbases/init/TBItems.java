@@ -95,6 +95,7 @@ public class TBItems {
     public static Item ukulele;
     public static Item knozeseed;
     public static Item knowledge_shard;
+    public static Item lapis_shard;
 
     public static Block[] crystalBlock = new Block[]{TBBlocks.crystalblocktainted, TBBlocks.crystalblockentropy, TBBlocks.crystalblockorder, TBBlocks.crystalblockearth, TBBlocks.crystalblockfire, TBBlocks.crystalblockair, TBBlocks.crystalblockwater, TBBlocks.crystalblockmixed};
 
@@ -165,6 +166,8 @@ public class TBItems {
 
         revolver = new ItemRevolver().setUnlocalizedName("revolver").setMaxStackSize(1).setMaxDamage(1561).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
         ukulele = new ItemUkulele().setUnlocalizedName("ukulele").setHasSubtypes(true).setMaxStackSize(1).setMaxDamage(0).setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
+
+        lapis_shard = new Item().setUnlocalizedName("lapis_shard").setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
     }
 
 
@@ -228,6 +231,8 @@ public class TBItems {
         TBItems.registerItem(revolver, revolver.getUnlocalizedName().substring(5));
         TBItems.registerItem(ukulele, ukulele.getUnlocalizedName().substring(5));
         TBItems.registerItem(knowledge_shard, knowledge_shard.getUnlocalizedName().substring(5));
+
+        TBItems.registerItem(lapis_shard, lapis_shard.getUnlocalizedName().substring(5));
     }
 
 
@@ -299,6 +304,8 @@ public class TBItems {
 
         renderItems(knowledge_shard);
         renderItems(revolver);
+
+        renderItems(lapis_shard);
     }
 
     public static void renderItems(Item i) {

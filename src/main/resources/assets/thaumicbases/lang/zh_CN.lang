@@ -146,6 +146,7 @@ item.revolver.name=奥术左轮枪
 item.bullet.name=左轮枪弹
 item.knozeseed.name=神秘玫瑰芽
 item.knowledge_shard.name=知识碎片
+item.lapis_shard.name=青金石碎片
 
 #奥术左轮枪附魔
 revolverUpgrade.ACCURACY.name=精准

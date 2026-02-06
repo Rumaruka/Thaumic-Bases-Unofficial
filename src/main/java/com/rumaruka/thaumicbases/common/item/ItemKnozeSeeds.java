@@ -24,7 +24,7 @@ public class ItemKnozeSeeds extends ItemSeeds {
 
     public Block crops;
 
-    public ItemKnozeSeeds(Block crops){
+    public ItemKnozeSeeds(Block crops) {
         super(crops, new TBBlockCrytal(Material.GLASS, false));
         this.crops = crops;
         this.setCreativeTab(TBCreativeTabs.TB_CREATIVEtabs);
@@ -34,18 +34,15 @@ public class ItemKnozeSeeds extends ItemSeeds {
     @Nonnull
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack stack = player.getHeldItem(hand);
-        if(facing != EnumFacing.UP){
+        if (facing != EnumFacing.UP) {
             return EnumActionResult.FAIL;
-        }
-        else if (!player.canPlayerEdit(pos.offset(facing),facing,stack)){
+        } else if (!player.canPlayerEdit(pos.offset(facing), facing, stack)) {
             return EnumActionResult.FAIL;
-        }
-        else if((worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblockfire || worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblockwater || worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblockair || worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblockearth|| worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblockorder| worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblockentropy || worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblocktainted || worldIn.getBlockState(pos).getBlock()== TBBlocks.crystalblockmixed)&&worldIn.isAirBlock(pos.up())) {
+        } else if ((worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblockfire || worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblockwater || worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblockair || worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblockearth || worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblockorder | worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblockentropy || worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblocktainted || worldIn.getBlockState(pos).getBlock() == TBBlocks.crystalblockmixed) && worldIn.isAirBlock(pos.up())) {
             worldIn.setBlockState(pos.up(), this.crops.getDefaultState());
             stack.shrink(1);
             return EnumActionResult.SUCCESS;
-        }
-        else
+        } else
             return EnumActionResult.FAIL;
     }
 

@@ -8,6 +8,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.PotionEffect;
@@ -90,6 +91,8 @@ public class EnchantmentHandler {
     @SubscribeEvent
     public void registerAspects(AspectRegistryEvent event) {
         AspectEventProxy proxy = event.register;
+        proxy.registerObjectTag(new ItemStack(Items.GOLD_NUGGET), new AspectList().add(Aspect.METAL, 1).add(Aspect.DESIRE, 1));
+
         proxy.registerComplexObjectTag(new ItemStack(TBItems.aureliapetal), new AspectList().add(Aspect.AURA, 10));
         proxy.registerComplexObjectTag(new ItemStack(TBBlocks.goldenleaves), new AspectList().add(Aspect.PLANT, 5));
         proxy.registerComplexObjectTag(new ItemStack(TBBlocks.enderleaves), new AspectList().add(Aspect.PLANT, 5));

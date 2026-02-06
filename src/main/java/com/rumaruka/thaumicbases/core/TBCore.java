@@ -82,11 +82,10 @@ public class TBCore {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e) {
-
         proxy.Renders();
 
         network = NetworkRegistry.INSTANCE.newSimpleChannel("thaumicbases");
         proxy.postInit(e);
-
     }
+
 }

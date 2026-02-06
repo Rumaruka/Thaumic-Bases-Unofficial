@@ -90,7 +90,7 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-        if (entity.isEntityAlive() && entity instanceof IMob) {
+        if (entity.isEntityAlive() && entity instanceof IMob && player.getCooledAttackStrength(1.0F) == 1.0f) {
             attack(player, new ArrayList<>(), (EntityLivingBase) entity);
         }
         return super.onLeftClickEntity(stack, player, entity);
@@ -183,7 +183,8 @@ public class ItemHerobrinesScythe extends ItemSword implements IWarpingGear {
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack) {
         Multimap attribs = HashMultimap.create();
         if (stack.getItem() == TBItems.herobrinesscythe && slot == EntityEquipmentSlot.MAINHAND) {
-            attribs.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF"), "ATTACK DAMAGE", 14.5F, 0));
+            attribs.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", 14.5F, 0));
+            attribs.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", -3.0F, 0));
             attribs.put(SharedMonsterAttributes.MOVEMENT_SPEED.getName(), new AttributeModifier(UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CE"), "MOVEMENT SPEED", 0.5F, 2));
         }
         return attribs;

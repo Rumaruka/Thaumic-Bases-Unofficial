@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "blocks/peacelog_top",
-    "side": "blocks/peacelog"
-  }
-}

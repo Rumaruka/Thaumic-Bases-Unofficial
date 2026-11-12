@@ -1,7 +1,0 @@
-{
-  "parent": "thaumicbases:item/revolver_base",
-  "textures": {
-    "all": "thaumicbases:items/revolver/void_eldritch_taint",
-    "particle": "thaumicbases:items/revolver/void_eldritch_taint"
-  }
-}

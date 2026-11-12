@@ -1,0 +1,36 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.thauminite_gear.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": -2,
+  "row": 0,
+  "icons": ["thaumicbases:thauminitesword"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.thauminite_gear.stage_0",
+      "required_knowledge": [
+        { "type": "observation", "category": "thaumaturge:artifice", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.thauminite_gear.stage_1",
+      "recipes": [
+        "thaumicbases:thauminite_plate",
+        "thaumicbases:thauminitesword",
+        "thaumicbases:thauminiteaxe",
+        "thaumicbases:thauminitepickaxe",
+        "thaumicbases:thauminiteshovel",
+        "thaumicbases:thauminitehoe",
+        "thaumicbases:thauminitehelmet",
+        "thaumicbases:thauminitechest",
+        "thaumicbases:thauminitelegs",
+        "thaumicbases:thauminiteboots"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:metallum", "amount": 3 },
+    { "aspect": "thaumaturge:praecantatio", "amount": 2 }
+  ],
+  "complexity": 1
+}

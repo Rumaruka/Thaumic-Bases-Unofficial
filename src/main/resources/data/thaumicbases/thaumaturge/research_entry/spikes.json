@@ -1,0 +1,29 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.spikes.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": 2,
+  "row": -2,
+  "icons": ["thaumicbases:ironspike"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.spikes.stage_0",
+      "required_knowledge": [
+        { "type": "observation", "category": "thaumaturge:artifice", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.spikes.stage_1",
+      "recipes": [
+        "thaumicbases:arcane_workbench/iron_spike",
+        "thaumicbases:arcane_workbench/thaumium_spike",
+        "thaumicbases:arcane_workbench/void_spike"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:aversio", "amount": 3 },
+    { "aspect": "thaumaturge:metallum", "amount": 2 }
+  ],
+  "complexity": 1
+}

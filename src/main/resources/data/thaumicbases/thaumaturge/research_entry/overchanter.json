@@ -1,0 +1,25 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.overchanter.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": 2,
+  "row": 0,
+  "icons": ["thaumicbases:overchanter"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.overchanter.stage_0",
+      "required_knowledge": [
+        { "type": "theory", "category": "thaumaturge:infusion", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.overchanter.stage_1",
+      "recipes": ["thaumicbases:infusion/overchanter"]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:praecantatio", "amount": 4 },
+    { "aspect": "thaumaturge:cognitio", "amount": 2 }
+  ],
+  "complexity": 2
+}

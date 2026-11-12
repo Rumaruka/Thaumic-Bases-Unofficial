@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "thaumicbases:netherlogs"
+    }
+  ],
+  "result": {
+    "id": "thaumicbases:netherplanks",
+    "count": 4
+  }
+}

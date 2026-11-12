@@ -1,0 +1,31 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.root.title",
+  "parents": ["thaumaturge:base_alchemy"],
+  "column": 0,
+  "row": 0,
+  "icons": ["thaumicbases:nuggetthauminite"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.root.stage_0",
+      "required_knowledge": [
+        { "type": "observation", "category": "thaumaturge:basics", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.root.stage_1",
+      "recipes": [
+        "thaumicbases:thauminite_ingot_from_nuggets",
+        "thaumicbases:nuggetthauminite",
+        "thaumicbases:blockthauminite",
+        "thaumicbases:thauminite_ingot_from_block",
+        "thaumicbases:crucible/thauminite_ingot"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:praecantatio", "amount": 2 },
+    { "aspect": "thaumaturge:metallum", "amount": 2 }
+  ],
+  "complexity": 1
+}

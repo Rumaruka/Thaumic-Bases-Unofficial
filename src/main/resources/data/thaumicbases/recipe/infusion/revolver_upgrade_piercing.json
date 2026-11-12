@@ -1,0 +1,51 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  12,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumicbases:crystalblockfire"
+                       },
+                       {
+                           "item":  "thaumicbases:crystalblockwater"
+                       },
+                       {
+                           "item":  "thaumicbases:crystalblockair"
+                       },
+                       {
+                           "item":  "minecraft:diamond_sword"
+                       },
+                       {
+                           "item":  "thaumicbases:crystalblockearth"
+                       },
+                       {
+                           "item":  "thaumicbases:crystalblockentropy"
+                       },
+                       {
+                           "item":  "thaumicbases:crystalblockorder"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:aversio",
+                        "amount":  50
+                    },
+                    {
+                        "aspect":  "thaumaturge:aer",
+                        "amount":  100
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "PIERCING":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

@@ -1,0 +1,42 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.revolver_upgrades.title",
+  "parents": ["thaumicbases:revolver"],
+  "column": 5,
+  "row": 0,
+  "icons": ["thaumicbases:textures/thaumonomicon/enchantments_icon.png"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.revolver_upgrades.stage_0",
+      "required_knowledge": [
+        { "type": "theory", "category": "thaumaturge:infusion", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.revolver_upgrades.stage_1",
+      "recipes": [
+        "thaumicbases:infusion/revolver_upgrade_accuracy",
+        "thaumicbases:infusion/revolver_upgrade_bane_of_atropods",
+        "thaumicbases:infusion/revolver_upgrade_bane_of_eldritch",
+        "thaumicbases:infusion/revolver_upgrade_dueling",
+        "thaumicbases:infusion/revolver_upgrade_efficiency",
+        "thaumicbases:infusion/revolver_upgrade_eldritch",
+        "thaumicbases:infusion/revolver_upgrade_heavy",
+        "thaumicbases:infusion/revolver_upgrade_knowledge",
+        "thaumicbases:infusion/revolver_upgrade_piercing",
+        "thaumicbases:infusion/revolver_upgrade_power",
+        "thaumicbases:infusion/revolver_upgrade_primal",
+        "thaumicbases:infusion/revolver_upgrade_silver",
+        "thaumicbases:infusion/revolver_upgrade_speed",
+        "thaumicbases:infusion/revolver_upgrade_tainted",
+        "thaumicbases:infusion/revolver_upgrade_void"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:aversio", "amount": 2 },
+    { "aspect": "thaumaturge:instrumentum", "amount": 2 },
+    { "aspect": "thaumaturge:praecantatio", "amount": 1 }
+  ],
+  "complexity": 3
+}

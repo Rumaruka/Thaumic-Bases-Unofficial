@@ -1,0 +1,9 @@
+{
+    "textures":  {
+                     "bottom":  "thaumicbases:block/rcbottom",
+                     "top":  "thaumicbases:block/rctop",
+                     "side":  "thaumicbases:block/rcside",
+                     "particle":  "thaumicbases:block/rcside"
+                 },
+    "parent":  "minecraft:block/cactus"
+}

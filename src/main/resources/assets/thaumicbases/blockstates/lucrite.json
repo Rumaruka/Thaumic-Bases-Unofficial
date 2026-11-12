@@ -1,0 +1,28 @@
+{
+    "variants":  {
+                     "age=1":  {
+                                   "model":  "thaumicbases:block/lucrite_1"
+                               },
+                     "age=2":  {
+                                   "model":  "thaumicbases:block/lucrite_2"
+                               },
+                     "age=5":  {
+                                   "model":  "thaumicbases:block/lucrite_5"
+                               },
+                     "age=6":  {
+                                   "model":  "thaumicbases:block/lucrite_6"
+                               },
+                     "age=4":  {
+                                   "model":  "thaumicbases:block/lucrite_4"
+                               },
+                     "age=0":  {
+                                   "model":  "thaumicbases:block/lucrite_0"
+                               },
+                     "age=7":  {
+                                   "model":  "thaumicbases:block/lucrite_7"
+                               },
+                     "age=3":  {
+                                   "model":  "thaumicbases:block/lucrite_3"
+                               }
+                 }
+}

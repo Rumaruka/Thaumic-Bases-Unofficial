@@ -1,0 +1,19 @@
+{
+  "type": "thaumaturge:arcane_workbench_shaped",
+  "vis": 50,
+  "crystals": [],
+  "pattern": [
+    "# #",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "thaumicbases:oldcobble"
+  }
+}

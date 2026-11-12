@@ -1,0 +1,16 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:aversio",
+      "amount": 6
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:arrow"
+  },
+  "result": {
+    "count": 2,
+    "id": "minecraft:arrow"
+  }
+}

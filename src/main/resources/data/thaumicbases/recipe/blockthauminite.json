@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "thaumicbases:thauminite_ingot"
+    }
+  },
+  "result": {
+    "id": "thaumicbases:blockthauminite"
+  }
+}

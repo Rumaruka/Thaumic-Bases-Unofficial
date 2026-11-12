@@ -1,0 +1,46 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  1,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "minecraft:spider_eye"
+                       },
+                       {
+                           "item":  "minecraft:fermented_spider_eye"
+                       },
+                       {
+                           "item":  "minecraft:spider_eye"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:mortuus",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:bestia",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:fabrico",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "BANE_OF_ATROPODS":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

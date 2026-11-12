@@ -1,0 +1,19 @@
+
+{
+  "result": {
+    "item": "thaumicbases:thauminitelegs"
+  },
+  "pattern": [
+    "III",
+    "I I",
+    "I I"
+  ],
+
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "thaumicbases:thauminite_ingot"
+    }
+  }
+
+}

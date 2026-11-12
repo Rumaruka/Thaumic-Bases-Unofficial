@@ -1,0 +1,49 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:salis_mundus"
+    },
+    {
+      "item": "thaumaturge:bath_salts"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    },
+    {
+      "item": "thaumaturge:bath_salts"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 160
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 90
+    },
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:cognitio",
+      "amount": 30
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_calming"
+  }
+}

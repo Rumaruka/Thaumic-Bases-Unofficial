@@ -1,0 +1,28 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.anvils.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": 2,
+  "row": 2,
+  "icons": ["thaumicbases:thaumic_anvil"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.anvils.stage_0",
+      "required_knowledge": [
+        { "type": "theory", "category": "thaumaturge:artifice", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.anvils.stage_1",
+      "recipes": [
+        "thaumicbases:arcane_workbench/thaumic_anvil",
+        "thaumicbases:infusion/void_anvil"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:metallum", "amount": 3 },
+    { "aspect": "thaumaturge:instrumentum", "amount": 2 }
+  ],
+  "complexity": 2
+}

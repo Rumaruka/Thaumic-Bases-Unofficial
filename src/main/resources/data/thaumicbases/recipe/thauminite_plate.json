@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "thaumicbases:thauminite_ingot"
+    }
+  },
+  "result": {
+    "id": "thaumicbases:thauminite_plate",
+    "count": 3
+  }
+}

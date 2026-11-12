@@ -1,0 +1,40 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:aer",
+      "amount": 6
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 6
+    },
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 6
+    },
+    {
+      "aspect": "thaumaturge:aqua",
+      "amount": 6
+    },
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 6
+    },
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 6
+    },
+    {
+      "aspect": "thaumaturge:fabrico",
+      "amount": 2
+    }
+  ],
+  "catalyst": {
+    "item": "thaumicbases:dustblock"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:crystalblockmixed"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 40
+    },
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 25
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:lava_bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:pyrobucket"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:salis_mundus"
+    },
+    {
+      "item": "minecraft:shield"
+    },
+    {
+      "item": "thaumaturge:crystal_terra"
+    },
+    {
+      "item": "minecraft:iron_chestplate"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    },
+    {
+      "item": "minecraft:obsidian"
+    },
+    {
+      "item": "thaumaturge:crystal_ordo"
+    },
+    {
+      "item": "minecraft:golden_apple"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 160
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 90
+    },
+    {
+      "aspect": "thaumaturge:instrumentum",
+      "amount": 80
+    },
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_resistance"
+  }
+}

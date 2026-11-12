@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "thaumicbases:lapis_shard"
+    }
+  },
+  "result": {
+    "id": "minecraft:lapis_lazuli"
+  }
+}

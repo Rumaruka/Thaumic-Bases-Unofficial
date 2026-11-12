@@ -1,0 +1,69 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  12,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "thaumaturge:primordial_pearl"
+                       },
+                       {
+                           "item":  "minecraft:diamond_sword"
+                       },
+                       {
+                           "item":  "thaumaturge:primordial_pearl"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:aversio",
+                        "amount":  100
+                    },
+                    {
+                        "aspect":  "thaumaturge:aer",
+                        "amount":  100
+                    },
+                    {
+                        "aspect":  "thaumaturge:ignis",
+                        "amount":  100
+                    },
+                    {
+                        "aspect":  "thaumaturge:aqua",
+                        "amount":  100
+                    },
+                    {
+                        "aspect":  "thaumaturge:terra",
+                        "amount":  100
+                    },
+                    {
+                        "aspect":  "thaumaturge:ordo",
+                        "amount":  100
+                    },
+                    {
+                        "aspect":  "thaumaturge:perditio",
+                        "amount":  100
+                    },
+                    {
+                        "aspect":  "thaumaturge:potentia",
+                        "amount":  100
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "PRIMAL":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "QQQ",
+    "QQQ",
+    "QQQ"
+  ],
+  "key": {
+    "Q": {
+      "item": "thaumaturge:quicksilver"
+    }
+  },
+  "result": {
+    "id": "thaumicbases:quicksilverblock"
+  }
+}

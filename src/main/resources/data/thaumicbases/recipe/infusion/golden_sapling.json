@@ -1,0 +1,35 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "tag": "minecraft:saplings"
+  },
+  "components": [
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 150
+    },
+    {
+      "aspect": "thaumaturge:desiderium",
+      "amount": 250
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:goldensapling"
+  }
+}

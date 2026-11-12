@@ -1,0 +1,23 @@
+{
+    "parent": "thaumicbases:block/void_anvil",
+    "overrides": [
+        {
+            "predicate": {
+                "void_anvil": 0
+            },
+            "model": "thaumicbases:item/void_anvil_intact"
+        },
+        {
+            "predicate": {
+                "void_anvil": 1
+            },
+            "model": "thaumicbases:item/void_anvil_slightly_damaged"
+        },
+        {
+            "predicate": {
+                "void_anvil": 2
+            },
+            "model": "thaumicbases:item/void_anvil_very_damaged"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 10
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 15
+    }
+  ],
+  "catalyst": {
+    "tag": "c:ingots/thaumium"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:thauminite_ingot"
+  }
+}

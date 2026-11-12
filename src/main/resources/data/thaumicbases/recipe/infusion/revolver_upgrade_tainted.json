@@ -1,0 +1,42 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  4,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:crystal_vitium"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "thaumaturge:crystal_vitium"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:vitium",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:aversio",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "TAINTED":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

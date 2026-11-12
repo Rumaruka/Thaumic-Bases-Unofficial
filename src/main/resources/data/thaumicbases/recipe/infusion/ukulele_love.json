@@ -1,0 +1,55 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "thaumaturge:lamp_fertility"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "thaumaturge:lamp_fertility"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "thaumaturge:lamp_fertility"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "thaumaturge:lamp_fertility"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 160
+    },
+    {
+      "aspect": "thaumaturge:bestia",
+      "amount": 90
+    },
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_love"
+  }
+}

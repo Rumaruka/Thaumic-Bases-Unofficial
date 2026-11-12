@@ -1,0 +1,28 @@
+{
+    "variants":  {
+                     "age=1":  {
+                                   "model":  "thaumicbases:block/lazullia_1"
+                               },
+                     "age=2":  {
+                                   "model":  "thaumicbases:block/lazullia_2"
+                               },
+                     "age=5":  {
+                                   "model":  "thaumicbases:block/lazullia_5"
+                               },
+                     "age=6":  {
+                                   "model":  "thaumicbases:block/lazullia_6"
+                               },
+                     "age=4":  {
+                                   "model":  "thaumicbases:block/lazullia_4"
+                               },
+                     "age=0":  {
+                                   "model":  "thaumicbases:block/lazullia_0"
+                               },
+                     "age=7":  {
+                                   "model":  "thaumicbases:block/lazullia_7"
+                               },
+                     "age=3":  {
+                                   "model":  "thaumicbases:block/lazullia_3"
+                               }
+                 }
+}

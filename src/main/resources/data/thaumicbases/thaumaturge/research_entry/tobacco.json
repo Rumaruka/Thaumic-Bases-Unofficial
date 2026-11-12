@@ -1,0 +1,42 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.tobacco.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": -2,
+  "row": -2,
+  "icons": ["thaumicbases:mortar"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.tobacco.stage_0",
+      "required_knowledge": [
+        { "type": "observation", "category": "thaumaturge:alchemy", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.tobacco.stage_1",
+      "recipes": [
+        "thaumicbases:arcane_workbench/mortar",
+        "thaumicbases:tobacco_pile",
+        "thaumicbases:crucible/tobaccoseed",
+        "thaumicbases:crucible/tobacco_pile_crucible",
+        "thaumicbases:crucible/tobacco_knowledge",
+        "thaumicbases:crucible/tobacco_fighting",
+        "thaumicbases:crucible/tobacco_mining",
+        "thaumicbases:crucible/tobacco_tainted",
+        "thaumicbases:crucible/tobacco_wispy_base",
+        "thaumicbases:crucible/tobacco_eldritch_base",
+        "thaumicbases:arcane_workbench/tobacco_hunger",
+        "thaumicbases:arcane_workbench/tobacco_sanity",
+        "thaumicbases:infusion/wispy_tobacco",
+        "thaumicbases:infusion/eldritch_tobacco",
+        "thaumicbases:arcane_workbench/greatwood_pipe",
+        "thaumicbases:infusion/silverwood_pipe"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:herba", "amount": 3 },
+    { "aspect": "thaumaturge:sensus", "amount": 2 }
+  ],
+  "complexity": 2
+}

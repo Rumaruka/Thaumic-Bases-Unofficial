@@ -1,0 +1,39 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  2,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "minecraft:feather"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:motus",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:aer",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "SPEED":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

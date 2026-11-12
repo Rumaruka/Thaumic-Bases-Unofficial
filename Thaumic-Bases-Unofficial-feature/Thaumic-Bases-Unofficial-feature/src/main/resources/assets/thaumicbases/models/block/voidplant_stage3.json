@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "thaumicbases:blocks/voidplant_stage_3"
+  }
+}

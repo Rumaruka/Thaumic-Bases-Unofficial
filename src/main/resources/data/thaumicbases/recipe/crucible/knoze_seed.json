@@ -1,0 +1,24 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:cognitio",
+      "amount": 60
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 30
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:rose_bush"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:knozeseed"
+  }
+}

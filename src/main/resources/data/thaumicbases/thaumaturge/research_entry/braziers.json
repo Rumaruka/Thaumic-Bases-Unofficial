@@ -1,0 +1,36 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.braziers.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": 0,
+  "row": -2,
+  "icons": ["thaumicbases:campfire"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.braziers.stage_0",
+      "required_knowledge": [
+        { "type": "observation", "category": "thaumaturge:alchemy", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.braziers.stage_1",
+      "recipes": [
+        "thaumicbases:arcane_workbench/campfire",
+        "thaumicbases:arcane_workbench/braizer",
+        "thaumicbases:arcane_workbench/deco_old_brick",
+        "thaumicbases:arcane_workbench/deco_old_cobble",
+        "thaumicbases:arcane_workbench/deco_old_cobble_mossy",
+        "thaumicbases:arcane_workbench/deco_old_diamond",
+        "thaumicbases:arcane_workbench/deco_old_gold",
+        "thaumicbases:arcane_workbench/deco_old_gravel",
+        "thaumicbases:arcane_workbench/deco_old_iron",
+        "thaumicbases:arcane_workbench/deco_old_lapis"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:ignis", "amount": 2 },
+    { "aspect": "thaumaturge:perditio", "amount": 2 }
+  ],
+  "complexity": 1
+}

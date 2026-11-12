@@ -1,0 +1,21 @@
+{
+  "type": "thaumaturge:arcane_workbench_shapeless",
+  "vis": 10,
+  "crystals": [
+    {
+      "aspect": "thaumaturge:ordo"
+    },
+    {
+      "aspect": "thaumaturge:ignis"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "thaumicbases:tobacco_pile"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:tobacco_sanity"
+  }
+}

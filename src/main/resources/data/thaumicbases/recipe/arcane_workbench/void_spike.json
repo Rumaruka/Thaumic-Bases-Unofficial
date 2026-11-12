@@ -1,0 +1,32 @@
+{
+  "type": "thaumaturge:arcane_workbench_shaped",
+  "vis": 20,
+  "crystals": [
+    {
+      "aspect": "thaumaturge:ignis"
+    },
+    {
+      "aspect": "thaumaturge:perditio"
+    }
+  ],
+  "pattern": [
+    " n ",
+    "nIn",
+    "ISI"
+  ],
+  "key": {
+    "n": {
+      "item": "thaumaturge:nugget_void"
+    },
+    "I": {
+      "tag": "c:ingots/void_metal"
+    },
+    "S": {
+      "item": "thaumicbases:thaumspike"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:voidspike"
+  }
+}

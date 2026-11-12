@@ -1,0 +1,28 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 15
+    },
+    {
+      "aspect": "thaumaturge:alkimia",
+      "amount": 5
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 5
+    },
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 1
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:blaze_powder"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:blaze_rod"
+  }
+}

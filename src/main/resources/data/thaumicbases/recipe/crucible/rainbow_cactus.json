@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 60
+    },
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 30
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:cactus"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:rainbowcactus"
+  }
+}

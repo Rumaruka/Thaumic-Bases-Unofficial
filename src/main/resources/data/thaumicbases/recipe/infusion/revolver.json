@@ -1,0 +1,75 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 8,
+  "catalyst": {
+    "item": "thaumaturge:metal_brass"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:turret_basic"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:redstone_torch"
+    },
+    {
+      "item": "thaumaturge:log_greatwood"
+    },
+    {
+      "item": "minecraft:fire_charge"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "thaumaturge:essentia_crystal"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:fire_charge"
+    },
+    {
+      "item": "thaumaturge:log_greatwood"
+    },
+    {
+      "item": "thaumaturge:mechanism_complex"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:instrumentum",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:machina",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:metallum",
+      "amount": 75
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:aversio",
+      "amount": 250
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:revolver"
+  }
+}

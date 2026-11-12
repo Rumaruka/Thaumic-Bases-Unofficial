@@ -1,0 +1,30 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.void_tools.title",
+  "parents": ["thaumicbases:anvils"],
+  "column": 4,
+  "row": 2,
+  "icons": ["thaumicbases:voidfas"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.void_tools.stage_0",
+      "required_knowledge": [
+        { "type": "theory", "category": "thaumaturge:eldritch", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.void_tools.stage_1",
+      "recipes": [
+        "thaumicbases:infusion/void_seed",
+        "thaumicbases:voidfas",
+        "thaumicbases:voidshears",
+        "thaumicbases:infusion/herobrines_scythe"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:vacuos", "amount": 3 },
+    { "aspect": "thaumaturge:metallum", "amount": 2 }
+  ],
+  "complexity": 2
+}

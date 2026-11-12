@@ -1,0 +1,49 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 3,
+  "catalyst": {
+    "item": "thaumicbases:thaumic_anvil"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:metal_void"
+    },
+    {
+      "item": "thaumaturge:metal_void"
+    },
+    {
+      "item": "thaumaturge:metal_void"
+    },
+    {
+      "item": "thaumaturge:metal_void"
+    },
+    {
+      "item": "thaumaturge:metal_void"
+    },
+    {
+      "item": "thaumaturge:metal_void"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:instrumentum",
+      "amount": 125
+    },
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 125
+    },
+    {
+      "aspect": "thaumaturge:alienis",
+      "amount": 75
+    },
+    {
+      "aspect": "thaumaturge:metallum",
+      "amount": 75
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:void_anvil"
+  }
+}

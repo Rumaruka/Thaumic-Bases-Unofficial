@@ -1,0 +1,47 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:greatwoodpipe"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:shimmerleaf"
+    },
+    {
+      "tag": "c:planks/silverwood"
+    },
+    {
+      "tag": "c:planks/silverwood"
+    },
+    {
+      "tag": "c:planks/silverwood"
+    },
+    {
+      "tag": "c:planks/silverwood"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:silverwoodpipe"
+  }
+}

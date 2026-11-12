@@ -1,0 +1,40 @@
+{
+  "type": "thaumaturge:arcane_workbench_shaped",
+  "vis": 50,
+  "crystals": [
+    {
+      "aspect": "thaumaturge:aer"
+    },
+    {
+      "aspect": "thaumaturge:ignis"
+    },
+    {
+      "aspect": "thaumaturge:aqua"
+    },
+    {
+      "aspect": "thaumaturge:terra"
+    },
+    {
+      "aspect": "thaumaturge:ordo"
+    },
+    {
+      "aspect": "thaumaturge:perditio"
+    }
+  ],
+  "pattern": [
+    "gS ",
+    " gg"
+  ],
+  "key": {
+    "g": {
+      "tag": "c:planks/greatwood"
+    },
+    "S": {
+      "item": "thaumaturge:salis_mundus"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:greatwoodpipe"
+  }
+}

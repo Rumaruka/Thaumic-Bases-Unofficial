@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "all":  "thaumicbases:block/goldenleaves"
+                 },
+    "parent":  "minecraft:block/cube_all"
+}

@@ -1,0 +1,35 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 1,
+  "catalyst": {
+    "item": "thaumicbases:tobacco_pile"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:crystal_aer"
+    },
+    {
+      "item": "thaumaturge:crystal_aer"
+    },
+    {
+      "item": "thaumaturge:shimmerleaf"
+    },
+    {
+      "item": "thaumaturge:salis_mundus"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:aer",
+      "amount": 25
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:tobacco_wispy"
+  }
+}

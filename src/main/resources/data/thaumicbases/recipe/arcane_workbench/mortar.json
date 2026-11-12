@@ -1,0 +1,26 @@
+{
+  "type": "thaumaturge:arcane_workbench_shapeless",
+  "vis": 25,
+  "crystals": [],
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "tag": "minecraft:wooden_slabs"
+    },
+    {
+      "tag": "minecraft:wooden_slabs"
+    },
+    {
+      "tag": "minecraft:wooden_slabs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:mortar"
+  }
+}

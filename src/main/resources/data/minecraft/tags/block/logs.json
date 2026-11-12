@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "thaumicbases:enderlogs",
+    "thaumicbases:goldenlogs",
+    "thaumicbases:netherlogs",
+    "thaumicbases:peacelogs"
+  ]
+}

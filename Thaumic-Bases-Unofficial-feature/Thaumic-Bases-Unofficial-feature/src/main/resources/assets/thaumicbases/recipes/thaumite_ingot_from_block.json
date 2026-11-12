@@ -1,0 +1,12 @@
+{
+  "result": {
+    "item": "thaumicbases:thauminite_ingot",
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "item": "thaumicbases:blockthauminite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

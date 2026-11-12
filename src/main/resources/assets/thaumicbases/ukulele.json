@@ -1,0 +1,19 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "thaumicbases:ukulele.obj",
+    "textures": {
+      "#Material.001": "thaumicbases:item/ukulele/ukulelebase",
+      "#Material.002": "thaumicbases:item/ukulele/ukulelestrings",
+      "#Material.003": "thaumicbases:item/ukulele/ukulelehandle"
+    },
+    "custom": {
+      "flip-v": true
+    }
+  },
+  "variants": {
+    "inventory": [{}],
+    "normal": [
+      {}]
+  }
+}

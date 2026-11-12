@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "I I",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "thaumicbases:thauminite_ingot"
+    }
+  },
+  "result": {
+    "id": "thaumicbases:thauminiteboots"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "variants":  {
+                     "state=0":  {
+                                     "model":  "thaumicbases:block/braizer"
+                                 },
+                     "state=1":  {
+                                     "model":  "thaumicbases:block/braizer"
+                                 }
+                 }
+}

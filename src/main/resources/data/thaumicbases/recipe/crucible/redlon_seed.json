@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 16
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:melon_seeds"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:redlonseed"
+  }
+}

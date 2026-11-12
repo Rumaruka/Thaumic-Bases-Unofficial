@@ -1,0 +1,45 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  2,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "tag":  "minecraft:beds"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "minecraft:ghast_tear"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:mortuus",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:humanus",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "DUELING":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

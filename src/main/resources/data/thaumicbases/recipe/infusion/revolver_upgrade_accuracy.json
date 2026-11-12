@@ -1,0 +1,48 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  1,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "minecraft:glass_pane"
+                       },
+                       {
+                           "item":  "minecraft:carrot"
+                       },
+                       {
+                           "item":  "minecraft:glass_pane"
+                       },
+                       {
+                           "item":  "minecraft:glass_pane"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "minecraft:glass_pane"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:ordo",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:sensus",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "ACCURACY":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

@@ -1,0 +1,16 @@
+{
+    "variants":  {
+                     "axis=y":  {
+                                    "model":  "thaumicbases:block/enderlogs"
+                                },
+                     "axis=x":  {
+                                    "y":  90,
+                                    "model":  "thaumicbases:block/enderlogs",
+                                    "x":  90
+                                },
+                     "axis=z":  {
+                                    "model":  "thaumicbases:block/enderlogs",
+                                    "x":  90
+                                }
+                 }
+}

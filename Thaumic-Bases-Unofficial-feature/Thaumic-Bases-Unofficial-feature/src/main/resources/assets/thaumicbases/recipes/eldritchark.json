@@ -1,0 +1,23 @@
+
+{
+  "result": {
+    "item": "thaumicbases:eldritchark",
+    "count": 5
+  },
+  "pattern": [
+    "gOg",
+    "OOO",
+    "gOg"
+  ],
+
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "g": {
+      "item": "minecraft:gold_nugget"
+    }
+  }
+
+}

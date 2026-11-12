@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " #",
+    "# "
+  ],
+  "key": {
+    "#": {
+      "item": "thaumaturge:ingot_void"
+    }
+  },
+  "result": {
+    "id": "thaumicbases:voidshears"
+  }
+}

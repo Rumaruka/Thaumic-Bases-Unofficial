@@ -1,0 +1,59 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "thaumicbases:dustblock"
+    },
+    {
+      "item": "thaumaturge:lamp_growth"
+    },
+    {
+      "item": "thaumaturge:crystal_terra"
+    },
+    {
+      "item": "thaumaturge:lamp_growth"
+    },
+    {
+      "item": "thaumicbases:dustblock"
+    },
+    {
+      "item": "thaumaturge:lamp_growth"
+    },
+    {
+      "item": "thaumaturge:crystal_terra"
+    },
+    {
+      "item": "thaumaturge:lamp_growth"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 60
+    },
+    {
+      "aspect": "thaumaturge:lux",
+      "amount": 90
+    },
+    {
+      "aspect": "thaumaturge:aqua",
+      "amount": 60
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_growth"
+  }
+}

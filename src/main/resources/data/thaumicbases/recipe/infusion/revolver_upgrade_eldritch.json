@@ -1,0 +1,42 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  5,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:void_seed"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "thaumaturge:void_seed"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:alienis",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:vacuos",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "ELDRITCH":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "thaumicbases:blockthauminite",
+    "thaumicbases:braizer",
+    "thaumicbases:crystalblockair",
+    "thaumicbases:crystalblockearth",
+    "thaumicbases:crystalblockentropy",
+    "thaumicbases:crystalblockfire",
+    "thaumicbases:crystalblockmixed",
+    "thaumicbases:crystalblockorder",
+    "thaumicbases:crystalblocktainted",
+    "thaumicbases:crystalblockwater",
+    "thaumicbases:dustblock",
+    "thaumicbases:eldritchark",
+    "thaumicbases:irongreatwood",
+    "thaumicbases:ironspike",
+    "thaumicbases:oldbrick",
+    "thaumicbases:oldcobble",
+    "thaumicbases:oldcobblemossy",
+    "thaumicbases:olddiamond",
+    "thaumicbases:oldgold",
+    "thaumicbases:oldiron",
+    "thaumicbases:oldlapis",
+    "thaumicbases:overchanter",
+    "thaumicbases:quicksilverblock",
+    "thaumicbases:quicksilverbrick",
+    "thaumicbases:thaumic_anvil",
+    "thaumicbases:thaumspike",
+    "thaumicbases:void_anvil",
+    "thaumicbases:voidspike"
+  ]
+}

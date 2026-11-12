@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "thaumicbases:thauminiteshovel"
+  },
+  "pattern": [
+    " I ",
+    " S ",
+    " S "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "S": {
+      "item": "#STICKWOOD"
+    },
+    "I": {
+      "item": "thaumicbases:thauminite_ingot"
+    }
+  }
+}

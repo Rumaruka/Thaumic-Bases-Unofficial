@@ -1,0 +1,16 @@
+{
+    "variants":  {
+                     "axis=y":  {
+                                    "model":  "thaumicbases:block/goldenlogs"
+                                },
+                     "axis=x":  {
+                                    "y":  90,
+                                    "model":  "thaumicbases:block/goldenlogs",
+                                    "x":  90
+                                },
+                     "axis=z":  {
+                                    "model":  "thaumicbases:block/goldenlogs",
+                                    "x":  90
+                                }
+                 }
+}

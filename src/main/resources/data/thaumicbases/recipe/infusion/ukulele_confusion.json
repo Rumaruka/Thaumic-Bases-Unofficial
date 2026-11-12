@@ -1,0 +1,55 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 3,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "thaumaturge:arcane_ear"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "item": "thaumaturge:arcane_ear"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "thaumaturge:brain"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 160
+    },
+    {
+      "aspect": "thaumaturge:mortuus",
+      "amount": 60
+    },
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 90
+    },
+    {
+      "aspect": "thaumaturge:cognitio",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_confusion"
+  }
+}

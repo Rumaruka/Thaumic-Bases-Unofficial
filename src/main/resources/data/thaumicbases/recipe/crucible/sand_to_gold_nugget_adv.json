@@ -1,0 +1,28 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 10
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 5
+    },
+    {
+      "aspect": "thaumaturge:fabrico",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:desiderium",
+      "amount": 5
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:sand"
+  },
+  "result": {
+    "count": 4,
+    "id": "minecraft:gold_nugget"
+  }
+}

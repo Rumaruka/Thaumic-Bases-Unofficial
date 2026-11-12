@@ -1,0 +1,22 @@
+{
+  "type": "thaumaturge:arcane_workbench_shaped",
+  "vis": 50,
+  "crystals": [
+    {
+      "aspect": "thaumaturge:terra"
+    }
+  ],
+  "pattern": [
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "thaumicbases:bloodycloth"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:bloodyboots"
+  }
+}

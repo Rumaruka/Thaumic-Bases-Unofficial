@@ -1,0 +1,45 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  0,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "minecraft:blaze_powder"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "minecraft:enchanted_book"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:ordo",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:permutatio",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "EFFICIENCY":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

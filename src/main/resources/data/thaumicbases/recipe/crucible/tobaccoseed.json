@@ -1,0 +1,24 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:cognitio",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:aqua",
+      "amount": 25
+    },
+    {
+      "aspect": "thaumaturge:humanus",
+      "amount": 10
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:tobaccoseed"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "thaumicbases:endersapling",
+    "thaumicbases:goldensapling",
+    "thaumicbases:nethersapling",
+    "thaumicbases:peacesapling"
+  ]
+}

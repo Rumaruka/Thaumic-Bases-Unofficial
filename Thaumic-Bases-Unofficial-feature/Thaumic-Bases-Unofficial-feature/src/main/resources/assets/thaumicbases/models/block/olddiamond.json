@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "thaumicbases:blocks/diamond_block",
+    "side": "thaumicbases:blocks/diamond_block_side",
+    "front": "thaumicbases:blocks/diamond_block_side"
+  }
+}

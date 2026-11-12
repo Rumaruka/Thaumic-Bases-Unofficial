@@ -1,0 +1,7 @@
+{
+    "textures":  {
+                     "end":  "thaumicbases:block/goldenlog_top",
+                     "side":  "thaumicbases:block/goldenlog_side"
+                 },
+    "parent":  "minecraft:block/cube_column"
+}

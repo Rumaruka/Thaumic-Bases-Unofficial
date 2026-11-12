@@ -1,0 +1,24 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 25
+    },
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 12
+    },
+    {
+      "aspect": "thaumaturge:desiderium",
+      "amount": 10
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:pink_tulip"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:aurelia"
+  }
+}

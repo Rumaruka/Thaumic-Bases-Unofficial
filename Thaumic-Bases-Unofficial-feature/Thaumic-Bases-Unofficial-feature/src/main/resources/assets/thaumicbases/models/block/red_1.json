@@ -1,0 +1,6 @@
+{
+    "parent": "block/stem_growth1",
+    "textures": {
+      "stem": "thaumicbases:blocks/red_disconnected"
+    }
+}

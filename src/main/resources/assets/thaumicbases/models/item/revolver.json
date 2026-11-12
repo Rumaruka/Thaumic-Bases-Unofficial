@@ -1,0 +1,20 @@
+{
+  "parent": "thaumicbases:item/revolver_base",
+  "textures": {
+    "all": "thaumicbases:item/revolver/base",
+    "particle": "thaumicbases:item/revolver/base"
+  },
+  "overrides": [
+    { "predicate": { "thaumicbases:void": 1.0, "thaumicbases:eldritch": 1.0, "thaumicbases:primal": 1.0 }, "model": "thaumicbases:item/revolver_void_eldritch_primal" },
+    { "predicate": { "thaumicbases:void": 1.0, "thaumicbases:eldritch": 1.0, "thaumicbases:taint": 1.0 }, "model": "thaumicbases:item/revolver_void_eldritch_taint" },
+    { "predicate": { "thaumicbases:void": 1.0, "thaumicbases:eldritch": 1.0 }, "model": "thaumicbases:item/revolver_void_eldritch" },
+    { "predicate": { "thaumicbases:void": 1.0, "thaumicbases:primal": 1.0 }, "model": "thaumicbases:item/revolver_void_primal" },
+    { "predicate": { "thaumicbases:void": 1.0, "thaumicbases:taint": 1.0 }, "model": "thaumicbases:item/revolver_void_taint" },
+    { "predicate": { "thaumicbases:eldritch": 1.0, "thaumicbases:primal": 1.0 }, "model": "thaumicbases:item/revolver_eldritch_primal" },
+    { "predicate": { "thaumicbases:eldritch": 1.0, "thaumicbases:taint": 1.0 }, "model": "thaumicbases:item/revolver_eldritch_taint" },
+    { "predicate": { "thaumicbases:void": 1.0 }, "model": "thaumicbases:item/revolver_void" },
+    { "predicate": { "thaumicbases:eldritch": 1.0 }, "model": "thaumicbases:item/revolver_eldritch" },
+    { "predicate": { "thaumicbases:primal": 1.0 }, "model": "thaumicbases:item/revolver_primal" },
+    { "predicate": { "thaumicbases:taint": 1.0 }, "model": "thaumicbases:item/revolver_taint" }
+  ]
+}

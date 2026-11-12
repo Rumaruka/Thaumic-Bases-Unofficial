@@ -1,0 +1,49 @@
+{
+    "variants":  {
+                     "facing=north,damage=0":  {
+                                                   "model":  "thaumicbases:block/thaumic_anvil_undamaged",
+                                                   "y":  180
+                                               },
+                     "facing=east,damage=0":  {
+                                                  "model":  "thaumicbases:block/thaumic_anvil_undamaged",
+                                                  "y":  270
+                                              },
+                     "facing=south,damage=0":  {
+                                                   "model":  "thaumicbases:block/thaumic_anvil_undamaged"
+                                               },
+                     "facing=west,damage=0":  {
+                                                  "model":  "thaumicbases:block/thaumic_anvil_undamaged",
+                                                  "y":  90
+                                              },
+                     "facing=north,damage=1":  {
+                                                   "model":  "thaumicbases:block/thaumic_anvil_slightly_damaged",
+                                                   "y":  180
+                                               },
+                     "facing=east,damage=1":  {
+                                                  "model":  "thaumicbases:block/thaumic_anvil_slightly_damaged",
+                                                  "y":  270
+                                              },
+                     "facing=south,damage=1":  {
+                                                   "model":  "thaumicbases:block/thaumic_anvil_slightly_damaged"
+                                               },
+                     "facing=west,damage=1":  {
+                                                  "model":  "thaumicbases:block/thaumic_anvil_slightly_damaged",
+                                                  "y":  90
+                                              },
+                     "facing=north,damage=2":  {
+                                                   "model":  "thaumicbases:block/thaumic_anvil_very_damaged",
+                                                   "y":  180
+                                               },
+                     "facing=east,damage=2":  {
+                                                  "model":  "thaumicbases:block/thaumic_anvil_very_damaged",
+                                                  "y":  270
+                                              },
+                     "facing=south,damage=2":  {
+                                                   "model":  "thaumicbases:block/thaumic_anvil_very_damaged"
+                                               },
+                     "facing=west,damage=2":  {
+                                                  "model":  "thaumicbases:block/thaumic_anvil_very_damaged",
+                                                  "y":  90
+                                              }
+                 }
+}

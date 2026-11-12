@@ -1,0 +1,47 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "thaumicbases:knowledge_shard"
+    },
+    {
+      "item": "thaumaturge:scribing_tools"
+    },
+    {
+      "item": "thaumicbases:knowledge_shard"
+    },
+    {
+      "item": "thaumaturge:thaumonomicon"
+    },
+    {
+      "item": "thaumicbases:knowledge_shard"
+    },
+    {
+      "item": "thaumaturge:scribing_tools"
+    },
+    {
+      "item": "thaumicbases:knowledge_shard"
+    },
+    {
+      "item": "thaumaturge:thaumonomicon"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:cognitio",
+      "amount": 250
+    },
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_knowledge"
+  }
+}

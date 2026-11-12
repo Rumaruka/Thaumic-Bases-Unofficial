@@ -1,0 +1,37 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.alchemy_utilities.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": 0,
+  "row": 2,
+  "icons": ["thaumicbases:pyrobucket"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.alchemy_utilities.stage_0",
+      "required_knowledge": [
+        { "type": "observation", "category": "thaumaturge:alchemy", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.alchemy_utilities.stage_1",
+      "recipes": [
+        "thaumicbases:crucible/pyrobucket",
+        "thaumicbases:arcane_workbench/rosehip_syrup",
+        "thaumicbases:arcane_workbench/salis_mundus_block",
+        "thaumicbases:arcane_workbench/salis_mundus_from_block",
+        "thaumicbases:crucible/double_salis_mundus",
+        "thaumicbases:crucible/curio_ancient",
+        "thaumicbases:crucible/curio_arcane",
+        "thaumicbases:crucible/curio_eldritch",
+        "thaumicbases:crucible/curio_knowledge",
+        "thaumicbases:crucible/curio_preserved",
+        "thaumicbases:crucible/curio_twisted"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:alkimia", "amount": 3 },
+    { "aspect": "thaumaturge:ignis", "amount": 2 }
+  ],
+  "complexity": 2
+}

@@ -1,0 +1,10 @@
+{
+    "variants":  {
+                     "bloody=false":  {
+                                          "model":  "thaumicbases:block/thaumspike_0"
+                                      },
+                     "bloody=true":  {
+                                         "model":  "thaumicbases:block/thaumspike_1"
+                                     }
+                 }
+}

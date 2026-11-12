@@ -1,0 +1,12 @@
+{
+  "background": "thaumicbases:textures/thaumonomicon/background.png",
+  "formula": [
+    { "amount": 4, "aspect": "thaumaturge:praecantatio" },
+    { "amount": 3, "aspect": "thaumaturge:instrumentum" },
+    { "amount": 3, "aspect": "thaumaturge:fabrico" },
+    { "amount": 2, "aspect": "thaumaturge:terra" },
+    { "amount": 2, "aspect": "thaumaturge:ignis" }
+  ],
+  "icon": "thaumicbases:textures/thaumonomicon/bases.png",
+  "overlay_background": "thaumaturge:textures/gui/gui_research_back_over.png"
+}

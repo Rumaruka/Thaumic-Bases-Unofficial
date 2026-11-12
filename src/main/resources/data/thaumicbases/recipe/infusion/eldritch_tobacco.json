@@ -1,0 +1,39 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:tobacco_pile"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:void_seed"
+    },
+    {
+      "item": "thaumaturge:void_seed"
+    },
+    {
+      "item": "thaumaturge:shimmerleaf"
+    },
+    {
+      "item": "thaumaturge:shimmerleaf"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:alienis",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:vitium",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 20
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:tobacco_eldritch"
+  }
+}

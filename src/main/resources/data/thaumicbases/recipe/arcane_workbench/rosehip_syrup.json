@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:arcane_workbench_shapeless",
+  "vis": 50,
+  "crystals": [],
+  "ingredients": [
+    {
+      "item": "thaumaturge:phial"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "thaumicbases:briar_seedbag"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:rosehipsyrup"
+  }
+}

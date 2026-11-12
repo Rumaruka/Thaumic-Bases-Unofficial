@@ -1,0 +1,35 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.ukulele.title",
+  "parents": ["thaumicbases:tb_root"],
+  "column": -2,
+  "row": 2,
+  "icons": ["thaumicbases:ukulele"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.ukulele.stage_0",
+      "required_knowledge": [
+        { "type": "theory", "category": "thaumaturge:infusion", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.ukulele.stage_1",
+      "recipes": [
+        "thaumicbases:infusion/ukulele",
+        "thaumicbases:infusion/ukulele_knowledge",
+        "thaumicbases:infusion/ukulele_calming",
+        "thaumicbases:infusion/ukulele_electric",
+        "thaumicbases:infusion/ukulele_resistance",
+        "thaumicbases:infusion/ukulele_buffing",
+        "thaumicbases:infusion/ukulele_confusion",
+        "thaumicbases:infusion/ukulele_growth",
+        "thaumicbases:infusion/ukulele_love"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:sensus", "amount": 3 },
+    { "aspect": "thaumaturge:instrumentum", "amount": 2 }
+  ],
+  "complexity": 2
+}

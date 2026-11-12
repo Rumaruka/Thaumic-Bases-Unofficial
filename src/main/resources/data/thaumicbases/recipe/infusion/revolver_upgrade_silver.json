@@ -1,0 +1,46 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  0,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "thaumaturge:quicksilver"
+                       },
+                       {
+                           "item":  "thaumaturge:quicksilver"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:mortuus",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:bestia",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:exanimis",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "SILVER":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

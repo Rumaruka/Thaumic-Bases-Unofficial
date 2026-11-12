@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "thaumicbases:enderlogs"
+    }
+  ],
+  "result": {
+    "id": "thaumicbases:enderplanks",
+    "count": 4
+  }
+}

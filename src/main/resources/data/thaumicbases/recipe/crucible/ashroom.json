@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 10
+    },
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 5
+    }
+  ],
+  "catalyst": {
+    "item": "thaumaturge:vishroom"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ashroom"
+  }
+}

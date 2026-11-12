@@ -1,0 +1,10 @@
+{
+    "variants":  {
+                     "state=0":  {
+                                     "model":  "thaumicbases:block/aurelia_stage_close"
+                                 },
+                     "state=1":  {
+                                     "model":  "thaumicbases:block/aurelia_stage_open"
+                                 }
+                 }
+}

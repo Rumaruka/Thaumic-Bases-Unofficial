@@ -1,0 +1,10 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+
+    "top": "thaumicbases:block/cryingobelisk_top",
+    "side": "thaumicbases:block/cryingobelisk_side",
+    "front": "thaumicbases:block/cryingobelisk",
+    "bottom":"thaumicbases:block/cryingobelisk_buttom"
+  }
+}

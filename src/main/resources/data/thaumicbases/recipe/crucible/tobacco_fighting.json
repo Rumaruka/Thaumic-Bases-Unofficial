@@ -1,0 +1,16 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:aversio",
+      "amount": 20
+    }
+  ],
+  "catalyst": {
+    "item": "thaumicbases:tobacco_pile"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:tobacco_fighting"
+  }
+}

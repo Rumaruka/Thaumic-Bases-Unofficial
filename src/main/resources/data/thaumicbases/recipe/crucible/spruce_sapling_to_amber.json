@@ -1,0 +1,16 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:vinculum",
+      "amount": 20
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:spruce_sapling"
+  },
+  "result": {
+    "count": 3,
+    "id": "thaumaturge:amber"
+  }
+}

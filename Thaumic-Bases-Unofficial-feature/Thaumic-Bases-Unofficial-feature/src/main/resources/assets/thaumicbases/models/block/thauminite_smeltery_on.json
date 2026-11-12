@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "thaumicbases:blocks/tFurnace/top_filled",
+    "front": "thaumicbases:blocks/tFurnace/front_on",
+    "side": "thaumicbases:blocks/tFurnace/side"
+  }
+}

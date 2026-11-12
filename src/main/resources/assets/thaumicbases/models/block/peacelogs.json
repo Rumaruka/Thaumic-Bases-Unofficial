@@ -1,0 +1,7 @@
+{
+    "textures":  {
+                     "end":  "thaumicbases:block/peacelog_top",
+                     "side":  "thaumicbases:block/peacelog"
+                 },
+    "parent":  "minecraft:block/cube_column"
+}

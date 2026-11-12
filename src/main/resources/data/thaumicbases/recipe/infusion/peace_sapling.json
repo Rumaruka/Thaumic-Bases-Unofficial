@@ -1,0 +1,35 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "tag": "minecraft:saplings"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:lamp_fertility"
+    },
+    {
+      "item": "thaumaturge:lamp_fertility"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:beetroot"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 150
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 250
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:peacesapling"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 5,
+  "catalyst": {
+    "item": "thaumaturge:void_hoe"
+  },
+  "components": [
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "thaumaturge:metal_void"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:aversio",
+      "amount": 40
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 75
+    },
+    {
+      "aspect": "thaumaturge:alienis",
+      "amount": 25
+    },
+    {
+      "aspect": "thaumaturge:mortuus",
+      "amount": 25
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:herobrinesscythe"
+  }
+}

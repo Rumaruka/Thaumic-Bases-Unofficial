@@ -1,0 +1,87 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 4,
+  "catalyst": {
+    "item": "minecraft:enchanting_table"
+  },
+  "components": [
+    {
+      "item": "thaumicbases:dustblock"
+    },
+    {
+      "item": "thaumicbases:dustblock"
+    },
+    {
+      "item": "thaumicbases:crystalblockmixed"
+    },
+    {
+      "item": "thaumicbases:crystalblockmixed"
+    },
+    {
+      "item": "thaumicbases:crystalblockentropy"
+    },
+    {
+      "item": "thaumicbases:crystalblockorder"
+    },
+    {
+      "item": "thaumicbases:crystalblockearth"
+    },
+    {
+      "item": "thaumicbases:crystalblockwater"
+    },
+    {
+      "item": "thaumicbases:crystalblockfire"
+    },
+    {
+      "item": "thaumicbases:crystalblockair"
+    },
+    {
+      "item": "thaumaturge:metal_thaumium"
+    },
+    {
+      "item": "thaumaturge:metal_thaumium"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:aer",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:aqua",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:machina",
+      "amount": 125
+    },
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 125
+    },
+    {
+      "aspect": "thaumaturge:cognitio",
+      "amount": 125
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:overchanter"
+  }
+}

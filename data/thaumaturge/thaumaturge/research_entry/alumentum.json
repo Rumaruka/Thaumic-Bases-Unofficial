@@ -1,0 +1,41 @@
+{
+  "category": "thaumaturge:alchemy",
+  "name": "research.thaumaturge.alumentum.title",
+  "parents": [
+    "thaumaturge:base_alchemy"
+  ],
+  "column": 2,
+  "row": -1,
+  "icons": [
+    "thaumaturge:alumentum"
+  ],
+  "stages": [
+    {
+      "text": "research.thaumaturge.alumentum.stage_0",
+      "required_knowledge": [
+        {
+          "type": "observation",
+          "category": "thaumaturge:basics",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "text": "research.thaumaturge.alumentum.stage_1",
+      "recipes": [
+        "thaumaturge:crucible/alumentum"
+      ]
+    }
+  ],
+  "note_aspects": [
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 3
+    },
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 1
+    }
+  ],
+  "complexity": 1
+}

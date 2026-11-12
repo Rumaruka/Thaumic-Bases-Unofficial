@@ -1,0 +1,41 @@
+{
+  "type": "thaumaturge:arcane_workbench_shaped",
+  "vis": 50,
+  "crystals": [
+    {
+      "aspect": "thaumaturge:perditio"
+    },
+    {
+      "aspect": "thaumaturge:perditio"
+    },
+    {
+      "aspect": "thaumaturge:ignis"
+    },
+    {
+      "aspect": "thaumaturge:ignis"
+    }
+  ],
+  "pattern": [
+    "SSS",
+    "CUC",
+    "GGG"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "U": {
+      "tag": "minecraft:coals"
+    },
+    "C": {
+      "tag": "c:cobblestones"
+    },
+    "G": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:campfire"
+  }
+}

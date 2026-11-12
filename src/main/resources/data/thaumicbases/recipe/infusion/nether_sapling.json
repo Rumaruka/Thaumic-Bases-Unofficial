@@ -1,0 +1,35 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "tag": "minecraft:saplings"
+  },
+  "components": [
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 150
+    },
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 250
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:nethersapling"
+  }
+}

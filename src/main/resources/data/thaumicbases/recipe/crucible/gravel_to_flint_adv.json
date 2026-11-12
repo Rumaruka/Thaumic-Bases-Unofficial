@@ -1,0 +1,24 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 10
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 10
+    },
+    {
+      "aspect": "thaumaturge:fabrico",
+      "amount": 5
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:gravel"
+  },
+  "result": {
+    "count": 4,
+    "id": "minecraft:flint"
+  }
+}

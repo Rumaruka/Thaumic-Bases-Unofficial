@@ -1,0 +1,6 @@
+{
+    "textures":  {
+                     "cross":  "thaumicbases:block/nethersapling"
+                 },
+    "parent":  "minecraft:block/cross"
+}

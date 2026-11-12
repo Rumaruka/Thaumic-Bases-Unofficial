@@ -1,0 +1,61 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumaturge:log_greatwood"
+  },
+  "components": [
+    {
+      "item": "minecraft:note_block"
+    },
+    {
+      "item": "minecraft:jukebox"
+    },
+    {
+      "item": "minecraft:note_block"
+    },
+    {
+      "item": "thaumaturge:arcane_ear"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:note_block"
+    },
+    {
+      "item": "minecraft:redstone_lamp"
+    },
+    {
+      "item": "minecraft:note_block"
+    },
+    {
+      "item": "thaumaturge:arcane_ear"
+    },
+    {
+      "item": "thaumaturge:jar_normal"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:sensus",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:humanus",
+      "amount": 75
+    },
+    {
+      "aspect": "thaumaturge:instrumentum",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele"
+  }
+}

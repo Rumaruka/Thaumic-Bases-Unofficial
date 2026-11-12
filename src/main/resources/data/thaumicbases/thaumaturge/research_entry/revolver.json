@@ -1,0 +1,25 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.revolver.title",
+  "parents": ["thaumicbases:overchanter"],
+  "column": 4,
+  "row": 0,
+  "icons": ["thaumicbases:revolver"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.revolver.stage_0",
+      "required_knowledge": [
+        { "type": "theory", "category": "thaumaturge:artifice", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.revolver.stage_1",
+      "recipes": ["thaumicbases:infusion/revolver"]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:aversio", "amount": 3 },
+    { "aspect": "thaumaturge:machina", "amount": 2 }
+  ],
+  "complexity": 2
+}

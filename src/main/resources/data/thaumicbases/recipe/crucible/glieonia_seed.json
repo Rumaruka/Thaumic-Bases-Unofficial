@@ -1,0 +1,24 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 15
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 15
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:azure_bluet"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:glieoniaseed"
+  }
+}

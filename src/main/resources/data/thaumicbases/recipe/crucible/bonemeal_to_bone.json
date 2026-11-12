@@ -1,0 +1,32 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 2
+    },
+    {
+      "aspect": "thaumaturge:sensus",
+      "amount": 6
+    },
+    {
+      "aspect": "thaumaturge:fabrico",
+      "amount": 2
+    },
+    {
+      "aspect": "thaumaturge:permutatio",
+      "amount": 1
+    },
+    {
+      "aspect": "thaumaturge:mortuus",
+      "amount": 4
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:bone_meal"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:bone"
+  }
+}

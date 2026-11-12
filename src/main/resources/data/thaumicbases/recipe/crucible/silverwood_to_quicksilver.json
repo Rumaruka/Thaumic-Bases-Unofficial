@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 20
+    }
+  ],
+  "catalyst": {
+    "item": "thaumaturge:log_silverwood"
+  },
+  "result": {
+    "count": 3,
+    "id": "thaumaturge:quicksilver"
+  }
+}

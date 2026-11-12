@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "thaumicbases:campfire",
+    "thaumicbases:enderlogs",
+    "thaumicbases:enderplanks",
+    "thaumicbases:goldenlogs",
+    "thaumicbases:goldenplanks",
+    "thaumicbases:netherlogs",
+    "thaumicbases:netherplanks",
+    "thaumicbases:peacelogs",
+    "thaumicbases:peaceplanks"
+  ]
+}

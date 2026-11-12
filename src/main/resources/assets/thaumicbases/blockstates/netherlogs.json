@@ -1,0 +1,16 @@
+{
+    "variants":  {
+                     "axis=y":  {
+                                    "model":  "thaumicbases:block/netherlogs"
+                                },
+                     "axis=x":  {
+                                    "y":  90,
+                                    "model":  "thaumicbases:block/netherlogs",
+                                    "x":  90
+                                },
+                     "axis=z":  {
+                                    "model":  "thaumicbases:block/netherlogs",
+                                    "x":  90
+                                }
+                 }
+}

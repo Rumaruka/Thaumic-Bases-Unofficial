@@ -1,0 +1,36 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:aer",
+      "amount": 8
+    },
+    {
+      "aspect": "thaumaturge:ignis",
+      "amount": 8
+    },
+    {
+      "aspect": "thaumaturge:aqua",
+      "amount": 8
+    },
+    {
+      "aspect": "thaumaturge:terra",
+      "amount": 8
+    },
+    {
+      "aspect": "thaumaturge:ordo",
+      "amount": 8
+    },
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 8
+    }
+  ],
+  "catalyst": {
+    "item": "thaumaturge:salis_mundus"
+  },
+  "result": {
+    "count": 2,
+    "id": "thaumaturge:salis_mundus"
+  }
+}

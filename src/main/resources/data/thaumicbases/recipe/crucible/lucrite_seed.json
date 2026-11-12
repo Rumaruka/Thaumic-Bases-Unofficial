@@ -1,0 +1,24 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 20
+    },
+    {
+      "aspect": "thaumaturge:desiderium",
+      "amount": 18
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 14
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:golden_carrot"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:lucriteseed"
+  }
+}

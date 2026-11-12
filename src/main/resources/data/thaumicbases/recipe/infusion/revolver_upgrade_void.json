@@ -1,0 +1,45 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  4,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "thaumaturge:metal_void"
+                       },
+                       {
+                           "item":  "thaumaturge:metal_void"
+                       },
+                       {
+                           "item":  "thaumaturge:metal_void"
+                       },
+                       {
+                           "item":  "thaumaturge:metal_void"
+                       },
+                       {
+                           "item":  "thaumaturge:metal_void"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:vacuos",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:instrumentum",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "VOID":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

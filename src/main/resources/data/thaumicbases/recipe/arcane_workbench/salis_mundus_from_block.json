@@ -1,0 +1,19 @@
+{
+  "type": "thaumaturge:arcane_workbench_shaped",
+  "vis": 50,
+  "crystals": [],
+  "pattern": [
+    "   ",
+    " s ",
+    "   "
+  ],
+  "key": {
+    "s": {
+      "item": "thaumicbases:dustblock"
+    }
+  },
+  "result": {
+    "count": 9,
+    "id": "thaumaturge:salis_mundus"
+  }
+}

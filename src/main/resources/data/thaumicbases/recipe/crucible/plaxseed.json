@@ -1,0 +1,20 @@
+{
+  "type": "thaumaturge:crucible",
+  "aspects": [
+    {
+      "aspect": "thaumaturge:herba",
+      "amount": 25
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 20
+    }
+  ],
+  "catalyst": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:plaxseed"
+  }
+}

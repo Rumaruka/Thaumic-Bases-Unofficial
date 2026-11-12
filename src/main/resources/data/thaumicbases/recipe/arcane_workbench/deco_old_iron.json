@@ -1,0 +1,29 @@
+{
+  "type": "thaumaturge:arcane_workbench_shaped",
+  "vis": 50,
+  "crystals": [
+    {
+      "aspect": "thaumaturge:perditio"
+    },
+    {
+      "aspect": "thaumaturge:terra"
+    },
+    {
+      "aspect": "thaumaturge:ordo"
+    }
+  ],
+  "pattern": [
+    "# #",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "thaumicbases:oldiron"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "category": "thaumicbases:thaumicbases",
+  "name": "research.thaumicbases.bloody_gear.title",
+  "parents": ["thaumicbases:spikes"],
+  "column": 4,
+  "row": -2,
+  "icons": ["thaumicbases:bloodycloth"],
+  "stages": [
+    {
+      "text": "research.thaumicbases.bloody_gear.stage_0",
+      "required_knowledge": [
+        { "type": "theory", "category": "thaumaturge:infusion", "amount": 1 }
+      ]
+    },
+    {
+      "text": "research.thaumicbases.bloody_gear.stage_1",
+      "recipes": [
+        "thaumicbases:arcane_workbench/bloody_chest",
+        "thaumicbases:arcane_workbench/bloody_legs",
+        "thaumicbases:arcane_workbench/bloody_boots"
+      ]
+    }
+  ],
+  "note_aspects": [
+    { "aspect": "thaumaturge:victus", "amount": 3 },
+    { "aspect": "thaumaturge:praemunio", "amount": 2 }
+  ],
+  "complexity": 2
+}

@@ -1,0 +1,59 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "thaumaturge:focus_2"
+    },
+    {
+      "item": "thaumicbases:crystalblockair"
+    },
+    {
+      "item": "thaumaturge:mirror_essentia"
+    },
+    {
+      "item": "thaumicbases:crystalblockentropy"
+    },
+    {
+      "item": "thaumaturge:focus_2"
+    },
+    {
+      "item": "thaumicbases:crystalblockair"
+    },
+    {
+      "item": "thaumaturge:crystal_ignis"
+    },
+    {
+      "item": "thaumicbases:crystalblockentropy"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 40
+    },
+    {
+      "aspect": "thaumaturge:aer",
+      "amount": 90
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 100
+    },
+    {
+      "aspect": "thaumaturge:perditio",
+      "amount": 30
+    },
+    {
+      "aspect": "thaumaturge:aversio",
+      "amount": 60
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_electric"
+  }
+}

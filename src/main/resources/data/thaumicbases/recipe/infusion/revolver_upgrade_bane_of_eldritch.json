@@ -1,0 +1,39 @@
+﻿{
+    "type":  "thaumaturge:infusion",
+    "instability":  2,
+    "catalyst":  {
+                     "item":  "thaumicbases:revolver"
+                 },
+    "components":  [
+                       {
+                           "item":  "minecraft:ender_eye"
+                       },
+                       {
+                           "item":  "thaumaturge:salis_mundus"
+                       },
+                       {
+                           "item":  "minecraft:ender_pearl"
+                       }
+                   ],
+    "aspects":  [
+                    {
+                        "aspect":  "thaumaturge:mortuus",
+                        "amount":  20
+                    },
+                    {
+                        "aspect":  "thaumaturge:alienis",
+                        "amount":  20
+                    }
+                ],
+    "result":  {
+                   "id":  "thaumicbases:revolver",
+                   "count":  1,
+                   "components":  {
+                                      "minecraft:custom_data":  {
+                                                                    "tb_upgrades":  {
+                                                                                        "BANE_OF_ELDRITCH":  1
+                                                                                    }
+                                                                }
+                                  }
+               }
+}

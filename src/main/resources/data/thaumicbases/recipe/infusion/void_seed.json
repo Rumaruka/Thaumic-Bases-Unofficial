@@ -1,0 +1,48 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 3,
+  "catalyst": {
+    "item": "thaumaturge:void_seed"
+  },
+  "components": [
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:poisonous_potato"
+    },
+    {
+      "item": "minecraft:melon_seeds"
+    },
+    {
+      "item": "minecraft:pumpkin_seeds"
+    },
+    {
+      "item": "minecraft:wheat_seeds"
+    },
+    {
+      "item": "minecraft:beetroot_seeds"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:tenebrae",
+      "amount": 135
+    },
+    {
+      "aspect": "thaumaturge:praecantatio",
+      "amount": 125
+    },
+    {
+      "aspect": "thaumaturge:cognitio",
+      "amount": 125
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:voidseed"
+  }
+}

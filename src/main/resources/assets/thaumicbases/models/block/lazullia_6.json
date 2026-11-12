@@ -1,0 +1,7 @@
+{
+  "parent": "block/crop",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "crop": "thaumicbases:block/lazullia_stage_6"
+  }
+}

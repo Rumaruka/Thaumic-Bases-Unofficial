@@ -1,0 +1,13 @@
+{
+    "variants":  {
+                     "state=0":  {
+                                     "model":  "thaumicbases:block/campfire"
+                                 },
+                     "state=1":  {
+                                     "model":  "thaumicbases:block/campfire_1"
+                                 },
+                     "state=2":  {
+                                     "model":  "thaumicbases:block/campfire_1"
+                                 }
+                 }
+}

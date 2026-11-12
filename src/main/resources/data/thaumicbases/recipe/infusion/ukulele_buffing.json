@@ -1,0 +1,51 @@
+{
+  "type": "thaumaturge:infusion",
+  "instability": 2,
+  "catalyst": {
+    "item": "thaumicbases:ukulele"
+  },
+  "components": [
+    {
+      "item": "minecraft:glowstone"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:golden_carrot"
+    },
+    {
+      "item": "minecraft:rabbit_foot"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "aspects": [
+    {
+      "aspect": "thaumaturge:auram",
+      "amount": 160
+    },
+    {
+      "aspect": "thaumaturge:victus",
+      "amount": 90
+    },
+    {
+      "aspect": "thaumaturge:potentia",
+      "amount": 90
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "thaumicbases:ukulele_buffing"
+  }
+}

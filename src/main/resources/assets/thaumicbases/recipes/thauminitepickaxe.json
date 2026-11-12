@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "thaumicbases:thauminitepickaxe"
+  },
+  "pattern": [
+    "III",
+    " S ",
+    " S "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "S": {
+      "item": "#STICKWOOD"
+    },
+    "I": {
+      "item": "thaumicbases:thauminite_ingot"
+    }
+  }
+}

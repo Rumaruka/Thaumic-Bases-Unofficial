@@ -1,0 +1,16 @@
+{
+    "variants":  {
+                     "axis=y":  {
+                                    "model":  "thaumicbases:block/peacelogs"
+                                },
+                     "axis=x":  {
+                                    "y":  90,
+                                    "model":  "thaumicbases:block/peacelogs",
+                                    "x":  90
+                                },
+                     "axis=z":  {
+                                    "model":  "thaumicbases:block/peacelogs",
+                                    "x":  90
+                                }
+                 }
+}
